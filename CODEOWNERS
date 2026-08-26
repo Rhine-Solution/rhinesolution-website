@@ -1,0 +1,7 @@
+# CODEOWNERS for Rhine Solution website
+# RAGNAROK owns personal portfolio and related content
+RAGNAROK-RS0 @RhineSolution/RAGNAROK-RS0 /app/[locale]/team/ragnarok/
+# ZeroMeister owns technical documentation and related content
+ZeroMeister @RhineSolution/ZeroMeister /app/[locale]/team/zeromeister/
+# Both own the rest
+* @RhineSolution/RAGNAROK-RS0 @RhineSolution/ZeroMeister
