@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import "../../../styles/globals.css";
-import { ThemeProvider } from "../../../src/components/ThemeProvider";
+import "../../styles/globals.css";
+import { ThemeProvider } from "../../src/components/ThemeProvider";
 
 export const metadata: Metadata = {
   title: "Rhine Solution — Custom Web Development",

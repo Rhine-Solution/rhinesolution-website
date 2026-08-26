@@ -1,6 +1,6 @@
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
-import content from "../../../content/en.json";
+import content from "../../content/nl.json";
 import Link from "next/link";
 
 export const metadata = { title: "Rhine Solution" };
@@ -19,8 +19,8 @@ export default function HomeEn() {
           <h1>{t.hero_title}</h1>
           <p>{t.hero_subtitle}</p>
           <div className="ctas">
-            <Link href="/en/team" className="btn btn-primary">{t.cta_team}</Link>
-            <Link href="/en/projects" className="btn btn-secondary">{t.cta_projects}</Link>
+            <Link href="/nl/team" className="btn btn-primary">{t.cta_team}</Link>
+            <Link href="/nl/projects" className="btn btn-secondary">{t.cta_projects}</Link>
           </div>
         </section>
         <section className="container" style={{ marginTop: "var(--space-7)" }}>
@@ -30,7 +30,7 @@ export default function HomeEn() {
             {projects.map((p) => (
               <Link
                 key={p.slug}
-                href={`/en/projects/${p.slug}`}
+                href={`/nl/projects/${p.slug}`}
                 className="card"
                 style={{ textDecoration: "none", color: "inherit" }}
               >
@@ -47,12 +47,12 @@ export default function HomeEn() {
           <h2>{t.section_team_title}</h2>
           <p style={{ color: "var(--color-text-muted)" }}>{t.section_team_text}</p>
           <div className="grid" style={{ marginTop: "var(--space-4)" }}>
-            <Link href="/en/team/ragnarok" className="card" style={{ textDecoration: "none", color: "inherit" }}>
+            <Link href="/nl/team/ragnarok" className="card" style={{ textDecoration: "none", color: "inherit" }}>
               <h3>{content.ragnarok.name}</h3>
               <p style={{ color: "var(--color-accent)", marginBottom: "var(--space-2)" }}>{content.ragnarok.role}</p>
               <p style={{ marginBottom: 0 }}>{content.ragnarok.tagline}</p>
             </Link>
-            <Link href="/en/team/zeromeister" className="card" style={{ textDecoration: "none", color: "inherit" }}>
+            <Link href="/nl/team/zeromeister" className="card" style={{ textDecoration: "none", color: "inherit" }}>
               <h3>{content.zeromeister.name}</h3>
               <p style={{ color: "var(--color-accent)", marginBottom: "var(--space-2)" }}>{content.zeromeister.role}</p>
               <p style={{ marginBottom: 0 }}>{content.zeromeister.tagline}</p>

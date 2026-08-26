@@ -1,11 +1,11 @@
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
-import content from "../../../../../content/nl.json";
+import content from "../../../../content/nl.json";
 
-export const metadata = { title: "ZeroMeister — CTO" };
+export const metadata = { title: "RAGNAROK — CEO" };
 
-export default function ZeromeisterEn() {
-  const p = content.zeromeister;
+export default function RagnarokEn() {
+  const p = content.ragnarok;
   return (
     <>
       <Nav locale="en" brand={content.brand.name} labels={content.nav} current="team" />
@@ -35,7 +35,7 @@ export default function ZeromeisterEn() {
         </section>
         <section style={{ marginTop: "var(--space-5)" }}>
           <h2>Featured work</h2>
-          <p style={{ color: "var(--color-text-muted)" }}>Selected projects ZeroMeister built or maintained.</p>
+          <p style={{ color: "var(--color-text-muted)" }}>Selected projects RAGNAROK led or contributed to.</p>
         </section>
       </main>
       <Footer locale="en" backLabel={content.nav.back} socialHeading={content.footer.social_heading} />

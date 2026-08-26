@@ -1,6 +1,6 @@
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
-import content from "../../../../../content/nl.json";
+import content from "../../../../content/en.json";
 
 export const metadata = { title: "RAGNAROK — CEO" };
 

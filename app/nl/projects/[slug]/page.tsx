@@ -1,6 +1,6 @@
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
-import content from "../../../../../content/en.json";
+import content from "../../../../content/nl.json";
 import { notFound } from "next/navigation";
 
 export async function generateStaticParams() {
