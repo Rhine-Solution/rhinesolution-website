@@ -7,13 +7,14 @@ type ThemeToggleProps = {
 };
 
 export default function ThemeToggle({ className }: ThemeToggleProps) {
-  const { theme, setTheme } = useTheme();
-
+  const { theme, toggleTheme } = useTheme();
   return (
     <button
-      onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+      type="button"
+      onClick={toggleTheme}
+      aria-label={theme === "light" ? "Switch to dark mode" : "Switch to light mode"}
       aria-pressed={theme === "dark"}
-      className={`${className} theme-toggle`}
+      className={className ?? "theme-toggle"}
     >
       {theme === "light" ? "🌙" : "☀️"}
     </button>

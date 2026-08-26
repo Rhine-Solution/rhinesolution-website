@@ -1,0 +1,115 @@
+{
+  "brand": {
+    "name": "Rhine Solution",
+    "tagline": "Custom web development, portfolios, and digital experiences"
+  },
+  "nav": {
+    "home": "Home",
+    "team": "Team",
+    "projects": "Projects",
+    "back": "← Back to Rhine Solution"
+  },
+  "home": {
+    "hero_title": "Build with Rhine Solution",
+    "hero_subtitle": "Custom web applications, portfolios, and digital experiences crafted with care.",
+    "cta_team": "Meet our team",
+    "cta_projects": "See our work",
+    "section_team_title": "The team",
+    "section_team_text": "Two builders, one vision. Rhine Solution is led by a CEO/CTO pair who ship together.",
+    "section_projects_title": "Selected work",
+    "section_projects_text": "Production code, deployed and live."
+  },
+  "team": {
+    "title": "Our team",
+    "subtitle": "Two people, one mission: build useful software."
+  },
+  "ragnarok": {
+    "name": "RAGNAROK",
+    "role": "CEO & Visionary",
+    "tagline": "Driving the strategic direction and brand of Rhine Solution.",
+    "bio": "Founder of Rhine Solution. Leads product, brand, and client relationships. Builds in TypeScript, Next.js, and pure CSS. Maintains the Obsidian Brain that powers the company's AI infrastructure.",
+    "skills": [
+      "Product strategy",
+      "Brand & design",
+      "Next.js & TypeScript",
+      "AI infrastructure",
+      "System architecture"
+    ],
+    "social": {
+      "github": "https://github.com/RAGNAROK-RS0",
+      "tiktok": "https://www.tiktok.com/@rhinesolution",
+      "youtube": "https://www.youtube.com/@RhineSolutions",
+      "linkedin": "https://www.linkedin.com/in/rhinesolution",
+      "pinterest": "https://nl.pinterest.com/soc0255/",
+      "x": "https://x.com/RhineSolution",
+      "reddit": "https://www.reddit.com/user/RhineSolution/"
+    }
+  },
+  "zeromeister": {
+    "name": "ZeroMeister",
+    "role": "CTO & Engineer",
+    "tagline": "Building the technical foundations of Rhine Solution.",
+    "bio": "Chief Technology Officer. Owns the engineering practice, infrastructure, and the Mac Mini that runs the company's AI stack. Ships production code and keeps the lights on.",
+    "skills": [
+      "Systems engineering",
+      "DevOps & deployment",
+      "Backend architecture",
+      "AI tooling & agents",
+      "macOS & Linux"
+    ],
+    "social": {
+      "github": "https://github.com/ZeroMeister"
+    }
+  },
+  "projects": {
+    "title": "Selected work",
+    "subtitle": "Production systems, deployed and maintained."
+  },
+  "project_rhinesolution": {
+    "title": "rhinesolution.com",
+    "slug": "rhinesolution",
+    "summary": "This website. Next.js 15, TypeScript, pure CSS, deployed to Vercel with Cloudflare DNS.",
+    "stack": [
+      "Next.js 15",
+      "TypeScript",
+      "Pure CSS",
+      "Vercel",
+      "Cloudflare"
+    ],
+    "year": 2026
+  },
+  "project_brain": {
+    "title": "Obsidian Brain",
+    "slug": "brain",
+    "summary": "A living knowledge base of 40+ notes covering architecture, security, deployment, and AI tooling. The single source of truth for the Rhine Solution team.",
+    "stack": [
+      "Obsidian",
+      "Markdown",
+      "Git"
+    ],
+    "year": 2026
+  },
+  "project_macmini": {
+    "title": "Mac Mini AI Infrastructure",
+    "slug": "macmini",
+    "summary": "The Mac Mini that runs Rhine Solution's AI stack: Free Claude Code (Discord bot), 5 model fallbacks (NVIDIA NIM, Groq, Gemini, Mistral, OpenRouter), and the OpenCode agent that assists with daily work.",
+    "stack": [
+      "macOS 26",
+      "Free Claude Code",
+      "OpenCode",
+      "5 LLM providers",
+      "Tailscale"
+    ],
+    "year": 2026
+  },
+  "footer": {
+    "social_heading": "Find us elsewhere",
+    "theme_toggle_light": "Switch to dark",
+    "theme_toggle_dark": "Switch to light"
+  },
+  "a11y": {
+    "skip_to_content": "Skip to main content",
+    "nav_label": "Main navigation",
+    "current_page": "Current page"
+  }
+}

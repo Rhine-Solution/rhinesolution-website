@@ -1,14 +1,39 @@
 import Link from "next/link";
-import ThemeToggle from "@/components/ThemeToggle";
+import ThemeToggle from "./ThemeToggle";
 
-export default function Footer() {
+type Social = { href: string; label: string };
+type FooterProps = {
+  locale: string;
+  backLabel: string;
+  socials?: Social[];
+  socialHeading?: string;
+};
+
+export default function Footer({ locale, backLabel, socials = [], socialHeading }: FooterProps) {
   return (
-    <footer className="footer">
-      <div className="footer-content">
-        <Link href="/" className="back-link">
-          ← Back to Rhine Solution
+    <footer className="footer" role="contentinfo">
+      <div className="footer-inner">
+        <Link href={`/${locale}`} className="footer-back">
+          {backLabel}
         </Link>
-        <ThemeToggle className="theme-toggle" />
+        {socials.length > 0 && (
+          <nav className="footer-socials" aria-label={socialHeading}>
+            {socials.map((s) => (
+              <a
+                key={s.href}
+                href={s.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                title={s.label}
+              >
+                {s.label.slice(0, 2).toUpperCase()}
+              </a>
+            ))}
+          </nav>
+        )}
+        <div className="footer-actions">
+          <ThemeToggle />
+        </div>
       </div>
     </footer>
   );
