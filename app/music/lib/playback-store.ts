@@ -95,8 +95,11 @@ export async function play(playable: Playable): Promise<void> {
 export function toggle() {
   if (!audio) return;
   if (audio.paused) {
-    audio.play();
-    setState({ ...state, status: "playing" });
+    audio.play().then(() => {
+      setState({ ...state, status: "playing" });
+    }).catch(() => {
+      setState({ status: "error", playable: state.playable, track: null, message: "No preview available for this genre" });
+    });
   } else {
     audio.pause();
     setState({ ...state, status: "paused" });
