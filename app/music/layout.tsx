@@ -2,6 +2,7 @@ import "../../styles/music/music.css";
 import { Inter, Cormorant_Garamond } from "next/font/google";
 import MusicNav from "./MusicNav";
 import MusicFooter from "./MusicFooter";
+import PlayerBar from "./components/PlayerBar";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
@@ -40,6 +41,7 @@ export default function MusicLayout({ children }: { children: React.ReactNode })
       <main id="music-main" style={{ flex: 1 }}>
         {children}
       </main>
+      <PlayerBar />
       <MusicFooter />
     </div>
   );
