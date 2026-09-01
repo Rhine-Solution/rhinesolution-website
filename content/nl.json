@@ -7,7 +7,7 @@
     "home": "Home",
     "team": "Team",
     "projects": "Projecten",
-    "back": "← Terug naar Rhine Solution"
+    "back": "Terug naar Rhine Solution"
   },
   "home": {
     "hero_title": "Bouw met Rhine Solution",
@@ -102,6 +102,22 @@
     ],
     "year": 2026
   },
+  "project_music": {
+    "title": "Music Trends Local",
+    "slug": "music",
+    "summary": "Een cyber-gethematiseerd muziekportaal met topnummers, artiesten en genres — 48 tracks in 8 elektronische subgenres met zoeken, filters en localStorage-favorieten.",
+    "stack": [
+      "HTML5",
+      "CSS",
+      "Bootstrap",
+      "JavaScript",
+      "SVG",
+      "Next.js 15"
+    ],
+    "year": 2026,
+    "team": "RAGNAROK + ZeroMeister",
+    "live_url": "/music"
+  },
   "footer": {
     "social_heading": "Vind ons elders",
     "theme_toggle_light": "Schakel naar donker",
@@ -111,5 +127,16 @@
     "skip_to_content": "Ga naar hoofdcontent",
     "nav_label": "Hoofdnavigatie",
     "current_page": "Huidige pagina"
+  },
+  "sections": {
+    "stack": "Techniek",
+    "year": "Jaar",
+    "team": "Team",
+    "launch": "Openen",
+    "about": "Over",
+    "skills": "Vaardigheden",
+    "social": "Vind mij online",
+    "featured_work": "Uitgelicht werk",
+    "featured_work_text": "Geselecteerde projecten, gebouwd en onderhouden door het Rhine Solution team."
   }
 }

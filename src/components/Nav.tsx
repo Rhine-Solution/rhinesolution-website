@@ -5,10 +5,11 @@ type NavProps = {
   locale: string;
   brand: string;
   labels: { home: string; team: string; projects: string };
+  themeLabels?: { theme_toggle_light: string; theme_toggle_dark: string };
   current: "home" | "team" | "projects";
 };
 
-export default function Nav({ locale, brand, labels, current }: NavProps) {
+export default function Nav({ locale, brand, labels, themeLabels, current }: NavProps) {
   return (
     <nav className="nav" aria-label="Main navigation">
       <div className="nav-inner">
@@ -32,7 +33,7 @@ export default function Nav({ locale, brand, labels, current }: NavProps) {
             </Link>
           </li>
         </ul>
-        <ThemeToggle />
+        <ThemeToggle labels={themeLabels} />
       </div>
     </nav>
   );

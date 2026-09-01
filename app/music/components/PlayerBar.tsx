@@ -1,6 +1,7 @@
 "use client";
 
 import { useSyncExternalStore } from "react";
+import { FaPlay, FaPause, FaXmark } from "react-icons/fa6";
 import { subscribe, getState, toggle, close } from "../lib/playback-store";
 
 export default function PlayerBar() {
@@ -16,7 +17,7 @@ export default function PlayerBar() {
         onClick={toggle}
         aria-label={isPlaying ? "Pause" : "Play"}
       >
-        {isPlaying ? "❚❚" : "▶"}
+        {isPlaying ? <FaPause size={16} aria-hidden="true" /> : <FaPlay size={16} aria-hidden="true" />}
       </button>
       <div className="music-player-info">
         <span className="music-player-title">{state.playable?.title}</span>
@@ -33,7 +34,7 @@ export default function PlayerBar() {
         )}
       </div>
       <button className="music-player-close" onClick={close} aria-label="Close player">
-        ✕
+        <FaXmark size={16} aria-hidden="true" />
       </button>
     </div>
   );

@@ -1,6 +1,7 @@
 "use client";
 
 import { useSyncExternalStore } from "react";
+import { FaPlay, FaPause } from "react-icons/fa6";
 import { subscribe, getState, play } from "../lib/playback-store";
 import type { Playable } from "../lib/playback-store";
 
@@ -20,7 +21,7 @@ export default function PlayButton({ playable }: { playable: Playable }) {
       }}
       aria-label={isPlaying ? `Pause ${playable.title}` : `Play ${playable.title}`}
     >
-      {isPlaying ? "❚❚" : "▶"}
+      {isPlaying ? <FaPause size={14} aria-hidden="true" /> : <FaPlay size={14} aria-hidden="true" />}
     </button>
   );
 }

@@ -1,6 +1,9 @@
 import music from "./data/music.json";
 import Link from "next/link";
+import Image from "next/image";
+import { FaMusic, FaListUl, FaMicrophone } from "react-icons/fa6";
 import PlayButton from "./components/PlayButton";
+import GenreIcon from "./components/GenreIcon";
 
 export const metadata = {
   title: "Music Trends Local — Discover Electronic Music",
@@ -22,20 +25,20 @@ export default function MusicHome() {
         </p>
         <div className="music-hero-cta">
           <Link href="/music/top-songs" className="music-btn music-btn-primary">
-            ▸ Top Songs
+            <FaMusic size={16} aria-hidden="true" /> Top Songs
           </Link>
           <Link href="/music/genres" className="music-btn">
-            ◢ Genres
+            <FaListUl size={16} aria-hidden="true" /> Genres
           </Link>
           <Link href="/music/top-artists" className="music-btn">
-            ◆ Artists
+            <FaMicrophone size={16} aria-hidden="true" /> Artists
           </Link>
         </div>
       </section>
 
       <section className="music-container">
         <div className="section-head">
-          <h2>// Trending Now</h2>
+          <h2>{"// Trending Now"}</h2>
           <span className="meta">TOP {topSongs.length} BY POPULARITY</span>
         </div>
         <div className="music-grid" style={{ marginBottom: "4rem" }}>
@@ -51,7 +54,7 @@ export default function MusicHome() {
                 <PlayButton
                   playable={{ title: song.title, artist: music.artists.find((a) => a.id === song.artist)?.name ?? "Unknown", genreId: song.genre }}
                 />
-                <img src={song.image} alt={`${song.title} cover`} width={400} height={400} />
+                <Image src={song.image} alt={`${song.title} cover`} width={400} height={400} />
                 <div className="music-card-body">
                   <div className="music-card-title">{song.title}</div>
                   <div className="music-card-artist">{artist?.name}</div>
@@ -59,7 +62,7 @@ export default function MusicHome() {
                     className="music-genre-badge"
                     style={{ "--badge-color": genre?.color, alignSelf: "flex-start" } as React.CSSProperties}
                   >
-                    {genre?.icon} {genre?.name}
+                    {genre && <GenreIcon genreId={genre.id} size={12} />} {genre?.name}
                   </span>
                 </div>
                 <div className="music-card-meta">
@@ -75,7 +78,7 @@ export default function MusicHome() {
         </div>
 
         <div className="section-head">
-          <h2>// Browse by Genre</h2>
+          <h2>{"// Browse by Genre"}</h2>
           <span className="meta">{genres.length} GENRES</span>
         </div>
         <div className="music-grid">
@@ -87,14 +90,14 @@ export default function MusicHome() {
               style={{ "--card-color": g.color, textDecoration: "none" } as React.CSSProperties}
             >
               <div style={{
-                fontSize: "3rem",
                 color: g.color,
                 textAlign: "center",
                 padding: "2rem 0",
-                fontFamily: "var(--font-mono)",
-                textShadow: `0 0 20px ${g.color}`
+                display: "flex",
+                justifyContent: "center",
+                filter: `drop-shadow(0 0 20px ${g.color})`,
               }}>
-                {g.icon}
+                <GenreIcon genreId={g.id} size={52} />
               </div>
               <div className="music-card-body">
                 <div className="music-card-title">{g.name}</div>

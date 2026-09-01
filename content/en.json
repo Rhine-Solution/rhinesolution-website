@@ -7,7 +7,7 @@
     "home": "Home",
     "team": "Team",
     "projects": "Projects",
-    "back": "← Back to Rhine Solution"
+    "back": "Back to Rhine Solution"
   },
   "home": {
     "hero_title": "Build with Rhine Solution",
@@ -111,6 +111,17 @@
     "skip_to_content": "Skip to main content",
     "nav_label": "Main navigation",
     "current_page": "Current page"
+  },
+  "sections": {
+    "stack": "Stack",
+    "year": "Year",
+    "team": "Team",
+    "launch": "Launch",
+    "about": "About",
+    "skills": "Skills",
+    "social": "Find me online",
+    "featured_work": "Featured work",
+    "featured_work_text": "Selected projects built and maintained by the Rhine Solution team."
   },
   "project_music": {
     "title": "Music Trends Local",

@@ -13,14 +13,12 @@ const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
   const [theme, setThemeState] = useState<Theme>("light");
-  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     const saved = window.localStorage.getItem("rhine-theme") as Theme | null;
-    const initial: Theme = saved ?? (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    const initial: Theme = saved === "dark" ? "dark" : "light";
     setThemeState(initial);
     document.documentElement.setAttribute("data-theme", initial);
-    setMounted(true);
   }, []);
 
   const setTheme = (next: Theme) => {

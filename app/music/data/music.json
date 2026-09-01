@@ -3,50 +3,42 @@
     {
       "id": "synthwave",
       "name": "Synthwave",
-      "color": "#ff00ff",
-      "icon": "◢◤"
+      "color": "#ff00ff"
     },
     {
       "id": "cyberpunk",
       "name": "Cyberpunk",
-      "color": "#00ffff",
-      "icon": "▣"
+      "color": "#00ffff"
     },
     {
       "id": "techno",
       "name": "Techno",
-      "color": "#ff0080",
-      "icon": "◉"
+      "color": "#ff0080"
     },
     {
       "id": "darksynth",
       "name": "Dark Synth",
-      "color": "#8000ff",
-      "icon": "◆"
+      "color": "#8000ff"
     },
     {
       "id": "vaporwave",
       "name": "Vaporwave",
-      "color": "#ff8000",
-      "icon": "◈"
+      "color": "#ff8000"
     },
     {
       "id": "industrial",
       "name": "Industrial",
-      "color": "#ff0040",
-      "icon": "⬢"
+      "color": "#ff0040"
     },
     {
       "id": "ebm",
       "name": "EBM",
-      "color": "#40ff00",
-      "icon": "◧"
+      "color": "#40ff00"
     },
     {
       "id": "retrowave",
       "name": "Retrowave",
-      "color": "#0080ff",
-      "icon": "◭"
+      "color": "#0080ff"
     }
   ],
   "artists": [

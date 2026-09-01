@@ -5,7 +5,7 @@ export default function MusicNav() {
     <nav className="music-nav" aria-label="Music portal navigation">
       <div className="music-nav-inner">
         <Link href="/music" className="music-nav-brand">
-          MUSIC<span>//</span>TRENDS
+          MUSIC<span>{"//"}</span>TRENDS
         </Link>
         <ul className="music-nav-links">
           <li><Link href="/music">Home</Link></li>

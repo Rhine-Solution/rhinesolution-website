@@ -1,8 +1,14 @@
 "use client";
 
 import { useState, useEffect, useMemo } from "react";
+import Image from "next/image";
+import {
+  FaPlay, FaXmark, FaMusic, FaListOl, FaMagnifyingGlass, FaFilter, FaArrowDownAZ,
+  FaTriangleExclamation,
+} from "react-icons/fa6";
 import data from "./data/music.json";
 import PlayButton from "./components/PlayButton";
+import GenreIcon from "./components/GenreIcon";
 
 type Artist = typeof data.artists[number];
 type SortKey = "popularity-desc" | "name" | "songs-desc";
@@ -66,13 +72,13 @@ export default function ArtistExplorer() {
 
       <section className="music-container">
         <div className="section-head">
-          <h2>// Top Artists</h2>
+          <h2>{"// Top Artists"}</h2>
           <span className="meta">{artists.length} / {data.artists.length} ARTISTS</span>
         </div>
 
         <div className="controls">
           <div style={{ flex: 1, minWidth: 200 }}>
-            <label htmlFor="artist-search">▸ SEARCH</label>
+            <label htmlFor="artist-search"><FaMagnifyingGlass size={11} aria-hidden="true" /> SEARCH</label>
             <input
               id="artist-search"
               type="search"
@@ -82,20 +88,20 @@ export default function ArtistExplorer() {
             />
           </div>
           <div>
-            <label htmlFor="artist-genre">▸ GENRE</label>
+            <label htmlFor="artist-genre"><FaFilter size={11} aria-hidden="true" /> GENRE</label>
             <select id="artist-genre" value={genreFilter} onChange={(e) => setGenreFilter(e.target.value)}>
               <option value="all">All</option>
               {data.genres.map((g) => (
-                <option key={g.id} value={g.id}>{g.icon} {g.name}</option>
+                <option key={g.id} value={g.id}>{g.name}</option>
               ))}
             </select>
           </div>
           <div>
-            <label htmlFor="artist-sort">▸ SORT</label>
+            <label htmlFor="artist-sort"><FaArrowDownAZ size={11} aria-hidden="true" /> SORT</label>
             <select id="artist-sort" value={sort} onChange={(e) => setSort(e.target.value as SortKey)}>
-              <option value="popularity-desc">Popularity ↓</option>
+              <option value="popularity-desc">Popularity: high to low</option>
               <option value="name">Name A-Z</option>
-              <option value="songs-desc">Songs count ↓</option>
+              <option value="songs-desc">Songs count: most</option>
             </select>
           </div>
         </div>
@@ -103,7 +109,7 @@ export default function ArtistExplorer() {
         <div className="music-grid">
           {artists.length === 0 ? (
             <div className="music-empty" style={{ gridColumn: "1 / -1" }}>
-              ▢ NO RESULTS
+              <FaTriangleExclamation size={18} aria-hidden="true" /> NO RESULTS
             </div>
           ) : (
             artists.map((artist) => {
@@ -118,7 +124,7 @@ export default function ArtistExplorer() {
                   onClick={() => setModalArtist(artist)}
                 >
                   {topSong && (
-                    <img src={topSong.image} alt={`${artist.name} album`} width={400} height={400} />
+                    <Image src={topSong.image} alt={`${artist.name} album`} width={400} height={400} />
                   )}
                   <div className="music-card-body">
                     <div className="music-card-title">{artist.name}</div>
@@ -129,7 +135,7 @@ export default function ArtistExplorer() {
                   </div>
                   <div className="music-card-meta">
                     <span>{Math.floor(artist.popularity)}%</span>
-                    <span>{genre?.icon}</span>
+                    <span>{genre && <GenreIcon genreId={genre.id} size={16} />}</span>
                   </div>
                   <div className="popularity-bar">
                     <div className="popularity-bar-fill" style={{ width: `${artist.popularity}%`, background: genre?.color }} />
@@ -145,15 +151,20 @@ export default function ArtistExplorer() {
         <div className="music-modal-overlay" onClick={() => setModalArtist(null)}>
           <div className="music-modal" onClick={(e) => e.stopPropagation()} role="dialog">
             <div className="music-modal-header">
-              <h3>▶ {modalArtist.name}</h3>
-              <button className="music-modal-close" onClick={() => setModalArtist(null)} aria-label="Close">✕</button>
+              <h3>
+                <FaPlay size={14} aria-hidden="true" style={{ verticalAlign: "-2px", color: "var(--accent-cyan, #00ffff)" }} />{" "}
+                {modalArtist.name}
+              </h3>
+              <button className="music-modal-close" onClick={() => setModalArtist(null)} aria-label="Close"><FaXmark size={16} aria-hidden="true" /></button>
             </div>
             <div className="music-modal-body">
               <p style={{ color: "var(--accent-cyan)", fontFamily: "var(--font-mono)" }}>
-                {getGenre(modalArtist.genre)?.icon} {getGenre(modalArtist.genre)?.name}
+                {getGenre(modalArtist.genre) && <GenreIcon genreId={modalArtist.genre} size={16} />} {getGenre(modalArtist.genre)?.name}
               </p>
               <p>{modalArtist.bio}</p>
-              <h4 style={{ marginTop: "1rem" }}>▸ Top 3 Songs</h4>
+              <h4 style={{ marginTop: "1rem", display: "flex", alignItems: "center", gap: "0.5rem" }}>
+                <FaListOl size={14} aria-hidden="true" style={{ color: "var(--accent-cyan)" }} /> Top 3 Songs
+              </h4>
               <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: "0.5rem" }}>
                 {getArtistSongs(modalArtist.id)
                   .sort((a, b) => b.popularity - a.popularity)
@@ -165,7 +176,7 @@ export default function ArtistExplorer() {
                       background: "var(--bg-elevated)",
                       border: "1px solid var(--border-subtle)"
                     }}>
-                      ▸ {s.title} <span style={{ color: "var(--text-muted)" }}>({s.year}) · {Math.floor(s.popularity)}%</span>
+                      <FaMusic size={12} aria-hidden="true" style={{ color: "var(--accent-cyan)", marginRight: "0.35rem", verticalAlign: "-1px" }} /> {s.title} <span style={{ color: "var(--text-muted)" }}>({s.year}) · {Math.floor(s.popularity)}%</span>
                       <PlayButton
                         playable={{ title: s.title, artist: modalArtist.name, genreId: s.genre }}
                       />

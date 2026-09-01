@@ -1,5 +1,7 @@
 import Link from "next/link";
+import { FaArrowRight } from "react-icons/fa6";
 import data from "../data/music.json";
+import GenreIcon from "../components/GenreIcon";
 
 export const metadata = {
   title: "Genres — Music Trends Local",
@@ -19,7 +21,7 @@ export default function GenresPage() {
   return (
     <section className="music-container">
       <div className="section-head">
-        <h2>// Genres</h2>
+        <h2>{"// Genres"}</h2>
         <span className="meta">{genres.length} GENRES · {data.songs.length} SONGS TOTAL</span>
       </div>
 
@@ -32,14 +34,14 @@ export default function GenresPage() {
             style={{ "--card-color": g.color } as React.CSSProperties}
           >
             <div style={{
-              fontSize: "3.5rem",
               color: g.color,
               textAlign: "center",
               padding: "2rem 0 1rem",
-              fontFamily: "var(--font-mono)",
-              textShadow: `0 0 25px ${g.color}`
+              display: "flex",
+              justifyContent: "center",
+              filter: `drop-shadow(0 0 25px ${g.color})`,
             }}>
-              {g.icon}
+              <GenreIcon genreId={g.id} size={56} />
             </div>
             <div className="music-card-body">
               <div className="music-card-title">{g.name}</div>
@@ -58,7 +60,7 @@ export default function GenresPage() {
                 className="music-btn"
                 style={{ fontSize: "0.75rem", padding: "0.4rem 0.75rem" }}
               >
-                Explore →
+                Explore <FaArrowRight size={10} aria-hidden="true" style={{ verticalAlign: "-1px", marginLeft: "0.25rem" }} />
               </Link>
             </div>
           </article>
