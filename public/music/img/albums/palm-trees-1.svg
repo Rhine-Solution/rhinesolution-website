@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400" role="img" aria-label="Album cover">
+  <defs>
+    <linearGradient id="bg-palm-trees-1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0a0a0f"/>
+      <stop offset="100%" stop-color="#1a1a2e"/>
+    </linearGradient>
+    <filter id="glow-palm-trees-1">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <rect width="400" height="400" fill="url(#bg-palm-trees-1)"/>
+<g>  <line x1="0" y1="0" x2="400" y2="0" stroke="#0080ff" stroke-width="0.5" opacity="0.3"/>
+  <line x1="0" y1="20" x2="400" y2="20" stroke="#0080ff" stroke-width="0.5" opacity="0.3"/>
+  <line x1="0" y1="40" x2="400" y2="40" stroke="#0080ff" stroke-width="0.5" opacity="0.3"/>
+  <line x1="0" y1="60" x2="400" y2="60" stroke="#0080ff" stroke-width="0.5" opacity="0.3"/>
+  <line x1="0" y1="80" x2="400" y2="80" stroke="#0080ff" stroke-width="0.5" opacity="0.3"/>
+  <line x1="0" y1="100" x2="400" y2="100" stroke="#0080ff" stroke-width="0.5" opacity="0.3"/>
+  <line x1="0" y1="120" x2="400" y2="120" stroke="#0080ff" stroke-width="0.5" opacity="0.3"/>
+  <line x1="0" y1="140" x2="400" y2="140" stroke="#0080ff" stroke-width="0.5" opacity="0.3"/>
+  <line x1="0" y1="160" x2="400" y2="160" stroke="#0080ff" stroke-width="0.5" opacity="0.3"/>
+  <line x1="0" y1="180" x2="400" y2="180" stroke="#0080ff" stroke-width="0.5" opacity="0.3"/>
+  <line x1="0" y1="200" x2="400" y2="200" stroke="#0080ff" stroke-width="0.5" opacity="0.3"/>
+  <line x1="0" y1="220" x2="400" y2="220" stroke="#0080ff" stroke-width="0.5" opacity="0.3"/>
+  <line x1="0" y1="240" x2="400" y2="240" stroke="#0080ff" stroke-width="0.5" opacity="0.3"/>
+  <line x1="0" y1="260" x2="400" y2="260" stroke="#0080ff" stroke-width="0.5" opacity="0.3"/>
+  <line x1="0" y1="280" x2="400" y2="280" stroke="#0080ff" stroke-width="0.5" opacity="0.3"/>
+  <line x1="0" y1="300" x2="400" y2="300" stroke="#0080ff" stroke-width="0.5" opacity="0.3"/>
+  <line x1="0" y1="320" x2="400" y2="320" stroke="#0080ff" stroke-width="0.5" opacity="0.3"/>
+  <line x1="0" y1="340" x2="400" y2="340" stroke="#0080ff" stroke-width="0.5" opacity="0.3"/>
+  <line x1="0" y1="360" x2="400" y2="360" stroke="#0080ff" stroke-width="0.5" opacity="0.3"/>
+  <line x1="0" y1="380" x2="400" y2="380" stroke="#0080ff" stroke-width="0.5" opacity="0.3"/></g>
+  <rect x="75" y="60" width="68" height="10" fill="#0080ff" opacity="0.35"/>
+  <rect x="156" y="175" width="50" height="7" fill="#0080ff" opacity="0.53"/>
+  <rect x="125" y="172" width="78" height="14" fill="#0080ff" opacity="0.45"/>
+  <text x="200" y="200" font-family="monospace" font-size="24" font-weight="bold" fill="#0080ff" text-anchor="middle" filter="url(#glow-palm-trees-1)" opacity="0.9">PALM-TRE</text>
+  <text x="200" y="380" font-family="monospace" font-size="10" fill="#0080ff" text-anchor="middle" opacity="0.5">► ALBUM_01</text>
+  <rect x="0" y="0" width="400" height="2" fill="#0080ff" opacity="0.6"/>
+  <rect x="0" y="398" width="400" height="2" fill="#0080ff" opacity="0.6"/>
+</svg>

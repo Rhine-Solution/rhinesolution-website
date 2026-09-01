@@ -1,0 +1,662 @@
+{
+  "genres": [
+    {
+      "id": "synthwave",
+      "name": "Synthwave",
+      "color": "#ff00ff",
+      "icon": "◢◤"
+    },
+    {
+      "id": "cyberpunk",
+      "name": "Cyberpunk",
+      "color": "#00ffff",
+      "icon": "▣"
+    },
+    {
+      "id": "techno",
+      "name": "Techno",
+      "color": "#ff0080",
+      "icon": "◉"
+    },
+    {
+      "id": "darksynth",
+      "name": "Dark Synth",
+      "color": "#8000ff",
+      "icon": "◆"
+    },
+    {
+      "id": "vaporwave",
+      "name": "Vaporwave",
+      "color": "#ff8000",
+      "icon": "◈"
+    },
+    {
+      "id": "industrial",
+      "name": "Industrial",
+      "color": "#ff0040",
+      "icon": "⬢"
+    },
+    {
+      "id": "ebm",
+      "name": "EBM",
+      "color": "#40ff00",
+      "icon": "◧"
+    },
+    {
+      "id": "retrowave",
+      "name": "Retrowave",
+      "color": "#0080ff",
+      "icon": "◭"
+    }
+  ],
+  "artists": [
+    {
+      "id": "neon-pulse",
+      "name": "Neon Pulse",
+      "genre": "synthwave",
+      "bio": "Tokyo-based duo crafting analog synth landscapes since 2018.",
+      "popularity": 92
+    },
+    {
+      "id": "kairo",
+      "name": "Kairo",
+      "genre": "cyberpunk",
+      "bio": "Berlin producer fusing industrial beats with neon melodies.",
+      "popularity": 88
+    },
+    {
+      "id": "voltage-9",
+      "name": "Voltage 9",
+      "genre": "techno",
+      "bio": "Detroit techno veteran with 15 years of warehouse experience.",
+      "popularity": 85
+    },
+    {
+      "id": "void-echo",
+      "name": "Void Echo",
+      "genre": "darksynth",
+      "bio": "Anonymous producer exploring the darker side of analog synthesis.",
+      "popularity": 79
+    },
+    {
+      "id": "chrome-dreams",
+      "name": "Chrome Dreams",
+      "genre": "vaporwave",
+      "bio": "Slowed and reverbed aesthetics from a Miami bedroom studio.",
+      "popularity": 76
+    },
+    {
+      "id": "axiom",
+      "name": "Axiom",
+      "genre": "industrial",
+      "bio": "Belgian industrial act pushing mechanical rhythms to extremes.",
+      "popularity": 74
+    },
+    {
+      "id": "hex-code",
+      "name": "Hex Code",
+      "genre": "ebm",
+      "bio": "Minimal electronic body music from Stockholm.",
+      "popularity": 71
+    },
+    {
+      "id": "solar-flare",
+      "name": "Solar Flare",
+      "genre": "retrowave",
+      "bio": "Sun-soaked synth melodies inspired by 80s cinema.",
+      "popularity": 82
+    },
+    {
+      "id": "neon-pulse-2",
+      "name": "Crystal Grid",
+      "genre": "synthwave",
+      "bio": "Sibling project to Neon Pulse, focusing on arpeggiated sequences.",
+      "popularity": 68
+    },
+    {
+      "id": "binary-star",
+      "name": "Binary Star",
+      "genre": "cyberpunk",
+      "bio": "Two producers, one vision: dystopian dancefloor anthems.",
+      "popularity": 86
+    },
+    {
+      "id": "subzero",
+      "name": "Subzero",
+      "genre": "techno",
+      "bio": "Berghain regular known for glacial, minimalist sets.",
+      "popularity": 90
+    },
+    {
+      "id": "midnight-protocol",
+      "name": "Midnight Protocol",
+      "genre": "darksynth",
+      "bio": "Late-night synthwave for empty highways.",
+      "popularity": 77
+    },
+    {
+      "id": "static-bloom",
+      "name": "Static Bloom",
+      "genre": "vaporwave",
+      "bio": "Glitchy textures meet dreamy pads.",
+      "popularity": 69
+    },
+    {
+      "id": "iron-lung",
+      "name": "Iron Lung",
+      "genre": "industrial",
+      "bio": "Mechanical percussion and distorted synths.",
+      "popularity": 72
+    },
+    {
+      "id": "neon-veins",
+      "name": "Neon Veins",
+      "genre": "ebm",
+      "bio": "Driving beats with cold, clinical synth lines.",
+      "popularity": 73
+    },
+    {
+      "id": "palm-trees",
+      "name": "Palm Trees 2084",
+      "genre": "retrowave",
+      "bio": "Tropical cyberpunk vibes from a fictional future.",
+      "popularity": 80
+    },
+    {
+      "id": "circuit-breaker",
+      "name": "Circuit Breaker",
+      "genre": "synthwave",
+      "bio": "High-energy synthwave with a punk edge.",
+      "popularity": 84
+    },
+    {
+      "id": "ghost-protocol",
+      "name": "Ghost Protocol",
+      "genre": "cyberpunk",
+      "bio": "Anonymous collective releasing music on encrypted platforms.",
+      "popularity": 87
+    }
+  ],
+  "songs": [
+    {
+      "id": "song-001",
+      "title": "Neon Night",
+      "artist": "neon-pulse",
+      "genre": "synthwave",
+      "year": 2022,
+      "popularity": 89,
+      "duration": 237,
+      "image": "/music/img/albums/neon-pulse-1.svg"
+    },
+    {
+      "id": "song-002",
+      "title": "Pulse Night",
+      "artist": "neon-pulse",
+      "genre": "synthwave",
+      "year": 2020,
+      "popularity": 99,
+      "duration": 202,
+      "image": "/music/img/albums/neon-pulse-2.svg"
+    },
+    {
+      "id": "song-003",
+      "title": "Neon Dreams",
+      "artist": "kairo",
+      "genre": "cyberpunk",
+      "year": 2020,
+      "popularity": 84,
+      "duration": 239,
+      "image": "/music/img/albums/kairo-1.svg"
+    },
+    {
+      "id": "song-004",
+      "title": "Cipher Matrix",
+      "artist": "kairo",
+      "genre": "cyberpunk",
+      "year": 2020,
+      "popularity": 95,
+      "duration": 230,
+      "image": "/music/img/albums/kairo-2.svg"
+    },
+    {
+      "id": "song-005",
+      "title": "Wired City",
+      "artist": "kairo",
+      "genre": "cyberpunk",
+      "year": 2025,
+      "popularity": 95,
+      "duration": 287,
+      "image": "/music/img/albums/kairo-3.svg"
+    },
+    {
+      "id": "song-006",
+      "title": "Phantom Matrix",
+      "artist": "voltage-9",
+      "genre": "techno",
+      "year": 2022,
+      "popularity": 75,
+      "duration": 374,
+      "image": "/music/img/albums/voltage-9-1.svg"
+    },
+    {
+      "id": "song-007",
+      "title": "Pulse Night",
+      "artist": "voltage-9",
+      "genre": "techno",
+      "year": 2023,
+      "popularity": 85,
+      "duration": 251,
+      "image": "/music/img/albums/voltage-9-2.svg"
+    },
+    {
+      "id": "song-008",
+      "title": "Static Frequency",
+      "artist": "void-echo",
+      "genre": "darksynth",
+      "year": 2020,
+      "popularity": 71,
+      "duration": 277,
+      "image": "/music/img/albums/void-echo-1.svg"
+    },
+    {
+      "id": "song-009",
+      "title": "Chrome Frequency",
+      "artist": "void-echo",
+      "genre": "darksynth",
+      "year": 2026,
+      "popularity": 80,
+      "duration": 334,
+      "image": "/music/img/albums/void-echo-2.svg"
+    },
+    {
+      "id": "song-010",
+      "title": "Neon Night",
+      "artist": "chrome-dreams",
+      "genre": "vaporwave",
+      "year": 2023,
+      "popularity": 83,
+      "duration": 211,
+      "image": "/music/img/albums/chrome-dreams-1.svg"
+    },
+    {
+      "id": "song-011",
+      "title": "Vector Lights",
+      "artist": "chrome-dreams",
+      "genre": "vaporwave",
+      "year": 2024,
+      "popularity": 75,
+      "duration": 392,
+      "image": "/music/img/albums/chrome-dreams-2.svg"
+    },
+    {
+      "id": "song-012",
+      "title": "Pulse Matrix",
+      "artist": "chrome-dreams",
+      "genre": "vaporwave",
+      "year": 2026,
+      "popularity": 77,
+      "duration": 327,
+      "image": "/music/img/albums/chrome-dreams-3.svg"
+    },
+    {
+      "id": "song-013",
+      "title": "Wired Lights",
+      "artist": "axiom",
+      "genre": "industrial",
+      "year": 2020,
+      "popularity": 71,
+      "duration": 377,
+      "image": "/music/img/albums/axiom-1.svg"
+    },
+    {
+      "id": "song-014",
+      "title": "Grid Lights",
+      "artist": "axiom",
+      "genre": "industrial",
+      "year": 2026,
+      "popularity": 71,
+      "duration": 401,
+      "image": "/music/img/albums/axiom-2.svg"
+    },
+    {
+      "id": "song-015",
+      "title": "Vector Protocol",
+      "artist": "hex-code",
+      "genre": "ebm",
+      "year": 2023,
+      "popularity": 72,
+      "duration": 221,
+      "image": "/music/img/albums/hex-code-1.svg"
+    },
+    {
+      "id": "song-016",
+      "title": "Echo Frequency",
+      "artist": "hex-code",
+      "genre": "ebm",
+      "year": 2021,
+      "popularity": 69,
+      "duration": 359,
+      "image": "/music/img/albums/hex-code-2.svg"
+    },
+    {
+      "id": "song-017",
+      "title": "Ghost City",
+      "artist": "solar-flare",
+      "genre": "retrowave",
+      "year": 2021,
+      "popularity": 89,
+      "duration": 366,
+      "image": "/music/img/albums/solar-flare-1.svg"
+    },
+    {
+      "id": "song-018",
+      "title": "Static Highway",
+      "artist": "solar-flare",
+      "genre": "retrowave",
+      "year": 2023,
+      "popularity": 84,
+      "duration": 249,
+      "image": "/music/img/albums/solar-flare-2.svg"
+    },
+    {
+      "id": "song-019",
+      "title": "Pulse Frequency",
+      "artist": "neon-pulse-2",
+      "genre": "synthwave",
+      "year": 2026,
+      "popularity": 59,
+      "duration": 238,
+      "image": "/music/img/albums/neon-pulse-2-1.svg"
+    },
+    {
+      "id": "song-020",
+      "title": "Neon Frequency",
+      "artist": "neon-pulse-2",
+      "genre": "synthwave",
+      "year": 2023,
+      "popularity": 66,
+      "duration": 196,
+      "image": "/music/img/albums/neon-pulse-2-2.svg"
+    },
+    {
+      "id": "song-021",
+      "title": "Ghost Night",
+      "artist": "binary-star",
+      "genre": "cyberpunk",
+      "year": 2022,
+      "popularity": 82,
+      "duration": 347,
+      "image": "/music/img/albums/binary-star-1.svg"
+    },
+    {
+      "id": "song-022",
+      "title": "Phantom Pulse",
+      "artist": "binary-star",
+      "genre": "cyberpunk",
+      "year": 2025,
+      "popularity": 90,
+      "duration": 216,
+      "image": "/music/img/albums/binary-star-2.svg"
+    },
+    {
+      "id": "song-023",
+      "title": "Pulse Rain",
+      "artist": "subzero",
+      "genre": "techno",
+      "year": 2025,
+      "popularity": 97,
+      "duration": 317,
+      "image": "/music/img/albums/subzero-1.svg"
+    },
+    {
+      "id": "song-024",
+      "title": "Grid Night",
+      "artist": "subzero",
+      "genre": "techno",
+      "year": 2024,
+      "popularity": 93,
+      "duration": 409,
+      "image": "/music/img/albums/subzero-2.svg"
+    },
+    {
+      "id": "song-025",
+      "title": "Ghost Pulse",
+      "artist": "subzero",
+      "genre": "techno",
+      "year": 2022,
+      "popularity": 87,
+      "duration": 215,
+      "image": "/music/img/albums/subzero-3.svg"
+    },
+    {
+      "id": "song-026",
+      "title": "Chrome Dreams",
+      "artist": "midnight-protocol",
+      "genre": "darksynth",
+      "year": 2026,
+      "popularity": 70,
+      "duration": 219,
+      "image": "/music/img/albums/midnight-protocol-1.svg"
+    },
+    {
+      "id": "song-027",
+      "title": "Pulse Highway",
+      "artist": "midnight-protocol",
+      "genre": "darksynth",
+      "year": 2026,
+      "popularity": 80,
+      "duration": 332,
+      "image": "/music/img/albums/midnight-protocol-2.svg"
+    },
+    {
+      "id": "song-028",
+      "title": "Chrome Pulse",
+      "artist": "midnight-protocol",
+      "genre": "darksynth",
+      "year": 2023,
+      "popularity": 81,
+      "duration": 315,
+      "image": "/music/img/albums/midnight-protocol-3.svg"
+    },
+    {
+      "id": "song-029",
+      "title": "Cipher Dreams",
+      "artist": "static-bloom",
+      "genre": "vaporwave",
+      "year": 2025,
+      "popularity": 62,
+      "duration": 354,
+      "image": "/music/img/albums/static-bloom-1.svg"
+    },
+    {
+      "id": "song-030",
+      "title": "Cipher Protocol",
+      "artist": "static-bloom",
+      "genre": "vaporwave",
+      "year": 2026,
+      "popularity": 69,
+      "duration": 208,
+      "image": "/music/img/albums/static-bloom-2.svg"
+    },
+    {
+      "id": "song-031",
+      "title": "Grid Pulse",
+      "artist": "static-bloom",
+      "genre": "vaporwave",
+      "year": 2021,
+      "popularity": 73,
+      "duration": 180,
+      "image": "/music/img/albums/static-bloom-3.svg"
+    },
+    {
+      "id": "song-032",
+      "title": "Cipher Highway",
+      "artist": "iron-lung",
+      "genre": "industrial",
+      "year": 2024,
+      "popularity": 65,
+      "duration": 402,
+      "image": "/music/img/albums/iron-lung-1.svg"
+    },
+    {
+      "id": "song-033",
+      "title": "Pulse Protocol",
+      "artist": "iron-lung",
+      "genre": "industrial",
+      "year": 2026,
+      "popularity": 78,
+      "duration": 335,
+      "image": "/music/img/albums/iron-lung-2.svg"
+    },
+    {
+      "id": "song-034",
+      "title": "Static Highway",
+      "artist": "iron-lung",
+      "genre": "industrial",
+      "year": 2022,
+      "popularity": 67,
+      "duration": 318,
+      "image": "/music/img/albums/iron-lung-3.svg"
+    },
+    {
+      "id": "song-035",
+      "title": "Ghost Frequency",
+      "artist": "neon-veins",
+      "genre": "ebm",
+      "year": 2023,
+      "popularity": 63,
+      "duration": 208,
+      "image": "/music/img/albums/neon-veins-1.svg"
+    },
+    {
+      "id": "song-036",
+      "title": "Echo Protocol",
+      "artist": "neon-veins",
+      "genre": "ebm",
+      "year": 2021,
+      "popularity": 64,
+      "duration": 241,
+      "image": "/music/img/albums/neon-veins-2.svg"
+    },
+    {
+      "id": "song-037",
+      "title": "Chrome Night",
+      "artist": "palm-trees",
+      "genre": "retrowave",
+      "year": 2023,
+      "popularity": 72,
+      "duration": 374,
+      "image": "/music/img/albums/palm-trees-1.svg"
+    },
+    {
+      "id": "song-038",
+      "title": "Cipher Highway",
+      "artist": "palm-trees",
+      "genre": "retrowave",
+      "year": 2021,
+      "popularity": 85,
+      "duration": 320,
+      "image": "/music/img/albums/palm-trees-2.svg"
+    },
+    {
+      "id": "song-039",
+      "title": "Grid Sequence",
+      "artist": "circuit-breaker",
+      "genre": "synthwave",
+      "year": 2026,
+      "popularity": 87,
+      "duration": 234,
+      "image": "/music/img/albums/circuit-breaker-1.svg"
+    },
+    {
+      "id": "song-040",
+      "title": "Cipher Night",
+      "artist": "circuit-breaker",
+      "genre": "synthwave",
+      "year": 2025,
+      "popularity": 80,
+      "duration": 362,
+      "image": "/music/img/albums/circuit-breaker-2.svg"
+    },
+    {
+      "id": "song-041",
+      "title": "Vector City",
+      "artist": "ghost-protocol",
+      "genre": "cyberpunk",
+      "year": 2025,
+      "popularity": 88,
+      "duration": 292,
+      "image": "/music/img/albums/ghost-protocol-1.svg"
+    },
+    {
+      "id": "song-042",
+      "title": "Cipher Drive",
+      "artist": "ghost-protocol",
+      "genre": "cyberpunk",
+      "year": 2020,
+      "popularity": 84,
+      "duration": 237,
+      "image": "/music/img/albums/ghost-protocol-2.svg"
+    },
+    {
+      "id": "song-043",
+      "title": "Chrome Frequency",
+      "artist": "ghost-protocol",
+      "genre": "cyberpunk",
+      "year": 2020,
+      "popularity": 95,
+      "duration": 321,
+      "image": "/music/img/albums/ghost-protocol-3.svg"
+    },
+    {
+      "id": "song-044",
+      "title": "Vector Rain",
+      "artist": "static-bloom",
+      "genre": "vaporwave",
+      "year": 2024,
+      "popularity": 64,
+      "duration": 238,
+      "image": "/music/img/albums/static-bloom-1.svg"
+    },
+    {
+      "id": "song-045",
+      "title": "Chrome Protocol",
+      "artist": "chrome-dreams",
+      "genre": "vaporwave",
+      "year": 2025,
+      "popularity": 78,
+      "duration": 315,
+      "image": "/music/img/albums/chrome-dreams-3.svg"
+    },
+    {
+      "id": "song-046",
+      "title": "Chrome Matrix",
+      "artist": "ghost-protocol",
+      "genre": "cyberpunk",
+      "year": 2023,
+      "popularity": 83,
+      "duration": 287,
+      "image": "/music/img/albums/ghost-protocol-3.svg"
+    },
+    {
+      "id": "song-047",
+      "title": "Echo Pulse",
+      "artist": "hex-code",
+      "genre": "ebm",
+      "year": 2026,
+      "popularity": 67,
+      "duration": 218,
+      "image": "/music/img/albums/hex-code-2.svg"
+    },
+    {
+      "id": "song-048",
+      "title": "Ghost Frequency",
+      "artist": "axiom",
+      "genre": "industrial",
+      "year": 2020,
+      "popularity": 80,
+      "duration": 353,
+      "image": "/music/img/albums/axiom-1.svg"
+    }
+  ]
+}

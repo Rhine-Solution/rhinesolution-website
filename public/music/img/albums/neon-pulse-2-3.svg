@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400" role="img" aria-label="Album cover">
+  <defs>
+    <linearGradient id="bg-neon-pulse-2-3" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0a0a0f"/>
+      <stop offset="100%" stop-color="#1a1a2e"/>
+    </linearGradient>
+    <filter id="glow-neon-pulse-2-3">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <rect width="400" height="400" fill="url(#bg-neon-pulse-2-3)"/>
+<g>  <line x1="-200" y1="0" x2="200" y2="400" stroke="#ff00ff" stroke-width="0.5" opacity="0.3"/>
+  <line x1="-170" y1="0" x2="230" y2="400" stroke="#ff00ff" stroke-width="0.5" opacity="0.3"/>
+  <line x1="-140" y1="0" x2="260" y2="400" stroke="#ff00ff" stroke-width="0.5" opacity="0.3"/>
+  <line x1="-110" y1="0" x2="290" y2="400" stroke="#ff00ff" stroke-width="0.5" opacity="0.3"/>
+  <line x1="-80" y1="0" x2="320" y2="400" stroke="#ff00ff" stroke-width="0.5" opacity="0.3"/>
+  <line x1="-50" y1="0" x2="350" y2="400" stroke="#ff00ff" stroke-width="0.5" opacity="0.3"/>
+  <line x1="-20" y1="0" x2="380" y2="400" stroke="#ff00ff" stroke-width="0.5" opacity="0.3"/>
+  <line x1="10" y1="0" x2="410" y2="400" stroke="#ff00ff" stroke-width="0.5" opacity="0.3"/>
+  <line x1="40" y1="0" x2="440" y2="400" stroke="#ff00ff" stroke-width="0.5" opacity="0.3"/>
+  <line x1="70" y1="0" x2="470" y2="400" stroke="#ff00ff" stroke-width="0.5" opacity="0.3"/>
+  <line x1="100" y1="0" x2="500" y2="400" stroke="#ff00ff" stroke-width="0.5" opacity="0.3"/>
+  <line x1="130" y1="0" x2="530" y2="400" stroke="#ff00ff" stroke-width="0.5" opacity="0.3"/>
+  <line x1="160" y1="0" x2="560" y2="400" stroke="#ff00ff" stroke-width="0.5" opacity="0.3"/>
+  <line x1="190" y1="0" x2="590" y2="400" stroke="#ff00ff" stroke-width="0.5" opacity="0.3"/>
+  <line x1="220" y1="0" x2="620" y2="400" stroke="#ff00ff" stroke-width="0.5" opacity="0.3"/>
+  <line x1="250" y1="0" x2="650" y2="400" stroke="#ff00ff" stroke-width="0.5" opacity="0.3"/>
+  <line x1="280" y1="0" x2="680" y2="400" stroke="#ff00ff" stroke-width="0.5" opacity="0.3"/>
+  <line x1="310" y1="0" x2="710" y2="400" stroke="#ff00ff" stroke-width="0.5" opacity="0.3"/>
+  <line x1="340" y1="0" x2="740" y2="400" stroke="#ff00ff" stroke-width="0.5" opacity="0.3"/>
+  <line x1="370" y1="0" x2="770" y2="400" stroke="#ff00ff" stroke-width="0.5" opacity="0.3"/></g>
+  <rect x="181" y="241" width="63" height="16" fill="#ff00ff" opacity="0.67"/>
+  <rect x="110" y="281" width="22" height="18" fill="#ff00ff" opacity="0.35"/>
+  <rect x="158" y="289" width="77" height="9" fill="#ff00ff" opacity="0.66"/>
+  <text x="200" y="200" font-family="monospace" font-size="24" font-weight="bold" fill="#ff00ff" text-anchor="middle" filter="url(#glow-neon-pulse-2-3)" opacity="0.9">NEON-PUL</text>
+  <text x="200" y="380" font-family="monospace" font-size="10" fill="#ff00ff" text-anchor="middle" opacity="0.5">► ALBUM_03</text>
+  <rect x="0" y="0" width="400" height="2" fill="#ff00ff" opacity="0.6"/>
+  <rect x="0" y="398" width="400" height="2" fill="#ff00ff" opacity="0.6"/>
+</svg>

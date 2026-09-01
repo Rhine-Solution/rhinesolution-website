@@ -1,0 +1,26 @@
+import "../../styles/music/music.css";
+import MusicNav from "./MusicNav";
+import MusicFooter from "./MusicFooter";
+
+export const metadata = {
+  title: "Music Trends Local — Rhine Solution",
+  description: "Discover top songs, artists, and genres in electronic, synthwave, and cyberpunk music. Built by Rhine Solution.",
+  keywords: ["music", "synthwave", "cyberpunk", "electronic", "music portal"],
+};
+
+export default function MusicLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <div className="music-body">
+      <a href="#music-main" className="skip-link" style={{
+        position: "absolute", top: "-100px", left: "1rem",
+        background: "var(--accent-cyan)", color: "var(--bg-base)",
+        padding: "0.5rem 1rem", zIndex: 1000
+      }}>Skip to main content</a>
+      <MusicNav />
+      <main id="music-main" style={{ flex: 1 }}>
+        {children}
+      </main>
+      <MusicFooter />
+    </div>
+  );
+}

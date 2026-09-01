@@ -21,6 +21,9 @@ export default function HomeEn() {
           <div className="ctas">
             <Link href="/en/team" className="btn btn-primary">{t.cta_team}</Link>
             <Link href="/en/projects" className="btn btn-secondary">{t.cta_projects}</Link>
+            <Link href="/music" className="btn btn-secondary" style={{ borderColor: "var(--accent-cyan)", color: "var(--accent-cyan)" }}>
+              ♫ Music Portal
+            </Link>
           </div>
         </section>
         <section className="container" style={{ marginTop: "var(--space-7)" }}>
@@ -41,6 +44,31 @@ export default function HomeEn() {
                 </p>
               </Link>
             ))}
+            <Link
+              href="/music"
+              className="card"
+              style={{
+                textDecoration: "none",
+                color: "inherit",
+                borderColor: "var(--accent-cyan)",
+                background: "linear-gradient(135deg, rgba(0,255,255,0.05), rgba(255,0,255,0.05))",
+              }}
+            >
+              <div style={{
+                fontFamily: "monospace",
+                fontSize: "0.7rem",
+                color: "var(--accent-cyan)",
+                letterSpacing: "0.2em",
+                marginBottom: "0.5rem",
+              }}>
+                TEAM PROJECT
+              </div>
+              <h3>Music Trends Local</h3>
+              <p style={{ marginBottom: "var(--space-2)" }}>Cyber-themed music portal — browse top songs, artists, and genres. 48 tracks across 8 electronic sub-genres.</p>
+              <p style={{ color: "var(--color-text-muted)", fontSize: "0.85rem", marginBottom: 0 }}>
+                HTML5 · CSS · Bootstrap · JavaScript · SVG · RAGNAROK + ZeroMeister
+              </p>
+            </Link>
           </div>
         </section>
         <section className="container" style={{ marginTop: "var(--space-6)" }}>

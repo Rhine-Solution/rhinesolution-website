@@ -13,5 +13,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/en/projects/rhinesolution`, lastModified: now, changeFrequency: "monthly", priority: 0.5 },
     { url: `${base}/en/projects/brain`, lastModified: now, changeFrequency: "monthly", priority: 0.5 },
     { url: `${base}/en/projects/macmini`, lastModified: now, changeFrequency: "monthly", priority: 0.5 },
+    { url: `${base}/music`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
+    { url: `${base}/music/top-songs`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
+    { url: `${base}/music/top-artists`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${base}/music/genres`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
   ];
 }
