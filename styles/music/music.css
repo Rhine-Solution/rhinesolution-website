@@ -1,8 +1,8 @@
-/* Music portal — cyber theme */
+/* Music portal — cyber theme with star field */
 :root {
-  --bg-base: #0a0a0f;
-  --bg-surface: #14141f;
-  --bg-elevated: #1e1e2e;
+  --bg-base: #000000;
+  --bg-surface: #0a0a14;
+  --bg-elevated: #14141f;
   --text-primary: #e0e0ff;
   --text-muted: #8080a0;
   --accent-cyan: #00ffff;
@@ -20,7 +20,7 @@
 html { font-size: 16px; }
 
 body.music-body {
-  background: var(--bg-base);
+  background: #000000;
   color: var(--text-primary);
   font-family: var(--font-display);
   line-height: 1.5;
@@ -31,39 +31,56 @@ body.music-body {
   position: relative;
 }
 
-/* Animated grid background */
+/* Star pixel field — layer 1 (cyan-tinted, faster twinkle) */
 body.music-body::before {
   content: '';
   position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
+  inset: 0;
   background-image:
-    linear-gradient(rgba(0,255,255,0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0,255,255,0.04) 1px, transparent 1px);
-  background-size: 40px 40px;
+    radial-gradient(1px 1px at 13px 23px, rgba(255,255,255,0.7), transparent),
+    radial-gradient(1px 1px at 47px 89px, rgba(0,255,255,0.5), transparent),
+    radial-gradient(1px 1px at 73px 17px, rgba(255,255,255,0.8), transparent),
+    radial-gradient(1px 1px at 127px 53px, rgba(255,0,255,0.4), transparent),
+    radial-gradient(1px 1px at 167px 97px, rgba(255,255,255,0.6), transparent),
+    radial-gradient(1px 1px at 211px 33px, rgba(0,255,255,0.7), transparent),
+    radial-gradient(1px 1px at 251px 71px, rgba(255,255,255,0.8), transparent),
+    radial-gradient(1px 1px at 307px 113px, rgba(255,0,255,0.5), transparent),
+    radial-gradient(1px 1px at 347px 47px, rgba(255,255,255,0.7), transparent),
+    radial-gradient(1px 1px at 401px 87px, rgba(0,255,255,0.6), transparent);
+  background-repeat: repeat;
+  background-size: 420px 130px;
   pointer-events: none;
-  z-index: -1;
-  animation: gridShift 20s linear infinite;
+  z-index: 0;
+  animation: starTwinkle1 6s ease-in-out infinite;
 }
 
-@keyframes gridShift {
-  0% { background-position: 0 0, 0 0; }
-  100% { background-position: 40px 40px, 40px 40px; }
+@keyframes starTwinkle1 {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.35; }
 }
 
-/* Scanline overlay */
+/* Star pixel field — layer 2 (magenta-tinted, slower twinkle) */
 body.music-body::after {
   content: '';
   position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: repeating-linear-gradient(
-    0deg,
-    transparent,
-    transparent 2px,
-    rgba(0,255,255,0.015) 2px,
-    rgba(0,255,255,0.015) 4px
-  );
+  inset: 0;
+  background-image:
+    radial-gradient(1.5px 1.5px at 33px 67px, rgba(0,255,255,0.9), transparent),
+    radial-gradient(1.5px 1.5px at 97px 13px, rgba(255,0,255,0.7), transparent),
+    radial-gradient(1.5px 1.5px at 157px 79px, rgba(255,255,255,0.8), transparent),
+    radial-gradient(1.5px 1.5px at 223px 47px, rgba(0,255,255,0.6), transparent),
+    radial-gradient(1.5px 1.5px at 283px 109px, rgba(255,255,255,0.7), transparent),
+    radial-gradient(1.5px 1.5px at 371px 29px, rgba(255,0,255,0.8), transparent);
+  background-repeat: repeat;
+  background-size: 420px 130px;
   pointer-events: none;
-  z-index: 1000;
+  z-index: 0;
+  animation: starTwinkle2 11s ease-in-out infinite;
+}
+
+@keyframes starTwinkle2 {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 1; }
 }
 
 /* Typography */
@@ -88,10 +105,7 @@ h2 {
   margin-bottom: 1rem;
 }
 
-p {
-  color: var(--text-primary);
-  margin-bottom: 1rem;
-}
+p { color: var(--text-primary); margin-bottom: 1rem; }
 
 a {
   color: var(--accent-cyan);
@@ -109,8 +123,8 @@ a:hover {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(10, 10, 15, 0.95);
-  backdrop-filter: blur(10px);
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border-strong);
 }
 
@@ -164,11 +178,12 @@ a:hover {
   padding: 5rem 1.5rem 4rem;
   text-align: center;
   position: relative;
+  z-index: 1;
 }
 
 .music-hero h1 {
   font-size: clamp(2.5rem, 7vw, 4.5rem);
-  animation: glitch 3s infinite;
+  animation: glitch 5s infinite;
 }
 
 @keyframes glitch {
@@ -221,7 +236,7 @@ a:hover {
 
 .music-btn-primary {
   background: var(--accent-cyan);
-  color: var(--bg-base);
+  color: #000;
   border-color: var(--accent-cyan);
   font-weight: 700;
 }
@@ -229,7 +244,7 @@ a:hover {
 .music-btn-primary:hover {
   background: var(--accent-magenta);
   border-color: var(--accent-magenta);
-  color: var(--bg-base);
+  color: #000;
 }
 
 /* Container */
@@ -239,6 +254,8 @@ a:hover {
   padding-inline: 1.5rem;
   padding-block: 3rem;
   flex: 1;
+  position: relative;
+  z-index: 1;
 }
 
 /* Section heading */
@@ -253,9 +270,7 @@ a:hover {
   gap: 1rem;
 }
 
-.section-head h2 {
-  margin-bottom: 0;
-}
+.section-head h2 { margin-bottom: 0; }
 
 .section-head .meta {
   font-family: var(--font-mono);
@@ -275,7 +290,7 @@ a:hover {
 .controls input[type="search"],
 .controls input[type="text"],
 .controls select {
-  background: var(--bg-surface);
+  background: rgba(10, 10, 20, 0.6);
   border: 1px solid var(--border-subtle);
   color: var(--text-primary);
   padding: 0.5rem 1rem;
@@ -309,7 +324,8 @@ a:hover {
 
 /* Card */
 .music-card {
-  background: var(--bg-surface);
+  background: rgba(10, 10, 20, 0.7);
+  backdrop-filter: blur(8px);
   border: 1px solid var(--border-subtle);
   padding: 1rem;
   position: relative;
@@ -319,6 +335,7 @@ a:hover {
   gap: 0.75rem;
   cursor: pointer;
   overflow: hidden;
+  z-index: 1;
 }
 
 .music-card::before {
@@ -335,12 +352,10 @@ a:hover {
 .music-card:hover {
   border-color: var(--card-color, var(--accent-cyan));
   transform: translateY(-2px);
-  box-shadow: 0 4px 30px rgba(0,255,255,0.15);
+  box-shadow: 0 4px 30px rgba(0,255,255,0.2);
 }
 
-.music-card:hover::before {
-  opacity: 1;
-}
+.music-card:hover::before { opacity: 1; }
 
 .music-card img {
   width: 100%;
@@ -382,7 +397,7 @@ a:hover {
 
 .popularity-bar {
   height: 4px;
-  background: var(--bg-elevated);
+  background: rgba(20, 20, 35, 0.8);
   position: relative;
   overflow: hidden;
 }
@@ -399,7 +414,7 @@ a:hover {
   position: absolute;
   top: 1rem;
   right: 1rem;
-  background: rgba(0,0,0,0.6);
+  background: rgba(0,0,0,0.7);
   border: 1px solid var(--border-strong);
   color: var(--accent-magenta);
   width: 36px;
@@ -415,15 +430,14 @@ a:hover {
 
 .music-card-favorite:hover {
   background: var(--accent-magenta);
-  color: var(--bg-base);
+  color: #000;
 }
 
 .music-card-favorite.active {
   background: var(--accent-magenta);
-  color: var(--bg-base);
+  color: #000;
 }
 
-/* Genre badges */
 .music-genre-badge {
   display: inline-flex;
   align-items: center;
@@ -445,14 +459,18 @@ a:hover {
   color: var(--text-muted);
   font-family: var(--font-mono);
   border: 1px dashed var(--border-subtle);
+  background: rgba(10, 10, 20, 0.4);
 }
 
 /* Footer */
 .music-footer {
   border-top: 1px solid var(--border-strong);
-  background: var(--bg-surface);
+  background: rgba(5, 5, 10, 0.8);
+  backdrop-filter: blur(8px);
   padding: 2rem 1.5rem;
   margin-top: 4rem;
+  position: relative;
+  z-index: 1;
 }
 
 .music-footer-inner {
@@ -485,7 +503,7 @@ a:hover {
 .music-modal-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.85);
+  background: rgba(0, 0, 0, 0.9);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -495,14 +513,16 @@ a:hover {
 }
 
 .music-modal {
-  background: var(--bg-surface);
+  background: rgba(10, 10, 20, 0.97);
+  backdrop-filter: blur(12px);
   border: 1px solid var(--accent-cyan);
   max-width: 600px;
   width: 100%;
   max-height: 90vh;
   overflow-y: auto;
   position: relative;
-  box-shadow: 0 0 60px rgba(0, 255, 255, 0.3);
+  box-shadow: 0 0 60px rgba(0, 255, 255, 0.4);
+  z-index: 1001;
 }
 
 .music-modal-header {
@@ -570,7 +590,7 @@ a:hover {
 .music-loading {
   position: fixed;
   inset: 0;
-  background: rgba(10, 10, 15, 0.95);
+  background: rgba(0, 0, 0, 0.95);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -581,7 +601,7 @@ a:hover {
 }
 
 .music-loading::after {
-  content: '▮▮▮';
+  content: "▮▮▮";
   animation: loadPulse 1s infinite;
   margin-left: 0.5rem;
 }
@@ -589,28 +609,6 @@ a:hover {
 @keyframes loadPulse {
   0%, 100% { opacity: 0.3; }
   50% { opacity: 1; }
-}
-
-/* Favorites count badge */
-.fav-count {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--accent-magenta);
-  color: var(--bg-base);
-  font-family: var(--font-mono);
-  font-size: 0.7rem;
-  font-weight: 700;
-  padding: 0.125rem 0.5rem;
-  border-radius: 999px;
-  margin-left: 0.5rem;
-}
-
-/* Empty favorites */
-.favorites-empty {
-  text-align: center;
-  padding: 3rem 1rem;
-  color: var(--text-muted);
 }
 
 /* Responsive */
@@ -628,5 +626,5 @@ a:hover {
     animation-duration: 0.01ms !important;
     transition-duration: 0.01ms !important;
   }
-  body::before { animation: none; }
+  body::before, body::after { animation: none; }
 }

@@ -4,8 +4,8 @@ import ThemeToggle from "./ThemeToggle";
 type NavProps = {
   locale: string;
   brand: string;
-  labels: { home: string; team: string; projects: string; music: string };
-  current: "home" | "team" | "projects" | "music";
+  labels: { home: string; team: string; projects: string };
+  current: "home" | "team" | "projects";
 };
 
 export default function Nav({ locale, brand, labels, current }: NavProps) {
@@ -29,11 +29,6 @@ export default function Nav({ locale, brand, labels, current }: NavProps) {
           <li>
             <Link href={`/${locale}/projects`} aria-current={current === "projects" ? "page" : undefined}>
               {labels.projects}
-            </Link>
-          </li>
-          <li>
-            <Link href="/music" aria-current={current === "music" ? "page" : undefined} style={{ color: "var(--accent-cyan)" }}>
-              {labels.music}
             </Link>
           </li>
         </ul>
