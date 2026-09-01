@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useMemo, useRef } from "react";
 import data from "./data/music.json";
+import PlayButton from "./components/PlayButton";
 
 type Song = typeof data.songs[number];
 type Genre = typeof data.genres[number];
@@ -151,6 +152,9 @@ export default function SongExplorer() {
                   >
                     {isFav ? "★" : "☆"}
                   </button>
+                  <PlayButton
+                    playable={{ title: song.title, artist: artist?.name ?? "Unknown", genreId: song.genre }}
+                  />
                   <img src={song.image} alt={`${song.title} by ${artist?.name}`} width={400} height={400} />
                   <div className="music-card-body">
                     <div className="music-card-title">{song.title}</div>
@@ -195,13 +199,17 @@ export default function SongExplorer() {
                 <div><span>Popularity</span>{Math.floor(modalSong.popularity)}%</div>
                 <div><span>Duration</span>{Math.floor(modalSong.duration / 60)}:{(modalSong.duration % 60).toString().padStart(2, "0")}</div>
               </div>
-              <button
-                className={`music-btn ${favorites.includes(modalSong.id) ? "music-btn-primary" : ""}`}
-                onClick={() => toggleFavorite(modalSong.id)}
-                style={{ alignSelf: "flex-start" }}
-              >
-                {favorites.includes(modalSong.id) ? "★ In Favorites" : "☆ Add to Favorites"}
-              </button>
+              <div style={{ display: "flex", alignItems: "center", gap: "0.75rem", alignSelf: "flex-start" }}>
+                <PlayButton
+                  playable={{ title: modalSong.title, artist: getArtist(modalSong.artist)?.name ?? "Unknown", genreId: modalSong.genre }}
+                />
+                <button
+                  className={`music-btn ${favorites.includes(modalSong.id) ? "music-btn-primary" : ""}`}
+                  onClick={() => toggleFavorite(modalSong.id)}
+                >
+                  {favorites.includes(modalSong.id) ? "★ In Favorites" : "☆ Add to Favorites"}
+                </button>
+              </div>
             </div>
           </div>
         </div>
