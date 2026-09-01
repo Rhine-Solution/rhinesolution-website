@@ -7,7 +7,8 @@ export const metadata = { title: "Projects" };
 
 export default function ProjectsEn() {
   const t = content.projects;
-  const items = ["project_rhinesolution", "project_brain", "project_macmini"].map((k) => (content as Record<string, any>)[k]);
+  const items = ["project_rhinesolution", "project_brain", "project_macmini", "project_music"]
+    .map((k) => (content as Record<string, any>)[k]);
   return (
     <>
       <Nav locale="en" brand={content.brand.name} labels={content.nav} current="projects" />
