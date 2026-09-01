@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useMemo } from "react";
 import data from "./data/music.json";
+import PlayButton from "./components/PlayButton";
 
 type Artist = typeof data.artists[number];
 type SortKey = "popularity-desc" | "name" | "songs-desc";
@@ -165,6 +166,9 @@ export default function ArtistExplorer() {
                       border: "1px solid var(--border-subtle)"
                     }}>
                       ▸ {s.title} <span style={{ color: "var(--text-muted)" }}>({s.year}) · {Math.floor(s.popularity)}%</span>
+                      <PlayButton
+                        playable={{ title: s.title, artist: modalArtist.name, genreId: s.genre }}
+                      />
                     </li>
                   ))}
               </ul>

@@ -1,5 +1,6 @@
 import music from "./data/music.json";
 import Link from "next/link";
+import PlayButton from "./components/PlayButton";
 
 export const metadata = {
   title: "Music Trends Local — Discover Electronic Music",
@@ -47,6 +48,9 @@ export default function MusicHome() {
                 className="music-card"
                 style={{ "--card-color": genre?.color } as React.CSSProperties}
               >
+                <PlayButton
+                  playable={{ title: song.title, artist: music.artists.find((a) => a.id === song.artist)?.name ?? "Unknown", genreId: song.genre }}
+                />
                 <img src={song.image} alt={`${song.title} cover`} width={400} height={400} />
                 <div className="music-card-body">
                   <div className="music-card-title">{song.title}</div>
