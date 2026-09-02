@@ -8,7 +8,6 @@ import { createRoadsScene } from "./scenes/roads";
 import { createGlowScene } from "./scenes/glow";
 import type { RhineScene } from "./types";
 import TheatreDirector from "./TheatreDirector";
-import { playCue } from "@/components/AudioCues";
 
 const SCENES: RhineScene[] = [
   createDriftScene(),
@@ -91,7 +90,6 @@ export default function SceneManager() {
     // Scroll state
     let scrollProgress = 0;
     let scrollTarget = 0;
-    let lastCueAt = -1;
     const onScroll = () => {
       const max =
         document.documentElement.scrollHeight - window.innerHeight;
@@ -112,15 +110,6 @@ export default function SceneManager() {
       // Smooth scroll lerp
       scrollProgress += (scrollTarget - scrollProgress) * (reducedMotion ? 1 : 0.06);
       scrollProgressRef.current = scrollProgress;
-
-      // Audio cue when crossing scene boundaries
-      const cueMarkers = [0.20, 0.50, 0.78];
-      for (const m of cueMarkers) {
-        if (scrollProgress >= m && lastCueAt < m) {
-          lastCueAt = m;
-          playCue("homeTransition");
-        }
-      }
 
       // Update each scene and modulate group visibility via scale/opacity
       for (let i = 0; i < SCENES.length; i++) {

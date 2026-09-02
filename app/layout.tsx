@@ -2,7 +2,6 @@ import type { Metadata, Viewport } from "next";
 import { Inter, Cormorant_Garamond } from "next/font/google";
 import SceneManager from "@/components/scene/SceneManager";
 import SmoothScrollProvider from "@/components/SmoothScrollProvider";
-import AudioCues from "@/components/AudioCues";
 import CustomCursor from "@/components/CustomCursor";
 import IntroLoader from "@/components/IntroLoader";
 
@@ -96,7 +95,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <SceneManager />
         <SmoothScrollProvider />
-        <AudioCues />
         <CustomCursor />
         <IntroLoader />
         {children}
