@@ -36,22 +36,20 @@ export default function Footer({
             {backLabel}
           </Link>
         )}
-        {socials.length > 0 && (
-          <nav className="footer-socials" aria-label={socialHeading}>
-            {socials.map((s) => (
-              <a
-                key={s.href}
-                href={s.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                title={socialLabel(s.name)}
-                aria-label={socialLabel(s.name)}
-              >
-                <SocialIcon name={s.name} />
-              </a>
-            ))}
-          </nav>
-        )}
+        <nav className="footer-socials" aria-label={socialHeading}>
+          {socials.map((s) => (
+            <a
+              key={s.href}
+              href={s.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              title={socialLabel(s.name)}
+              aria-label={socialLabel(s.name)}
+            >
+              <SocialIcon name={s.name} />
+            </a>
+          ))}
+        </nav>
         <div className="footer-actions">
           <ThemeToggle labels={themeLabels} />
         </div>
