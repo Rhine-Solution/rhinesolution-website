@@ -90,8 +90,13 @@ export async function POST(req: Request) {
     });
 
     if (error) {
+      console.error("[contact] Resend error:", JSON.stringify(error));
       return NextResponse.json(
-        { ok: false, error: "Could not send message" },
+        {
+          ok: false,
+          error: "Could not send message",
+          detail: error.message ?? error.name ?? "unknown",
+        },
         { status: 502 }
       );
     }
