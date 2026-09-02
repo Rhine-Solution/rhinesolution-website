@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import "../../styles/globals.css";
-import { ThemeProvider } from "@/components/ThemeProvider";
 import { getContent } from "@/lib/i18n";
 
 type Props = {
@@ -21,5 +20,5 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default function LocaleLayout({ children }: { children: React.ReactNode }) {
-  return <ThemeProvider>{children}</ThemeProvider>;
+  return <>{children}</>;
 }

@@ -1,5 +1,10 @@
 import type { Metadata } from "next";
 import { Inter, Cormorant_Garamond } from "next/font/google";
+import SceneManager from "@/components/scene/SceneManager";
+import SmoothScrollProvider from "@/components/SmoothScrollProvider";
+import AudioCues from "@/components/AudioCues";
+import CustomCursor from "@/components/CustomCursor";
+import IntroLoader from "@/components/IntroLoader";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
@@ -18,11 +23,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={`${inter.variable} ${cormorant.variable}`} suppressHydrationWarning>
       <body>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: "(function(){try{var t=window.localStorage.getItem('rhine-theme');if(t==='dark')document.documentElement.setAttribute('data-theme','dark')}catch(e){}})();",
-          }}
-        />
+        <SceneManager />
+        <SmoothScrollProvider />
+        <AudioCues />
+        <CustomCursor />
+        <IntroLoader />
         {children}
       </body>
     </html>
