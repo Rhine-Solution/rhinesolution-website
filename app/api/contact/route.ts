@@ -3,10 +3,12 @@ import { Resend } from "resend";
 
 export const runtime = "nodejs";
 
-const RECIPIENT = "info@rhinesolution.com";
-// Sender address. Resend's free onboarding sender works without domain
-// verification (emails show "via resend.dev" until rhinesolution.com is
-// verified at https://resend.com/domains).
+// Resend's free tier: until rhinesolution.com is verified at
+// https://resend.com/domains, the API can only send TO the account owner's
+// email and FROM Resend's sandbox sender. Once verified, switch:
+//   RECIPIENT = "info@rhinesolution.com"
+//   FROM_ADDRESS = "noreply@rhinesolution.com"
+const RECIPIENT = "admin@rhinesolution.com";
 const FROM_NAME = "Rhine Solution";
 const FROM_ADDRESS = "onboarding@resend.dev";
 
