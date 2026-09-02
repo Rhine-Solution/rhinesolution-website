@@ -32,7 +32,7 @@ export default async function MemberPage({ params }: Props) {
   if (!p) notFound();
   return (
     <>
-      <Nav locale={locale} brand={content.brand.name} labels={content.nav} themeLabels={content.footer} current="team" />
+      <Nav locale={locale} brand={content.brand.name} labels={content.nav} current="team" />
       <main id="main" className="container page">
         <header className="portfolio-header">
           <h1>{p.name}</h1>
@@ -65,7 +65,7 @@ export default async function MemberPage({ params }: Props) {
           <p style={{ color: "var(--color-text-muted)" }}>{t.featured_work_text}</p>
         </section>
       </main>
-      <Footer locale={locale} backLabel={content.nav.back} brand={content.brand.name} tagline={content.brand.tagline} socialHeading={content.footer.social_heading} themeLabels={content.footer} socials={getCompanySocials(content)} />
+      <Footer locale={locale} backLabel={content.nav.back} brand={content.brand.name} tagline={content.brand.tagline} socialHeading={content.footer.social_heading} socials={getCompanySocials(content)} />
     </>
   );
 }

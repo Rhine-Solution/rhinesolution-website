@@ -17,10 +17,12 @@ export default async function TeamPage({ params }: Props) {
   const t = content.team;
   return (
     <>
-      <Nav locale={locale} brand={content.brand.name} labels={content.nav} themeLabels={content.footer} current="team" />
+      <Nav locale={locale} brand={content.brand.name} labels={content.nav} current="team" />
       <main id="main" className="container page">
-        <h1>{t.title}</h1>
-        <p style={{ color: "var(--color-text-muted)", fontSize: "1.1rem" }}>{t.subtitle}</p>
+        <header className="page-head">
+          <p className="section-eyebrow">{t.title}</p>
+          <h1>{t.subtitle}</h1>
+        </header>
         <div className="grid" style={{ marginTop: "var(--space-5)" }}>
           {getMembers(content).map((m) => (
             <Link
@@ -30,13 +32,13 @@ export default async function TeamPage({ params }: Props) {
               style={{ textDecoration: "none", color: "inherit" }}
             >
               <h2>{m.name}</h2>
-              <p style={{ color: "var(--color-accent)" }}>{m.role}</p>
+              <p style={{ color: "var(--color-blue-soft)" }}>{m.role}</p>
               <p>{m.tagline}</p>
             </Link>
           ))}
         </div>
       </main>
-      <Footer locale={locale} backLabel={content.nav.back} brand={content.brand.name} tagline={content.brand.tagline} socialHeading={content.footer.social_heading} themeLabels={content.footer} socials={getCompanySocials(content)} />
+      <Footer locale={locale} backLabel={content.nav.back} brand={content.brand.name} tagline={content.brand.tagline} socialHeading={content.footer.social_heading} socials={getCompanySocials(content)} />
     </>
   );
 }

@@ -16,17 +16,53 @@
     "home": "Home",
     "team": "Team",
     "projects": "Projects",
+    "about": "About",
+    "news": "News",
+    "contact": "Contact",
     "back": "Back to Rhine Solution"
   },
   "home": {
-    "hero_title": "Build with Rhine Solution",
+    "hero_line_1": "Build with",
+    "hero_line_2": "Rhine Solution",
     "hero_subtitle": "Custom web applications, portfolios, and digital experiences crafted with care.",
-    "cta_team": "Meet our team",
     "cta_projects": "See our work",
-    "section_team_title": "The team",
-    "section_team_text": "Two builders, one vision. Rhine Solution is led by a CEO/CTO pair who ship together.",
-    "section_projects_title": "Selected work",
-    "section_projects_text": "Production code, deployed and live."
+    "cta_about": "About the studio",
+    "stage_b_eyebrow": "The idea",
+    "stage_b_title": "Web that works — and shows it.",
+    "stage_b_text": "Keep scrolling. Every layer of Rhine Solution is shipped, live, and made to move.",
+    "stage_b_link": "See the work",
+    "statements": [
+      {
+        "eyebrow": "01 · Craft",
+        "heading": "Small team, high standard.",
+        "body": "A founding duo that ships together — design, build, and deploy, all in-house, with no layers between idea and launch.",
+        "link_label": "Meet the team",
+        "href": "/team"
+      },
+      {
+        "eyebrow": "02 · AI-powered",
+        "heading": "An AI-first workflow.",
+        "body": "Our Mac Mini runs the stack: agents, five model providers, and the Obsidian Brain that keeps every decision documented.",
+        "link_label": "How we build",
+        "href": "/projects/macmini"
+      },
+      {
+        "eyebrow": "03 · Excellence",
+        "heading": "Shipped, not staged.",
+        "body": "Every project ends up live in production. No mockups, no abandoned ideas — just code that runs.",
+        "link_label": "See our work",
+        "href": "/projects"
+      },
+      {
+        "eyebrow": "04 · Together",
+        "heading": "Let's build something.",
+        "body": "Two builders, one direct conversation. Partner with us on your next project.",
+        "link_label": "Start a conversation",
+        "href": "/contact"
+      }
+    ],
+    "featured_title": "Featured work",
+    "featured_text": "Selected projects, built and maintained by the Rhine Solution team."
   },
   "team": {
     "title": "Our team",
@@ -105,6 +141,80 @@
     ],
     "year": 2026
   },
+  "project_music": {
+    "title": "Music Trends Local",
+    "slug": "music",
+    "summary": "A cyber-themed music portal showcasing top songs, artists, and genres — 48 tracks across 8 electronic sub-genres with search, filters, and localStorage favorites.",
+    "stack": [
+      "HTML5",
+      "CSS",
+      "Bootstrap",
+      "JavaScript",
+      "SVG",
+      "Next.js 15"
+    ],
+    "year": 2026,
+    "team": "RAGNAROK + ZeroMeister",
+    "live_url": "/music"
+  },
+  "about": {
+    "eyebrow": "The studio",
+    "statement": "Small team, high standard, shipped work.",
+    "story": [
+      "Rhine Solution is a two-person studio led by a CEO/CTO pair who build together. We make custom web experiences — portfolios, portals, and products — from first sketch to live deploy.",
+      "Our workflow is AI-first but human-led. The Mac Mini runs our agents and models, and the Obsidian Brain keeps every decision documented and repeatable.",
+      "We favor simplicity, craft, and production code. When we promise a project, it ships."
+    ],
+    "stats_label": "The studio in numbers",
+    "stats": [
+      { "value": 4, "suffix": "", "label": "Projects shipped" },
+      { "value": 2, "suffix": "", "label": "Builders" },
+      { "value": 5, "suffix": "", "label": "AI providers" },
+      { "value": 40, "suffix": "+", "label": "Brain notes" }
+    ],
+    "values_title": "What we value",
+    "values": [
+      { "title": "Craft over quantity", "text": "We take on a few projects and finish them properly." },
+      { "title": "Simplicity wins", "text": "Clear structure, pure CSS, no unnecessary dependencies." },
+      { "title": "AI-assisted, human-led", "text": "Agents and models speed us up; people make the calls." },
+      { "title": "Documented, always", "text": "Every decision lives in the Brain, not in someone's head." },
+      { "title": "Own the outcome", "text": "Our own infrastructure, our own code, end to end." },
+      { "title": "Bilingual by default", "text": "English and Dutch built into the content layer from day one." }
+    ],
+    "cta_head": "Interested in working together?",
+    "cta_text": "You'll always talk to a builder — not a salesperson.",
+    "cta_link_label": "Browse our work"
+  },
+  "news": {
+    "eyebrow": "Updates",
+    "title": "News & updates",
+    "subtitle": "What's new at Rhine Solution.",
+    "items": [
+      {
+        "date": "Aug 2026",
+        "title": "Bilingual site structure",
+        "summary": "The site moved to /[locale] routing. English and Dutch now share one component tree and a single content layer."
+      },
+      {
+        "date": "Aug 2026",
+        "title": "Music Trends Local is live",
+        "summary": "A cyber-themed music portal with 48 tracks across eight electronic sub-genres, plus search, filters, and favorite tracks."
+      },
+      {
+        "date": "Jul 2026",
+        "title": "Dependency cleanup",
+        "summary": "Postcss updated and the audit returned zero vulnerabilities across the full dependency tree."
+      }
+    ]
+  },
+  "contact": {
+    "eyebrow": "Contact",
+    "title": "Start a conversation.",
+    "body": "Two builders behind one brand. You'll always reach a builder, not a salesperson.",
+    "alt_title": "Or jump straight into the work.",
+    "alt_text": "Every shipped project lives on this site. Start with the showcase.",
+    "alt_link": "Browse projects"
+  },
   "footer": {
     "social_heading": "Find us elsewhere",
     "theme_toggle_light": "Switch to dark",
@@ -125,21 +235,5 @@
     "social": "Find me online",
     "featured_work": "Featured work",
     "featured_work_text": "Selected projects built and maintained by the Rhine Solution team."
-  },
-  "project_music": {
-    "title": "Music Trends Local",
-    "slug": "music",
-    "summary": "A cyber-themed music portal showcasing top songs, artists, and genres — 48 tracks across 8 electronic sub-genres with search, filters, and localStorage favorites.",
-    "stack": [
-      "HTML5",
-      "CSS",
-      "Bootstrap",
-      "JavaScript",
-      "SVG",
-      "Next.js 15"
-    ],
-    "year": 2026,
-    "team": "RAGNAROK + ZeroMeister",
-    "live_url": "/music"
   }
 }

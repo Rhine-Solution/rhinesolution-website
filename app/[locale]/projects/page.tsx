@@ -19,10 +19,13 @@ export default async function ProjectsPage({ params }: Props) {
 
   return (
     <>
-      <Nav locale={locale} brand={content.brand.name} labels={content.nav} themeLabels={content.footer} current="projects" />
+      <Nav locale={locale} brand={content.brand.name} labels={content.nav} current="projects" />
       <main id="main" className="container page">
-        <h1>{t.title}</h1>
-        <p style={{ color: "var(--color-text-muted)", fontSize: "1.1rem" }}>{t.subtitle}</p>
+        <header className="page-head">
+          <p className="section-eyebrow">{content.sections.featured_work}</p>
+          <h1>{t.title}</h1>
+          <p style={{ color: "var(--color-text-muted)", fontSize: "1.1rem" }}>{t.subtitle}</p>
+        </header>
         <div className="grid" style={{ marginTop: "var(--space-5)" }}>
           {items.map((p) => (
             <Link
@@ -40,7 +43,7 @@ export default async function ProjectsPage({ params }: Props) {
           ))}
         </div>
       </main>
-      <Footer locale={locale} backLabel={content.nav.back} brand={content.brand.name} tagline={content.brand.tagline} socialHeading={content.footer.social_heading} themeLabels={content.footer} socials={getCompanySocials(content)} />
+      <Footer locale={locale} backLabel={content.nav.back} brand={content.brand.name} tagline={content.brand.tagline} socialHeading={content.footer.social_heading} socials={getCompanySocials(content)} />
     </>
   );
 }

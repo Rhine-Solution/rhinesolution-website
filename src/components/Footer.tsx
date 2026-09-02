@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { FiArrowLeft } from "react-icons/fi";
-import ThemeToggle from "./ThemeToggle";
 import SocialIcon from "./SocialIcon";
 import { socialLabel } from "@/lib/socials";
 
@@ -13,7 +12,6 @@ type FooterProps = {
   showBack?: boolean;
   socials?: Social[];
   socialHeading?: string;
-  themeLabels?: { theme_toggle_light: string; theme_toggle_dark: string };
 };
 
 export default function Footer({
@@ -24,7 +22,6 @@ export default function Footer({
   showBack = true,
   socials = [],
   socialHeading,
-  themeLabels,
 }: FooterProps) {
   const year = new Date().getFullYear();
   return (
@@ -50,9 +47,6 @@ export default function Footer({
             </a>
           ))}
         </nav>
-        <div className="footer-actions">
-          <ThemeToggle labels={themeLabels} />
-        </div>
       </div>
       <div className="footer-bottom">
         <span>

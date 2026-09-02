@@ -37,7 +37,7 @@ export default async function ProjectDetailPage({ params }: Props) {
   if (!p) notFound();
   return (
     <>
-      <Nav locale={locale} brand={content.brand.name} labels={content.nav} themeLabels={content.footer} current="projects" />
+      <Nav locale={locale} brand={content.brand.name} labels={content.nav} current="projects" />
       <main id="main" className="container page">
         <h1>{p.title}</h1>
         <p style={{ color: "var(--color-text-muted)", fontSize: "1.1rem" }}>{p.summary}</p>
@@ -70,7 +70,7 @@ export default async function ProjectDetailPage({ params }: Props) {
           </section>
         )}
       </main>
-      <Footer locale={locale} backLabel={content.nav.back} brand={content.brand.name} tagline={content.brand.tagline} socialHeading={content.footer.social_heading} themeLabels={content.footer} socials={getCompanySocials(content)} />
+      <Footer locale={locale} backLabel={content.nav.back} brand={content.brand.name} tagline={content.brand.tagline} socialHeading={content.footer.social_heading} socials={getCompanySocials(content)} />
     </>
   );
 }

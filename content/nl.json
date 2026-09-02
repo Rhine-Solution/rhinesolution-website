@@ -16,17 +16,53 @@
     "home": "Home",
     "team": "Team",
     "projects": "Projecten",
+    "about": "Over ons",
+    "news": "Nieuws",
+    "contact": "Contact",
     "back": "Terug naar Rhine Solution"
   },
   "home": {
-    "hero_title": "Bouw met Rhine Solution",
+    "hero_line_1": "Bouw met",
+    "hero_line_2": "Rhine Solution",
     "hero_subtitle": "Maatwerk webapplicaties, portfolio's en digitale ervaringen, met zorg gemaakt.",
-    "cta_team": "Maak kennis met het team",
     "cta_projects": "Bekijk ons werk",
-    "section_team_title": "Het team",
-    "section_team_text": "Twee bouwers, één visie. Rhine Solution wordt geleid door een CEO/CTO-duo dat samen bouwt.",
-    "section_projects_title": "Geselecteerd werk",
-    "section_projects_text": "Productiecode, uitgerold en live."
+    "cta_about": "Over ons",
+    "stage_b_eyebrow": "Het idee",
+    "stage_b_title": "Web dat werkt — én dat laat zien.",
+    "stage_b_text": "Scroll verder. Elke laag van Rhine Solution is uitgerold, live en gebouwd om te bewegen.",
+    "stage_b_link": "Bekijk het werk",
+    "statements": [
+      {
+        "eyebrow": "01 · Ambacht",
+        "heading": "Klein team, hoge standaard.",
+        "body": "Een oprichtersduo dat samen bouwt — design, bouw en uitrol volledig in huis, zonder lagen tussen idee en lancering.",
+        "link_label": "Maak kennis met het team",
+        "href": "/team"
+      },
+      {
+        "eyebrow": "02 · AI-first",
+        "heading": "Een AI-first werkwijze.",
+        "body": "Onze Mac Mini draait de stack: agents, vijf modelproviders, en de Obsidian Brain die elke beslissing documenteert.",
+        "link_label": "Zo bouwen wij",
+        "href": "/projects/macmini"
+      },
+      {
+        "eyebrow": "03 · Excellentie",
+        "heading": "Live, niet geënsceneerd.",
+        "body": "Elk project eindigt live in productie. Geen mockups, geen verlaten ideeën — alleen code die draait.",
+        "link_label": "Bekijk ons werk",
+        "href": "/projects"
+      },
+      {
+        "eyebrow": "04 · Samen",
+        "heading": "Laten we iets bouwen.",
+        "body": "Twee bouwers, één directe lijn. Werk samen met ons aan je volgende project.",
+        "link_label": "Start een gesprek",
+        "href": "/contact"
+      }
+    ],
+    "featured_title": "Uitgelicht werk",
+    "featured_text": "Geselecteerde projecten, gebouwd en onderhouden door het Rhine Solution team."
   },
   "team": {
     "title": "Ons team",
@@ -126,6 +162,64 @@
     "year": 2026,
     "team": "RAGNAROK + ZeroMeister",
     "live_url": "/music"
+  },
+  "about": {
+    "eyebrow": "Het bedrijf",
+    "statement": "Klein team, hoge standaard, geleverd werk.",
+    "story": [
+      "Rhine Solution is een twee-koppig bedrijf, geleid door een CEO/CTO-duo dat samen bouwt. We maken maatwerk webbelevingen — portfolio's, portals en producten — van eerste schets tot live uitrol.",
+      "Onze werkwijze is AI-first maar mens-geleid. De Mac Mini draait onze agents en modellen, en de Obsidian Brain houdt elke beslissing gedocumenteerd en herhaalbaar.",
+      "We kiezen voor eenvoud, vakmanschap en productiecode. Als we een project beloven, leveren we het."
+    ],
+    "stats_label": "Het bedrijf in cijfers",
+    "stats": [
+      { "value": 4, "suffix": "", "label": "Projecten uitgerold" },
+      { "value": 2, "suffix": "", "label": "Bouwers" },
+      { "value": 5, "suffix": "", "label": "AI-providers" },
+      { "value": 40, "suffix": "+", "label": "Brain-notities" }
+    ],
+    "values_title": "Waar we voor staan",
+    "values": [
+      { "title": "Vakmanschap boven kwantiteit", "text": "We nemen weinig projecten aan en maken ze goed af." },
+      { "title": "Eenvoud wint", "text": "Duidelijke structuur, pure CSS, geen overbodige dependencies." },
+      { "title": "AI-geholpen, mens-geleid", "text": "Agents en modellen versnellen ons; mensen nemen de beslissingen." },
+      { "title": "Altijd gedocumenteerd", "text": "Elke beslissing leeft in de Brain, niet in iemands hoofd." },
+      { "title": "Verantwoordelijk voor het resultaat", "text": "Onze eigen infrastructuur, onze eigen code, van begin tot eind." },
+      { "title": "Standaard tweetalig", "text": "Engels en Nederlands ingebouwd in de contentlaag vanaf dag één." }
+    ],
+    "cta_head": "Interesse om samen te werken?",
+    "cta_text": "Je praat altijd met een bouwer — niet met een verkoper.",
+    "cta_link_label": "Bekijk ons werk"
+  },
+  "news": {
+    "eyebrow": "Updates",
+    "title": "Nieuws & updates",
+    "subtitle": "Wat is er nieuw bij Rhine Solution.",
+    "items": [
+      {
+        "date": "Aug 2026",
+        "title": "Tweetalige websitestructuur",
+        "summary": "De site is overgezet op /[locale]-routing. Engels en Nederlands delen nu één componentenstructuur en één contentlaag."
+      },
+      {
+        "date": "Aug 2026",
+        "title": "Music Trends Local is live",
+        "summary": "Een cyber-gethematiseerd muziekportaal met 48 tracks in acht elektronische subgenres, plus zoeken, filters en favorieten."
+      },
+      {
+        "date": "Jul 2026",
+        "title": "Dependencies opgeruimd",
+        "summary": "Postcss geüpdatet en de audit meldt nul kwetsbaarheden in de volledige dependency-boom."
+      }
+    ]
+  },
+  "contact": {
+    "eyebrow": "Contact",
+    "title": "Start een gesprek.",
+    "body": "Twee bouwers achter één merk. Je bereikt altijd een bouwer, geen verkoper.",
+    "alt_title": "Of duik meteen het werk in.",
+    "alt_text": "Elk geleverd project staat op deze site. Begin bij de showcase.",
+    "alt_link": "Bekijk projecten"
   },
   "footer": {
     "social_heading": "Vind ons elders",
