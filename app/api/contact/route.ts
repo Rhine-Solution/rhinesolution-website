@@ -4,7 +4,11 @@ import { Resend } from "resend";
 export const runtime = "nodejs";
 
 const RECIPIENT = "info@rhinesolution.com";
-const FROM_ADDRESS = "noreply@rhinesolution.com";
+// Sender address. Resend's free onboarding sender works without domain
+// verification (emails show "via resend.dev" until rhinesolution.com is
+// verified at https://resend.com/domains).
+const FROM_NAME = "Rhine Solution";
+const FROM_ADDRESS = "onboarding@resend.dev";
 
 type ContactPayload = {
   name?: string;
@@ -77,7 +81,7 @@ export async function POST(req: Request) {
       `${message}\n`;
 
     const { error } = await resend.emails.send({
-      from: `Rhine Solution <${FROM_ADDRESS}>`,
+      from: `${FROM_NAME} <${FROM_ADDRESS}>`,
       to: [RECIPIENT],
       replyTo: email,
       subject,
