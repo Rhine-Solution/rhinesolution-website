@@ -3,13 +3,18 @@ import Footer from "@/components/Footer";
 import StatBlock from "@/components/StatBlock";
 import { getContent } from "@/lib/i18n";
 import { getCompanySocials } from "@/lib/socials";
+import { buildMetadata } from "@/lib/seo";
 import Link from "next/link";
 
 type Props = { params: Promise<{ locale: string }> };
 
 export async function generateMetadata({ params }: Props) {
   const { locale } = await params;
-  return { title: getContent(locale).nav.about };
+  const c = getContent(locale);
+  return buildMetadata(locale, "/about", {
+    title: c.nav.about,
+    description: c.about.statement,
+  });
 }
 
 export default async function AboutPage({ params }: Props) {

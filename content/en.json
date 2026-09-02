@@ -211,6 +211,16 @@
     "eyebrow": "Contact",
     "title": "Start a conversation.",
     "body": "Two builders behind one brand. You'll always reach a builder, not a salesperson.",
+    "form_title": "Send us a message",
+    "form": {
+      "name": "Your name",
+      "email": "Email",
+      "message": "Message",
+      "submit": "Send message",
+      "submitting": "Sending...",
+      "success": "Message sent. We'll reply within 1-2 business days.",
+      "error_generic": "Something went wrong. Please try again or email info@rhinesolution.com."
+    },
     "alt_title": "Or jump straight into the work.",
     "alt_text": "Every shipped project lives on this site. Start with the showcase.",
     "alt_link": "Browse projects"

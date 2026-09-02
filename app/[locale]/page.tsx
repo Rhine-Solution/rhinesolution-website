@@ -4,9 +4,19 @@ import StatementBand from "@/components/StatementBand";
 import SectionDivider from "@/components/SectionDivider";
 import { getContent, getProjects } from "@/lib/i18n";
 import { getCompanySocials } from "@/lib/socials";
+import { buildMetadata } from "@/lib/seo";
 import Link from "next/link";
 
 type Props = { params: Promise<{ locale: string }> };
+
+export async function generateMetadata({ params }: Props) {
+  const { locale } = await params;
+  const c = getContent(locale);
+  return buildMetadata(locale, "", {
+    title: c.brand.name,
+    description: c.brand.tagline,
+  });
+}
 
 export default async function HomePage({ params }: Props) {
   const { locale } = await params;

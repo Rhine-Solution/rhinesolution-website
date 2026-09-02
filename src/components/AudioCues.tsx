@@ -108,11 +108,11 @@ export default function AudioCues() {
       title={enabled ? "Audio cues on" : "Audio cues off"}
       style={{
         position: "fixed",
-        bottom: "1rem",
+        bottom: "calc(env(safe-area-inset-bottom, 0px) + 1rem)",
         right: "1rem",
-        zIndex: 50,
-        width: "2.5rem",
-        height: "2.5rem",
+        zIndex: 110,
+        width: "3rem",
+        height: "3rem",
         borderRadius: "50%",
         border: "1px solid rgba(126, 167, 255, 0.4)",
         background: enabled ? "rgba(44, 107, 255, 0.2)" : "rgba(7, 14, 36, 0.6)",
@@ -121,8 +121,9 @@ export default function AudioCues() {
         display: "grid",
         placeItems: "center",
         backdropFilter: "blur(8px)",
-        fontSize: "1rem",
+        fontSize: "1.1rem",
       }}
+      className="audio-toggle"
     >
       {enabled ? "🔊" : "🔇"}
     </button>

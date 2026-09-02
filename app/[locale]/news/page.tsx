@@ -2,12 +2,17 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import { getContent } from "@/lib/i18n";
 import { getCompanySocials } from "@/lib/socials";
+import { buildMetadata } from "@/lib/seo";
 
 type Props = { params: Promise<{ locale: string }> };
 
 export async function generateMetadata({ params }: Props) {
   const { locale } = await params;
-  return { title: getContent(locale).news.title };
+  const c = getContent(locale);
+  return buildMetadata(locale, "/news", {
+    title: c.news.title,
+    description: c.news.subtitle,
+  });
 }
 
 export default async function NewsPage({ params }: Props) {

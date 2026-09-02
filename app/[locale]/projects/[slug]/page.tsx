@@ -2,6 +2,7 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import { getContent, getProject } from "@/lib/i18n";
 import { getCompanySocials } from "@/lib/socials";
+import { buildMetadata } from "@/lib/seo";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { FaMusic } from "react-icons/fa6";
@@ -26,7 +27,10 @@ export async function generateMetadata({ params }: Props) {
   const content = getContent(locale);
   const p = getProject(content, slug);
   if (!p) return { title: "Not found" };
-  return { title: p.title, description: p.summary };
+  return buildMetadata(locale, `/projects/${slug}`, {
+    title: p.title,
+    description: p.summary,
+  });
 }
 
 export default async function ProjectDetailPage({ params }: Props) {

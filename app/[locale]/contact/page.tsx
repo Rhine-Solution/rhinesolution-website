@@ -1,15 +1,21 @@
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import SocialIcon from "@/components/SocialIcon";
+import ContactForm from "@/components/ContactForm";
 import { getContent } from "@/lib/i18n";
 import { getCompanySocials, socialLabel } from "@/lib/socials";
+import { buildMetadata } from "@/lib/seo";
 import Link from "next/link";
 
 type Props = { params: Promise<{ locale: string }> };
 
 export async function generateMetadata({ params }: Props) {
   const { locale } = await params;
-  return { title: getContent(locale).contact.eyebrow };
+  const c = getContent(locale);
+  return buildMetadata(locale, "/contact", {
+    title: c.contact.title,
+    description: c.contact.body,
+  });
 }
 
 export default async function ContactPage({ params }: Props) {
@@ -27,6 +33,11 @@ export default async function ContactPage({ params }: Props) {
           <h1>{c.title}</h1>
           <p className="contact-body">{c.body}</p>
         </header>
+
+        <section className="contact-form-section">
+          <h2>{c.form_title}</h2>
+          <ContactForm locale={locale} labels={c.form} />
+        </section>
 
         <nav className="contact-socials" aria-label={content.footer.social_heading}>
           {socials.map((s) => (

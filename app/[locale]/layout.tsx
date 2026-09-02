@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import "../../styles/globals.css";
 import { getContent } from "@/lib/i18n";
+import MobileHeader from "@/components/MobileHeader";
+import MobileFooter from "@/components/MobileFooter";
 
 type Props = {
   children: React.ReactNode;
@@ -19,6 +21,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export default function LocaleLayout({ children }: { children: React.ReactNode }) {
-  return <>{children}</>;
+export default async function LocaleLayout({ children, params }: Props) {
+  const { locale } = await params;
+  return (
+    <>
+      <MobileHeader locale={locale} />
+      {children}
+      <MobileFooter locale={locale} />
+    </>
+  );
 }

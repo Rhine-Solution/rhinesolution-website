@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import SocialIcon from "@/components/SocialIcon";
 import { getContent, getMember } from "@/lib/i18n";
 import { getCompanySocials, socialLabel } from "@/lib/socials";
+import { buildMetadata } from "@/lib/seo";
 import { notFound } from "next/navigation";
 
 type Props = { params: Promise<{ locale: string; member: string }> };
@@ -21,7 +22,10 @@ export async function generateMetadata({ params }: Props) {
   const content = getContent(locale);
   const p = getMember(content, member);
   if (!p) return { title: "Not found" };
-  return { title: `${p.name} — ${p.role}` };
+  return buildMetadata(locale, `/team/${member}`, {
+    title: `${p.name} — ${p.role}`,
+    description: p.tagline,
+  });
 }
 
 export default async function MemberPage({ params }: Props) {

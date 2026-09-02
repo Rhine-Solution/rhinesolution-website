@@ -217,6 +217,16 @@
     "eyebrow": "Contact",
     "title": "Start een gesprek.",
     "body": "Twee bouwers achter één merk. Je bereikt altijd een bouwer, geen verkoper.",
+    "form_title": "Stuur ons een bericht",
+    "form": {
+      "name": "Jouw naam",
+      "email": "E-mail",
+      "message": "Bericht",
+      "submit": "Verstuur bericht",
+      "submitting": "Versturen...",
+      "success": "Bericht verstuurd. We reageren binnen 1-2 werkdagen.",
+      "error_generic": "Er ging iets mis. Probeer opnieuw of mail info@rhinesolution.com."
+    },
     "alt_title": "Of duik meteen het werk in.",
     "alt_text": "Elk geleverd project staat op deze site. Begin bij de showcase.",
     "alt_link": "Bekijk projecten"
