@@ -563,6 +563,32 @@ p { margin-bottom: var(--space-3); color: var(--text-secondary); }
   color: var(--text-muted);
 }
 
+.music-footer-socials {
+  grid-column: 2;
+  justify-self: center;
+  display: flex;
+  gap: var(--space-2);
+}
+
+.music-footer-socials a {
+  width: 34px; height: 34px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-pill);
+  background: var(--bg-elevated);
+  color: var(--text-muted);
+  border: 1px solid var(--border-subtle);
+  font-size: 0.8rem;
+  text-decoration: none;
+  transition: color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.music-footer-socials a:hover {
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
 .music-footer-bottom {
   max-width: 1200px;
   margin-inline: auto;
@@ -735,6 +761,10 @@ p { margin-bottom: var(--space-3); color: var(--text-secondary); }
   .controls { flex-direction: column; align-items: stretch; }
   .controls input, .controls select { width: 100%; min-width: 0; }
   .music-card-favorite { opacity: 1; transform: translateY(0); }
+  .music-footer-main { grid-template-columns: 1fr; justify-items: center; }
+  .music-footer-back { grid-column: auto; justify-self: center; }
+  .music-footer-socials { grid-column: auto; justify-self: center; }
+  .music-footer-meta { grid-column: auto; justify-self: center; }
 }
 
 @media (prefers-reduced-motion: reduce) {
