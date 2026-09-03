@@ -648,7 +648,7 @@ p { margin-bottom: var(--space-3); }
   margin-top: var(--space-5);
   flex-wrap: wrap;
 }
-.hero-section .btn-primary { background: #2c6bff; border-color: #2c6bff; }
+.hero-section .btn-primary { background: #2c6bff; border-color: #2c6bff; color: #f2f5ff; }
 .hero-section .btn-primary:hover { filter: brightness(1.12); }
 .hero-section .btn-secondary { color: #e6ecff; border-color: rgba(126, 167, 255, 0.5); }
 .hero-section .btn-secondary:hover { background: rgba(126, 167, 255, 0.14); border-color: rgba(126, 167, 255, 0.7); }

@@ -37,7 +37,7 @@ export function buildMetadata(
       description: opts.description,
       images: [
         {
-          url: "/og-image.svg",
+          url: "/og-image.png",
           width: 1200,
           height: 630,
           alt: "Rhine Solution",
@@ -48,7 +48,7 @@ export function buildMetadata(
       card: "summary_large_image",
       title: opts.title,
       description: opts.description,
-      images: ["/og-image.svg"],
+      images: ["/og-image.png"],
     },
   };
 }

@@ -10,7 +10,7 @@ import { getCompanySocials } from "@/lib/socials";
 import { getContent } from "@/lib/i18n";
 
 type Social = { name: string; href: string };
-type NavKey = "home" | "team" | "projects" | "about" | "news" | "contact";
+type NavKey = "home" | "team" | "projects" | "about" | "news" | "dfir" | "contact";
 
 type MobileHeaderProps = {
   locale: string;
@@ -44,6 +44,7 @@ export default function MobileHeader({
     if (pathname.startsWith(`/${locale}/about`)) return "about";
     if (pathname.startsWith(`/${locale}/news`)) return "news";
     if (pathname.startsWith(`/${locale}/contact`)) return "contact";
+    if (pathname.startsWith(`/dfir`)) return "dfir";
     return "home";
   })();
 
@@ -87,6 +88,7 @@ export default function MobileHeader({
 
   const linkFor = (key: NavKey) => {
     if (key === "home") return `/${locale}`;
+    if (key === "dfir") return "/dfir";
     return `/${locale}/${key}`;
   };
 
@@ -159,6 +161,13 @@ export default function MobileHeader({
               aria-current={current === "news" ? "page" : undefined}
             >
               {labels.news}
+            </Link>
+            <Link
+              href={linkFor("dfir")}
+              onClick={() => setOpen(false)}
+              aria-current={current === "dfir" ? "page" : undefined}
+            >
+              {labels.dfir}
             </Link>
             <Link
               href={linkFor("contact")}

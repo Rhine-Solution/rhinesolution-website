@@ -4,6 +4,7 @@ import SceneManager from "@/components/scene/SceneManager";
 import SmoothScrollProvider from "@/components/SmoothScrollProvider";
 import CustomCursor from "@/components/CustomCursor";
 import IntroLoader from "@/components/IntroLoader";
+import JsonLd, { siteJsonLd } from "@/components/JsonLd";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
@@ -60,7 +61,7 @@ export const metadata: Metadata = {
       "Custom web development, portfolios, and digital experiences.",
     images: [
       {
-        url: "/og-image.svg",
+        url: "/og-image.png",
         width: 1200,
         height: 630,
         alt: "Rhine Solution",
@@ -71,7 +72,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Rhine Solution",
     description: "Custom web development, portfolios, and digital experiences.",
-    images: ["/og-image.svg"],
+    images: ["/og-image.png"],
   },
   robots: {
     index: true,
@@ -93,6 +94,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={`${inter.variable} ${cormorant.variable}`} suppressHydrationWarning>
       <body>
+        <JsonLd data={siteJsonLd()} />
         <SceneManager />
         <SmoothScrollProvider />
         <CustomCursor />

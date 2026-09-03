@@ -10,6 +10,7 @@ type NavLabels = {
   projects: string;
   about: string;
   news: string;
+  dfir: string;
   contact: string;
   back: string;
 };
@@ -62,7 +63,7 @@ export default function Footer({
 
         {/* Column 2 — Navigate */}
         <nav className="footer-col" aria-label={footerColumns.nav_heading}>
-          <h4 className="footer-col-heading">{footerColumns.nav_heading}</h4>
+          <h3 className="footer-col-heading">{footerColumns.nav_heading}</h3>
           <ul className="footer-col-list">
             <li>
               <Link href={`/${locale}`}>{navLabels.home}</Link>
@@ -80,6 +81,9 @@ export default function Footer({
               <Link href={`/${locale}/news`}>{navLabels.news}</Link>
             </li>
             <li>
+              <Link href="/dfir">{navLabels.dfir}</Link>
+            </li>
+            <li>
               <Link href={`/${locale}/contact`}>{navLabels.contact}</Link>
             </li>
           </ul>
@@ -87,7 +91,7 @@ export default function Footer({
 
         {/* Column 3 — Connect */}
         <div className="footer-col">
-          <h4 className="footer-col-heading">{footerColumns.connect_heading}</h4>
+          <h3 className="footer-col-heading">{footerColumns.connect_heading}</h3>
           <ul className="footer-col-list">
             <li>
               <a href="mailto:info@rhinesolution.com">info@rhinesolution.com</a>
@@ -124,7 +128,7 @@ export default function Footer({
 
         {/* Column 4 — Legal + back-to-top */}
         <div className="footer-col footer-col-legal">
-          <h4 className="footer-col-heading">{footerColumns.legal_heading}</h4>
+          <h3 className="footer-col-heading">{footerColumns.legal_heading}</h3>
           <ul className="footer-col-list">
             <li>
               <Link href={`/${locale}/privacy`}>{footerColumns.privacy}</Link>

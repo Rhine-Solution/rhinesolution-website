@@ -4,14 +4,11 @@ import { verifyTurnstile } from "@/lib/turnstile";
 
 export const runtime = "nodejs";
 
-// Resend's free tier: until rhinesolution.com is verified at
-// https://resend.com/domains, the API can only send TO the account owner's
-// email and FROM Resend's sandbox sender. Once verified, switch:
-//   RECIPIENT = "info@rhinesolution.com"
-//   FROM_ADDRESS = "noreply@rhinesolution.com"
-const RECIPIENT = "admin@rhinesolution.com";
+// Resend domain rhinesolution.com verified — the API can now send FROM
+// noreply@rhinesolution.com TO any recipient.
+const RECIPIENT = "info@rhinesolution.com";
 const FROM_NAME = "Rhine Solution";
-const FROM_ADDRESS = "onboarding@resend.dev";
+const FROM_ADDRESS = "noreply@rhinesolution.com";
 
 type ContactPayload = {
   name?: string;

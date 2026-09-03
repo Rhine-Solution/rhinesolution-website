@@ -4,8 +4,8 @@ import { FiChevronDown } from "react-icons/fi";
 type NavProps = {
   locale: string;
   brand: string;
-  labels: { home: string; team: string; projects: string; about: string; news: string; contact: string };
-  current: "home" | "team" | "projects" | "about" | "news" | "contact";
+  labels: { home: string; team: string; projects: string; about: string; news: string; dfir: string; contact: string };
+  current: "home" | "team" | "projects" | "about" | "news" | "dfir" | "contact";
 };
 
 export default function Nav({ locale, brand, labels, current }: NavProps) {
@@ -41,6 +41,11 @@ export default function Nav({ locale, brand, labels, current }: NavProps) {
             <li>
               <Link href={`/${locale}/news`} aria-current={current === "news" ? "page" : undefined}>
                 {labels.news}
+              </Link>
+            </li>
+            <li>
+              <Link href="/dfir" aria-current={current === "dfir" ? "page" : undefined}>
+                {labels.dfir}
               </Link>
             </li>
             <li>

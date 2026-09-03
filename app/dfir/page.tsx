@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import JsonLd, { breadcrumbJsonLd } from "@/components/JsonLd";
 import { getContent, defaultLocale } from "@/lib/i18n";
 import { getCompanySocials } from "@/lib/socials";
 
@@ -28,7 +29,13 @@ export default function DfirIndexPage() {
   const content = getContent(defaultLocale);
   return (
     <>
-      <Nav locale="en" brand={content.brand.name} labels={content.nav} current="projects" />
+      <Nav locale="en" brand={content.brand.name} labels={content.nav} current="dfir" />
+      <JsonLd
+        data={breadcrumbJsonLd("en", [
+          { name: "Home", path: "/en" },
+          { name: "DFIR Cases", path: "/dfir" },
+        ])}
+      />
       <main id="main" className="container page">
         <header className="page-head">
           <p className="section-eyebrow">ZeroMeister · Digital Forensics</p>
