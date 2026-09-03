@@ -21,6 +21,12 @@
     "contact": "Contact",
     "back": "Terug naar Rhine Solution"
   },
+  "gate": {
+    "eyebrow": "Voordat je binnenkomt",
+    "title": "Snelle menscontrole",
+    "body": "Verifieer dat je een mens bent voordat je de site betreedt. Zo houden we onze site vrij van geautomatiseerd verkeer.",
+    "verified": "Geverifieerd. Welkom bij Rhine Solution."
+  },
   "home": {
     "hero_line_1": "Bouw met",
     "hero_line_2": "Rhine Solution",

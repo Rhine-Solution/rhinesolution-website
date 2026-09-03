@@ -21,6 +21,12 @@
     "contact": "Contact",
     "back": "Back to Rhine Solution"
   },
+  "gate": {
+    "eyebrow": "Before you enter",
+    "title": "Quick human check",
+    "body": "Please verify you're human before entering the site. This keeps our site free of automated traffic.",
+    "verified": "Verified. Welcome to Rhine Solution."
+  },
   "home": {
     "hero_line_1": "Build with",
     "hero_line_2": "Rhine Solution",

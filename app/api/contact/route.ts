@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
+import { verifyTurnstile } from "@/lib/turnstile";
 
 export const runtime = "nodejs";
 
@@ -17,6 +18,7 @@ type ContactPayload = {
   email?: string;
   message?: string;
   locale?: string;
+  turnstile?: string;
 };
 
 function isEmail(value: string): boolean {
@@ -49,6 +51,16 @@ export async function POST(req: Request) {
     return NextResponse.json(
       { ok: false, error: "Please enter a valid email address" },
       { status: 400 }
+    );
+  }
+
+  const turnstileToken = (body.turnstile ?? "").trim().slice(0, 4000);
+  const remoteIp = req.headers.get("x-forwarded-for")?.split(",")[0]?.trim();
+  const { ok: human } = await verifyTurnstile(turnstileToken, remoteIp);
+  if (!human) {
+    return NextResponse.json(
+      { ok: false, error: "Verification failed. Please try again." },
+      { status: 403 }
     );
   }
 

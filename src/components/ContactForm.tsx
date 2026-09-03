@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
+import Turnstile from "./Turnstile";
 
 type Status = "idle" | "submitting" | "success" | "error";
 
@@ -23,17 +24,26 @@ export default function ContactForm({ locale, labels }: ContactFormProps) {
   const [message, setMessage] = useState("");
   const [status, setStatus] = useState<Status>("idle");
   const [errorMsg, setErrorMsg] = useState<string>("");
+  const [turnstileToken, setTurnstileToken] = useState<string>("");
+
+  const turnstileConfigured =
+    typeof process !== "undefined" && Boolean(process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY);
 
   async function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     if (status === "submitting") return;
+    if (turnstileConfigured && !turnstileToken) {
+      setErrorMsg("Please complete the verification below.");
+      setStatus("error");
+      return;
+    }
     setStatus("submitting");
     setErrorMsg("");
     try {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "content-type": "application/json" },
-        body: JSON.stringify({ name, email, message, locale }),
+        body: JSON.stringify({ name, email, message, locale, turnstile: turnstileToken }),
       });
       const data: { ok: boolean; error?: string } = await res.json();
       if (data.ok) {
@@ -41,6 +51,7 @@ export default function ContactForm({ locale, labels }: ContactFormProps) {
         setName("");
         setEmail("");
         setMessage("");
+        setTurnstileToken("");
       } else {
         setErrorMsg(data.error || labels.error_generic);
         setStatus("error");
@@ -122,6 +133,15 @@ export default function ContactForm({ locale, labels }: ContactFormProps) {
         <p className="contact-form-error" role="alert">
           {errorMsg}
         </p>
+      )}
+      {turnstileConfigured && (
+        <div className="contact-form-turnstile">
+          <Turnstile
+            onToken={(t) => setTurnstileToken(t)}
+            onExpired={() => setTurnstileToken("")}
+            theme="dark"
+          />
+        </div>
       )}
       <button
         type="submit"

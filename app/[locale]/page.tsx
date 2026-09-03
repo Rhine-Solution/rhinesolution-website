@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import StatementBand from "@/components/StatementBand";
 import SectionDivider from "@/components/SectionDivider";
 import ClosingCta from "@/components/ClosingCta";
+import EntryGate from "@/components/EntryGate";
 import { getContent, getProjects } from "@/lib/i18n";
 import { getCompanySocials } from "@/lib/socials";
 import { buildMetadata } from "@/lib/seo";
@@ -32,6 +33,13 @@ export default async function HomePage({ params }: Props) {
 
   return (
     <>
+      <EntryGate
+        locale={locale}
+        eyebrow={content.gate.eyebrow}
+        title={content.gate.title}
+        body={content.gate.body}
+        verifiedLabel={content.gate.verified}
+      />
       <Nav locale={locale} brand={content.brand.name} labels={content.nav} current="home" />
       <main id="main">
         <section className="hero-section">
