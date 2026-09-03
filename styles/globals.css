@@ -1470,3 +1470,175 @@ p { margin-bottom: var(--space-3); }
 }
 .footer-bottom { color: rgba(226, 234, 255, 0.78); }
 .footer-brand { color: var(--color-ink); }
+
+/* ============================================================
+   LEGAL PAGES — Privacy + Colophon
+   Shared base + page-specific overrides below.
+   ============================================================ */
+.legal-page,
+.colophon-page {
+  max-width: 760px;
+}
+.legal-page-head,
+.colophon-page-head {
+  padding-top: var(--space-6);
+  padding-bottom: var(--space-6);
+  border-bottom: 1px solid rgba(126, 167, 255, 0.16);
+  margin-bottom: var(--space-6);
+}
+.legal-page-eyebrow,
+.colophon-page-eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #7ea7ff;
+  margin-bottom: var(--space-3);
+}
+.legal-page-title,
+.colophon-page-title {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-size: clamp(2rem, 4.5vw, 3rem);
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  color: var(--color-ink);
+  margin-bottom: var(--space-4);
+}
+.legal-page-intro,
+.colophon-page-intro {
+  color: rgba(226, 234, 255, 0.85);
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin-bottom: var(--space-4);
+}
+.legal-page-updated {
+  font-size: 0.85rem;
+  color: rgba(226, 234, 255, 0.6);
+  margin: 0;
+}
+.legal-page-updated span { color: rgba(226, 234, 255, 0.5); margin-right: 0.4rem; }
+.legal-page-updated time { color: #7ea7ff; font-variant-numeric: tabular-nums; }
+
+/* Privacy body — numbered sections, calm density */
+.legal-page-body { display: flex; flex-direction: column; gap: var(--space-5); }
+.legal-page-section {
+  padding: var(--space-4) 0;
+  border-bottom: 1px solid rgba(126, 167, 255, 0.08);
+}
+.legal-page-section:last-child { border-bottom: none; }
+.legal-page-section h2 {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-3);
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-size: clamp(1.3rem, 2.4vw, 1.6rem);
+  color: var(--color-ink);
+  margin-bottom: var(--space-3);
+  letter-spacing: -0.005em;
+}
+.legal-page-num {
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: #7ea7ff;
+  flex-shrink: 0;
+  min-width: 2ch;
+}
+.legal-page-section p {
+  color: rgba(226, 234, 255, 0.82);
+  line-height: 1.65;
+  margin: 0;
+}
+.legal-page-subhead {
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(226, 234, 255, 0.7);
+  margin-top: var(--space-4);
+  margin-bottom: var(--space-2);
+}
+.legal-page-contact { padding-bottom: var(--space-2); }
+.legal-page-emails {
+  list-style: none;
+  padding: 0;
+  margin: var(--space-3) 0 var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.legal-page-emails a {
+  color: #7ea7ff;
+  text-decoration: none;
+  font-size: 1rem;
+  font-variant-numeric: tabular-nums;
+}
+.legal-page-emails a:hover { text-decoration: underline; }
+.legal-page-link {
+  color: #7ea7ff;
+  text-decoration: none;
+  font-size: 1rem;
+}
+.legal-page-link:hover { text-decoration: underline; }
+
+/* Colophon body — editorial numbered lists, kerkstra-style hairline rules */
+.colophon-page-body { display: flex; flex-direction: column; gap: var(--space-5); }
+.colophon-page-section {
+  padding: var(--space-4) 0;
+  border-top: 1px solid rgba(126, 167, 255, 0.16);
+}
+.colophon-page-section:first-child { border-top: none; padding-top: 0; }
+.colophon-section-heading {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-3);
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-size: clamp(1.4rem, 2.6vw, 1.8rem);
+  color: var(--color-ink);
+  margin-bottom: var(--space-4);
+  letter-spacing: -0.005em;
+}
+.colophon-section-num {
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  color: #7ea7ff;
+  flex-shrink: 0;
+  min-width: 2.5ch;
+  letter-spacing: 0.18em;
+}
+.colophon-section-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+.colophon-section-list li {
+  position: relative;
+  padding-left: var(--space-4);
+  color: rgba(226, 234, 255, 0.85);
+  line-height: 1.6;
+}
+.colophon-section-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.85em;
+  width: 12px;
+  height: 1px;
+  background: rgba(126, 167, 255, 0.55);
+}
+
+@media (max-width: 640px) {
+  .legal-page-head, .colophon-page-head { padding-top: var(--space-4); padding-bottom: var(--space-4); }
+  .legal-page-section h2,
+  .colophon-section-heading { flex-wrap: wrap; }
+}

@@ -261,5 +261,118 @@
     "social": "Find me online",
     "featured_work": "Featured work",
     "featured_work_text": "Selected projects built and maintained by the Rhine Solution team."
+  },
+  "privacy": {
+    "eyebrow": "Privacy",
+    "title": "Your data, our responsibility.",
+    "intro": "This is the shortest privacy policy we've ever read on a website — and we mean that as a compliment to ourselves. Rhine Solution collects the absolute minimum required to do our job: respond to you when you reach out. No analytics, no advertising, no third-party tracking, no cookies of any kind. Just the contact form, run by a single email service that we control end-to-end.",
+    "last_updated": "Last updated",
+    "who_we_are": {
+      "heading": "Who we are",
+      "body": "Rhine Solution is a two-person studio. We are the data controller for any personal information you send us through this site. You can reach us at the addresses listed at the bottom of this page."
+    },
+    "what_we_collect": {
+      "heading": "What we collect",
+      "body": "Only what you type into the contact form: your name, your email address, the message you write, and the language you used (English or Dutch). Nothing else. We do not collect IP addresses, browser fingerprints, location data, device identifiers, or any analytics. We do not place cookies. We do not run third-party scripts."
+    },
+    "why_we_collect": {
+      "heading": "Why we collect it",
+      "body": "To reply to you. That's it. The legal basis under GDPR Article 6(1)(b) is that processing is necessary to respond to your enquiry — or, if you haven't engaged us yet, Article 6(1)(f) legitimate interest in operating a basic business contact channel. We do not market to you, build profiles on you, or share your information with anyone outside the chain needed to send you our reply."
+    },
+    "who_we_share_with": {
+      "heading": "Who we share it with",
+      "body": "One service: Resend (resend.com), the email infrastructure that delivers your message to our inbox. Resend acts as our data processor under a standard Data Processing Agreement. They store the message body and metadata on servers in the EU and the United States; transfers to the US are covered by the EU–US Data Privacy Framework, which Resend is certified under. No other third parties receive your data. We do not sell, rent, or trade it."
+    },
+    "how_long": {
+      "heading": "How long we keep it",
+      "body": "Your message stays in our Resend inbox and our internal email client for as long as the conversation is active. Once the project is delivered (or we agree it isn't a fit), we archive it for up to 24 months in case you come back, then delete it from active storage. You can ask us to delete it sooner — see below."
+    },
+    "your_rights": {
+      "heading": "Your rights",
+      "body": "Under GDPR you have the right to access, rectify, erase, restrict, port, and object to the processing of any personal data we hold about you. You also have the right to lodge a complaint with the Dutch Data Protection Authority (Autoriteit Persoonsgegevens). Exercising any of these is free and we respond within one month. Email us at the address below to start."
+    },
+    "changes": {
+      "heading": "Changes to this policy",
+      "body": "If we change anything material — a new service, a different retention rule — we'll update the date below and explain what changed in plain language. The version you read now is the only version that matters; there are no buried archive pages of older policies."
+    },
+    "contact_label": "Privacy contact",
+    "contact_intro": "For any privacy question — to access, correct, or delete your data — write to us:",
+    "complaint_label": "Lodge a complaint",
+    "complaint_body": "If you'd rather raise your concern with the regulator, you can contact the Dutch Data Protection Authority (Autoriteit Persoonsgegevens) at autoriteitpersoonsgegevens.nl."
+  },
+  "colophon": {
+    "eyebrow": "Colophon",
+    "title": "How this site is made.",
+    "intro": "A colophon is a publisher's note — traditionally printed on the inside cover of a book to credit the people who made it. On the web, it lists the tools, decisions, and people behind a site. This one is honest about what works, what doesn't, and where the seams show.",
+    "sections": {
+      "principles": {
+        "heading": "Principles",
+        "items": [
+          "Calm by default. The site is always dark navy + WebGL; no light mode, no theme toggle, no decision for the visitor to make.",
+          "Two builders, one source. Every line of code, every word of copy, every asset passes through both of us before it ships.",
+          "Bilingual from day one. English and Dutch share one component tree and one content layer; nothing is translated twice.",
+          "Owned infrastructure. The site, the agents, the models, the notes — all run on our own hardware, not rented SaaS.",
+          "Shipped, not staged. Every project linked from this site is live in production. There are no mockups."
+        ]
+      },
+      "stack": {
+        "heading": "Stack",
+        "items": [
+          "Next.js 15 (App Router) for the framework — Server Components by default, 'use client' only where state or event handlers need it.",
+          "TypeScript for type safety across the codebase.",
+          "Pure CSS with custom properties — no Tailwind, no CSS-in-JS. The design tokens are a single file.",
+          "Three.js for the WebGL background — four scroll-driven scenes (Drift, Lines, Roads, Glow) crossfaded by Theatre.js keyframes.",
+          "Lenis for smooth momentum scrolling.",
+          "Resend for transactional email (the contact form).",
+          "Vercel for hosting and continuous deployment — every push to main deploys automatically.",
+          "Cloudflare for DNS and edge."
+        ]
+      },
+      "typefaces": {
+        "heading": "Typefaces",
+        "items": [
+          "Cormorant Garamond — the serif. Used for display, headings, and the moments where the page wants to feel like a book. Loaded from Google Fonts.",
+          "Inter — the sans. Used for body, UI chrome, and dense metadata where readability matters more than character. Also from Google Fonts."
+        ]
+      },
+      "how_we_work": {
+        "heading": "How we work",
+        "items": [
+          "We write proposals in plain language before we write a single line of code.",
+          "We commit in small, reviewable steps. Every commit explains why, not just what.",
+          "We document decisions in the Brain — our internal Obsidian vault — so the reasoning survives the people who made it.",
+          "We close every project with a written handoff: what was built, how to maintain it, where the seams are."
+        ]
+      },
+      "tools": {
+        "heading": "Tools we reach for",
+        "items": [
+          "opencode-go (this agent) for code work — same session, multiple model providers as fallbacks.",
+          "Obsidian for the Brain.",
+          "Git on a Mac Mini for the local repo and the Obsidian vault.",
+          "Discord for the FCC bot — our agent's interface to the rest of the world.",
+          "Linear Lite for client task tracking. We don't love it. We use it anyway."
+        ]
+      },
+      "limits": {
+        "heading": "Where the seams show",
+        "items": [
+          "Three.js is heavy on mobile. We've kept it but a low-end phone on a flaky connection will feel it.",
+          "The WebGL crossfade has visible seams on Safari < 17. We could mask them with more shader work; for now, we accept the cost.",
+          "The contact form sends from a Resend sandbox address until we verify rhinesolution.com on their domain list — an open task.",
+          "There's no analytics on this site. We can't tell you which pages people read most. We'd rather not know than compromise the privacy promise above."
+        ]
+      },
+      "credits": {
+        "heading": "Credits",
+        "items": [
+          "Design, code, copy, and infrastructure: RAGNAROK (CEO) and ZeroMeister (CTO).",
+          "Brand assets: derived from a hand-drawn mark that's been with us since the school project that started Rhine Solution.",
+          "Hosting: Vercel (Frankfurt region, EU).",
+          "DNS: Cloudflare.",
+          "Email: Resend (EU + US, DPF-certified)."
+        ]
+      }
+    }
   }
 }

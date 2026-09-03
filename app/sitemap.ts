@@ -10,6 +10,8 @@ const localePaths = [
   "/about",
   "/news",
   "/contact",
+  "/privacy",
+  "/colophon",
 ];
 
 function languages(path: string) {

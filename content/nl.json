@@ -267,5 +267,118 @@
     "social": "Vind mij online",
     "featured_work": "Uitgelicht werk",
     "featured_work_text": "Geselecteerde projecten, gebouwd en onderhouden door het Rhine Solution team."
+  },
+  "privacy": {
+    "eyebrow": "Privacy",
+    "title": "Jouw data, onze verantwoordelijkheid.",
+    "intro": "Dit is het kortste privacybeleid dat we ooit op een website zijn tegengekomen — en dat bedoelen we als compliment aan onszelf. Rhine Solution verzamelt het absolute minimum dat nodig is om ons werk te doen: reageren wanneer jij contact opneemt. Geen analytics, geen advertenties, geen tracking door derden, geen cookies. Alleen het contactformulier, gedraaid door één e-mailservice die we end-to-end beheren.",
+    "last_updated": "Laatst bijgewerkt",
+    "who_we_are": {
+      "heading": "Wie we zijn",
+      "body": "Rhine Solution is een studio met twee personen. Wij zijn de verwerkingsverantwoordelijke voor alle persoonsgegevens die je via deze site stuurt. Je kunt ons bereiken op de adressen onderaan deze pagina."
+    },
+    "what_we_collect": {
+      "heading": "Wat we verzamelen",
+      "body": "Alleen wat je in het contactformulier typt: je naam, je e-mailadres, je bericht, en de taal die je gebruikte (Nederlands of Engels). Niets meer. We verzamelen geen IP-adressen, browser-fingerprinting, locatiegegevens, apparaat-identificatoren of analytics. We plaatsen geen cookies. We draaien geen scripts van derden."
+    },
+    "why_we_collect": {
+      "heading": "Waarom we het verzamelen",
+      "body": "Om je te antwoorden. Dat is alles. De rechtsgrond onder AVG artikel 6(1)(b) is dat verwerking noodzakelijk is om op je vraag te reageren — of, als je nog niet met ons in zee bent, artikel 6(1)(f) gerechtvaardigd belang bij het exploiteren van een basiscontactkanaal. We sturen je geen marketing, bouwen geen profielen, en delen je gegevens met niemand buiten de keten die nodig is om ons antwoord te bezorgen."
+    },
+    "who_we_share_with": {
+      "heading": "Met wie we het delen",
+      "body": "Eén dienst: Resend (resend.com), de e-mailinfrastructuur die je bericht bij ons in de inbox bezorgt. Resend treedt op als onze verwerker onder een standaard verwerkersovereenkomst. Zij slaan de berichttekst en metadata op servers in de EU en de Verenigde Staten; doorgifte naar de VS valt onder het EU–VS Data Privacy Framework, waar Resend onder gecertificeerd is. Geen andere derden ontvangen je gegevens. We verkopen, verhuren of verhandelen ze niet."
+    },
+    "how_long": {
+      "heading": "Hoe lang we het bewaren",
+      "body": "Je bericht blijft in onze Resend-inbox en onze interne e-mailcliënt staan zolang het gesprek loopt. Zodra het project is opgeleverd (of we samen besluiten dat het niet past), archiveren we het tot 24 maanden voor het geval je terugkomt, daarna verwijderen we het uit de actieve opslag. Je kunt ons vragen het eerder te verwijderen — zie hieronder."
+    },
+    "your_rights": {
+      "heading": "Jouw rechten",
+      "body": "Onder de AVG heb je recht op inzage, rectificatie, wissen, beperking, overdraagbaarheid en bezwaar tegen de verwerking van persoonsgegevens die we over je bewaren. Je hebt ook het recht een klacht in te dienen bij de Autoriteit Persoonsgegevens. Het uitoefenen van deze rechten is gratis en we reageren binnen een maand. Mail ons op het onderstaande adres om te starten."
+    },
+    "changes": {
+      "heading": "Wijzigingen in dit beleid",
+      "body": "Als we iets materieels veranderen — een nieuwe dienst, een andere bewaartermijn — werken we de datum hieronder bij en leggen we in heldere taal uit wat er is gewijzigd. De versie die je nu leest is de enige die ertoe doet; er zijn geen verborgen archiefpagina's van oudere beleidsversies."
+    },
+    "contact_label": "Privacycontact",
+    "contact_intro": "Voor elke privacyvraag — om je gegevens in te zien, te corrigeren of te verwijderen — mail ons:",
+    "complaint_label": "Klacht indienen",
+    "complaint_body": "Als je je liever bij de toezichthouder meldt, kun je contact opnemen met de Autoriteit Persoonsgegevens via autoriteitpersoonsgegevens.nl."
+  },
+  "colophon": {
+    "eyebrow": "Colofon",
+    "title": "Hoe deze site is gemaakt.",
+    "intro": "Een colofon is een colofon — van oorsprong gedrukt op de binnenkant van het omslag van een boek om de makers te eren. Op het web lijst het de tools, keuzes en mensen achter een site. Deze is eerlijk over wat werkt, wat niet werkt, en waar de naden zichtbaar zijn.",
+    "sections": {
+      "principles": {
+        "heading": "Principes",
+        "items": [
+          "Kalm by default. De site is altijd donker marine + WebGL; geen light mode, geen themaschakelaar, geen beslissing voor de bezoeker.",
+          "Twee bouwers, één bron. Elke regel code, elk woord copy, elk asset gaat door ons beiden voordat het live gaat.",
+          "Tweetalig vanaf dag één. Engels en Nederlands delen dezelfde component-tree en content-laag; niets wordt twee keer vertaald.",
+          "Eigen infrastructuur. De site, de agents, de modellen, de notities — alles draait op onze eigen hardware, niet op gehuurde SaaS.",
+          "Live, niet geënsceneerd. Elk project dat op deze site staat is in productie. Er zijn geen mockups."
+        ]
+      },
+      "stack": {
+        "heading": "Techniek",
+        "items": [
+          "Next.js 15 (App Router) als framework — Server Components by default, 'use client' alleen waar state of event handlers dat vereisen.",
+          "TypeScript voor typeveiligheid door de hele codebase.",
+          "Pure CSS met custom properties — geen Tailwind, geen CSS-in-JS. De designtokens zitten in één bestand.",
+          "Three.js voor de WebGL-achtergrond — vier scroll-gedreven scenes (Drift, Lines, Roads, Glow) met smoothstep-crossfade via Theatre.js-keyframes.",
+          "Lenis voor smooth momentum-scrolling.",
+          "Resend voor transactionele e-mail (het contactformulier).",
+          "Vercel voor hosting en continue deployment — elke push naar main deployt automatisch.",
+          "Cloudflare voor DNS en edge."
+        ]
+      },
+      "typefaces": {
+        "heading": "Lettertypes",
+        "items": [
+          "Cormorant Garamond — de serif. Gebruikt voor display, koppen, en de momenten waar de site als een boek wil voelen. Via Google Fonts.",
+          "Inter — de sans. Gebruikt voor body, UI-chrome en dichte metadata waar leesbaarheid belangrijker is dan karakter. Ook via Google Fonts."
+        ]
+      },
+      "how_we_work": {
+        "heading": "Hoe we werken",
+        "items": [
+          "We schrijven voorstellen in gewone taal voordat we ook maar één regel code schrijven.",
+          "We committen in kleine, reviewbare stappen. Elke commit legt uit waarom, niet alleen wat.",
+          "We documenteren beslissingen in de Brain — onze interne Obsidian-vault — zodat de redenatie overleeft de mensen die haar maakten.",
+          "We sluiten elk project af met een geschreven overdracht: wat er gebouwd is, hoe je het onderhoudt, waar de naden zitten."
+        ]
+      },
+      "tools": {
+        "heading": "Tools waar we naar grijpen",
+        "items": [
+          "opencode-go (deze agent) voor codewerk — dezelfde sessie, meerdere modelproviders als fallback.",
+          "Obsidian voor de Brain.",
+          "Git op een Mac Mini voor de lokale repo en de Obsidian-vault.",
+          "Discord voor de FCC-bot — de interface van onze agent naar de rest van de wereld.",
+          "Linear Lite voor klanttaken. We houden er niet van. We gebruiken het toch."
+        ]
+      },
+      "limits": {
+        "heading": "Waar de naden zichtbaar zijn",
+        "items": [
+          "Three.js is zwaar op mobiel. We houden het, maar een low-end telefoon op een slechte verbinding voelt het.",
+          "De WebGL-crossfade heeft zichtbare naden op Safari < 17. We zouden ze kunnen verbergen met meer shader-werk; voor nu accepteren we de kosten.",
+          "Het contactformulier verstuurt vanaf een Resend-sandboxadres totdat we rhinesolution.com op hun domeinlijst verifiëren — een open taak.",
+          "Er zit geen analytics op deze site. We kunnen niet vertellen welke pagina's het meest gelezen worden. Liever niet weten dan de privacybelofte hierboven schenden."
+        ]
+      },
+      "credits": {
+        "heading": "Credits",
+        "items": [
+          "Design, code, copy en infrastructuur: RAGNAROK (CEO) en ZeroMeister (CTO).",
+          "Brand-assets: afgeleid van een handgetekend merk dat bij ons is sinds het schoolproject waar Rhine Solution mee begon.",
+          "Hosting: Vercel (Frankfurt, EU).",
+          "DNS: Cloudflare.",
+          "E-mail: Resend (EU + VS, DPF-gecertificeerd)."
+        ]
+      }
+    }
   }
 }
