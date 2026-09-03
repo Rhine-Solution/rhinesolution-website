@@ -1,20 +1,15 @@
 import * as THREE from "three";
-import { palette, type RhineScene, type SceneObject } from "../types";
+import { palette, trapWeight, type RhineScene, type SceneObject } from "../types";
 
 /**
  * LinesScene — wireframe grid floor + vertical extruded lines.
- * Suggests "structured / architectural" — middle scroll band (0.20–0.50).
+ * Suggests "structured / architectural" — middle scroll band (0.18–0.55).
+ * trapWeight gives smoothstep edges so the crossfade feels organic.
  */
 export function createLinesScene(): RhineScene {
   return {
     name: "Lines",
-    weight: (p) => {
-      // ramp 0.20->0.30, plateau, fade 0.45->0.55
-      if (p < 0.18 || p > 0.55) return 0;
-      if (p < 0.30) return (p - 0.18) / 0.12;
-      if (p > 0.45) return 1 - (p - 0.45) / 0.10;
-      return 1;
-    },
+    weight: (p) => trapWeight(p, 0.18, 0.55, 0.12),
     build: (): SceneObject => {
       const group = new THREE.Group();
       group.name = "LinesScene";

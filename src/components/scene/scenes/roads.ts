@@ -1,20 +1,15 @@
 import * as THREE from "three";
-import { palette, type RhineScene, type SceneObject } from "../types";
+import { palette, trapWeight, type RhineScene, type SceneObject } from "../types";
 
 /**
  * RoadsScene — wireframe extruded "road" / building silhouettes.
  * Mirrors hubtown's roads reveal (HomeThird→HomeFourth).
- * Scroll band (0.50–0.78).
+ * Scroll band (0.50–0.80). trapWeight for smooth crossfade.
  */
 export function createRoadsScene(): RhineScene {
   return {
     name: "Roads",
-    weight: (p) => {
-      if (p < 0.48 || p > 0.80) return 0;
-      if (p < 0.58) return (p - 0.48) / 0.10;
-      if (p > 0.72) return 1 - (p - 0.72) / 0.08;
-      return 1;
-    },
+    weight: (p) => trapWeight(p, 0.50, 0.78, 0.10),
     build: (): SceneObject => {
       const group = new THREE.Group();
       group.name = "RoadsScene";

@@ -107,8 +107,18 @@ export default function SceneManager() {
       const dt = Math.min(clock.getDelta(), 0.05);
       const time = clock.elapsedTime;
 
-      // Smooth scroll lerp
-      scrollProgress += (scrollTarget - scrollProgress) * (reducedMotion ? 1 : 0.06);
+// Smooth scroll lerp
+      // Two-stage: body (0..0.7) = 0.05 (slightly slower than the original 0.06
+      // per user feedback on 2026-09-03 — start with 0.05 and tune), closing
+      // (0.7..1.0) decelerates to 0.025 so the WebGL "settles" as you reach the
+      // footer / closing CTA. The deceleration is what makes the page feel
+      // like it's ending, not just stopping.
+      const lerpFactor = reducedMotion
+        ? 1
+        : scrollProgress < 0.7
+          ? 0.05
+          : 0.025;
+      scrollProgress += (scrollTarget - scrollProgress) * lerpFactor;
       scrollProgressRef.current = scrollProgress;
 
       // Update each scene and modulate group visibility via scale/opacity

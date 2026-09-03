@@ -62,7 +62,23 @@
       }
     ],
     "featured_title": "Uitgelicht werk",
-    "featured_text": "Geselecteerde projecten, gebouwd en onderhouden door het Rhine Solution team."
+    "featured_text": "Geselecteerde projecten, gebouwd en onderhouden door het Rhine Solution team.",
+    "closing_cta": {
+      "eyebrow": "Volgende stap",
+      "title": "Een project in gedachten?",
+      "body": "Twee bouwers, één direct gesprek. We reageren binnen een dag — meestal sneller.",
+      "cta_label": "Start een gesprek",
+      "secondary_label": "Bekijk ons werk"
+    }
+  },
+  "footer_columns": {
+    "brand_tagline": "Maatwerk webontwikkeling, portfolio's en digitale ervaringen. Gebouwd in Nederland, opgeleverd wereldwijd.",
+    "nav_heading": "Navigatie",
+    "connect_heading": "Contact",
+    "legal_heading": "Juridisch",
+    "back_to_top": "Terug naar boven",
+    "privacy": "Privacy",
+    "colophon": "Colofon"
   },
   "team": {
     "title": "Ons team",
