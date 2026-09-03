@@ -1642,3 +1642,110 @@ p { margin-bottom: var(--space-3); }
   .legal-page-section h2,
   .colophon-section-heading { flex-wrap: wrap; }
 }
+
+/* ==== DFIR case-study page ==== */
+.dfir-hero {
+  border-left: 3px solid var(--color-accent);
+  padding-left: var(--space-4);
+  margin-bottom: var(--space-5);
+}
+.dfir-hero h1 { margin-bottom: var(--space-2); }
+.dfir-lead {
+  font-size: 1.1rem;
+  color: var(--color-text-muted);
+  max-width: 70ch;
+}
+.dfir-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2) var(--space-5);
+  margin-top: var(--space-3);
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+}
+.dfir-meta strong {
+  display: block;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-blue-soft);
+}
+.dfir-quote {
+  border-left: 3px solid var(--color-blue);
+  padding: var(--space-2) var(--space-4);
+  margin: var(--space-3) 0;
+  color: var(--color-ink);
+  font-style: italic;
+  font-size: 1.05rem;
+  max-width: 70ch;
+}
+.dfir-table-wrap {
+  overflow-x: auto;
+  margin-block: var(--space-3);
+}
+.dfir-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+  background: rgba(10, 18, 46, 0.5);
+}
+.dfir-table caption {
+  text-align: left;
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  padding: var(--space-2) 0;
+  font-family: var(--font-sans);
+}
+.dfir-table caption span { color: var(--color-blue-soft); }
+.dfir-table th {
+  text-align: left;
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-blue-soft);
+  padding: var(--space-2) var(--space-3);
+  border-bottom: 1px solid var(--color-border);
+  white-space: nowrap;
+}
+.dfir-table td {
+  padding: var(--space-2) var(--space-3);
+  border-bottom: 1px solid rgba(126, 167, 255, 0.1);
+  vertical-align: top;
+}
+.dfir-table tbody tr:last-child td { border-bottom: none; }
+.dfir-table tbody tr.is-strong td {
+  background: rgba(126, 167, 255, 0.08);
+  color: var(--color-ink);
+}
+.dfir-note {
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+  border-left: 2px solid var(--color-border);
+  padding-left: var(--space-3);
+}
+.dfir-finding {
+  margin-block: var(--space-4);
+  padding-left: var(--space-3);
+  border-left: 1px solid var(--color-border);
+}
+.dfir-finding h3 { margin-bottom: var(--space-1); }
+.dfir-finding-id {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  color: var(--color-blue-soft);
+  margin-right: var(--space-2);
+  letter-spacing: 0.04em;
+}
+.dfir-conclusion li {
+  margin-bottom: var(--space-2);
+  line-height: 1.6;
+}
+.dfir-cta {
+  display: flex;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+  margin-top: var(--space-6);
+  padding-top: var(--space-5);
+  border-top: 1px solid var(--color-border);
+}
