@@ -5,6 +5,7 @@ import { getContent, getMember } from "@/lib/i18n";
 import { getCompanySocials, socialLabel } from "@/lib/socials";
 import { buildMetadata } from "@/lib/seo";
 import { notFound } from "next/navigation";
+import Link from "next/link";
 
 type Props = { params: Promise<{ locale: string; member: string }> };
 
@@ -66,7 +67,29 @@ export default async function MemberPage({ params }: Props) {
         </section>
         <section style={{ marginTop: "var(--space-5)" }}>
           <h2>{t.featured_work}</h2>
-          <p style={{ color: "var(--color-text-muted)" }}>{t.featured_work_text}</p>
+          {p.featured && p.featured.length > 0 ? (
+            <>
+              <p style={{ color: "var(--color-text-muted)" }}>{t.featured_work_text}</p>
+              <div className="grid" style={{ marginTop: "var(--space-3)" }}>
+                {p.featured.map((f) => (
+                  <Link
+                    key={f.href}
+                    href={f.href}
+                    className="card"
+                    style={{ textDecoration: "none", color: "inherit" }}
+                  >
+                    <h3>{f.title}</h3>
+                    {f.meta && (
+                      <p style={{ color: "var(--color-text-muted)", fontSize: "0.85rem" }}>{f.meta}</p>
+                    )}
+                    {f.summary && <p>{f.summary}</p>}
+                  </Link>
+                ))}
+              </div>
+            </>
+          ) : (
+            <p style={{ color: "var(--color-text-muted)" }}>{t.featured_work_text}</p>
+          )}
         </section>
       </main>
       <Footer

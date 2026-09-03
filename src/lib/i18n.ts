@@ -25,6 +25,13 @@ export type ContentProject = {
   live_url?: string;
 };
 
+export type FeaturedWork = {
+  title: string;
+  href: string;
+  meta?: string;
+  summary?: string;
+};
+
 export type ContentMember = {
   name: string;
   role: string;
@@ -32,6 +39,7 @@ export type ContentMember = {
   bio: string;
   skills: string[];
   social: Record<string, string>;
+  featured?: FeaturedWork[];
 };
 
 const memberKeys: string[] = ["ragnarok", "zeromeister"];

@@ -116,11 +116,20 @@
       "DevOps & deployment",
       "Backend architectuur",
       "AI tooling & agents",
-      "macOS & Linux"
+      "macOS & Linux",
+      "Digital Forensics Investigator"
     ],
     "social": {
       "github": "https://github.com/ZeroMeister"
-    }
+    },
+    "featured": [
+      {
+        "title": "DFIR",
+        "href": "/dfir/lab041",
+        "meta": "Digital Forensics · LAB041",
+        "summary": "Een forensisch onderzoek naar een oude MP3-speler, waarin illegaal verkregen muziek is herleid via metadata, slack space en file carving."
+      }
+    ]
   },
   "projects": {
     "title": "Geselecteerd werk",
