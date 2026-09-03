@@ -1,18 +1,15 @@
 import * as THREE from "three";
-import { palette, type RhineScene, type SceneObject } from "../types";
+import { palette, trapWeight, type RhineScene, type SceneObject } from "../types";
 
 /**
  * GlowScene — clustered wireframe forms around a central glow point.
- * Bottom of the home (0.78–1.0) — "settle" energy.
+ * Bottom of the home (0.78–1.0) — "settle" energy. Smoothstep edges for
+ * a calm close.
  */
 export function createGlowScene(): RhineScene {
   return {
     name: "Glow",
-    weight: (p) => {
-      if (p < 0.76) return 0;
-      if (p > 0.96) return 1 - (p - 0.96) / 0.04;
-      return (p - 0.76) / 0.20;
-    },
+    weight: (p) => trapWeight(p, 0.78, 0.96, 0.10),
     build: (): SceneObject => {
       const group = new THREE.Group();
       group.name = "GlowScene";

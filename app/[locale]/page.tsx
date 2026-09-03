@@ -2,6 +2,7 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import StatementBand from "@/components/StatementBand";
 import SectionDivider from "@/components/SectionDivider";
+import ClosingCta from "@/components/ClosingCta";
 import { getContent, getProjects } from "@/lib/i18n";
 import { getCompanySocials } from "@/lib/socials";
 import { buildMetadata } from "@/lib/seo";
@@ -121,7 +122,18 @@ export default async function HomePage({ params }: Props) {
           </div>
         </section>
       </main>
-      <Footer locale={locale} backLabel={content.nav.back} brand={content.brand.name} tagline={content.brand.tagline} showBack={false} socialHeading={content.footer.social_heading} socials={getCompanySocials(content)} />
+
+      <ClosingCta locale={locale} labels={t.closing_cta} />
+
+      <Footer
+        locale={locale}
+        brand={content.brand.name}
+        tagline={content.footer_columns.brand_tagline}
+        navLabels={content.nav}
+        footerColumns={content.footer_columns}
+        socials={getCompanySocials(content)}
+        socialHeading={content.footer.social_heading}
+      />
     </>
   );
 }

@@ -74,7 +74,15 @@ export default async function ProjectDetailPage({ params }: Props) {
           </section>
         )}
       </main>
-      <Footer locale={locale} backLabel={content.nav.back} brand={content.brand.name} tagline={content.brand.tagline} socialHeading={content.footer.social_heading} socials={getCompanySocials(content)} />
+      <Footer
+        locale={locale}
+        brand={content.brand.name}
+        tagline={content.footer_columns.brand_tagline}
+        navLabels={content.nav}
+        footerColumns={content.footer_columns}
+        socials={getCompanySocials(content)}
+        socialHeading={content.footer.social_heading}
+      />
     </>
   );
 }

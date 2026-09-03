@@ -1,19 +1,16 @@
 import * as THREE from "three";
-import { palette, type RhineScene, type SceneObject } from "../types";
+import { palette, trapWeight, type RhineScene, type SceneObject } from "../types";
 
 /**
  * DriftScene — sparse particles + slow-rotating wireframe cubes.
- * Top of the home (scrollProgress 0–0.25).
+ * Top of the home (scrollProgress 0–0.30). Uses trapWeight (smoothstep edges)
+ * for organic fade in/out, per user feedback 2026-09-03 that linear ramps
+ * "go to fast".
  */
 export function createDriftScene(): RhineScene {
   return {
     name: "Drift",
-    weight: (p) => {
-      // Full at 0, fade out by 0.25
-      if (p < 0.0) return 0;
-      if (p > 0.25) return 0;
-      return 1 - p / 0.25;
-    },
+    weight: (p) => trapWeight(p, 0, 0.18, 0.12),
     build: (): SceneObject => {
       const group = new THREE.Group();
       group.name = "DriftScene";

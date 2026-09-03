@@ -62,7 +62,23 @@
       }
     ],
     "featured_title": "Featured work",
-    "featured_text": "Selected projects, built and maintained by the Rhine Solution team."
+    "featured_text": "Selected projects, built and maintained by the Rhine Solution team.",
+    "closing_cta": {
+      "eyebrow": "Next step",
+      "title": "Have a project in mind?",
+      "body": "Two builders, one direct conversation. We reply within a day — usually faster.",
+      "cta_label": "Start a conversation",
+      "secondary_label": "See our work"
+    }
+  },
+  "footer_columns": {
+    "brand_tagline": "Custom web development, portfolios, and digital experiences. Built in the Netherlands, shipped worldwide.",
+    "nav_heading": "Navigate",
+    "connect_heading": "Connect",
+    "legal_heading": "Legal",
+    "back_to_top": "Back to top",
+    "privacy": "Privacy",
+    "colophon": "Colophon"
   },
   "team": {
     "title": "Our team",
