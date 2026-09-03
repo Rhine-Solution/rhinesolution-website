@@ -5,9 +5,8 @@ import * as THREE from "three";
 import { getProject, types } from "@theatre/core";
 
 /**
- * TheatreDirector — declares keyframeable objects per scene (mirroring hubtown's
- * `G.theatre.objects[SceneName][Prop]`), then scrubs their values from
- * scroll each frame (mirroring their GSAP ScrollTrigger pattern).
+ * TheatreDirector — declares keyframeable objects per scene, then scrubs
+ * their values from scroll each frame.
  *
  * Per-scene values are mirrored onto THREE.Group.userData so per-scene
  * `update` functions can read them.

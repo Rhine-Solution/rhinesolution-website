@@ -3,7 +3,6 @@ import { palette, trapWeight, type RhineScene, type SceneObject } from "../types
 
 /**
  * RoadsScene — wireframe extruded "road" / building silhouettes.
- * Mirrors hubtown's roads reveal (HomeThird→HomeFourth).
  * Scroll band (0.50–0.80). trapWeight for smooth crossfade.
  */
 export function createRoadsScene(): RhineScene {

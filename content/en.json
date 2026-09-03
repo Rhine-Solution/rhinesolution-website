@@ -347,10 +347,9 @@
       "tools": {
         "heading": "Tools we reach for",
         "items": [
-          "opencode-go (this agent) for code work — same session, multiple model providers as fallbacks.",
           "Obsidian for the Brain.",
           "Git on a Mac Mini for the local repo and the Obsidian vault.",
-          "Discord for the FCC bot — our agent's interface to the rest of the world.",
+          "Discord for Rhine AI — our agent's interface to the rest of the world.",
           "Linear Lite for client task tracking. We don't love it. We use it anyway."
         ]
       },

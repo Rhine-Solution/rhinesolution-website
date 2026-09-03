@@ -353,10 +353,9 @@
       "tools": {
         "heading": "Tools waar we naar grijpen",
         "items": [
-          "opencode-go (deze agent) voor codewerk — dezelfde sessie, meerdere modelproviders als fallback.",
           "Obsidian voor de Brain.",
           "Git op een Mac Mini voor de lokale repo en de Obsidian-vault.",
-          "Discord voor de FCC-bot — de interface van onze agent naar de rest van de wereld.",
+          "Discord voor Rhine AI — de interface van onze agent naar de rest van de wereld.",
           "Linear Lite voor klanttaken. We houden er niet van. We gebruiken het toch."
         ]
       },
