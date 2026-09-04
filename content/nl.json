@@ -179,9 +179,9 @@
     "year": 2026
   },
   "project_brain": {
-    "title": "Obsidian Brain",
+    "title": "Het Brein",
     "slug": "brain",
-    "summary": "Een levende kennisbank van 40+ notities over architectuur, security, deployment en AI tooling. De single source of truth voor het Rhine Solution team.",
+    "summary": "Onze levende engineering-kennisbank — notities over architectuur, security, deployment en testing, openbaar gepubliceerd. Blader door de denkwijze achter hoe wij bouwen.",
     "stack": [
       "Obsidian",
       "Markdown",

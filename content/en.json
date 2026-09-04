@@ -173,9 +173,9 @@
     "year": 2026
   },
   "project_brain": {
-    "title": "Obsidian Brain",
+    "title": "The Brain",
     "slug": "brain",
-    "summary": "A living knowledge base of 40+ notes covering architecture, security, deployment, and AI tooling. The single source of truth for the Rhine Solution team.",
+    "summary": "Our living engineering knowledge base — architecture, security, deployment, and testing notes, published openly. Browse the thinking behind how we build.",
     "stack": [
       "Obsidian",
       "Markdown",
