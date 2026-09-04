@@ -15,7 +15,7 @@
 .markdown table { width: 100%; border-collapse: collapse; margin: 1.2rem 0; }
 .markdown th, .markdown td { border: 1px solid rgba(126,167,255,0.18); padding: 0.5rem 0.75rem; text-align: left; }
 .markdown th { background: rgba(13,26,56,0.6); }
-.markdown .hljs-keyword, .markdown .hljs-selector-tag { color: #7ea7ff; }
-.markdown .hljs-string, .markdown .hljs-attr { color: #a5d6a7; }
-.markdown .hljs-number, .markdown .hljs-literal { color: #ffd54f; }
-.markdown .hljs-comment { color: rgba(226,234,255,0.45); }
+.markdown :global(.hljs-keyword), .markdown :global(.hljs-selector-tag) { color: #7ea7ff; }
+.markdown :global(.hljs-string), .markdown :global(.hljs-attr) { color: #a5d6a7; }
+.markdown :global(.hljs-number), .markdown :global(.hljs-literal) { color: #ffd54f; }
+.markdown :global(.hljs-comment) { color: rgba(226,234,255,0.45); }
