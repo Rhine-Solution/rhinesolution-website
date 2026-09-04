@@ -5,6 +5,8 @@
 
 ## 2026-09-04
 
+- **feat(brain): public knowledge base at /projects/brain** — publish script +
+  custom Markdown renderer + file-tree sidebar. (`b354caf`)
 - **fix(site): entry gate never hard-locks humans** — gate now shows a
   Continue fallback when the Turnstile widget fails to load/errors (preview
   domains, adblock, transient issues). Widget allowlist updated to include
