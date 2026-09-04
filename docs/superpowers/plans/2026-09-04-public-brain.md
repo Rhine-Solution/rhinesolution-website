@@ -27,7 +27,7 @@
 **Files:**
 - Create: `scripts/publish-brain.mjs`
 - Create: `scripts/publish-brain.test.mjs`
-- Modify: `package.json` (add `"brain:publish": "node scripts/publish-brain.mjs"` and `"test": "node --test scripts/"`)
+- Modify: `package.json` (add `"brain:publish": "node scripts/publish-brain.mjs"` and `"test": "node --test scripts/*.test.mjs"`)
 
 **Interfaces:**
 - Exports: `publishBrain({ vault, out, force })` → `{ published: string[], skipped: { file: string; reason: string }[] }`; `slugify(name)` → string.
@@ -59,7 +59,7 @@ function fixture() {
     const dirOf = name.includes("/") ? join(vault, name.split("/")[0]) : vault;
     writeFileSync(join(dirOf, name.split("/")[1] ?? name), body);
   }
-  const out = join(dir, "brain");
+  const out = join(dir, "brain-out");
   return { vault, out };
 }
 
@@ -187,9 +187,13 @@ export function publishBrain({ vault, out, force = false }) {
   const published = [];
   const skipped = [];
 
-  for (const file of Object.keys(FOLDERS)) {
+  const candidates = [...new Set([...Object.keys(FOLDERS), ...PRIVATE_FILES])];
+  for (const file of candidates) {
     const folder = FOLDERS[file];
-    if (PRIVATE_FILES.includes(file)) continue;
+    if (PRIVATE_FILES.includes(file)) {
+      if (existsSync(join(vault, file))) skipped.push({ file, reason: "private blocklist" });
+      continue;
+    }
     const src = join(vault, file);
     if (!existsSync(src)) continue;
     const raw = readFileSync(src, "utf8");
