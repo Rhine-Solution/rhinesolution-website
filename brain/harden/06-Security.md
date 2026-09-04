@@ -75,5 +75,3 @@ updated: 2026-08-10
 - [ ] Rate limited if public/exposed
 - [ ] Webhook/3rd-party signatures verified
 
-## Links
-- Next: [[07-Testing]] · Back to [[Home]] · every feature must pass [[09-Code-Review-Production]]

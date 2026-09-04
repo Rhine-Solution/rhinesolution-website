@@ -49,5 +49,3 @@ updated: 2026-08-10
 - Don't alert on every metric — alert on SLOs.
 - Don't monitor only the happy path — track failures, retries, timeouts explicitly.
 
-## Links
-- Next: [[Lessons-Learned]] · Back to [[Home]] · errors/review [[09-Code-Review-Production]] · edge/ops [[08-Deployment-DevOps]]

@@ -51,5 +51,3 @@ updated: 2026-08-10
 - Requirements are rarely the hard part; misunderstanding them is.
 - Clarify scope, constraints, and "done" before writing code.
 
-## Links
-- Next: [[02-Architecture]] · Back to [[Home]] · see the build layers [[03-Backend]] / [[04-Frontend]] / [[05-Databases]]

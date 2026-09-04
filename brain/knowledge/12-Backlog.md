@@ -15,7 +15,7 @@ updated: 2026-09-04
 - [x] A3 — [[14-Monitoring]]
 - [x] A4 — project note for `fullstack/`
 - [x] A6 — `verified:` tags on time-sensitive claims
-- [x] A8 — expand [[Resources]] with verified, dated links
+- [x] A8 — expand  with verified, dated links
 - [x] A10 — `Dailies/` log folder + template
 
 ### B. Root / workspace
@@ -70,10 +70,9 @@ P2 (bigger efforts / ideas):
 - [ ] H11 — Content depth: case studies, DFIR methodology page, FAQ — 4-8 substantive pages in both languages. L.
 - [ ] H12 — Per-page OG images (currently single PNG; verify 1200×630). M.
 - [ ] H13 — Accessibility hardening: gate `aria-modal` focus management, duplicate `<h1>` on home, custom cursor occlusion; run axe. M.
+- [x] H14 — Public Brain (explorer + per-note pages at `/projects/brain`) — `npm run brain:publish` keeps `brain/` in sync from the vault. D.
 Note: entry gate is KEPT by user decision (research confirms crawl risk is low — SSR content + client overlay). Turnstile stays on contact form.
 
 ## Waiting on the human (can't do without input)
 1. **Judgment calls**: analytics provider (if any), future projects direction, which site-research backlog items to build (see section H below)
 
-## Links
-- Back to [[Home]] · add new ideas here anytime

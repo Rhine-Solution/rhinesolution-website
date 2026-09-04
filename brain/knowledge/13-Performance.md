@@ -54,5 +54,3 @@ updated: 2026-08-10
 - LCP: ≤2.5s · INP: ≤200ms · CLS: ≤0.1.
 - First byte (TTFB): ≤800ms on the edge, ≤200ms same-region.
 
-## Links
-- Next: [[14-Monitoring]] · Back to [[Home]] · frontend context [[04-Frontend]] · serverless/edge [[08-Deployment-DevOps]]

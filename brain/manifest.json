@@ -58,7 +58,7 @@
       "file": "plan/02-Architecture.md",
       "title": "02 - Architecture",
       "folder": "plan",
-      "excerpt": "Don't ask \"monolith or microservices?\" — ask **\"what specific problem am I solving?\"** If you can't name one, you don't need microservices yet. Technical debt i",
+      "excerpt": "Don't ask \"monolith or microservices?\" — ask \"what specific problem am I solving?\" If you can't name one, you don't need microservices yet. Technical debt is ne",
       "order": 2
     },
     "03-backend": {
@@ -66,7 +66,7 @@
       "file": "build/03-Backend.md",
       "title": "03 - Backend",
       "folder": "build",
-      "excerpt": "src/",
+      "excerpt": "APIs, services, and business logic. TypeScript is the 2026 default for full-stack TypeScript shops; pick the language that fits the team.",
       "order": 3
     },
     "04-frontend": {
@@ -98,7 +98,7 @@
       "file": "harden/07-Testing.md",
       "title": "07 - Testing",
       "folder": "harden",
-      "excerpt": "/\\        E2E (few) — critical user journeys only",
+      "excerpt": "Tests are the memory of what the system is supposed to do. If it's not tested, it will break in production.",
       "order": 7
     },
     "08-deployment-devops": {
@@ -106,7 +106,7 @@
       "file": "ship/08-Deployment-DevOps.md",
       "title": "08 - Deployment & DevOps",
       "folder": "ship",
-      "excerpt": "feat/<name> branch → push → GitHub Actions CI (lint + typecheck + build)",
+      "excerpt": "Lean ops for this workspace: Vercel + GitHub Actions + Cloudflare. Matches what Rhine Solution actually uses — no enterprise machinery we will never run.",
       "order": 8
     },
     "09-code-review-production": {

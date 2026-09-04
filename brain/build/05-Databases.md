@@ -108,5 +108,3 @@ updated: 2026-08-10
 - **Gotchas**: **permissions = row-level ACLs enforced server-side at sync time** (never trust client-side filtering); identity = per-user ID + device ID in every mutation; schema drift via version gates + add-only columns; sync rides PG WAL logical replication (ElectricSQL/Zero).
 - **AI connection**: local-first + on-device models pair naturally — local embeddings/vector store for agent memory (privacy, no token exfiltration), WebGPU/WASM inference, agents as peers in collab rooms.
 
-## Links
-- Next: [[06-Security]] · Back to [[Home]] · backend data flows [[03-Backend]] · migration ops [[08-Deployment-DevOps]]

@@ -108,5 +108,3 @@ updated: 2026-08-10
 - **Store fees 2026**: Apple Small Business Program **15%** (<$1M/yr proceeds); Google **15% first $1M/yr** (from Jun 30 2026 — 10% service + 5% billing), subs 15% day one on both.
 - **Rule of thumb**: responsive web + PWA first; Expo when you need app-store presence or full device APIs; Capacitor to ship an existing web app with native wrappers fast; Tauri for desktop apps from the same stack.
 
-## Links
-- Next: [[05-Databases]] · Back to [[Home]] · edge/ops [[08-Deployment-DevOps]]

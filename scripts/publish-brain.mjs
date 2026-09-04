@@ -1,4 +1,4 @@
-import { readFileSync, writeFileSync, mkdirSync, existsSync, copyFileSync, rmSync } from "node:fs";
+import { readFileSync, writeFileSync, mkdirSync, existsSync, rmSync } from "node:fs";
 import { join } from "node:path";
 import { pathToFileURL } from "node:url";
 
@@ -39,35 +39,73 @@ const SECRET_PATTERNS = [
   /Bearer\s+[A-Za-z0-9._-]{20,}/i,
   /(?:api[_-]?key|secret|access_token)\s*[:=]\s*["']?[A-Za-z0-9_-]{16,}/i,
   /0x[0-9a-fA-F]{20,}/,
+  /[0-9a-f]{32,}/i,
+  /\bAuthorization\s*:/i,
   /C:\\Users\\/i,
 ];
 
 function parseFrontmatter(md) {
   const m = /^---\r?\n([\s\S]*?)\r?\n---\r?\n?/.exec(md);
-  if (!m) return { data: {}, body: md };
+  if (!m) return { data: {}, body: md, raw: null };
   const data = {};
   for (const line of m[1].split("\n")) {
     const kv = /^([\w-]+):\s*(.*)$/.exec(line.trim());
     if (kv) data[kv[1]] = kv[2];
   }
-  return { data, body: md.slice(m[0].length) };
+  return { data, body: md.slice(m[0].length), raw: m[0] };
+}
+
+function stripLinksFooter(body) {
+  const re = /^##[ \t]+Links[ \t]*$/gm;
+  let last = -1;
+  let m = null;
+  while ((m = re.exec(body)) !== null) last = m.index;
+  if (last < 0) return body;
+  const lineEnd = body.indexOf("\n", last);
+  const after = lineEnd < 0 ? "" : body.slice(lineEnd + 1);
+  if (/^#{1,6}[ \t]/m.test(after)) return body;
+  return body.slice(0, last);
+}
+
+function scrubLinks(body, publicSlugs) {
+  return body.replace(/\[\[([^\]|]+)(?:\|([^\]]+))?\]\]/g, (full, target, alias) => {
+    if (publicSlugs.has(slugify(target.trim()))) return full;
+    return alias !== undefined ? alias.trim() : "";
+  });
 }
 
 function extractExcerpt(body) {
-  const lines = body.split("\n").map((l) => l.trim());
-  const p = lines.find(
-    (l) =>
-      l.length > 0 &&
-      !l.startsWith("#") &&
-      !/^[-*] /.test(l) &&
-      !/^\d+\./.test(l) &&
-      !l.startsWith(">") &&
-      !l.startsWith("```") &&
-      !l.includes("|")
-  );
-  if (p) return p.slice(0, 160);
-  const quote = lines.find((l) => l.startsWith(">") && l.trim().length > 2);
-  return (quote || "").replace(/^>\s*/, "").slice(0, 160);
+  let inFence = false;
+  for (const rawLine of body.split("\n")) {
+    if (/^\s{4,}/.test(rawLine) || /^\t/.test(rawLine)) continue;
+    const l = rawLine.trim();
+    if (l.startsWith("```")) {
+      inFence = !inFence;
+      continue;
+    }
+    if (inFence) continue;
+    if (
+      l.length === 0 ||
+      l.startsWith("#") ||
+      /^[-*] /.test(l) ||
+      /^\d+\./.test(l) ||
+      l.startsWith(">") ||
+      l.includes("|")
+    ) {
+      continue;
+    }
+    return stripInlineMarkdown(l).slice(0, 160);
+  }
+  const quote = body.split("\n").map((x) => x.trim()).find((l) => l.startsWith(">") && l.trim().length > 2);
+  return stripInlineMarkdown(quote || "").replace(/^>\s*/, "").slice(0, 160);
+}
+
+function stripInlineMarkdown(text) {
+  return text
+    .replace(/\*\*([^*]+)\*\*/g, "$1")
+    .replace(/\*([^*]+)\*/g, "$1")
+    .replace(/`([^`]+)`/g, "$1")
+    .trim();
 }
 
 function extractTitle(body) {
@@ -81,6 +119,7 @@ export function publishBrain({ vault, out, force = false }) {
   const blocked = [];
   const published = [];
   const skipped = [];
+  const publishedBodies = {};
 
   const candidates = [...new Set([...Object.keys(FOLDERS), ...PRIVATE_FILES])];
   for (const file of candidates) {
@@ -92,7 +131,7 @@ export function publishBrain({ vault, out, force = false }) {
     const src = join(vault, file);
     if (!existsSync(src)) continue;
     const raw = readFileSync(src, "utf8");
-    const { data } = parseFrontmatter(raw);
+    const { data, body: rawBody, raw: rawFront } = parseFrontmatter(raw);
     if (String(data.status || "").trim() === "archive") {
       skipped.push({ file, reason: "status: archive" });
       continue;
@@ -103,9 +142,19 @@ export function publishBrain({ vault, out, force = false }) {
       skipped.push({ file, reason: "secret scan" });
       continue;
     }
+    const slug = slugify(file);
+    published.push(slug);
+    publishedBodies[slug] = { body: rawBody, folder, front: rawFront };
+  }
+
+  const publicSlugs = new Set(published);
+  for (const [slug, { body, folder, front }] of Object.entries(publishedBodies)) {
+    const file = Object.keys(FOLDERS).find((f) => slugify(f) === slug);
+    const outBody = scrubLinks(stripLinksFooter(body), publicSlugs);
+    const content = front === null ? outBody : front + outBody;
     mkdirSync(join(out, folder), { recursive: true });
-    copyFileSync(src, join(out, folder, file));
-    published.push(slugify(file));
+    writeFileSync(join(out, folder, file), content);
+    publishedBodies[slug] = { body: outBody, folder };
   }
 
   if (blocked.length > 0 && !force) {
@@ -114,17 +163,13 @@ export function publishBrain({ vault, out, force = false }) {
   }
 
   const notes = {};
-  for (const file of Object.keys(FOLDERS)) {
-    if (PRIVATE_FILES.includes(file)) continue;
-    const slug = slugify(file);
-    if (!published.includes(slug)) continue;
-    const raw = readFileSync(join(out, FOLDERS[file], file), "utf8");
-    const { body } = parseFrontmatter(raw);
+  for (const [slug, { body, folder }] of Object.entries(publishedBodies)) {
+    const file = Object.keys(FOLDERS).find((f) => slugify(f) === slug);
     notes[slug] = {
       slug,
-      file: `${FOLDERS[file]}/${file}`,
+      file: `${folder}/${file}`,
       title: extractTitle(body),
-      folder: FOLDERS[file],
+      folder,
       excerpt: extractExcerpt(body),
       order: Object.keys(FOLDERS).indexOf(file) + 1,
     };

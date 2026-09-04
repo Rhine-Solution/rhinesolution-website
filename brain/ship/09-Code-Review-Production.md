@@ -51,5 +51,3 @@ Most incidents come from boring gaps, not exotic bugs:
 - **AI + human beats either alone**: teams with structured AI review caught ~34% more bugs pre-merge. But the architectural calls remain human — AI doesn't know the 80%-memory service or the pricing engine's business rules.
 - A solo dev gets the most value from AI review — there's no human fallback.
 
-## Links
-- Next: [[10-AI-Assisted-Development]] · Back to [[Home]] · security checklist [[06-Security]] · testing [[07-Testing]]

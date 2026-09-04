@@ -103,5 +103,3 @@ src/
 - **Fraud & disputes**: Radar ML is free (trained on >$1T/yr volume) + 3DS gives liability shift (`has_liability_shift`); card-testing defense = CAPTCHA + rate limits + rules like `total_charges_per_ip_address_hourly > 1`; Ethoca (MC) / Verifi (Visa) alerts + RDR auto-resolve; avg chargeback cost ~$128. Track dispute ratios + build an evidence library before volume hits.
 - **2026 signal — agentic payments**: Stripe Agent Toolkit SDK + MCP server (`mcp.stripe.com`, OAuth ~25 tools); Agentic Commerce Suite (Dec 2025 — Kate Spade/Best Buy/Coach); Sessions 2026 added Metronome (usage metering), Tempo (micropayments), Privy (agent wallets). AI agents paying for things is the new frontier.
 
-## Links
-- Next: [[04-Frontend]] · Back to [[Home]] · data model [[05-Databases]] · deployment [[08-Deployment-DevOps]]

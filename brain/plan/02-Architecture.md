@@ -71,5 +71,3 @@ Don't ask "monolith or microservices?" — ask **"what specific problem am I sol
 - Async inference for LLM calls (keep UI snappy).
 - Agentic loops: agents that call tools and iterate — design evaluator/validator layers because AI output is non-deterministic.
 
-## Links
-- Next: [[03-Backend]] · Back to [[Home]] · layer details in [[04-Frontend]] / [[05-Databases]]

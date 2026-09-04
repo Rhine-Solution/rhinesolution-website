@@ -85,5 +85,3 @@ updated: 2026-08-10
 - A test suite that's slow, flaky, or noisy is abandoned → then it's worthless.
 - Keep tests fast (< 1–2 min for unit+integration) so devs run them constantly. Target: full build <10 min, flake rate <1%.
 
-## Links
-- Next: [[08-Deployment-DevOps]] · Back to [[Home]] · tests feed the [[09-Code-Review-Production]] checklist · frontend test layers in [[04-Frontend]]

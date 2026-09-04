@@ -55,6 +55,14 @@ test("publishBrain fails closed on secret patterns", () => {
   assert.ok(result.skipped.some((s) => s.file === "02-Architecture.md" && s.reason.includes("secret")));
 });
 
+test("publishBrain fails closed on bare 32-hex tokens", () => {
+  const { vault, out } = fixture();
+  writeFileSync(join(vault, "02-Architecture.md"), `# 02\n\napi_key = ${"a".repeat(32)}\n`);
+  assert.throws(() => publishBrain({ vault, out }), /SECRET SCAN FAILED/i);
+  const result = publishBrain({ vault, out, force: true });
+  assert.ok(result.skipped.some((s) => s.file === "02-Architecture.md" && s.reason.includes("secret")));
+});
+
 test("manifest.json has folders + notes with slug/title/excerpt/folder", () => {
   const { vault, out } = fixture();
   publishBrain({ vault, out, force: true });

@@ -36,7 +36,7 @@ feat/<name> branch → push → GitHub Actions CI (lint + typecheck + build)
 ## Secrets & env hygiene
 - `.env.local` is gitignored and never committed. `.env.example` documents the var names with empty placeholders.
 - Vercel env vars (`RESEND_API_KEY`, `NEXT_PUBLIC_TURNSTILE_SITE_KEY`, `TURNSTILE_SECRET_KEY`) are set per-environment; keep production/preview/development consistent.
-- Rotate any token shared outside a private channel — see rotation table in [[17-Infrastructure]].
+- Rotate any token shared outside a private channel — see rotation table in .
 - The Brain stores the *map* of where secrets live, never the secrets themselves.
 
 ## Monitoring (keep it light)
@@ -50,5 +50,3 @@ feat/<name> branch → push → GitHub Actions CI (lint + typecheck + build)
 - **Revert-and-fix** — broken main → revert the offending commit, redeploy, fix on a branch.
 - No feature flags, no blue/green, no canary, no DB migrations (static site, no database).
 
-## Links
-- Next: [[09-Code-Review-Production]] · Back to [[Home]] · accounts/secrets in [[17-Infrastructure]] · project state in [[Projects/rhinesolution]]
