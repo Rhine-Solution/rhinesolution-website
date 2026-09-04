@@ -39,3 +39,6 @@ yarn-error.log*
 *.tsbuildinfo
 
 docs/superpowers/
+
+# sdd workspace
+.superpowers/
