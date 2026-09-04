@@ -110,7 +110,15 @@
       "pinterest": "https://nl.pinterest.com/soc0255/",
       "x": "https://x.com/RhineSolution",
       "reddit": "https://www.reddit.com/user/RhineSolution/"
-    }
+    },
+    "featured": [
+      {
+        "title": "Cybercrime and Cybersecurity Report",
+        "href": "/dfir/cybercrime-report",
+        "meta": "Cyber Security · K1352",
+        "summary": "Keuzedeel K1352 onderzoeksrapport: hoe het internet vanaf nul werkt, wat cybercrime is, hoe groot het probleem is en hoe je jezelf beschermt."
+      }
+    ]
   },
   "zeromeister": {
     "name": "ZeroMeister",

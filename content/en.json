@@ -104,7 +104,15 @@
     ],
     "social": {
       "github": "https://github.com/RAGNAROK-RS0"
-    }
+    },
+    "featured": [
+      {
+        "title": "Cybercrime and Cybersecurity Report",
+        "href": "/dfir/cybercrime-report",
+        "meta": "Cyber Security · K1352",
+        "summary": "Keuzedeel K1352 research report: how the internet works from zero, what cybercrime is, the scale of the problem, and how to protect against it."
+      }
+    ]
   },
   "zeromeister": {
     "name": "ZeroMeister",
