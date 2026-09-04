@@ -1,0 +1,153 @@
+{
+  "folders": [
+    {
+      "id": "plan",
+      "notes": [
+        "01-core-principles",
+        "02-architecture"
+      ]
+    },
+    {
+      "id": "build",
+      "notes": [
+        "03-backend",
+        "04-frontend",
+        "05-databases"
+      ]
+    },
+    {
+      "id": "harden",
+      "notes": [
+        "06-security",
+        "07-testing"
+      ]
+    },
+    {
+      "id": "ship",
+      "notes": [
+        "08-deployment-devops",
+        "09-code-review-production"
+      ]
+    },
+    {
+      "id": "knowledge",
+      "notes": [
+        "12-backlog",
+        "13-performance",
+        "14-monitoring"
+      ]
+    },
+    {
+      "id": "journal",
+      "notes": [
+        "lessons-learned"
+      ]
+    }
+  ],
+  "notes": {
+    "01-core-principles": {
+      "slug": "01-core-principles",
+      "file": "plan/01-Core-Principles.md",
+      "title": "01 - Core Principles",
+      "folder": "plan",
+      "excerpt": "",
+      "order": 1
+    },
+    "02-architecture": {
+      "slug": "02-architecture",
+      "file": "plan/02-Architecture.md",
+      "title": "02 - Architecture",
+      "folder": "plan",
+      "excerpt": "| Pattern | Use when |",
+      "order": 2
+    },
+    "03-backend": {
+      "slug": "03-backend",
+      "file": "build/03-Backend.md",
+      "title": "03 - Backend",
+      "folder": "build",
+      "excerpt": "| Boundary | Pick | Why |",
+      "order": 3
+    },
+    "04-frontend": {
+      "slug": "04-frontend",
+      "file": "build/04-Frontend.md",
+      "title": "04 - Frontend",
+      "folder": "build",
+      "excerpt": "| Tool | Replaces | 2026 status | When to adopt |",
+      "order": 4
+    },
+    "05-databases": {
+      "slug": "05-databases",
+      "file": "build/05-Databases.md",
+      "title": "05 - Databases",
+      "folder": "build",
+      "excerpt": "| Need | Use |",
+      "order": 5
+    },
+    "06-security": {
+      "slug": "06-security",
+      "file": "harden/06-Security.md",
+      "title": "06 - Security",
+      "folder": "harden",
+      "excerpt": "1. **Never trust input** — validate server-side on every boundary (zod/joi/pydantic).",
+      "order": 6
+    },
+    "07-testing": {
+      "slug": "07-testing",
+      "file": "harden/07-Testing.md",
+      "title": "07 - Testing",
+      "folder": "harden",
+      "excerpt": "```",
+      "order": 7
+    },
+    "08-deployment-devops": {
+      "slug": "08-deployment-devops",
+      "file": "ship/08-Deployment-DevOps.md",
+      "title": "08 - Deployment & DevOps",
+      "folder": "ship",
+      "excerpt": "```",
+      "order": 8
+    },
+    "09-code-review-production": {
+      "slug": "09-code-review-production",
+      "file": "ship/09-Code-Review-Production.md",
+      "title": "09 - Code Review & Production Readiness",
+      "folder": "ship",
+      "excerpt": "\"Ready for production\" ≠ \"the feature works.\" It means an operator who didn't build it can:",
+      "order": 9
+    },
+    "12-backlog": {
+      "slug": "12-backlog",
+      "file": "knowledge/12-Backlog.md",
+      "title": "12 - Backlog",
+      "folder": "knowledge",
+      "excerpt": "P0 (quick wins, low risk):",
+      "order": 10
+    },
+    "13-performance": {
+      "slug": "13-performance",
+      "file": "knowledge/13-Performance.md",
+      "title": "13 - Performance",
+      "folder": "knowledge",
+      "excerpt": "1. Measure CrUX for the real-user baseline.",
+      "order": 11
+    },
+    "14-monitoring": {
+      "slug": "14-monitoring",
+      "file": "knowledge/14-Monitoring.md",
+      "title": "14 - Monitoring",
+      "folder": "knowledge",
+      "excerpt": "1. **Rate** — requests per second (traffic up or down is news).",
+      "order": 12
+    },
+    "lessons-learned": {
+      "slug": "lessons-learned",
+      "file": "journal/Lessons-Learned.md",
+      "title": "Lessons Learned",
+      "folder": "journal",
+      "excerpt": "```markdown",
+      "order": 13
+    }
+  }
+}

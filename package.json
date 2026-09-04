@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "brain:publish": "node scripts/publish-brain.mjs",
+    "test": "node --test scripts/*.test.mjs"
   },
   "dependencies": {
     "@theatre/core": "^0.7.2",
