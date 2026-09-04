@@ -33,6 +33,8 @@ export default function TheatreDirector({
   } | null>(null);
 
   useEffect(() => {
+    if (refs.current) return;
+
     const project = getProject("RhineSolution");
     const driftObj = project.sheet("Drift").object("DriftScene", {
       particleSpeed: types.number(1, { range: [0, 2] }),
@@ -58,10 +60,6 @@ export default function TheatreDirector({
       glow: glowObj as unknown as {
         value: { glowPulse: number; orbitSpeed: number };
       },
-    };
-
-    return () => {
-      refs.current = null;
     };
   }, []);
 
