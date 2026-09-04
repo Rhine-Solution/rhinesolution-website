@@ -19,3 +19,20 @@
 .markdown :global(.hljs-string), .markdown :global(.hljs-attr) { color: #a5d6a7; }
 .markdown :global(.hljs-number), .markdown :global(.hljs-literal) { color: #ffd54f; }
 .markdown :global(.hljs-comment) { color: rgba(226,234,255,0.45); }
+.treeToggle { display: none; align-items: center; gap: 0.5rem; background: rgba(13,26,56,0.6); border: 1px solid rgba(126,167,255,0.18); color: #e6ecff; border-radius: 10px; padding: 0.6rem 1rem; cursor: pointer; margin-bottom: 1rem; }
+.tree { position: sticky; top: 5rem; align-self: start; min-width: 230px; max-height: calc(100vh - 8rem); overflow-y: auto; }
+.treeClose { display: none; }
+.treeOverlay { display: none; }
+.treeFolder { margin-bottom: 1.2rem; }
+.treeFolderTitle { display: flex; align-items: center; gap: 0.4rem; font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(226,234,255,0.6); margin-bottom: 0.4rem; }
+.treeList { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.15rem; }
+.treeLink { display: flex; align-items: center; gap: 0.4rem; padding: 0.35rem 0.6rem; border-radius: 8px; color: #c9d6ff; font-size: 0.92rem; text-decoration: none; }
+.treeLink:hover { background: rgba(126,167,255,0.12); color: #f2f5ff; }
+.treeLinkActive { background: rgba(44,107,255,0.25); color: #f2f5ff; }
+@media (max-width: 900px) {
+  .treeToggle { display: flex; }
+  .tree { display: none; position: fixed; inset: 0 0 0 auto; width: min(320px, 85vw); background: #070e24; border-left: 1px solid rgba(126,167,255,0.18); padding: 4.5rem 1.25rem 1.5rem; z-index: 60; }
+  .treeOpen { display: block; }
+  .treeClose { display: flex; position: absolute; top: 1rem; right: 1rem; background: none; border: none; color: #e6ecff; cursor: pointer; }
+  .treeOverlay { display: block; position: fixed; inset: 0; background: rgba(7,14,36,0.7); z-index: 50; }
+}
