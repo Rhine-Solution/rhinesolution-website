@@ -771,7 +771,7 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import BrainSidebar from "@/components/brain/BrainSidebar";
 import BrainMarkdown from "@/components/brain/BrainMarkdown";
-import { getContent } from "@/lib/i18n";
+import { getContent, locales } from "@/lib/i18n";
 import { getCompanySocials } from "@/lib/socials";
 import { buildMetadata } from "@/lib/seo";
 import { getBrainManifest, getNoteBySlug, getNoteMarkdown } from "@/lib/brain";
@@ -783,7 +783,9 @@ type Props = { params: Promise<{ locale: string; slug: string }> };
 
 export function generateStaticParams() {
   const manifest = getBrainManifest();
-  return Object.values(manifest.notes).map((n) => ({ slug: n.slug }));
+  return locales.flatMap((locale) =>
+    Object.values(manifest.notes).map((n) => ({ locale, slug: n.slug }))
+  );
 }
 
 export async function generateMetadata({ params }: Props) {
@@ -791,7 +793,7 @@ export async function generateMetadata({ params }: Props) {
   const note = getNoteBySlug(slug);
   if (!note) return { title: "Not found" };
   return buildMetadata(locale, `/projects/brain/${slug}`, {
-    title: `${note.title} — ${getContent(locale).brand.name}`,
+    title: note.title,
     description: note.excerpt,
   });
 }
