@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: Props) {
   const note = getNoteBySlug(slug);
   if (!note) return { title: "Not found" };
   return buildMetadata(locale, `/projects/brain/${slug}`, {
-    title: `${note.title} — ${getContent(locale).brand.name}`,
+    title: note.title,
     description: note.excerpt,
   });
 }
