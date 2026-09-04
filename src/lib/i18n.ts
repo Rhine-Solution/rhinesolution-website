@@ -17,6 +17,8 @@ export function getContent(locale: string): typeof en {
 
 export type ContentProject = {
   slug: string;
+  icon?: string;
+  featured?: boolean;
   title: string;
   summary: string;
   stack: string[];

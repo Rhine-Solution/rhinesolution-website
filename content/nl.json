@@ -147,7 +147,9 @@
   },
   "projects": {
     "title": "Geselecteerd werk",
-    "subtitle": "Productiesystemen, uitgerold en onderhouden."
+    "subtitle": "Productiesystemen, uitgerold en onderhouden.",
+    "featured_label": "Uitgelicht",
+    "read_more": "Lees meer"
   },
   "brain": {
     "title": "Het Brein",
@@ -168,6 +170,7 @@
   "project_rhinesolution": {
     "title": "rhinesolution.com",
     "slug": "rhinesolution",
+    "icon": "globe",
     "summary": "Deze website. Next.js 15, TypeScript, pure CSS, uitgerold naar Vercel met Cloudflare DNS.",
     "stack": [
       "Next.js 15",
@@ -181,6 +184,8 @@
   "project_brain": {
     "title": "Het Brein",
     "slug": "brain",
+    "icon": "brain",
+    "featured": true,
     "summary": "Onze levende engineering-kennisbank — notities over architectuur, security, deployment en testing, openbaar gepubliceerd. Blader door de denkwijze achter hoe wij bouwen.",
     "stack": [
       "Obsidian",
@@ -192,6 +197,7 @@
   "project_macmini": {
     "title": "Mac Mini AI Infrastructuur",
     "slug": "macmini",
+    "icon": "server",
     "summary": "De Mac Mini die de AI-stack van Rhine Solution draait: Free Claude Code (Discord bot), 5 model fallbacks (NVIDIA NIM, Groq, Gemini, Mistral, OpenRouter), en de OpenCode agent die meehelpt met dagelijks werk.",
     "stack": [
       "macOS 26",
@@ -205,6 +211,7 @@
   "project_music": {
     "title": "Music Trends Local",
     "slug": "music",
+    "icon": "music",
     "summary": "Een cyber-gethematiseerd muziekportaal met topnummers, artiesten en genres — 48 tracks in 8 elektronische subgenres met zoeken, filters en localStorage-favorieten.",
     "stack": [
       "HTML5",
