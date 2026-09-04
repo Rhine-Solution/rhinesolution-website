@@ -1879,6 +1879,49 @@ p { margin-bottom: var(--space-3); }
   padding-top: var(--space-5);
   border-top: 1px solid var(--color-border);
 }
+.dfir-steps {
+  list-style: none;
+  counter-reset: dfir-step;
+  margin-block: var(--space-3);
+  padding: 0;
+  display: grid;
+  gap: var(--space-3);
+}
+.dfir-steps li {
+  counter-increment: dfir-step;
+  position: relative;
+  padding-left: var(--space-6);
+  line-height: 1.6;
+}
+.dfir-steps li::before {
+  content: counter(dfir-step);
+  position: absolute;
+  left: 0;
+  top: 0.15em;
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-blue-soft);
+}
+.dfir-figure {
+  margin-block: var(--space-5);
+  padding: var(--space-3);
+  border: 1px solid var(--color-border);
+  background: rgba(10, 18, 46, 0.5);
+}
+.dfir-figure img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
+}
+.dfir-figure--wide img { max-width: min(100%, 640px); }
+.dfir-figure figcaption {
+  margin-top: var(--space-2);
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  font-family: var(--font-sans);
+}
 
 /* ============================================================
    TURNSTILE + ENTRY GATE
