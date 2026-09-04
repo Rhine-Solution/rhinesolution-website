@@ -1,6 +1,10 @@
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
-import StatBlock from "@/components/StatBlock";
+import {
+  FiLayout,
+  FiMonitor,
+  FiZap,
+} from "react-icons/fi";
 import { getContent } from "@/lib/i18n";
 import { getCompanySocials } from "@/lib/socials";
 import { buildMetadata } from "@/lib/seo";
@@ -8,12 +12,18 @@ import Link from "next/link";
 
 type Props = { params: Promise<{ locale: string }> };
 
+const serviceIcons: Record<string, typeof FiLayout> = {
+  layout: FiLayout,
+  monitor: FiMonitor,
+  zap: FiZap,
+};
+
 export async function generateMetadata({ params }: Props) {
   const { locale } = await params;
   const c = getContent(locale);
   return buildMetadata(locale, "/about", {
     title: c.nav.about,
-    description: c.about.statement,
+    description: c.about.statement.slice(0, 160),
   });
 }
 
@@ -37,10 +47,50 @@ export default async function AboutPage({ params }: Props) {
           ))}
         </section>
 
-        <section className="stats-band" aria-label={s.stats_label}>
-          {s.stats.map((st) => (
-            <StatBlock key={st.label} value={st.value} suffix={st.suffix} label={st.label} />
-          ))}
+        <section>
+          <h2>{s.services_title}</h2>
+          <div className="grid service-grid" style={{ marginTop: "var(--space-5)" }}>
+            {s.services.map((service) => {
+              const Icon = serviceIcons[service.icon] ?? FiLayout;
+              return (
+                <article className="card service-card" key={service.title}>
+                  <span className="service-icon" aria-hidden="true">
+                    <Icon size={22} />
+                  </span>
+                  <h3 className="service-title">{service.title}</h3>
+                  <p style={{ marginBottom: 0 }}>{service.text}</p>
+                </article>
+              );
+            })}
+          </div>
+        </section>
+
+        <section>
+          <h2>{s.process_title}</h2>
+          <div className="process-steps" style={{ marginTop: "var(--space-5)" }}>
+            {s.process.map((step, i) => (
+              <article className="process-step" key={step.title}>
+                <span className="step-num" aria-hidden="true">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <div>
+                  <h3 className="step-title">{step.title}</h3>
+                  <p style={{ marginBottom: 0 }}>{step.text}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section>
+          <h2>{s.stack_title}</h2>
+          <div className="stack-chips" style={{ marginTop: "var(--space-4)" }}>
+            {s.stack.map((item) => (
+              <span className="stack-chip" key={item}>
+                {item}
+              </span>
+            ))}
+          </div>
         </section>
 
         <section>
