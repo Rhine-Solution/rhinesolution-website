@@ -135,6 +135,22 @@
     "title": "Selected work",
     "subtitle": "Production systems, deployed and maintained."
   },
+  "brain": {
+    "title": "The Brain",
+    "subtitle": "Rhine Solution's living engineering knowledge base — how we think about building software.",
+    "browse": "Browse the knowledge base",
+    "read": "Read note",
+    "back": "Back to the Brain",
+    "empty": "The Brain is being prepared. Check back soon.",
+    "folders": {
+      "plan": "Plan",
+      "build": "Build",
+      "harden": "Harden",
+      "ship": "Ship",
+      "knowledge": "Knowledge",
+      "journal": "Journal"
+    }
+  },
   "project_rhinesolution": {
     "title": "rhinesolution.com",
     "slug": "rhinesolution",

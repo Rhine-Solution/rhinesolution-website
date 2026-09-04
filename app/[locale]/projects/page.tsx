@@ -20,7 +20,7 @@ export default async function ProjectsPage({ params }: Props) {
   const { locale } = await params;
   const content = getContent(locale);
   const t = content.projects;
-  const items = getProjects(content, ["project_rhinesolution", "project_brain", "project_macmini", "project_music"]);
+  const items = getProjects(content, ["project_rhinesolution", "project_macmini", "project_music"]);
 
   return (
     <>

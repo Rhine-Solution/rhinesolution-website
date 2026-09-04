@@ -72,6 +72,14 @@ styles/globals.css    # design tokens + global styles (always-dark)
 - `content/{locale}.json` holds all strings; components read via `getContent`.
 - `<html lang>` is set per locale.
 
+### Public Brain
+- Publishes a curated knowledge base at `/projects/brain` from the `brain/`
+  folder via `npm run brain:publish`.
+- A custom Markdown renderer (highlight.js tokens, no layout) turns each note
+  into a static page; a file-tree sidebar + explorer page provide navigation.
+- Content is curated in the vault and synced by the publish script; the site
+  just renders what `brain/` contains.
+
 ## Trade-offs and notes
 
 - Heavy WebGL/Three.js loads on the root layout; route-scoping it (music site

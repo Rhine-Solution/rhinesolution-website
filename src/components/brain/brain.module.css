@@ -1,0 +1,53 @@
+.markdown {
+  max-width: 68ch;
+  color: #e6ecff;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+.markdown h1, .markdown h2, .markdown h3 { color: #f2f5ff; }
+.markdown h1 { font-family: "Cormorant Garamond", serif; font-size: 2.2rem; }
+.markdown h2 { font-family: "Cormorant Garamond", serif; font-size: 1.7rem; margin-top: 2.2rem; border-bottom: 1px solid rgba(126,167,255,0.18); padding-bottom: 0.4rem; }
+.markdown a { color: #7ea7ff; }
+.markdown code { background: rgba(13,26,56,0.6); border-radius: 4px; padding: 0.15rem 0.35rem; font-size: 0.9em; }
+.markdown pre { background: rgba(13,26,56,0.6); border: 1px solid rgba(126,167,255,0.18); border-radius: 10px; padding: 1rem; overflow-x: auto; }
+.markdown pre code { background: none; padding: 0; }
+.markdown blockquote { border-left: 3px solid #2c6bff; margin: 1.2rem 0; padding-left: 1rem; color: rgba(226,234,255,0.8); }
+.markdown table { width: 100%; border-collapse: collapse; margin: 1.2rem 0; }
+.markdown th, .markdown td { border: 1px solid rgba(126,167,255,0.18); padding: 0.5rem 0.75rem; text-align: left; }
+.markdown th { background: rgba(13,26,56,0.6); }
+.markdown :global(.hljs-keyword), .markdown :global(.hljs-selector-tag) { color: #7ea7ff; }
+.markdown :global(.hljs-string), .markdown :global(.hljs-attr) { color: #a5d6a7; }
+.markdown :global(.hljs-number), .markdown :global(.hljs-literal) { color: #ffd54f; }
+.markdown :global(.hljs-comment) { color: rgba(226,234,255,0.45); }
+.treeToggle { display: none; align-items: center; gap: 0.5rem; background: rgba(13,26,56,0.6); border: 1px solid rgba(126,167,255,0.18); color: #e6ecff; border-radius: 10px; padding: 0.6rem 1rem; cursor: pointer; margin-bottom: 1rem; }
+.tree { position: sticky; top: 5rem; align-self: start; min-width: 230px; max-height: calc(100vh - 8rem); overflow-y: auto; }
+.treeClose { display: none; }
+.treeOverlay { display: none; }
+.treeFolder { margin-bottom: 1.2rem; }
+.treeFolderTitle { display: flex; align-items: center; gap: 0.4rem; font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(226,234,255,0.6); margin-bottom: 0.4rem; }
+.treeList { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.15rem; }
+.treeLink { display: flex; align-items: center; gap: 0.4rem; padding: 0.35rem 0.6rem; border-radius: 8px; color: #c9d6ff; font-size: 0.92rem; text-decoration: none; }
+.treeLink:hover { background: rgba(126,167,255,0.12); color: #f2f5ff; }
+.treeLinkActive { background: rgba(44,107,255,0.25); color: #f2f5ff; }
+@media (max-width: 900px) {
+  .treeToggle { display: flex; }
+  .tree { display: none; position: fixed; inset: 0 0 0 auto; width: min(320px, 85vw); background: #070e24; border-left: 1px solid rgba(126,167,255,0.18); padding: 4.5rem 1.25rem 1.5rem; z-index: 60; }
+  .treeOpen { display: block; }
+  .treeClose { display: flex; position: absolute; top: 1rem; right: 1rem; background: none; border: none; color: #e6ecff; cursor: pointer; }
+  .treeOverlay { display: block; position: fixed; inset: 0; background: rgba(7,14,36,0.7); z-index: 50; }
+}
+.explorer { display: flex; gap: 2.5rem; align-items: flex-start; }
+.explorerMain { flex: 1; min-width: 0; }
+.explorerFolder { margin-top: 2.5rem; }
+.explorerFolder > h2 { font-family: "Cormorant Garamond", serif; font-size: 1.4rem; color: #f2f5ff; border-bottom: 1px solid rgba(126,167,255,0.18); padding-bottom: 0.4rem; }
+.explorerList { list-style: none; margin: 1rem 0 0; padding: 0; display: grid; gap: 0.75rem; }
+.explorerCard { display: block; background: rgba(13,26,56,0.6); border: 1px solid rgba(126,167,255,0.18); border-radius: 10px; padding: 1rem 1.25rem; text-decoration: none; color: inherit; }
+.explorerCard:hover { border-color: rgba(126,167,255,0.45); }
+.explorerCard h3 { margin: 0 0 0.3rem; font-size: 1.05rem; color: #f2f5ff; }
+.explorerCard p { margin: 0; color: rgba(226,234,255,0.75); font-size: 0.95rem; }
+@media (max-width: 900px) { .explorer { flex-direction: column; } }
+.crumbs { display: flex; gap: 0.5rem; align-items: center; font-size: 0.85rem; color: rgba(226,234,255,0.6); margin-bottom: 1.5rem; flex-wrap: wrap; }
+.crumbs a { color: #7ea7ff; text-decoration: none; }
+.crumbs a:hover { text-decoration: underline; }
+.noteBack { margin-top: 3rem; }
+.noteBack a { color: #7ea7ff; text-decoration: none; }

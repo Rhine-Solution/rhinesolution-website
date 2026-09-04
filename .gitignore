@@ -10,7 +10,7 @@ coverage/
 # next.js
 .next/
 out/
-build/
+/build/
 dist/
 
 # production
@@ -37,3 +37,5 @@ yarn-error.log*
 
 # typescript
 *.tsbuildinfo
+
+docs/superpowers/

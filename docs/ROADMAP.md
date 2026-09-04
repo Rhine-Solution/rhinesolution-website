@@ -5,6 +5,9 @@
 
 ## Now (quick wins, low risk)
 
+- **Public Brain shipped** — curated knowledge base at `/projects/brain`
+  (publish script + custom Markdown renderer + file-tree sidebar). Keep
+  `brain/` in sync as content grows.
 - **Correct `<html lang>` per locale** — Dutch pages are currently announced
   and indexed as English.
 - **Complete the sitemap** — add `/dfir`, `/dfir/lab041`, and music subpages.

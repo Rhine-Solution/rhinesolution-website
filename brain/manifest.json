@@ -1,0 +1,153 @@
+{
+  "folders": [
+    {
+      "id": "plan",
+      "notes": [
+        "01-core-principles",
+        "02-architecture"
+      ]
+    },
+    {
+      "id": "build",
+      "notes": [
+        "03-backend",
+        "04-frontend",
+        "05-databases"
+      ]
+    },
+    {
+      "id": "harden",
+      "notes": [
+        "06-security",
+        "07-testing"
+      ]
+    },
+    {
+      "id": "ship",
+      "notes": [
+        "08-deployment-devops",
+        "09-code-review-production"
+      ]
+    },
+    {
+      "id": "knowledge",
+      "notes": [
+        "12-backlog",
+        "13-performance",
+        "14-monitoring"
+      ]
+    },
+    {
+      "id": "journal",
+      "notes": [
+        "lessons-learned"
+      ]
+    }
+  ],
+  "notes": {
+    "01-core-principles": {
+      "slug": "01-core-principles",
+      "file": "plan/01-Core-Principles.md",
+      "title": "01 - Core Principles",
+      "folder": "plan",
+      "excerpt": "The timeless rules that survive every framework change. From 40 years of shipping software.",
+      "order": 1
+    },
+    "02-architecture": {
+      "slug": "02-architecture",
+      "file": "plan/02-Architecture.md",
+      "title": "02 - Architecture",
+      "folder": "plan",
+      "excerpt": "Don't ask \"monolith or microservices?\" — ask \"what specific problem am I solving?\" If you can't name one, you don't need microservices yet. Technical debt is ne",
+      "order": 2
+    },
+    "03-backend": {
+      "slug": "03-backend",
+      "file": "build/03-Backend.md",
+      "title": "03 - Backend",
+      "folder": "build",
+      "excerpt": "APIs, services, and business logic. TypeScript is the 2026 default for full-stack TypeScript shops; pick the language that fits the team.",
+      "order": 3
+    },
+    "04-frontend": {
+      "slug": "04-frontend",
+      "file": "build/04-Frontend.md",
+      "title": "04 - Frontend",
+      "folder": "build",
+      "excerpt": "2026: server-first rendering is the default. Performance is the product.",
+      "order": 4
+    },
+    "05-databases": {
+      "slug": "05-databases",
+      "file": "build/05-Databases.md",
+      "title": "05 - Databases",
+      "folder": "build",
+      "excerpt": "Choose the right tool, design the schema first, and treat migrations as the riskiest operation you run.",
+      "order": 5
+    },
+    "06-security": {
+      "slug": "06-security",
+      "file": "harden/06-Security.md",
+      "title": "06 - Security",
+      "folder": "harden",
+      "excerpt": "Every feature, every line, no exceptions. Follow OWASP Top Ten. Security is embedded from the first commit, never bolted on.",
+      "order": 6
+    },
+    "07-testing": {
+      "slug": "07-testing",
+      "file": "harden/07-Testing.md",
+      "title": "07 - Testing",
+      "folder": "harden",
+      "excerpt": "Tests are the memory of what the system is supposed to do. If it's not tested, it will break in production.",
+      "order": 7
+    },
+    "08-deployment-devops": {
+      "slug": "08-deployment-devops",
+      "file": "ship/08-Deployment-DevOps.md",
+      "title": "08 - Deployment & DevOps",
+      "folder": "ship",
+      "excerpt": "Lean ops for this workspace: Vercel + GitHub Actions + Cloudflare. Matches what Rhine Solution actually uses — no enterprise machinery we will never run.",
+      "order": 8
+    },
+    "09-code-review-production": {
+      "slug": "09-code-review-production",
+      "file": "ship/09-Code-Review-Production.md",
+      "title": "09 - Code Review & Production Readiness",
+      "folder": "ship",
+      "excerpt": "\"Ready for production\" ≠ \"the feature works.\" It means an operator who didn't build it can:",
+      "order": 9
+    },
+    "12-backlog": {
+      "slug": "12-backlog",
+      "file": "knowledge/12-Backlog.md",
+      "title": "12 - Backlog",
+      "folder": "knowledge",
+      "excerpt": "P0 (quick wins, low risk):",
+      "order": 10
+    },
+    "13-performance": {
+      "slug": "13-performance",
+      "file": "knowledge/13-Performance.md",
+      "title": "13 - Performance",
+      "folder": "knowledge",
+      "excerpt": "Performance is a feature. Slow sites lose users, rank lower in search, and burn money on compute. Optimize what matters, measure everything.",
+      "order": 11
+    },
+    "14-monitoring": {
+      "slug": "14-monitoring",
+      "file": "knowledge/14-Monitoring.md",
+      "title": "14 - Monitoring",
+      "folder": "knowledge",
+      "excerpt": "If it isn't observed, it didn't happen. Monitoring is the bridge between \"it works on my machine\" and \"it works in production.\"",
+      "order": 12
+    },
+    "lessons-learned": {
+      "slug": "lessons-learned",
+      "file": "journal/Lessons-Learned.md",
+      "title": "Lessons Learned",
+      "folder": "journal",
+      "excerpt": "Every bug, outage, and surprise is a lesson. Log it here so it only happens once.",
+      "order": 13
+    }
+  }
+}
