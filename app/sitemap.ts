@@ -1,9 +1,10 @@
 import type { MetadataRoute } from "next";
+import { getBrainManifest } from "@/lib/brain";
 
 const base = "https://rhinesolution.com";
 const locales = ["en", "nl"] as const;
 const members = ["ragnarok", "zeromeister"] as const;
-const projects = ["rhinesolution", "brain", "macmini", "music"] as const;
+const projects = ["rhinesolution", "macmini", "music"] as const;
 const localePaths = [
   "/team",
   "/projects",
@@ -63,6 +64,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
         changeFrequency: "monthly",
         priority: 0.5,
         alternates: { languages: languages(`/projects/${slug}`) },
+      });
+    }
+    entries.push({
+      url: `${base}/${locale}/projects/brain`,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.7,
+      alternates: { languages: languages("/projects/brain") },
+    });
+    for (const note of Object.values(getBrainManifest().notes)) {
+      entries.push({
+        url: `${base}/${locale}/projects/brain/${note.slug}`,
+        lastModified: now,
+        changeFrequency: "monthly",
+        priority: 0.5,
+        alternates: { languages: languages(`/projects/brain/${note.slug}`) },
       });
     }
   }
