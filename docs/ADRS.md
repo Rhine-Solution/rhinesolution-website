@@ -21,11 +21,11 @@
   control with minimal toolchain.
 - **Decision:** no Tailwind, no CSS-in-JS. Design tokens as CSS custom
   properties in `styles/globals.css`.
-- **Consequence:** single locked stylesheet; theme changes are deliberate.
+- **Consequence:** single stylesheet; theme changes are deliberate.
 
 ## ADR-0003 · Always-dark design + WebGL (no light theme)
 
-**Status:** accepted — **locked**, do not revert
+**Status:** accepted
 
 - **Context:** the brand identity depends on translucent glass over a WebGL
   canvas, which requires a dark background to read.
@@ -35,7 +35,7 @@
 
 ## ADR-0004 · No audio
 
-**Status:** accepted — **locked**, do not revert
+**Status:** accepted
 
 - **Context:** an audio system added complexity and no product value.
 - **Decision:** audio removed entirely.
