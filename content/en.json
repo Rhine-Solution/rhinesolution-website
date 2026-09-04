@@ -141,7 +141,9 @@
   },
   "projects": {
     "title": "Selected work",
-    "subtitle": "Production systems, deployed and maintained."
+    "subtitle": "Production systems, deployed and maintained.",
+    "featured_label": "Featured",
+    "read_more": "Read more"
   },
   "brain": {
     "title": "The Brain",
@@ -162,6 +164,7 @@
   "project_rhinesolution": {
     "title": "rhinesolution.com",
     "slug": "rhinesolution",
+    "icon": "globe",
     "summary": "This website. Next.js 15, TypeScript, pure CSS, deployed to Vercel with Cloudflare DNS.",
     "stack": [
       "Next.js 15",
@@ -175,6 +178,8 @@
   "project_brain": {
     "title": "The Brain",
     "slug": "brain",
+    "icon": "brain",
+    "featured": true,
     "summary": "Our living engineering knowledge base — architecture, security, deployment, and testing notes, published openly. Browse the thinking behind how we build.",
     "stack": [
       "Obsidian",
@@ -186,6 +191,7 @@
   "project_macmini": {
     "title": "Mac Mini AI Infrastructure",
     "slug": "macmini",
+    "icon": "server",
     "summary": "The Mac Mini that runs Rhine Solution's AI stack: Free Claude Code (Discord bot), 5 model fallbacks (NVIDIA NIM, Groq, Gemini, Mistral, OpenRouter), and the OpenCode agent that assists with daily work.",
     "stack": [
       "macOS 26",
@@ -199,6 +205,7 @@
   "project_music": {
     "title": "Music Trends Local",
     "slug": "music",
+    "icon": "music",
     "summary": "A cyber-themed music portal showcasing top songs, artists, and genres — 48 tracks across 8 electronic sub-genres with search, filters, and localStorage favorites.",
     "stack": [
       "HTML5",

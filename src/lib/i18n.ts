@@ -17,6 +17,8 @@ export function getContent(locale: string): typeof en {
 
 export type ContentProject = {
   slug: string;
+  icon?: string;
+  featured?: boolean;
   title: string;
   summary: string;
   stack: string[];
@@ -48,6 +50,14 @@ export function getProjects(content: typeof en, keys: readonly string[]): Conten
   return keys
     .map((key) => (content as unknown as Record<string, ContentProject | undefined>)[key])
     .filter((p): p is ContentProject => Boolean(p));
+}
+
+export function sortProjects(projects: ContentProject[]): ContentProject[] {
+  return [...projects].sort((a, b) => {
+    if (a.featured && !b.featured) return -1;
+    if (b.featured && !a.featured) return 1;
+    return Number(b.year) - Number(a.year);
+  });
 }
 
 export function getProject(content: typeof en, slug: string): ContentProject | undefined {

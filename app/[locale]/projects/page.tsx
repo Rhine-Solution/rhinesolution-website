@@ -1,9 +1,9 @@
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
-import { getContent, getProjects } from "@/lib/i18n";
+import ProjectCard from "@/components/ProjectCard";
+import { getContent, getProjects, sortProjects } from "@/lib/i18n";
 import { getCompanySocials } from "@/lib/socials";
 import { buildMetadata } from "@/lib/seo";
-import Link from "next/link";
 
 type Props = { params: Promise<{ locale: string }> };
 
@@ -20,7 +20,7 @@ export default async function ProjectsPage({ params }: Props) {
   const { locale } = await params;
   const content = getContent(locale);
   const t = content.projects;
-  const items = getProjects(content, ["project_rhinesolution", "project_brain", "project_macmini", "project_music"]);
+  const items = sortProjects(getProjects(content, ["project_rhinesolution", "project_brain", "project_macmini", "project_music"]));
 
   return (
     <>
@@ -31,20 +31,18 @@ export default async function ProjectsPage({ params }: Props) {
           <h1>{t.title}</h1>
           <p style={{ color: "var(--color-text-muted)", fontSize: "1.1rem" }}>{t.subtitle}</p>
         </header>
-        <div className="grid" style={{ marginTop: "var(--space-5)" }}>
+        <div
+          className="projects-grid"
+          style={{ marginTop: "var(--space-5)" }}
+        >
           {items.map((p) => (
-            <Link
+            <ProjectCard
               key={p.slug}
-              href={`/${locale}/projects/${p.slug}`}
-              className="card"
-              style={{ textDecoration: "none", color: "inherit" }}
-            >
-              <h2>{p.title}</h2>
-              <p>{p.summary}</p>
-              <p style={{ color: "var(--color-text-muted)", fontSize: "0.85rem", marginBottom: 0 }}>
-                {p.stack.join(" · ")} · {p.year}
-              </p>
-            </Link>
+              project={p}
+              locale={locale}
+              featuredLabel={t.featured_label}
+              readMoreLabel={t.read_more}
+            />
           ))}
         </div>
       </main>

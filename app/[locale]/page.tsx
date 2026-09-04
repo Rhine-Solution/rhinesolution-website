@@ -4,7 +4,8 @@ import StatementBand from "@/components/StatementBand";
 import SectionDivider from "@/components/SectionDivider";
 import ClosingCta from "@/components/ClosingCta";
 import EntryGate from "@/components/EntryGate";
-import { getContent, getProjects } from "@/lib/i18n";
+import ProjectCard from "@/components/ProjectCard";
+import { getContent, getProjects, sortProjects } from "@/lib/i18n";
 import { getCompanySocials } from "@/lib/socials";
 import { buildMetadata } from "@/lib/seo";
 import Link from "next/link";
@@ -24,12 +25,14 @@ export default async function HomePage({ params }: Props) {
   const { locale } = await params;
   const content = getContent(locale);
   const t = content.home;
-  const projects = getProjects(content, [
-    "project_rhinesolution",
-    "project_brain",
-    "project_macmini",
-    "project_music",
-  ]);
+  const projects = sortProjects(
+    getProjects(content, [
+      "project_rhinesolution",
+      "project_brain",
+      "project_macmini",
+      "project_music",
+    ])
+  );
 
   return (
     <>
@@ -102,30 +105,16 @@ export default async function HomePage({ params }: Props) {
           <p className="section-eyebrow">{content.sections.featured_work}</p>
           <h2>{t.featured_title}</h2>
           <p style={{ color: "var(--color-text-muted)" }}>{t.featured_text}</p>
-          <div className="grid" style={{ marginTop: "var(--space-5)" }}>
+          <div className="projects-grid" style={{ marginTop: "var(--space-5)" }}>
             {projects.map((p) => (
-              <Link
+              <ProjectCard
                 key={p.slug}
-                href={`/${locale}/projects/${p.slug}`}
-                className="project-card"
-                style={{ textDecoration: "none", color: "inherit" }}
-              >
-                <div className="project-card-content">
-                  <h3>{p.title}</h3>
-                  <p style={{ marginBottom: "var(--space-2)" }}>{p.summary}</p>
-                  <p style={{ color: "var(--color-text-muted)", fontSize: "0.9rem", marginBottom: 0 }}>
-                    {p.stack.join(" · ")} · {p.year}
-                  </p>
-                </div>
-                <div className="project-card-preview" aria-hidden="true">
-                  <div className="project-card-preview-stack">
-                    {p.stack.slice(0, 4).map((tech) => (
-                      <span key={tech} className="project-card-tech">{tech}</span>
-                    ))}
-                  </div>
-                  <span className="project-card-arrow">View project →</span>
-                </div>
-              </Link>
+                project={p}
+                locale={locale}
+                featuredLabel={content.projects.featured_label}
+                readMoreLabel={content.projects.read_more}
+                headingLevel="h3"
+              />
             ))}
           </div>
         </section>
