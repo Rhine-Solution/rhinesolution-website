@@ -1,17 +1,35 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Cormorant_Garamond } from "next/font/google";
+import localFont from "next/font/local";
 import SceneManager from "@/components/scene/SceneManager";
 import SmoothScrollProvider from "@/components/SmoothScrollProvider";
 import CustomCursor from "@/components/CustomCursor";
 import IntroLoader from "@/components/IntroLoader";
 import JsonLd, { siteJsonLd } from "@/components/JsonLd";
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
+const rijksSans = localFont({
+  src: "../fonts/rijksoverheids-sans-text-regular.ttf",
+  variable: "--font-rijks-sans",
+});
 
-const cormorant = Cormorant_Garamond({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-cormorant",
+const rijksHeading = localFont({
+  src: "../fonts/rijksoverheids-heading-bold.ttf",
+  variable: "--font-rijks-heading",
+});
+
+const rijksSerif = localFont({
+  src: [
+    {
+      path: "../fonts/rijksoverheids-serif-regular.ttf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../fonts/rijksoverheids-serif-italic.ttf",
+      weight: "400",
+      style: "italic",
+    },
+  ],
+  variable: "--font-rijks-serif",
 });
 
 const SITE = "https://rhinesolution.com";
@@ -92,7 +110,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${inter.variable} ${cormorant.variable}`} suppressHydrationWarning>
+    <html lang="en" className={`${rijksSans.variable} ${rijksHeading.variable} ${rijksSerif.variable}`} suppressHydrationWarning>
       <body>
         <JsonLd data={siteJsonLd()} />
         <SceneManager />
