@@ -30,6 +30,11 @@ Follow this workflow on every change to this repo:
 5. **When done**, report to RAGNAROK (Discord 🤖┃rhine-ragnarok) with the branch name and a short summary, so he can review and merge.
 6. **When new work arrives**, start from a fresh branch off updated `main` — never chain commits on an old closed branch.
 
+## Documentation (public)
+- `docs/README.md` — engineering documentation index (architecture, stack, security, deployment, ADRs, roadmap, changelog).
+- **Keep `docs/` current**: update the matching document in the same PR that changes the behavior it describes.
+- This repo is **public** — never reference private paths, internal notes, or secrets here.
+
 ## See also
-- `~/Projects/obsidian-vault/Brain/Projects/rhinesolution-architecture.md`
-- `~/Projects/obsidian-vault/Brain/17-Infrastructure.md`
+- Engineering docs: `docs/README.md`
+- Internal notes (private, do NOT reference from this repo): the local Obsidian Brain at `~/Projects/obsidian-vault/Brain/`
