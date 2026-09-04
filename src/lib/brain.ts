@@ -32,6 +32,14 @@ function stripFrontmatter(md: string): { body: string } {
   return m ? { body: md.slice(m[0].length) } : { body: md };
 }
 
+function stripLinksFooter(body: string): string {
+  const re = /(?:^|\n)[ \t]*##\s*links[^\n]*$/gim;
+  let last = -1;
+  let m: RegExpExecArray | null;
+  while ((m = re.exec(body)) !== null) last = m.index;
+  return last >= 0 ? body.slice(0, last) : body;
+}
+
 export function getBrainManifest(): BrainManifest {
   return JSON.parse(readFileSync(join(brainDir(), "manifest.json"), "utf8")) as BrainManifest;
 }
@@ -54,8 +62,9 @@ export function getNoteMarkdown(slug: string, locale: string): string {
   if (!note) throw new Error(`Unknown brain note: ${slug}`);
   const raw = readFileSync(join(brainDir(), note.file), "utf8");
   const { body } = stripFrontmatter(raw);
+  const withoutFooter = stripLinksFooter(body);
   const manifest = getBrainManifest();
-  return body.replace(/\[\[([^\]|]+)(?:\|([^\]]+))?\]\]/g, (_m, target, alias) => {
+  return withoutFooter.replace(/\[\[([^\]|]+)(?:\|([^\]]+))?\]\]/g, (_m, target, alias) => {
     const targetSlug = slugify(target.trim());
     const resolved = manifest.notes[targetSlug];
     const label = (alias ?? target).trim();
