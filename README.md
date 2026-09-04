@@ -18,5 +18,8 @@ Open http://localhost:3000
 ## Deployment
 Deployed to Vercel: https://rhinesolution.com
 
+## Documentation
+Living engineering documentation lives in [`docs/`](docs/README.md) — architecture, stack, security, deployment, decision records, roadmap, and changelog.
+
 ## License
 © Rhine Solution
