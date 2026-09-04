@@ -33,11 +33,15 @@ function stripFrontmatter(md: string): { body: string } {
 }
 
 function stripLinksFooter(body: string): string {
-  const re = /(?:^|\n)[ \t]*##\s*links[^\n]*$/gim;
+  const re = /^##[ \t]+Links[ \t]*$/gm;
   let last = -1;
   let m: RegExpExecArray | null;
   while ((m = re.exec(body)) !== null) last = m.index;
-  return last >= 0 ? body.slice(0, last) : body;
+  if (last < 0) return body;
+  const lineEnd = body.indexOf("\n", last);
+  const after = lineEnd < 0 ? "" : body.slice(lineEnd + 1);
+  if (/^#{1,6}[ \t]/m.test(after)) return body;
+  return body.slice(0, last);
 }
 
 export function getBrainManifest(): BrainManifest {
@@ -58,12 +62,12 @@ export function buildTree(manifest: BrainManifest) {
 }
 
 export function getNoteMarkdown(slug: string, locale: string): string {
-  const note = getNoteBySlug(slug);
+  const manifest = getBrainManifest();
+  const note = manifest.notes[slug];
   if (!note) throw new Error(`Unknown brain note: ${slug}`);
   const raw = readFileSync(join(brainDir(), note.file), "utf8");
   const { body } = stripFrontmatter(raw);
   const withoutFooter = stripLinksFooter(body);
-  const manifest = getBrainManifest();
   return withoutFooter.replace(/\[\[([^\]|]+)(?:\|([^\]]+))?\]\]/g, (_m, target, alias) => {
     const targetSlug = slugify(target.trim());
     const resolved = manifest.notes[targetSlug];
