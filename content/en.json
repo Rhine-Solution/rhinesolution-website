@@ -18,7 +18,6 @@
     "projects": "Projects",
     "about": "About",
     "news": "News",
-    "dfir": "DFIR",
     "contact": "Contact",
     "back": "Back to Rhine Solution"
   },
@@ -265,7 +264,12 @@
   "a11y": {
     "skip_to_content": "Skip to main content",
     "nav_label": "Main navigation",
-    "current_page": "Current page"
+    "current_page": "Current page",
+    "language_switcher": "Switch language",
+    "language_names": {
+      "en": "English",
+      "nl": "Nederlands"
+    }
   },
   "sections": {
     "stack": "Stack",

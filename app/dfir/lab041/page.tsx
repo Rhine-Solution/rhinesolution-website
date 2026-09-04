@@ -112,7 +112,7 @@ export default function DfirLab041Page() {
   const content = getContent(defaultLocale);
   return (
     <>
-      <Nav locale="en" brand={content.brand.name} labels={content.nav} current="dfir" />
+      <Nav locale="en" brand={content.brand.name} labels={content.nav} />
       <JsonLd
         data={breadcrumbJsonLd("en", [
           { name: "Home", path: "/en" },

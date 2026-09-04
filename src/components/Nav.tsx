@@ -1,11 +1,12 @@
 import Link from "next/link";
 import { FiChevronDown } from "react-icons/fi";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 type NavProps = {
   locale: string;
   brand: string;
-  labels: { home: string; team: string; projects: string; about: string; news: string; dfir: string; contact: string };
-  current: "home" | "team" | "projects" | "about" | "news" | "dfir" | "contact";
+  labels: { home: string; team: string; projects: string; about: string; news: string; contact: string };
+  current?: "home" | "team" | "projects" | "about" | "news" | "contact";
 };
 
 export default function Nav({ locale, brand, labels, current }: NavProps) {
@@ -44,17 +45,13 @@ export default function Nav({ locale, brand, labels, current }: NavProps) {
               </Link>
             </li>
             <li>
-              <Link href="/dfir" aria-current={current === "dfir" ? "page" : undefined}>
-                {labels.dfir}
-              </Link>
-            </li>
-            <li>
               <Link href={`/${locale}/contact`} aria-current={current === "contact" ? "page" : undefined}>
                 {labels.contact}
               </Link>
             </li>
           </ul>
         </div>
+        <LanguageSwitcher locale={locale} variant="dock" />
       </div>
     </nav>
   );

@@ -10,7 +10,6 @@ type NavLabels = {
   projects: string;
   about: string;
   news: string;
-  dfir: string;
   contact: string;
   back: string;
 };
@@ -79,9 +78,6 @@ export default function Footer({
             </li>
             <li>
               <Link href={`/${locale}/news`}>{navLabels.news}</Link>
-            </li>
-            <li>
-              <Link href="/dfir">{navLabels.dfir}</Link>
             </li>
             <li>
               <Link href={`/${locale}/contact`}>{navLabels.contact}</Link>
