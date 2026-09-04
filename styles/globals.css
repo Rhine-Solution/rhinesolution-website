@@ -136,12 +136,10 @@ p { margin-bottom: var(--space-3); }
 .portfolio-header,
 .page > section,
 .page > header,
-.page .stats-band,
 .page .about-cta,
 .project-detail,
 .project-content,
 .team-card,
-.stat,
 .news-card {
   background: rgba(13, 26, 56, 0.6);
   border-radius: var(--radius-lg);
@@ -838,53 +836,6 @@ p { margin-bottom: var(--space-3); }
   margin-bottom: var(--space-2);
 }
 
-/* Stats */
-.stats-band {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
-  gap: var(--space-4);
-  margin-block: var(--space-6);
-}
-.stat {
-  position: relative;
-  overflow: hidden;
-}
-.stat-value {
-  position: relative;
-  display: block;
-  font-family: var(--font-serif);
-  font-size: clamp(2.5rem, 5vw, 3.5rem);
-  font-weight: 600;
-  line-height: 1;
-  color: var(--color-blue-soft);
-}
-.stat-label {
-  display: block;
-  margin-top: var(--space-2);
-  color: var(--color-text-muted);
-  font-size: 0.9rem;
-}
-.stat-ring {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 9rem;
-  height: 9rem;
-  pointer-events: none;
-}
-.stat-ring::after {
-  content: "";
-  position: absolute;
-  inset: 1.5rem;
-  border-radius: 50%;
-  background: rgba(44, 107, 255, 0.32);
-  animation: stat-pulse 3.4s ease-in-out infinite;
-}
-@keyframes stat-pulse {
-  0%, 100% { transform: scale(0.9); opacity: 0.75; }
-  50% { transform: scale(1.12); opacity: 0.35; }
-}
-
 /* About */
 .about-story {
   max-width: var(--max-w-prose);
@@ -896,6 +847,70 @@ p { margin-bottom: var(--space-3); }
 .value-title {
   color: var(--color-blue-soft);
 }
+
+/* Services (What we build) */
+.service-card {
+  position: relative;
+}
+.service-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: var(--radius-md);
+  background: rgba(44, 107, 255, 0.14);
+  color: var(--color-blue-soft);
+  margin-bottom: var(--space-3);
+}
+.service-title {
+  color: var(--color-blue-soft);
+  margin-bottom: var(--space-2);
+}
+
+/* Process (How we work) */
+.process-steps {
+  display: grid;
+  gap: var(--space-4);
+}
+.process-step {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--space-4);
+  align-items: start;
+  background: rgba(13, 26, 56, 0.6);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+}
+.step-num {
+  font-family: var(--font-serif);
+  font-size: 1.6rem;
+  font-weight: 600;
+  line-height: 1;
+  color: rgba(126, 167, 255, 0.55);
+}
+.step-title {
+  color: var(--color-blue-soft);
+  margin-bottom: var(--space-2);
+}
+
+/* Stack & toolkit */
+.stack-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+.stack-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--space-2) var(--space-3);
+  border-radius: 999px;
+  background: rgba(13, 26, 56, 0.6);
+  border: 1px solid rgba(126, 167, 255, 0.28);
+  color: rgba(226, 234, 255, 0.85);
+  font-size: 0.9rem;
+}
+
 .about-cta {
   margin-top: var(--space-6);
   padding: var(--space-6);
@@ -1163,7 +1178,6 @@ p { margin-bottom: var(--space-3); }
   .statement-band { padding-block: var(--space-6); }
   .statement-heading { font-size: clamp(1.9rem, 9vw, 2.8rem); }
   .news-card { grid-template-columns: 1fr; gap: var(--space-2); }
-  .stats-band { grid-template-columns: repeat(2, 1fr); }
   .hero-title { font-size: clamp(2.6rem, 14vw, 4rem); }
 }
 
@@ -1570,11 +1584,6 @@ p { margin-bottom: var(--space-3); }
 .page h1, .page h2 { color: var(--color-ink); }
 .page .section-eyebrow { color: #7ea7ff; }
 .page .contact-body { color: rgba(226, 234, 255, 0.85); }
-.page .stats-band {
-  display: grid;
-  gap: var(--space-4);
-  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
-}
 .page .about-cta {
   background: linear-gradient(135deg, rgba(44, 107, 255, 0.18), rgba(13, 26, 56, 0.7));
   text-align: center;

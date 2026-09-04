@@ -220,13 +220,45 @@
       "Our workflow is AI-first but human-led. The Mac Mini runs our agents and models, and the Obsidian Brain keeps every decision documented and repeatable.",
       "We favor simplicity, craft, and production code. When we promise a project, it ships."
     ],
-    "stats_label": "The studio in numbers",
-    "stats": [
-      { "value": 4, "suffix": "", "label": "Projects shipped" },
-      { "value": 2, "suffix": "", "label": "Builders" },
-      { "value": 5, "suffix": "", "label": "AI providers" },
-      { "value": 40, "suffix": "+", "label": "Brain notes" }
+    "services_title": "What we build",
+    "services": [
+      {
+        "icon": "layout",
+        "title": "Portfolios & brand sites",
+        "text": "Personal and studio sites that lead with character — fast, bilingual, and built to feel like the brand they stand for."
+      },
+      {
+        "icon": "monitor",
+        "title": "Portals & products",
+        "text": "Internal portals, dashboards, and tools with real logins, real data, and real users — maintained for the long run."
+      },
+      {
+        "icon": "zap",
+        "title": "Custom web apps",
+        "text": "Applications built to spec, from first sketch to live deploy — no mockups left behind, only code that runs."
+      }
     ],
+    "process_title": "How we work",
+    "process": [
+      {
+        "title": "Proposal first",
+        "text": "We write the plan in plain language before a single line of code — so you know what you're getting and why."
+      },
+      {
+        "title": "Small, reviewable steps",
+        "text": "We commit in small increments. Every change explains its why, not just its what, and stays easy to review."
+      },
+      {
+        "title": "Decisions documented",
+        "text": "Every choice lives in the Obsidian Brain — so the reasoning survives the people who made it."
+      },
+      {
+        "title": "Written handoff",
+        "text": "We close with a handover: what was built, how to maintain it, and where the seams are."
+      }
+    ],
+    "stack_title": "Stack & toolkit",
+    "stack": ["Next.js 15", "TypeScript", "Pure CSS", "Mac Mini", "Obsidian Brain", "Vercel", "Cloudflare"],
     "values_title": "What we value",
     "values": [
       { "title": "Craft over quantity", "text": "We take on a few projects and finish them properly." },

@@ -226,13 +226,45 @@
       "Onze werkwijze is AI-first maar mens-geleid. De Mac Mini draait onze agents en modellen, en de Obsidian Brain houdt elke beslissing gedocumenteerd en herhaalbaar.",
       "We kiezen voor eenvoud, vakmanschap en productiecode. Als we een project beloven, leveren we het."
     ],
-    "stats_label": "Het bedrijf in cijfers",
-    "stats": [
-      { "value": 4, "suffix": "", "label": "Projecten uitgerold" },
-      { "value": 2, "suffix": "", "label": "Bouwers" },
-      { "value": 5, "suffix": "", "label": "AI-providers" },
-      { "value": 40, "suffix": "+", "label": "Brain-notities" }
+    "services_title": "Wat we bouwen",
+    "services": [
+      {
+        "icon": "layout",
+        "title": "Portfolio's en merksites",
+        "text": "Persoonlijke en studio-sites met karakter — snel, tweetalig en gebouwd als het merk dat ze vertegenwoordigen."
+      },
+      {
+        "icon": "monitor",
+        "title": "Portals en producten",
+        "text": "Interne portals, dashboards en tools met echte logins, echte data en echte gebruikers — onderhouden voor de lange termijn."
+      },
+      {
+        "icon": "zap",
+        "title": "Maatwerk webapps",
+        "text": "Applicaties op specificatie, van eerste schets tot live uitrol — geen mockups achtergelaten, alleen code die draait."
+      }
     ],
+    "process_title": "Hoe we werken",
+    "process": [
+      {
+        "title": "Eerst een voorstel",
+        "text": "We schrijven het plan in duidelijke taal vóór de eerste regel code — zodat je weet wat je krijgt en waarom."
+      },
+      {
+        "title": "Kleine, controleerbare stappen",
+        "text": "We committen in kleine stappen. Elke wijziging verklaart het waarom, niet alleen het wat, en blijft eenvoudig te beoordelen."
+      },
+      {
+        "title": "Beslissingen gedocumenteerd",
+        "text": "Elke keuze leeft in de Obsidian Brain — zodat de redenatie de mensen die haar maakten overleeft."
+      },
+      {
+        "title": "Schriftelijke overdracht",
+        "text": "We sluiten af met een overdracht: wat is gebouwd, hoe je het onderhoudt en waar de naden zitten."
+      }
+    ],
+    "stack_title": "Stack en tools",
+    "stack": ["Next.js 15", "TypeScript", "Pure CSS", "Mac Mini", "Obsidian Brain", "Vercel", "Cloudflare"],
     "values_title": "Waar we voor staan",
     "values": [
       { "title": "Vakmanschap boven kwantiteit", "text": "We nemen weinig projecten aan en maken ze goed af." },
