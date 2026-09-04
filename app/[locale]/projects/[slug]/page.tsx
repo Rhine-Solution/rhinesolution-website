@@ -12,11 +12,9 @@ type Props = { params: Promise<{ locale: string; slug: string }> };
 export async function generateStaticParams() {
   return [
     { locale: "en", slug: "rhinesolution" },
-    { locale: "en", slug: "brain" },
     { locale: "en", slug: "macmini" },
     { locale: "en", slug: "music" },
     { locale: "nl", slug: "rhinesolution" },
-    { locale: "nl", slug: "brain" },
     { locale: "nl", slug: "macmini" },
     { locale: "nl", slug: "music" },
   ];
