@@ -141,6 +141,22 @@
     "title": "Geselecteerd werk",
     "subtitle": "Productiesystemen, uitgerold en onderhouden."
   },
+  "brain": {
+    "title": "Het Brein",
+    "subtitle": "Rhine Solution's levende technische kennisbank — hoe wij nadenken over het bouwen van software.",
+    "browse": "Verken de kennisbank",
+    "read": "Lees notitie",
+    "back": "Terug naar het Brein",
+    "empty": "Het Brein wordt nog voorbereid. Kom binnenkort terug.",
+    "folders": {
+      "plan": "Planning",
+      "build": "Ontwikkeling",
+      "harden": "Beveiliging",
+      "ship": "Release",
+      "knowledge": "Kennis",
+      "journal": "Logboek"
+    }
+  },
   "project_rhinesolution": {
     "title": "rhinesolution.com",
     "slug": "rhinesolution",
