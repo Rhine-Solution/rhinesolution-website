@@ -42,14 +42,14 @@ src/
   components/         # React components (Nav, Footer, EntryGate, Turnstile, …)
   components/scene/   # WebGL scene system (Three.js + Theatre.js + Lenis)
   lib/                # i18n, seo, socials, turnstile helpers
-styles/globals.css    # design tokens + global styles (locked: always-dark)
+styles/globals.css    # design tokens + global styles (always-dark)
 ```
 
 ## Design system
 
 - **Always-dark navy** (`#070e24`) + WebGL background. No light theme by
-  design, so translucent "glass" panels stay readable. `styles/globals.css` is
-  a locked file — changes need explicit review.
+  design, so translucent "glass" panels stay readable. `styles/globals.css`
+  holds the design tokens — changes there need review.
 - Typography: Cormorant Garamond (display) + Inter (body).
 - No CSS-in-JS, no Tailwind — pure CSS custom properties.
 

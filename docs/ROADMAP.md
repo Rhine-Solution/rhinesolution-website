@@ -39,8 +39,8 @@
 
 ## Never / rejected
 
-- Light theme (see `ADRS.md` — locked).
-- Audio (see `ADRS.md` — locked).
+- Light theme (see `ADRS.md` — rejected).
+- Audio (see `ADRS.md` — rejected).
 - Removing the entry gate (kept by owner decision; Turnstile stays on the
   contact API regardless).
 

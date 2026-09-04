@@ -26,7 +26,7 @@ path segment.
 ### Pure CSS over Tailwind / CSS-in-JS
 The brand is a specific always-dark WebGL look with translucent surfaces. CSS
 custom properties give the design system without a build-time dependency or
-runtime style injection. Tokens live in `styles/globals.css` (locked file).
+runtime style injection. Design tokens live in `styles/globals.css`.
 
 ### Vercel over self-hosted / Hostinger VPS
 The site is static-first with two small serverless functions. Vercel provides
