@@ -1,25 +1,11 @@
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
-import { getContent, getProjects } from "@/lib/i18n";
+import ProjectCard from "@/components/ProjectCard";
+import { getContent, getProjects, sortProjects } from "@/lib/i18n";
 import { getCompanySocials } from "@/lib/socials";
 import { buildMetadata } from "@/lib/seo";
-import Link from "next/link";
-import {
-  LuBrain,
-  LuGlobe,
-  LuMusic,
-  LuServer,
-  LuArrowUpRight,
-} from "react-icons/lu";
 
 type Props = { params: Promise<{ locale: string }> };
-
-const projectIcons: Record<string, typeof LuGlobe> = {
-  globe: LuGlobe,
-  brain: LuBrain,
-  server: LuServer,
-  music: LuMusic,
-};
 
 export async function generateMetadata({ params }: Props) {
   const { locale } = await params;
@@ -34,12 +20,7 @@ export default async function ProjectsPage({ params }: Props) {
   const { locale } = await params;
   const content = getContent(locale);
   const t = content.projects;
-  const items = getProjects(content, ["project_rhinesolution", "project_brain", "project_macmini", "project_music"])
-    .sort((a, b) => {
-      if (a.featured && !b.featured) return -1;
-      if (b.featured && !a.featured) return 1;
-      return Number(b.year) - Number(a.year);
-    });
+  const items = sortProjects(getProjects(content, ["project_rhinesolution", "project_brain", "project_macmini", "project_music"]));
 
   return (
     <>
@@ -54,37 +35,15 @@ export default async function ProjectsPage({ params }: Props) {
           className="projects-grid"
           style={{ marginTop: "var(--space-5)" }}
         >
-          {items.map((p) => {
-            const Icon = projectIcons[p.icon ?? ""] ?? LuGlobe;
-            return (
-              <Link
-                key={p.slug}
-                href={`/${locale}/projects/${p.slug}`}
-                className={`card project-card${p.featured ? " featured" : ""}`}
-                style={{ textDecoration: "none", color: "inherit" }}
-              >
-                {p.featured && (
-                  <span className="featured-tag">{t.featured_label}</span>
-                )}
-                <div className="project-card-head">
-                  <span className="project-icon" aria-hidden="true">
-                    <Icon size={20} />
-                  </span>
-                  <h2>{p.title}</h2>
-                </div>
-                <p className="project-summary">{p.summary}</p>
-                <div className="project-card-foot">
-                  <p className="project-meta">
-                    {p.stack.join(" · ")} · {p.year}
-                  </p>
-                  <span className="read-more">
-                    {t.read_more}
-                    <LuArrowUpRight size={16} aria-hidden="true" />
-                  </span>
-                </div>
-              </Link>
-            );
-          })}
+          {items.map((p) => (
+            <ProjectCard
+              key={p.slug}
+              project={p}
+              locale={locale}
+              featuredLabel={t.featured_label}
+              readMoreLabel={t.read_more}
+            />
+          ))}
         </div>
       </main>
       <Footer

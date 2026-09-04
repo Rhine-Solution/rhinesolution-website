@@ -52,6 +52,14 @@ export function getProjects(content: typeof en, keys: readonly string[]): Conten
     .filter((p): p is ContentProject => Boolean(p));
 }
 
+export function sortProjects(projects: ContentProject[]): ContentProject[] {
+  return [...projects].sort((a, b) => {
+    if (a.featured && !b.featured) return -1;
+    if (b.featured && !a.featured) return 1;
+    return Number(b.year) - Number(a.year);
+  });
+}
+
 export function getProject(content: typeof en, slug: string): ContentProject | undefined {
   return getProjects(content, [`project_${slug}`])[0];
 }
