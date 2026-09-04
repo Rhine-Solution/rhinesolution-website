@@ -18,7 +18,6 @@
     "projects": "Projecten",
     "about": "Over ons",
     "news": "Nieuws",
-    "dfir": "DFIR",
     "contact": "Contact",
     "back": "Terug naar Rhine Solution"
   },
@@ -271,7 +270,12 @@
   "a11y": {
     "skip_to_content": "Ga naar hoofdcontent",
     "nav_label": "Hoofdnavigatie",
-    "current_page": "Huidige pagina"
+    "current_page": "Huidige pagina",
+    "language_switcher": "Wissel van taal",
+    "language_names": {
+      "en": "English",
+      "nl": "Nederlands"
+    }
   },
   "sections": {
     "stack": "Techniek",

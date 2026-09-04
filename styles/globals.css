@@ -278,6 +278,90 @@ p { margin-bottom: var(--space-3); }
 }
 .nav-links a[aria-current="page"]::after { right: 0; }
 
+/* Language switcher — dropdown variant (inside the nav island) */
+.lang-switcher {
+  position: relative;
+  display: inline-flex;
+}
+.lang-switcher summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.32rem 0.75rem;
+  border-radius: 999px;
+  background: rgba(126, 167, 255, 0.08);
+  border: 1px solid rgba(126, 167, 255, 0.2);
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  list-style: none;
+  transition: color var(--transition-fast), border-color var(--transition-fast), background var(--transition-fast);
+}
+.lang-switcher summary::-webkit-details-marker { display: none; }
+.lang-switcher summary:hover {
+  color: var(--color-text);
+  border-color: rgba(126, 167, 255, 0.4);
+}
+.lang-switcher-caret {
+  transition: transform var(--transition-med);
+}
+.lang-switcher[open] .lang-switcher-caret { transform: rotate(180deg); }
+.lang-switcher-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 0.35rem;
+  border-radius: var(--radius-md);
+  background: rgba(10, 20, 46, 0.97);
+  border: 1px solid rgba(126, 167, 255, 0.2);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  white-space: nowrap;
+}
+.lang-switcher-menu a {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.45rem 0.7rem;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+.lang-switcher-menu a:hover {
+  background: rgba(126, 167, 255, 0.12);
+  color: var(--color-text);
+}
+.lang-switcher-menu a.is-active { color: #7ea7ff; }
+.lang-switcher-menu .lang-switcher-code {
+  font-weight: 700;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  min-width: 1.6rem;
+}
+.lang-switcher-name { opacity: 0.9; }
+
+.lang-switcher--dock {
+  display: none;
+}
+.nav-island:hover .lang-switcher--dock,
+.nav-island:focus-within .lang-switcher--dock {
+  display: inline-flex;
+}
+.lang-switcher--dock .lang-switcher-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: -0.4rem;
+  min-width: 170px;
+  z-index: 50;
+}
+
 /* Portfolio page */
 .portfolio-header {
   padding-block: var(--space-6) var(--space-4);
@@ -559,6 +643,9 @@ p { margin-bottom: var(--space-3); }
   .nav-menu-col .nav-links a {
     opacity: 1;
     transform: none;
+  }
+  .lang-switcher--dock {
+    display: inline-flex;
   }
   .nav-links { gap: var(--space-3); font-size: 0.9rem; }
   .footer-main { grid-template-columns: 1fr; justify-items: center; text-align: center; }
@@ -1267,6 +1354,49 @@ p { margin-bottom: var(--space-3); }
   }
   .mobile-menu-nav a:active { background: rgba(126, 167, 255, 0.12); }
   .mobile-menu-nav a[aria-current="page"] { color: #7ea7ff; }
+  .mobile-lang {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    padding: var(--space-3) 0 var(--space-4);
+  }
+  .mobile-lang-label {
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+  }
+  .lang-pills {
+    display: inline-flex;
+    gap: 4px;
+    padding: 3px;
+    border-radius: 999px;
+    background: rgba(126, 167, 255, 0.08);
+    border: 1px solid rgba(126, 167, 255, 0.15);
+  }
+  .lang-pills a {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.4rem 0.9rem;
+    border-radius: 999px;
+    text-decoration: none;
+    font-family: var(--font-sans);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: var(--color-text-muted);
+    transition: color var(--transition-fast), background var(--transition-fast);
+  }
+  .lang-pills a:hover {
+    color: var(--color-ink);
+    background: rgba(126, 167, 255, 0.18);
+  }
+  .lang-pills a.is-active {
+    color: var(--color-ink);
+    background: rgba(44, 107, 255, 0.85);
+  }
   .mobile-menu-socials {
     display: flex;
     flex-wrap: wrap;
