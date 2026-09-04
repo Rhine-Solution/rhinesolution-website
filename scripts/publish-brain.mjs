@@ -1,4 +1,4 @@
-import { readFileSync, writeFileSync, mkdirSync, existsSync, copyFileSync } from "node:fs";
+import { readFileSync, writeFileSync, mkdirSync, existsSync, copyFileSync, rmSync } from "node:fs";
 import { join } from "node:path";
 import { pathToFileURL } from "node:url";
 
@@ -54,11 +54,20 @@ function parseFrontmatter(md) {
 }
 
 function extractExcerpt(body) {
-  const p = body
-    .split("\n")
-    .map((l) => l.trim())
-    .find((l) => l.length > 0 && !l.startsWith("#") && !l.startsWith("-") && !l.startsWith(">"));
-  return (p || "").slice(0, 160);
+  const lines = body.split("\n").map((l) => l.trim());
+  const p = lines.find(
+    (l) =>
+      l.length > 0 &&
+      !l.startsWith("#") &&
+      !/^[-*] /.test(l) &&
+      !/^\d+\./.test(l) &&
+      !l.startsWith(">") &&
+      !l.startsWith("```") &&
+      !l.includes("|")
+  );
+  if (p) return p.slice(0, 160);
+  const quote = lines.find((l) => l.startsWith(">") && l.trim().length > 2);
+  return (quote || "").replace(/^>\s*/, "").slice(0, 160);
 }
 
 function extractTitle(body) {
@@ -68,6 +77,7 @@ function extractTitle(body) {
 
 export function publishBrain({ vault, out, force = false }) {
   if (!existsSync(vault)) throw new Error(`Vault not found: ${vault}`);
+  rmSync(out, { recursive: true, force: true });
   const blocked = [];
   const published = [];
   const skipped = [];
@@ -136,7 +146,11 @@ export function publishBrain({ vault, out, force = false }) {
 
 const isMain = process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href;
 if (isMain) {
-  const vault = process.env.BRAIN_VAULT || "C:/Users/teoal/Projects/obsidian-vault/Brain";
+  const vault = process.env.BRAIN_VAULT;
+  if (!vault) {
+    console.error("BRAIN_VAULT env var is required (path to the private Brain vault).");
+    process.exit(1);
+  }
   const out = join(process.cwd(), "brain");
   const force = process.argv.includes("--force");
   try {
