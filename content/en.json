@@ -34,14 +34,14 @@
     "cta_projects": "See our work",
     "cta_about": "About the studio",
     "stage_b_eyebrow": "The idea",
-    "stage_b_title": "Web that works — and shows it.",
+    "stage_b_title": "Web that works and shows it.",
     "stage_b_text": "Keep scrolling. Every layer of Rhine Solution is shipped, live, and made to move.",
     "stage_b_link": "See the work",
     "statements": [
       {
         "eyebrow": "01 · Craft",
         "heading": "Small team, high standard.",
-        "body": "A founding duo that ships together — design, build, and deploy, all in-house, with no layers between idea and launch.",
+        "body": "A founding duo that ships together design, build, and deploy, all in-house, with no layers between idea and launch.",
         "link_label": "Meet the team",
         "href": "/team"
       },
@@ -55,7 +55,7 @@
       {
         "eyebrow": "03 · Excellence",
         "heading": "Shipped, not staged.",
-        "body": "Every project ends up live in production. No mockups, no abandoned ideas — just code that runs.",
+        "body": "Every project ends up live in production. No mockups, no abandoned ideas just code that runs.",
         "link_label": "See our work",
         "href": "/projects"
       },
@@ -72,7 +72,7 @@
     "closing_cta": {
       "eyebrow": "Next step",
       "title": "Have a project in mind?",
-      "body": "Two builders, one direct conversation. We reply within a day — usually faster.",
+      "body": "Two builders, one direct conversation. We reply within a day usually faster.",
       "cta_label": "Start a conversation",
       "secondary_label": "See our work"
     }
@@ -147,7 +147,7 @@
   },
   "brain": {
     "title": "The Brain",
-    "subtitle": "Rhine Solution's living engineering knowledge base — how we think about building software.",
+    "subtitle": "Rhine Solution's living engineering knowledge base how we think about building software.",
     "browse": "Browse the knowledge base",
     "read": "Read note",
     "back": "Back to the Brain",
@@ -180,7 +180,7 @@
     "slug": "brain",
     "icon": "brain",
     "featured": true,
-    "summary": "Our living engineering knowledge base — architecture, security, deployment, and testing notes, published openly. Browse the thinking behind how we build.",
+    "summary": "Our living engineering knowledge base architecture, security, deployment, and testing notes, published openly. Browse the thinking behind how we build.",
     "stack": [
       "Obsidian",
       "Markdown",
@@ -206,7 +206,7 @@
     "title": "Music Trends Local",
     "slug": "music",
     "icon": "music",
-    "summary": "A cyber-themed music portal showcasing top songs, artists, and genres — 48 tracks across 8 electronic sub-genres with search, filters, and localStorage favorites.",
+    "summary": "A cyber-themed music portal showcasing top songs, artists, and genres 48 tracks across 8 electronic sub-genres with search, filters, and localStorage favorites.",
     "stack": [
       "HTML5",
       "CSS",
@@ -223,7 +223,7 @@
     "eyebrow": "The studio",
     "statement": "Small team, high standard, shipped work.",
     "story": [
-      "Rhine Solution is a two-person studio led by a CEO/CTO pair who build together. We make custom web experiences — portfolios, portals, and products — from first sketch to live deploy.",
+      "Rhine Solution is a two-person studio led by a CEO/CTO pair who build together. We make custom web experiences portfolios, portals, and products from first sketch to live deploy.",
       "Our workflow is AI-first but human-led. The Mac Mini runs our agents and models, and the Obsidian Brain keeps every decision documented and repeatable.",
       "We favor simplicity, craft, and production code. When we promise a project, it ships."
     ],
@@ -232,24 +232,24 @@
       {
         "icon": "layout",
         "title": "Portfolios & brand sites",
-        "text": "Personal and studio sites that lead with character — fast, bilingual, and built to feel like the brand they stand for."
+        "text": "Personal and studio sites that lead with character fast, bilingual, and built to feel like the brand they stand for."
       },
       {
         "icon": "monitor",
         "title": "Portals & products",
-        "text": "Internal portals, dashboards, and tools with real logins, real data, and real users — maintained for the long run."
+        "text": "Internal portals, dashboards, and tools with real logins, real data, and real users maintained for the long run."
       },
       {
         "icon": "zap",
         "title": "Custom web apps",
-        "text": "Applications built to spec, from first sketch to live deploy — no mockups left behind, only code that runs."
+        "text": "Applications built to spec, from first sketch to live deploy no mockups left behind, only code that runs."
       }
     ],
     "process_title": "How we work",
     "process": [
       {
         "title": "Proposal first",
-        "text": "We write the plan in plain language before a single line of code — so you know what you're getting and why."
+        "text": "We write the plan in plain language before a single line of code so you know what you're getting and why."
       },
       {
         "title": "Small, reviewable steps",
@@ -257,7 +257,7 @@
       },
       {
         "title": "Decisions documented",
-        "text": "Every choice lives in the Obsidian Brain — so the reasoning survives the people who made it."
+        "text": "Every choice lives in the Obsidian Brain so the reasoning survives the people who made it."
       },
       {
         "title": "Written handoff",
@@ -276,7 +276,7 @@
       { "title": "Bilingual by default", "text": "English and Dutch built into the content layer from day one." }
     ],
     "cta_head": "Interested in working together?",
-    "cta_text": "You'll always talk to a builder — not a salesperson.",
+    "cta_text": "You'll always talk to a builder not a salesperson.",
     "cta_link_label": "Browse our work"
   },
   "news": {
@@ -348,7 +348,7 @@
   "privacy": {
     "eyebrow": "Privacy",
     "title": "Your data, our responsibility.",
-    "intro": "This is the shortest privacy policy we've ever read on a website — and we mean that as a compliment to ourselves. Rhine Solution collects the absolute minimum required to do our job: respond to you when you reach out. No analytics, no advertising, no third-party tracking, no cookies of any kind. Just the contact form, run by a single email service that we control end-to-end.",
+    "intro": "This is the shortest privacy policy we've ever read on a website and we mean that as a compliment to ourselves. Rhine Solution collects the absolute minimum required to do our job: respond to you when you reach out. No analytics, no advertising, no third-party tracking, no cookies of any kind. Just the contact form, run by a single email service that we control end-to-end.",
     "last_updated": "Last updated",
     "who_we_are": {
       "heading": "Who we are",
@@ -360,7 +360,7 @@
     },
     "why_we_collect": {
       "heading": "Why we collect it",
-      "body": "To reply to you. That's it. The legal basis under GDPR Article 6(1)(b) is that processing is necessary to respond to your enquiry — or, if you haven't engaged us yet, Article 6(1)(f) legitimate interest in operating a basic business contact channel. We do not market to you, build profiles on you, or share your information with anyone outside the chain needed to send you our reply."
+      "body": "To reply to you. That's it. The legal basis under GDPR Article 6(1)(b) is that processing is necessary to respond to your enquiry or, if you haven't engaged us yet, Article 6(1)(f) legitimate interest in operating a basic business contact channel. We do not market to you, build profiles on you, or share your information with anyone outside the chain needed to send you our reply."
     },
     "who_we_share_with": {
       "heading": "Who we share it with",
@@ -368,7 +368,7 @@
     },
     "how_long": {
       "heading": "How long we keep it",
-      "body": "Your message stays in our Resend inbox and our internal email client for as long as the conversation is active. Once the project is delivered (or we agree it isn't a fit), we archive it for up to 24 months in case you come back, then delete it from active storage. You can ask us to delete it sooner — see below."
+      "body": "Your message stays in our Resend inbox and our internal email client for as long as the conversation is active. Once the project is delivered (or we agree it isn't a fit), we archive it for up to 24 months in case you come back, then delete it from active storage. You can ask us to delete it sooner see below."
     },
     "your_rights": {
       "heading": "Your rights",
@@ -376,17 +376,17 @@
     },
     "changes": {
       "heading": "Changes to this policy",
-      "body": "If we change anything material — a new service, a different retention rule — we'll update the date below and explain what changed in plain language. The version you read now is the only version that matters; there are no buried archive pages of older policies."
+      "body": "If we change anything material a new service, a different retention rule we'll update the date below and explain what changed in plain language. The version you read now is the only version that matters; there are no buried archive pages of older policies."
     },
     "contact_label": "Privacy contact",
-    "contact_intro": "For any privacy question — to access, correct, or delete your data — write to us:",
+    "contact_intro": "For any privacy question to access, correct, or delete your data write to us:",
     "complaint_label": "Lodge a complaint",
     "complaint_body": "If you'd rather raise your concern with the regulator, you can contact the Dutch Data Protection Authority (Autoriteit Persoonsgegevens) at autoriteitpersoonsgegevens.nl."
   },
   "colophon": {
     "eyebrow": "Colophon",
     "title": "How this site is made.",
-    "intro": "A colophon is a publisher's note — traditionally printed on the inside cover of a book to credit the people who made it. On the web, it lists the tools, decisions, and people behind a site. This one is honest about what works, what doesn't, and where the seams show.",
+    "intro": "A colophon is a publisher's note traditionally printed on the inside cover of a book to credit the people who made it. On the web, it lists the tools, decisions, and people behind a site. This one is honest about what works, what doesn't, and where the seams show.",
     "sections": {
       "principles": {
         "heading": "Principles",
@@ -394,28 +394,28 @@
           "Calm by default. The site is always dark navy + WebGL; no light mode, no theme toggle, no decision for the visitor to make.",
           "Two builders, one source. Every line of code, every word of copy, every asset passes through both of us before it ships.",
           "Bilingual from day one. English and Dutch share one component tree and one content layer; nothing is translated twice.",
-          "Owned infrastructure. The site, the agents, the models, the notes — all run on our own hardware, not rented SaaS.",
+          "Owned infrastructure. The site, the agents, the models, the notes all run on our own hardware, not rented SaaS.",
           "Shipped, not staged. Every project linked from this site is live in production. There are no mockups."
         ]
       },
       "stack": {
         "heading": "Stack",
         "items": [
-          "Next.js 15 (App Router) for the framework — Server Components by default, 'use client' only where state or event handlers need it.",
+          "Next.js 15 (App Router) for the framework Server Components by default, 'use client' only where state or event handlers need it.",
           "TypeScript for type safety across the codebase.",
-          "Pure CSS with custom properties — no Tailwind, no CSS-in-JS. The design tokens are a single file.",
-          "Three.js for the WebGL background — four scroll-driven scenes (Drift, Lines, Roads, Glow) crossfaded by Theatre.js keyframes.",
+          "Pure CSS with custom properties no Tailwind, no CSS-in-JS. The design tokens are a single file.",
+          "Three.js for the WebGL background four scroll-driven scenes (Drift, Lines, Roads, Glow) crossfaded by Theatre.js keyframes.",
           "Lenis for smooth momentum scrolling.",
           "Resend for transactional email (the contact form).",
-          "Vercel for hosting and continuous deployment — every push to main deploys automatically.",
+          "Vercel for hosting and continuous deployment every push to main deploys automatically.",
           "Cloudflare for DNS and edge."
         ]
       },
       "typefaces": {
         "heading": "Typefaces",
         "items": [
-          "Cormorant Garamond — the serif. Used for display, headings, and the moments where the page wants to feel like a book. Loaded from Google Fonts.",
-          "Inter — the sans. Used for body, UI chrome, and dense metadata where readability matters more than character. Also from Google Fonts."
+          "Rijksoverheid Sans Heading Bold the display face. Used for titles, headings, and the moments where the page wants to make a statement. Self-hosted.",
+          "Rijksoverheid Sans Text the body face. Used for copy, UI chrome, and dense metadata where readability matters more than character. Also self-hosted."
         ]
       },
       "how_we_work": {
@@ -423,7 +423,7 @@
         "items": [
           "We write proposals in plain language before we write a single line of code.",
           "We commit in small, reviewable steps. Every commit explains why, not just what.",
-          "We document decisions in the Brain — our internal Obsidian vault — so the reasoning survives the people who made it.",
+          "We document decisions in the Brain our internal Obsidian vault so the reasoning survives the people who made it.",
           "We close every project with a written handoff: what was built, how to maintain it, where the seams are."
         ]
       },
@@ -432,7 +432,7 @@
         "items": [
           "Obsidian for the Brain.",
           "Git on a Mac Mini for the local repo and the Obsidian vault.",
-          "Discord for Rhine AI — our agent's interface to the rest of the world.",
+          "Discord for Rhine AI our agent's interface to the rest of the world.",
           "Linear Lite for client task tracking. We don't love it. We use it anyway."
         ]
       },
@@ -441,7 +441,7 @@
         "items": [
           "Three.js is heavy on mobile. We've kept it but a low-end phone on a flaky connection will feel it.",
           "The WebGL crossfade has visible seams on Safari < 17. We could mask them with more shader work; for now, we accept the cost.",
-          "The contact form sends from a Resend sandbox address until we verify rhinesolution.com on their domain list — an open task.",
+          "The contact form sends from a Resend sandbox address until we verify rhinesolution.com on their domain list an open task.",
           "There's no analytics on this site. We can't tell you which pages people read most. We'd rather not know than compromise the privacy promise above."
         ]
       },

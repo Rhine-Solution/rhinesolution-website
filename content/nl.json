@@ -34,14 +34,14 @@
     "cta_projects": "Bekijk ons werk",
     "cta_about": "Over ons",
     "stage_b_eyebrow": "Het idee",
-    "stage_b_title": "Web dat werkt — én dat laat zien.",
+    "stage_b_title": "Web dat werkt én dat laat zien.",
     "stage_b_text": "Scroll verder. Elke laag van Rhine Solution is uitgerold, live en gebouwd om te bewegen.",
     "stage_b_link": "Bekijk het werk",
     "statements": [
       {
         "eyebrow": "01 · Ambacht",
         "heading": "Klein team, hoge standaard.",
-        "body": "Een oprichtersduo dat samen bouwt — design, bouw en uitrol volledig in huis, zonder lagen tussen idee en lancering.",
+        "body": "Een oprichtersduo dat samen bouwt design, bouw en uitrol volledig in huis, zonder lagen tussen idee en lancering.",
         "link_label": "Maak kennis met het team",
         "href": "/team"
       },
@@ -55,7 +55,7 @@
       {
         "eyebrow": "03 · Excellentie",
         "heading": "Live, niet geënsceneerd.",
-        "body": "Elk project eindigt live in productie. Geen mockups, geen verlaten ideeën — alleen code die draait.",
+        "body": "Elk project eindigt live in productie. Geen mockups, geen verlaten ideeën alleen code die draait.",
         "link_label": "Bekijk ons werk",
         "href": "/projects"
       },
@@ -72,7 +72,7 @@
     "closing_cta": {
       "eyebrow": "Volgende stap",
       "title": "Een project in gedachten?",
-      "body": "Twee bouwers, één direct gesprek. We reageren binnen een dag — meestal sneller.",
+      "body": "Twee bouwers, één direct gesprek. We reageren binnen een dag meestal sneller.",
       "cta_label": "Start een gesprek",
       "secondary_label": "Bekijk ons werk"
     }
@@ -153,7 +153,7 @@
   },
   "brain": {
     "title": "Het Brein",
-    "subtitle": "Rhine Solution's levende technische kennisbank — hoe wij nadenken over het bouwen van software.",
+    "subtitle": "Rhine Solution's levende technische kennisbank hoe wij nadenken over het bouwen van software.",
     "browse": "Verken de kennisbank",
     "read": "Lees notitie",
     "back": "Terug naar het Brein",
@@ -186,7 +186,7 @@
     "slug": "brain",
     "icon": "brain",
     "featured": true,
-    "summary": "Onze levende engineering-kennisbank — notities over architectuur, security, deployment en testing, openbaar gepubliceerd. Blader door de denkwijze achter hoe wij bouwen.",
+    "summary": "Onze levende engineering-kennisbank notities over architectuur, security, deployment en testing, openbaar gepubliceerd. Blader door de denkwijze achter hoe wij bouwen.",
     "stack": [
       "Obsidian",
       "Markdown",
@@ -212,7 +212,7 @@
     "title": "Music Trends Local",
     "slug": "music",
     "icon": "music",
-    "summary": "Een cyber-gethematiseerd muziekportaal met topnummers, artiesten en genres — 48 tracks in 8 elektronische subgenres met zoeken, filters en localStorage-favorieten.",
+    "summary": "Een cyber-gethematiseerd muziekportaal met topnummers, artiesten en genres 48 tracks in 8 elektronische subgenres met zoeken, filters en localStorage-favorieten.",
     "stack": [
       "HTML5",
       "CSS",
@@ -229,7 +229,7 @@
     "eyebrow": "Het bedrijf",
     "statement": "Klein team, hoge standaard, geleverd werk.",
     "story": [
-      "Rhine Solution is een twee-koppig bedrijf, geleid door een CEO/CTO-duo dat samen bouwt. We maken maatwerk webbelevingen — portfolio's, portals en producten — van eerste schets tot live uitrol.",
+      "Rhine Solution is een twee-koppig bedrijf, geleid door een CEO/CTO-duo dat samen bouwt. We maken maatwerk webbelevingen portfolio's, portals en producten van eerste schets tot live uitrol.",
       "Onze werkwijze is AI-first maar mens-geleid. De Mac Mini draait onze agents en modellen, en de Obsidian Brain houdt elke beslissing gedocumenteerd en herhaalbaar.",
       "We kiezen voor eenvoud, vakmanschap en productiecode. Als we een project beloven, leveren we het."
     ],
@@ -238,24 +238,24 @@
       {
         "icon": "layout",
         "title": "Portfolio's en merksites",
-        "text": "Persoonlijke en studio-sites met karakter — snel, tweetalig en gebouwd als het merk dat ze vertegenwoordigen."
+        "text": "Persoonlijke en studio-sites met karakter snel, tweetalig en gebouwd als het merk dat ze vertegenwoordigen."
       },
       {
         "icon": "monitor",
         "title": "Portals en producten",
-        "text": "Interne portals, dashboards en tools met echte logins, echte data en echte gebruikers — onderhouden voor de lange termijn."
+        "text": "Interne portals, dashboards en tools met echte logins, echte data en echte gebruikers onderhouden voor de lange termijn."
       },
       {
         "icon": "zap",
         "title": "Maatwerk webapps",
-        "text": "Applicaties op specificatie, van eerste schets tot live uitrol — geen mockups achtergelaten, alleen code die draait."
+        "text": "Applicaties op specificatie, van eerste schets tot live uitrol geen mockups achtergelaten, alleen code die draait."
       }
     ],
     "process_title": "Hoe we werken",
     "process": [
       {
         "title": "Eerst een voorstel",
-        "text": "We schrijven het plan in duidelijke taal vóór de eerste regel code — zodat je weet wat je krijgt en waarom."
+        "text": "We schrijven het plan in duidelijke taal vóór de eerste regel code zodat je weet wat je krijgt en waarom."
       },
       {
         "title": "Kleine, controleerbare stappen",
@@ -263,7 +263,7 @@
       },
       {
         "title": "Beslissingen gedocumenteerd",
-        "text": "Elke keuze leeft in de Obsidian Brain — zodat de redenatie de mensen die haar maakten overleeft."
+        "text": "Elke keuze leeft in de Obsidian Brain zodat de redenatie de mensen die haar maakten overleeft."
       },
       {
         "title": "Schriftelijke overdracht",
@@ -282,7 +282,7 @@
       { "title": "Standaard tweetalig", "text": "Engels en Nederlands ingebouwd in de contentlaag vanaf dag één." }
     ],
     "cta_head": "Interesse om samen te werken?",
-    "cta_text": "Je praat altijd met een bouwer — niet met een verkoper.",
+    "cta_text": "Je praat altijd met een bouwer niet met een verkoper.",
     "cta_link_label": "Bekijk ons werk"
   },
   "news": {
@@ -354,7 +354,7 @@
   "privacy": {
     "eyebrow": "Privacy",
     "title": "Jouw data, onze verantwoordelijkheid.",
-    "intro": "Dit is het kortste privacybeleid dat we ooit op een website zijn tegengekomen — en dat bedoelen we als compliment aan onszelf. Rhine Solution verzamelt het absolute minimum dat nodig is om ons werk te doen: reageren wanneer jij contact opneemt. Geen analytics, geen advertenties, geen tracking door derden, geen cookies. Alleen het contactformulier, gedraaid door één e-mailservice die we end-to-end beheren.",
+    "intro": "Dit is het kortste privacybeleid dat we ooit op een website zijn tegengekomen en dat bedoelen we als compliment aan onszelf. Rhine Solution verzamelt het absolute minimum dat nodig is om ons werk te doen: reageren wanneer jij contact opneemt. Geen analytics, geen advertenties, geen tracking door derden, geen cookies. Alleen het contactformulier, gedraaid door één e-mailservice die we end-to-end beheren.",
     "last_updated": "Laatst bijgewerkt",
     "who_we_are": {
       "heading": "Wie we zijn",
@@ -366,7 +366,7 @@
     },
     "why_we_collect": {
       "heading": "Waarom we het verzamelen",
-      "body": "Om je te antwoorden. Dat is alles. De rechtsgrond onder AVG artikel 6(1)(b) is dat verwerking noodzakelijk is om op je vraag te reageren — of, als je nog niet met ons in zee bent, artikel 6(1)(f) gerechtvaardigd belang bij het exploiteren van een basiscontactkanaal. We sturen je geen marketing, bouwen geen profielen, en delen je gegevens met niemand buiten de keten die nodig is om ons antwoord te bezorgen."
+      "body": "Om je te antwoorden. Dat is alles. De rechtsgrond onder AVG artikel 6(1)(b) is dat verwerking noodzakelijk is om op je vraag te reageren of, als je nog niet met ons in zee bent, artikel 6(1)(f) gerechtvaardigd belang bij het exploiteren van een basiscontactkanaal. We sturen je geen marketing, bouwen geen profielen, en delen je gegevens met niemand buiten de keten die nodig is om ons antwoord te bezorgen."
     },
     "who_we_share_with": {
       "heading": "Met wie we het delen",
@@ -374,7 +374,7 @@
     },
     "how_long": {
       "heading": "Hoe lang we het bewaren",
-      "body": "Je bericht blijft in onze Resend-inbox en onze interne e-mailcliënt staan zolang het gesprek loopt. Zodra het project is opgeleverd (of we samen besluiten dat het niet past), archiveren we het tot 24 maanden voor het geval je terugkomt, daarna verwijderen we het uit de actieve opslag. Je kunt ons vragen het eerder te verwijderen — zie hieronder."
+      "body": "Je bericht blijft in onze Resend-inbox en onze interne e-mailcliënt staan zolang het gesprek loopt. Zodra het project is opgeleverd (of we samen besluiten dat het niet past), archiveren we het tot 24 maanden voor het geval je terugkomt, daarna verwijderen we het uit de actieve opslag. Je kunt ons vragen het eerder te verwijderen zie hieronder."
     },
     "your_rights": {
       "heading": "Jouw rechten",
@@ -382,17 +382,17 @@
     },
     "changes": {
       "heading": "Wijzigingen in dit beleid",
-      "body": "Als we iets materieels veranderen — een nieuwe dienst, een andere bewaartermijn — werken we de datum hieronder bij en leggen we in heldere taal uit wat er is gewijzigd. De versie die je nu leest is de enige die ertoe doet; er zijn geen verborgen archiefpagina's van oudere beleidsversies."
+      "body": "Als we iets materieels veranderen een nieuwe dienst, een andere bewaartermijn werken we de datum hieronder bij en leggen we in heldere taal uit wat er is gewijzigd. De versie die je nu leest is de enige die ertoe doet; er zijn geen verborgen archiefpagina's van oudere beleidsversies."
     },
     "contact_label": "Privacycontact",
-    "contact_intro": "Voor elke privacyvraag — om je gegevens in te zien, te corrigeren of te verwijderen — mail ons:",
+    "contact_intro": "Voor elke privacyvraag om je gegevens in te zien, te corrigeren of te verwijderen mail ons:",
     "complaint_label": "Klacht indienen",
     "complaint_body": "Als je je liever bij de toezichthouder meldt, kun je contact opnemen met de Autoriteit Persoonsgegevens via autoriteitpersoonsgegevens.nl."
   },
   "colophon": {
     "eyebrow": "Colofon",
     "title": "Hoe deze site is gemaakt.",
-    "intro": "Een colofon is een colofon — van oorsprong gedrukt op de binnenkant van het omslag van een boek om de makers te eren. Op het web lijst het de tools, keuzes en mensen achter een site. Deze is eerlijk over wat werkt, wat niet werkt, en waar de naden zichtbaar zijn.",
+    "intro": "Een colofon is een colofon van oorsprong gedrukt op de binnenkant van het omslag van een boek om de makers te eren. Op het web lijst het de tools, keuzes en mensen achter een site. Deze is eerlijk over wat werkt, wat niet werkt, en waar de naden zichtbaar zijn.",
     "sections": {
       "principles": {
         "heading": "Principes",
@@ -400,28 +400,28 @@
           "Kalm by default. De site is altijd donker marine + WebGL; geen light mode, geen themaschakelaar, geen beslissing voor de bezoeker.",
           "Twee bouwers, één bron. Elke regel code, elk woord copy, elk asset gaat door ons beiden voordat het live gaat.",
           "Tweetalig vanaf dag één. Engels en Nederlands delen dezelfde component-tree en content-laag; niets wordt twee keer vertaald.",
-          "Eigen infrastructuur. De site, de agents, de modellen, de notities — alles draait op onze eigen hardware, niet op gehuurde SaaS.",
+          "Eigen infrastructuur. De site, de agents, de modellen, de notities alles draait op onze eigen hardware, niet op gehuurde SaaS.",
           "Live, niet geënsceneerd. Elk project dat op deze site staat is in productie. Er zijn geen mockups."
         ]
       },
       "stack": {
         "heading": "Techniek",
         "items": [
-          "Next.js 15 (App Router) als framework — Server Components by default, 'use client' alleen waar state of event handlers dat vereisen.",
+          "Next.js 15 (App Router) als framework Server Components by default, 'use client' alleen waar state of event handlers dat vereisen.",
           "TypeScript voor typeveiligheid door de hele codebase.",
-          "Pure CSS met custom properties — geen Tailwind, geen CSS-in-JS. De designtokens zitten in één bestand.",
-          "Three.js voor de WebGL-achtergrond — vier scroll-gedreven scenes (Drift, Lines, Roads, Glow) met smoothstep-crossfade via Theatre.js-keyframes.",
+          "Pure CSS met custom properties geen Tailwind, geen CSS-in-JS. De designtokens zitten in één bestand.",
+          "Three.js voor de WebGL-achtergrond vier scroll-gedreven scenes (Drift, Lines, Roads, Glow) met smoothstep-crossfade via Theatre.js-keyframes.",
           "Lenis voor smooth momentum-scrolling.",
           "Resend voor transactionele e-mail (het contactformulier).",
-          "Vercel voor hosting en continue deployment — elke push naar main deployt automatisch.",
+          "Vercel voor hosting en continue deployment elke push naar main deployt automatisch.",
           "Cloudflare voor DNS en edge."
         ]
       },
       "typefaces": {
         "heading": "Lettertypes",
         "items": [
-          "Cormorant Garamond — de serif. Gebruikt voor display, koppen, en de momenten waar de site als een boek wil voelen. Via Google Fonts.",
-          "Inter — de sans. Gebruikt voor body, UI-chrome en dichte metadata waar leesbaarheid belangrijker is dan karakter. Ook via Google Fonts."
+          "Rijksoverheid Sans Heading Bold het display-lettertype. Gebruikt voor titels, koppen, en de momenten waar de site een statement wil maken. Self-hosted.",
+          "Rijksoverheid Sans Text het body-lettertype. Gebruikt voor tekst, UI-chrome en dichte metadata waar leesbaarheid belangrijker is dan karakter. Ook self-hosted."
         ]
       },
       "how_we_work": {
@@ -429,7 +429,7 @@
         "items": [
           "We schrijven voorstellen in gewone taal voordat we ook maar één regel code schrijven.",
           "We committen in kleine, reviewbare stappen. Elke commit legt uit waarom, niet alleen wat.",
-          "We documenteren beslissingen in de Brain — onze interne Obsidian-vault — zodat de redenatie overleeft de mensen die haar maakten.",
+          "We documenteren beslissingen in de Brain onze interne Obsidian-vault zodat de redenatie overleeft de mensen die haar maakten.",
           "We sluiten elk project af met een geschreven overdracht: wat er gebouwd is, hoe je het onderhoudt, waar de naden zitten."
         ]
       },
@@ -438,7 +438,7 @@
         "items": [
           "Obsidian voor de Brain.",
           "Git op een Mac Mini voor de lokale repo en de Obsidian-vault.",
-          "Discord voor Rhine AI — de interface van onze agent naar de rest van de wereld.",
+          "Discord voor Rhine AI de interface van onze agent naar de rest van de wereld.",
           "Linear Lite voor klanttaken. We houden er niet van. We gebruiken het toch."
         ]
       },
@@ -447,7 +447,7 @@
         "items": [
           "Three.js is zwaar op mobiel. We houden het, maar een low-end telefoon op een slechte verbinding voelt het.",
           "De WebGL-crossfade heeft zichtbare naden op Safari < 17. We zouden ze kunnen verbergen met meer shader-werk; voor nu accepteren we de kosten.",
-          "Het contactformulier verstuurt vanaf een Resend-sandboxadres totdat we rhinesolution.com op hun domeinlijst verifiëren — een open taak.",
+          "Het contactformulier verstuurt vanaf een Resend-sandboxadres totdat we rhinesolution.com op hun domeinlijst verifiëren een open taak.",
           "Er zit geen analytics op deze site. We kunnen niet vertellen welke pagina's het meest gelezen worden. Liever niet weten dan de privacybelofte hierboven schenden."
         ]
       },

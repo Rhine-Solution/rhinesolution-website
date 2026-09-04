@@ -839,8 +839,11 @@ p { margin-bottom: var(--space-3); }
   letter-spacing: -0.02em;
   color: #f2f5ff;
   margin-bottom: var(--space-4);
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.28em;
   max-width: 18ch;
-  margin-inline: auto;
 }
 .hero-section .stage-sub {
   font-size: clamp(1.05rem, 2vw, 1.3rem);
