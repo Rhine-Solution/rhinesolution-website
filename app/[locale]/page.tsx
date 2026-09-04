@@ -34,6 +34,24 @@ export default async function HomePage({ params }: Props) {
     ])
   );
 
+  const renderLetters = (text: string, step: number) => {
+    const words = text.split(" ");
+    let idx = 0;
+    return words.map((word, w) => (
+      <span key={w} className="hero-word" aria-hidden="true">
+        {word.split("").map((ch) => {
+          const delay = idx * step;
+          idx += 1;
+          return (
+            <span key={`${w}-${ch}`} className="hero-letter" style={{ animationDelay: `${delay}ms` }}>
+              {ch}
+            </span>
+          );
+        })}
+      </span>
+    ));
+  };
+
   return (
     <>
       <EntryGate
@@ -48,11 +66,7 @@ export default async function HomePage({ params }: Props) {
         <section className="hero-section">
           <p className="hero-eyebrow">{t.hero_line_1}</p>
           <h1 className="hero-title" aria-label={t.hero_line_2}>
-            {t.hero_line_2.split("").map((ch, i) => (
-              <span key={i} className="hero-letter" style={{ animationDelay: `${i * 40}ms` }} aria-hidden="true">
-                {ch === " " ? "\u00A0" : ch}
-              </span>
-            ))}
+            {renderLetters(t.hero_line_2, 40)}
           </h1>
           <p className="hero-sub">{t.hero_subtitle}</p>
           <div className="hero-ctas">
@@ -68,11 +82,7 @@ export default async function HomePage({ params }: Props) {
         <section className="hero-section">
           <p className="stage-eyebrow">{t.stage_b_eyebrow}</p>
           <h2 className="stage-title" aria-label={t.stage_b_title}>
-            {t.stage_b_title.split("").map((ch, i) => (
-              <span key={i} className="hero-letter" style={{ animationDelay: `${i * 35}ms` }} aria-hidden="true">
-                {ch === " " ? "\u00A0" : ch}
-              </span>
-            ))}
+            {renderLetters(t.stage_b_title, 35)}
           </h2>
           <p className="stage-sub">{t.stage_b_text}</p>
           <div className="stage-ctas">
