@@ -6,7 +6,7 @@ export type TrendItem = { title: string; link: string; date: string; source: str
 export async function getDevTrends(limit = 5): Promise<TrendItem[]> {
   const results = await Promise.allSettled(
     NEWS_FEEDS.map(async (feed) => {
-      const res = await fetch(feed.url, { next: { revalidate: 7200 } });
+      const res = await fetch(feed.url, { next: { revalidate: 7200 }, signal: AbortSignal.timeout(10000) });
       if (!res.ok) throw new Error(`feed ${feed.url} -> ${res.status}`);
       const xml = await res.text();
       return parseRss(xml).map((p) => ({ ...p, source: feed.source }));

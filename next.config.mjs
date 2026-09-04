@@ -10,6 +10,9 @@ const nextConfig = {
       'vercel.com',
     ],
   },
+  outputFileTracingIncludes: {
+    "/*": ["./content/news/**/*"],
+  },
 };
 
 export default nextConfig;

@@ -15,6 +15,9 @@ const securityHeaders = [
 
 const nextConfig = {
   outputFileTracingRoot: __dirname,
+  outputFileTracingIncludes: {
+    "/*": ["./content/news/**/*"],
+  },
   async headers() {
     return [
       {

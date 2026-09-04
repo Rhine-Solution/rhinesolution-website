@@ -1,0 +1,114 @@
+.card {
+  display: grid;
+  gap: var(--space-2);
+}
+.cardMeta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+.date {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+}
+.badge {
+  display: inline-block;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 0.18rem 0.6rem;
+  border: 1px solid color-mix(in srgb, var(--color-blue-soft) 45%, transparent);
+  border-radius: 999px;
+  color: var(--color-blue-soft);
+  line-height: 1.4;
+}
+.cardTitle a {
+  color: var(--color-text);
+  text-decoration: none;
+}
+.cardTitle a:hover {
+  color: var(--color-blue-soft);
+}
+.cardExcerpt {
+  color: var(--color-text-muted);
+  margin-bottom: 0;
+}
+.cardMore {
+  font-size: 0.85rem;
+  color: var(--color-blue-soft);
+  text-decoration: none;
+  width: fit-content;
+}
+.cardMore:hover {
+  text-decoration: underline;
+}
+
+.trends {
+  margin-top: var(--space-6);
+  padding-top: var(--space-5);
+  border-top: 1px solid color-mix(in srgb, var(--color-text-muted) 25%, transparent);
+}
+.trendsTitle {
+  font-size: 1.4rem;
+}
+.trendsSubtitle {
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-3);
+}
+.trendsList {
+  list-style: none;
+  display: grid;
+  gap: var(--space-2);
+  margin: 0;
+  padding: 0;
+}
+.trendsItem {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+.trendsItem a {
+  color: var(--color-text);
+  text-decoration: none;
+}
+.trendsItem a:hover {
+  color: var(--color-blue-soft);
+}
+.trendsSource {
+  color: var(--color-text-muted);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+}
+
+.article {
+  max-width: 72ch;
+}
+.crumbs {
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-4);
+}
+.crumbs a {
+  color: var(--color-text-muted);
+}
+.crumbs a:hover {
+  color: var(--color-blue-soft);
+}
+.articleHead {
+  margin-bottom: var(--space-5);
+}
+.articleHead h1 {
+  margin-top: var(--space-3);
+  margin-bottom: var(--space-2);
+}
+.lede {
+  color: var(--color-text-muted);
+  font-size: 1.15rem;
+}
+.back {
+  margin-top: var(--space-6);
+}
