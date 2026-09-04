@@ -46,3 +46,8 @@
 .explorerCard h3 { margin: 0 0 0.3rem; font-size: 1.05rem; color: #f2f5ff; }
 .explorerCard p { margin: 0; color: rgba(226,234,255,0.75); font-size: 0.95rem; }
 @media (max-width: 900px) { .explorer { flex-direction: column; } }
+.crumbs { display: flex; gap: 0.5rem; align-items: center; font-size: 0.85rem; color: rgba(226,234,255,0.6); margin-bottom: 1.5rem; flex-wrap: wrap; }
+.crumbs a { color: #7ea7ff; text-decoration: none; }
+.crumbs a:hover { text-decoration: underline; }
+.noteBack { margin-top: 3rem; }
+.noteBack a { color: #7ea7ff; text-decoration: none; }
