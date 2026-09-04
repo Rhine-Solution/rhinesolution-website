@@ -16,21 +16,12 @@ updated: 2026-09-04
 - [x] A4 — project note for `fullstack/`
 - [x] A6 — `verified:` tags on time-sensitive claims
 - [x] A8 — expand  with verified, dated links
-- [x] A10 — `Dailies/` log folder + template
 
 ### B. Root / workspace
 - [x] B11 — `scripts/audit-brain.ps1`
 - [x] B12 — `.editorconfig`
 - [x] B13 — root `README.md` for the workspace
 - [x] B14 — `templates/` real Next.js+Supabase scaffold
-
-### C. opencode config & integrations
-- [x] C19-C23 — Supabase/Stripe/Neon/Sentry/Figma MCP configs (deferred — no active Supabase project)
-- [x] C24 — `brain-auditor` subagent
-- [x] C25 — `brain-writer` subagent
-- [x] C27 — git-commit skill
-- [x] C28 — verify/document Obsidian remote MCP
-- [x] C30 — memory graph sync to vault
 
 ### D. Backend / fullstack
 - [x] D31 — `/api/health` + echo route
@@ -48,10 +39,6 @@ updated: 2026-09-04
 ### F. DevOps / workflow
 - [x] F42 — deployment (decided: Vercel)
 - [x] F43 — Vercel preview deploys
-- [x] F45 — Obsidian Git auto-commit verified
-
-### G. Vault tooling
-- [x] G46-G50 — QuickAdd/Linter/Excalidraw/Kanban/Dataview documented
 
 ### H. Site research backlog (2026-09-04 — deep research via subagent; for approval before building)
 P0 (quick wins, low risk):
@@ -72,7 +59,4 @@ P2 (bigger efforts / ideas):
 - [ ] H13 — Accessibility hardening: gate `aria-modal` focus management, duplicate `<h1>` on home, custom cursor occlusion; run axe. M.
 - [x] H14 — Public Brain (explorer + per-note pages at `/projects/brain`) — `npm run brain:publish` keeps `brain/` in sync from the vault. D.
 Note: entry gate is KEPT by user decision (research confirms crawl risk is low — SSR content + client overlay). Turnstile stays on contact form.
-
-## Waiting on the human (can't do without input)
-1. **Judgment calls**: analytics provider (if any), future projects direction, which site-research backlog items to build (see section H below)
 
