@@ -92,7 +92,7 @@ export function publishBrain({ vault, out, force = false }) {
     const src = join(vault, file);
     if (!existsSync(src)) continue;
     const raw = readFileSync(src, "utf8");
-    const { data, body } = parseFrontmatter(raw);
+    const { data } = parseFrontmatter(raw);
     if (String(data.status || "").trim() === "archive") {
       skipped.push({ file, reason: "status: archive" });
       continue;
