@@ -24,6 +24,7 @@ export default function EntryGate({
   const [token, setToken] = useState<string>("");
   const [checking, setChecking] = useState(false);
   const [error, setError] = useState<string>("");
+  const [widgetFailed, setWidgetFailed] = useState(false);
 
   // If Turnstile isn't configured yet (during rollout / no site key),
   // never block the site — the gate simply doesn't appear.
@@ -91,11 +92,33 @@ export default function EntryGate({
           <Turnstile
             onToken={(t) => setToken(t)}
             onExpired={() => setToken("")}
+            onError={() => setWidgetFailed(true)}
             theme="dark"
           />
           {checking && <p className="entry-gate-status">Verifying…</p>}
           {error && <p className="entry-gate-error" role="alert">{error}</p>}
           {verified && <p className="entry-gate-verified">{verifiedLabel}</p>}
+          {widgetFailed && (
+            <div className="entry-gate-fallback">
+              <p className="entry-gate-error" role="alert">
+                Verification is temporarily unavailable.
+              </p>
+              <button
+                type="button"
+                className="btn btn-secondary"
+                onClick={() => {
+                  try {
+                    localStorage.setItem(STORAGE_KEY, "verified");
+                  } catch {
+                    /* ignore */
+                  }
+                  setVerified(true);
+                }}
+              >
+                Continue
+              </button>
+            </div>
+          )}
         </div>
 
         <p className="entry-gate-hint">

@@ -29,6 +29,7 @@ declare global {
 type TurnstileProps = {
   onToken: (token: string) => void;
   onExpired?: () => void;
+  onError?: () => void;
   theme?: "dark" | "light" | "auto";
 };
 
@@ -59,12 +60,14 @@ function ensureScript(): Promise<void> {
   return scriptLoading;
 }
 
-export default function Turnstile({ onToken, onExpired, theme = "dark" }: TurnstileProps) {
+export default function Turnstile({ onToken, onExpired, onError, theme = "dark" }: TurnstileProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const widgetIdRef = useRef<string | undefined>(undefined);
   const [status, setStatus] = useState<TurnstileStatus>({ state: "loading" });
   const onExpiredRef = useRef(onExpired);
   onExpiredRef.current = onExpired;
+  const onErrorRef = useRef(onError);
+  onErrorRef.current = onError;
 
   useEffect(() => {
     let cancelled = false;
@@ -72,6 +75,7 @@ export default function Turnstile({ onToken, onExpired, theme = "dark" }: Turnst
 
     if (!siteKey) {
       setStatus({ state: "error" });
+      onErrorRef.current?.();
       return;
     }
 
@@ -91,12 +95,14 @@ export default function Turnstile({ onToken, onExpired, theme = "dark" }: Turnst
           },
           "error-callback": () => {
             setStatus({ state: "error" });
+            onErrorRef.current?.();
           },
         });
         setStatus({ state: "loading" });
       })
       .catch(() => {
         setStatus({ state: "error" });
+        onErrorRef.current?.();
       });
 
     return () => {
