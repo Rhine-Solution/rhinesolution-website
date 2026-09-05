@@ -50,6 +50,6 @@ Most incidents come from boring gaps, not exotic bugs:
 - AI generates far more code now — review has adapted. **AI handles the mechanical passes** (style, obvious bugs, missing validation, security patterns, perf); **humans own architecture, business logic, trade-offs, and context** that lives outside the diff.
 - **Prompt & process disclosure**: when AI wrote part of a change, the PR must say so — what the AI did and the core prompt used. It's as reviewable as the commit message, and it's how you calibrate the tool.
 - **Configure AI review for signal, not noise**: focused concerns (security, perf, common bugs) produce signal; broad "review everything" produces noise that erodes trust. Monitor its effectiveness (bug catch rate, false positives — ~50% comment-acceptance is a good trust benchmark) and tune over time.
-- **AI + human beats either alone**: teams with structured AI review caught ~34% more bugs pre-merge. But the architectural calls remain human — AI doesn't know the 80%-memory service or the pricing engine's business rules.
+- **AI + human beats either alone**: teams using structured AI review reported substantial pre-merge bug-catch gains (the widely-cited 34% figure is unverified; Google's ML comment-resolution shows ~50% precision / ~40% acceptance). But the architectural calls remain human — AI doesn't know the 80%-memory service or the pricing engine's business rules.
 - A solo dev gets the most value from AI review — there's no human fallback.
 
