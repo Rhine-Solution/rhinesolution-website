@@ -1,9 +1,10 @@
-# Changelog — Rhine Solution
+﻿# Changelog â€” Rhine Solution
 
 > Notable changes, newest first. Full detail lives in git history. Keep this
 > updated on every meaningful release/change.
 
 ## 2026-09-05
+- **feat(search): site search over Brain + News** - build-time minisearch index + SearchBox on the Brain explorer and News pages.
 
 - **feat(news): news page v2** - per-locale Markdown posts in
   `content/news/{en,nl}/`, static detail pages, category badges, RSS feed at
@@ -19,15 +20,15 @@
 
 ## 2026-09-04
 
-- **feat(brain): public knowledge base at /projects/brain** — publish script +
+- **feat(brain): public knowledge base at /projects/brain** â€” publish script +
   custom Markdown renderer + file-tree sidebar. (`b354caf`)
-- **fix(site): entry gate never hard-locks humans** — gate now shows a
+- **fix(site): entry gate never hard-locks humans** â€” gate now shows a
   Continue fallback when the Turnstile widget fails to load/errors (preview
   domains, adblock, transient issues). Widget allowlist updated to include
   stable Vercel aliases. (`5968d45`)
-- **ci: lint/typecheck/build gate on main + dev** — GitHub Actions enforces the
+- **ci: lint/typecheck/build gate on main + dev** â€” GitHub Actions enforces the
   git workflow on every PR/push; added `.env.example`. (`cdb935e`)
-- **docs: mandatory git workflow** — feature branches, review before merge.
+- **docs: mandatory git workflow** â€” feature branches, review before merge.
   (`b109383`)
 
 ## Earlier (2026-09-04 and before)
@@ -43,3 +44,4 @@
 - Project scaffold: Next.js 15 + TypeScript + pure CSS + WebGL scene system
 - Bilingual EN/NL content, contact form, music portal, DFIR section
 - Initial deploy to Vercel; domain `rhinesolution.com` on Cloudflare DNS
+- **feat(search): site search over Brain + News** - build-time minisearch index + SearchBox on the Brain explorer and News pages (`2d37ce4` search work in `feat/content-integrity-3d`).

@@ -1,6 +1,7 @@
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import BrainSidebar from "@/components/brain/BrainSidebar";
+import SearchBox from "@/components/search/SearchBox";
 import { getContent } from "@/lib/i18n";
 import { getCompanySocials } from "@/lib/socials";
 import { buildMetadata } from "@/lib/seo";
@@ -35,6 +36,7 @@ export default async function BrainExplorerPage({ params }: Props) {
               <h1>{content.brain.title}</h1>
               <p style={{ color: "var(--color-text-muted)", fontSize: "1.1rem" }}>{content.brain.subtitle}</p>
             </header>
+            <SearchBox placeholder={content.brain.browse} />
             {tree.length === 0 ? (
               <p style={{ color: "var(--color-text-muted)" }}>{content.brain.empty}</p>
             ) : (

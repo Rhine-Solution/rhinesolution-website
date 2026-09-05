@@ -318,7 +318,8 @@
       "feature": "Función",
       "fix": "Corrección",
       "update": "Actualización"
-    }
+    },
+    "search": "Buscar noticias"
   },
   "contact": {
     "eyebrow": "Contacto",
