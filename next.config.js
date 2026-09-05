@@ -11,6 +11,13 @@ const securityHeaders = [
     key: "Strict-Transport-Security",
     value: "max-age=63072000; includeSubDomains; preload",
   },
+  // Report-only CSP: starts collecting violations without blocking anything.
+  // Tighten to an enforcing policy once the report data is clean.
+  {
+    key: "Content-Security-Policy-Report-Only",
+    value:
+      "default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; connect-src 'self' https://generativelanguage.googleapis.com https://challenges.cloudflare.com; font-src 'self' data:; frame-src https://challenges.cloudflare.com; base-uri 'self'; form-action 'self'",
+  },
 ];
 
 const nextConfig = {
