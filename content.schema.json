@@ -1,0 +1,68 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://rhinesolution.com/schemas/content.json",
+  "title": "Rhine Solution locale content",
+  "description": "Every content/<locale>.json must satisfy this shape. Enforced by scripts/validate-content.mjs in CI so structural drift or silent data corruption cannot reach main.",
+  "type": "object",
+  "required": [
+    "brand",
+    "nav",
+    "gate",
+    "home",
+    "footer_columns",
+    "team",
+    "projects",
+    "news",
+    "contact",
+    "footer",
+    "a11y",
+    "sections",
+    "privacy",
+    "colophon"
+  ],
+  "properties": {
+    "brand": {
+      "type": "object",
+      "required": ["name", "tagline"],
+      "properties": {
+        "name": { "type": "string", "minLength": 1 },
+        "tagline": { "type": "string", "minLength": 1 }
+      }
+    },
+    "news": {
+      "type": "object",
+      "required": ["eyebrow", "title", "subtitle", "back", "categories"],
+      "not": { "required": ["items"] },
+      "properties": {
+        "categories": {
+          "type": "object",
+          "required": ["launch", "feature", "fix", "update"],
+          "additionalProperties": { "type": "string", "minLength": 1 }
+        }
+      }
+    },
+    "a11y": {
+      "type": "object",
+      "required": ["language_names", "skip_to_content"],
+      "properties": {
+        "language_names": {
+          "type": "object",
+          "required": ["en", "nl", "de", "fr", "es", "it", "zh"]
+        }
+      }
+    },
+    "contact": { "type": "object" },
+    "privacy": { "type": "object" },
+    "colophon": {
+      "type": "object",
+      "required": ["eyebrow", "title"],
+      "properties": {
+        "sections": {
+          "type": "object",
+          "required": ["typefaces"]
+        }
+      }
+    }
+  },
+  "additionalProperties": true
+}

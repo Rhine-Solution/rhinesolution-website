@@ -11,6 +11,7 @@
     "brain:publish": "node scripts/publish-brain.mjs",
     "news:update": "node scripts/news-from-git.mjs update",
     "news:accept": "node scripts/news-from-git.mjs accept",
+    "validate:content": "node scripts/validate-content.mjs",
     "test": "node --test scripts/*.test.mjs"
   },
   "dependencies": {
@@ -37,6 +38,7 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "@types/three": "^0.185.4",
+    "ajv": "^8.20.0",
     "eslint": "^9.39.5",
     "eslint-config-next": "^15.5.25",
     "typescript": "^5"

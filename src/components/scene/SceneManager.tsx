@@ -2,6 +2,8 @@
 
 import { useEffect, useRef } from "react";
 import * as THREE from "three";
+import { RGBELoader } from "three/examples/jsm/loaders/RGBELoader.js";
+import { createShaderScene } from "./scenes/shader";
 import { createDriftScene } from "./scenes/drift";
 import { createLinesScene } from "./scenes/lines";
 import { createRoadsScene } from "./scenes/roads";
@@ -10,6 +12,7 @@ import type { RhineScene } from "./types";
 import TheatreDirector from "./TheatreDirector";
 
 const SCENES: RhineScene[] = [
+  createShaderScene(),
   createDriftScene(),
   createLinesScene(),
   createRoadsScene(),
@@ -47,6 +50,8 @@ export default function SceneManager() {
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     renderer.setSize(window.innerWidth, window.innerHeight, false);
     renderer.setClearColor("#070e24", 1);
+    renderer.toneMapping = THREE.ACESFilmicToneMapping;
+    renderer.toneMappingExposure = 1.0;
 
     // Camera
     const camera = new THREE.PerspectiveCamera(
@@ -68,6 +73,18 @@ export default function SceneManager() {
     dir.position.set(2, 3, 4);
     scene.add(dir);
 
+    // CC0 HDRI environment (Poly Haven, studio_small_03) — real reflections
+    // on the physical-material shards, mapped via PMREM.
+    const pmrem = new THREE.PMREMGenerator(renderer);
+    let envTex: THREE.Texture | null = null;
+    new RGBELoader().load("/textures/studio_small_03_1k.hdr", (hdr) => {
+      envTex = pmrem.fromEquirectangular(hdr).texture;
+      scene.environment = envTex;
+      scene.environmentIntensity = 0.6;
+      hdr.dispose();
+      pmrem.dispose();
+    });
+
     // Build all scene objects
     const built = SCENES.map((s) => s.build());
 
@@ -79,12 +96,12 @@ export default function SceneManager() {
     }
     scene.add(scenesParent);
 
-    // Expose scene groups for TheatreDirector
+    // Expose scene groups for TheatreDirector (shader scene has no theatre props)
     sceneObjectsRef.current = {
-      drift: built[0].group,
-      lines: built[1].group,
-      roads: built[2].group,
-      glow: built[3].group,
+      drift: built[1].group,
+      lines: built[2].group,
+      roads: built[3].group,
+      glow: built[4].group,
     };
 
     // Scroll state
@@ -165,6 +182,8 @@ export default function SceneManager() {
       window.removeEventListener("scroll", onScroll);
       window.removeEventListener("resize", onResize);
       sceneObjectsRef.current = null;
+      if (envTex) envTex.dispose();
+      pmrem.dispose();
       for (const obj of built) obj.dispose();
       renderer.dispose();
     };
