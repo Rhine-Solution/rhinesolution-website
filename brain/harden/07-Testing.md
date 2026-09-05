@@ -29,7 +29,7 @@ description: Tests are the memory of what the system is supposed to do. If it's 
 - **Never test against production** data or credentials.
 
 ## Flaky tests are a budget line (2026)
-- Baseline reality: ~1.5% of Google's test runs are flaky, affecting ~16% of tests; repair runs ~$2,250/month for a mid-size team — and every flake trains devs to ignore CI, which is the death spiral.
+- Baseline reality: ~1.5% of Google's test runs are flaky, affecting ~16% of tests; repair costs are significant (~$27,750/quarter for 50 flakes at $150/hr, Diffie 2026) — and every flake trains devs to ignore CI, which is the death spiral.
 - **Quarantine-first**: move a flaky test to a non-blocking group (still runs, still tracked), set a max 30-day stay, then fix or delete. Quarantine count must trend down.
 - **Retry only the failed tests** (test-level, not whole-pipeline re-run), and log every retry — a test that passes on retry is still flaky; use that data to find root causes.
 - **Parallel isolation is mandatory**: per-worker DB/schema/namespace, dynamic ports, no shared temp dirs, no execution-order reliance.
