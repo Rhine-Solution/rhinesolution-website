@@ -68,6 +68,22 @@
       ],
       "folders": [
         {
+          "name": "_machine",
+          "notes": [],
+          "folders": [
+            {
+              "name": "wiki",
+              "notes": [
+                "index",
+                "rhine-solution",
+                "machine-brain",
+                "okm"
+              ],
+              "folders": []
+            }
+          ]
+        },
+        {
           "name": "Archive",
           "notes": [
             "adr-001-nextjs-supabase",
@@ -405,6 +421,69 @@
       "outlinks": [
         "12-backlog",
         "lessons-learned"
+      ]
+    },
+    "index": {
+      "slug": "index",
+      "source": "_machine/wiki/index.md",
+      "file": "nous/index.md",
+      "title": "Wiki index",
+      "folder": "nous",
+      "excerpt": "Map of all machine-brain wiki notes, grouped by type.",
+      "order": 20,
+      "tags": [],
+      "updated": "2026-09-06",
+      "outlinks": [
+        "rhine-solution",
+        "machine-brain",
+        "okm"
+      ]
+    },
+    "rhine-solution": {
+      "slug": "rhine-solution",
+      "source": "_machine/wiki/rhine-solution.md",
+      "file": "nous/rhine-solution.md",
+      "title": "Rhine Solution",
+      "folder": "nous",
+      "excerpt": "Rhine Solution is a software engineering studio. Its public site (rhinesolution.com, 7 locales, Next.js 15 on Vercel) includes a public brain browser under Our ",
+      "order": 21,
+      "tags": [],
+      "updated": "2026-09-05",
+      "outlinks": [
+        "machine-brain",
+        "okm",
+        "index"
+      ]
+    },
+    "machine-brain": {
+      "slug": "machine-brain",
+      "source": "_machine/wiki/machine-brain.md",
+      "file": "nous/machine-brain.md",
+      "title": "Machine brain (NOUS)",
+      "folder": "nous",
+      "excerpt": "The machine brain is the AI-augmented chamber (Brain/_machine/) where agents capture, think, and compound — separate from the read-only legacy Brain/.",
+      "order": 22,
+      "tags": [],
+      "updated": "2026-09-05",
+      "outlinks": [
+        "rhine-solution",
+        "okm",
+        "index"
+      ]
+    },
+    "okm": {
+      "slug": "okm",
+      "source": "_machine/wiki/okm.md",
+      "file": "nous/okm.md",
+      "title": "OKF / OKM conventions",
+      "folder": "nous",
+      "excerpt": "Every note carries OKF frontmatter: tags, created, updated, type, description. Every fact is timeless, dated (as_of), or a pointer.",
+      "order": 23,
+      "tags": [],
+      "updated": "2026-09-05",
+      "outlinks": [
+        "machine-brain",
+        "index"
       ]
     }
   }
