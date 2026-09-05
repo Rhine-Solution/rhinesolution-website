@@ -1,0 +1,754 @@
+{
+  "brand": {
+    "name": "Rhine Solution",
+    "tagline": "Desarrollo web a medida, portafolios y experiencias digitales",
+    "social": {
+      "github": "https://github.com/RAGNAROK-RS0",
+      "tiktok": "https://www.tiktok.com/@rhinesolution",
+      "youtube": "https://www.youtube.com/@RhineSolutions",
+      "linkedin": "https://www.linkedin.com/in/rhinesolution",
+      "pinterest": "https://nl.pinterest.com/soc0255/",
+      "x": "https://x.com/RhineSolution",
+      "reddit": "https://www.reddit.com/user/RhineSolution/"
+    }
+  },
+  "nav": {
+    "home": "Inicio",
+    "team": "Equipo",
+    "projects": "Proyectos",
+    "about": "Nosotros",
+    "news": "Novedades",
+    "contact": "Contacto",
+    "back": "Volver a Rhine Solution"
+  },
+  "gate": {
+    "eyebrow": "Antes de entrar",
+    "title": "Verificación humana rápida",
+    "body": "Por favor, verifica que eres humano antes de entrar al sitio. Esto mantiene nuestro sitio libre de tráfico automatizado.",
+    "verified": "Verificado. Bienvenido a Rhine Solution."
+  },
+  "home": {
+    "hero_line_1": "Construimos con",
+    "hero_line_2": "Rhine Solution",
+    "hero_subtitle": "Aplicaciones web a medida, portafolios y experiencias digitales creadas con esmero.",
+    "cta_projects": "Ver nuestro trabajo",
+    "cta_about": "Sobre el estudio",
+    "stage_b_eyebrow": "La idea",
+    "stage_b_title": "Web que funciona y lo demuestra.",
+    "stage_b_text": "Sigue desplazándote. Cada capa de Rhine Solution está publicada, en vivo y hecha para moverse.",
+    "stage_b_link": "Ver el trabajo",
+    "statements": [
+      {
+        "eyebrow": "01 · Craft",
+        "heading": "Equipo pequeño, alto estándar.",
+        "body": "Un dúo fundador que publica juntos: diseño, construcción y despliegue, todo interno, sin intermediarios entre la idea y el lanzamiento.",
+        "link_label": "Conoce al equipo",
+        "href": "/team"
+      },
+      {
+        "eyebrow": "02 · AI-powered",
+        "heading": "Un flujo de trabajo centrado en IA.",
+        "body": "Nuestra Mac Mini ejecuta todo el stack: agentes, cinco proveedores de modelos y el Obsidian Brain que mantiene cada decisión documentada.",
+        "link_label": "Cómo construimos",
+        "href": "/projects/macmini"
+      },
+      {
+        "eyebrow": "03 · Excellence",
+        "heading": "Publicado, no maquetado.",
+        "body": "Cada proyecto termina en producción. Sin maquetas, sin ideas abandonadas: solo código que funciona.",
+        "link_label": "Ver nuestro trabajo",
+        "href": "/projects"
+      },
+      {
+        "eyebrow": "04 · Together",
+        "heading": "Construyamos algo.",
+        "body": "Dos constructores, una conversación directa. Colabora con nosotros en tu próximo proyecto.",
+        "link_label": "Iniciar una conversación",
+        "href": "/contact"
+      }
+    ],
+    "featured_title": "Trabajo destacado",
+    "featured_text": "Proyectos seleccionados, construidos y mantenidos por el equipo de Rhine Solution.",
+    "closing_cta": {
+      "eyebrow": "Siguiente paso",
+      "title": "¿Tienes un proyecto en mente?",
+      "body": "Dos constructores, una conversación directa. Respondemos en un día, normalmente más rápido.",
+      "cta_label": "Iniciar una conversación",
+      "secondary_label": "Ver nuestro trabajo"
+    }
+  },
+  "footer_columns": {
+    "brand_tagline": "Desarrollo web a medida, portafolios y experiencias digitales. Construido en los Países Bajos, enviado a todo el mundo.",
+    "nav_heading": "Navegar",
+    "connect_heading": "Conectar",
+    "legal_heading": "Legal",
+    "back_to_top": "Volver arriba",
+    "privacy": "Privacidad",
+    "colophon": "Colofón"
+  },
+  "team": {
+    "title": "Nuestro equipo",
+    "subtitle": "Dos personas, una misión: construir software útil."
+  },
+  "ragnarok": {
+    "name": "RAGNAROK",
+    "role": "CEO y Visionario",
+    "tagline": "Impulsa la dirección estratégica y la marca de Rhine Solution.",
+    "bio": "Fundador de Rhine Solution. Lidera el producto, la marca y las relaciones con los clientes. Construye con TypeScript, Next.js y CSS puro. Mantiene el Obsidian Brain que impulsa la infraestructura de IA de la empresa.",
+    "skills": [
+      "Estrategia de producto",
+      "Marca y diseño",
+      "Next.js y TypeScript",
+      "Infraestructura de IA",
+      "Arquitectura de sistemas"
+    ],
+    "social": {
+      "github": "https://github.com/RAGNAROK-RS0"
+    },
+    "featured": [
+      {
+        "title": "Informe de Ciberdelincuencia y Ciberseguridad",
+        "href": "/es/dfir/cybercrime-report",
+        "meta": "Ciberseguridad · K1352",
+        "summary": "Informe de investigación del Keuzedeel K1352: cómo funciona internet desde cero, qué es la ciberdelincuencia, la magnitud del problema y cómo protegerse."
+      }
+    ]
+  },
+  "zeromeister": {
+    "name": "ZeroMeister",
+    "role": "CTO e Ingeniero",
+    "tagline": "Construye los cimientos técnicos de Rhine Solution.",
+    "bio": "Director de Tecnología. Es responsable de la práctica de ingeniería, la infraestructura y la Mac Mini que ejecuta el stack de IA de la empresa. Publica código de producción y mantiene todo en funcionamiento.",
+    "skills": [
+      "Ingeniería de sistemas",
+      "DevOps y despliegue",
+      "Arquitectura de backend",
+      "Herramientas y agentes de IA",
+      "macOS y Linux",
+      "Investigador de Informática Forense"
+    ],
+    "social": {
+      "github": "https://github.com/ZeroMeister"
+    },
+    "featured": [
+      {
+        "title": "DFIR",
+        "href": "/dfir/lab041",
+        "meta": "Informática Forense · LAB041",
+        "summary": "Un examen forense de un antiguo reproductor MP3, rastreando música pirateada mediante metadatos, espacio slack y carving de archivos."
+      }
+    ]
+  },
+  "projects": {
+    "title": "Trabajo seleccionado",
+    "subtitle": "Sistemas en producción, desplegados y mantenidos.",
+    "featured_label": "Destacado",
+    "read_more": "Leer más"
+  },
+  "brain": {
+    "title": "The Brain",
+    "subtitle": "La base de conocimientos de ingeniería viva de Rhine Solution: cómo pensamos la construcción de software.",
+    "browse": "Explorar la base de conocimientos",
+    "read": "Leer nota",
+    "back": "Volver a The Brain",
+    "empty": "The Brain se está preparando. Vuelve pronto.",
+    "folders": {
+      "plan": "Plan",
+      "build": "Build",
+      "harden": "Harden",
+      "ship": "Ship",
+      "knowledge": "Knowledge",
+      "journal": "Journal"
+    }
+  },
+  "project_rhinesolution": {
+    "title": "rhinesolution.com",
+    "slug": "rhinesolution",
+    "icon": "globe",
+    "summary": "Este sitio web. Next.js 15, TypeScript, CSS puro, desplegado en Vercel con DNS de Cloudflare.",
+    "stack": [
+      "Next.js 15",
+      "TypeScript",
+      "Pure CSS",
+      "Vercel",
+      "Cloudflare"
+    ],
+    "year": 2026
+  },
+  "project_brain": {
+    "title": "The Brain",
+    "slug": "brain",
+    "icon": "brain",
+    "featured": true,
+    "summary": "Nuestra base de conocimientos de ingeniería viva: notas de arquitectura, seguridad, despliegue y pruebas, publicadas abiertamente. Explora el razonamiento detrás de cómo construimos.",
+    "stack": [
+      "Obsidian",
+      "Markdown",
+      "Git"
+    ],
+    "year": 2026
+  },
+  "project_macmini": {
+    "title": "Infraestructura de IA con Mac Mini",
+    "slug": "macmini",
+    "icon": "server",
+    "summary": "La Mac Mini que ejecuta el stack de IA de Rhine Solution: Free Claude Code (bot de Discord), 5 modelos de respaldo (NVIDIA NIM, Groq, Gemini, Mistral, OpenRouter) y el agente OpenCode que ayuda con el trabajo diario.",
+    "stack": [
+      "macOS 26",
+      "Free Claude Code",
+      "OpenCode",
+      "5 proveedores de LLM",
+      "Tailscale"
+    ],
+    "year": 2026
+  },
+  "project_music": {
+    "title": "Music Trends Local",
+    "slug": "music",
+    "icon": "music",
+    "summary": "Un portal musical de temática cyber que muestra las mejores canciones, artistas y géneros: 48 pistas en 8 subgéneros electrónicos con búsqueda, filtros y favoritos en localStorage.",
+    "stack": [
+      "HTML5",
+      "CSS",
+      "Bootstrap",
+      "JavaScript",
+      "SVG",
+      "Next.js 15"
+    ],
+    "year": 2026,
+    "team": "RAGNAROK + ZeroMeister",
+    "live_url": "/music"
+  },
+  "about": {
+    "eyebrow": "El estudio",
+    "statement": "Equipo pequeño, alto estándar, trabajo publicado.",
+    "story": [
+      "Rhine Solution es un estudio de dos personas liderado por una dupla de CEO/CTO que construyen juntos. Creamos experiencias web a medida: portafolios, portales y productos, desde el primer boceto hasta el despliegue en vivo.",
+      "Nuestro flujo de trabajo es centrado en IA pero guiado por personas. La Mac Mini ejecuta nuestros agentes y modelos, y el Obsidian Brain mantiene cada decisión documentada y repetible.",
+      "Apostamos por la simplicidad, el oficio y el código de producción. Cuando prometemos un proyecto, se publica."
+    ],
+    "services_title": "Qué construimos",
+    "services": [
+      {
+        "icon": "layout",
+        "title": "Portafolios y sitios de marca",
+        "text": "Sitios personales y de estudio que destacan por su carácter: rápidos, bilingües y diseñados para sentirse como la marca que representan."
+      },
+      {
+        "icon": "monitor",
+        "title": "Portales y productos",
+        "text": "Portales internos, paneles y herramientas con inicios de sesión reales, datos reales y usuarios reales, mantenidos a largo plazo."
+      },
+      {
+        "icon": "zap",
+        "title": "Aplicaciones web a medida",
+        "text": "Aplicaciones construidas según especificación, del primer boceto al despliegue en vivo: sin maquetas abandonadas, solo código que funciona."
+      }
+    ],
+    "process_title": "Cómo trabajamos",
+    "process": [
+      {
+        "title": "Propuesta primero",
+        "text": "Escribimos el plan en lenguaje sencillo antes de una sola línea de código, para que sepas qué recibirás y por qué."
+      },
+      {
+        "title": "Pasos pequeños y revisables",
+        "text": "Hacemos commits en incrementos pequeños. Cada cambio explica su porqué, no solo su qué, y se mantiene fácil de revisar."
+      },
+      {
+        "title": "Decisiones documentadas",
+        "text": "Cada elección vive en el Obsidian Brain para que el razonamiento sobreviva a las personas que la tomaron."
+      },
+      {
+        "title": "Entrega por escrito",
+        "text": "Cerramos con un traspaso: qué se construyó, cómo mantenerlo y dónde están las costuras."
+      }
+    ],
+    "stack_title": "Stack y herramientas",
+    "stack": ["Next.js 15", "TypeScript", "Pure CSS", "Mac Mini", "Obsidian Brain", "Vercel", "Cloudflare"],
+    "values_title": "Lo que valoramos",
+    "values": [
+      { "title": "Ofício sobre cantidad", "text": "Tomamos pocos proyectos y los terminamos bien." },
+      { "title": "La simplicidad gana", "text": "Estructura clara, CSS puro, sin dependencias innecesarias." },
+      { "title": "Asistido por IA, guiado por humanos", "text": "Los agentes y modelos nos hacen más rápidos; las personas toman las decisiones." },
+      { "title": "Documentado, siempre", "text": "Cada decisión vive en The Brain, no en la cabeza de alguien." },
+      { "title": "Ser dueños del resultado", "text": "Nuestra propia infraestructura, nuestro propio código, de principio a fin." },
+      { "title": "Bilingüe por defecto", "text": "Inglés y neerlandés integrados en la capa de contenido desde el primer día." }
+    ],
+    "cta_head": "¿Interesado en trabajar juntos?",
+    "cta_text": "Siempre hablarás con un constructor, no con un vendedor.",
+    "cta_link_label": "Explorar nuestro trabajo"
+  },
+  "news": {
+    "eyebrow": "Actualizaciones",
+    "title": "Novedades y actualizaciones",
+    "subtitle": "Lo nuevo en Rhine Solution.",
+    "items": [
+      {
+        "date": "Aug 2026",
+        "title": "Estructura bilingüe del sitio",
+        "summary": "El sitio pasó al enrutamiento /[locale]. El inglés y el neerlandés ahora comparten un mismo árbol de componentes y una única capa de contenido."
+      },
+      {
+        "date": "Aug 2026",
+        "title": "Music Trends Local ya está en línea",
+        "summary": "Un portal musical de temática cyber con 48 pistas en ocho subgéneros electrónicos, además de búsqueda, filtros y canciones favoritas."
+      },
+      {
+        "date": "Jul 2026",
+        "title": "Limpieza de dependencias",
+        "summary": "Postcss actualizado y la auditoría devolvió cero vulnerabilidades en todo el árbol de dependencias."
+      }
+    ]
+  },
+  "contact": {
+    "eyebrow": "Contacto",
+    "title": "Inicia una conversación.",
+    "body": "Dos constructores detrás de una marca. Siempre llegarás a un constructor, no a un vendedor.",
+    "form_title": "Envíanos un mensaje",
+    "form": {
+      "name": "Tu nombre",
+      "email": "Correo electrónico",
+      "message": "Mensaje",
+      "submit": "Enviar mensaje",
+      "submitting": "Enviando...",
+      "success": "Mensaje enviado. Responderemos en un plazo de 1 a 2 días hábiles.",
+      "error_generic": "Algo salió mal. Inténtalo de nuevo o escribe a info@rhinesolution.com."
+    },
+    "alt_title": "O entra directo al trabajo.",
+    "alt_text": "Cada proyecto publicado vive en este sitio. Empieza con la muestra.",
+    "alt_link": "Explorar proyectos"
+  },
+  "footer": {
+    "social_heading": "Encuéntranos en otros sitios",
+    "theme_toggle_light": "Cambiar a oscuro",
+    "theme_toggle_dark": "Cambiar a claro"
+  },
+  "a11y": {
+    "skip_to_content": "Saltar al contenido principal",
+    "nav_label": "Navegación principal",
+    "current_page": "Página actual",
+    "language_switcher": "Cambiar idioma",
+    "language_names": {
+      "en": "English",
+      "nl": "Nederlands",
+      "de": "Deutsch",
+      "fr": "Français",
+      "es": "Español",
+      "it": "Italiano",
+      "zh": "中文"
+    }
+  },
+  "sections": {
+    "stack": "Stack",
+    "year": "Año",
+    "team": "Equipo",
+    "launch": "Lanzamiento",
+    "about": "Nosotros",
+    "skills": "Habilidades",
+    "social": "Encuéntrame en línea",
+    "featured_work": "Trabajo destacado",
+    "featured_work_text": "Proyectos seleccionados construidos y mantenidos por el equipo de Rhine Solution."
+  },
+  "privacy": {
+    "eyebrow": "Privacidad",
+    "title": "Tus datos, nuestra responsabilidad.",
+    "intro": "Esta es la política de privacidad más corta que hemos leído en un sitio web, y lo decimos como un cumplido hacia nosotros mismos. Rhine Solution recopila el mínimo absoluto necesario para hacer nuestro trabajo: responderte cuando te comunicas con nosotros. Sin analíticas, sin publicidad, sin seguimiento de terceros, sin cookies de ningún tipo. Solo el formulario de contacto, gestionado por un único servicio de correo que controlamos de principio a fin.",
+    "last_updated": "Última actualización",
+    "who_we_are": {
+      "heading": "Quiénes somos",
+      "body": "Rhine Solution es un estudio de dos personas. Somos el responsable del tratamiento de cualquier información personal que nos envíes a través de este sitio. Puedes contactarnos en las direcciones que figuran al final de esta página."
+    },
+    "what_we_collect": {
+      "heading": "Qué recopilamos",
+      "body": "Solo lo que escribes en el formulario de contacto: tu nombre, tu dirección de correo electrónico, el mensaje que redactas y el idioma que usaste (inglés o neerlandés). Nada más. No recopilamos direcciones IP, huellas del navegador, datos de ubicación, identificadores de dispositivo ni analíticas. No colocamos cookies. No ejecutamos scripts de terceros."
+    },
+    "why_we_collect": {
+      "heading": "Por qué lo recopilamos",
+      "body": "Para responderte. Eso es todo. La base legal conforme al artículo 6(1)(b) del RGPD es que el tratamiento es necesario para responder a tu consulta o, si aún no has trabajado con nosotros, el artículo 6(1)(f): el interés legítimo de operar un canal básico de contacto comercial. No te enviamos publicidad, no creamos perfiles sobre ti ni compartimos tu información con nadie fuera de la cadena necesaria para enviarte nuestra respuesta."
+    },
+    "who_we_share_with": {
+      "heading": "Con quién la compartimos",
+      "body": "Un solo servicio: Resend (resend.com), la infraestructura de correo que entrega tu mensaje en nuestra bandeja de entrada. Resend actúa como nuestro encargado del tratamiento en virtud de un acuerdo estándar de tratamiento de datos. Almacenan el cuerpo del mensaje y los metadatos en servidores de la UE y de los Estados Unidos; las transferencias a EE. UU. están cubiertas por el Marco de Privacidad de Datos UE–EE. UU., del cual Resend está certificado. Ningún otro tercero recibe tus datos. No los vendemos, alquilamos ni intercambiamos."
+    },
+    "how_long": {
+      "heading": "Cuánto tiempo los conservamos",
+      "body": "Tu mensaje permanece en nuestra bandeja de Resend y en nuestro cliente de correo interno mientras la conversación esté activa. Una vez entregado el proyecto (o si acordamos que no encajamos), lo archivamos hasta 24 meses por si vuelves, y luego lo eliminamos del almacenamiento activo. Puedes pedirnos que lo eliminemos antes: ver abajo."
+    },
+    "your_rights": {
+      "heading": "Tus derechos",
+      "body": "En virtud del RGPD tienes derecho a acceder, rectificar, suprimir, limitar, portar y oponerte al tratamiento de cualquier dato personal que tengamos sobre ti. También tienes derecho a presentar una reclamación ante la Autoridad Neerlandesa de Protección de Datos (Autoriteit Persoonsgegevens). Ejercer cualquiera de estos derechos es gratuito y respondemos en un plazo de un mes. Escríbenos a la dirección de abajo para comenzar."
+    },
+    "changes": {
+      "heading": "Cambios en esta política",
+      "body": "Si cambiamos algo relevante: un nuevo servicio, una regla de retención distinta: actualizaremos la fecha de abajo y explicaremos qué cambió en lenguaje sencillo. La versión que lees ahora es la única que cuenta; no hay páginas de archivo ocultas con políticas anteriores."
+    },
+    "contact_label": "Contacto de privacidad",
+    "contact_intro": "Para cualquier consulta de privacidad: acceder, corregir o eliminar tus datos, escríbenos:",
+    "complaint_label": "Presentar una reclamación",
+    "complaint_body": "Si prefieres plantear tu inquietud ante el regulador, puedes contactar con la Autoridad Neerlandesa de Protección de Datos (Autoriteit Persoonsgegevens) en autoriteitpersoonsgegevens.nl."
+  },
+  "colophon": {
+    "eyebrow": "Colofón",
+    "title": "Cómo está hecho este sitio.",
+    "intro": "Un colofón es una nota del editor que tradicionalmente se imprime en la contraportada de un libro para reconocer a las personas que lo hicieron. En la web, enumera las herramientas, decisiones y personas detrás de un sitio. Este es honesto sobre lo que funciona, lo que no y dónde se notan las costuras.",
+    "sections": {
+      "principles": {
+        "heading": "Principios",
+        "items": [
+          "Calma por defecto. El sitio es siempre azul marino oscuro + WebGL; sin modo claro, sin conmutador de tema, sin decisiones para el visitante.",
+          "Dos constructores, una fuente. Cada línea de código, cada palabra de texto, cada recurso pasa por los dos antes de publicarse.",
+          "Bilingüe desde el primer día. El inglés y el neerlandés comparten un árbol de componentes y una capa de contenido; nada se traduce dos veces.",
+          "Infraestructura propia. El sitio, los agentes, los modelos, las notas: todo corre en nuestro propio hardware, no en SaaS alquilado.",
+          "Publicado, no maquetado. Cada proyecto enlazado desde este sitio está en producción. No hay maquetas."
+        ]
+      },
+      "stack": {
+        "heading": "Stack",
+        "items": [
+          "Next.js 15 (App Router) como framework: Server Components por defecto, 'use client' solo donde se necesitan estado o manejadores de eventos.",
+          "TypeScript para la seguridad de tipos en todo el código.",
+          "CSS puro con custom properties: sin Tailwind, sin CSS-in-JS. Los tokens de diseño son un único archivo.",
+          "Three.js para el fondo WebGL: cuatro escenas guiadas por scroll (Drift, Lines, Roads, Glow) con fundidos cruzados mediante keyframes de Theatre.js.",
+          "Lenis para un desplazamiento con inercia suave.",
+          "Resend para el correo transaccional (el formulario de contacto).",
+          "Vercel para el alojamiento y el despliegue continuo: cada push a main se despliega automáticamente.",
+          "Cloudflare para DNS y edge."
+        ]
+      },
+      "typefaces": {
+        "heading": "Tipografías",
+        "items": [
+          "Rijksoverheid Sans Heading Bold: la tipografía de exhibición. Se usa para títulos, encabezados y los momentos en que la página quiere hacer una declaración. Autoalojada.",
+          "Rijksoverheid Sans Text: la tipografía de texto. Se usa para el contenido, la interfaz y los metadatos densos donde la legibilidad importa más que el carácter. También autoalojada."
+        ]
+      },
+      "how_we_work": {
+        "heading": "Cómo trabajamos",
+        "items": [
+          "Escribimos propuestas en lenguaje sencillo antes de escribir una sola línea de código.",
+          "Hacemos commits en pasos pequeños y revisables. Cada commit explica el porqué, no solo el qué.",
+          "Documentamos las decisiones en The Brain, nuestra bóveda interna de Obsidian, para que el razonamiento sobreviva a las personas que lo tomaron.",
+          "Cerramos cada proyecto con un traspaso por escrito: qué se construyó, cómo mantenerlo y dónde están las costuras."
+        ]
+      },
+      "tools": {
+        "heading": "Herramientas que usamos",
+        "items": [
+          "Obsidian para The Brain.",
+          "Git en una Mac Mini para el repositorio local y la bóveda de Obsidian.",
+          "Discord para Rhine AI: la interfaz de nuestro agente con el resto del mundo.",
+          "Linear Lite para el seguimiento de tareas de los clientes. No nos encanta. Lo usamos de todos modos."
+        ]
+      },
+      "limits": {
+        "heading": "Dónde se notan las costuras",
+        "items": [
+          "Three.js es pesado en móviles. Lo hemos conservado, pero un teléfono de gama baja con una conexión inestable lo notará.",
+          "El fundido cruzado de WebGL muestra costuras visibles en Safari < 17. Podríamos enmascararlas con más trabajo de shaders; por ahora, asumimos el costo.",
+          "El formulario de contacto envía desde una dirección sandbox de Resend hasta que verifiquemos rhinesolution.com en su lista de dominios: una tarea pendiente.",
+          "No hay analíticas en este sitio. No podemos decirte qué páginas lee más la gente. Preferimos no saberlo antes que comprometer la promesa de privacidad anterior."
+        ]
+      },
+      "credits": {
+        "heading": "Créditos",
+        "items": [
+          "Diseño, código, texto e infraestructura: RAGNAROK (CEO) y ZeroMeister (CTO).",
+          "Activos de marca: derivados de una marca dibujada a mano que nos acompaña desde el proyecto escolar que dio origen a Rhine Solution.",
+          "Alojamiento: Vercel (región de Frankfurt, UE).",
+          "DNS: Cloudflare.",
+          "Correo: Resend (UE + EE. UU., certificado DPF)."
+        ]
+      }
+    }
+  },
+  "dfir": {
+    "cybercrime_report": {
+      "meta_title": "Informe sobre ciberdelincuencia y ciberseguridad",
+      "meta_description": "Informe de investigación del keuzedeel K1352: cómo funciona internet, qué es la ciberdelincuencia, la magnitud del problema y cómo protegerse de ella.",
+      "eyebrow": "RAGNAROK · Cyber Security",
+      "title": "Informe sobre ciberdelincuencia y ciberseguridad",
+      "lead": "Informe de investigación del keuzedeel K1352. Cómo funciona internet desde cero, qué es la ciberdelincuencia, cuán grande es realmente el problema, quién la comete y por qué, y qué pueden hacer las personas y las organizaciones para protegerse.",
+      "meta": {
+        "course_label": "Curso",
+        "course_value": "K1352 · Basis cybercriminaliteit en cyberveiligheid",
+        "title_label": "Título",
+        "title_value": "Ciberdelincuencia y ciberseguridad",
+        "language_label": "Idioma",
+        "language_value": "Español",
+        "date_label": "Fecha del informe",
+        "date_value": "Sep 2026"
+      },
+      "executive_summary_heading": "Resumen ejecutivo",
+      "executive_summary": "Casi todo lo que hacemos hoy en día implica internet, y sin embargo internet no es algo que simplemente exista. Es una red física de cables, routers, centros de datos y dispositivos. Y dondequiera que se reúnen las personas, también hay delincuencia. Este informe explica el viaje que hacen los datos desde un dispositivo hasta los cables submarinos bajo el océano, y después analiza qué es la ciberdelincuencia, los tipos principales, la magnitud del problema con cifras reales, quién la comete y por qué, de dónde procede, cómo reacciona el público y, por último, cómo protegerse de ella.",
+      "sections": [
+        {
+          "heading": "1 · Internet desde cero",
+          "subsections": [
+            {
+              "heading": "1.1 Qué es internet",
+              "paragraphs": [
+                "Internet es una red gigantesca de computadoras que intercambian información. Cuando un teléfono, un portátil o un televisor inteligente está conectado, pasa a formar parte de esa red. Una metáfora útil es la de un sistema de carreteras: carreteras locales (la red doméstica), autopistas (la red del proveedor) y rutas internacionales (los cables bajo el océano). Los datos viajan como coches, y si una carretera está bloqueada, los datos se redirigen por otra ruta, por eso internet rara vez se detiene por completo.",
+                "Internet y la World Wide Web no son lo mismo. Internet es la red física y sus reglas; la Web es solo un servicio que funciona sobre ella, el que usan los navegadores para las páginas web. El correo electrónico, los juegos y el streaming son otros servicios que también se ejecutan sobre internet."
+              ]
+            },
+            {
+              "heading": "1.2 El viaje de un mensaje",
+              "paragraphs": [
+                "Enviar una foto a un amigo al otro lado del mundo ocurre por pasos. El mensaje nunca viaja como una sola pieza:"
+              ],
+              "steps": [
+                { "step": 1, "title": "Tu dispositivo", "body": "El dispositivo divide el mensaje (una foto, un correo) en pequeños fragmentos llamados paquetes. Cada paquete es como una carta en un sobre, con información de cabecera que indica de dónde viene y adónde va." },
+                { "step": 2, "title": "Ondas de radio hasta el router", "body": "Con Wi-Fi, los paquetes salen del dispositivo como ondas de radio y llegan al router. Con datos móviles van en su lugar a una antena de telefonía cercana." },
+                { "step": 3, "title": "Del router al módem", "body": "El router es el gestor de tráfico de la red doméstica. El módem es el traductor: convierte las señales en una forma que puede viajar por los cables del proveedor." },
+                { "step": 4, "title": "La red del ISP", "body": "El módem envía los datos por cables coaxiales o de fibra al proveedor de servicios de internet (ISP), que elige la ruta más eficiente para los paquetes." },
+                { "step": 5, "title": "Centros regionales", "body": "Los datos llegan a grandes centros de datos que intercambian tráfico entre redes. Estos centros se conectan a la columna vertebral de internet." },
+                { "step": 6, "title": "Cables submarinos", "body": "Para los datos que cruzan continentes, la columna vertebral incluye enormes cables en el fondo del océano, tendidos y reparados por barcos especiales. Los datos viajan a través de ellos como pulsos de luz en finas fibras de vidrio." },
+                { "step": 7, "title": "Destino", "body": "Los paquetes llegan al otro lado, se vuelven a ensamblar en el orden correcto y el dispositivo del destinatario muestra el mensaje." }
+              ],
+              "note": "Así que cada mensaje viaja a través de una mezcla de ondas de radio, cables de cobre, fibras de vidrio y cables submarinos. Solo a nosotros nos parece inalámbrico."
+            },
+            {
+              "heading": "1.3 Paquetes, direcciones IP y protocolos",
+              "paragraphs": [
+                "Dos cosas hacen posible todo esto: los paquetes y los protocolos."
+              ],
+              "protocols": [
+                { "term": "Binario", "body": "Dentro de un dispositivo, toda la información se almacena como unos y ceros. El dispositivo los convierte en ondas de radio o señales eléctricas para enviarlos." },
+                { "term": "Dirección IP", "body": "Cada dispositivo recibe un número único, como una dirección postal. Los routers lo usan para reenviar cada paquete al lugar correcto." },
+                { "term": "TCP", "body": "TCP (Transmission Control Protocol) garantiza que los paquetes lleguen en el orden correcto y que no falte ninguno. El receptor confirma cada paquete y los que faltan se reenvían." },
+                { "term": "DNS", "body": "El Sistema de Nombres de Dominio es la guía telefónica de internet. Traduce nombres como www.example.com a la dirección IP que una computadora realmente necesita." },
+                { "term": "Servidores", "body": "Las páginas web, las aplicaciones y los archivos viven en servidores, computadoras potentes que permanecen conectadas. Cuando visitas una página, tu dispositivo le pide al servidor que se la envíe, y llega en forma de paquetes." }
+              ]
+            },
+            {
+              "heading": "1.4 Distintas formas de conectarse",
+              "table": {
+                "caption": "Comparación de tipos de conexión",
+                "rows": [
+                  ["Conexión", "Cómo funciona", "Ventajas", "Inconvenientes"],
+                  ["Cable", "Usa los mismos cables coaxiales que la televisión por cable; un módem convierte la señal.", "Rápida (hasta 1 Gbps) y muy disponible.", "La subida es lenta; los vecinos comparten la conexión, por lo que la velocidad baja por la noche."],
+                  ["Fibra", "Envía los datos como pulsos de luz a través de fibras de vidrio.", "La opción más rápida (hasta 10 Gbps), subida y bajada simétricas, poca pérdida de señal.", "No está disponible en todas partes; tender nueva fibra es caro."],
+                  ["DSL", "Usa las líneas telefónicas de cobre existentes.", "Muy extendida y no bloquea la línea telefónica.", "Más lenta; la velocidad depende de la distancia a la central del proveedor."],
+                  ["Satélite", "Envía los datos desde satélites en órbita a una antena parabólica en tu casa.", "Funciona en casi cualquier lugar, lo que ayuda a las zonas rurales.", "Latencia alta porque los datos viajan al espacio y regresan; las tormentas la interrumpen."],
+                  ["Fijo inalámbrico", "Señales de radio entre una estación base y una antena en el hogar.", "Buena para zonas sin cables; menor latencia que el satélite.", "Los árboles, los edificios y el clima pueden debilitar la señal."],
+                  ["5G en casa", "Usa redes móviles para conectar un hogar.", "Rápida de desplegar sin zanjas; altas velocidades y baja latencia.", "La cobertura aún es limitada y depende de la distancia y la congestión."]
+                ]
+              },
+              "note": "Un tema común: las velocidades de subida, el ancho de banda compartido y la cobertura rural son los puntos débiles de casi todas las tecnologías."
+            },
+            {
+              "heading": "1.5 La última milla",
+              "paragraphs": [
+                "El tramo final desde la red del proveedor hasta el hogar se llama la última milla. Es la parte más cara de construir, por eso las ciudades tienen fibra mientras que las zonas rurales y pobres reciben conexiones más lentas o ninguna. Tecnologías más recientes, como los enlaces de microondas y el 5G, ayudan a cerrar esa brecha, pero el acceso básico a internet sigue siendo un problema en muchas partes del mundo."
+              ],
+              "figure": {
+                "src": "/dfir/a-brief-history-of-the-internet-graphic-768x1296.jpg",
+                "alt": "Infografía: una breve historia de internet",
+                "caption": "Figura 1 · Una breve historia de internet (infografía de BroadbandNow)."
+              }
+            }
+          ]
+        },
+        {
+          "heading": "2 · Qué es la ciberdelincuencia",
+          "subsections": [
+            {
+              "heading": "",
+              "paragraphs": [
+                "La ciberdelincuencia es el delito que implica computadoras, internet u otra tecnología digital. Puede dirigirse a personas, empresas o gobiernos, y puede causar daños económicos, daños a la reputación o daño psicológico. Las definiciones varían entre países, lo que dificulta medirla, pero los expertos suelen dividir la ciberdelincuencia en dos grupos:"
+              ],
+              "bullets": [
+                { "strong": "Delito ciberdependiente:", "body": "delitos que solo pueden existir gracias a las computadoras y las redes. Hacking, ataques DDoS, malware. Sin internet, estos delitos no existirían." },
+                { "strong": "Delito ciberfacilitado:", "body": "delitos tradicionales que se trasladaron a internet o se volvieron más fáciles. Fraude en línea, phishing, piratería digital, ciberacoso. Ya existían antes, pero internet permite a los delincuentes cometerlos más rápido, más barato y contra más víctimas a la vez." }
+              ],
+              "paragraphs_after": [
+                "El criminólogo David Wall describe cuatro categorías de ciberdelincuencia: ciberallanamiento (entrar en sistemas donde no tienes permiso), ciberdecepción o ciberrobo (robar cosas en línea, como datos de tarjetas de crédito), ciberpornografía u obscenidad (compartir material sexual en línea) y ciberviolencia (causar daño emocional o psicológico, como el ciberacoso. La víctima puede no sufrir daño físico pero puede padecer un daño duradero)."
+              ]
+            }
+          ]
+        },
+        {
+          "heading": "3 · Tipos de ciberdelincuencia",
+          "subsections": [
+            {
+              "heading": "",
+              "paragraphs": [
+                "Los tipos de ciberdelincuencia más comunes son:"
+              ],
+              "table": {
+                "caption": "Resumen de los tipos de ciberdelincuencia",
+                "rows": [
+                  ["Tipo", "Descripción"],
+                  ["Hacking", "Entrar en un sistema informático sin permiso, por beneficio personal o para causar daños."],
+                  ["Phishing", "Correos o mensajes falsos que parecen proceder de una empresa real (como un banco), usados para engañar a las personas y que revelen contraseñas o datos personales."],
+                  ["Ransomware", "Software malicioso que bloquea tus archivos y exige dinero para devolvértelos. El ataque WannaCry de 2017 es un ejemplo muy conocido."],
+                  ["Ataques DDoS", "Inundar un sitio web o un servicio con tanto tráfico que se cae, a menudo usando redes de computadoras infectadas (botnets)."],
+                  ["Robo de identidad", "Robar datos personales para cometer fraude, por ejemplo abrir cuentas o pedir préstamos a nombre de la víctima."],
+                  ["Ciberacoso", "Seguir, amenazar o intimidar a alguien repetidamente a través de internet."],
+                  ["Piratería digital", "Descargar o compartir contenido protegido, películas, música, software, sin permiso."],
+                  ["Ciberextorsión", "Hackear un sistema o un servidor de correo y exigir dinero para devolverlo o mantener los datos en secreto."],
+                  ["Ciberterrorismo", "Hackear sistemas gubernamentales o grandes organizaciones para impulsar objetivos políticos y crear miedo."],
+                  ["Blanqueo de dinero", "Limpiar dinero obtenido ilegalmente a través de internet y la banca digital para que parezca legal."],
+                  ["Grooming infantil", "Crear una conexión emocional con un niño en línea, a menudo para abusar de él o explotarlo."]
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "heading": "4 · La magnitud del problema",
+          "subsections": [
+            {
+              "heading": "",
+              "paragraphs": [
+                "La ciberdelincuencia no es un problema pequeño. Las cifras son enormes y siguen creciendo:"
+              ],
+              "table": {
+                "caption": "Datos y cifras clave",
+                "rows": [
+                  ["Dato", "Cifra / Fuente"],
+                  ["Coste mundial de la ciberdelincuencia en 2024", "Unos 9,5 billones de dólares al año, con previsión de subir otro 15% en 2025 (Cybersecurity Ventures)."],
+                  ["Ataque de ransomware WannaCry (2017)", "Infectó más de 230.000 computadoras en 150 países; más de 4.000 millones de dólares en pérdidas económicas."],
+                  ["Usuarios de internet en 2005", "Unos 1.000 millones de personas (16% de la población mundial)."],
+                  ["Usuarios de internet en 2023", "Unos 5.400 millones de personas (67% de la población mundial)."],
+                  ["Uso de internet entre adultos", "Pasó de alrededor del 52% (2000) a alrededor del 96% (2024)."],
+                  ["Contribución económica directa de internet", "Unos 175.000 millones de dólares al año por publicidad, comercio en línea y pagos a los ISP; efecto multiplicador de unos 444.000 millones."]
+                ]
+              },
+              "note": "El crecimiento de internet también significa más víctimas potenciales: de unos 1.000 millones de personas en línea en 2005 a unos 5.400 millones en 2023. La ciberdelincuencia es en la práctica una industria de billones de dólares para los delincuentes, y casi todo el mundo conectado es un objetivo potencial."
+            }
+          ]
+        },
+        {
+          "heading": "5 · Quién comete ciberdelincuencia y por qué",
+          "subsections": [
+            {
+              "heading": "5.1 Factores sociales y económicos",
+              "paragraphs": [
+                "Un estudio de 2023 que trazó un mapa mundial de la ciberdelincuencia descubrió que está muy ligada al desarrollo de un país. Una mejor infraestructura de internet, niveles educativos más altos y más usuarios de internet implican más ciberdelincuencia, porque los delincuentes tienen mejores herramientas y más objetivos. Al mismo tiempo, la pobreza, el desempleo y la desigualdad de ingresos empujan a las personas de las regiones más pobres hacia la ciberdelincuencia como forma de ganar dinero, por ejemplo los jóvenes de algunas partes de África Occidental que recurren al fraude en línea porque no encuentran otro trabajo. La política también importa: una aplicación de la ley débil, una corrupción elevada y poca cooperación policial internacional facilitan que los delincuentes actúen impunemente."
+              ]
+            },
+            {
+              "heading": "5.2 Explicaciones criminológicas",
+              "table": {
+                "caption": "Tres teorías que explican la ciberdelincuencia",
+                "rows": [
+                  ["Teoría", "Idea central", "Cómo explica la ciberdelincuencia"],
+                  ["Teoría general del delito (bajo autocontrol)", "Algunas personas actúan impulsivamente, asumen riesgos y buscan recompensas rápidas sin pensar en las consecuencias.", "La ciberdelincuencia ofrece dinero rápido, e internet permite a los delincuentes actuar sin ver el daño. Los estudios relacionan sistemáticamente el bajo autocontrol con el delito cibernético."],
+                  ["Teoría del aprendizaje social", "El delito se aprende de los demás. El comportamiento se copia cuando parece funcionar.", "Si los amigos o las comunidades en línea aprueban el hacking o la piratería, es más probable que las personas hagan lo mismo, sobre todo cuando parece que queda impune."],
+                  ["Teoría de la actividad rutinaria", "El delito ocurre cuando coinciden un delincuente motivado, un objetivo adecuado y la ausencia de un guardián capaz.", "En línea, las contraseñas débiles, hacer clic en enlaces de phishing y el software desactualizado te convierten en un objetivo adecuado. El software de seguridad y los hábitos cuidadosos son el guardián."]
+                ]
+              }
+            },
+            {
+              "heading": "5.3 Tipos de hackers",
+              "paragraphs": [
+                "No todos los hackers tienen la misma motivación:"
+              ],
+              "bullets": [
+                { "strong": "Ciberutopistas", "body": "personas que hacen cosas maliciosas pero creen que actúan por el bien común." },
+                { "strong": "Ciberpunks", "body": "hackers que atacan a instituciones que les resultan ofensivas, a menudo solo por diversión o para reivindicar algo." },
+                { "strong": "Ciberespías y ciberterroristas", "body": "atacantes muy cualificados con motivaciones extremas, a menudo al servicio de estados o causas políticas." }
+              ]
+            }
+          ]
+        },
+        {
+          "heading": "6 · De dónde procede la ciberdelincuencia",
+          "subsections": [
+            {
+              "heading": "",
+              "paragraphs": [
+                "Como internet no tiene fronteras, es difícil decir exactamente dónde se encuentra un ciberdelincuente. Los delincuentes se ocultan con VPN, proxies o atacando a través de computadoras infectadas en otros países. Aun así, los investigadores trazaron un mapa de las direcciones IP conocidas por actividad maliciosa. La mayoría se encuentran en Norteamérica, Europa central y oriental, Asia oriental, India y el este de Australia. A nivel continental, Norteamérica y Europa albergan la mayoría, y las regiones de altos ingresos albergan la mayor parte de las IP maliciosas. En otras palabras, los países más ricos y mejor conectados son a la vez los mayores objetivos y las mayores ubicaciones de origen de la infraestructura de la ciberdelincuencia."
+              ],
+              "figure": {
+                "src": "/dfir/top-20-countries-malicious-programs-2014.png",
+                "alt": "Los 20 países más expuestos a ataques externos de programas maliciosos en 2014",
+                "caption": "Figura 2 · Los 20 países más expuestos a ataques externos de programas maliciosos en 2014 (fuente: ResearchGate)."
+              },
+              "note": "Matiz importante: estos mapas basados en IP muestran desde dónde se originan los ataques, no necesariamente dónde viven los delincuentes. Un delincuente de un país puede atacar fácilmente desde servidores de otro, precisamente por eso es tan difícil para la policía combatir la ciberdelincuencia."
+            }
+          ]
+        },
+        {
+          "heading": "7 · Cómo reacciona la gente ante la ciberdelincuencia",
+          "subsections": [
+            {
+              "heading": "",
+              "paragraphs": [
+                "La ciberdelincuencia cuesta dinero, pero también afecta emocionalmente a las personas. Un estudio de 2025 analizó más de 6.700 publicaciones y 100.000 comentarios sobre ciberdelincuencia en Reddit, repartidos a lo largo de 14 años (2008-2022). Los hallazgos:"
+              ],
+              "bullets": [
+                { "strong": "", "body": "Las mayores discusiones las provocaron las violaciones de datos, los ciberataques, el ransomware y el hacking vinculado a países (hacking estatal ruso o chino)." },
+                { "strong": "Ira", "body": "fue la emoción más común, dirigida contra las violaciones de privacidad, las empresas que no protegieron los datos y los gobiernos que gestionaron mal las amenazas." },
+                { "strong": "Sarcasmo", "body": "fue la segunda reacción más común, sobre todo hacia los relatos oficiales y las medidas de seguridad ineficaces." },
+                { "strong": "Miedo", "body": "también estuvo claramente presente, lo que demuestra que la gente se siente realmente amenazada." }
+              ],
+              "paragraphs_after": [
+                "Los ciberataques pueden dañar seriamente la confianza pública en empresas y gobiernos, y las reacciones emocionales pueden incluso impulsar el apoyo a políticas de ciberseguridad más estrictas."
+              ]
+            }
+          ]
+        },
+        {
+          "heading": "8 · Ciberseguridad: cómo protegerte",
+          "subsections": [
+            {
+              "heading": "",
+              "paragraphs": [
+                "La ciberseguridad es todo lo que hacemos para proteger computadoras, redes, programas y datos del acceso no autorizado, los daños o el robo. Es el guardián de la teoría de la actividad rutinaria. Sin ella, el atacante lo tiene mucho más fácil."
+              ],
+              "h3": "8.1 Para particulares",
+              "measures": [
+                "Usa contraseñas seguras y únicas para cada cuenta y cámbialas con regularidad. Un gestor de contraseñas ayuda.",
+                "Activa la autenticación de dos factores (2FA) siempre que sea posible, para que una contraseña robada por sí sola no sea suficiente.",
+                "Mantén todo actualizado: sistema operativo, aplicaciones y antivirus, porque las actualizaciones corrigen vulnerabilidades conocidas.",
+                "Piensa antes de hacer clic: no abras enlaces ni archivos adjuntos que no esperabas, aunque parezcan venir de tu banco.",
+                "Introduce datos personales solo en sitios seguros. Comprueba el candado y el https en la barra de direcciones.",
+                "Evita el Wi-Fi público sin protección para la banca; usa una VPN si no tienes más remedio.",
+                "Haz copias de seguridad, para que el ransomware no pueda bloquearte el acceso a tus datos para siempre."
+              ],
+              "h3_2": "8.2 Para organizaciones",
+              "measures_2": [
+                "Una arquitectura de seguridad y un diagrama de red claros para que se comprenda el entorno.",
+                "Políticas de seguridad y una política de gestión de riesgos que indiquen cómo se identifican y gestionan los riesgos.",
+                "Evaluaciones de riesgos y auditorías de seguridad periódicas.",
+                "Procedimientos de copia de seguridad y restauración, además de un plan de recuperación ante desastres, para que la organización pueda recuperarse tras un ataque.",
+                "Formación para el personal. Las personas son el eslabón más débil, y un empleado formado tiene menos probabilidades de caer en el phishing.",
+                "Gestión de incidentes, para que cuando algo salga mal la respuesta sea rápida, contenida y quede documentada."
+              ],
+              "note": "La ciberseguridad no es un trabajo de una sola vez. Es un proceso continuo de detectar amenazas, corregir debilidades y mantenerse al día, porque los atacantes no dejan de cambiar sus métodos."
+            }
+          ]
+        },
+        {
+          "heading": "9 · Conclusión",
+          "subsections": [
+            {
+              "heading": "",
+              "paragraphs": [
+                "Internet es una red física de cables, routers y centros de datos que conecta a casi todo el mundo, y entender el viaje desde un dispositivo hasta los cables submarinos bajo el océano ayuda a explicar de dónde viene la ciberdelincuencia. La ciberdelincuencia es un problema enorme y creciente que cuesta unos 9,5 billones de dólares al año, impulsado a la vez por la oportunidad y por la necesidad. Las teorías criminológicas muestran que el bajo autocontrol, el aprendizaje de los demás y la ausencia de un guardián influyen, que es precisamente por lo que los buenos hábitos de ciberseguridad funcionan: eliminan la oportunidad.",
+                "Para un desarrollador de software, y para cualquiera que esté en línea, la lección es simple. Conoce cómo funciona la tecnología, reconoce las amenazas y protégete a ti y a tus usuarios con contraseñas seguras, actualizaciones, copias de seguridad y concienciación. La mayoría de los ataques triunfan solo por errores simples que son fáciles de prevenir."
+              ]
+            }
+          ]
+        }
+      ],
+      "references_heading": "10 · Referencias",
+      "references": [
+        { "label": "Tsotetsi, K. \"Understanding the Internet: A Journey from Devices to Submarine Cables.\"", "href": "https://vocal.media/fyi/understanding-the-internet-a-journey-from-devices-to-submarine-cables" },
+        { "label": "Lefelhoc, C. \"How Does Cable Internet Work?\"", "href": "https://www.compareinternet.com/blog/how-does-cable-internet-work/" },
+        { "label": "Fann, K. \"How Does the Internet Work? A Complete Guide.\" BroadbandNow.", "href": "https://broadbandnow.com/guides/how-does-the-internet-work" },
+        { "label": "Tutorials Point. \"Cyber Crime & Cyber Security.\"", "href": "https://www.tutorialspoint.com/fundamentals_of_science_and_technology/cyber_crime_and_cyber_security.htm" },
+        { "label": "Chen, S. et al. \"Exploring the global geography of cybercrime and its driving forces.\" (2023).", "href": "https://www.nature.com/articles/s41599-023-01560-x" },
+        { "label": "Achuthan, K., Khobragade, S. & Kowalski, R. \"Cybercrime through the public lens: a longitudinal analysis.\" (2025).", "href": "https://www.nature.com/articles/s41599-025-04459-x" },
+        { "label": "Onwuadiamu, G. \"Cybercrime in criminology; A systematic review of criminological theories, methods, and concepts.\" Journal of Economic Criminology 8 (2025) 100136.", "href": "https://doi.org/10.1016/j.jeconc.2025.100136" },
+        { "label": "ResearchGate. \"Top 20 countries exposed to external attacks from malicious programs in 2014.\"", "href": "https://www.researchgate.net/figure/Top-20-countries-exposed-to-external-attacks-from-malicious-programs-in-2014_fig1_331914032" }
+      ],
+      "references_note": "Figuras: \"A brief history of the internet\" (BroadbandNow) y \"Top 20 countries exposed to external attacks from malicious programs in 2014\" (ResearchGate). Los datos se recopilan de las fuentes anteriores y se reescriben con palabras propias de este informe.",
+      "back_label": "Volver al equipo",
+      "profile_label": "Ver el perfil de RAGNAROK"
+    }
+  }
+}

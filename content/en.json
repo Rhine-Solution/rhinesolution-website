@@ -108,7 +108,7 @@
     "featured": [
       {
         "title": "Cybercrime and Cybersecurity Report",
-        "href": "/dfir/cybercrime-report",
+        "href": "/en/dfir/cybercrime-report",
         "meta": "Cyber Security · K1352",
         "summary": "Keuzedeel K1352 research report: how the internet works from zero, what cybercrime is, the scale of the problem, and how to protect against it."
       }
@@ -331,7 +331,12 @@
     "language_switcher": "Switch language",
     "language_names": {
       "en": "English",
-      "nl": "Nederlands"
+      "nl": "Nederlands",
+      "de": "Deutsch",
+      "fr": "Français",
+      "es": "Español",
+      "it": "Italiano",
+      "zh": "中文"
     }
   },
   "sections": {
@@ -455,6 +460,295 @@
           "Email: Resend (EU + US, DPF-certified)."
         ]
       }
+    }
+  },
+  "dfir": {
+    "cybercrime_report": {
+      "meta_title": "Cybercrime and Cybersecurity Report",
+      "meta_description": "Keuzedeel K1352 research report: how the internet works, what cybercrime is, the scale of the problem, and how to protect against it.",
+      "eyebrow": "RAGNAROK · Cyber Security",
+      "title": "Cybercrime and Cybersecurity Report",
+      "lead": "Keuzedeel K1352 research report. How the internet works from zero, what cybercrime is, how big the problem really is, who commits it and why, and what people and organizations can do to protect themselves.",
+      "meta": {
+        "course_label": "Course",
+        "course_value": "K1352 · Basis cybercriminaliteit en cyberveiligheid",
+        "title_label": "Title",
+        "title_value": "Cybercrime and Cybersecurity",
+        "language_label": "Language",
+        "language_value": "English",
+        "date_label": "Report date",
+        "date_value": "Sep 2026"
+      },
+      "executive_summary_heading": "Executive Summary",
+      "executive_summary": "Almost everything we do today involves the internet, yet the internet is not something that just exists. It is a physical network of cables, routers, data centers and devices. And wherever people gather, there is also crime. This report explains the journey data takes from a device to the submarine cables under the ocean, then looks at what cybercrime is, the main types, the scale of the problem with real numbers, who commits it and why, where it comes from, how the public reacts, and finally how to protect against it.",
+      "sections": [
+        {
+          "heading": "1 · The Internet from Zero",
+          "subsections": [
+            {
+              "heading": "1.1 What the internet is",
+              "paragraphs": [
+                "The internet is a giant network of computers that exchange information. When a phone, laptop or smart TV is online, it becomes part of that network. A useful metaphor is a road system: local roads (the home network), highways (the provider's network) and international routes (the cables under the ocean). Data travels like cars, and if one road is blocked, the data re-routes through another path, which is why the internet rarely stops completely.",
+                "The internet and the World Wide Web are not the same thing. The internet is the physical network and its rules; the Web is just one service on top of it, the one browsers use for websites. Email, gaming and streaming are other services that also run on the internet."
+              ]
+            },
+            {
+              "heading": "1.2 The journey of a message",
+              "paragraphs": [
+                "Sending a picture to a friend on the other side of the world happens in steps. The message never travels as one piece:"
+              ],
+              "steps": [
+                { "step": 1, "title": "Your device", "body": "The device splits the message (a photo, an email) into small chunks called packets. Each packet is like a letter in an envelope, with header info showing where it came from and where it is going." },
+                { "step": 2, "title": "Radio waves to the router", "body": "On Wi-Fi, the packets leave the device as radio waves and arrive at the router. On mobile data they go to a nearby cell tower instead." },
+                { "step": 3, "title": "Router to modem", "body": "The router is the traffic manager of the home network. The modem is the translator: it converts the signals into a form that can travel over the provider's cables." },
+                { "step": 4, "title": "The ISP network", "body": "The modem sends the data over coaxial or fiber cables to the internet service provider (ISP), which picks the most efficient route for the packets." },
+                { "step": 5, "title": "Regional hubs", "body": "The data arrives at large data centers that exchange traffic between networks. These hubs connect to the internet backbone." },
+                { "step": 6, "title": "Submarine cables", "body": "For data crossing continents, the backbone includes huge cables on the ocean floor, laid and repaired by special ships. Data travels through them as light pulses in thin glass fibers." },
+                { "step": 7, "title": "Destination", "body": "The packets reach the other side, are re-assembled in the correct order, and the recipient's device shows the message." }
+              ],
+              "note": "So every message travels through a mix of radio waves, copper wires, glass fibers and undersea cables. It only feels wireless to us."
+            },
+            {
+              "heading": "1.3 Packets, IP addresses and protocols",
+              "paragraphs": [
+                "Two things make all of this possible: packets and protocols."
+              ],
+              "protocols": [
+                { "term": "Binary", "body": "Inside a device all information is stored as ones and zeros. The device translates those into radio waves or electrical signals to send them out." },
+                { "term": "IP address", "body": "Every device gets a unique number, like a postal address. Routers use it to forward each packet to the correct place." },
+                { "term": "TCP", "body": "TCP (Transmission Control Protocol) makes sure packets arrive in the right order and that nothing is missing. The receiver confirms every packet and missing ones are resent." },
+                { "term": "DNS", "body": "The Domain Name System is the internet's phonebook. It translates names like www.example.com into the IP address a computer actually needs." },
+                { "term": "Servers", "body": "Websites, apps and files live on servers, powerful computers that stay online. When you visit a page, your device asks the server to send it, and it comes back as packets." }
+              ]
+            },
+            {
+              "heading": "1.4 Different ways to connect",
+              "table": {
+                "caption": "Connection types compared",
+                "rows": [
+                  ["Connection", "How it works", "Strengths", "Weaknesses"],
+                  ["Cable", "Uses the same coaxial cables as cable TV; a modem converts the signal.", "Fast (up to 1 Gbps) and widely available.", "Upload is slow; neighbors share the connection, so speeds drop in the evening."],
+                  ["Fiber", "Sends data as light pulses through glass fibers.", "Fastest option (up to 10 Gbps), equal upload/download, little signal loss.", "Not available everywhere; laying new fiber is expensive."],
+                  ["DSL", "Uses the existing copper telephone lines.", "Very widely available and does not block the phone line.", "Slower; speed depends on distance to the provider's exchange."],
+                  ["Satellite", "Beams data from satellites in orbit to a dish at your home.", "Works almost anywhere, which helps rural areas.", "High latency because data travels to space and back; storms interrupt it."],
+                  ["Fixed wireless", "Radio signals between a base station and an antenna at the home.", "Good for areas without cables; lower latency than satellite.", "Trees, buildings and weather can weaken the signal."],
+                  ["5G home", "Uses mobile networks to connect a household.", "Fast to deploy without digging; high speeds and low latency.", "Coverage is still limited and depends on distance and congestion."]
+                ]
+              },
+              "note": "One common theme: upload speeds, shared bandwidth and rural coverage are the weak spots of almost every technology."
+            },
+            {
+              "heading": "1.5 The last mile",
+              "paragraphs": [
+                "The final stretch from the provider's network to the home is called the last mile. It is the most expensive part to build, which is why cities get fiber while rural and poor areas get slower connections or none at all. Newer technologies such as microwave links and 5G help close the gap, but basic internet access is still a problem in many parts of the world."
+              ],
+              "figure": {
+                "src": "/dfir/a-brief-history-of-the-internet-graphic-768x1296.jpg",
+                "alt": "Infographic: a brief history of the internet",
+                "caption": "Figure 1 · A brief history of the internet (infographic from BroadbandNow)."
+              }
+            }
+          ]
+        },
+        {
+          "heading": "2 · What is Cybercrime",
+          "subsections": [
+            {
+              "heading": "",
+              "paragraphs": [
+                "Cybercrime is crime that involves computers, the internet or other digital technology. It can be aimed at individuals, companies or governments, and it can cause financial damage, reputational damage, or mental harm. Definitions vary between countries, which makes it hard to measure, but experts usually split cybercrime into two groups:"
+              ],
+              "bullets": [
+                { "strong": "Cyber-dependent crime:", "body": "crimes that can only exist because of computers and networks. Hacking, DDoS attacks, malware. Without the internet these crimes would not exist." },
+                { "strong": "Cyber-enabled crime:", "body": "traditional crimes that moved online or got easier. Online fraud, phishing, digital piracy, cyberbullying. They existed before, but the internet lets criminals do them faster, cheaper and to more victims at once." }
+              ],
+              "paragraphs_after": [
+                "Criminologist David Wall describes four categories of cybercrime: cyber trespass (getting into systems you are not allowed to enter), cyber deception or theft (stealing things online, like credit card data), cyber pornography or obscenity (sharing sexual material online), and cyber violence (causing emotional or psychological harm, such as cyberstalking. The victim may not be physically hurt but can suffer lasting damage)."
+              ]
+            }
+          ]
+        },
+        {
+          "heading": "3 · Types of Cybercrime",
+          "subsections": [
+            {
+              "heading": "",
+              "paragraphs": [
+                "The most common types of cybercrime are:"
+              ],
+              "table": {
+                "caption": "Overview of cybercrime types",
+                "rows": [
+                  ["Type", "Description"],
+                  ["Hacking", "Breaking into a computer system without permission, for personal gain or to cause damage."],
+                  ["Phishing", "Fake emails or messages that look like they come from a real company (like a bank), used to trick people into giving away passwords or personal data."],
+                  ["Ransomware", "Malicious software that locks your files and demands money to give them back. The WannaCry attack in 2017 is a well-known example."],
+                  ["DDoS attacks", "Flooding a website or service with so much traffic that it goes down, often using networks of infected computers (botnets)."],
+                  ["Identity theft", "Stealing personal details to commit fraud, for example opening accounts or taking loans in the victim's name."],
+                  ["Cyberstalking", "Repeatedly following, threatening or intimidating someone through the internet."],
+                  ["Digital piracy", "Downloading or sharing protected content, movies, music, software, without permission."],
+                  ["Cyber-extortion", "Hacking a system or email server and demanding money to give it back or keep the data secret."],
+                  ["Cyber-terrorism", "Hacking government systems or large organizations to push political goals and create fear."],
+                  ["Money laundering", "Cleaning illegally earned money through the internet and digital banking so it looks legal."],
+                  ["Child grooming", "Building an emotional connection with a child online, often to abuse or traffic them."]
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "heading": "4 · The Scale of the Problem",
+          "subsections": [
+            {
+              "heading": "",
+              "paragraphs": [
+                "Cybercrime is not a small problem. The numbers are enormous and still growing:"
+              ],
+              "table": {
+                "caption": "Key facts and figures",
+                "rows": [
+                  ["Fact", "Figure / Source"],
+                  ["Global cost of cybercrime in 2024", "About $9.5 trillion per year, expected to rise another 15% in 2025 (Cybersecurity Ventures)."],
+                  ["WannaCry ransomware attack (2017)", "Infected 230,000+ computers across 150 countries; over $4 billion in economic losses."],
+                  ["Internet users in 2005", "About 1 billion people (16% of the world's population)."],
+                  ["Internet users in 2023", "About 5.4 billion people (67% of the world's population)."],
+                  ["Adult internet usage", "Grew from about 52% (2000) to about 96% (2024)."],
+                  ["Internet's direct economic contribution", "About $175 billion per year from advertising, online retail and ISP payments; ripple effect about $444 billion."]
+                ]
+              },
+              "note": "Internet growth also means more potential victims: from about 1 billion people online in 2005 to roughly 5.4 billion in 2023. Cybercrime is effectively a trillion-dollar industry for criminals, and almost everyone connected is a potential target."
+            }
+          ]
+        },
+        {
+          "heading": "5 · Who Commits Cybercrime and Why",
+          "subsections": [
+            {
+              "heading": "5.1 Social and economic drivers",
+              "paragraphs": [
+                "A 2023 study that mapped cybercrime worldwide found it is strongly linked to a country's development. Better internet infrastructure, higher education levels and more internet users all mean more cybercrime, because criminals have better tools and more targets. At the same time, poverty, unemployment and income inequality push people in poorer regions into cybercrime as a way to make money, for example young people in parts of West Africa who turn to online fraud because they cannot find other work. Politics matters too: weak law enforcement, high corruption and little international police cooperation make it easier for criminals to operate unpunished."
+              ]
+            },
+            {
+              "heading": "5.2 Criminological explanations",
+              "table": {
+                "caption": "Three theories that explain cybercrime",
+                "rows": [
+                  ["Theory", "Core idea", "How it explains cybercrime"],
+                  ["General theory of crime (low self-control)", "Some people act impulsively, take risks and want quick rewards without thinking about consequences.", "Cybercrime offers fast money, and the internet lets criminals act without seeing the harm. Studies consistently link low self-control to cyber offending."],
+                  ["Social learning theory", "Crime is learned from others. Behavior is copied when it seems to work.", "If friends or online communities approve of hacking or piracy, people are more likely to do it too, especially when it seems to go unpunished."],
+                  ["Routine activity theory", "Crime happens when a motivated offender, a suitable target and no capable guardian come together.", "Online, weak passwords, clicking phishing links and outdated software make you a suitable target. Security software and careful habits are the guardian."]
+                ]
+              }
+            },
+            {
+              "heading": "5.3 Types of hackers",
+              "paragraphs": [
+                "Not every hacker has the same motivation:"
+              ],
+              "bullets": [
+                { "strong": "Cyber utopians", "body": "people who do malicious things but believe they act for the common good." },
+                { "strong": "Cyber punks", "body": "hackers who target institutions they find offensive, often just for fun or to make a point." },
+                { "strong": "Cyber spies and cyber terrorists", "body": "highly skilled attackers with extreme motives, often working for states or political causes." }
+              ]
+            }
+          ]
+        },
+        {
+          "heading": "6 · Where Cybercrime Comes From",
+          "subsections": [
+            {
+              "heading": "",
+              "paragraphs": [
+                "Because the internet has no borders, it is hard to say exactly where a cybercriminal sits. Criminals hide with VPNs, proxies, or by attacking through infected computers in other countries. Still, researchers mapped the IP addresses known for malicious activity. Most are located in North America, Central and Eastern Europe, East Asia, India and eastern Australia. On a continental level, North America and Europe host the most, and high-income regions host the majority of malicious IPs. In other words, the richest, most connected countries are both the biggest targets and the biggest source locations of cybercrime infrastructure."
+              ],
+              "figure": {
+                "src": "/dfir/top-20-countries-malicious-programs-2014.png",
+                "alt": "Top 20 countries exposed to external attacks from malicious programs in 2014",
+                "caption": "Figure 2 · Top 20 countries exposed to external attacks from malicious programs in 2014 (source: ResearchGate)."
+              },
+              "note": "Important nuance: these IP-based maps show where attacks originate from, not necessarily where the criminals live. A criminal in one country can easily attack from servers in another, exactly why fighting cybercrime is so hard for the police."
+            }
+          ]
+        },
+        {
+          "heading": "7 · How People React to Cybercrime",
+          "subsections": [
+            {
+              "heading": "",
+              "paragraphs": [
+                "Cybercrime costs money, but it also affects people emotionally. A 2025 study analyzed more than 6,700 posts and 100,000 comments about cybercrime on Reddit, spread over 14 years (2008-2022). The findings:"
+              ],
+              "bullets": [
+                { "strong": "", "body": "The biggest discussions were triggered by data breaches, cyber-attacks, ransomware, and hacking linked to countries (Russian or Chinese state hacking)." },
+                { "strong": "Anger", "body": "was the most common emotion, aimed at privacy violations, companies that failed to protect data, and governments that handled threats badly." },
+                { "strong": "Sarcasm", "body": "was the second most common reaction, mostly toward official narratives and ineffective security measures." },
+                { "strong": "Fear", "body": "was also clearly present, showing that people feel genuinely threatened." }
+              ],
+              "paragraphs_after": [
+                "Cyberattacks can seriously damage public trust in companies and governments, and emotional reactions can even push support for stronger cybersecurity policies."
+              ]
+            }
+          ]
+        },
+        {
+          "heading": "8 · Cybersecurity: How to Protect Yourself",
+          "subsections": [
+            {
+              "heading": "",
+              "paragraphs": [
+                "Cybersecurity is everything we do to protect computers, networks, programs and data from unauthorized access, damage or theft. It is the guardian from routine activity theory. Without it, the attacker has a much easier job."
+              ],
+              "h3": "8.1 For individuals",
+              "measures": [
+                "Use strong, unique passwords for every account and change them regularly. A password manager helps.",
+                "Turn on two-factor authentication (2FA) wherever possible, so a stolen password alone is not enough.",
+                "Keep everything updated: operating system, apps and antivirus, because updates fix known security holes.",
+                "Think before you click: do not open links or attachments you did not expect, even if they look like they come from your bank.",
+                "Only enter personal data on secure sites. Check for the padlock and https in the address bar.",
+                "Avoid unsecured public Wi-Fi for banking; use a VPN if you must use it.",
+                "Make backups, so ransomware cannot lock you out of your data for good."
+              ],
+              "h3_2": "8.2 For organizations",
+              "measures_2": [
+                "A clear security architecture and network diagram so the environment is understood.",
+                "Security policies and a risk management policy that say how risks are identified and handled.",
+                "Regular risk assessments and security audits.",
+                "Backup and restore procedures plus a disaster recovery plan, so the organization can recover after an attack.",
+                "Training for staff. People are the weakest link, and a trained employee is less likely to fall for phishing.",
+                "Incident management, so when something goes wrong the response is quick, contained and documented."
+              ],
+              "note": "Cybersecurity is not a one-time job. It is a continuous process of spotting threats, fixing weaknesses and staying up to date, because the attackers keep changing their methods."
+            }
+          ]
+        },
+        {
+          "heading": "9 · Conclusion",
+          "subsections": [
+            {
+              "heading": "",
+              "paragraphs": [
+                "The internet is a physical network of cables, routers and data centers that connects almost the whole world, and understanding the journey from a device to the submarine cables under the ocean helps explain where cybercrime comes from. Cybercrime is a massive, growing problem costing around $9.5 trillion a year, driven by both opportunity and hardship. Criminological theories show that low self-control, learning from others and the lack of a guardian all play a role, which is exactly why good cybersecurity habits work: they take away the opportunity.",
+                "For a software developer, and for anyone online, the lesson is simple. Know how the technology works, recognize the threats, and protect yourself and your users with strong passwords, updates, backups and awareness. Most attacks succeed only because of simple mistakes that are easy to prevent."
+              ]
+            }
+          ]
+        }
+      ],
+      "references_heading": "10 · References",
+      "references": [
+        { "label": "Tsotetsi, K. \"Understanding the Internet: A Journey from Devices to Submarine Cables.\"", "href": "https://vocal.media/fyi/understanding-the-internet-a-journey-from-devices-to-submarine-cables" },
+        { "label": "Lefelhoc, C. \"How Does Cable Internet Work?\"", "href": "https://www.compareinternet.com/blog/how-does-cable-internet-work/" },
+        { "label": "Fann, K. \"How Does the Internet Work? A Complete Guide.\" BroadbandNow.", "href": "https://broadbandnow.com/guides/how-does-the-internet-work" },
+        { "label": "Tutorials Point. \"Cyber Crime & Cyber Security.\"", "href": "https://www.tutorialspoint.com/fundamentals_of_science_and_technology/cyber_crime_and_cyber_security.htm" },
+        { "label": "Chen, S. et al. \"Exploring the global geography of cybercrime and its driving forces.\" (2023).", "href": "https://www.nature.com/articles/s41599-023-01560-x" },
+        { "label": "Achuthan, K., Khobragade, S. & Kowalski, R. \"Cybercrime through the public lens: a longitudinal analysis.\" (2025).", "href": "https://www.nature.com/articles/s41599-025-04459-x" },
+        { "label": "Onwuadiamu, G. \"Cybercrime in criminology; A systematic review of criminological theories, methods, and concepts.\" Journal of Economic Criminology 8 (2025) 100136.", "href": "https://doi.org/10.1016/j.jeconc.2025.100136" },
+        { "label": "ResearchGate. \"Top 20 countries exposed to external attacks from malicious programs in 2014.\"", "href": "https://www.researchgate.net/figure/Top-20-countries-exposed-to-external-attacks-from-malicious-programs-in-2014_fig1_331914032" }
+      ],
+      "references_note": "Figures: \"A brief history of the internet\" (BroadbandNow) and \"Top 20 countries exposed to external attacks from malicious programs in 2014\" (ResearchGate). Facts are collected from the sources above and rewritten in this report's own words.",
+      "back_label": "Back to the team",
+      "profile_label": "View RAGNAROK profile"
     }
   }
 }
