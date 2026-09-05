@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import { FiMessageSquare, FiX, FiSend } from "react-icons/fi";
+import Turnstile from "./Turnstile";
 
 type ChatMessage = {
   role: "user" | "assistant";
@@ -31,6 +32,8 @@ export default function ChatWidget({ locale: propLocale }: Props) {
   ]);
   const [input, setInput] = useState("");
   const [busy, setBusy] = useState(false);
+  const [turnstileToken, setTurnstileToken] = useState("");
+  const [turnstileNonce, setTurnstileNonce] = useState(0);
   const scrollRef = useRef<HTMLDivElement>(null);
 
   const locale = propLocale ?? "en";
@@ -61,6 +64,7 @@ export default function ChatWidget({ locale: propLocale }: Props) {
           messages: history,
           locale,
           currentPath: pathname ?? "/",
+          turnstileToken,
         }),
         signal: controller.signal,
       });
@@ -124,6 +128,9 @@ export default function ChatWidget({ locale: propLocale }: Props) {
     } finally {
       clearTimeout(abortTimer);
       setBusy(false);
+      // Turnstile tokens are single-use — remount the widget for the next message.
+      setTurnstileToken("");
+      setTurnstileNonce((n) => n + 1);
       if (fullText) {
         const matches = [...fullText.matchAll(NAV_TOKEN)];
         const clean = stripNavTokens(fullText);
@@ -176,6 +183,13 @@ export default function ChatWidget({ locale: propLocale }: Props) {
               </div>
             ))}
           </div>
+          <Turnstile
+            key={turnstileNonce}
+            onToken={setTurnstileToken}
+            onExpired={() => setTurnstileToken("")}
+            onError={() => setTurnstileToken("")}
+            theme="dark"
+          />
           <form
             className="chat-form"
             onSubmit={(e) => {

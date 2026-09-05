@@ -84,15 +84,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
       alternates: { languages: languages("/projects/brain") },
     });
-    for (const note of Object.values(getBrainManifest().notes)) {
-      entries.push({
-        url: `${base}/${locale}/projects/brain/${note.slug}`,
-        lastModified: now,
-        changeFrequency: "monthly",
-        priority: 0.5,
-        alternates: { languages: languages(`/projects/brain/${note.slug}`) },
-      });
-    }
     for (const slug of getNews(locale).map((n) => n.slug)) {
       entries.push({
         url: `${base}/${locale}/news/${slug}`,
@@ -111,6 +102,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
         alternates: { languages: languages("/news") },
       });
     }
+  }
+
+  // Brain notes are English-only content — a single en canonical per note, no fake alternates.
+  for (const note of Object.values(getBrainManifest().notes)) {
+    entries.push({
+      url: `${base}/en/projects/brain/${note.slug}`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.5,
+      alternates: {
+        languages: {
+          en: `${base}/en/projects/brain/${note.slug}`,
+          "x-default": `${base}/en/projects/brain/${note.slug}`,
+        },
+      },
+    });
   }
 
   return entries;

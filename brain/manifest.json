@@ -242,7 +242,7 @@
       "file": "knowledge/14-Monitoring.md",
       "title": "14 - Monitoring",
       "folder": "knowledge",
-      "excerpt": "If it isn't observed, it didn't happen. Monitoring is the bridge between \"it works on my machine\" and \"it works in production.\"",
+      "excerpt": "If it isn't observed, it didn't happen. Monitoring is the bridge between \\\"it works on my machine\\\" and \\\"it works in production.\\\"",
       "order": 12
     },
     "lessons-learned": {
@@ -260,7 +260,7 @@
       "file": "journal/Daily log.md",
       "title": "Daily log",
       "folder": "journal",
-      "excerpt": "Day-to-day notes. Use the  template. Roll lessons into [[Lessons-Learned]] weekly.",
+      "excerpt": "Day-to-day notes. Use the [[Daily]] template. Roll lessons into [[Lessons-Learned]] weekly.",
       "order": 14
     },
     "rhinesolution": {
@@ -269,7 +269,7 @@
       "file": "projects/rhinesolution.md",
       "title": "Project: Rhine Solution",
       "folder": "projects",
-      "excerpt": "C:/Users/teoal/Projects/projects/rhinesolution-website",
+      "excerpt": "The flagship Rhine Solution project deep-dive (website, public brain, infrastructure).",
       "order": 15
     },
     "adr-001-nextjs-supabase": {
@@ -278,7 +278,7 @@
       "file": "archive/ADR-001-Nextjs-Supabase.md",
       "title": "ADR-001: Next.js App Router + Supabase for the fullstack app",
       "folder": "archive",
-      "excerpt": "accepted",
+      "excerpt": "Starting a new fullstack app from the workspace templates/ scaffold. Requirements: TypeScript end-to-end, quick time-to-value for a solo dev, real auth + Postgr",
       "order": 16
     },
     "fullstack": {
@@ -305,7 +305,7 @@
       "file": "archive/2026-08-10.md",
       "title": "2026-08-10",
       "folder": "archive",
-      "excerpt": "",
+      "excerpt": "Archived daily log for 2026-08-10 - early vault scaffolding day.",
       "order": 19
     }
   }

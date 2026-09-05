@@ -53,7 +53,7 @@ export default async function BrainNotePage({ params }: Props) {
             </nav>
             <BrainMarkdown content={md} />
             <p className={styles.noteBack}>
-              <Link href={`/${locale}/projects/brain`}>â† {content.brain.back}</Link>
+              <Link href={`/${locale}/projects/brain`}>← {content.brain.back}</Link>
             </p>
           </article>
         </div>

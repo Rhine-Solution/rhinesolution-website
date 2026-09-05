@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { verifyTurnstile } from "@/lib/turnstile";
 
 export const runtime = "nodejs";
 
@@ -62,6 +63,7 @@ type ChatBody = {
   messages?: ChatMessage[];
   locale?: string;
   currentPath?: string;
+  turnstileToken?: string;
 };
 
 export async function POST(req: Request) {
@@ -81,14 +83,27 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "Invalid request body" }, { status: 400 });
   }
 
+  // Trust only the proxy-set client IP (x-forwarded-for is client-spoofable).
   const ip =
-    req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ||
+    req.headers.get("x-vercel-forwarded-for")?.split(",")[0]?.trim() ||
     req.headers.get("x-real-ip") ||
     "unknown";
   if (isRateLimited(ip)) {
     return NextResponse.json(
       { error: "Too many requests, please slow down." },
       { status: 429 }
+    );
+  }
+
+  // Fail closed on the human check: no valid Turnstile token, no Gemini spend.
+  const human = await verifyTurnstile(
+    typeof body.turnstileToken === "string" ? body.turnstileToken : undefined,
+    ip
+  );
+  if (!human.ok) {
+    return NextResponse.json(
+      { error: "Human verification failed." },
+      { status: 403 }
     );
   }
 
@@ -131,9 +146,12 @@ export async function POST(req: Request) {
     systemInstruction: { parts: [{ text: systemPrompt }] },
   };
 
-  const upstream = await fetch(`${GEMINI_URL}&key=${encodeURIComponent(apiKey)}`, {
+  const upstream = await fetch(GEMINI_URL, {
     method: "POST",
-    headers: { "Content-Type": "application/json" },
+    headers: {
+      "Content-Type": "application/json",
+      "x-goog-api-key": apiKey, // key in header, never in the URL query string
+    },
     body: JSON.stringify(payload),
   });
 
