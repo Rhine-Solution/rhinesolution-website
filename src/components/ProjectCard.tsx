@@ -1,6 +1,7 @@
 import Link from "next/link";
 import {
   LuBrain,
+  LuCalendarDays,
   LuGlobe,
   LuMusic,
   LuServer,
@@ -13,6 +14,7 @@ const projectIcons: Record<string, typeof LuGlobe> = {
   brain: LuBrain,
   server: LuServer,
   music: LuMusic,
+  calendar: LuCalendarDays,
 };
 
 type Props = {

@@ -980,5 +980,20 @@
       "back_label": "Terug naar het team",
       "profile_label": "Bekijk RAGNAROK-profiel"
     }
+  },
+  "project_plan2shift": {
+    "title": "Plan2Shift",
+    "slug": "plan2shift",
+    "icon": "calendar",
+    "summary": "Een shifts plannen platform voor medewerkers en HR. Plan diensten, volg je maandelijkse verdiensten in realtime en meld je ziek of wissel diensten zonder heen-en-weer gedoe.",
+    "stack": [
+      "Next.js",
+      "TypeScript",
+      "PostgreSQL",
+      "Tailwind CSS"
+    ],
+    "year": 2026,
+    "team": "RAGNAROK + ZeroMeister",
+    "live_url": "https://plan2shift.com/"
   }
 }

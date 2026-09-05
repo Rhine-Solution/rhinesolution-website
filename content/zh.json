@@ -974,5 +974,20 @@
       "back_label": "返回团队",
       "profile_label": "查看 RAGNAROK 简介"
     }
+  },
+  "project_plan2shift": {
+    "title": "Plan2Shift",
+    "slug": "plan2shift",
+    "icon": "calendar",
+    "summary": "面向员工和人力资源团队的排班平台。规划班次、实时查看每月收入，并发送病假或换班请求，无需来回沟通。",
+    "stack": [
+      "Next.js",
+      "TypeScript",
+      "PostgreSQL",
+      "Tailwind CSS"
+    ],
+    "year": 2026,
+    "team": "RAGNAROK + ZeroMeister",
+    "live_url": "https://plan2shift.com/"
   }
 }

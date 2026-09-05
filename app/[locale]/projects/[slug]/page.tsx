@@ -5,7 +5,7 @@ import { getCompanySocials } from "@/lib/socials";
 import { buildMetadata } from "@/lib/seo";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { FaMusic } from "react-icons/fa6";
+import { LuArrowUpRight } from "react-icons/lu";
 
 type Props = { params: Promise<{ locale: string; slug: string }> };
 
@@ -14,9 +14,11 @@ export async function generateStaticParams() {
     { locale: "en", slug: "rhinesolution" },
     { locale: "en", slug: "macmini" },
     { locale: "en", slug: "music" },
+    { locale: "en", slug: "plan2shift" },
     { locale: "nl", slug: "rhinesolution" },
     { locale: "nl", slug: "macmini" },
     { locale: "nl", slug: "music" },
+    { locale: "nl", slug: "plan2shift" },
   ];
 }
 
@@ -61,14 +63,27 @@ export default async function ProjectDetailPage({ params }: Props) {
         )}
         {p.live_url && (
           <section style={{ marginTop: "var(--space-6)" }}>
-            <Link
-              href={p.live_url}
-              className="btn btn-primary"
-              style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", fontSize: "1rem", padding: "0.75rem 1.5rem" }}
-            >
-              <FaMusic size={16} aria-hidden="true" />
-              {t.launch} {p.title}
-            </Link>
+            {p.live_url.startsWith("http") ? (
+              <a
+                href={p.live_url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-primary"
+                style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", fontSize: "1rem", padding: "0.75rem 1.5rem" }}
+              >
+                <LuArrowUpRight size={16} aria-hidden="true" />
+                {t.launch} {p.title}
+              </a>
+            ) : (
+              <Link
+                href={p.live_url}
+                className="btn btn-primary"
+                style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", fontSize: "1rem", padding: "0.75rem 1.5rem" }}
+              >
+                <LuArrowUpRight size={16} aria-hidden="true" />
+                {t.launch} {p.title}
+              </Link>
+            )}
           </section>
         )}
       </main>

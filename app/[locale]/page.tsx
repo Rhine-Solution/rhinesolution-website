@@ -31,6 +31,7 @@ export default async function HomePage({ params }: Props) {
       "project_brain",
       "project_macmini",
       "project_music",
+      "project_plan2shift",
     ])
   );
 
