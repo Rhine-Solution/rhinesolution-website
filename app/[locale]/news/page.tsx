@@ -1,10 +1,20 @@
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import NewsCard from "@/components/news/NewsCard";
+import TrendsSection from "@/components/news/TrendsSection";
 import { getContent } from "@/lib/i18n";
 import { getCompanySocials } from "@/lib/socials";
 import { buildMetadata } from "@/lib/seo";
+import { getNews } from "@/lib/news";
+import { getDevTrends } from "@/lib/news-trends";
+
+export const revalidate = 7200;
 
 type Props = { params: Promise<{ locale: string }> };
+
+export function generateStaticParams() {
+  return [{ locale: "en" }, { locale: "nl" }];
+}
 
 export async function generateMetadata({ params }: Props) {
   const { locale } = await params;
@@ -12,6 +22,7 @@ export async function generateMetadata({ params }: Props) {
   return buildMetadata(locale, "/news", {
     title: c.news.title,
     description: c.news.subtitle,
+    feedUrl: `https://rhinesolution.com/${locale}/news/feed.xml`,
   });
 }
 
@@ -19,6 +30,8 @@ export default async function NewsPage({ params }: Props) {
   const { locale } = await params;
   const content = getContent(locale);
   const n = content.news;
+  const items = getNews(locale);
+  const trends = await getDevTrends();
 
   return (
     <>
@@ -31,17 +44,14 @@ export default async function NewsPage({ params }: Props) {
         </header>
 
         <ol className="news-list">
-          {n.items.map((item, i) => (
-            <li key={item.title} className="news-card">
-              <span className="news-index">{String(i + 1).padStart(2, "0")}</span>
-              <div>
-                <span className="news-date">{item.date}</span>
-                <h2>{item.title}</h2>
-                <p>{item.summary}</p>
-              </div>
+          {items.map((item) => (
+            <li key={item.slug} className="news-card">
+              <NewsCard item={item} labels={n.categories} />
             </li>
           ))}
         </ol>
+
+        <TrendsSection title={n.trends_title} subtitle={n.trends_subtitle} trends={trends} />
       </main>
       <Footer
         locale={locale}

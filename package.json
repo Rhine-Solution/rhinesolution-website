@@ -9,11 +9,14 @@
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
     "brain:publish": "node scripts/publish-brain.mjs",
+    "news:update": "node scripts/news-from-git.mjs update",
+    "news:accept": "node scripts/news-from-git.mjs accept",
     "test": "node --test scripts/*.test.mjs"
   },
   "dependencies": {
     "@theatre/core": "^0.7.2",
     "@theatre/react": "^0.7.2",
+    "fast-xml-parser": "^5.11.1",
     "lenis": "^1.3.26",
     "next": "^15.5.4",
     "react": "^19.0.0",

@@ -13,6 +13,7 @@ export function buildMetadata(
   opts: {
     title: string;
     description: string;
+    feedUrl?: string;
   }
 ): Metadata {
   const normPath = path.replace(/\/+$/, "");
@@ -22,6 +23,7 @@ export function buildMetadata(
     description: opts.description,
     alternates: {
       canonical: url,
+      types: opts.feedUrl ? { "application/rss+xml": opts.feedUrl } : undefined,
       languages: {
         en: `${SITE}/en${normPath}`,
         nl: `${SITE}/nl${normPath}`,

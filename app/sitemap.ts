@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { getBrainManifest } from "@/lib/brain";
+import { getNews } from "@/lib/news";
 
 const base = "https://rhinesolution.com";
 const locales = ["en", "nl", "de", "fr", "es", "it", "zh"] as const;
@@ -86,6 +87,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
         changeFrequency: "monthly",
         priority: 0.5,
         alternates: { languages: languages(`/projects/brain/${note.slug}`) },
+      });
+    }
+    for (const slug of getNews(locale).map((n) => n.slug)) {
+      entries.push({
+        url: `${base}/${locale}/news/${slug}`,
+        lastModified: now,
+        changeFrequency: "monthly",
+        priority: 0.5,
+        alternates: { languages: languages(`/news/${slug}`) },
       });
     }
   }

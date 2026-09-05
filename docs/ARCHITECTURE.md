@@ -80,6 +80,19 @@ styles/globals.css    # design tokens + global styles (always-dark)
 - Content is curated in the vault and synced by the publish script; the site
   just renders what `brain/` contains.
 
+### News & updates
+- News posts are per-locale Markdown files in `content/news/{en,nl}/` with
+  frontmatter (`date`, `title`, `excerpt`, `category`); `src/lib/news.ts`
+  reads them at build time.
+- `/news` is ISR (revalidates every 2h) and shows posts + a **Dev trends**
+  widget: the top 5 headlines from a curated RSS/Atom feed list
+  (`src/lib/news-feeds.ts`), fetched server-side without API keys.
+- Posts get static detail pages at `/news/<slug>` and an RSS 2.0 feed at
+  `/news/feed.xml` (per locale).
+- `npm run news:update` generates review-first drafts from conventional
+  commits (feat/fix/refactor/perf since the last news date); `npm run
+  news:accept` promotes accepted drafts into both locales.
+
 ## Trade-offs and notes
 
 - Heavy WebGL/Three.js loads on the root layout; route-scoping it (music site

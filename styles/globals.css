@@ -140,8 +140,7 @@ p { margin-bottom: var(--space-3); }
 .page .about-cta,
 .project-detail,
 .project-content,
-.team-card,
-.news-card {
+.team-card {
   background: rgba(13, 26, 56, 0.6);
   border-radius: var(--radius-lg);
   padding: var(--space-5);
@@ -1055,23 +1054,12 @@ p { margin-bottom: var(--space-3); }
   gap: var(--space-4);
 }
 .news-card {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: var(--space-4);
-  align-items: baseline;
-}
-.news-index {
-  font-family: var(--font-serif);
-  font-size: 1.25rem;
-  color: var(--color-blue-soft);
-}
-.news-date {
   display: block;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  font-size: 0.78rem;
-  color: var(--color-text-muted);
-  margin-bottom: var(--space-1);
+  padding: var(--space-4) 0;
+  border-bottom: 1px solid color-mix(in srgb, var(--color-text-muted) 20%, transparent);
+}
+.news-card:last-child {
+  border-bottom: none;
 }
 .news-card h2 {
   font-size: 1.35rem;

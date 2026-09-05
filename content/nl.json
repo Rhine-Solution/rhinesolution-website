@@ -289,23 +289,16 @@
     "eyebrow": "Updates",
     "title": "Nieuws & updates",
     "subtitle": "Wat is er nieuw bij Rhine Solution.",
-    "items": [
-      {
-        "date": "Aug 2026",
-        "title": "Tweetalige websitestructuur",
-        "summary": "De site is overgezet op /[locale]-routing. Engels en Nederlands delen nu één componentenstructuur en één contentlaag."
-      },
-      {
-        "date": "Aug 2026",
-        "title": "Music Trends Local is live",
-        "summary": "Een cyber-gethematiseerd muziekportaal met 48 tracks in acht elektronische subgenres, plus zoeken, filters en favorieten."
-      },
-      {
-        "date": "Jul 2026",
-        "title": "Dependencies opgeruimd",
-        "summary": "Postcss geüpdatet en de audit meldt nul kwetsbaarheden in de volledige dependency-boom."
-      }
-    ]
+    "back": "Terug naar nieuws",
+    "read_more": "Lees meer",
+    "trends_title": "Dev-trends",
+    "trends_subtitle": "Het laatste nieuws uit de wereld van softwareontwikkeling.",
+    "categories": {
+      "launch": "Lancering",
+      "feature": "Functie",
+      "fix": "Fix",
+      "update": "Update"
+    }
   },
   "contact": {
     "eyebrow": "Contact",

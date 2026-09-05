@@ -283,23 +283,16 @@
     "eyebrow": "Updates",
     "title": "News & updates",
     "subtitle": "What's new at Rhine Solution.",
-    "items": [
-      {
-        "date": "Aug 2026",
-        "title": "Bilingual site structure",
-        "summary": "The site moved to /[locale] routing. English and Dutch now share one component tree and a single content layer."
-      },
-      {
-        "date": "Aug 2026",
-        "title": "Music Trends Local is live",
-        "summary": "A cyber-themed music portal with 48 tracks across eight electronic sub-genres, plus search, filters, and favorite tracks."
-      },
-      {
-        "date": "Jul 2026",
-        "title": "Dependency cleanup",
-        "summary": "Postcss updated and the audit returned zero vulnerabilities across the full dependency tree."
-      }
-    ]
+    "back": "Back to news",
+    "read_more": "Read more",
+    "trends_title": "Dev trends",
+    "trends_subtitle": "The latest from the world of software development.",
+    "categories": {
+      "launch": "Launch",
+      "feature": "Feature",
+      "fix": "Fix",
+      "update": "Update"
+    }
   },
   "contact": {
     "eyebrow": "Contact",
