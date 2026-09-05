@@ -2,6 +2,15 @@
   display: grid;
   gap: var(--space-3);
 }
+.cardLink {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  transition: opacity var(--transition-fast);
+}
+.cardLink:hover {
+  opacity: 0.85;
+}
 .cardMeta {
   display: flex;
   align-items: center;
@@ -37,51 +46,103 @@
   max-width: 72ch;
 }
 
-.trends {
+.globalNews {
   margin-top: var(--space-6);
   padding-top: var(--space-5);
   border-top: 1px solid color-mix(in srgb, var(--color-text-muted) 25%, transparent);
 }
-.trendsTitle {
+.globalNewsTitle {
   font-size: 1.4rem;
 }
-.trendsSubtitle {
+.globalNewsSubtitle {
   color: var(--color-text-muted);
   margin-bottom: var(--space-3);
 }
-.trendsList {
+.globalNewsList {
   list-style: none;
   display: grid;
   gap: var(--space-4);
   margin: 0;
   padding: 0;
 }
-.trendsItem {
-  display: grid;
-  gap: var(--space-1);
+.globalNewsItem {
   padding-bottom: var(--space-3);
   border-bottom: 1px solid color-mix(in srgb, var(--color-text-muted) 18%, transparent);
 }
-.trendsItem:last-child {
+.globalNewsItem:last-child {
   border-bottom: none;
   padding-bottom: 0;
 }
-.trendsHeadline {
+.globalNewsLink {
+  display: grid;
+  gap: var(--space-1);
+  text-decoration: none;
+  color: inherit;
+}
+.globalNewsLink:hover .globalNewsHeadline {
+  color: var(--color-blue-soft);
+}
+.globalNewsHeadline {
   font-size: 1.1rem;
   margin: 0;
   color: var(--color-text);
+  transition: color var(--transition-fast);
 }
-.trendsExcerpt {
+.globalNewsExcerpt {
   color: var(--color-text-muted);
   font-size: 0.95rem;
   margin: 0;
 }
-.trendsSource {
+.globalNewsSource {
   color: var(--color-text-muted);
   font-size: 0.72rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   width: fit-content;
+}
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  margin-top: var(--space-5);
+  padding-top: var(--space-4);
+  border-top: 1px solid color-mix(in srgb, var(--color-text-muted) 18%, transparent);
+}
+.paginationBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.5rem 0.9rem;
+  border: 1px solid color-mix(in srgb, var(--color-blue-soft) 45%, transparent);
+  border-radius: var(--radius-md);
+  color: var(--color-blue-soft);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+.paginationBtn:hover {
+  background: color-mix(in srgb, var(--color-blue-soft) 14%, transparent);
+  color: var(--color-text);
+}
+.paginationBtnDisabled {
+  opacity: 0.4;
+  pointer-events: none;
+}
+.paginationInfo {
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+  text-align: center;
+}
+@media (max-width: 767px) {
+  .pagination {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .paginationInfo {
+    order: -1;
+    width: 100%;
+  }
 }
 
 .article {

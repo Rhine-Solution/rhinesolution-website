@@ -1047,9 +1047,12 @@ p { margin-bottom: var(--space-3); }
 }
 
 /* News */
+.news-section-title {
+  margin-top: var(--space-6);
+}
 .news-list {
   list-style: none;
-  margin-top: var(--space-5);
+  margin-top: var(--space-3);
   display: grid;
   gap: var(--space-4);
 }
