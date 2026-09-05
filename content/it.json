@@ -158,7 +158,9 @@
       "harden": "Protezione",
       "ship": "Pubblicazione",
       "knowledge": "Conoscenza",
-      "journal": "Diario"
+      "journal": "Diario",
+      "projects": "Progetti",
+      "archive": "Archivio"
     }
   },
   "project_rhinesolution": {

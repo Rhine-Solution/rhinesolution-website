@@ -158,7 +158,9 @@
       "harden": "Harden",
       "ship": "Ship",
       "knowledge": "Knowledge",
-      "journal": "Journal"
+      "journal": "Journal",
+      "projects": "Projects",
+      "archive": "Archive"
     }
   },
   "project_rhinesolution": {

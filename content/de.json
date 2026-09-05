@@ -158,7 +158,9 @@
       "harden": "Härten",
       "ship": "Liefern",
       "knowledge": "Wissen",
-      "journal": "Journal"
+      "journal": "Journal",
+      "projects": "Projekte",
+      "archive": "Archiv"
     }
   },
   "project_rhinesolution": {

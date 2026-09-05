@@ -3,6 +3,7 @@ import { join } from "node:path";
 
 export type BrainNoteMeta = {
   slug: string;
+  source: string;
   file: string;
   title: string;
   folder: string;
@@ -10,8 +11,15 @@ export type BrainNoteMeta = {
   order: number;
 };
 
+export type BrainTreeNode = {
+  name: string;
+  notes: string[];
+  folders: BrainTreeNode[];
+};
+
 export type BrainManifest = {
   folders: { id: string; notes: string[] }[];
+  tree: BrainTreeNode[];
   notes: Record<string, BrainNoteMeta>;
 };
 
