@@ -25,6 +25,7 @@ export default function EntryGate({
   const [checking, setChecking] = useState(false);
   const [error, setError] = useState<string>("");
   const [widgetFailed, setWidgetFailed] = useState(false);
+  const [attempt, setAttempt] = useState(0);
 
   // If Turnstile isn't configured yet (during rollout / no site key),
   // never block the site — the gate simply doesn't appear.
@@ -65,18 +66,20 @@ export default function EntryGate({
         } else {
           setError("Verification failed. Please try again.");
           setChecking(false);
+          setToken("");
         }
       })
       .catch(() => {
         if (cancelled) return;
         setError("Verification failed. Please try again.");
         setChecking(false);
+        setToken("");
       });
     return () => {
       cancelled = true;
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [token, verified]);
+  }, [token, verified, attempt]);
 
   if (!configured) return null;
   if (verified) return null;
@@ -90,13 +93,21 @@ export default function EntryGate({
 
         <div className="entry-gate-challenge">
           <Turnstile
+            key={attempt}
             onToken={(t) => setToken(t)}
             onExpired={() => setToken("")}
             onError={() => setWidgetFailed(true)}
             theme="dark"
           />
           {checking && <p className="entry-gate-status">Verifying…</p>}
-          {error && <p className="entry-gate-error" role="alert">{error}</p>}
+          {error && (
+            <p className="entry-gate-error" role="alert">
+              {error}
+              <button type="button" className="entry-gate-retry" onClick={() => setAttempt((a) => a + 1)}>
+                Try again
+              </button>
+            </p>
+          )}
           {verified && <p className="entry-gate-verified">{verifiedLabel}</p>}
           {widgetFailed && (
             <div className="entry-gate-fallback">

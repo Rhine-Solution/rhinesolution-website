@@ -5,6 +5,7 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import JsonLd, { breadcrumbJsonLd } from "@/components/JsonLd";
 import { getContent, locales } from "@/lib/i18n";
+import { buildMetadata } from "@/lib/seo";
 import { getCompanySocials } from "@/lib/socials";
 
 type Props = { params: Promise<{ locale: string }> };
@@ -16,10 +17,10 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   const c = getContent(locale);
-  return {
+  return buildMetadata(locale, "/dfir/cybercrime-report", {
     title: c.dfir.cybercrime_report.meta_title,
     description: c.dfir.cybercrime_report.meta_description,
-  };
+  });
 }
 
 export default async function CybercrimeReportPage({ params }: Props) {
@@ -29,7 +30,7 @@ export default async function CybercrimeReportPage({ params }: Props) {
 
   return (
     <>
-      <Nav locale={locale} brand={content.brand.name} labels={content.nav} />
+      <Nav locale={locale} brand={content.brand.name} labels={content.nav} navLabel={content.a11y.nav_label} />
       <JsonLd
         data={breadcrumbJsonLd(locale, [
           { name: content.nav.home, path: `/${locale}` },
@@ -39,9 +40,7 @@ export default async function CybercrimeReportPage({ params }: Props) {
       />
       <main id="main" className="container page">
         <header className="dfir-hero">
-          <p className="section-eyebrow">
-            <Link href={`/${locale}/team/ragnarok`} style={{ color: "inherit" }}>RAGNAROK</Link> · Cyber Security
-          </p>
+          <p className="section-eyebrow">{report.eyebrow}</p>
           <h1>{report.title}</h1>
           <p className="dfir-lead">{report.lead}</p>
           <div className="dfir-meta">

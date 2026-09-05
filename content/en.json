@@ -265,15 +265,41 @@
       }
     ],
     "stack_title": "Stack & toolkit",
-    "stack": ["Next.js 15", "TypeScript", "Pure CSS", "Mac Mini", "Obsidian Brain", "Vercel", "Cloudflare"],
+    "stack": [
+      "Next.js 15",
+      "TypeScript",
+      "Pure CSS",
+      "Mac Mini",
+      "Obsidian Brain",
+      "Vercel",
+      "Cloudflare"
+    ],
     "values_title": "What we value",
     "values": [
-      { "title": "Craft over quantity", "text": "We take on a few projects and finish them properly." },
-      { "title": "Simplicity wins", "text": "Clear structure, pure CSS, no unnecessary dependencies." },
-      { "title": "AI-assisted, human-led", "text": "Agents and models speed us up; people make the calls." },
-      { "title": "Documented, always", "text": "Every decision lives in the Brain, not in someone's head." },
-      { "title": "Own the outcome", "text": "Our own infrastructure, our own code, end to end." },
-      { "title": "Bilingual by default", "text": "English and Dutch built into the content layer from day one." }
+      {
+        "title": "Craft over quantity",
+        "text": "We take on a few projects and finish them properly."
+      },
+      {
+        "title": "Simplicity wins",
+        "text": "Clear structure, pure CSS, no unnecessary dependencies."
+      },
+      {
+        "title": "AI-assisted, human-led",
+        "text": "Agents and models speed us up; people make the calls."
+      },
+      {
+        "title": "Documented, always",
+        "text": "Every decision lives in the Brain, not in someone's head."
+      },
+      {
+        "title": "Own the outcome",
+        "text": "Our own infrastructure, our own code, end to end."
+      },
+      {
+        "title": "Bilingual by default",
+        "text": "English and Dutch built into the content layer from day one."
+      }
     ],
     "cta_head": "Interested in working together?",
     "cta_text": "You'll always talk to a builder not a salesperson.",
@@ -306,7 +332,8 @@
       "submit": "Send message",
       "submitting": "Sending...",
       "success": "Message sent. We'll reply within 1-2 business days.",
-      "error_generic": "Something went wrong. Please try again or email info@rhinesolution.com."
+      "error_generic": "Something went wrong. Please try again or email info@rhinesolution.com.",
+      "verify_error": "Please complete the verification below."
     },
     "alt_title": "Or jump straight into the work.",
     "alt_text": "Every shipped project lives on this site. Start with the showcase.",
@@ -491,13 +518,41 @@
                 "Sending a picture to a friend on the other side of the world happens in steps. The message never travels as one piece:"
               ],
               "steps": [
-                { "step": 1, "title": "Your device", "body": "The device splits the message (a photo, an email) into small chunks called packets. Each packet is like a letter in an envelope, with header info showing where it came from and where it is going." },
-                { "step": 2, "title": "Radio waves to the router", "body": "On Wi-Fi, the packets leave the device as radio waves and arrive at the router. On mobile data they go to a nearby cell tower instead." },
-                { "step": 3, "title": "Router to modem", "body": "The router is the traffic manager of the home network. The modem is the translator: it converts the signals into a form that can travel over the provider's cables." },
-                { "step": 4, "title": "The ISP network", "body": "The modem sends the data over coaxial or fiber cables to the internet service provider (ISP), which picks the most efficient route for the packets." },
-                { "step": 5, "title": "Regional hubs", "body": "The data arrives at large data centers that exchange traffic between networks. These hubs connect to the internet backbone." },
-                { "step": 6, "title": "Submarine cables", "body": "For data crossing continents, the backbone includes huge cables on the ocean floor, laid and repaired by special ships. Data travels through them as light pulses in thin glass fibers." },
-                { "step": 7, "title": "Destination", "body": "The packets reach the other side, are re-assembled in the correct order, and the recipient's device shows the message." }
+                {
+                  "step": 1,
+                  "title": "Your device",
+                  "body": "The device splits the message (a photo, an email) into small chunks called packets. Each packet is like a letter in an envelope, with header info showing where it came from and where it is going."
+                },
+                {
+                  "step": 2,
+                  "title": "Radio waves to the router",
+                  "body": "On Wi-Fi, the packets leave the device as radio waves and arrive at the router. On mobile data they go to a nearby cell tower instead."
+                },
+                {
+                  "step": 3,
+                  "title": "Router to modem",
+                  "body": "The router is the traffic manager of the home network. The modem is the translator: it converts the signals into a form that can travel over the provider's cables."
+                },
+                {
+                  "step": 4,
+                  "title": "The ISP network",
+                  "body": "The modem sends the data over coaxial or fiber cables to the internet service provider (ISP), which picks the most efficient route for the packets."
+                },
+                {
+                  "step": 5,
+                  "title": "Regional hubs",
+                  "body": "The data arrives at large data centers that exchange traffic between networks. These hubs connect to the internet backbone."
+                },
+                {
+                  "step": 6,
+                  "title": "Submarine cables",
+                  "body": "For data crossing continents, the backbone includes huge cables on the ocean floor, laid and repaired by special ships. Data travels through them as light pulses in thin glass fibers."
+                },
+                {
+                  "step": 7,
+                  "title": "Destination",
+                  "body": "The packets reach the other side, are re-assembled in the correct order, and the recipient's device shows the message."
+                }
               ],
               "note": "So every message travels through a mix of radio waves, copper wires, glass fibers and undersea cables. It only feels wireless to us."
             },
@@ -507,11 +562,26 @@
                 "Two things make all of this possible: packets and protocols."
               ],
               "protocols": [
-                { "term": "Binary", "body": "Inside a device all information is stored as ones and zeros. The device translates those into radio waves or electrical signals to send them out." },
-                { "term": "IP address", "body": "Every device gets a unique number, like a postal address. Routers use it to forward each packet to the correct place." },
-                { "term": "TCP", "body": "TCP (Transmission Control Protocol) makes sure packets arrive in the right order and that nothing is missing. The receiver confirms every packet and missing ones are resent." },
-                { "term": "DNS", "body": "The Domain Name System is the internet's phonebook. It translates names like www.example.com into the IP address a computer actually needs." },
-                { "term": "Servers", "body": "Websites, apps and files live on servers, powerful computers that stay online. When you visit a page, your device asks the server to send it, and it comes back as packets." }
+                {
+                  "term": "Binary",
+                  "body": "Inside a device all information is stored as ones and zeros. The device translates those into radio waves or electrical signals to send them out."
+                },
+                {
+                  "term": "IP address",
+                  "body": "Every device gets a unique number, like a postal address. Routers use it to forward each packet to the correct place."
+                },
+                {
+                  "term": "TCP",
+                  "body": "TCP (Transmission Control Protocol) makes sure packets arrive in the right order and that nothing is missing. The receiver confirms every packet and missing ones are resent."
+                },
+                {
+                  "term": "DNS",
+                  "body": "The Domain Name System is the internet's phonebook. It translates names like www.example.com into the IP address a computer actually needs."
+                },
+                {
+                  "term": "Servers",
+                  "body": "Websites, apps and files live on servers, powerful computers that stay online. When you visit a page, your device asks the server to send it, and it comes back as packets."
+                }
               ]
             },
             {
@@ -519,13 +589,48 @@
               "table": {
                 "caption": "Connection types compared",
                 "rows": [
-                  ["Connection", "How it works", "Strengths", "Weaknesses"],
-                  ["Cable", "Uses the same coaxial cables as cable TV; a modem converts the signal.", "Fast (up to 1 Gbps) and widely available.", "Upload is slow; neighbors share the connection, so speeds drop in the evening."],
-                  ["Fiber", "Sends data as light pulses through glass fibers.", "Fastest option (up to 10 Gbps), equal upload/download, little signal loss.", "Not available everywhere; laying new fiber is expensive."],
-                  ["DSL", "Uses the existing copper telephone lines.", "Very widely available and does not block the phone line.", "Slower; speed depends on distance to the provider's exchange."],
-                  ["Satellite", "Beams data from satellites in orbit to a dish at your home.", "Works almost anywhere, which helps rural areas.", "High latency because data travels to space and back; storms interrupt it."],
-                  ["Fixed wireless", "Radio signals between a base station and an antenna at the home.", "Good for areas without cables; lower latency than satellite.", "Trees, buildings and weather can weaken the signal."],
-                  ["5G home", "Uses mobile networks to connect a household.", "Fast to deploy without digging; high speeds and low latency.", "Coverage is still limited and depends on distance and congestion."]
+                  [
+                    "Connection",
+                    "How it works",
+                    "Strengths",
+                    "Weaknesses"
+                  ],
+                  [
+                    "Cable",
+                    "Uses the same coaxial cables as cable TV; a modem converts the signal.",
+                    "Fast (up to 1 Gbps) and widely available.",
+                    "Upload is slow; neighbors share the connection, so speeds drop in the evening."
+                  ],
+                  [
+                    "Fiber",
+                    "Sends data as light pulses through glass fibers.",
+                    "Fastest option (up to 10 Gbps), equal upload/download, little signal loss.",
+                    "Not available everywhere; laying new fiber is expensive."
+                  ],
+                  [
+                    "DSL",
+                    "Uses the existing copper telephone lines.",
+                    "Very widely available and does not block the phone line.",
+                    "Slower; speed depends on distance to the provider's exchange."
+                  ],
+                  [
+                    "Satellite",
+                    "Beams data from satellites in orbit to a dish at your home.",
+                    "Works almost anywhere, which helps rural areas.",
+                    "High latency because data travels to space and back; storms interrupt it."
+                  ],
+                  [
+                    "Fixed wireless",
+                    "Radio signals between a base station and an antenna at the home.",
+                    "Good for areas without cables; lower latency than satellite.",
+                    "Trees, buildings and weather can weaken the signal."
+                  ],
+                  [
+                    "5G home",
+                    "Uses mobile networks to connect a household.",
+                    "Fast to deploy without digging; high speeds and low latency.",
+                    "Coverage is still limited and depends on distance and congestion."
+                  ]
                 ]
               },
               "note": "One common theme: upload speeds, shared bandwidth and rural coverage are the weak spots of almost every technology."
@@ -552,8 +657,14 @@
                 "Cybercrime is crime that involves computers, the internet or other digital technology. It can be aimed at individuals, companies or governments, and it can cause financial damage, reputational damage, or mental harm. Definitions vary between countries, which makes it hard to measure, but experts usually split cybercrime into two groups:"
               ],
               "bullets": [
-                { "strong": "Cyber-dependent crime:", "body": "crimes that can only exist because of computers and networks. Hacking, DDoS attacks, malware. Without the internet these crimes would not exist." },
-                { "strong": "Cyber-enabled crime:", "body": "traditional crimes that moved online or got easier. Online fraud, phishing, digital piracy, cyberbullying. They existed before, but the internet lets criminals do them faster, cheaper and to more victims at once." }
+                {
+                  "strong": "Cyber-dependent crime:",
+                  "body": "crimes that can only exist because of computers and networks. Hacking, DDoS attacks, malware. Without the internet these crimes would not exist."
+                },
+                {
+                  "strong": "Cyber-enabled crime:",
+                  "body": "traditional crimes that moved online or got easier. Online fraud, phishing, digital piracy, cyberbullying. They existed before, but the internet lets criminals do them faster, cheaper and to more victims at once."
+                }
               ],
               "paragraphs_after": [
                 "Criminologist David Wall describes four categories of cybercrime: cyber trespass (getting into systems you are not allowed to enter), cyber deception or theft (stealing things online, like credit card data), cyber pornography or obscenity (sharing sexual material online), and cyber violence (causing emotional or psychological harm, such as cyberstalking. The victim may not be physically hurt but can suffer lasting damage)."
@@ -572,18 +683,54 @@
               "table": {
                 "caption": "Overview of cybercrime types",
                 "rows": [
-                  ["Type", "Description"],
-                  ["Hacking", "Breaking into a computer system without permission, for personal gain or to cause damage."],
-                  ["Phishing", "Fake emails or messages that look like they come from a real company (like a bank), used to trick people into giving away passwords or personal data."],
-                  ["Ransomware", "Malicious software that locks your files and demands money to give them back. The WannaCry attack in 2017 is a well-known example."],
-                  ["DDoS attacks", "Flooding a website or service with so much traffic that it goes down, often using networks of infected computers (botnets)."],
-                  ["Identity theft", "Stealing personal details to commit fraud, for example opening accounts or taking loans in the victim's name."],
-                  ["Cyberstalking", "Repeatedly following, threatening or intimidating someone through the internet."],
-                  ["Digital piracy", "Downloading or sharing protected content, movies, music, software, without permission."],
-                  ["Cyber-extortion", "Hacking a system or email server and demanding money to give it back or keep the data secret."],
-                  ["Cyber-terrorism", "Hacking government systems or large organizations to push political goals and create fear."],
-                  ["Money laundering", "Cleaning illegally earned money through the internet and digital banking so it looks legal."],
-                  ["Child grooming", "Building an emotional connection with a child online, often to abuse or traffic them."]
+                  [
+                    "Type",
+                    "Description"
+                  ],
+                  [
+                    "Hacking",
+                    "Breaking into a computer system without permission, for personal gain or to cause damage."
+                  ],
+                  [
+                    "Phishing",
+                    "Fake emails or messages that look like they come from a real company (like a bank), used to trick people into giving away passwords or personal data."
+                  ],
+                  [
+                    "Ransomware",
+                    "Malicious software that locks your files and demands money to give them back. The WannaCry attack in 2017 is a well-known example."
+                  ],
+                  [
+                    "DDoS attacks",
+                    "Flooding a website or service with so much traffic that it goes down, often using networks of infected computers (botnets)."
+                  ],
+                  [
+                    "Identity theft",
+                    "Stealing personal details to commit fraud, for example opening accounts or taking loans in the victim's name."
+                  ],
+                  [
+                    "Cyberstalking",
+                    "Repeatedly following, threatening or intimidating someone through the internet."
+                  ],
+                  [
+                    "Digital piracy",
+                    "Downloading or sharing protected content, movies, music, software, without permission."
+                  ],
+                  [
+                    "Cyber-extortion",
+                    "Hacking a system or email server and demanding money to give it back or keep the data secret."
+                  ],
+                  [
+                    "Cyber-terrorism",
+                    "Hacking government systems or large organizations to push political goals and create fear."
+                  ],
+                  [
+                    "Money laundering",
+                    "Cleaning illegally earned money through the internet and digital banking so it looks legal."
+                  ],
+                  [
+                    "Child grooming",
+                    "Building an emotional connection with a child online, often to abuse or traffic them."
+                  ]
                 ]
               }
             }
@@ -600,13 +747,34 @@
               "table": {
                 "caption": "Key facts and figures",
                 "rows": [
-                  ["Fact", "Figure / Source"],
-                  ["Global cost of cybercrime in 2024", "About $9.5 trillion per year, expected to rise another 15% in 2025 (Cybersecurity Ventures)."],
-                  ["WannaCry ransomware attack (2017)", "Infected 230,000+ computers across 150 countries; over $4 billion in economic losses."],
-                  ["Internet users in 2005", "About 1 billion people (16% of the world's population)."],
-                  ["Internet users in 2023", "About 5.4 billion people (67% of the world's population)."],
-                  ["Adult internet usage", "Grew from about 52% (2000) to about 96% (2024)."],
-                  ["Internet's direct economic contribution", "About $175 billion per year from advertising, online retail and ISP payments; ripple effect about $444 billion."]
+                  [
+                    "Fact",
+                    "Figure / Source"
+                  ],
+                  [
+                    "Global cost of cybercrime in 2024",
+                    "About $9.5 trillion per year, expected to rise another 15% in 2025 (Cybersecurity Ventures)."
+                  ],
+                  [
+                    "WannaCry ransomware attack (2017)",
+                    "Infected 230,000+ computers across 150 countries; over $4 billion in economic losses."
+                  ],
+                  [
+                    "Internet users in 2005",
+                    "About 1 billion people (16% of the world's population)."
+                  ],
+                  [
+                    "Internet users in 2023",
+                    "About 5.4 billion people (67% of the world's population)."
+                  ],
+                  [
+                    "Adult internet usage",
+                    "Grew from about 52% (2000) to about 96% (2024)."
+                  ],
+                  [
+                    "Internet's direct economic contribution",
+                    "About $175 billion per year from advertising, online retail and ISP payments; ripple effect about $444 billion."
+                  ]
                 ]
               },
               "note": "Internet growth also means more potential victims: from about 1 billion people online in 2005 to roughly 5.4 billion in 2023. Cybercrime is effectively a trillion-dollar industry for criminals, and almost everyone connected is a potential target."
@@ -627,10 +795,26 @@
               "table": {
                 "caption": "Three theories that explain cybercrime",
                 "rows": [
-                  ["Theory", "Core idea", "How it explains cybercrime"],
-                  ["General theory of crime (low self-control)", "Some people act impulsively, take risks and want quick rewards without thinking about consequences.", "Cybercrime offers fast money, and the internet lets criminals act without seeing the harm. Studies consistently link low self-control to cyber offending."],
-                  ["Social learning theory", "Crime is learned from others. Behavior is copied when it seems to work.", "If friends or online communities approve of hacking or piracy, people are more likely to do it too, especially when it seems to go unpunished."],
-                  ["Routine activity theory", "Crime happens when a motivated offender, a suitable target and no capable guardian come together.", "Online, weak passwords, clicking phishing links and outdated software make you a suitable target. Security software and careful habits are the guardian."]
+                  [
+                    "Theory",
+                    "Core idea",
+                    "How it explains cybercrime"
+                  ],
+                  [
+                    "General theory of crime (low self-control)",
+                    "Some people act impulsively, take risks and want quick rewards without thinking about consequences.",
+                    "Cybercrime offers fast money, and the internet lets criminals act without seeing the harm. Studies consistently link low self-control to cyber offending."
+                  ],
+                  [
+                    "Social learning theory",
+                    "Crime is learned from others. Behavior is copied when it seems to work.",
+                    "If friends or online communities approve of hacking or piracy, people are more likely to do it too, especially when it seems to go unpunished."
+                  ],
+                  [
+                    "Routine activity theory",
+                    "Crime happens when a motivated offender, a suitable target and no capable guardian come together.",
+                    "Online, weak passwords, clicking phishing links and outdated software make you a suitable target. Security software and careful habits are the guardian."
+                  ]
                 ]
               }
             },
@@ -640,9 +824,18 @@
                 "Not every hacker has the same motivation:"
               ],
               "bullets": [
-                { "strong": "Cyber utopians", "body": "people who do malicious things but believe they act for the common good." },
-                { "strong": "Cyber punks", "body": "hackers who target institutions they find offensive, often just for fun or to make a point." },
-                { "strong": "Cyber spies and cyber terrorists", "body": "highly skilled attackers with extreme motives, often working for states or political causes." }
+                {
+                  "strong": "Cyber utopians",
+                  "body": "people who do malicious things but believe they act for the common good."
+                },
+                {
+                  "strong": "Cyber punks",
+                  "body": "hackers who target institutions they find offensive, often just for fun or to make a point."
+                },
+                {
+                  "strong": "Cyber spies and cyber terrorists",
+                  "body": "highly skilled attackers with extreme motives, often working for states or political causes."
+                }
               ]
             }
           ]
@@ -673,10 +866,22 @@
                 "Cybercrime costs money, but it also affects people emotionally. A 2025 study analyzed more than 6,700 posts and 100,000 comments about cybercrime on Reddit, spread over 14 years (2008-2022). The findings:"
               ],
               "bullets": [
-                { "strong": "", "body": "The biggest discussions were triggered by data breaches, cyber-attacks, ransomware, and hacking linked to countries (Russian or Chinese state hacking)." },
-                { "strong": "Anger", "body": "was the most common emotion, aimed at privacy violations, companies that failed to protect data, and governments that handled threats badly." },
-                { "strong": "Sarcasm", "body": "was the second most common reaction, mostly toward official narratives and ineffective security measures." },
-                { "strong": "Fear", "body": "was also clearly present, showing that people feel genuinely threatened." }
+                {
+                  "strong": "",
+                  "body": "The biggest discussions were triggered by data breaches, cyber-attacks, ransomware, and hacking linked to countries (Russian or Chinese state hacking)."
+                },
+                {
+                  "strong": "Anger",
+                  "body": "was the most common emotion, aimed at privacy violations, companies that failed to protect data, and governments that handled threats badly."
+                },
+                {
+                  "strong": "Sarcasm",
+                  "body": "was the second most common reaction, mostly toward official narratives and ineffective security measures."
+                },
+                {
+                  "strong": "Fear",
+                  "body": "was also clearly present, showing that people feel genuinely threatened."
+                }
               ],
               "paragraphs_after": [
                 "Cyberattacks can seriously damage public trust in companies and governments, and emotional reactions can even push support for stronger cybersecurity policies."
@@ -730,14 +935,38 @@
       ],
       "references_heading": "10 · References",
       "references": [
-        { "label": "Tsotetsi, K. \"Understanding the Internet: A Journey from Devices to Submarine Cables.\"", "href": "https://vocal.media/fyi/understanding-the-internet-a-journey-from-devices-to-submarine-cables" },
-        { "label": "Lefelhoc, C. \"How Does Cable Internet Work?\"", "href": "https://www.compareinternet.com/blog/how-does-cable-internet-work/" },
-        { "label": "Fann, K. \"How Does the Internet Work? A Complete Guide.\" BroadbandNow.", "href": "https://broadbandnow.com/guides/how-does-the-internet-work" },
-        { "label": "Tutorials Point. \"Cyber Crime & Cyber Security.\"", "href": "https://www.tutorialspoint.com/fundamentals_of_science_and_technology/cyber_crime_and_cyber_security.htm" },
-        { "label": "Chen, S. et al. \"Exploring the global geography of cybercrime and its driving forces.\" (2023).", "href": "https://www.nature.com/articles/s41599-023-01560-x" },
-        { "label": "Achuthan, K., Khobragade, S. & Kowalski, R. \"Cybercrime through the public lens: a longitudinal analysis.\" (2025).", "href": "https://www.nature.com/articles/s41599-025-04459-x" },
-        { "label": "Onwuadiamu, G. \"Cybercrime in criminology; A systematic review of criminological theories, methods, and concepts.\" Journal of Economic Criminology 8 (2025) 100136.", "href": "https://doi.org/10.1016/j.jeconc.2025.100136" },
-        { "label": "ResearchGate. \"Top 20 countries exposed to external attacks from malicious programs in 2014.\"", "href": "https://www.researchgate.net/figure/Top-20-countries-exposed-to-external-attacks-from-malicious-programs-in-2014_fig1_331914032" }
+        {
+          "label": "Tsotetsi, K. \"Understanding the Internet: A Journey from Devices to Submarine Cables.\"",
+          "href": "https://vocal.media/fyi/understanding-the-internet-a-journey-from-devices-to-submarine-cables"
+        },
+        {
+          "label": "Lefelhoc, C. \"How Does Cable Internet Work?\"",
+          "href": "https://www.compareinternet.com/blog/how-does-cable-internet-work/"
+        },
+        {
+          "label": "Fann, K. \"How Does the Internet Work? A Complete Guide.\" BroadbandNow.",
+          "href": "https://broadbandnow.com/guides/how-does-the-internet-work"
+        },
+        {
+          "label": "Tutorials Point. \"Cyber Crime & Cyber Security.\"",
+          "href": "https://www.tutorialspoint.com/fundamentals_of_science_and_technology/cyber_crime_and_cyber_security.htm"
+        },
+        {
+          "label": "Chen, S. et al. \"Exploring the global geography of cybercrime and its driving forces.\" (2023).",
+          "href": "https://www.nature.com/articles/s41599-023-01560-x"
+        },
+        {
+          "label": "Achuthan, K., Khobragade, S. & Kowalski, R. \"Cybercrime through the public lens: a longitudinal analysis.\" (2025).",
+          "href": "https://www.nature.com/articles/s41599-025-04459-x"
+        },
+        {
+          "label": "Onwuadiamu, G. \"Cybercrime in criminology; A systematic review of criminological theories, methods, and concepts.\" Journal of Economic Criminology 8 (2025) 100136.",
+          "href": "https://doi.org/10.1016/j.jeconc.2025.100136"
+        },
+        {
+          "label": "ResearchGate. \"Top 20 countries exposed to external attacks from malicious programs in 2014.\"",
+          "href": "https://www.researchgate.net/figure/Top-20-countries-exposed-to-external-attacks-from-malicious-programs-in-2014_fig1_331914032"
+        }
       ],
       "references_note": "Figures: \"A brief history of the internet\" (BroadbandNow) and \"Top 20 countries exposed to external attacks from malicious programs in 2014\" (ResearchGate). Facts are collected from the sources above and rewritten in this report's own words.",
       "back_label": "Back to the team",

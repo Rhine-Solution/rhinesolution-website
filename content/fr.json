@@ -332,7 +332,8 @@
       "submit": "Envoyer le message",
       "submitting": "Envoi...",
       "success": "Message envoyé. Nous répondrons sous 1 à 2 jours ouvrés.",
-      "error_generic": "Une erreur s'est produite. Veuillez réessayer ou envoyer un e-mail à info@rhinesolution.com."
+      "error_generic": "Une erreur s'est produite. Veuillez réessayer ou envoyer un e-mail à info@rhinesolution.com.",
+      "verify_error": "Veuillez terminer la vérification ci-dessous."
     },
     "alt_title": "Ou plongez directement dans le travail.",
     "alt_text": "Chaque projet livré vit sur ce site. Commencez par la vitrine.",

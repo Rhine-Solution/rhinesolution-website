@@ -23,6 +23,21 @@ function isEmail(value: string): boolean {
 }
 
 export async function POST(req: Request) {
+  const contentType = req.headers.get("content-type") ?? "";
+  if (!contentType.toLowerCase().includes("application/json")) {
+    return NextResponse.json(
+      { ok: false, error: "Content-Type must be application/json" },
+      { status: 415 }
+    );
+  }
+  const contentLength = Number(req.headers.get("content-length") ?? "0");
+  if (contentLength > 32_000) {
+    return NextResponse.json(
+      { ok: false, error: "Request body too large" },
+      { status: 413 }
+    );
+  }
+
   let body: ContactPayload;
   try {
     body = await req.json();
@@ -106,7 +121,6 @@ export async function POST(req: Request) {
         {
           ok: false,
           error: "Could not send message",
-          detail: error.message ?? error.name ?? "unknown",
         },
         { status: 502 }
       );

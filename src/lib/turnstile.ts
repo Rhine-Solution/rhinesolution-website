@@ -4,9 +4,9 @@ export async function verifyTurnstile(
 ): Promise<{ ok: boolean }> {
   const secret = process.env.TURNSTILE_SECRET_KEY;
 
-  // No secret configured — pass through so the app is never hard-locked
-  // during rollout. Once keys are set in Vercel, real verification applies.
-  if (!secret) return { ok: true };
+  // Fail closed: if the secret isn't configured, reject verification rather
+  // than silently disabling bot protection. Keys must be set in Vercel.
+  if (!secret) return { ok: false };
   if (!token) return { ok: false };
 
   try {

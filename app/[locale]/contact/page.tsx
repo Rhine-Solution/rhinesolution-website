@@ -26,7 +26,7 @@ export default async function ContactPage({ params }: Props) {
 
   return (
     <>
-      <Nav locale={locale} brand={content.brand.name} labels={content.nav} current="contact" />
+      <Nav locale={locale} brand={content.brand.name} labels={content.nav} navLabel={content.a11y.nav_label} current="contact" />
       <main id="main" className="container page">
         <header className="page-head">
           <p className="section-eyebrow">{c.eyebrow}</p>

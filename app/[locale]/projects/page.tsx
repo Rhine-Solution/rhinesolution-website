@@ -24,7 +24,7 @@ export default async function ProjectsPage({ params }: Props) {
 
   return (
     <>
-      <Nav locale={locale} brand={content.brand.name} labels={content.nav} current="projects" />
+      <Nav locale={locale} brand={content.brand.name} labels={content.nav} navLabel={content.a11y.nav_label} current="projects" />
       <main id="main" className="container page">
         <header className="page-head">
           <p className="section-eyebrow">{content.sections.featured_work}</p>

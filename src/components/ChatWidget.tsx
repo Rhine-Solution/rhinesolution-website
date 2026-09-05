@@ -16,7 +16,7 @@ type Props = {
 const WELCOME =
   "Hi! I'm the Rhine Solution assistant. Ask me about the studio, our projects, the team, or how to get in touch.";
 
-const NAV_TOKEN = /\[navigate:([^\]]+)\]/;
+const NAV_TOKEN = /\[navigate:([^\]]+)\]/g;
 
 function stripNavTokens(text: string): string {
   return text.replace(NAV_TOKEN, "").trim();
@@ -49,6 +49,9 @@ export default function ChatWidget({ locale: propLocale }: Props) {
     setMessages((prev) => [...prev, { role: "assistant", content: "" }]);
 
     const history = [...messages, { role: "user" as const, content: text }];
+    const controller = new AbortController();
+    const abortTimer = setTimeout(() => controller.abort(), 30000);
+    let fullText = "";
 
     try {
       const res = await fetch("/api/chat", {
@@ -59,6 +62,7 @@ export default function ChatWidget({ locale: propLocale }: Props) {
           locale,
           currentPath: pathname ?? "/",
         }),
+        signal: controller.signal,
       });
 
       if (!res.ok || !res.body) {
@@ -80,7 +84,10 @@ export default function ChatWidget({ locale: propLocale }: Props) {
           const trimmed = line.trim();
           if (!trimmed.startsWith("data:")) continue;
           const payload = trimmed.slice(5).trim();
-          if (payload === "[DONE]") continue;
+          if (payload === "[DONE]") {
+            reader.cancel().catch(() => {});
+            break;
+          }
           try {
             const json = JSON.parse(payload);
             const delta =
@@ -90,11 +97,12 @@ export default function ChatWidget({ locale: propLocale }: Props) {
                 .join("") ??
               "";
             if (delta) {
+              fullText += delta;
               setMessages((prev) => {
                 const next = [...prev];
                 next[next.length - 1] = {
                   role: "assistant",
-                  content: next[next.length - 1].content + delta,
+                  content: (next[next.length - 1].content || "") + delta,
                 };
                 return next;
               });
@@ -114,28 +122,32 @@ export default function ChatWidget({ locale: propLocale }: Props) {
         return next;
       });
     } finally {
+      clearTimeout(abortTimer);
       setBusy(false);
-      setMessages((prev) => {
-        const next = [...prev];
-        const last = next[next.length - 1];
-        if (last?.role === "assistant" && last.content) {
-          const match = last.content.match(NAV_TOKEN);
-          const clean = stripNavTokens(last.content);
-          next[next.length - 1] = { role: "assistant", content: clean || WELCOME };
-          if (match && match[1]) {
-            let target = match[1].startsWith("/") ? match[1] : `/${match[1]}`;
-            if (target.startsWith(`/${locale}/`) || target === `/${locale}`) {
-              // already locale-prefixed
-            } else if (target === "/") {
-              target = `/${locale}`;
-            } else {
-              target = `/${locale}${target}`;
-            }
-            setTimeout(() => router.push(target), 400);
+      if (fullText) {
+        const matches = [...fullText.matchAll(NAV_TOKEN)];
+        const clean = stripNavTokens(fullText);
+        setMessages((prev) => {
+          const next = [...prev];
+          next[next.length - 1] = {
+            role: "assistant",
+            content: clean || WELCOME,
+          };
+          return next;
+        });
+        const token = matches[matches.length - 1]?.[1];
+        if (token) {
+          let target = token.startsWith("/") ? token : `/${token}`;
+          if (target.startsWith(`/${locale}/`) || target === `/${locale}`) {
+            // already locale-prefixed
+          } else if (target === "/") {
+            target = `/${locale}`;
+          } else {
+            target = `/${locale}${target}`;
           }
+          setTimeout(() => router.push(target), 400);
         }
-        return next;
-      });
+      }
     }
   }
 
@@ -157,7 +169,7 @@ export default function ChatWidget({ locale: propLocale }: Props) {
               <FiX size={18} />
             </button>
           </div>
-          <div className="chat-messages" ref={scrollRef}>
+          <div className="chat-messages" ref={scrollRef} aria-live="polite" role="log">
             {messages.map((m, i) => (
               <div key={i} className={`chat-msg chat-msg--${m.role}`}>
                 {m.content || "…"}

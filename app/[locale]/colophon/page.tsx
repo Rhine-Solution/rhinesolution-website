@@ -32,7 +32,7 @@ export default async function ColophonPage({ params }: Props) {
 
   return (
     <>
-      <Nav locale={locale} brand={content.brand.name} labels={content.nav} current="about" />
+      <Nav locale={locale} brand={content.brand.name} labels={content.nav} navLabel={content.a11y.nav_label} current="about" />
       <main id="main" className="container page colophon-page">
         <header className="colophon-page-head">
           <p className="colophon-page-eyebrow">{c.eyebrow}</p>

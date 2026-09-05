@@ -5,6 +5,22 @@ export const runtime = "nodejs";
 const MODEL = "gemini-3.6-flash";
 const GEMINI_URL = `https://generativelanguage.googleapis.com/v1beta/models/${MODEL}:streamGenerateContent?alt=sse`;
 const MAX_HISTORY = 20;
+const MAX_MESSAGE_LENGTH = 4000;
+const RATE_LIMIT_WINDOW_MS = 60_000;
+const RATE_LIMIT_MAX = 10;
+
+const rateBuckets = new Map<string, { count: number; resetAt: number }>();
+
+function isRateLimited(ip: string): boolean {
+  const now = Date.now();
+  const bucket = rateBuckets.get(ip);
+  if (!bucket || now > bucket.resetAt) {
+    rateBuckets.set(ip, { count: 1, resetAt: now + RATE_LIMIT_WINDOW_MS });
+    return false;
+  }
+  bucket.count += 1;
+  return bucket.count > RATE_LIMIT_MAX;
+}
 
 const SYSTEM_PROMPT = `You are the Rhine Solution assistant chatbot embedded on rhinesolution.com. You help visitors understand the studio, its projects, its people, and its pages, and you point them to the right section of the site.
 
@@ -49,11 +65,31 @@ type ChatBody = {
 };
 
 export async function POST(req: Request) {
+  const contentType = req.headers.get("content-type") ?? "";
+  if (!contentType.toLowerCase().includes("application/json")) {
+    return NextResponse.json({ error: "Content-Type must be application/json" }, { status: 415 });
+  }
+  const contentLength = Number(req.headers.get("content-length") ?? "0");
+  if (contentLength > 100_000) {
+    return NextResponse.json({ error: "Request body too large" }, { status: 413 });
+  }
+
   let body: ChatBody;
   try {
     body = await req.json();
   } catch {
     return NextResponse.json({ error: "Invalid request body" }, { status: 400 });
+  }
+
+  const ip =
+    req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ||
+    req.headers.get("x-real-ip") ||
+    "unknown";
+  if (isRateLimited(ip)) {
+    return NextResponse.json(
+      { error: "Too many requests, please slow down." },
+      { status: 429 }
+    );
   }
 
   const apiKey = process.env.GEMINI_API_KEY;
@@ -65,7 +101,13 @@ export async function POST(req: Request) {
   }
 
   const history = (body.messages ?? [])
-    .filter((m) => m && typeof m.content === "string")
+    .filter(
+      (m) =>
+        m &&
+        typeof m.content === "string" &&
+        m.content.trim().length > 0 &&
+        m.content.length <= MAX_MESSAGE_LENGTH
+    )
     .slice(-MAX_HISTORY);
 
   if (history.length === 0) {
@@ -97,6 +139,7 @@ export async function POST(req: Request) {
 
   if (!upstream.ok) {
     const text = await upstream.text();
+    console.error("[chat] Gemini error:", upstream.status, text.slice(0, 500));
     return NextResponse.json(
       { error: `Upstream error ${upstream.status}` },
       { status: upstream.status }

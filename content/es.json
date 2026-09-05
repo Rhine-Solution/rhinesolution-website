@@ -332,7 +332,8 @@
       "submit": "Enviar mensaje",
       "submitting": "Enviando...",
       "success": "Mensaje enviado. Responderemos en un plazo de 1 a 2 días hábiles.",
-      "error_generic": "Algo salió mal. Inténtalo de nuevo o escribe a info@rhinesolution.com."
+      "error_generic": "Algo salió mal. Inténtalo de nuevo o escribe a info@rhinesolution.com.",
+      "verify_error": "Complete la verificación a continuación."
     },
     "alt_title": "O entra directo al trabajo.",
     "alt_text": "Cada proyecto publicado vive en este sitio. Empieza con la muestra.",

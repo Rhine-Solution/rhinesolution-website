@@ -33,7 +33,7 @@ export default async function PrivacyPage({ params }: Props) {
 
   return (
     <>
-      <Nav locale={locale} brand={content.brand.name} labels={content.nav} current="about" />
+      <Nav locale={locale} brand={content.brand.name} labels={content.nav} navLabel={content.a11y.nav_label} current="about" />
       <main id="main" className="container page legal-page">
         <header className="legal-page-head">
           <p className="legal-page-eyebrow">{p.eyebrow}</p>
@@ -78,7 +78,7 @@ export default async function PrivacyPage({ params }: Props) {
                 rel="noopener noreferrer"
                 className="legal-page-link"
               >
-                autoriteitpersoonsgegevens.nl →
+                autoriteitpersoonsgegevens.nl â†’
               </a>
             </p>
           </section>

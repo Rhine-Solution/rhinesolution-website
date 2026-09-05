@@ -15,6 +15,7 @@ type ContactFormProps = {
     submitting: string;
     success: string;
     error_generic: string;
+    verify_error: string;
   };
 };
 
@@ -33,7 +34,7 @@ export default function ContactForm({ locale, labels }: ContactFormProps) {
     e.preventDefault();
     if (status === "submitting") return;
     if (turnstileConfigured && !turnstileToken) {
-      setErrorMsg("Please complete the verification below.");
+      setErrorMsg(labels.verify_error);
       setStatus("error");
       return;
     }

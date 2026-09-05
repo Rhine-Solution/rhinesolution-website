@@ -13,19 +13,25 @@ export default function IntroLoader() {
   const [hide, setHide] = useState(false);
 
   useEffect(() => {
-    const reducedMotion = window.matchMedia(
-      "(prefers-reduced-motion: reduce)"
-    ).matches;
-    if (reducedMotion) return;
     if (typeof window === "undefined") return;
-    const seen = window.sessionStorage.getItem("rhine-intro-seen");
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    let seen = false;
+    try {
+      seen = Boolean(window.sessionStorage.getItem("rhine-intro-seen"));
+    } catch {
+      /* storage unavailable */
+    }
     if (seen) return;
 
     setShow(true);
     const t1 = window.setTimeout(() => setHide(true), 1300);
     const t2 = window.setTimeout(() => {
       setShow(false);
-      window.sessionStorage.setItem("rhine-intro-seen", "1");
+      try {
+        window.sessionStorage.setItem("rhine-intro-seen", "1");
+      } catch {
+        /* storage unavailable */
+      }
     }, 1900);
     return () => {
       window.clearTimeout(t1);

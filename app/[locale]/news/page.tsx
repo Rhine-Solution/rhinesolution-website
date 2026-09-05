@@ -40,7 +40,7 @@ export default async function NewsPage({ params, searchParams }: Props) {
 
   return (
     <>
-      <Nav locale={locale} brand={content.brand.name} labels={content.nav} current="news" />
+      <Nav locale={locale} brand={content.brand.name} labels={content.nav} navLabel={content.a11y.nav_label} current="news" />
       <main id="main" className="container page">
         <header className="page-head">
           <p className="section-eyebrow">{n.eyebrow}</p>
