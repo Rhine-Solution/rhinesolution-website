@@ -9,6 +9,8 @@
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
     "brain:publish": "node scripts/publish-brain.mjs",
+    "news:update": "node scripts/news-from-git.mjs update",
+    "news:accept": "node scripts/news-from-git.mjs accept",
     "test": "node --test scripts/*.test.mjs"
   },
   "dependencies": {
