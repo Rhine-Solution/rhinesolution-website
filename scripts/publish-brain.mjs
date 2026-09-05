@@ -1,4 +1,4 @@
-import { readFileSync, writeFileSync, mkdirSync, existsSync, rmSync } from "node:fs";
+﻿import { readFileSync, writeFileSync, mkdirSync, existsSync, rmSync } from "node:fs";
 import { join } from "node:path";
 import { pathToFileURL } from "node:url";
 
@@ -10,25 +10,27 @@ export function slugify(name) {
     .replace(/^-+|-+$/g, "");
 }
 
+const base = (file) => file.split("/").pop();
+
 const FOLDERS = {
-  "01-Core-Principles.md": "plan",
-  "02-Architecture.md": "plan",
-  "03-Backend.md": "build",
-  "04-Frontend.md": "build",
-  "05-Databases.md": "build",
-  "06-Security.md": "harden",
-  "07-Testing.md": "harden",
-  "08-Deployment-DevOps.md": "ship",
-  "09-Code-Review-Production.md": "ship",
-  "12-Backlog.md": "knowledge",
-  "13-Performance.md": "knowledge",
-  "14-Monitoring.md": "knowledge",
+  "Plan/01-Core-Principles.md": "plan",
+  "Plan/02-Architecture.md": "plan",
+  "Build/03-Backend.md": "build",
+  "Build/04-Frontend.md": "build",
+  "Build/05-Databases.md": "build",
+  "Harden/06-Security.md": "harden",
+  "Harden/07-Testing.md": "harden",
+  "Ship/08-Deployment-DevOps.md": "ship",
+  "Ship/09-Code-Review-Production.md": "ship",
+  "Operations/12-Backlog.md": "knowledge",
+  "Operations/13-Performance.md": "knowledge",
+  "Operations/14-Monitoring.md": "knowledge",
   "Lessons-Learned.md": "journal",
 };
 
 const PRIVATE_FILES = [
-  "17-Infrastructure.md", "10-AI-Assisted-Development.md", "11-Opencode-Integrations.md",
-  "16-Token-Efficiency.md", "Projects/rhinesolution.md", "Workspace.md",
+  "Operations/17-Infrastructure.md", "AI/10-AI-Assisted-Development.md", "AI/11-Opencode-Integrations.md",
+  "AI/16-Token-Efficiency.md", "Projects/rhinesolution.md", "Workspace.md",
   "Session-Start-rhinesolution.md", "Obsidian-Setup.md", "Inbox.md",
   "Hypotheses.md", "Sources.md", "Home.md",
 ];
@@ -142,18 +144,18 @@ export function publishBrain({ vault, out, force = false }) {
       skipped.push({ file, reason: "secret scan" });
       continue;
     }
-    const slug = slugify(file);
+    const slug = slugify(base(file));
     published.push(slug);
     publishedBodies[slug] = { body: rawBody, folder, front: rawFront };
   }
 
   const publicSlugs = new Set(published);
   for (const [slug, { body, folder, front }] of Object.entries(publishedBodies)) {
-    const file = Object.keys(FOLDERS).find((f) => slugify(f) === slug);
+    const file = Object.keys(FOLDERS).find((f) => slugify(base(f)) === slug);
     const outBody = scrubLinks(stripLinksFooter(body), publicSlugs);
     const content = front === null ? outBody : front + outBody;
     mkdirSync(join(out, folder), { recursive: true });
-    writeFileSync(join(out, folder, file), content);
+    writeFileSync(join(out, folder, base(file)), content);
     publishedBodies[slug] = { body: outBody, folder };
   }
 
@@ -164,10 +166,10 @@ export function publishBrain({ vault, out, force = false }) {
 
   const notes = {};
   for (const [slug, { body, folder }] of Object.entries(publishedBodies)) {
-    const file = Object.keys(FOLDERS).find((f) => slugify(f) === slug);
+    const file = Object.keys(FOLDERS).find((f) => slugify(base(f)) === slug);
     notes[slug] = {
       slug,
-      file: `${folder}/${file}`,
+      file: `${folder}/${base(file)}`,
       title: extractTitle(body),
       folder,
       excerpt: extractExcerpt(body),

@@ -4,6 +4,8 @@ tags:
   - review
 created: 2026-08-10
 updated: 2026-08-10
+type: concept
+description: \"Ready for production\" ≠ \"the feature works.\" It means an operator who didn't build it can:
 ---
 # 09 - Code Review & Production Readiness
 

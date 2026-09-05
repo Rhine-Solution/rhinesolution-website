@@ -146,7 +146,7 @@
       "file": "journal/Lessons-Learned.md",
       "title": "Lessons Learned",
       "folder": "journal",
-      "excerpt": "Every bug, outage, and surprise is a lesson. Log it here so it only happens once.",
+      "excerpt": "Addendum: PowerShell \\Add-Content\\ (PS 5.1) also writes non-ASCII as ANSI (e.g. \\··\\ -> lone 0xB7, invalid UTF-8). Always write notes via Node \\writeFileSync(ut",
       "order": 13
     }
   }

@@ -4,6 +4,8 @@ tags:
   - architecture
 created: 2026-08-10
 updated: 2026-08-10
+type: concept
+description: Don't ask \"monolith or microservices?\" — ask \"what specific problem am I solving?\" If you can't name one, you don't need microservices yet. Technical debt is ne
 ---
 # 02 - Architecture
 

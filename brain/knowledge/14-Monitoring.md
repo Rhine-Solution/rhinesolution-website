@@ -3,6 +3,8 @@ tags:
   - brain
 created: 2026-08-10
 updated: 2026-08-10
+type: concept
+description: If it isn't observed, it didn't happen. Monitoring is the bridge between \"it works on my machine\" and \"it works in production.\"
 ---
 # 14 - Monitoring
 

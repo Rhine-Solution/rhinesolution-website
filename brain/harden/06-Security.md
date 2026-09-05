@@ -4,6 +4,8 @@ tags:
   - security
 created: 2026-08-10
 updated: 2026-08-10
+type: concept
+description: Every feature, every line, no exceptions. Follow OWASP Top Ten. Security is embedded from the first commit, never bolted on.
 ---
 # 06 - Security
 

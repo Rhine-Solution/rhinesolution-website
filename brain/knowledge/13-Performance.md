@@ -3,6 +3,8 @@ tags:
   - brain
 created: 2026-08-10
 updated: 2026-08-10
+type: concept
+description: Performance is a feature. Slow sites lose users, rank lower in search, and burn money on compute. Optimize what matters, measure everything.
 ---
 # 13 - Performance
 

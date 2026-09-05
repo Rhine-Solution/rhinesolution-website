@@ -4,6 +4,8 @@ tags:
   - backend
 created: 2026-08-10
 updated: 2026-08-10
+type: concept
+description: APIs, services, and business logic. TypeScript is the 2026 default for full-stack TypeScript shops; pick the language that fits the team.
 ---
 # 03 - Backend
 

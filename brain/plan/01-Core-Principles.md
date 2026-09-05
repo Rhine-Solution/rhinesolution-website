@@ -1,9 +1,11 @@
 ---
 tags:
   - brain
-  - principles
+  - principle
 created: 2026-08-10
 updated: 2026-08-10
+type: concept
+description: The timeless rules that survive every framework change. From 40 years of shipping software.
 ---
 # 01 - Core Principles
 
