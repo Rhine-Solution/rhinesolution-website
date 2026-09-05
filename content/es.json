@@ -188,7 +188,8 @@
       "Markdown",
       "Git"
     ],
-    "year": 2026
+    "year": 2026,
+    "href": "/projects/brain"
   },
   "project_macmini": {
     "title": "Infraestructura de IA con Mac Mini",
