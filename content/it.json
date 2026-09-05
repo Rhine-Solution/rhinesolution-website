@@ -438,8 +438,9 @@
       "typefaces": {
         "heading": "Caratteri tipografici",
         "items": [
-          "Rijksoverheid Sans Heading Bold il carattere display. Usato per titoli, intestazioni e i momenti in cui la pagina vuole fare una dichiarazione. Self-hosted.",
-          "Rijksoverheid Sans Text il carattere del corpo del testo. Usato per i testi, la UI e i metadati fitti dove la leggibilità conta più del carattere. Anch'esso self-hosted."
+          "Rijksoverheid Sans — il sans. Usato per il testo corrente e l'interfaccia, auto-ospitato così la pagina non fa richieste di font esterni.",
+          "Rijksoverheid Heading — il sans in grassetto. Usato per tutti i titoli, con un'interlettera compatta e decisa.",
+          "Rijksoverheid Serif — il serif, regular e italic. Usato per le eyebrow e per i momenti in cui la pagina vuole sembrare un libro."
         ]
       },
       "how_we_work": {

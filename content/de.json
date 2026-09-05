@@ -438,8 +438,9 @@
       "typefaces": {
         "heading": "Schriften",
         "items": [
-          "Rijksoverheid Sans Heading Bold als Auszeichnungsschrift. Verwendet für Titel, Überschriften und die Momente, in denen die Seite eine Aussage machen will. Selbst gehostet.",
-          "Rijksoverheid Sans Text als Fließtext-Schrift. Verwendet für Text, UI-Elemente und dichte Metadaten, wo Lesbarkeit mehr zählt als Charakter. Ebenfalls selbst gehostet."
+          "Rijksoverheid Sans — die serifenlose Schrift. Für Fließtext und UI, selbst gehostet, sodass die Seite keine externen Schriftanfragen stellt.",
+          "Rijksoverheid Heading — die fette serifenlose Schrift. Für alle Überschriften, mit straffer, selbstbewusster Laufweite.",
+          "Rijksoverheid Serif — die Serifenschrift, regular und italic. Für Eyebrow-Texte und die Momente, in denen sich die Seite wie ein Buch anfühlen soll."
         ]
       },
       "how_we_work": {
