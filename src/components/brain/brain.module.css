@@ -51,3 +51,48 @@
 .crumbs a:hover { text-decoration: underline; }
 .noteBack { margin-top: 3rem; }
 .noteBack a { color: #7ea7ff; text-decoration: none; }
+.prevNext {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 2.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid color-mix(in srgb, var(--color-blue-soft) 25%, transparent);
+}
+.prevNext a {
+  color: var(--color-blue-soft);
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+.prevNext a:hover {
+  text-decoration: underline;
+}
+.related {
+  margin-top: 2rem;
+  padding: 1rem 1.25rem;
+  border: 1px solid color-mix(in srgb, var(--color-blue-soft) 25%, transparent);
+  border-radius: 12px;
+}
+.related h2 {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-text-muted);
+  margin: 0 0 0.6rem;
+}
+.related ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+}
+.related a {
+  color: var(--color-blue-soft);
+  text-decoration: none;
+}
+.related a:hover {
+  text-decoration: underline;
+}
+

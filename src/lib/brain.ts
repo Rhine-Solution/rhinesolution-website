@@ -9,6 +9,9 @@ export type BrainNoteMeta = {
   folder: string;
   excerpt: string;
   order: number;
+  tags: string[];
+  updated: string;
+  outlinks: string[];
 };
 
 export type BrainTreeNode = {
@@ -77,10 +80,11 @@ export function getNoteMarkdown(slug: string, locale: string): string {
   const { body } = stripFrontmatter(raw);
   const withoutFooter = stripLinksFooter(body);
   return withoutFooter.replace(/\[\[([^\]|]+)(?:\|([^\]]+))?\]\]/g, (_m, target, alias) => {
-    const targetSlug = slugify(target.trim());
+    const [base, anchor] = target.trim().split("#");
+    const targetSlug = slugify(base.trim());
     const resolved = manifest.notes[targetSlug];
-    const label = (alias ?? target).trim();
-    if (resolved) return `[${label}](/${locale}/projects/brain/${resolved.slug})`;
-    return alias !== undefined ? label : "";
+    const label = (alias ?? base).trim();
+    if (resolved) return `[${label}](/${locale}/projects/brain/${resolved.slug}${anchor ? `#${anchor}` : ""})`;
+    return label; // never drop text — unresolved targets render as their name
   });
 }

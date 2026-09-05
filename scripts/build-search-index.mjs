@@ -10,12 +10,22 @@ const manifestPath = join(cwd, "brain", "manifest.json");
 if (existsSync(manifestPath)) {
   const manifest = JSON.parse(readFileSync(manifestPath, "utf8"));
   for (const note of Object.values(manifest.notes)) {
+    let body = "";
+    try {
+      const raw = readFileSync(join(cwd, "brain", note.file), "utf8");
+      body = raw.replace(/^---\r?\n[\s\S]*?\r?\n---\r?\n?/, "").replace(/\[\[([^\]|#]+)(?:[^\]])*\]\]/g, "$1");
+    } catch {
+      body = "";
+    }
     entries.push({
       id: `brain-${note.slug}`,
       title: note.title,
       excerpt: note.excerpt || "",
+      body: body.slice(0, 4000),
       url: `/en/projects/brain/${note.slug}`,
       type: "Brain",
+      folder: note.folder,
+      tags: note.tags ?? [],
     });
   }
 }
