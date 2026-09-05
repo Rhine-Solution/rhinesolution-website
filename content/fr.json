@@ -160,7 +160,9 @@
       "knowledge": "Connaissances",
       "journal": "Journal",
       "projects": "Projets",
-      "archive": "Archives"
+      "archive": "Archives",
+      "operations": "Opérations",
+      "dailies": "Journaux"
     },
     "related": "Connexes"
   },

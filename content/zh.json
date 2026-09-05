@@ -160,7 +160,9 @@
       "knowledge": "知识",
       "journal": "日志",
       "projects": "项目",
-      "archive": "归档"
+      "archive": "归档",
+      "operations": "运维",
+      "dailies": "日志"
     },
     "related": "相关"
   },

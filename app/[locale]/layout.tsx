@@ -1,14 +1,32 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
+import { Cormorant_Garamond } from "next/font/google";
 import "../../styles/globals.css";
 import { getContent } from "@/lib/i18n";
+import { rijksSans, rijksHeading, rijksSerif } from "@/lib/fonts";
 import MobileHeader from "@/components/MobileHeader";
 import MobileFooter from "@/components/MobileFooter";
 import ChatWidget from "@/components/ChatWidget";
-import LocaleLang from "@/components/LocaleLang";
+import SceneManager from "@/components/scene/SceneManager";
+import SmoothScrollProvider from "@/components/SmoothScrollProvider";
+import CustomCursor from "@/components/CustomCursor";
+import IntroLoader from "@/components/IntroLoader";
+import JsonLd, { siteJsonLd } from "@/components/JsonLd";
+
+const cormorant = Cormorant_Garamond({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-cormorant",
+});
 
 type Props = {
   children: React.ReactNode;
   params: Promise<{ locale: string }>;
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#070e24",
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -27,15 +45,21 @@ export default async function LocaleLayout({ children, params }: Props) {
   const { locale } = await params;
   const content = getContent(locale);
   return (
-    <>
-      <LocaleLang locale={locale} />
-      <a className="skip-link" href="#main">
-        {content.a11y.skip_to_content}
-      </a>
-      <MobileHeader locale={locale} />
-      {children}
-      <MobileFooter locale={locale} />
-      <ChatWidget locale={locale} />
-    </>
+    <html lang={locale} className={`${rijksSans.variable} ${rijksHeading.variable} ${rijksSerif.variable} ${cormorant.variable}`}>
+      <body>
+        <JsonLd data={siteJsonLd()} />
+        <SceneManager />
+        <SmoothScrollProvider />
+        <CustomCursor />
+        <IntroLoader />
+        <a className="skip-link" href="#main">
+          {content.a11y.skip_to_content}
+        </a>
+        <MobileHeader locale={locale} />
+        {children}
+        <MobileFooter locale={locale} />
+        <ChatWidget locale={locale} />
+      </body>
+    </html>
   );
 }
