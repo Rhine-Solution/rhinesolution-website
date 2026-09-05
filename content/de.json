@@ -977,5 +977,20 @@
       "back_label": "Zurück zum Team",
       "profile_label": "RAGNAROK-Profil ansehen"
     }
+  },
+  "project_plan2shift": {
+    "title": "Plan2Shift",
+    "slug": "plan2shift",
+    "icon": "calendar",
+    "summary": "Eine Schichtplanungs-Plattform für Mitarbeiter und HR-Teams. Plane Schichten, verfolge deine monatlichen Einnahmen in Echtzeit und melde Krankheit oder Schichtwechsel ohne Hin und Her.",
+    "stack": [
+      "Next.js",
+      "TypeScript",
+      "PostgreSQL",
+      "Tailwind CSS"
+    ],
+    "year": 2026,
+    "team": "RAGNAROK + ZeroMeister",
+    "live_url": "https://plan2shift.com/"
   }
 }

@@ -977,5 +977,20 @@
       "back_label": "Retour à l'équipe",
       "profile_label": "Voir le profil de RAGNAROK"
     }
+  },
+  "project_plan2shift": {
+    "title": "Plan2Shift",
+    "slug": "plan2shift",
+    "icon": "calendar",
+    "summary": "Une plateforme de planification des shifts pour employés et équipes RH. Planifiez les shifts, suivez vos gains mensuels en temps réel et envoyez des demandes de congé maladie ou de changement de shift sans allers-retours.",
+    "stack": [
+      "Next.js",
+      "TypeScript",
+      "PostgreSQL",
+      "Tailwind CSS"
+    ],
+    "year": 2026,
+    "team": "RAGNAROK + ZeroMeister",
+    "live_url": "https://plan2shift.com/"
   }
 }

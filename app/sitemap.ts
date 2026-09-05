@@ -5,7 +5,7 @@ import { getNews } from "@/lib/news";
 const base = "https://rhinesolution.com";
 const locales = ["en", "nl", "de", "fr", "es", "it", "zh"] as const;
 const members = ["ragnarok", "zeromeister"] as const;
-const projects = ["rhinesolution", "macmini", "music"] as const;
+const projects = ["rhinesolution", "macmini", "music", "plan2shift"] as const;
 const localePaths = [
   "/team",
   "/projects",
