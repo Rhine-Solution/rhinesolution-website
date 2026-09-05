@@ -164,7 +164,9 @@
       "harden": "Beveiliging",
       "ship": "Release",
       "knowledge": "Kennis",
-      "journal": "Logboek"
+      "journal": "Logboek",
+      "projects": "Projecten",
+      "archive": "Archief"
     }
   },
   "project_rhinesolution": {

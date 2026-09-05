@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { FiMenu, FiX, FiFolder, FiFile } from "react-icons/fi";
-import type { BrainManifest } from "@/lib/brain";
+import type { BrainManifest, BrainTreeNode } from "@/lib/brain";
 import styles from "./brain.module.css";
 
 type Props = {
@@ -15,9 +15,44 @@ type Props = {
 
 export default function BrainSidebar({ manifest, locale, labels, active }: Props) {
   const [open, setOpen] = useState(false);
-  const folders = manifest.folders
-    .map((f) => ({ ...f, notes: f.notes.map((s) => manifest.notes[s]).filter(Boolean) }))
-    .filter((f) => f.notes.length > 0);
+  const label = (name: string) => labels[name.toLowerCase()] ?? name;
+
+  function renderTree(node: BrainTreeNode, depth: number) {
+    const hasNotes = node.notes.length > 0;
+    return (
+      <li key={`${node.name}-${depth}`}>
+        {hasNotes && (
+          <span className={styles.treeFolderName} style={{ paddingLeft: depth * 14 }}>
+            <FiFolder size={14} aria-hidden="true" /> {node.name === "Brain" ? label("brain") : label(node.name)}
+          </span>
+        )}
+        {node.notes.length > 0 && (
+          <ul className={styles.treeList}>
+            {node.notes.map((slug) => {
+              const note = manifest.notes[slug];
+              if (!note) return null;
+              return (
+                <li key={note.slug}>
+                  <Link
+                    href={`/${locale}/projects/brain/${note.slug}`}
+                    className={`${styles.treeLink} ${active === note.slug ? styles.treeLinkActive : ""}`}
+                    onClick={() => setOpen(false)}
+                  >
+                    <FiFile size={13} aria-hidden="true" /> {note.title}
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+        )}
+        {node.folders.length > 0 && (
+          <ul className={styles.treeList}>
+            {node.folders.map((folder) => renderTree(folder, depth + 1))}
+          </ul>
+        )}
+      </li>
+    );
+  }
 
   return (
     <>
@@ -29,26 +64,9 @@ export default function BrainSidebar({ manifest, locale, labels, active }: Props
           <FiX size={18} aria-hidden="true" />
         </button>
         <nav aria-label="Brain notes">
-          {folders.map((folder) => (
-            <section key={folder.id} className={styles.treeFolder}>
-              <h2 className={styles.treeFolderTitle}>
-                <FiFolder size={14} aria-hidden="true" /> {labels[folder.id] ?? folder.id}
-              </h2>
-              <ul className={styles.treeList}>
-                {folder.notes.map((note) => (
-                  <li key={note.slug}>
-                    <Link
-                      href={`/${locale}/projects/brain/${note.slug}`}
-                      className={`${styles.treeLink} ${active === note.slug ? styles.treeLinkActive : ""}`}
-                      onClick={() => setOpen(false)}
-                    >
-                      <FiFile size={13} aria-hidden="true" /> {note.title}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </section>
-          ))}
+          <ul className={styles.treeList}>
+            {(manifest.tree ?? []).map((node) => renderTree(node, 0))}
+          </ul>
         </nav>
       </div>
       {open && <button type="button" className={styles.treeOverlay} onClick={() => setOpen(false)} aria-label="Close" />}

@@ -158,7 +158,9 @@
       "harden": "加固",
       "ship": "发布",
       "knowledge": "知识",
-      "journal": "日志"
+      "journal": "日志",
+      "projects": "项目",
+      "archive": "归档"
     }
   },
   "project_rhinesolution": {

@@ -8,18 +8,23 @@ import { publishBrain, slugify } from "./publish-brain.mjs";
 function fixture() {
   const dir = mkdtempSync(join(tmpdir(), "brain-pub-"));
   const vault = join(dir, "Brain");
+  mkdirSync(join(vault, "Plan"), { recursive: true });
+  mkdirSync(join(vault, "Operations"), { recursive: true });
   mkdirSync(join(vault, "Projects"), { recursive: true });
+  mkdirSync(join(vault, "Archive"), { recursive: true });
   const notes = {
-    "01-Core-Principles.md": "---\ntags: [brain]\nstatus: active\n---\n# 01 - Core Principles\n\nFirst principle paragraph here.\n",
-    "02-Architecture.md": "# 02 - Architecture\n\nBuild notes.\n",
-    "17-Infrastructure.md": "# Infra\n\napi_key = this_is_a_fake_secret_value_12345\n",
+    "Plan/01-Core-Principles.md": "---\ntags: [brain]\nstatus: active\n---\n# 01 - Core Principles\n\nFirst principle paragraph here.\n",
+    "Plan/02-Architecture.md": "# 02 - Architecture\n\nBuild notes.\n",
+    "Operations/17-Infrastructure.md": "# Infra\n\napi_key = this_is_a_fake_secret_value_12345\n",
     "Projects/rhinesolution.md": "# Project\n\ninternal\n",
-    "12-Backlog.md": "---\nstatus: archive\n---\n# Backlog\n\nold\n",
+    "Operations/12-Backlog.md": "---\nstatus: archive\n---\n# Backlog\n\nold\n",
+    "Archive/ADR-001-Nextjs-Supabase.md": "---\nstatus: archive\n---\n# ADR-001\n\nDecision made.\n",
     "Lessons-Learned.md": "# Lessons\n\nLearned a thing.\n",
   };
   for (const [name, body] of Object.entries(notes)) {
-    const dirOf = name.includes("/") ? join(vault, name.split("/")[0]) : vault;
-    writeFileSync(join(dirOf, name.split("/")[1] ?? name), body);
+    const path = join(vault, name);
+    mkdirSync(join(vault, name.split("/").slice(0, -1).join("/")), { recursive: true });
+    writeFileSync(path, body);
   }
   const out = join(dir, "brain-out");
   return { vault, out };
@@ -37,33 +42,37 @@ test("publishBrain publishes only the public set, grouped into folders", () => {
   assert.ok(existsSync(join(out, "plan", "01-Core-Principles.md")));
   assert.ok(existsSync(join(out, "journal", "Lessons-Learned.md")));
   assert.ok(!existsSync(join(out, "17-Infrastructure.md")));
-  assert.ok(skipped.some((s) => s.file === "17-Infrastructure.md"));
-  assert.ok(skipped.some((s) => s.file === "Projects/rhinesolution.md"));
+  assert.ok(skipped.some((s) => s.file === "Operations/17-Infrastructure.md"));
+  assert.ok(published.includes("rhinesolution"));
+  assert.ok(existsSync(join(out, "projects", "rhinesolution.md")));
 });
 
-test("publishBrain excludes notes with status: archive", () => {
+test("publishBrain publishes explicitly curated archive notes", () => {
   const { vault, out } = fixture();
   const { published } = publishBrain({ vault, out });
-  assert.ok(!published.includes("12-backlog"));
+  assert.ok(published.includes("12-backlog"));
+  assert.ok(published.includes("adr-001-nextjs-supabase"));
+  assert.ok(existsSync(join(out, "knowledge", "12-Backlog.md")));
+  assert.ok(existsSync(join(out, "archive", "ADR-001-Nextjs-Supabase.md")));
 });
 
 test("publishBrain fails closed on secret patterns", () => {
   const { vault, out } = fixture();
-  writeFileSync(join(vault, "02-Architecture.md"), "# 02\n\napi_key = this_is_a_fake_secret_value_54321\n");
+  writeFileSync(join(vault, "Plan", "02-Architecture.md"), "# 02\n\napi_key = this_is_a_fake_secret_value_54321\n");
   assert.throws(() => publishBrain({ vault, out }), /SECRET SCAN FAILED/i);
   const result = publishBrain({ vault, out, force: true });
-  assert.ok(result.skipped.some((s) => s.file === "02-Architecture.md" && s.reason.includes("secret")));
+  assert.ok(result.skipped.some((s) => s.file === "Plan/02-Architecture.md" && s.reason.includes("secret")));
 });
 
 test("publishBrain fails closed on bare 32-hex tokens", () => {
   const { vault, out } = fixture();
-  writeFileSync(join(vault, "02-Architecture.md"), `# 02\n\napi_key = ${"a".repeat(32)}\n`);
+  writeFileSync(join(vault, "Plan", "02-Architecture.md"), `# 02\n\napi_key = ${"a".repeat(32)}\n`);
   assert.throws(() => publishBrain({ vault, out }), /SECRET SCAN FAILED/i);
   const result = publishBrain({ vault, out, force: true });
-  assert.ok(result.skipped.some((s) => s.file === "02-Architecture.md" && s.reason.includes("secret")));
+  assert.ok(result.skipped.some((s) => s.file === "Plan/02-Architecture.md" && s.reason.includes("secret")));
 });
 
-test("manifest.json has folders + notes with slug/title/excerpt/folder", () => {
+test("manifest.json has folders + tree + notes with slug/title/excerpt/folder", () => {
   const { vault, out } = fixture();
   publishBrain({ vault, out, force: true });
   const manifest = JSON.parse(readFileSync(join(out, "manifest.json"), "utf8"));
@@ -72,6 +81,9 @@ test("manifest.json has folders + notes with slug/title/excerpt/folder", () => {
   assert.equal(manifest.notes["01-core-principles"].title, "01 - Core Principles");
   assert.ok(manifest.notes["01-core-principles"].excerpt.length > 0);
   assert.equal(manifest.notes["lessons-learned"].folder, "journal");
+  assert.ok(Array.isArray(manifest.tree));
+  assert.equal(manifest.tree[0].name, "Brain");
+  assert.ok(manifest.tree[0].folders.some((f) => f.name === "Projects" && f.notes.includes("rhinesolution")));
   assert.ok(existsSync(join(out, "README.md")));
   assert.match(readFileSync(join(out, "README.md"), "utf8"), /Generated by `npm run brain:publish`/);
 });

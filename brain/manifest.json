@@ -40,13 +40,106 @@
     {
       "id": "journal",
       "notes": [
+        "lessons-learned",
+        "daily-log"
+      ]
+    },
+    {
+      "id": "projects",
+      "notes": [
+        "rhinesolution"
+      ]
+    },
+    {
+      "id": "archive",
+      "notes": [
+        "adr-001-nextjs-supabase",
+        "fullstack",
+        "rhinesolution-decision",
+        "2026-08-10"
+      ]
+    }
+  ],
+  "tree": [
+    {
+      "name": "Brain",
+      "notes": [
         "lessons-learned"
+      ],
+      "folders": [
+        {
+          "name": "Archive",
+          "notes": [
+            "adr-001-nextjs-supabase",
+            "fullstack",
+            "rhinesolution-decision",
+            "2026-08-10"
+          ],
+          "folders": []
+        },
+        {
+          "name": "Build",
+          "notes": [
+            "03-backend",
+            "04-frontend",
+            "05-databases"
+          ],
+          "folders": []
+        },
+        {
+          "name": "Dailies",
+          "notes": [
+            "daily-log"
+          ],
+          "folders": []
+        },
+        {
+          "name": "Harden",
+          "notes": [
+            "06-security",
+            "07-testing"
+          ],
+          "folders": []
+        },
+        {
+          "name": "Operations",
+          "notes": [
+            "12-backlog",
+            "13-performance",
+            "14-monitoring"
+          ],
+          "folders": []
+        },
+        {
+          "name": "Plan",
+          "notes": [
+            "01-core-principles",
+            "02-architecture"
+          ],
+          "folders": []
+        },
+        {
+          "name": "Projects",
+          "notes": [
+            "rhinesolution"
+          ],
+          "folders": []
+        },
+        {
+          "name": "Ship",
+          "notes": [
+            "08-deployment-devops",
+            "09-code-review-production"
+          ],
+          "folders": []
+        }
       ]
     }
   ],
   "notes": {
     "01-core-principles": {
       "slug": "01-core-principles",
+      "source": "Plan/01-Core-Principles.md",
       "file": "plan/01-Core-Principles.md",
       "title": "01 - Core Principles",
       "folder": "plan",
@@ -55,6 +148,7 @@
     },
     "02-architecture": {
       "slug": "02-architecture",
+      "source": "Plan/02-Architecture.md",
       "file": "plan/02-Architecture.md",
       "title": "02 - Architecture",
       "folder": "plan",
@@ -63,6 +157,7 @@
     },
     "03-backend": {
       "slug": "03-backend",
+      "source": "Build/03-Backend.md",
       "file": "build/03-Backend.md",
       "title": "03 - Backend",
       "folder": "build",
@@ -71,6 +166,7 @@
     },
     "04-frontend": {
       "slug": "04-frontend",
+      "source": "Build/04-Frontend.md",
       "file": "build/04-Frontend.md",
       "title": "04 - Frontend",
       "folder": "build",
@@ -79,6 +175,7 @@
     },
     "05-databases": {
       "slug": "05-databases",
+      "source": "Build/05-Databases.md",
       "file": "build/05-Databases.md",
       "title": "05 - Databases",
       "folder": "build",
@@ -87,6 +184,7 @@
     },
     "06-security": {
       "slug": "06-security",
+      "source": "Harden/06-Security.md",
       "file": "harden/06-Security.md",
       "title": "06 - Security",
       "folder": "harden",
@@ -95,6 +193,7 @@
     },
     "07-testing": {
       "slug": "07-testing",
+      "source": "Harden/07-Testing.md",
       "file": "harden/07-Testing.md",
       "title": "07 - Testing",
       "folder": "harden",
@@ -103,6 +202,7 @@
     },
     "08-deployment-devops": {
       "slug": "08-deployment-devops",
+      "source": "Ship/08-Deployment-DevOps.md",
       "file": "ship/08-Deployment-DevOps.md",
       "title": "08 - Deployment & DevOps",
       "folder": "ship",
@@ -111,6 +211,7 @@
     },
     "09-code-review-production": {
       "slug": "09-code-review-production",
+      "source": "Ship/09-Code-Review-Production.md",
       "file": "ship/09-Code-Review-Production.md",
       "title": "09 - Code Review & Production Readiness",
       "folder": "ship",
@@ -119,6 +220,7 @@
     },
     "12-backlog": {
       "slug": "12-backlog",
+      "source": "Operations/12-Backlog.md",
       "file": "knowledge/12-Backlog.md",
       "title": "12 - Backlog",
       "folder": "knowledge",
@@ -127,6 +229,7 @@
     },
     "13-performance": {
       "slug": "13-performance",
+      "source": "Operations/13-Performance.md",
       "file": "knowledge/13-Performance.md",
       "title": "13 - Performance",
       "folder": "knowledge",
@@ -135,6 +238,7 @@
     },
     "14-monitoring": {
       "slug": "14-monitoring",
+      "source": "Operations/14-Monitoring.md",
       "file": "knowledge/14-Monitoring.md",
       "title": "14 - Monitoring",
       "folder": "knowledge",
@@ -143,11 +247,66 @@
     },
     "lessons-learned": {
       "slug": "lessons-learned",
+      "source": "Lessons-Learned.md",
       "file": "journal/Lessons-Learned.md",
       "title": "Lessons Learned",
       "folder": "journal",
       "excerpt": "Addendum: PowerShell \\Add-Content\\ (PS 5.1) also writes non-ASCII as ANSI (e.g. \\··\\ -> lone 0xB7, invalid UTF-8). Always write notes via Node \\writeFileSync(ut",
       "order": 13
+    },
+    "daily-log": {
+      "slug": "daily-log",
+      "source": "Dailies/Daily log.md",
+      "file": "journal/Daily log.md",
+      "title": "Daily log",
+      "folder": "journal",
+      "excerpt": "Day-to-day notes. Use the  template. Roll lessons into [[Lessons-Learned]] weekly.",
+      "order": 14
+    },
+    "rhinesolution": {
+      "slug": "rhinesolution",
+      "source": "Projects/rhinesolution.md",
+      "file": "projects/rhinesolution.md",
+      "title": "Project: Rhine Solution",
+      "folder": "projects",
+      "excerpt": "C:/Users/teoal/Projects/projects/rhinesolution-website",
+      "order": 15
+    },
+    "adr-001-nextjs-supabase": {
+      "slug": "adr-001-nextjs-supabase",
+      "source": "Archive/ADR-001-Nextjs-Supabase.md",
+      "file": "archive/ADR-001-Nextjs-Supabase.md",
+      "title": "ADR-001: Next.js App Router + Supabase for the fullstack app",
+      "folder": "archive",
+      "excerpt": "accepted",
+      "order": 16
+    },
+    "fullstack": {
+      "slug": "fullstack",
+      "source": "Archive/fullstack.md",
+      "file": "archive/fullstack.md",
+      "title": "Project: fullstack",
+      "folder": "archive",
+      "excerpt": "~/Projects/fullstack",
+      "order": 17
+    },
+    "rhinesolution-decision": {
+      "slug": "rhinesolution-decision",
+      "source": "Archive/rhinesolution-decision.md",
+      "file": "archive/rhinesolution-decision.md",
+      "title": "rhinesolution.com â€” direction proposal",
+      "folder": "archive",
+      "excerpt": "What should rhinesolution.com be? (User said \"don't have idea\" â€” current state: static placeholder.)",
+      "order": 18
+    },
+    "2026-08-10": {
+      "slug": "2026-08-10",
+      "source": "Archive/2026-08-10.md",
+      "file": "archive/2026-08-10.md",
+      "title": "2026-08-10",
+      "folder": "archive",
+      "excerpt": "",
+      "order": 19
     }
   }
 }

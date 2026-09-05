@@ -12,6 +12,34 @@ export function slugify(name) {
 
 const base = (file) => file.split("/").pop();
 
+// Build a nested file tree from source paths, e.g. "Plan/01-Core-Principles.md" -> { name: "Plan", notes: [...] }.
+function buildTree(sourceFiles, notes) {
+  const root = { name: "Brain", notes: [], folders: [] };
+  const index = new Map();
+  for (const file of sourceFiles) {
+    const slug = slugify(base(file));
+    const parts = file.split("/").filter(Boolean);
+    const dirs = parts.slice(0, -1);
+    let node = root;
+    for (const dir of dirs) {
+      const key = `${node.name}/${dir}`;
+      if (!index.has(key)) {
+        const child = { name: dir, notes: [], folders: [] };
+        node.folders.push(child);
+        index.set(key, child);
+      }
+      node = index.get(key);
+    }
+    if (notes[slug]) node.notes.push(slug);
+  }
+  const sortFolders = (n) => {
+    n.folders.sort((a, b) => a.name.localeCompare(b.name));
+    n.folders.forEach(sortFolders);
+    return n;
+  };
+  return [sortFolders(root)];
+}
+
 const FOLDERS = {
   "Plan/01-Core-Principles.md": "plan",
   "Plan/02-Architecture.md": "plan",
@@ -26,11 +54,17 @@ const FOLDERS = {
   "Operations/13-Performance.md": "knowledge",
   "Operations/14-Monitoring.md": "knowledge",
   "Lessons-Learned.md": "journal",
+  "Dailies/Daily log.md": "journal",
+  "Projects/rhinesolution.md": "projects",
+  "Archive/ADR-001-Nextjs-Supabase.md": "archive",
+  "Archive/fullstack.md": "archive",
+  "Archive/rhinesolution-decision.md": "archive",
+  "Archive/2026-08-10.md": "archive",
 };
 
 const PRIVATE_FILES = [
   "Operations/17-Infrastructure.md", "AI/10-AI-Assisted-Development.md", "AI/11-Opencode-Integrations.md",
-  "AI/16-Token-Efficiency.md", "Projects/rhinesolution.md", "Workspace.md",
+  "AI/16-Token-Efficiency.md", "Archive/private-tooling-and-ops-notes.md", "Workspace.md",
   "Session-Start-rhinesolution.md", "Obsidian-Setup.md", "Inbox.md",
   "Hypotheses.md", "Sources.md", "Home.md",
 ];
@@ -133,11 +167,7 @@ export function publishBrain({ vault, out, force = false }) {
     const src = join(vault, file);
     if (!existsSync(src)) continue;
     const raw = readFileSync(src, "utf8");
-    const { data, body: rawBody, raw: rawFront } = parseFrontmatter(raw);
-    if (String(data.status || "").trim() === "archive") {
-      skipped.push({ file, reason: "status: archive" });
-      continue;
-    }
+    const { body: rawBody, raw: rawFront } = parseFrontmatter(raw);
     const hit = SECRET_PATTERNS.find((re) => re.test(raw));
     if (hit) {
       blocked.push({ file, reason: `secret pattern: ${hit}` });
@@ -169,6 +199,7 @@ export function publishBrain({ vault, out, force = false }) {
     const file = Object.keys(FOLDERS).find((f) => slugify(base(f)) === slug);
     notes[slug] = {
       slug,
+      source: file,
       file: `${folder}/${base(file)}`,
       title: extractTitle(body),
       folder,
@@ -177,7 +208,7 @@ export function publishBrain({ vault, out, force = false }) {
     };
   }
 
-  const folderOrder = ["plan", "build", "harden", "ship", "knowledge", "journal"];
+  const folderOrder = ["plan", "build", "harden", "ship", "knowledge", "journal", "projects", "archive"];
   const folders = folderOrder.map((id) => ({
     id,
     notes: Object.values(notes)
@@ -186,8 +217,11 @@ export function publishBrain({ vault, out, force = false }) {
       .map((n) => n.slug),
   }));
 
+  // Source-shaped file tree (mirrors the vault structure under Brain/).
+  const tree = buildTree(Object.keys(FOLDERS), notes);
+
   mkdirSync(out, { recursive: true });
-  writeFileSync(join(out, "manifest.json"), JSON.stringify({ folders, notes }, null, 2));
+  writeFileSync(join(out, "manifest.json"), JSON.stringify({ folders, tree, notes }, null, 2));
   writeFileSync(
     join(out, "README.md"),
     [
