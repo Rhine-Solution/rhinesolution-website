@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import ChatWidget from "@/components/ChatWidget";
 import JsonLd, { breadcrumbJsonLd } from "@/components/JsonLd";
 import { getContent, defaultLocale } from "@/lib/i18n";
 import { getCompanySocials } from "@/lib/socials";
@@ -65,6 +66,7 @@ export default function DfirIndexPage() {
           ))}
         </div>
       </main>
+      <ChatWidget />
       <Footer locale="en" brand={content.brand.name} tagline={content.footer_columns.brand_tagline} navLabels={content.nav} footerColumns={content.footer_columns} socials={getCompanySocials(content)} socialHeading={content.footer.social_heading} />
     </>
   );
