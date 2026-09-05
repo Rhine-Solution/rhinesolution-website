@@ -1,7 +1,13 @@
 import { NEWS_FEEDS } from "./news-feeds";
 import { parseRss, pickTop } from "../../scripts/news-trends-core.mjs";
 
-export type TrendItem = { title: string; link: string; date: string; source: string };
+export type TrendItem = {
+  title: string;
+  link: string;
+  date: string;
+  source: string;
+  excerpt: string;
+};
 
 export async function getDevTrends(limit = 5): Promise<TrendItem[]> {
   const results = await Promise.allSettled(

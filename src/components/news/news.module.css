@@ -1,6 +1,6 @@
 .card {
   display: grid;
-  gap: var(--space-2);
+  gap: var(--space-3);
 }
 .cardMeta {
   display: flex;
@@ -24,25 +24,17 @@
   color: var(--color-blue-soft);
   line-height: 1.4;
 }
-.cardTitle a {
-  color: var(--color-text);
-  text-decoration: none;
-}
-.cardTitle a:hover {
-  color: var(--color-blue-soft);
+.cardTitle {
+  font-size: 1.5rem;
+  margin: 0;
 }
 .cardExcerpt {
   color: var(--color-text-muted);
-  margin-bottom: 0;
+  font-size: 1.05rem;
+  margin: 0;
 }
-.cardMore {
-  font-size: 0.85rem;
-  color: var(--color-blue-soft);
-  text-decoration: none;
-  width: fit-content;
-}
-.cardMore:hover {
-  text-decoration: underline;
+.cardBody {
+  max-width: 72ch;
 }
 
 .trends {
@@ -60,29 +52,36 @@
 .trendsList {
   list-style: none;
   display: grid;
-  gap: var(--space-2);
+  gap: var(--space-4);
   margin: 0;
   padding: 0;
 }
 .trendsItem {
-  display: flex;
-  align-items: baseline;
-  gap: var(--space-2);
-  flex-wrap: wrap;
+  display: grid;
+  gap: var(--space-1);
+  padding-bottom: var(--space-3);
+  border-bottom: 1px solid color-mix(in srgb, var(--color-text-muted) 18%, transparent);
 }
-.trendsItem a {
+.trendsItem:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+.trendsHeadline {
+  font-size: 1.1rem;
+  margin: 0;
   color: var(--color-text);
-  text-decoration: none;
 }
-.trendsItem a:hover {
-  color: var(--color-blue-soft);
+.trendsExcerpt {
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  margin: 0;
 }
 .trendsSource {
   color: var(--color-text-muted);
   font-size: 0.72rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  white-space: nowrap;
+  width: fit-content;
 }
 
 .article {

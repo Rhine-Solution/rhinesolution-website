@@ -2,6 +2,38 @@ import { XMLParser } from "fast-xml-parser";
 
 const parser = new XMLParser({ ignoreAttributes: false });
 
+function decodeEntities(s) {
+  return String(s)
+    .replace(/&amp;/g, "&")
+    .replace(/&lt;/g, "<")
+    .replace(/&gt;/g, ">")
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;|&apos;/g, "'")
+    .replace(/&nbsp;/g, " ");
+}
+
+export function stripHtml(s) {
+  return String(s)
+    .replace(/<[^>]*>/g, " ")
+    .replace(/\s+/g, " ")
+    .replace(/\s+([.,!?;:'"])/g, "$1")
+    .trim();
+}
+
+export function truncate(s, max = 180) {
+  const text = String(s);
+  if (text.length <= max) return text;
+  const cut = text.slice(0, max).replace(/\s+\S*$/, "");
+  return (cut.length ? cut : text.slice(0, max)) + "…";
+}
+
+export function excerptFrom(raw, max = 180) {
+  const text = decodeEntities(stripHtml(raw || ""));
+  if (!text) return "";
+  if (!text.includes(" ") && text.length < 24) return "";
+  return truncate(text, max);
+}
+
 export function parseRss(xml) {
   const doc = parser.parse(xml);
   const rssItems = doc?.rss?.channel?.item;
@@ -14,6 +46,7 @@ export function parseRss(xml) {
       title: String(it.title || "").trim(),
       link: String(it.link || "").trim(),
       date: String(it.pubDate || "").trim(),
+      excerpt: excerptFrom(it.description),
     });
   }
   for (const it of rawAtom) {
@@ -31,6 +64,7 @@ export function parseRss(xml) {
       title: String(it.title || "").trim(),
       link,
       date: String(it.updated || it.published || "").trim(),
+      excerpt: excerptFrom(it.summary),
     });
   }
   return items.filter((i) => i.title && i.link);
@@ -50,7 +84,7 @@ export function pickTop(items, { limit = 5, maxPerSource = 2 } = {}) {
     if (counts.get(src) >= maxPerSource) continue;
     seen.add(key);
     counts.set(src, (counts.get(src) || 0) + 1);
-    out.push({ title: it.title, link: it.link, date: it.date, source: src });
+    out.push({ title: it.title, link: it.link, date: it.date, source: src, excerpt: it.excerpt || "" });
     if (out.length >= limit) break;
   }
   return out;

@@ -46,7 +46,7 @@ export default async function NewsPage({ params }: Props) {
         <ol className="news-list">
           {items.map((item) => (
             <li key={item.slug} className="news-card">
-              <NewsCard item={item} locale={locale} labels={n.categories} readMore={n.read_more} />
+              <NewsCard item={item} labels={n.categories} />
             </li>
           ))}
         </ol>

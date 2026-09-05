@@ -12,10 +12,9 @@ export default function TrendsSection({ title, subtitle, trends }: Props) {
       <ol className={styles.trendsList}>
         {trends.map((t) => (
           <li key={`${t.source}·${t.title}`} className={styles.trendsItem}>
-            <a href={t.link} target="_blank" rel="noreferrer noopener">
-              {t.title}
-            </a>
-            <span className={styles.trendsSource}>{t.source}</span>
+            <h3 className={styles.trendsHeadline}>{t.title}</h3>
+            {t.excerpt && <p className={styles.trendsExcerpt}>{t.excerpt}</p>}
+            <span className={styles.trendsSource}>via {t.source}</span>
           </li>
         ))}
       </ol>
