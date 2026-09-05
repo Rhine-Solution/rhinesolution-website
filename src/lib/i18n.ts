@@ -1,7 +1,12 @@
 import en from "../../content/en.json";
 import nl from "../../content/nl.json";
+import de from "../../content/de.json";
+import fr from "../../content/fr.json";
+import es from "../../content/es.json";
+import it from "../../content/it.json";
+import zh from "../../content/zh.json";
 
-export const locales = ["en", "nl"] as const;
+export const locales = ["en", "nl", "de", "fr", "es", "it", "zh"] as const;
 export type Locale = (typeof locales)[number];
 export const defaultLocale: Locale = "en";
 
@@ -9,7 +14,7 @@ export function isLocale(value: string): value is Locale {
   return (locales as readonly string[]).includes(value);
 }
 
-const contentByLocale: Record<Locale, typeof en> = { en, nl };
+const contentByLocale: Record<Locale, typeof en> = { en, nl, de, fr, es, it, zh };
 
 export function getContent(locale: string): typeof en {
   return isLocale(locale) ? contentByLocale[locale] : contentByLocale[defaultLocale];

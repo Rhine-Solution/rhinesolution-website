@@ -114,7 +114,7 @@
     "featured": [
       {
         "title": "Cybercrime and Cybersecurity Report",
-        "href": "/dfir/cybercrime-report",
+        "href": "/nl/dfir/cybercrime-report",
         "meta": "Cyber Security · K1352",
         "summary": "Keuzedeel K1352 onderzoeksrapport: hoe het internet vanaf nul werkt, wat cybercrime is, hoe groot het probleem is en hoe je jezelf beschermt."
       }
@@ -337,7 +337,12 @@
     "language_switcher": "Wissel van taal",
     "language_names": {
       "en": "English",
-      "nl": "Nederlands"
+      "nl": "Nederlands",
+      "de": "Deutsch",
+      "fr": "Français",
+      "es": "Español",
+      "it": "Italiano",
+      "zh": "中文"
     }
   },
   "sections": {
@@ -461,6 +466,295 @@
           "E-mail: Resend (EU + VS, DPF-gecertificeerd)."
         ]
       }
+    }
+  },
+  "dfir": {
+    "cybercrime_report": {
+      "meta_title": "Rapport cybercriminaliteit en cyberveiligheid",
+      "meta_description": "Keuzedeel K1352-onderzoeksrapport: hoe het internet werkt, wat cybercriminaliteit is, de omvang van het probleem en hoe je je ertegen beschermt.",
+      "eyebrow": "RAGNAROK · Cyber Security",
+      "title": "Rapport cybercriminaliteit en cyberveiligheid",
+      "lead": "Keuzedeel K1352-onderzoeksrapport. Hoe het internet vanaf nul werkt, wat cybercriminaliteit is, hoe groot het probleem werkelijk is, wie het pleegt en waarom, en wat mensen en organisaties kunnen doen om zichzelf te beschermen.",
+      "meta": {
+        "course_label": "Cursus",
+        "course_value": "K1352 · Basis cybercriminaliteit en cyberveiligheid",
+        "title_label": "Titel",
+        "title_value": "Cybercriminaliteit en cyberveiligheid",
+        "language_label": "Taal",
+        "language_value": "Nederlands",
+        "date_label": "Rapportdatum",
+        "date_value": "Sep 2026"
+      },
+      "executive_summary_heading": "Samenvatting",
+      "executive_summary": "Bijna alles wat we vandaag de dag doen, heeft met het internet te maken, en toch is het internet niet zomaar iets dat er is. Het is een fysiek netwerk van kabels, routers, datacenters en apparaten. En waar mensen samenkomen, is er ook misdaad. Dit rapport legt de reis uit die data aflegt van een apparaat naar de onderzeese kabels onder de oceaan, kijkt vervolgens naar wat cybercriminaliteit is, de belangrijkste soorten, de omvang van het probleem met echte cijfers, wie het pleegt en waarom, waar het vandaan komt, hoe het publiek reageert, en tot slot hoe je je ertegen beschermt.",
+      "sections": [
+        {
+          "heading": "1 · Het internet vanaf nul",
+          "subsections": [
+            {
+              "heading": "1.1 Wat het internet is",
+              "paragraphs": [
+                "Het internet is een enorm netwerk van computers die informatie uitwisselen. Wanneer een telefoon, laptop of smart-tv online is, wordt die onderdeel van dat netwerk. Een handige metafoor is een wegennet: lokale wegen (het thuisnetwerk), snelwegen (het netwerk van de provider) en internationale routes (de kabels onder de oceaan). Data reist als auto's, en als één weg geblokkeerd is, wordt de data via een andere route omgeleid; daarom valt het internet zelden volledig stil.",
+                "Het internet en het World Wide Web zijn niet hetzelfde. Het internet is het fysieke netwerk met zijn regels; het web is slechts één dienst erop, de dienst die browsers gebruiken voor websites. E-mail, gaming en streaming zijn andere diensten die ook op het internet draaien."
+              ]
+            },
+            {
+              "heading": "1.2 De reis van een bericht",
+              "paragraphs": [
+                "Een foto naar een vriend aan de andere kant van de wereld sturen verloopt in stappen. Het bericht reist nooit als één geheel:"
+              ],
+              "steps": [
+                { "step": 1, "title": "Jouw apparaat", "body": "Het apparaat splitst het bericht (een foto, een e-mail) op in kleine stukjes die pakketten heten. Elk pakket is als een brief in een envelop, met headerinformatie die laat zien waar het vandaan komt en waar het naartoe gaat." },
+                { "step": 2, "title": "Radiogolven naar de router", "body": "Via wifi verlaten de pakketten het apparaat als radiogolven en komen ze bij de router aan. Bij mobiele data gaan ze in plaats daarvan naar een nabijgelegen zendmast." },
+                { "step": 3, "title": "Router naar modem", "body": "De router is de verkeersmanager van het thuisnetwerk. Het modem is de vertaler: het zet de signalen om in een vorm die over de kabels van de provider kan reizen." },
+                { "step": 4, "title": "Het netwerk van de ISP", "body": "Het modem stuurt de data via coax- of glasvezelkabels naar de internetprovider (ISP), die voor de pakketten de meest efficiënte route kiest." },
+                { "step": 5, "title": "Regionale hubs", "body": "De data komt aan bij grote datacenters die verkeer tussen netwerken uitwisselen. Deze hubs zijn verbonden met de backbone van het internet." },
+                { "step": 6, "title": "Onderzeese kabels", "body": "Voor data die continenten oversteekt, bevat de backbone enorme kabels op de oceaanbodem, die door speciale schepen worden gelegd en gerepareerd. Data reist erdoorheen als lichtpulsen in dunne glasvezels." },
+                { "step": 7, "title": "Bestemming", "body": "De pakketten bereiken de andere kant, worden in de juiste volgorde weer in elkaar gezet, en het apparaat van de ontvanger toont het bericht." }
+              ],
+              "note": "Elk bericht reist dus door een mix van radiogolven, koperdraden, glasvezels en onderzeese kabels. Het voelt voor ons alleen maar draadloos."
+            },
+            {
+              "heading": "1.3 Pakketten, IP-adressen en protocollen",
+              "paragraphs": [
+                "Twee dingen maken dit allemaal mogelijk: pakketten en protocollen."
+              ],
+              "protocols": [
+                { "term": "Binair", "body": "In een apparaat wordt alle informatie opgeslagen als enen en nullen. Het apparaat vertaalt die naar radiogolven of elektrische signalen om ze te versturen." },
+                { "term": "IP-adres", "body": "Elk apparaat krijgt een uniek nummer, zoals een postadres. Routers gebruiken het om elk pakket naar de juiste plaats door te sturen." },
+                { "term": "TCP", "body": "TCP (Transmission Control Protocol) zorgt ervoor dat pakketten in de juiste volgorde aankomen en dat er niets ontbreekt. De ontvanger bevestigt elk pakket en ontbrekende pakketten worden opnieuw verzonden." },
+                { "term": "DNS", "body": "Het Domain Name System is het telefoonboek van het internet. Het vertaalt namen zoals www.example.com naar het IP-adres dat een computer daadwerkelijk nodig heeft." },
+                { "term": "Servers", "body": "Websites, apps en bestanden leven op servers, krachtige computers die online blijven. Wanneer je een pagina bezoekt, vraagt je apparaat de server om deze te sturen, en die komt terug als pakketten." }
+              ]
+            },
+            {
+              "heading": "1.4 Verschillende manieren om verbinding te maken",
+              "table": {
+                "caption": "Vergelijking van verbindingstypen",
+                "rows": [
+                  ["Verbinding", "Hoe het werkt", "Sterke punten", "Zwakke punten"],
+                  ["Kabel", "Maakt gebruik van dezelfde coaxkabels als kabel-tv; een modem zet het signaal om.", "Snel (tot 1 Gbps) en overal beschikbaar.", "Upload is traag; buren delen de verbinding, waardoor de snelheid 's avonds daalt."],
+                  ["Glasvezel", "Verstuurt data als lichtpulsen door glasvezels.", "Snelste optie (tot 10 Gbps), gelijke upload/download, weinig signaalverlies.", "Niet overal beschikbaar; het aanleggen van nieuwe glasvezel is duur."],
+                  ["DSL", "Maakt gebruik van de bestaande koperen telefoonlijnen.", "Zeer wijdverbreid beschikbaar en blokkeert de telefoonlijn niet.", "Trager; de snelheid hangt af van de afstand tot de centrale van de provider."],
+                  ["Satelliet", "Stuurt data van satellieten in een baan om de aarde naar een schotel bij je thuis.", "Werkt vrijwel overal, wat helpt in landelijke gebieden.", "Hoge latentie omdat data naar de ruimte en terug reist; stormen verstoren de verbinding."],
+                  ["Vast draadloos", "Radiosignalen tussen een basisstation en een antenne bij het huis.", "Geschikt voor gebieden zonder kabels; lagere latentie dan satelliet.", "Bomen, gebouwen en weer kunnen het signaal verzwakken."],
+                  ["5G-thuis", "Maakt gebruik van mobiele netwerken om een huishouden te verbinden.", "Snel te installeren zonder graafwerk; hoge snelheden en lage latentie.", "De dekking is nog beperkt en hangt af van afstand en drukte."]
+                ]
+              },
+              "note": "Eén terugkerend thema: uploadsnelheden, gedeelde bandbreedte en landelijke dekking zijn de zwakke punten van vrijwel elke technologie."
+            },
+            {
+              "heading": "1.5 De last mile",
+              "paragraphs": [
+                "Het laatste stuk van het netwerk van de provider naar het huis wordt de last mile genoemd. Het is het duurst om aan te leggen, en daarom krijgen steden glasvezel terwijl landelijke en arme gebieden het met tragere verbindingen moeten doen, of helemaal geen verbinding hebben. Nieuwere technologieën zoals microgolfverbindingen en 5G helpen het gat te dichten, maar basisinternettoegang is in veel delen van de wereld nog steeds een probleem."
+              ],
+              "figure": {
+                "src": "/dfir/a-brief-history-of-the-internet-graphic-768x1296.jpg",
+                "alt": "Infographic: een korte geschiedenis van het internet",
+                "caption": "Figuur 1 · Een korte geschiedenis van het internet (infographic van BroadbandNow)."
+              }
+            }
+          ]
+        },
+        {
+          "heading": "2 · Wat is cybercriminaliteit",
+          "subsections": [
+            {
+              "heading": "",
+              "paragraphs": [
+                "Cybercriminaliteit is criminaliteit waarbij computers, het internet of andere digitale technologie betrokken is. Het kan gericht zijn op individuen, bedrijven of overheden, en het kan financiële schade, reputatieschade of psychische schade veroorzaken. Definities verschillen per land, waardoor het moeilijk te meten is, maar experts verdelen cybercriminaliteit meestal in twee groepen:"
+              ],
+              "bullets": [
+                { "strong": "Cyberafhankelijke criminaliteit:", "body": "misdrijven die alleen kunnen bestaan dankzij computers en netwerken. Hacking, DDoS-aanvallen, malware. Zonder het internet zouden deze misdrijven niet bestaan." },
+                { "strong": "Cybervergemakkelijkte criminaliteit:", "body": "traditionele misdrijven die online zijn verplaatst of makkelijker zijn geworden. Online fraude, phishing, digitale piraterij, cyberpesten. Ze bestonden al eerder, maar het internet stelt criminelen in staat ze sneller, goedkoper en bij meer slachtoffers tegelijk te plegen." }
+              ],
+              "paragraphs_after": [
+                "Criminoloog David Wall beschrijft vier categorieën cybercriminaliteit: cyber trespass (binnendringen in systemen waar je niet mag komen), cyber deception of theft (online stelen, zoals creditcardgegevens), cyber pornography of obscenity (online verspreiden van seksueel materiaal) en cyber violence (het veroorzaken van emotionele of psychologische schade, zoals cyberstalking. Het slachtoffer wordt misschien niet fysiek gekwetst, maar kan blijvende schade oplopen)."
+              ]
+            }
+          ]
+        },
+        {
+          "heading": "3 · Soorten cybercriminaliteit",
+          "subsections": [
+            {
+              "heading": "",
+              "paragraphs": [
+                "De meest voorkomende soorten cybercriminaliteit zijn:"
+              ],
+              "table": {
+                "caption": "Overzicht van soorten cybercriminaliteit",
+                "rows": [
+                  ["Type", "Omschrijving"],
+                  ["Hacking", "Zonder toestemming binnendringen in een computersysteem, voor persoonlijk gewin of om schade te veroorzaken."],
+                  ["Phishing", "Nep-e-mails of berichten die lijken te komen van een echt bedrijf (zoals een bank), bedoeld om mensen te verleiden tot het weggeven van wachtwoorden of persoonlijke gegevens."],
+                  ["Ransomware", "Kwaadaardige software die je bestanden vergrendelt en geld eist om ze terug te geven. De WannaCry-aanval in 2017 is een bekend voorbeeld."],
+                  ["DDoS-aanvallen", "Een website of dienst overspoelen met zoveel verkeer dat hij uitvalt, vaak via netwerken van geïnfecteerde computers (botnets)."],
+                  ["Identiteitsdiefstal", "Persoonlijke gegevens stelen om fraude te plegen, bijvoorbeeld door rekeningen te openen of leningen af te sluiten op naam van het slachtoffer."],
+                  ["Cyberstalking", "Iemand herhaaldelijk volgen, bedreigen of intimideren via het internet."],
+                  ["Digitale piraterij", "Beschermde content downloaden of delen, films, muziek, software, zonder toestemming."],
+                  ["Cyber-afpersing", "Een systeem of e-mailserver hacken en geld eisen om het terug te geven of de gegevens geheim te houden."],
+                  ["Cyberterrorisme", "Overheidssystemen of grote organisaties hacken om politieke doelen na te streven en angst te zaaien."],
+                  ["Witwassen", "Illegaal verdiend geld via het internet en digitaal bankieren witwassen zodat het legaal lijkt."],
+                  ["Online kinderlokking (grooming)", "Een emotionele band opbouwen met een kind online, vaak om het kind te misbruiken of te verhandelen."]
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "heading": "4 · De omvang van het probleem",
+          "subsections": [
+            {
+              "heading": "",
+              "paragraphs": [
+                "Cybercriminaliteit is geen klein probleem. De cijfers zijn enorm en blijven groeien:"
+              ],
+              "table": {
+                "caption": "Belangrijkste feiten en cijfers",
+                "rows": [
+                  ["Feit", "Cijfer / Bron"],
+                  ["Wereldwijde kosten van cybercriminaliteit in 2024", "Ongeveer $9.5 biljoen per jaar, naar verwachting in 2025 nog eens 15% hoger (Cybersecurity Ventures)."],
+                  ["WannaCry-ransomware-aanval (2017)", "Besmette 230.000+ computers in 150 landen; ruim $4 miljard aan economische schade."],
+                  ["Internetgebruikers in 2005", "Ongeveer 1 miljard mensen (16% van de wereldbevolking)."],
+                  ["Internetgebruikers in 2023", "Ongeveer 5,4 miljard mensen (67% van de wereldbevolking)."],
+                  ["Internetgebruik onder volwassenen", "Gegroeid van ongeveer 52% (2000) naar ongeveer 96% (2024)."],
+                  ["Directe economische bijdrage van het internet", "Ongeveer $175 miljard per jaar aan advertenties, online retail en betalingen aan ISP's; spin-off-effect ongeveer $444 miljard."]
+                ]
+              },
+              "note": "Internetgroei betekent ook meer potentiële slachtoffers: van ongeveer 1 miljard mensen online in 2005 tot ruwweg 5,4 miljard in 2023. Cybercriminaliteit is voor criminelen feitelijk een biljoenenindustrie, en vrijwel iedereen die verbonden is, is een potentieel doelwit."
+            }
+          ]
+        },
+        {
+          "heading": "5 · Wie pleegt cybercriminaliteit en waarom",
+          "subsections": [
+            {
+              "heading": "5.1 Sociale en economische drijfveren",
+              "paragraphs": [
+                "Een onderzoek uit 2023 dat cybercriminaliteit wereldwijd in kaart bracht, vond dat deze sterk samenhangt met de ontwikkeling van een land. Betere internetinfrastructuur, hogere opleidingsniveaus en meer internetgebruikers betekenen allemaal meer cybercriminaliteit, omdat criminelen betere hulpmiddelen en meer doelwitten hebben. Tegelijkertijd duwen armoede, werkloosheid en inkomensongelijkheid mensen in armere regio's richting cybercriminaliteit als een manier om geld te verdienen, bijvoorbeeld jongeren in delen van West-Afrika die zich tot online fraude wenden omdat ze geen ander werk kunnen vinden. Politiek doet er ook toe: zwakke wetshandhaving, veel corruptie en weinig internationale politiesamenwerking maken het gemakkelijker voor criminelen om ongestraft te opereren."
+              ]
+            },
+            {
+              "heading": "5.2 Criminologische verklaringen",
+              "table": {
+                "caption": "Drie theorieën die cybercriminaliteit verklaren",
+                "rows": [
+                  ["Theorie", "Kernidee", "Hoe het cybercriminaliteit verklaart"],
+                  ["Algemene crimetheorie (lage zelfbeheersing)", "Sommige mensen handelen impulsief, nemen risico's en willen snelle beloningen zonder na te denken over de gevolgen.", "Cybercriminaliteit biedt snel geld, en het internet stelt criminelen in staat te handelen zonder de schade te zien. Onderzoeken leggen consequent een verband tussen lage zelfbeheersing en cybercriminaliteit."],
+                  ["Sociale leertheorie", "Criminaliteit wordt van anderen geleerd. Gedrag wordt gekopieerd wanneer het lijkt te werken.", "Als vrienden of online gemeenschappen hacken of piraterij goedkeuren, is de kans groter dat mensen het ook doen, vooral wanneer het ongestraft lijkt te blijven."],
+                  ["Routineactiviteitentheorie", "Criminaliteit ontstaat wanneer een gemotiveerde dader, een geschikt doelwit en het ontbreken van een capabele beschermer samenkomen.", "Online maken zwakke wachtwoorden, klikken op phishing-links en verouderde software je een geschikt doelwit. Beveiligingssoftware en zorgvuldige gewoontes zijn de beschermer."]
+                ]
+              }
+            },
+            {
+              "heading": "5.3 Typen hackers",
+              "paragraphs": [
+                "Niet elke hacker heeft dezelfde motivatie:"
+              ],
+              "bullets": [
+                { "strong": "Cyber-utopisten", "body": "mensen die kwaadaardige dingen doen maar geloven dat ze voor het algemeen belang handelen." },
+                { "strong": "Cyberpunks", "body": "hackers die instellingen aanvallen die ze aanstootgevend vinden, vaak gewoon voor de lol of om een punt te maken." },
+                { "strong": "Cyber-spionnen en cyberterroristen", "body": "hoogopgeleide aanvallers met extreme motieven, vaak werkend voor staten of politieke doelen." }
+              ]
+            }
+          ]
+        },
+        {
+          "heading": "6 · Waar cybercriminaliteit vandaan komt",
+          "subsections": [
+            {
+              "heading": "",
+              "paragraphs": [
+                "Omdat het internet geen grenzen kent, is het moeilijk te zeggen waar een cybercrimineel zich precies bevindt. Criminelen verbergen zich met VPN's, proxies, of door aan te vallen via geïnfecteerde computers in andere landen. Toch hebben onderzoekers de IP-adressen in kaart gebracht die bekendstaan om kwaadaardige activiteiten. De meeste bevinden zich in Noord-Amerika, Centraal- en Oost-Europa, Oost-Azië, India en Oost-Australië. Op continentaal niveau herbergen Noord-Amerika en Europa de meeste, en huisvesten regio's met hoge inkomens de meerderheid van de kwaadaardige IP-adressen. Met andere woorden: de rijkste, best verbonden landen zijn zowel de grootste doelwitten als de grootste bronlocaties van cybercriminele infrastructuur."
+              ],
+              "figure": {
+                "src": "/dfir/top-20-countries-malicious-programs-2014.png",
+                "alt": "Top 20 landen blootgesteld aan externe aanvallen door schadelijke programma's in 2014",
+                "caption": "Figuur 2 · Top 20 landen blootgesteld aan externe aanvallen door schadelijke programma's in 2014 (bron: ResearchGate)."
+              },
+              "note": "Belangrijke nuance: deze op IP gebaseerde kaarten laten zien waar aanvallen vandaan komen, niet noodzakelijkerwijs waar de criminelen wonen. Een crimineel in het ene land kan gemakkelijk aanvallen vanaf servers in een ander land, en dat is precies waarom de bestrijding van cybercriminaliteit voor de politie zo moeilijk is."
+            }
+          ]
+        },
+        {
+          "heading": "7 · Hoe mensen reageren op cybercriminaliteit",
+          "subsections": [
+            {
+              "heading": "",
+              "paragraphs": [
+                "Cybercriminaliteit kost geld, maar het raakt mensen ook emotioneel. Een onderzoek uit 2025 analyseerde meer dan 6,700 berichten en 100,000 reacties over cybercriminaliteit op Reddit, verspreid over 14 jaar (2008-2022). De bevindingen:"
+              ],
+              "bullets": [
+                { "strong": "", "body": "De grootste discussies werden aangewakkerd door datalekken, cyberaanvallen, ransomware en hacking die aan landen werd gekoppeld (staatshacking door Rusland of China)." },
+                { "strong": "Boosheid", "body": "was de meest voorkomende emotie, gericht op privacyschendingen, bedrijven die data niet beschermden en overheden die bedreigingen slecht afhandelden." },
+                { "strong": "Sarcasme", "body": "was de tweede meest voorkomende reactie, vooral gericht op officiële verhalen en ineffectieve beveiligingsmaatregelen." },
+                { "strong": "Angst", "body": "was ook duidelijk aanwezig, wat laat zien dat mensen zich echt bedreigd voelen." }
+              ],
+              "paragraphs_after": [
+                "Cyberaanvallen kunnen het vertrouwen van het publiek in bedrijven en overheden ernstig beschadigen, en emotionele reacties kunnen zelfs de steun voor strenger cybersecuritybeleid vergroten."
+              ]
+            }
+          ]
+        },
+        {
+          "heading": "8 · Cybersecurity: hoe bescherm je jezelf",
+          "subsections": [
+            {
+              "heading": "",
+              "paragraphs": [
+                "Cybersecurity is alles wat we doen om computers, netwerken, programma's en data te beschermen tegen ongeoorloofde toegang, schade of diefstal. Het is de beschermer uit de routineactiviteitentheorie. Zonder cybersecurity krijgt de aanvaller het veel gemakkelijker."
+              ],
+              "h3": "8.1 Voor individuen",
+              "measures": [
+                "Gebruik sterke, unieke wachtwoorden voor elk account en verander ze regelmatig. Een wachtwoordmanager helpt daarbij.",
+                "Zet waar mogelijk twee-factor-authenticatie (2FA) aan, zodat een gestolen wachtwoord alleen niet genoeg is.",
+                "Houd alles up-to-date: besturingssysteem, apps en antivirus, want updates verhelpen bekende beveiligingslekken.",
+                "Denk na voordat je klikt: open geen links of bijlagen die je niet verwachtte, zelfs niet als ze lijken te komen van je bank.",
+                "Voer persoonlijke gegevens alleen in op beveiligde sites. Controleer op het hangslot en https in de adresbalk.",
+                "Vermijd onbeveiligde openbare wifi voor bankzaken; gebruik een VPN als je het toch moet gebruiken.",
+                "Maak back-ups, zodat ransomware je data niet voorgoed kan ontgrendelen."
+              ],
+              "h3_2": "8.2 Voor organisaties",
+              "measures_2": [
+                "Een duidelijke securityarchitectuur en een netwerkdiagram zodat de omgeving begrepen wordt.",
+                "Beveiligingsbeleid en een risicomanagementbeleid die beschrijven hoe risico's worden geïdentificeerd en afgehandeld.",
+                "Regelmatige risicobeoordelingen en security-audits.",
+                "Back-up- en herstelprocedures plus een disaster recovery-plan, zodat de organisatie na een aanval kan herstellen.",
+                "Training voor medewerkers. Mensen zijn de zwakste schakel, en een getrainde medewerker trapt minder snel in phishing.",
+                "Incidentmanagement, zodat wanneer er iets misgaat de reactie snel, beheerst en gedocumenteerd is."
+              ],
+              "note": "Cybersecurity is geen eenmalige klus. Het is een continu proces van bedreigingen opsporen, zwakke punten verhelpen en up-to-date blijven, want aanvallers veranderen voortdurend hun methoden."
+            }
+          ]
+        },
+        {
+          "heading": "9 · Conclusie",
+          "subsections": [
+            {
+              "heading": "",
+              "paragraphs": [
+                "Het internet is een fysiek netwerk van kabels, routers en datacenters dat bijna de hele wereld verbindt, en het begrijpen van de reis van een apparaat naar de onderzeese kabels onder de oceaan helpt verklaren waar cybercriminaliteit vandaan komt. Cybercriminaliteit is een enorm, groeiend probleem dat ongeveer $9.5 biljoen per jaar kost, gedreven door zowel kansen als tegenspoed. Criminologische theorieën laten zien dat lage zelfbeheersing, het leren van anderen en het ontbreken van een beschermer allemaal een rol spelen, en dat is precies waarom goede cybersecuritygewoontes werken: ze nemen de kans weg.",
+                "Voor een softwareontwikkelaar, en voor iedereen die online is, is de les eenvoudig. Weet hoe de technologie werkt, herken de bedreigingen en bescherm jezelf en je gebruikers met sterke wachtwoorden, updates, back-ups en bewustzijn. De meeste aanvallen slagen alleen door simpele fouten die gemakkelijk te voorkomen zijn."
+              ]
+            }
+          ]
+        }
+      ],
+      "references_heading": "10 · Bronnen",
+      "references": [
+        { "label": "Tsotetsi, K. \"Understanding the Internet: A Journey from Devices to Submarine Cables.\"", "href": "https://vocal.media/fyi/understanding-the-internet-a-journey-from-devices-to-submarine-cables" },
+        { "label": "Lefelhoc, C. \"How Does Cable Internet Work?\"", "href": "https://www.compareinternet.com/blog/how-does-cable-internet-work/" },
+        { "label": "Fann, K. \"How Does the Internet Work? A Complete Guide.\" BroadbandNow.", "href": "https://broadbandnow.com/guides/how-does-the-internet-work" },
+        { "label": "Tutorials Point. \"Cyber Crime & Cyber Security.\"", "href": "https://www.tutorialspoint.com/fundamentals_of_science_and_technology/cyber_crime_and_cyber_security.htm" },
+        { "label": "Chen, S. et al. \"Exploring the global geography of cybercrime and its driving forces.\" (2023).", "href": "https://www.nature.com/articles/s41599-023-01560-x" },
+        { "label": "Achuthan, K., Khobragade, S. & Kowalski, R. \"Cybercrime through the public lens: a longitudinal analysis.\" (2025).", "href": "https://www.nature.com/articles/s41599-025-04459-x" },
+        { "label": "Onwuadiamu, G. \"Cybercrime in criminology; A systematic review of criminological theories, methods, and concepts.\" Journal of Economic Criminology 8 (2025) 100136.", "href": "https://doi.org/10.1016/j.jeconc.2025.100136" },
+        { "label": "ResearchGate. \"Top 20 countries exposed to external attacks from malicious programs in 2014.\"", "href": "https://www.researchgate.net/figure/Top-20-countries-exposed-to-external-attacks-from-malicious-programs-in-2014_fig1_331914032" }
+      ],
+      "references_note": "Figuren: \"A brief history of the internet\" (BroadbandNow) en \"Top 20 countries exposed to external attacks from malicious programs in 2014\" (ResearchGate). De feiten zijn verzameld uit bovenstaande bronnen en in de eigen woorden van dit rapport herschreven.",
+      "back_label": "Terug naar het team",
+      "profile_label": "Bekijk RAGNAROK-profiel"
     }
   }
 }

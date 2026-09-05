@@ -1,4 +1,5 @@
 import Link from "next/link";
+import ChatWidget from "@/components/ChatWidget";
 
 export default function NotFound() {
   return (
@@ -44,6 +45,7 @@ export default function NotFound() {
       <Link href="/en" className="btn btn-primary">
         Back to home
       </Link>
+      <ChatWidget />
     </main>
   );
 }
