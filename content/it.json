@@ -1,0 +1,754 @@
+{
+  "brand": {
+    "name": "Rhine Solution",
+    "tagline": "Sviluppo web su misura, portfolio ed esperienze digitali",
+    "social": {
+      "github": "https://github.com/RAGNAROK-RS0",
+      "tiktok": "https://www.tiktok.com/@rhinesolution",
+      "youtube": "https://www.youtube.com/@RhineSolutions",
+      "linkedin": "https://www.linkedin.com/in/rhinesolution",
+      "pinterest": "https://nl.pinterest.com/soc0255/",
+      "x": "https://x.com/RhineSolution",
+      "reddit": "https://www.reddit.com/user/RhineSolution/"
+    }
+  },
+  "nav": {
+    "home": "Home",
+    "team": "Squadra",
+    "projects": "Progetti",
+    "about": "Chi siamo",
+    "news": "Novità",
+    "contact": "Contatti",
+    "back": "Torna a Rhine Solution"
+  },
+  "gate": {
+    "eyebrow": "Prima di entrare",
+    "title": "Verifica umana rapida",
+    "body": "Verifica di essere umano prima di entrare nel sito. Questo ci consente di mantenere il sito libero dal traffico automatizzato.",
+    "verified": "Verificato. Benvenuto su Rhine Solution."
+  },
+  "home": {
+    "hero_line_1": "Costruito con",
+    "hero_line_2": "Rhine Solution",
+    "hero_subtitle": "Applicazioni web su misura, portfolio ed esperienze digitali realizzati con cura.",
+    "cta_projects": "Scopri il nostro lavoro",
+    "cta_about": "Chi siamo",
+    "stage_b_eyebrow": "L'idea",
+    "stage_b_title": "Un web che funziona e lo dimostra.",
+    "stage_b_text": "Continua a scorrere. Ogni livello di Rhine Solution è pubblicato, online e pensato per muoversi.",
+    "stage_b_link": "Guarda il lavoro",
+    "statements": [
+      {
+        "eyebrow": "01 · Artigianato",
+        "heading": "Piccolo team, standard elevati.",
+        "body": "Un duo di fondatori che progetta, sviluppa e pubblica insieme, tutto in casa, senza strati tra idea e lancio.",
+        "link_label": "Incontra la squadra",
+        "href": "/team"
+      },
+      {
+        "eyebrow": "02 · Potenziato dall'AI",
+        "heading": "Un flusso di lavoro che mette l'AI al primo posto.",
+        "body": "Il nostro Mac Mini gestisce l'intera infrastruttura: agenti, cinque provider di modelli e l'Obsidian Brain che tiene documentata ogni decisione.",
+        "link_label": "Come lavoriamo",
+        "href": "/projects/macmini"
+      },
+      {
+        "eyebrow": "03 · Eccellenza",
+        "heading": "Pubblicato, non simulato.",
+        "body": "Ogni progetto arriva online in produzione. Niente mockup, niente idee abbandonate: solo codice che funziona.",
+        "link_label": "Scopri il nostro lavoro",
+        "href": "/projects"
+      },
+      {
+        "eyebrow": "04 · Insieme",
+        "heading": "Costruiamo qualcosa insieme.",
+        "body": "Due costruttori, una conversazione diretta. Lavora con noi al tuo prossimo progetto.",
+        "link_label": "Inizia una conversazione",
+        "href": "/contact"
+      }
+    ],
+    "featured_title": "Lavori in evidenza",
+    "featured_text": "Progetti selezionati, realizzati e mantenuti dalla squadra di Rhine Solution.",
+    "closing_cta": {
+      "eyebrow": "Prossimo passo",
+      "title": "Hai in mente un progetto?",
+      "body": "Due costruttori, una conversazione diretta. Rispondiamo entro un giorno, di solito anche prima.",
+      "cta_label": "Inizia una conversazione",
+      "secondary_label": "Scopri il nostro lavoro"
+    }
+  },
+  "footer_columns": {
+    "brand_tagline": "Sviluppo web su misura, portfolio ed esperienze digitali. Realizzato nei Paesi Bassi, pubblicato in tutto il mondo.",
+    "nav_heading": "Navigazione",
+    "connect_heading": "Collegamenti",
+    "legal_heading": "Legale",
+    "back_to_top": "Torna in alto",
+    "privacy": "Privacy",
+    "colophon": "Colophon"
+  },
+  "team": {
+    "title": "La nostra squadra",
+    "subtitle": "Due persone, una missione: costruire software utile."
+  },
+  "ragnarok": {
+    "name": "RAGNAROK",
+    "role": "CEO & Visionario",
+    "tagline": "Guida la direzione strategica e il brand di Rhine Solution.",
+    "bio": "Fondatore di Rhine Solution. Coordina prodotto, brand e relazioni con i clienti. Sviluppa in TypeScript, Next.js e CSS puro. Gestisce l'Obsidian Brain che alimenta l'infrastruttura AI dell'azienda.",
+    "skills": [
+      "Strategia di prodotto",
+      "Brand e design",
+      "Next.js & TypeScript",
+      "Infrastruttura AI",
+      "Architettura di sistema"
+    ],
+    "social": {
+      "github": "https://github.com/RAGNAROK-RS0"
+    },
+    "featured": [
+      {
+        "title": "Report su cybercrime e sicurezza informatica",
+        "href": "/it/dfir/cybercrime-report",
+        "meta": "Sicurezza informatica · K1352",
+        "summary": "Report di ricerca Keuzedeel K1352: come funziona Internet da zero, cos'è il cybercrime, le dimensioni del problema e come proteggersi."
+      }
+    ]
+  },
+  "zeromeister": {
+    "name": "ZeroMeister",
+    "role": "CTO & Ingegnere",
+    "tagline": "Costruisce le fondamenta tecniche di Rhine Solution.",
+    "bio": "Chief Technology Officer. Gestisce la pratica ingegneristica, l'infrastruttura e il Mac Mini che esegue lo stack AI dell'azienda. Pubblica codice in produzione e tiene tutto in funzione.",
+    "skills": [
+      "Ingegneria dei sistemi",
+      "DevOps e deployment",
+      "Architettura backend",
+      "Strumenti AI e agenti",
+      "macOS & Linux",
+      "Investigatore di digital forensics"
+    ],
+    "social": {
+      "github": "https://github.com/ZeroMeister"
+    },
+    "featured": [
+      {
+        "title": "DFIR",
+        "href": "/dfir/lab041",
+        "meta": "Digital Forensics · LAB041",
+        "summary": "Un esame forense di un vecchio lettore MP3, con la ricostruzione di musica piratata tramite metadata, spazio residuo e file carving."
+      }
+    ]
+  },
+  "projects": {
+    "title": "Lavori selezionati",
+    "subtitle": "Sistemi in produzione, distribuiti e mantenuti.",
+    "featured_label": "In evidenza",
+    "read_more": "Leggi di più"
+  },
+  "brain": {
+    "title": "The Brain",
+    "subtitle": "La base di conoscenza ingegneristica viva di Rhine Solution: come pensiamo allo sviluppo di software.",
+    "browse": "Esplora la base di conoscenza",
+    "read": "Leggi la nota",
+    "back": "Torna a The Brain",
+    "empty": "The Brain è in preparazione. Torna a trovarci presto.",
+    "folders": {
+      "plan": "Pianificazione",
+      "build": "Sviluppo",
+      "harden": "Protezione",
+      "ship": "Pubblicazione",
+      "knowledge": "Conoscenza",
+      "journal": "Diario"
+    }
+  },
+  "project_rhinesolution": {
+    "title": "rhinesolution.com",
+    "slug": "rhinesolution",
+    "icon": "globe",
+    "summary": "Questo sito web. Next.js 15, TypeScript, CSS puro, distribuito su Vercel con DNS Cloudflare.",
+    "stack": [
+      "Next.js 15",
+      "TypeScript",
+      "Pure CSS",
+      "Vercel",
+      "Cloudflare"
+    ],
+    "year": 2026
+  },
+  "project_brain": {
+    "title": "The Brain",
+    "slug": "brain",
+    "icon": "brain",
+    "featured": true,
+    "summary": "La nostra base di conoscenza ingegneristica viva: note su architettura, sicurezza, deployment e testing, pubblicate apertamente. Esplora il modo in cui pensiamo allo sviluppo.",
+    "stack": [
+      "Obsidian",
+      "Markdown",
+      "Git"
+    ],
+    "year": 2026
+  },
+  "project_macmini": {
+    "title": "Infrastruttura AI su Mac Mini",
+    "slug": "macmini",
+    "icon": "server",
+    "summary": "Il Mac Mini che esegue lo stack AI di Rhine Solution: Free Claude Code (bot Discord), 5 provider di modelli di riserva (NVIDIA NIM, Groq, Gemini, Mistral, OpenRouter) e l'agente OpenCode che supporta il lavoro quotidiano.",
+    "stack": [
+      "macOS 26",
+      "Free Claude Code",
+      "OpenCode",
+      "5 LLM providers",
+      "Tailscale"
+    ],
+    "year": 2026
+  },
+  "project_music": {
+    "title": "Music Trends Local",
+    "slug": "music",
+    "icon": "music",
+    "summary": "Un portale musicale a tema cyber che mette in mostra le migliori canzoni, artisti e generi: 48 brani in 8 sottogeneri elettronici, con ricerca, filtri e preferiti salvati in localStorage.",
+    "stack": [
+      "HTML5",
+      "CSS",
+      "Bootstrap",
+      "JavaScript",
+      "SVG",
+      "Next.js 15"
+    ],
+    "year": 2026,
+    "team": "RAGNAROK + ZeroMeister",
+    "live_url": "/music"
+  },
+  "about": {
+    "eyebrow": "Lo studio",
+    "statement": "Piccolo team, standard elevati, lavoro pubblicato.",
+    "story": [
+      "Rhine Solution è uno studio di due persone guidato da una coppia CEO/CTO che costruisce insieme. Realizziamo esperienze web su misura: portfolio, portali e prodotti, dal primo schizzo al deploy in produzione.",
+      "Il nostro flusso di lavoro è AI-first ma guidato dalle persone. Il Mac Mini esegue i nostri agenti e modelli, e l'Obsidian Brain mantiene ogni decisione documentata e ripetibile.",
+      "Preferiamo semplicità, artigianato e codice di produzione. Quando promettiamo un progetto, lo pubblichiamo."
+    ],
+    "services_title": "Cosa realizziamo",
+    "services": [
+      {
+        "icon": "layout",
+        "title": "Portfolio e siti brand",
+        "text": "Siti personali e di studio che puntano sul carattere: veloci, bilingui e costruiti per incarnare il brand che rappresentano."
+      },
+      {
+        "icon": "monitor",
+        "title": "Portali e prodotti",
+        "text": "Portali interni, dashboard e strumenti con accessi reali, dati reali e utenti reali, mantenuti nel lungo periodo."
+      },
+      {
+        "icon": "zap",
+        "title": "Applicazioni web su misura",
+        "text": "Applicazioni sviluppate su specifica, dal primo schizzo al deploy in produzione: niente mockup abbandonati, solo codice che funziona."
+      }
+    ],
+    "process_title": "Come lavoriamo",
+    "process": [
+      {
+        "title": "Prima la proposta",
+        "text": "Scriviamo il piano in linguaggio semplice prima di una singola riga di codice, così sai cosa riceverai e perché."
+      },
+      {
+        "title": "Piccoli passi verificabili",
+        "text": "Effettuiamo commit in piccoli incrementi. Ogni modifica spiega il suo perché, non solo il cosa, e resta facile da revisionare."
+      },
+      {
+        "title": "Decisioni documentate",
+        "text": "Ogni scelta vive nell'Obsidian Brain, così il ragionamento sopravvive alle persone che l'hanno presa."
+      },
+      {
+        "title": "Consegna scritta",
+        "text": "Concludiamo con una consegna: cosa è stato costruito, come mantenerlo e dove sono i punti critici."
+      }
+    ],
+    "stack_title": "Stack e strumenti",
+    "stack": ["Next.js 15", "TypeScript", "Pure CSS", "Mac Mini", "Obsidian Brain", "Vercel", "Cloudflare"],
+    "values_title": "Ciò in cui crediamo",
+    "values": [
+      { "title": "Qualità più che quantità", "text": "Accettiamo pochi progetti e li portiamo a termine nel modo giusto." },
+      { "title": "La semplicità vince", "text": "Struttura chiara, CSS puro, nessuna dipendenza superflua." },
+      { "title": "Supportati dall'AI, guidati dalle persone", "text": "Agenti e modelli ci rendono più veloci; le decisioni le prendono le persone." },
+      { "title": "Sempre documentato", "text": "Ogni decisione vive nel Brain, non nella testa di qualcuno." },
+      { "title": "Padroni del risultato", "text": "La nostra infrastruttura, il nostro codice, dall'inizio alla fine." },
+      { "title": "Bilingue per impostazione predefinita", "text": "Inglese e olandese integrati nel livello dei contenuti fin dal primo giorno." }
+    ],
+    "cta_head": "Ti interessa lavorare insieme?",
+    "cta_text": "Parlerai sempre con un costruttore, non con un venditore.",
+    "cta_link_label": "Sfoglia i nostri lavori"
+  },
+  "news": {
+    "eyebrow": "Aggiornamenti",
+    "title": "Novità e aggiornamenti",
+    "subtitle": "Cosa c'è di nuovo da Rhine Solution.",
+    "items": [
+      {
+        "date": "Aug 2026",
+        "title": "Struttura bilingue del sito",
+        "summary": "Il sito è passato al routing /[locale]. Inglese e olandese ora condividono un unico albero di componenti e un unico livello di contenuti."
+      },
+      {
+        "date": "Aug 2026",
+        "title": "Music Trends Local è online",
+        "summary": "Un portale musicale a tema cyber con 48 brani in otto sottogeneri elettronici, più ricerca, filtri e brani preferiti."
+      },
+      {
+        "date": "Jul 2026",
+        "title": "Pulizia delle dipendenze",
+        "summary": "Postcss aggiornato e l'audit ha restituito zero vulnerabilità nell'intero albero delle dipendenze."
+      }
+    ]
+  },
+  "contact": {
+    "eyebrow": "Contatti",
+    "title": "Inizia una conversazione.",
+    "body": "Due costruttori dietro un unico brand. Troverai sempre un costruttore, non un venditore.",
+    "form_title": "Scrivici un messaggio",
+    "form": {
+      "name": "Il tuo nome",
+      "email": "Email",
+      "message": "Messaggio",
+      "submit": "Invia messaggio",
+      "submitting": "Invio in corso...",
+      "success": "Messaggio inviato. Ti risponderemo entro 1-2 giorni lavorativi.",
+      "error_generic": "Qualcosa è andato storto. Riprova o scrivi a info@rhinesolution.com."
+    },
+    "alt_title": "Oppure passa direttamente al lavoro.",
+    "alt_text": "Ogni progetto pubblicato vive su questo sito. Inizia dalla vetrina.",
+    "alt_link": "Sfoglia i progetti"
+  },
+  "footer": {
+    "social_heading": "Trovaci altrove",
+    "theme_toggle_light": "Passa al tema scuro",
+    "theme_toggle_dark": "Passa al tema chiaro"
+  },
+  "a11y": {
+    "skip_to_content": "Vai al contenuto principale",
+    "nav_label": "Navigazione principale",
+    "current_page": "Pagina corrente",
+    "language_switcher": "Cambia lingua",
+    "language_names": {
+      "en": "English",
+      "nl": "Nederlands",
+      "de": "Deutsch",
+      "fr": "Français",
+      "es": "Español",
+      "it": "Italiano",
+      "zh": "中文"
+    }
+  },
+  "sections": {
+    "stack": "Stack",
+    "year": "Anno",
+    "team": "Squadra",
+    "launch": "Vai al progetto",
+    "about": "Chi siamo",
+    "skills": "Competenze",
+    "social": "Trovami online",
+    "featured_work": "Lavori in evidenza",
+    "featured_work_text": "Progetti selezionati, realizzati e mantenuti dal team di Rhine Solution."
+  },
+  "privacy": {
+    "eyebrow": "Privacy",
+    "title": "I tuoi dati, la nostra responsabilità.",
+    "intro": "Questa è la politica sulla privacy più breve che abbiamo mai letto su un sito web, e lo diciamo come complimento a noi stessi. Rhine Solution raccoglie il minimo assoluto necessario a svolgere il nostro lavoro: risponderti quando ci contatti. Nessuna analisi, nessuna pubblicità, nessun tracciamento di terze parti, nessun cookie di alcun tipo. Solo il modulo di contatto, gestito da un unico servizio di posta che controlliamo dall'inizio alla fine.",
+    "last_updated": "Ultimo aggiornamento",
+    "who_we_are": {
+      "heading": "Chi siamo",
+      "body": "Rhine Solution è uno studio di due persone. Siamo i titolari del trattamento per qualsiasi informazione personale che ci invii tramite questo sito. Puoi contattarci agli indirizzi elencati in fondo a questa pagina."
+    },
+    "what_we_collect": {
+      "heading": "Cosa raccogliamo",
+      "body": "Solo ciò che digiti nel modulo di contatto: il tuo nome, il tuo indirizzo email, il messaggio che scrivi e la lingua che hai usato (inglese o olandese). Nient'altro. Non raccogliamo indirizzi IP, impronte del browser, dati di geolocalizzazione, identificatori dei dispositivi o dati analitici. Non utilizziamo cookie. Non eseguiamo script di terze parti."
+    },
+    "why_we_collect": {
+      "heading": "Perché li raccogliamo",
+      "body": "Per risponderti. Tutto qui. La base giuridica ai sensi dell'Articolo 6(1)(b) del GDPR è che il trattamento è necessario per rispondere alla tua richiesta oppure, se non ci hai ancora contattato, l'Articolo 6(1)(f) legittimo interesse nella gestione di un canale di contatto commerciale di base. Non ti inviamo comunicazioni commerciali, non creiamo profili su di te e non condividiamo le tue informazioni con nessuno al di fuori della catena necessaria a inviarti la nostra risposta."
+    },
+    "who_we_share_with": {
+      "heading": "Con chi li condividiamo",
+      "body": "Un solo servizio: Resend (resend.com), l'infrastruttura di posta che consegna il tuo messaggio alla nostra casella di posta. Resend agisce come nostro responsabile del trattamento ai sensi di un accordo standard sul trattamento dei dati. Conserva il corpo del messaggio e i metadati su server nell'UE e negli Stati Uniti; i trasferimenti verso gli Stati Uniti sono coperti dal EU–US Data Privacy Framework, di cui Resend è certificata. Nessun altro soggetto terzo riceve i tuoi dati. Non li vendiamo, non li affittiamo e non li scambiamo."
+    },
+    "how_long": {
+      "heading": "Per quanto tempo li conserviamo",
+      "body": "Il tuo messaggio resta nella nostra casella di Resend e nel nostro client di posta interno finché la conversazione è attiva. Una volta consegnato il progetto (oppure se concordiamo che non sia adatto), lo archiviamo per un massimo di 24 mesi nel caso tu torni, poi lo eliminiamo dallo storage attivo. Puoi chiederci di eliminarlo prima: vedi sotto."
+    },
+    "your_rights": {
+      "heading": "I tuoi diritti",
+      "body": "Ai sensi del GDPR hai il diritto di accesso, rettifica, cancellazione, limitazione, portabilità e opposizione al trattamento di qualsiasi dato personale che conserviamo su di te. Hai anche il diritto di presentare un reclamo all'Autorità olandese per la protezione dei dati (Autoriteit Persoonsgegevens). Esercitare uno di questi diritti è gratuito e ti rispondiamo entro un mese. Scrivici all'indirizzo qui sotto per iniziare."
+    },
+    "changes": {
+      "heading": "Modifiche alla presente politica",
+      "body": "Se modifichiamo qualcosa di sostanziale: un nuovo servizio, una regola di conservazione diversa: aggiorneremo la data qui sotto e spiegheremo cosa è cambiato in linguaggio semplice. La versione che stai leggendo ora è l'unica che conta; non esistono pagine archiviate nascoste con le versioni precedenti."
+    },
+    "contact_label": "Contatto per la privacy",
+    "contact_intro": "Per qualsiasi domanda sulla privacy, per accedere, correggere o eliminare i tuoi dati, scrivici:",
+    "complaint_label": "Presenta un reclamo",
+    "complaint_body": "Se preferisci rivolgerti all'autorità di controllo, puoi contattare l'Autorità olandese per la protezione dei dati (Autoriteit Persoonsgegevens) all'indirizzo autoriteitpersoonsgegevens.nl."
+  },
+  "colophon": {
+    "eyebrow": "Colophon",
+    "title": "Come è fatto questo sito.",
+    "intro": "Il colophon è la nota dell'editore tradizionalmente stampata all'interno della copertina di un libro per citare chi lo ha realizzato. Sul web elenca gli strumenti, le decisioni e le persone dietro un sito. Questo è onesto su ciò che funziona, ciò che non funziona e dove i punti critici sono visibili.",
+    "sections": {
+      "principles": {
+        "heading": "Principi",
+        "items": [
+          "Calma per impostazione predefinita. Il sito è sempre blu scuro + WebGL: nessuna modalità chiara, nessun interruttore del tema, nessuna decisione per il visitatore.",
+          "Due costruttori, un'unica fonte. Ogni riga di codice, ogni parola dei testi, ogni asset passa da entrambi prima di essere pubblicato.",
+          "Bilingue dal primo giorno. Inglese e olandese condividono un unico albero di componenti e un unico livello di contenuti; nulla viene tradotto due volte.",
+          "Infrastruttura di proprietà. Il sito, gli agenti, i modelli e le note girano tutti sul nostro hardware, non su SaaS a noleggio.",
+          "Pubblicato, non simulato. Ogni progetto collegato da questo sito è online in produzione. Non ci sono mockup."
+        ]
+      },
+      "stack": {
+        "heading": "Stack",
+        "items": [
+          "Next.js 15 (App Router) come framework: Server Components per impostazione predefinita, 'use client' solo dove servono stato o gestori di eventi.",
+          "TypeScript per la sicurezza dei tipi in tutto il codebase.",
+          "CSS puro con proprietà custom: niente Tailwind, niente CSS-in-JS. I design token sono un unico file.",
+          "Three.js per lo sfondo WebGL: quattro scene guidate dallo scroll (Drift, Lines, Roads, Glow) con dissolvenze incrociate tramite keyframe di Theatre.js.",
+          "Lenis per lo scorrimento fluido a slancio.",
+          "Resend per l'email transazionale (il modulo di contatto).",
+          "Vercel per l'hosting e il deployment continuo: ogni push su main viene distribuito automaticamente.",
+          "Cloudflare per DNS ed edge."
+        ]
+      },
+      "typefaces": {
+        "heading": "Caratteri tipografici",
+        "items": [
+          "Rijksoverheid Sans Heading Bold il carattere display. Usato per titoli, intestazioni e i momenti in cui la pagina vuole fare una dichiarazione. Self-hosted.",
+          "Rijksoverheid Sans Text il carattere del corpo del testo. Usato per i testi, la UI e i metadati fitti dove la leggibilità conta più del carattere. Anch'esso self-hosted."
+        ]
+      },
+      "how_we_work": {
+        "heading": "Come lavoriamo",
+        "items": [
+          "Scriviamo le proposte in linguaggio semplice prima di scrivere una singola riga di codice.",
+          "Effettuiamo commit in piccoli passi verificabili. Ogni commit spiega il perché, non solo il cosa.",
+          "Documentiamo le decisioni nel Brain, il nostro vault Obsidian interno, così il ragionamento sopravvive alle persone che l'hanno preso.",
+          "Concludiamo ogni progetto con una consegna scritta: cosa è stato costruito, come mantenerlo, dove sono i punti critici."
+        ]
+      },
+      "tools": {
+        "heading": "Gli strumenti che usiamo",
+        "items": [
+          "Obsidian per il Brain.",
+          "Git su un Mac Mini per il repository locale e il vault Obsidian.",
+          "Discord per Rhine AI: l'interfaccia del nostro agente con il resto del mondo.",
+          "Linear Lite per il monitoraggio delle attività dei clienti. Non ci piace. Lo usiamo comunque."
+        ]
+      },
+      "limits": {
+        "heading": "Dove i punti critici sono visibili",
+        "items": [
+          "Three.js è pesante su mobile. L'abbiamo mantenuto, ma uno smartphone economico con una connessione instabile lo sentirà.",
+          "La dissolvenza WebGL presenta giunture visibili su Safari < 17. Potremmo mascherarle con più lavoro sugli shader; per ora accettiamo il costo.",
+          "Il modulo di contatto invia da un indirizzo sandbox di Resend finché non verifichiamo rhinesolution.com nella loro lista di domini: un compito ancora aperto.",
+          "Non c'è analisi dei dati su questo sito. Non possiamo dirti quali pagine vengono lette di più. Preferiamo non saperlo piuttosto che compromettere la promessa sulla privacy fatta sopra."
+        ]
+      },
+      "credits": {
+        "heading": "Crediti",
+        "items": [
+          "Design, codice, testi e infrastruttura: RAGNAROK (CEO) e ZeroMeister (CTO).",
+          "Asset del brand: derivati da un marchio disegnato a mano che ci accompagna dal progetto scolastico da cui è nata Rhine Solution.",
+          "Hosting: Vercel (regione di Francoforte, UE).",
+          "DNS: Cloudflare.",
+          "Email: Resend (UE + USA, certificato DPF)."
+        ]
+      }
+    }
+  },
+  "dfir": {
+    "cybercrime_report": {
+      "meta_title": "Rapporto su criminalità informatica e cybersecurity",
+      "meta_description": "Rapporto di ricerca del Keuzedeel K1352: come funziona internet, cos'è la criminalità informatica, la scala del problema e come proteggersi.",
+      "eyebrow": "RAGNAROK · Cyber Security",
+      "title": "Rapporto su criminalità informatica e cybersecurity",
+      "lead": "Rapporto di ricerca del Keuzedeel K1352. Come funziona internet da zero, cos'è la criminalità informatica, quanto è grande davvero il problema, chi la commette e perché, e cosa possono fare le persone e le organizzazioni per proteggersi.",
+      "meta": {
+        "course_label": "Corso",
+        "course_value": "K1352 · Basis cybercriminaliteit en cyberveiligheid",
+        "title_label": "Titolo",
+        "title_value": "Criminalità informatica e cybersecurity",
+        "language_label": "Lingua",
+        "language_value": "Italiano",
+        "date_label": "Data del rapporto",
+        "date_value": "Sep 2026"
+      },
+      "executive_summary_heading": "Sintesi esecutiva",
+      "executive_summary": "Quasi tutto ciò che facciamo oggi coinvolge internet, eppure internet non è qualcosa che esiste e basta. È una rete fisica di cavi, router, data center e dispositivi. E ovunque si riuniscono persone, c'è anche il crimine. Questo rapporto spiega il viaggio che i dati compiono da un dispositivo fino ai cavi sottomarini sotto l'oceano, poi esamina cos'è la criminalità informatica, i tipi principali, la scala del problema con numeri reali, chi la commette e perché, da dove proviene, come reagisce il pubblico e infine come proteggersi.",
+      "sections": [
+        {
+          "heading": "1 · Internet da zero",
+          "subsections": [
+            {
+              "heading": "1.1 Cos'è internet",
+              "paragraphs": [
+                "Internet è una rete enorme di computer che si scambiano informazioni. Quando un telefono, un laptop o una smart TV è online, fa parte di quella rete. Una metafora utile è il sistema stradale: strade locali (la rete di casa), autostrade (la rete del provider) e rotte internazionali (i cavi sotto l'oceano). I dati viaggiano come automobili e, se una strada è bloccata, si instradano da un altro percorso: ecco perché internet raramente si ferma del tutto.",
+                "Internet e World Wide Web non sono la stessa cosa. Internet è la rete fisica con le sue regole; il Web è solo uno dei servizi che vi girano sopra, quello che i browser usano per i siti web. La posta elettronica, il gaming e lo streaming sono altri servizi che girano anch'essi su internet."
+              ]
+            },
+            {
+              "heading": "1.2 Il viaggio di un messaggio",
+              "paragraphs": [
+                "Inviare una foto a un amico dall'altra parte del mondo avviene a tappe. Il messaggio non viaggia mai come un unico blocco:"
+              ],
+              "steps": [
+                { "step": 1, "title": "Il tuo dispositivo", "body": "Il dispositivo divide il messaggio (una foto, un'email) in piccoli frammenti chiamati pacchetti. Ogni pacchetto è come una lettera in una busta, con un'intestazione che indica da dove proviene e dove è diretto." },
+                { "step": 2, "title": "Onde radio verso il router", "body": "Con il Wi-Fi i pacchetti escono dal dispositivo come onde radio e arrivano al router. Con i dati mobili vanno invece a una cella telefonica vicina." },
+                { "step": 3, "title": "Dal router al modem", "body": "Il router è il gestore del traffico della rete domestica. Il modem è il traduttore: converte i segnali in una forma che può viaggiare sui cavi del provider." },
+                { "step": 4, "title": "La rete dell'ISP", "body": "Il modem invia i dati su cavi coassiali o in fibra all'internet service provider (ISP), che sceglie la rotta più efficiente per i pacchetti." },
+                { "step": 5, "title": "Hub regionali", "body": "I dati arrivano a grandi data center che si scambiano traffico tra reti. Questi hub si collegano alla dorsale di internet." },
+                { "step": 6, "title": "Cavi sottomarini", "body": "Per i dati che attraversano i continenti, la dorsale comprende enormi cavi sul fondale oceanico, posati e riparati da navi specializzate. I dati li attraversano come impulsi di luce in sottili fibre di vetro." },
+                { "step": 7, "title": "Destinazione", "body": "I pacchetti raggiungono l'altro lato, vengono riassemblati nell'ordine corretto e il dispositivo del destinatario mostra il messaggio." }
+              ],
+              "note": "Quindi ogni messaggio viaggia attraverso un mix di onde radio, fili di rame, fibre di vetro e cavi sottomarini. A noi sembra solo senza fili."
+            },
+            {
+              "heading": "1.3 Pacchetti, indirizzi IP e protocolli",
+              "paragraphs": [
+                "Due cose rendono possibile tutto questo: i pacchetti e i protocolli."
+              ],
+              "protocols": [
+                { "term": "Binario", "body": "All'interno di un dispositivo tutte le informazioni sono memorizzate come uno e zero. Il dispositivo le traduce in onde radio o segnali elettrici per inviarle." },
+                { "term": "Indirizzo IP", "body": "Ogni dispositivo riceve un numero univoco, come un indirizzo postale. I router lo usano per inoltrare ogni pacchetto al posto giusto." },
+                { "term": "TCP", "body": "Il TCP (Transmission Control Protocol) garantisce che i pacchetti arrivino nell'ordine giusto e che nulla vada perso. Il ricevente conferma ogni pacchetto e quelli mancanti vengono reinviati." },
+                { "term": "DNS", "body": "Il Domain Name System è l'elenco telefonico di internet. Traduce nomi come www.example.com nell'indirizzo IP di cui un computer ha realmente bisogno." },
+                { "term": "Server", "body": "Siti web, app e file vivono sui server, computer potenti che restano online. Quando visiti una pagina, il tuo dispositivo chiede al server di inviarla e questa torna sotto forma di pacchetti." }
+              ]
+            },
+            {
+              "heading": "1.4 Diversi modi per connettersi",
+              "table": {
+                "caption": "Tipi di connessione a confronto",
+                "rows": [
+                  ["Connessione", "Come funziona", "Punti di forza", "Punti deboli"],
+                  ["Cavo", "Usa gli stessi cavi coassiali della TV via cavo; un modem converte il segnale.", "Veloce (fino a 1 Gbps) e ampiamente disponibile.", "L'upload è lento; i vicini condividono la connessione, quindi la velocità cala di sera."],
+                  ["Fibra", "Invia i dati come impulsi di luce attraverso fibre di vetro.", "Opzione più veloce (fino a 10 Gbps), upload e download equivalenti, poca perdita di segnale.", "Non disponibile ovunque; posare nuova fibra è costoso."],
+                  ["DSL", "Usa le linee telefoniche in rame esistenti.", "Molto diffusa e non occupa la linea telefonica.", "Più lenta; la velocità dipende dalla distanza dalla centrale del provider."],
+                  ["Satellite", "Trasmette i dati da satelliti in orbita a una parabola a casa tua.", "Funziona quasi ovunque, il che aiuta le aree rurali.", "Latenza elevata perché i dati viaggiano fino allo spazio e ritorno; i temporali la interrompono."],
+                  ["Wireless fisso", "Segnali radio tra una stazione base e un'antenna a casa.", "Buona per le aree senza cavi; latenza inferiore al satellite.", "Alberi, edifici e maltempo possono indebolire il segnale."],
+                  ["5G a casa", "Usa le reti mobili per connettere un'abitazione.", "Rapida da implementare senza scavi; alte velocità e bassa latenza.", "La copertura è ancora limitata e dipende da distanza e congestione."]
+                ]
+              },
+              "note": "Un tema comune: velocità di upload, banda condivisa e copertura rurale sono i punti deboli di quasi tutte le tecnologie."
+            },
+            {
+              "heading": "1.5 L'ultimo miglio",
+              "paragraphs": [
+                "L'ultimo tratto dalla rete del provider fino alla casa si chiama ultimo miglio. È la parte più costosa da costruire, ed è per questo che le città ricevono la fibra mentre le aree rurali e povere ottengono connessioni più lente o nessuna. Tecnologie più recenti come i collegamenti a microonde e il 5G aiutano a colmare il divario, ma l'accesso di base a internet resta un problema in molte parti del mondo."
+              ],
+              "figure": {
+                "src": "/dfir/a-brief-history-of-the-internet-graphic-768x1296.jpg",
+                "alt": "Infografica: una breve storia di internet",
+                "caption": "Figura 1 · Una breve storia di internet (infografica di BroadbandNow)."
+              }
+            }
+          ]
+        },
+        {
+          "heading": "2 · Cos'è la criminalità informatica",
+          "subsections": [
+            {
+              "heading": "",
+              "paragraphs": [
+                "La criminalità informatica è un crimine che coinvolge computer, internet o altra tecnologia digitale. Può colpire individui, aziende o governi e può causare danni finanziari, reputazionali o psicologici. Le definizioni variano da paese a paese, il che rende difficile misurarne l'entità, ma gli esperti dividono di solito la criminalità informatica in due gruppi:"
+              ],
+              "bullets": [
+                { "strong": "Cyber-dependent crime:", "body": "crimini che possono esistere solo grazie a computer e reti. Hacking, attacchi DDoS, malware. Senza internet questi crimini non esisterebbero." },
+                { "strong": "Cyber-enabled crime:", "body": "crimini tradizionali che si sono spostati online o sono diventati più facili. Frode online, phishing, pirateria digitale, cyberbullismo. Esistevano già prima, ma internet permette ai criminali di commetterli più velocemente, a costo minore e contro più vittime contemporaneamente." }
+              ],
+              "paragraphs_after": [
+                "Il criminologo David Wall descrive quattro categorie di criminalità informatica: l'accesso abusivo (cyber trespass: entrare in sistemi in cui non è permesso entrare), l'inganno o il furto informatico (rubare cose online, come i dati delle carte di credito), la pornografia o oscenità informatica (condividere materiale sessuale online) e la violenza informatica (causare danni emotivi o psicologici, come lo cyberstalking. La vittima può non subire danni fisici ma può soffrire danni duraturi)."
+              ]
+            }
+          ]
+        },
+        {
+          "heading": "3 · Tipi di criminalità informatica",
+          "subsections": [
+            {
+              "heading": "",
+              "paragraphs": [
+                "I tipi più comuni di criminalità informatica sono:"
+              ],
+              "table": {
+                "caption": "Panoramica dei tipi di criminalità informatica",
+                "rows": [
+                  ["Tipo", "Descrizione"],
+                  ["Hacking", "Entrare in un sistema informatico senza permesso, per guadagno personale o per causare danni."],
+                  ["Phishing", "Email o messaggi falsi che sembrano provenire da un'azienda reale (come una banca), usati per indurre le persone a rivelare password o dati personali."],
+                  ["Ransomware", "Software dannoso che blocca i tuoi file e chiede denaro per restituirli. L'attacco WannaCry del 2017 è un esempio noto."],
+                  ["Attacchi DDoS", "Inondare un sito web o un servizio con così tanto traffico da mandarlo giù, spesso usando reti di computer infetti (botnet)."],
+                  ["Furto d'identità", "Rubare dati personali per commettere frodi, ad esempio aprendo conti o chiedendo prestiti a nome della vittima."],
+                  ["Cyberstalking", "Seguire, minacciare o intimidire ripetutamente qualcuno attraverso internet."],
+                  ["Pirateria digitale", "Scaricare o condividere contenuti protetti, film, musica, software, senza permesso."],
+                  ["Cyber-estorsione", "Violare un sistema o un server di posta e chiedere denaro per restituirlo o per mantenere segreti i dati."],
+                  ["Cyber-terrorismo", "Violare sistemi governativi o grandi organizzazioni per perseguire obiettivi politici e creare paura."],
+                  ["Riciclaggio di denaro", "Pulire denaro guadagnato illegalmente attraverso internet e il digital banking per farlo sembrare legale."],
+                  ["Adescamento di minori", "Costruire un legame emotivo con un minore online, spesso per abusarne o sfruttarlo."]
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "heading": "4 · La scala del problema",
+          "subsections": [
+            {
+              "heading": "",
+              "paragraphs": [
+                "La criminalità informatica non è un problema da poco. I numeri sono enormi e continuano a crescere:"
+              ],
+              "table": {
+                "caption": "Fatti e cifre chiave",
+                "rows": [
+                  ["Fatto", "Cifra / Fonte"],
+                  ["Costo globale della criminalità informatica nel 2024", "Circa 9,5 trilioni di dollari all'anno, con un aumento previsto di un altro 15% nel 2025 (Cybersecurity Ventures)."],
+                  ["Attacco ransomware WannaCry (2017)", "Ha infettato oltre 230.000 computer in 150 paesi; più di 4 miliardi di dollari di perdite economiche."],
+                  ["Utenti di internet nel 2005", "Circa 1 miliardo di persone (16% della popolazione mondiale)."],
+                  ["Utenti di internet nel 2023", "Circa 5,4 miliardi di persone (67% della popolazione mondiale)."],
+                  ["Uso di internet tra gli adulti", "Cresciuto da circa il 52% (2000) a circa il 96% (2024)."],
+                  ["Contributo economico diretto di internet", "Circa 175 miliardi di dollari all'anno tra pubblicità, e-commerce e pagamenti agli ISP; effetto indotto di circa 444 miliardi."]
+                ]
+              },
+              "note": "La crescita di internet significa anche più potenziali vittime: da circa 1 miliardo di persone online nel 2005 a circa 5,4 miliardi nel 2023. La criminalità informatica è di fatto un'industria da migliaia di miliardi per i criminali, e quasi ogni persona connessa è un potenziale bersaglio."
+            }
+          ]
+        },
+        {
+          "heading": "5 · Chi commette la criminalità informatica e perché",
+          "subsections": [
+            {
+              "heading": "5.1 Fattori sociali ed economici",
+              "paragraphs": [
+                "Uno studio del 2023 che ha mappato la criminalità informatica a livello mondiale ha rilevato che è fortemente legata allo sviluppo di un paese. Una migliore infrastruttura internet, livelli di istruzione più alti e più utenti online significano più criminalità informatica, perché i criminali hanno strumenti migliori e più bersagli. Allo stesso tempo, povertà, disoccupazione e disuguaglianza dei redditi spingono le persone delle regioni più povere verso la criminalità informatica come modo per guadagnare denaro, ad esempio i giovani in alcune zone dell'Africa occidentale che si dedicano alla frode online perché non trovano altro lavoro. Conta anche la politica: forze dell'ordine deboli, corruzione elevata e scarsa cooperazione di polizia internazionale rendono più facile per i criminali agire impuniti."
+              ]
+            },
+            {
+              "heading": "5.2 Spiegazioni criminologiche",
+              "table": {
+                "caption": "Tre teorie che spiegano la criminalità informatica",
+                "rows": [
+                  ["Teoria", "Idea centrale", "Come spiega la criminalità informatica"],
+                  ["Teoria generale del crimine (scarso autocontrollo)", "Alcune persone agiscono d'impulso, si assumono rischi e vogliono ricompense rapide senza pensare alle conseguenze.", "La criminalità informatica offre denaro veloce e internet permette ai criminali di agire senza vedere il danno. Gli studi collegano costantemente lo scarso autocontrollo ai reati informatici."],
+                  ["Teoria dell'apprendimento sociale", "Il crimine si impara dagli altri. Il comportamento viene copiato quando sembra funzionare.", "Se amici o comunità online approvano l'hacking o la pirateria, è più probabile che anche altri lo facciano, soprattutto quando sembra che resti impunito."],
+                  ["Teoria dell'attività di routine", "Il crimine avviene quando un autore motivato, un bersaglio adatto e l'assenza di un guardiano capace si combinano.", "Online, password deboli, clic su link di phishing e software obsoleti ti rendono un bersaglio adatto. I software di sicurezza e le abitudini prudenti sono il guardiano."]
+                ]
+              }
+            },
+            {
+              "heading": "5.3 Tipi di hacker",
+              "paragraphs": [
+                "Non tutti gli hacker hanno la stessa motivazione:"
+              ],
+              "bullets": [
+                { "strong": "Cyber utopians", "body": "persone che fanno cose dannose ma credono di agire per il bene comune." },
+                { "strong": "Cyber punks", "body": "hacker che prendono di mira istituzioni che trovano offensive, spesso solo per divertimento o per fare una dichiarazione." },
+                { "strong": "Cyber spies and cyber terrorists", "body": "attaccanti molto abili con motivazioni estreme, che spesso lavorano per stati o cause politiche." }
+              ]
+            }
+          ]
+        },
+        {
+          "heading": "6 · Da dove proviene la criminalità informatica",
+          "subsections": [
+            {
+              "heading": "",
+              "paragraphs": [
+                "Poiché internet non ha confini, è difficile dire esattamente dove si trova un criminale informatico. I criminali si nascondono con VPN, proxy o attaccando attraverso computer infetti in altri paesi. Tuttavia, i ricercatori hanno mappato gli indirizzi IP noti per attività dannose. La maggior parte si trova in Nord America, Europa centro-orientale, Asia orientale, India e Australia orientale. A livello continentale, Nord America ed Europa ne ospitano di più, e le regioni ad alto reddito ospitano la maggior parte degli IP dannosi. In altre parole, i paesi più ricchi e più connessi sono al tempo stesso i bersagli più grandi e le principali fonti dell'infrastruttura della criminalità informatica."
+              ],
+              "figure": {
+                "src": "/dfir/top-20-countries-malicious-programs-2014.png",
+                "alt": "I 20 paesi più esposti ad attacchi esterni da programmi dannosi nel 2014",
+                "caption": "Figura 2 · I 20 paesi più esposti ad attacchi esterni da programmi dannosi nel 2014 (fonte: ResearchGate)."
+              },
+              "note": "Sfumatura importante: queste mappe basate sugli IP mostrano da dove provengono gli attacchi, non necessariamente dove vivono i criminali. Un criminale in un paese può facilmente attaccare da server in un altro: è esattamente il motivo per cui combattere la criminalità informatica è così difficile per la polizia."
+            }
+          ]
+        },
+        {
+          "heading": "7 · Come reagiscono le persone alla criminalità informatica",
+          "subsections": [
+            {
+              "heading": "",
+              "paragraphs": [
+                "La criminalità informatica costa denaro, ma colpisce anche le persone sul piano emotivo. Uno studio del 2025 ha analizzato più di 6.700 post e 100.000 commenti sulla criminalità informatica su Reddit, distribuiti su 14 anni (2008-2022). I risultati:"
+              ],
+              "bullets": [
+                { "strong": "", "body": "Le discussioni più ampie sono state scatenate da violazioni dei dati, attacchi informatici, ransomware e hacking legato a paesi (hacking di stato russo o cinese)." },
+                { "strong": "Anger", "body": "è stata l'emozione più comune, rivolta alle violazioni della privacy, alle aziende che non hanno protetto i dati e ai governi che hanno gestito male le minacce." },
+                { "strong": "Sarcasm", "body": "è stata la seconda reazione più comune, soprattutto verso le narrazioni ufficiali e le misure di sicurezza inefficaci." },
+                { "strong": "Fear", "body": "era anch'essa chiaramente presente, a dimostrazione che le persone si sentono davvero minacciate." }
+              ],
+              "paragraphs_after": [
+                "Gli attacchi informatici possono danneggiare seriamente la fiducia del pubblico nelle aziende e nei governi, e le reazioni emotive possono persino rafforzare il sostegno a politiche di cybersecurity più rigorose."
+              ]
+            }
+          ]
+        },
+        {
+          "heading": "8 · Cybersecurity: come proteggersi",
+          "subsections": [
+            {
+              "heading": "",
+              "paragraphs": [
+                "La cybersecurity è tutto ciò che facciamo per proteggere computer, reti, programmi e dati da accessi non autorizzati, danni o furti. È il guardiano della teoria dell'attività di routine. Senza di essa, l'attaccante ha un lavoro molto più facile."
+              ],
+              "h3": "8.1 Per i singoli",
+              "measures": [
+                "Usa password forti e uniche per ogni account e cambiale regolarmente. Un password manager aiuta.",
+                "Attiva l'autenticazione a due fattori (2FA) ovunque possibile, così una password rubata da sola non basta.",
+                "Tieni tutto aggiornato: sistema operativo, app e antivirus, perché gli aggiornamenti correggono le falle di sicurezza note.",
+                "Pensa prima di cliccare: non aprire link o allegati che non ti aspetti, anche se sembrano provenire dalla tua banca.",
+                "Inserisci i dati personali solo su siti sicuri. Controlla il lucchetto e il https nella barra degli indirizzi.",
+                "Evita il Wi-Fi pubblico non protetto per le operazioni bancarie; usa una VPN se devi utilizzarlo.",
+                "Fai dei backup, così il ransomware non può chiuderti fuori dai tuoi dati per sempre."
+              ],
+              "h3_2": "8.2 Per le organizzazioni",
+              "measures_2": [
+                "Un'architettura di sicurezza e un diagramma di rete chiari, così l'ambiente è compreso.",
+                "Politiche di sicurezza e una policy di gestione del rischio che spieghino come i rischi vengono identificati e gestiti.",
+                "Valutazioni periodiche dei rischi e audit di sicurezza.",
+                "Procedure di backup e ripristino più un piano di disaster recovery, così l'organizzazione può riprendersi dopo un attacco.",
+                "Formazione per il personale. Le persone sono l'anello più debole e un dipendente formato ha meno probabilità di cadere nel phishing.",
+                "Gestione degli incidenti, così quando qualcosa va storto la risposta è rapida, contenuta e documentata."
+              ],
+              "note": "La cybersecurity non è un lavoro da fare una volta sola. È un processo continuo che consiste nell'individuare le minacce, correggere le debolezze e restare aggiornati, perché gli attaccanti cambiano continuamente i loro metodi."
+            }
+          ]
+        },
+        {
+          "heading": "9 · Conclusione",
+          "subsections": [
+            {
+              "heading": "",
+              "paragraphs": [
+                "Internet è una rete fisica di cavi, router e data center che collega quasi tutto il mondo, e capire il viaggio da un dispositivo fino ai cavi sottomarini sotto l'oceano aiuta a spiegare da dove proviene la criminalità informatica. La criminalità informatica è un problema enorme e in crescita che costa circa 9,5 trilioni di dollari all'anno, alimentato sia dalle opportunità sia dal disagio. Le teorie criminologiche mostrano che lo scarso autocontrollo, l'apprendimento dagli altri e la mancanza di un guardiano giocano tutti un ruolo, ed è esattamente il motivo per cui le buone abitudini di cybersecurity funzionano: tolgono l'opportunità.",
+                "Per uno sviluppatore di software, e per chiunque sia online, la lezione è semplice. Sapere come funziona la tecnologia, riconoscere le minacce e proteggere te stesso e i tuoi utenti con password forti, aggiornamenti, backup e consapevolezza. La maggior parte degli attacchi riesce solo grazie a semplici errori facili da prevenire."
+              ]
+            }
+          ]
+        }
+      ],
+      "references_heading": "10 · Riferimenti",
+      "references": [
+        { "label": "Tsotetsi, K. \"Understanding the Internet: A Journey from Devices to Submarine Cables.\"", "href": "https://vocal.media/fyi/understanding-the-internet-a-journey-from-devices-to-submarine-cables" },
+        { "label": "Lefelhoc, C. \"How Does Cable Internet Work?\"", "href": "https://www.compareinternet.com/blog/how-does-cable-internet-work/" },
+        { "label": "Fann, K. \"How Does the Internet Work? A Complete Guide.\" BroadbandNow.", "href": "https://broadbandnow.com/guides/how-does-the-internet-work" },
+        { "label": "Tutorials Point. \"Cyber Crime & Cyber Security.\"", "href": "https://www.tutorialspoint.com/fundamentals_of_science_and_technology/cyber_crime_and_cyber_security.htm" },
+        { "label": "Chen, S. et al. \"Exploring the global geography of cybercrime and its driving forces.\" (2023).", "href": "https://www.nature.com/articles/s41599-023-01560-x" },
+        { "label": "Achuthan, K., Khobragade, S. & Kowalski, R. \"Cybercrime through the public lens: a longitudinal analysis.\" (2025).", "href": "https://www.nature.com/articles/s41599-025-04459-x" },
+        { "label": "Onwuadiamu, G. \"Cybercrime in criminology; A systematic review of criminological theories, methods, and concepts.\" Journal of Economic Criminology 8 (2025) 100136.", "href": "https://doi.org/10.1016/j.jeconc.2025.100136" },
+        { "label": "ResearchGate. \"Top 20 countries exposed to external attacks from malicious programs in 2014.\"", "href": "https://www.researchgate.net/figure/Top-20-countries-exposed-to-external-attacks-from-malicious-programs-in-2014_fig1_331914032" }
+      ],
+      "references_note": "Figure: \"A brief history of the internet\" (BroadbandNow) e \"Top 20 countries exposed to external attacks from malicious programs in 2014\" (ResearchGate). I fatti sono raccolti dalle fonti sopra indicate e riscritti con le parole del presente rapporto.",
+      "back_label": "Torna al team",
+      "profile_label": "Visualizza il profilo di RAGNAROK"
+    }
+  }
+}

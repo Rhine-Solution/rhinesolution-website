@@ -3,6 +3,7 @@ import "../../styles/globals.css";
 import { getContent } from "@/lib/i18n";
 import MobileHeader from "@/components/MobileHeader";
 import MobileFooter from "@/components/MobileFooter";
+import ChatWidget from "@/components/ChatWidget";
 
 type Props = {
   children: React.ReactNode;
@@ -28,6 +29,7 @@ export default async function LocaleLayout({ children, params }: Props) {
       <MobileHeader locale={locale} />
       {children}
       <MobileFooter locale={locale} />
+      <ChatWidget locale={locale} />
     </>
   );
 }

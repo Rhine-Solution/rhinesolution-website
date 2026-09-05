@@ -3,7 +3,7 @@ import { getBrainManifest } from "@/lib/brain";
 import { getNews } from "@/lib/news";
 
 const base = "https://rhinesolution.com";
-const locales = ["en", "nl"] as const;
+const locales = ["en", "nl", "de", "fr", "es", "it", "zh"] as const;
 const members = ["ragnarok", "zeromeister"] as const;
 const projects = ["rhinesolution", "macmini", "music"] as const;
 const localePaths = [
@@ -14,6 +14,7 @@ const localePaths = [
   "/contact",
   "/privacy",
   "/colophon",
+  "/dfir/cybercrime-report",
 ];
 
 function languages(path: string) {
@@ -22,6 +23,11 @@ function languages(path: string) {
     "x-default": `${base}/en${norm}`,
     en: `${base}/en${norm}`,
     nl: `${base}/nl${norm}`,
+    de: `${base}/de${norm}`,
+    fr: `${base}/fr${norm}`,
+    es: `${base}/es${norm}`,
+    it: `${base}/it${norm}`,
+    zh: `${base}/zh${norm}`,
   };
 }
 

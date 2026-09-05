@@ -1,0 +1,754 @@
+{
+  "brand": {
+    "name": "Rhine Solution",
+    "tagline": "定制网页开发、作品集与数字体验",
+    "social": {
+      "github": "https://github.com/RAGNAROK-RS0",
+      "tiktok": "https://www.tiktok.com/@rhinesolution",
+      "youtube": "https://www.youtube.com/@RhineSolutions",
+      "linkedin": "https://www.linkedin.com/in/rhinesolution",
+      "pinterest": "https://nl.pinterest.com/soc0255/",
+      "x": "https://x.com/RhineSolution",
+      "reddit": "https://www.reddit.com/user/RhineSolution/"
+    }
+  },
+  "nav": {
+    "home": "首页",
+    "team": "团队",
+    "projects": "项目",
+    "about": "关于我们",
+    "news": "动态",
+    "contact": "联系我们",
+    "back": "返回 Rhine Solution"
+  },
+  "gate": {
+    "eyebrow": "进入之前",
+    "title": "快速人机验证",
+    "body": "进入网站前请确认你是真人。这能让我们的网站免受自动化流量的侵扰。",
+    "verified": "验证通过。欢迎来到 Rhine Solution。"
+  },
+  "home": {
+    "hero_line_1": "与",
+    "hero_line_2": "Rhine Solution",
+    "hero_subtitle": "用心打造的定制网页应用、作品集与数字体验。",
+    "cta_projects": "查看我们的作品",
+    "cta_about": "关于工作室",
+    "stage_b_eyebrow": "理念",
+    "stage_b_title": "真正上线、看得见的网页。",
+    "stage_b_text": "继续往下滚动。Rhine Solution 的每一层都已上线、正在运行、并时刻运转。",
+    "stage_b_link": "查看作品",
+    "statements": [
+      {
+        "eyebrow": "01 · 匠心",
+        "heading": "小团队，高标准。",
+        "body": "创始双人组从设计、构建到部署全程自主完成，从想法到发布之间没有任何中间环节。",
+        "link_label": "认识团队",
+        "href": "/team"
+      },
+      {
+        "eyebrow": "02 · AI 驱动",
+        "heading": "AI 优先的工作流程。",
+        "body": "我们的 Mac Mini 承载整套技术栈：智能体、五个模型服务商，以及记录每项决策的 Obsidian Brain。",
+        "link_label": "了解我们的构建方式",
+        "href": "/projects/macmini"
+      },
+      {
+        "eyebrow": "03 · 卓越",
+        "heading": "已经上线，而非展示。",
+        "body": "每个项目最终都会投入生产环境。没有原型稿，没有搁置的想法，只有真正运行起来的代码。",
+        "link_label": "查看我们的作品",
+        "href": "/projects"
+      },
+      {
+        "eyebrow": "04 · 携手",
+        "heading": "让我们一起做点什么。",
+        "body": "两位开发者，一次直接的对话。在下一个项目上与我们合作吧。",
+        "link_label": "开启对话",
+        "href": "/contact"
+      }
+    ],
+    "featured_title": "精选作品",
+    "featured_text": "由 Rhine Solution 团队构建并维护的精选项目。",
+    "closing_cta": {
+      "eyebrow": "下一步",
+      "title": "心中已有项目构想？",
+      "body": "两位开发者，一次直接的对话。我们通常一天内回复，常常更快。",
+      "cta_label": "开启对话",
+      "secondary_label": "查看我们的作品"
+    }
+  },
+  "footer_columns": {
+    "brand_tagline": "定制网页开发、作品集与数字体验。在荷兰打造，向全球发布。",
+    "nav_heading": "导航",
+    "connect_heading": "联系",
+    "legal_heading": "法律",
+    "back_to_top": "返回顶部",
+    "privacy": "隐私政策",
+    "colophon": "版本说明"
+  },
+  "team": {
+    "title": "我们的团队",
+    "subtitle": "两个人，一个使命：打造有用的软件。"
+  },
+  "ragnarok": {
+    "name": "RAGNAROK",
+    "role": "CEO 与愿景担当",
+    "tagline": "引领 Rhine Solution 的战略方向与品牌。",
+    "bio": "Rhine Solution 创始人。负责产品、品牌与客户关系。使用 TypeScript、Next.js 与纯 CSS 构建产品，并维护为公司 AI 基础设施提供动力的 Obsidian Brain。",
+    "skills": [
+      "产品策略",
+      "品牌与设计",
+      "Next.js 与 TypeScript",
+      "AI 基础设施",
+      "系统架构"
+    ],
+    "social": {
+      "github": "https://github.com/RAGNAROK-RS0"
+    },
+    "featured": [
+      {
+        "title": "网络犯罪与网络安全报告",
+        "href": "/zh/dfir/cybercrime-report",
+        "meta": "网络安全 · K1352",
+        "summary": "Keuzedeel K1352 研究报告：互联网如何从零开始运作、什么是网络犯罪、问题的规模，以及如何加以防范。"
+      }
+    ]
+  },
+  "zeromeister": {
+    "name": "ZeroMeister",
+    "role": "CTO 与工程师",
+    "tagline": "构筑 Rhine Solution 的技术根基。",
+    "bio": "首席技术官。负责工程实践、基础设施，以及承载公司 AI 技术栈的 Mac Mini。负责上线生产代码，并让一切保持正常运转。",
+    "skills": [
+      "系统工程",
+      "DevOps 与部署",
+      "后端架构",
+      "AI 工具与智能体",
+      "macOS 与 Linux",
+      "数字取证调查员"
+    ],
+    "social": {
+      "github": "https://github.com/ZeroMeister"
+    },
+    "featured": [
+      {
+        "title": "DFIR",
+        "href": "/dfir/lab041",
+        "meta": "数字取证 · LAB041",
+        "summary": "对一部老式 MP3 播放器进行取证检查，通过元数据、空闲空间与文件雕刻追踪盗版音乐。"
+      }
+    ]
+  },
+  "projects": {
+    "title": "精选作品",
+    "subtitle": "已部署并持续维护的生产系统。",
+    "featured_label": "精选",
+    "read_more": "阅读更多"
+  },
+  "brain": {
+    "title": "The Brain",
+    "subtitle": "Rhine Solution 的活态工程知识库——我们如何思考构建软件。",
+    "browse": "浏览知识库",
+    "read": "阅读笔记",
+    "back": "返回 The Brain",
+    "empty": "The Brain 正在准备中。敬请稍后回来查看。",
+    "folders": {
+      "plan": "规划",
+      "build": "构建",
+      "harden": "加固",
+      "ship": "发布",
+      "knowledge": "知识",
+      "journal": "日志"
+    }
+  },
+  "project_rhinesolution": {
+    "title": "rhinesolution.com",
+    "slug": "rhinesolution",
+    "icon": "globe",
+    "summary": "这个网站。基于 Next.js 15、TypeScript、纯 CSS 构建，部署到 Vercel，DNS 由 Cloudflare 提供。",
+    "stack": [
+      "Next.js 15",
+      "TypeScript",
+      "Pure CSS",
+      "Vercel",
+      "Cloudflare"
+    ],
+    "year": 2026
+  },
+  "project_brain": {
+    "title": "The Brain",
+    "slug": "brain",
+    "icon": "brain",
+    "featured": true,
+    "summary": "我们的活态工程知识库——架构、安全、部署与测试笔记，公开发布。探索我们构建方式背后的思考。",
+    "stack": [
+      "Obsidian",
+      "Markdown",
+      "Git"
+    ],
+    "year": 2026
+  },
+  "project_macmini": {
+    "title": "Mac Mini AI 基础设施",
+    "slug": "macmini",
+    "icon": "server",
+    "summary": "驱动 Rhine Solution AI 技术栈的 Mac Mini：Free Claude Code（Discord 机器人）、5 套模型回退方案（NVIDIA NIM、Groq、Gemini、Mistral、OpenRouter），以及协助日常工作的 OpenCode 智能体。",
+    "stack": [
+      "macOS 26",
+      "Free Claude Code",
+      "OpenCode",
+      "5 LLM providers",
+      "Tailscale"
+    ],
+    "year": 2026
+  },
+  "project_music": {
+    "title": "Music Trends Local",
+    "slug": "music",
+    "icon": "music",
+    "summary": "一个赛博主题音乐门户，展示热门歌曲、歌手与流派——横跨 8 个电子音乐子流派的 48 首曲目，支持搜索、筛选与 localStorage 收藏。",
+    "stack": [
+      "HTML5",
+      "CSS",
+      "Bootstrap",
+      "JavaScript",
+      "SVG",
+      "Next.js 15"
+    ],
+    "year": 2026,
+    "team": "RAGNAROK + ZeroMeister",
+    "live_url": "/music"
+  },
+  "about": {
+    "eyebrow": "工作室",
+    "statement": "小团队，高标准，已上线。",
+    "story": [
+      "Rhine Solution 是一家由 CEO/CTO 搭档共同构建的双人工作室。我们打造定制的网页体验——作品集、门户与产品——从最初草图到正式上线。",
+      "我们的工作流程 AI 优先、以人为本。Mac Mini 承载着我们的智能体与模型，Obsidian Brain 让每项决策都有记录、可复现。",
+      "我们崇尚简洁、匠心与生产级代码。一旦承诺了项目，它就一定会交付。"
+    ],
+    "services_title": "我们构建什么",
+    "services": [
+      {
+        "icon": "layout",
+        "title": "作品集与品牌网站",
+        "text": "以个性取胜的个人与工作室网站——快速、双语，并且让人觉得它就是这个品牌本身。"
+      },
+      {
+        "icon": "monitor",
+        "title": "门户与产品",
+        "text": "具备真实登录、真实数据与真实用户的内部门户、仪表盘与工具，并长期维护。"
+      },
+      {
+        "icon": "zap",
+        "title": "定制网页应用",
+        "text": "按规格打造的应用，从最初草图到正式上线——不留下任何原型稿，只有真正运行起来的代码。"
+      }
+    ],
+    "process_title": "我们的工作方式",
+    "process": [
+      {
+        "title": "提案先行",
+        "text": "在写任何一行代码之前，我们先用通俗的语言写出方案，让你清楚自己会得到什么、为什么。"
+      },
+      {
+        "title": "小而可审的步骤",
+        "text": "我们以小步幅增量提交。每项变更不仅说明做了什么，还解释为什么这么做，并始终保持易于审查。"
+      },
+      {
+        "title": "决策有据可查",
+        "text": "每一项选择都记录在 Obsidian Brain 中，让背后的思考比做出决策的人更长久。"
+      },
+      {
+        "title": "书面交接",
+        "text": "我们以一份交接文档收尾：构建了什么、如何维护、哪里有缝隙。"
+      }
+    ],
+    "stack_title": "技术栈与工具",
+    "stack": ["Next.js 15", "TypeScript", "Pure CSS", "Mac Mini", "Obsidian Brain", "Vercel", "Cloudflare"],
+    "values_title": "我们看重什么",
+    "values": [
+      { "title": "匠心胜过数量", "text": "我们只承接少数项目，并把它们做完整。" },
+      { "title": "简洁制胜", "text": "清晰的结构、纯 CSS，没有多余的依赖。" },
+      { "title": "AI 辅助，以人为本", "text": "智能体与模型让我们提速；决策始终由人来做。" },
+      { "title": "永远记录在案", "text": "每项决策都在 Brain 里，而不在某个人的脑子里。" },
+      { "title": "自己掌控结果", "text": "自有基础设施、自有代码，端到端全面掌控。" },
+      { "title": "天生双语", "text": "英语与荷兰语从第一天起就内置在内容层中。" }
+    ],
+    "cta_head": "有兴趣合作吗？",
+    "cta_text": "与你对话的永远是开发者，而不是销售。",
+    "cta_link_label": "浏览我们的作品"
+  },
+  "news": {
+    "eyebrow": "更新",
+    "title": "动态与更新",
+    "subtitle": "Rhine Solution 的最新进展。",
+    "items": [
+      {
+        "date": "Aug 2026",
+        "title": "双语站点结构",
+        "summary": "网站已迁移到 /[locale] 路由。英语与荷兰语现在共享同一套组件树与单一内容层。"
+      },
+      {
+        "date": "Aug 2026",
+        "title": "Music Trends Local 已上线",
+        "summary": "一个赛博主题音乐门户，包含横跨八个电子音乐子流派的 48 首曲目，以及搜索、筛选与收藏功能。"
+      },
+      {
+        "date": "Jul 2026",
+        "title": "依赖清理",
+        "summary": "Postcss 已更新，审计显示整个依赖树零漏洞。"
+      }
+    ]
+  },
+  "contact": {
+    "eyebrow": "联系我们",
+    "title": "开启对话。",
+    "body": "一个品牌，两位开发者。你联系到的永远是开发者，而不是销售。",
+    "form_title": "给我们留言",
+    "form": {
+      "name": "你的姓名",
+      "email": "电子邮箱",
+      "message": "留言内容",
+      "submit": "发送留言",
+      "submitting": "发送中...",
+      "success": "留言已发送。我们会在 1-2 个工作日内回复。",
+      "error_generic": "出了一些问题。请重试，或发送邮件至 info@rhinesolution.com。"
+    },
+    "alt_title": "或者直接去看作品。",
+    "alt_text": "每一个已上线的项目都收录在这个网站上。从展示页开始看吧。",
+    "alt_link": "浏览项目"
+  },
+  "footer": {
+    "social_heading": "在别处找到我们",
+    "theme_toggle_light": "切换为深色",
+    "theme_toggle_dark": "切换为浅色"
+  },
+  "a11y": {
+    "skip_to_content": "跳到主要内容",
+    "nav_label": "主导航",
+    "current_page": "当前页面",
+    "language_switcher": "切换语言",
+    "language_names": {
+      "en": "English",
+      "nl": "Nederlands",
+      "de": "Deutsch",
+      "fr": "Français",
+      "es": "Español",
+      "it": "Italiano",
+      "zh": "中文"
+    }
+  },
+  "sections": {
+    "stack": "技术栈",
+    "year": "年份",
+    "team": "团队",
+    "launch": "上线",
+    "about": "关于我们",
+    "skills": "技能",
+    "social": "在线找我",
+    "featured_work": "精选作品",
+    "featured_work_text": "由 Rhine Solution 团队构建并维护的精选项目。"
+  },
+  "privacy": {
+    "eyebrow": "隐私政策",
+    "title": "你的数据，我们的责任。",
+    "intro": "这是我们见过的网站上最简短的隐私政策，而且我们把这当作对自己的褒奖。Rhine Solution 只收集完成本职工作所需的最少信息：在你主动联系我们时回复你。没有分析工具、没有广告、没有第三方追踪、没有任何类型的 Cookie。只有一个联系表单，由一项我们端到端掌控的邮件服务运行。",
+    "last_updated": "最后更新",
+    "who_we_are": {
+      "heading": "我们是谁",
+      "body": "Rhine Solution 是一家双人工作室。我们是你在本网站发送给我们的任何个人信息的数据控制者。你可以通过本页底部的联系方式找到我们。"
+    },
+    "what_we_collect": {
+      "heading": "我们收集什么",
+      "body": "只收集你在联系表单中填写的内容：你的姓名、你的电子邮箱地址、你写的留言，以及你使用的语言（英语或荷兰语）。除此之外什么都没有。我们不收集 IP 地址、浏览器指纹、位置数据、设备标识符，也不使用任何分析工具。我们不放置 Cookie，不运行第三方脚本。"
+    },
+    "why_we_collect": {
+      "heading": "为什么收集",
+      "body": "为了回复你。仅此而已。GDPR 第 6(1)(b) 条规定的法律依据是，处理是回应你的咨询所必需的；如果你尚未与我们建立合作，则依据第 6(1)(f) 条，即运营基本商务联系渠道的正当利益。我们不会向你进行营销、不会为你建立画像，也不会在必要链条之外与任何人分享你的信息。"
+    },
+    "who_we_share_with": {
+      "heading": "我们与谁分享",
+      "body": "仅一项服务：Resend（resend.com），负责将你的留言投递到我们收件箱的邮件基础设施。Resend 依据标准数据处理协议作为我们的数据处理方。他们将留言正文与元数据存储于欧盟和美国的服务器上；向美国的传输受欧盟-美国数据隐私框架（EU-US Data Privacy Framework）的覆盖，Resend 已在该框架下获得认证。没有其他第三方接触你的数据。我们不会出售、出租或交换这些数据。"
+    },
+    "how_long": {
+      "heading": "我们保留多久",
+      "body": "只要对话还在进行，你的留言就会保留在我们的 Resend 收件箱和内部邮件客户端中。项目交付（或我们确认不匹配）后，我们会将其归档保存最长 24 个月，以备你再次回来，随后从活跃存储中删除。你也可以要求我们提前删除——见下方说明。"
+    },
+    "your_rights": {
+      "heading": "你的权利",
+      "body": "根据 GDPR，你有权访问、更正、删除、限制处理、转移以及反对我们对你所持有的任何个人数据的处理。你还有权向荷兰数据保护机构（Autoriteit Persoonsgegevens）提出投诉。行使上述任何权利均免费，我们会在一个月内回应。请通过下方地址给我们发邮件开始。"
+    },
+    "changes": {
+      "heading": "本政策的变更",
+      "body": "如果我们做出任何实质性变更——新增服务、不同的保留规则——我们会更新下方的日期，并用通俗的语言说明变更内容。你现在读到的版本是唯一有效的版本；没有隐藏着旧政策的归档页面。"
+    },
+    "contact_label": "隐私联系方式",
+    "contact_intro": "任何隐私相关问题——访问、更正或删除你的数据——请写信给我们：",
+    "complaint_label": "提出投诉",
+    "complaint_body": "如果你更愿意向监管机构反映问题，可以联系荷兰数据保护机构（Autoriteit Persoonsgegevens），网址为 autoriteitpersoonsgegevens.nl。"
+  },
+  "colophon": {
+    "eyebrow": "版本说明",
+    "title": "这个网站是如何做出来的。",
+    "intro": "版本说明是出版者的注记，传统上印在书籍的扉页内侧，用来感谢参与创作的人。在网页上，它列出网站背后的工具、决策与人。这份说明如实陈述哪些是有效的、哪些并非如此，以及缝隙在哪里。",
+    "sections": {
+      "principles": {
+        "heading": "原则",
+        "items": [
+          "默认保持宁静。网站始终是深海军蓝 + WebGL；没有浅色模式、没有主题切换按钮、没有需要访客做的选择。",
+          "两位构建者，同一来源。每一行代码、每一句文案、每一份素材，在发布前都会经过我们两人。",
+          "从第一天起就是双语。英语与荷兰语共享同一套组件树和同一内容层；不会翻译两遍。",
+          "自有基础设施。网站、智能体、模型、笔记——全部运行在我们自己的硬件上，而非租用的 SaaS。",
+          "已经上线，而非展示。这个网站链接到的每个项目都已在生产环境运行。没有原型稿。"
+        ]
+      },
+      "stack": {
+        "heading": "技术栈",
+        "items": [
+          "Next.js 15（App Router）作为框架——默认使用服务端组件，仅在需要状态或事件处理时使用 'use client'。",
+          "TypeScript 保障整个代码库的类型安全。",
+          "使用自定义属性的纯 CSS——没有 Tailwind、没有 CSS-in-JS。设计令牌集中在一个文件中。",
+          "Three.js 用于 WebGL 背景——四个滚动驱动的场景（Drift、Lines、Roads、Glow），由 Theatre.js 关键帧交叉淡入淡出。",
+          "Lenis 用于流畅的惯性滚动。",
+          "Resend 用于事务性邮件（联系表单）。",
+          "Vercel 用于托管与持续部署——每次推送到 main 都会自动部署。",
+          "Cloudflare 用于 DNS 与边缘计算。"
+        ]
+      },
+      "typefaces": {
+        "heading": "字体",
+        "items": [
+          "Rijksoverheid Sans Heading Bold——展示字体。用于标题、各级标题以及页面想要表明态度的时刻。自托管。",
+          "Rijksoverheid Sans Text——正文字体。用于正文、界面组件与密集的元数据，在这些地方可读性比个性更重要。同样自托管。"
+        ]
+      },
+      "how_we_work": {
+        "heading": "我们的工作方式",
+        "items": [
+          "在写任何一行代码之前，我们先用通俗的语言撰写提案。",
+          "我们以小而可审的步骤提交。每次提交不仅说明做了什么，还说明为什么。",
+          "我们把决策记录在 Brain——我们内部的 Obsidian 知识库中，让背后的思考比做出决策的人更长久。",
+          "我们以一份书面交接文档结束每个项目：构建了什么、如何维护、缝隙在哪里。"
+        ]
+      },
+      "tools": {
+        "heading": "我们常用的工具",
+        "items": [
+          "Obsidian 用于 The Brain。",
+          "Mac Mini 上的 Git 用于本地仓库与 Obsidian 知识库。",
+          "Discord 用于 Rhine AI——我们的智能体连接外部世界的接口。",
+          "Linear Lite 用于客户任务跟踪。我们并不喜欢它，但我们还是用它。"
+        ]
+      },
+      "limits": {
+        "heading": "缝隙在哪里",
+        "items": [
+          "Three.js 在移动端负担较重。我们保留了下来，但低端手机加上不稳定的网络会明显感受到。",
+          "WebGL 的交叉淡入淡出在 Safari < 17 上有可见的缝隙。我们本可以通过更多的着色器工作来掩盖它们；目前，我们接受这个代价。",
+          "在我们于其域名列表中验证 rhinesolution.com 之前，联系表单会从 Resend 沙盒地址发送——这是一项待办事项。",
+          "这个网站没有分析工具。我们无法告诉你人们最常阅读哪些页面。与其违背上面的隐私承诺，我们宁愿不知道。"
+        ]
+      },
+      "credits": {
+        "heading": "致谢",
+        "items": [
+          "设计、代码、文案与基础设施：RAGNAROK（CEO）与 ZeroMeister（CTO）。",
+          "品牌素材：源自一个手绘标志，从孕育 Rhine Solution 的校园项目起就一路伴随我们。",
+          "托管：Vercel（法兰克福区域，欧盟）。",
+          "DNS：Cloudflare。",
+          "邮件：Resend（欧盟 + 美国，DPF 认证）。"
+        ]
+      }
+    }
+  },
+  "dfir": {
+    "cybercrime_report": {
+      "meta_title": "网络犯罪与网络安全报告",
+      "meta_description": "Keuzedeel K1352 研究报告：互联网如何运作、什么是网络犯罪、问题的规模有多大，以及如何防范。",
+      "eyebrow": "RAGNAROK · 网络安全",
+      "title": "网络犯罪与网络安全报告",
+      "lead": "Keuzedeel K1352 研究报告。从零开始讲解互联网如何运作、什么是网络犯罪、问题到底有多大、谁在实施犯罪及其原因，以及个人和组织可以如何保护自己。",
+      "meta": {
+        "course_label": "课程",
+        "course_value": "K1352 · Basis cybercriminaliteit en cyberveiligheid",
+        "title_label": "标题",
+        "title_value": "网络犯罪与网络安全",
+        "language_label": "语言",
+        "language_value": "简体中文",
+        "date_label": "报告日期",
+        "date_value": "Sep 2026"
+      },
+      "executive_summary_heading": "执行摘要",
+      "executive_summary": "如今，我们几乎所做的一切都离不开互联网，但互联网并非凭空存在。它是一个由电缆、路由器、数据中心和设备构成的实体网络。而只要有人聚集的地方，就会有犯罪。本报告解释了数据从设备到海底电缆的传输之旅，然后探讨什么是网络犯罪、主要类型有哪些、以真实数据呈现的问题规模、谁在实施犯罪及其原因、犯罪源自何处、公众如何反应，以及最后如何防范。",
+      "sections": [
+        {
+          "heading": "1 · 从零认识互联网",
+          "subsections": [
+            {
+              "heading": "1.1 互联网是什么",
+              "paragraphs": [
+                "互联网是由众多计算机组成的、相互交换信息的庞大网络。当一部手机、笔记本电脑或智能电视联网时，它就成为该网络的一部分。一个有用的比喻是公路系统：本地道路（家庭网络）、高速公路（服务提供商的网络）和国际线路（海底电缆）。数据像汽车一样行进，如果某条道路被阻断，数据会改道另一条路径，这正是互联网很少完全瘫痪的原因。",
+                "互联网和万维网并不是一回事。互联网是物理网络及其规则；万维网只是其上的一个服务，是浏览器用来访问网站的服务。电子邮件、游戏和流媒体也是运行在互联网上的其他服务。"
+              ]
+            },
+            {
+              "heading": "1.2 一条消息的旅程",
+              "paragraphs": [
+                "把一张图片发送给世界另一端的友人，是分步完成的。消息从不作为整体传输："
+              ],
+              "steps": [
+                { "step": 1, "title": "你的设备", "body": "设备将消息（照片、电子邮件）拆分成称为数据包的小块。每个数据包就像装在信封里的一封信，带有显示其来源和去向的报头信息。" },
+                { "step": 2, "title": "无线电波到路由器", "body": "在 Wi-Fi 下，数据包以无线电波的形式离开设备并到达路由器。在移动数据下，它们则前往附近的基站。" },
+                { "step": 3, "title": "路由器到调制解调器", "body": "路由器是家庭网络的流量管理器。调制解调器是翻译器：它将信号转换为可以通过提供商电缆传输的形式。" },
+                { "step": 4, "title": "ISP 网络", "body": "调制解调器通过同轴电缆或光纤电缆将数据发送给互联网服务提供商（ISP），由它为数据包选择最高效的路由。" },
+                { "step": 5, "title": "区域枢纽", "body": "数据到达在各大网络之间交换流量的大型数据中心。这些枢纽连接到互联网骨干网。" },
+                { "step": 6, "title": "海底电缆", "body": "对于跨大洲传输的数据，骨干网包括铺设在海底的巨型电缆，由专用船舶进行铺设和维修。数据以光脉冲的形式穿过细小的玻璃纤维。" },
+                { "step": 7, "title": "目的地", "body": "数据包到达另一侧，按正确顺序重新组装，接收者的设备便显示出消息。" }
+              ],
+              "note": "所以每条消息都要经过无线电波、铜线、玻璃纤维和海底电缆的混合传输。只是我们感觉它是无线的。"
+            },
+            {
+              "heading": "1.3 数据包、IP 地址与协议",
+              "paragraphs": [
+                "有两样东西让这一切成为可能：数据包和协议。"
+              ],
+              "protocols": [
+                { "term": "二进制", "body": "在设备内部，所有信息都以 0 和 1 存储。设备将它们转换为无线电波或电信号以发送出去。" },
+                { "term": "IP 地址", "body": "每台设备都有一个唯一编号，就像邮政地址一样。路由器利用它把每个数据包转发到正确的位置。" },
+                { "term": "TCP", "body": "TCP（传输控制协议）确保数据包按正确顺序到达且没有缺失。接收方确认每个数据包，缺失的数据包会被重新发送。" },
+                { "term": "DNS", "body": "域名系统（DNS）是互联网的电话簿。它将像 www.example.com 这样的名称转换为计算机真正需要的 IP 地址。" },
+                { "term": "服务器", "body": "网站、应用和文件存放在服务器上——那些始终保持在线的强大计算机。当你访问某个页面时，你的设备请求服务器发送它，数据便以数据包的形式返回。" }
+              ]
+            },
+            {
+              "heading": "1.4 不同的连接方式",
+              "table": {
+                "caption": "连接方式对比",
+                "rows": [
+                  ["连接方式", "工作原理", "优势", "劣势"],
+                  ["有线电缆", "使用与有线电视相同的同轴电缆；调制解调器转换信号。", "速度快（最高 1 Gbps）且普及度高。", "上传速度慢；邻居共享带宽，晚间网速会下降。"],
+                  ["光纤", "以光脉冲的形式通过玻璃纤维发送数据。", "最快的选项（最高 10 Gbps），上下行对等，信号损耗小。", "并非随处可用；铺设新光纤成本高昂。"],
+                  ["DSL", "使用现有的铜制电话线。", "覆盖范围极广，且不占用电话线路。", "速度较慢；速度取决于与提供商交换机的距离。"],
+                  ["卫星", "将数据从轨道卫星传送到你家里的接收天线。", "几乎在任何地方都能工作，对农村地区很有帮助。", "由于数据需往返太空，延迟较高；暴风雨会中断信号。"],
+                  ["固定无线", "在基站与家庭天线之间通过无线电信号传输。", "适合没有电缆的地区；延迟低于卫星。", "树木、建筑物和天气都会削弱信号。"],
+                  ["5G 家庭宽带", "利用移动网络连接家庭。", "无需开挖即可快速部署；速度快且延迟低。", "覆盖仍然有限，取决于距离和网络拥塞程度。"]
+                ]
+              },
+              "note": "一个共同的主题：上传速度、共享带宽和农村覆盖几乎是所有技术的薄弱环节。"
+            },
+            {
+              "heading": "1.5 最后一英里",
+              "paragraphs": [
+                "从提供商网络到家庭的最后一段称为最后一英里。它是最昂贵的建设部分，因此城市能铺设光纤，而农村和贫困地区只能获得更慢的连接，甚至根本没有。微波链路和 5G 等新技术有助于弥合这一差距，但在世界许多地方，基本的互联网接入仍然是个问题。"
+              ],
+              "figure": {
+                "src": "/dfir/a-brief-history-of-the-internet-graphic-768x1296.jpg",
+                "alt": "信息图：互联网简史",
+                "caption": "图 1 · 互联网简史（信息图来自 BroadbandNow）。"
+              }
+            }
+          ]
+        },
+        {
+          "heading": "2 · 什么是网络犯罪",
+          "subsections": [
+            {
+              "heading": "",
+              "paragraphs": [
+                "网络犯罪是指涉及计算机、互联网或其他数字技术的犯罪。它可能针对个人、公司或政府，并可能造成经济损失、声誉损害或精神伤害。不同国家的定义各不相同，这使其难以衡量，但专家通常将网络犯罪分为两类："
+              ],
+              "bullets": [
+                { "strong": "依赖网络的犯罪：", "body": "只能因计算机和网络而存在的犯罪，如黑客攻击、DDoS 攻击、恶意软件。没有互联网，这些犯罪就不会存在。" },
+                { "strong": "借助网络的犯罪：", "body": "转移到线上或变得更容易的传统犯罪，如网络欺诈、钓鱼、数字盗版、网络霸凌。它们早已存在，但互联网让犯罪分子能以更快、更便宜的方式同时侵害更多受害者。" }
+              ],
+              "paragraphs_after": [
+                "犯罪学家 David Wall 描述了四类网络犯罪：网络入侵（进入你无权进入的系统）、网络欺骗或盗窃（在线窃取财物，如信用卡数据）、网络色情或淫秽（在线传播性材料），以及网络暴力（造成情感或心理伤害，如网络跟踪。受害者可能没有身体受伤，却会遭受持久的伤害）。"
+              ]
+            }
+          ]
+        },
+        {
+          "heading": "3 · 网络犯罪的类型",
+          "subsections": [
+            {
+              "heading": "",
+              "paragraphs": [
+                "最常见的网络犯罪类型有："
+              ],
+              "table": {
+                "caption": "网络犯罪类型概览",
+                "rows": [
+                  ["类型", "描述"],
+                  ["黑客攻击", "未经许可闯入计算机系统，为谋取私利或造成破坏。"],
+                  ["钓鱼", "伪造电子邮件或消息，看起来像来自真实公司（如银行），用来诱骗人们交出密码或个人数据。"],
+                  ["勒索软件", "锁定你的文件并勒索钱财以归还文件的恶意软件。2017 年的 WannaCry 攻击就是一个著名的例子。"],
+                  ["DDoS 攻击", "用海量流量淹没网站或服务使其瘫痪，通常利用被感染计算机组成的网络（僵尸网络）。"],
+                  ["身份盗窃", "窃取个人资料以实施欺诈，例如以受害者名义开设账户或申请贷款。"],
+                  ["网络跟踪", "通过互联网反复尾随、威胁或恐吓某人。"],
+                  ["数字盗版", "未经许可下载或分享受版权保护的内容，如电影、音乐、软件。"],
+                  ["网络勒索", "入侵系统或邮件服务器，索要钱财才归还系统，或对数据保密。"],
+                  ["网络恐怖主义", "入侵政府系统或大型组织，以推进政治目的并制造恐慌。"],
+                  ["洗钱", "通过互联网和数字银行清洗非法所得，使其看起来合法。"],
+                  ["诱骗儿童", "在网上与儿童建立情感联系，通常是为了实施虐待或人口贩卖。"]
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "heading": "4 · 问题的规模",
+          "subsections": [
+            {
+              "heading": "",
+              "paragraphs": [
+                "网络犯罪不是一个小问题。数字巨大且仍在增长："
+              ],
+              "table": {
+                "caption": "关键事实与数据",
+                "rows": [
+                  ["事实", "数据 / 来源"],
+                  ["2024 年全球网络犯罪成本", "每年约 9.5 万亿美元，预计 2025 年还将增长 15%（Cybersecurity Ventures）。"],
+                  ["WannaCry 勒索软件攻击（2017 年）", "感染了 150 个国家的 230,000+ 台计算机；经济损失超过 40 亿美元。"],
+                  ["2005 年互联网用户", "约 10 亿人（占全球人口的 16%）。"],
+                  ["2023 年互联网用户", "约 54 亿人（占全球人口的 67%）。"],
+                  ["成人互联网使用率", "从约 52%（2000 年）增长到约 96%（2024 年）。"],
+                  ["互联网的直接经济贡献", "广告、网络零售和 ISP 收入每年约 1750 亿美元；连带效应约 4440 亿美元。"]
+                ]
+              },
+              "note": "互联网的增长也意味着更多的潜在受害者：从 2005 年约 10 亿人上网，到 2023 年约 54 亿人。网络犯罪实际上对犯罪分子而言是一个万亿美元级的产业，几乎所有联网的人都是潜在目标。"
+            }
+          ]
+        },
+        {
+          "heading": "5 · 谁在实施网络犯罪，为什么",
+          "subsections": [
+            {
+              "heading": "5.1 社会与经济驱动因素",
+              "paragraphs": [
+                "一项 2023 年绘制的全球网络犯罪分布研究发现，网络犯罪与一个国家的发展水平密切相关。更好的互联网基础设施、更高的教育水平和更多的互联网用户，都意味着更多的网络犯罪，因为犯罪分子拥有更好的工具和更多的目标。与此同时，贫困、失业和收入不平等迫使贫困地区的人把网络犯罪当作赚钱手段，例如西非部分地区因找不到其他工作而转向网络欺诈的年轻人。政治也很重要：执法不力、腐败严重、国际警务合作不足，都会让犯罪分子更容易逍遥法外。"
+              ]
+            },
+            {
+              "heading": "5.2 犯罪学解释",
+              "table": {
+                "caption": "解释网络犯罪的三种理论",
+                "rows": [
+                  ["理论", "核心观点", "如何解释网络犯罪"],
+                  ["犯罪一般理论（低自我控制）", "有些人行事冲动、爱冒险，只想快速获利而不考虑后果。", "网络犯罪能带来快钱，互联网还让犯罪分子无需亲眼看到伤害。研究一致地将低自我控制与网络犯罪联系起来。"],
+                  ["社会学习理论", "犯罪是从他人那里习得的。当某种行为看起来有效时，人们就会模仿。", "如果朋友或线上社区认同黑客攻击或盗版，人们也更可能这样做，尤其是当它看起来没有受到惩罚时。"],
+                  ["日常活动理论", "当有犯罪动机的犯罪者、合适的目标和缺乏有能力的监管者同时出现时，犯罪就会发生。", "在网上，弱密码、点击钓鱼链接和过时软件会让你成为合适的目标。安全软件和谨慎的习惯就是监管者。"]
+                ]
+              }
+            },
+            {
+              "heading": "5.3 黑客的类型",
+              "paragraphs": [
+                "并非每个黑客都有相同的动机："
+              ],
+              "bullets": [
+                { "strong": "网络乌托邦主义者", "body": "做一些恶意之事，却自认为是在为公共利益而行动的人。" },
+                { "strong": "网络朋克", "body": "以自己反感的机构为目标的黑客，往往只是为了乐趣或表明某种立场。" },
+                { "strong": "网络间谍与网络恐怖分子", "body": "技艺高超、动机极端的攻击者，往往为国家或政治事业效力。" }
+              ]
+            }
+          ]
+        },
+        {
+          "heading": "6 · 网络犯罪源自何处",
+          "subsections": [
+            {
+              "heading": "",
+              "paragraphs": [
+                "由于互联网没有国界，很难确切说出网络犯罪分子身处何方。犯罪分子借助 VPN、代理服务器，或通过攻击其他国家的被感染计算机来隐藏自己。尽管如此，研究人员仍绘制了已知恶意活动的 IP 地址分布图。其中大部分位于北美、中欧和东欧、东亚、印度和澳大利亚东部。就大陆而言，北美和欧洲承载最多，高收入地区承载了大多数恶意 IP。换言之，最富有、互联程度最高的国家既是最大的目标，也是网络犯罪基础设施的最大来源地。"
+              ],
+              "figure": {
+                "src": "/dfir/top-20-countries-malicious-programs-2014.png",
+                "alt": "2014 年遭受恶意程序外部攻击最多的 20 个国家",
+                "caption": "图 2 · 2014 年遭受恶意程序外部攻击最多的 20 个国家（来源：ResearchGate）。"
+              },
+              "note": "重要的细微差别：这些基于 IP 的地图显示的是攻击的源头，而不一定是犯罪分子居住的地方。一个国家的犯罪分子可以轻易地从另一个国家的服务器发起攻击，这正是警方打击网络犯罪如此困难的原因。"
+            }
+          ]
+        },
+        {
+          "heading": "7 · 人们对网络犯罪的反应",
+          "subsections": [
+            {
+              "heading": "",
+              "paragraphs": [
+                "网络犯罪耗费金钱，但也会在情感上影响人们。一项 2025 年的研究分析了 Reddit 上超过 6,700 条帖子和 100,000 条关于网络犯罪的评论，时间跨度达 14 年（2008-2022）。研究发现："
+              ],
+              "bullets": [
+                { "strong": "", "body": "最大的讨论由数据泄露、网络攻击、勒索软件以及与特定国家相关的黑客攻击（俄罗斯或中国的国家黑客攻击）引发。" },
+                { "strong": "愤怒", "body": "是最常见的情绪，主要针对隐私侵犯、未能保护数据的公司，以及应对威胁不力的政府。" },
+                { "strong": "讽刺", "body": "是第二常见的反应，主要针对官方说辞和无效的安全措施。" },
+                { "strong": "恐惧", "body": "也明显存在，表明人们确实感到自己受到威胁。" }
+              ],
+              "paragraphs_after": [
+                "网络攻击会严重损害公众对公司和政府的信任，情感上的反应甚至可能推动人们对更强网络安全政策的支持。"
+              ]
+            }
+          ]
+        },
+        {
+          "heading": "8 · 网络安全：如何保护自己",
+          "subsections": [
+            {
+              "heading": "",
+              "paragraphs": [
+                "网络安全是我们为保护计算机、网络、程序和数据免遭未授权访问、破坏或窃取所做的一切。它就是日常活动理论中的监管者。没有它，攻击者的工作就会轻松得多。"
+              ],
+              "h3": "8.1 针对个人",
+              "measures": [
+                "为每个账户使用强且唯一的密码，并定期更换。密码管理器会有所帮助。",
+                "尽可能开启双重身份验证（2FA），这样仅凭被盗的密码也不够。",
+                "保持一切更新：操作系统、应用和杀毒软件，因为更新会修复已知的安全漏洞。",
+                "点击前三思：不要打开你未预期的链接或附件，即使它们看起来像来自你的银行。",
+                "只在安全的网站上输入个人数据。检查地址栏中的挂锁图标和 https。",
+                "避免在未加密的公共 Wi-Fi 上进行银行业务；如必须使用，请使用 VPN。",
+                "定期备份，这样勒索软件就无法永久将你锁在自己的数据之外。"
+              ],
+              "h3_2": "8.2 针对组织",
+              "measures_2": [
+                "清晰的安防架构和网络拓扑图，以便了解整体环境。",
+                "安全策略和风险管理策略，说明如何识别和处理风险。",
+                "定期的风险评估和安全审计。",
+                "备份与恢复流程，以及灾难恢复计划，让组织在遭受攻击后能够恢复。",
+                "员工培训。人是最薄弱的环节，受过培训的员工更不容易落入钓鱼陷阱。",
+                "事件管理，以便在出错时能快速、受控并留档地做出响应。"
+              ],
+              "note": "网络安全不是一劳永逸的工作。它是一个持续发现威胁、修复弱点并保持更新的过程，因为攻击者在不断改变手法。"
+            }
+          ]
+        },
+        {
+          "heading": "9 · 结论",
+          "subsections": [
+            {
+              "heading": "",
+              "paragraphs": [
+                "互联网是一个由电缆、路由器和数据中心组成的、连接几乎全世界的实体网络，理解数据从设备到海底电缆的旅程，有助于解释网络犯罪源自何处。网络犯罪是一个庞大且不断增长的问题，每年造成约 9.5 万亿美元的损失，其驱动力既有机会也有困境。犯罪学理论表明，低自我控制、向他人学习和缺乏监管者都在起作用，这正是良好的网络安全习惯之所以有效的原因：它们剥夺了机会。",
+                "对软件开发者以及任何上网的人来说，道理很简单。了解技术如何运作，识别威胁，并用强密码、更新、备份和安全意识来保护自己和你的用户。大多数攻击之所以得逞，只是因为一些易于防范的简单失误。"
+              ]
+            }
+          ]
+        }
+      ],
+      "references_heading": "10 · 参考文献",
+      "references": [
+        { "label": "Tsotetsi, K. \"Understanding the Internet: A Journey from Devices to Submarine Cables.\"", "href": "https://vocal.media/fyi/understanding-the-internet-a-journey-from-devices-to-submarine-cables" },
+        { "label": "Lefelhoc, C. \"How Does Cable Internet Work?\"", "href": "https://www.compareinternet.com/blog/how-does-cable-internet-work/" },
+        { "label": "Fann, K. \"How Does the Internet Work? A Complete Guide.\" BroadbandNow.", "href": "https://broadbandnow.com/guides/how-does-the-internet-work" },
+        { "label": "Tutorials Point. \"Cyber Crime & Cyber Security.\"", "href": "https://www.tutorialspoint.com/fundamentals_of_science_and_technology/cyber_crime_and_cyber_security.htm" },
+        { "label": "Chen, S. et al. \"Exploring the global geography of cybercrime and its driving forces.\" (2023).", "href": "https://www.nature.com/articles/s41599-023-01560-x" },
+        { "label": "Achuthan, K., Khobragade, S. & Kowalski, R. \"Cybercrime through the public lens: a longitudinal analysis.\" (2025).", "href": "https://www.nature.com/articles/s41599-025-04459-x" },
+        { "label": "Onwuadiamu, G. \"Cybercrime in criminology; A systematic review of criminological theories, methods, and concepts.\" Journal of Economic Criminology 8 (2025) 100136.", "href": "https://doi.org/10.1016/j.jeconc.2025.100136" },
+        { "label": "ResearchGate. \"Top 20 countries exposed to external attacks from malicious programs in 2014.\"", "href": "https://www.researchgate.net/figure/Top-20-countries-exposed-to-external-attacks-from-malicious-programs-in-2014_fig1_331914032" }
+      ],
+      "references_note": "图表：\"互联网简史\"（BroadbandNow）和\"2014 年遭受恶意程序外部攻击最多的 20 个国家\"（ResearchGate）。事实收集自上述来源，并以本报告的措辞改写。",
+      "back_label": "返回团队",
+      "profile_label": "查看 RAGNAROK 简介"
+    }
+  }
+}
