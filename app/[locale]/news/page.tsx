@@ -2,6 +2,7 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import NewsCard from "@/components/news/NewsCard";
 import GlobalNewsSection from "@/components/news/GlobalNewsSection";
+import SearchBox from "@/components/search/SearchBox";
 import { getContent } from "@/lib/i18n";
 import { getCompanySocials } from "@/lib/socials";
 import { buildMetadata } from "@/lib/seo";
@@ -47,6 +48,8 @@ export default async function NewsPage({ params, searchParams }: Props) {
           <h1>{n.title}</h1>
           <p style={{ color: "var(--color-text-muted)", fontSize: "1.1rem" }}>{n.subtitle}</p>
         </header>
+
+        <SearchBox placeholder={n.search} />
 
         <h2 className="news-section-title">From the studio</h2>
         <ol className="news-list">

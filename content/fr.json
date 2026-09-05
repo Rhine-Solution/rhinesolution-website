@@ -318,7 +318,8 @@
       "feature": "Fonctionnalité",
       "fix": "Correction",
       "update": "Mise à jour"
-    }
+    },
+    "search": "Rechercher dans les actualités"
   },
   "contact": {
     "eyebrow": "Contact",

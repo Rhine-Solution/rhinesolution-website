@@ -318,7 +318,8 @@
       "feature": "Feature",
       "fix": "Fix",
       "update": "Update"
-    }
+    },
+    "search": "Search news"
   },
   "contact": {
     "eyebrow": "Contact",
