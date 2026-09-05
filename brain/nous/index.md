@@ -16,10 +16,14 @@ description: Map of all machine-brain wiki notes, grouped by type.
 - [[okm]] — OKF/OKM conventions.
 -  — market + competitors for scheduling/WFM SaaS.
 -  — Workers + Hyperdrive + MySQL pattern (howto).
+-  — tooling & agent roadmap (researcher, security scanning, schema docs, monitoring).
+-  — Turnstile + abuse-defense + form backend on Workers (howto).
 
 ## Projects
 
 -  — workforce scheduling & time tracking site (separate from Rhine Solution).
+-  — recommended MySQL schema for the scheduling SaaS.
+-  — auto-scheduling solver (CP-SAT) + optional AI layer.
 
 ## Ledgers
 
