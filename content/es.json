@@ -438,8 +438,9 @@
       "typefaces": {
         "heading": "Tipografías",
         "items": [
-          "Rijksoverheid Sans Heading Bold: la tipografía de exhibición. Se usa para títulos, encabezados y los momentos en que la página quiere hacer una declaración. Autoalojada.",
-          "Rijksoverheid Sans Text: la tipografía de texto. Se usa para el contenido, la interfaz y los metadatos densos donde la legibilidad importa más que el carácter. También autoalojada."
+          "Rijksoverheid Sans — la sans. Se usa para el cuerpo del texto y la interfaz, autoalojada para que la página no haga solicitudes de fuentes externas.",
+          "Rijksoverheid Heading — la sans en negrita. Se usa en todos los títulos, con un interletrado firme y seguro.",
+          "Rijksoverheid Serif — la serif, regular e italic. Se usa para las eyebrows y los momentos en que la página quiere parecer un libro."
         ]
       },
       "how_we_work": {

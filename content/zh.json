@@ -438,8 +438,9 @@
       "typefaces": {
         "heading": "字体",
         "items": [
-          "Rijksoverheid Sans Heading Bold——展示字体。用于标题、各级标题以及页面想要表明态度的时刻。自托管。",
-          "Rijksoverheid Sans Text——正文字体。用于正文、界面组件与密集的元数据，在这些地方可读性比个性更重要。同样自托管。"
+          "Rijksoverheid Sans — 无衬线字体。用于正文和界面，自托管，页面不向外部请求字体。",
+          "Rijksoverheid Heading — 粗体无衬线字体。用于所有标题，字距紧凑而自信。",
+          "Rijksoverheid Serif — 衬线字体（常规与斜体）。用于小标眉以及页面想要如书本般呈现的时刻。"
         ]
       },
       "how_we_work": {

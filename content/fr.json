@@ -438,8 +438,9 @@
       "typefaces": {
         "heading": "Polices",
         "items": [
-          "Rijksoverheid Sans Heading Bold — la police d'affichage. Utilisée pour les titres, les en-têtes et les moments où la page veut faire une déclaration. Auto-hébergée.",
-          "Rijksoverheid Sans Text — la police de texte. Utilisée pour le corps de texte, l'interface et les métadonnées denses, là où la lisibilité compte plus que le caractère. Également auto-hébergée."
+          "Rijksoverheid Sans — la police sans. Utilisée pour le texte courant et l'interface, auto-hébergée afin que la page ne fasse aucune requête de police externe.",
+          "Rijksoverheid Heading — la police sans en gras. Utilisée pour tous les titres, avec un espacement serré et affirmé.",
+          "Rijksoverheid Serif — la police serif, regular et italic. Utilisée pour les eyebrows et les moments où la page veut ressembler à un livre."
         ]
       },
       "how_we_work": {
