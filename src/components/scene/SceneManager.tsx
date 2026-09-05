@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import * as THREE from "three";
-import { RGBELoader } from "three/examples/jsm/loaders/RGBELoader.js";
+import { HDRLoader } from "three/examples/jsm/loaders/HDRLoader.js";
 import { createShaderScene } from "./scenes/shader";
 import { createDriftScene } from "./scenes/drift";
 import { createLinesScene } from "./scenes/lines";
@@ -67,7 +67,7 @@ export default function SceneManager() {
     // on the physical-material shards, mapped via PMREM.
     const pmrem = new THREE.PMREMGenerator(renderer);
     let envTex: THREE.Texture | null = null;
-    new RGBELoader().load("/textures/studio_small_03_1k.hdr", (hdr) => {
+    new HDRLoader().load("/textures/studio_small_03_1k.hdr", (hdr) => {
       envTex = pmrem.fromEquirectangular(hdr).texture;
       scene.environment = envTex;
       scene.environmentIntensity = 0.6;
