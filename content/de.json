@@ -333,7 +333,8 @@
       "submit": "Nachricht senden",
       "submitting": "Wird gesendet...",
       "success": "Nachricht gesendet. Wir antworten innerhalb von 1–2 Werktagen.",
-      "error_generic": "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut oder schreiben Sie an info@rhinesolution.com."
+      "error_generic": "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut oder schreiben Sie an info@rhinesolution.com.",
+      "verify_error": "Bitte schließen Sie die Verifizierung unten ab."
     },
     "alt_title": "Oder direkt zur Arbeit.",
     "alt_text": "Jedes gelieferte Projekt lebt auf dieser Website. Beginnen Sie mit der Ausstellung.",

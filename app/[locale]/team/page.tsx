@@ -22,7 +22,7 @@ export default async function TeamPage({ params }: Props) {
   const t = content.team;
   return (
     <>
-      <Nav locale={locale} brand={content.brand.name} labels={content.nav} current="team" />
+      <Nav locale={locale} brand={content.brand.name} labels={content.nav} navLabel={content.a11y.nav_label} current="team" />
       <main id="main" className="container page">
         <header className="page-head">
           <p className="section-eyebrow">{t.title}</p>

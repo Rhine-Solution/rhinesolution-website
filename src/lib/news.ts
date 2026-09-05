@@ -22,7 +22,16 @@ export function formatNewsDate(date: string, locale: string): string {
   }).format(d);
 }
 
+// Simple in-memory cache: news files are read from disk on every call
+// otherwise. News changes infrequently; a short TTL keeps it fresh while
+// avoiding repeated reads during page renders / ISR revalidation.
+const cache = new Map<string, { at: number; items: NewsItem[] }>();
+const CACHE_TTL_MS = 5 * 60 * 1000;
+
 export function getNews(locale: string): NewsItem[] {
+  const cached = cache.get(locale);
+  if (cached && Date.now() - cached.at < CACHE_TTL_MS) return cached.items;
+
   const dir = join(process.cwd(), "content", "news", locale);
   if (!existsSync(dir)) return [];
   const files = readdirSync(dir).filter((f) => f.endsWith(".md") && !f.startsWith("_"));
@@ -30,7 +39,9 @@ export function getNews(locale: string): NewsItem[] {
     const base = parseNewsItem(f, readFileSync(join(dir, f), "utf8"));
     return { ...base, dateLabel: formatNewsDate(base.date, locale) };
   });
-  return sortNewsDesc(items);
+  const sorted = sortNewsDesc(items);
+  cache.set(locale, { at: Date.now(), items: sorted });
+  return sorted;
 }
 
 export function getNewsItem(locale: string, slug: string): NewsItem | undefined {

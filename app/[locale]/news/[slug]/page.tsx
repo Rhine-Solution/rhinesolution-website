@@ -24,7 +24,6 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale, slug } = await params;
-  const c = getContent(locale);
   const item = getNewsItem(locale, slug);
   if (item) {
     return buildMetadata(locale, `/news/${slug}`, {
@@ -53,7 +52,7 @@ export default async function NewsArticlePage({ params }: Props) {
     if (!global) notFound();
     return (
       <>
-        <Nav locale={locale} brand={content.brand.name} labels={content.nav} current="news" />
+        <Nav locale={locale} brand={content.brand.name} labels={content.nav} navLabel={content.a11y.nav_label} current="news" />
         <main id="main" className="container page">
           <p className={styles.crumbs}>
             <Link href={`/${locale}/news`}>{n.back}</Link>
@@ -100,7 +99,7 @@ export default async function NewsArticlePage({ params }: Props) {
   const badge = n.categories[item.category as keyof typeof n.categories] || item.category;
   return (
     <>
-      <Nav locale={locale} brand={content.brand.name} labels={content.nav} current="news" />
+      <Nav locale={locale} brand={content.brand.name} labels={content.nav} navLabel={content.a11y.nav_label} current="news" />
       <main id="main" className="container page">
         <p className={styles.crumbs}>
           <Link href={`/${locale}/news`}>{n.back}</Link>

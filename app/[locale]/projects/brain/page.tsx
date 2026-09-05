@@ -26,7 +26,7 @@ export default async function BrainExplorerPage({ params }: Props) {
 
   return (
     <>
-      <Nav locale={locale} brand={content.brand.name} labels={content.nav} current="projects" />
+      <Nav locale={locale} brand={content.brand.name} labels={content.nav} navLabel={content.a11y.nav_label} current="projects" />
       <main id="main" className="container page">
         <div className={styles.explorer}>
           <BrainSidebar manifest={manifest} locale={locale} labels={labels} />

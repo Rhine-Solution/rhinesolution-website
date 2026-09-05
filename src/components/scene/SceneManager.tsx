@@ -9,7 +9,6 @@ import { createLinesScene } from "./scenes/lines";
 import { createRoadsScene } from "./scenes/roads";
 import { createGlowScene } from "./scenes/glow";
 import type { RhineScene } from "./types";
-import TheatreDirector from "./TheatreDirector";
 
 const SCENES: RhineScene[] = [
   createShaderScene(),
@@ -22,15 +21,6 @@ const SCENES: RhineScene[] = [
 export default function SceneManager() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   // WebGL canvas renders on every page.
-
-  // Refs that TheatreDirector reads from inside the rAF loop
-  const scrollProgressRef = useRef(0);
-  const sceneObjectsRef = useRef<{
-    drift: THREE.Group;
-    lines: THREE.Group;
-    roads: THREE.Group;
-    glow: THREE.Group;
-  } | null>(null);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -96,14 +86,6 @@ export default function SceneManager() {
     }
     scene.add(scenesParent);
 
-    // Expose scene groups for TheatreDirector (shader scene has no theatre props)
-    sceneObjectsRef.current = {
-      drift: built[1].group,
-      lines: built[2].group,
-      roads: built[3].group,
-      glow: built[4].group,
-    };
-
     // Scroll state
     let scrollProgress = 0;
     let scrollTarget = 0;
@@ -117,12 +99,13 @@ export default function SceneManager() {
 
     // Animation loop
     let raf = 0;
-    const clock = new THREE.Clock();
+    const timer = new THREE.Timer();
 
     const tick = () => {
       raf = requestAnimationFrame(tick);
-      const dt = Math.min(clock.getDelta(), 0.05);
-      const time = clock.elapsedTime;
+      timer.update();
+      const dt = Math.min(timer.getDelta(), 0.05);
+      const time = timer.getElapsed();
 
 // Smooth scroll lerp
       // Two-stage: body (0..0.7) = 0.05 (slightly slower than the original 0.06
@@ -136,7 +119,6 @@ export default function SceneManager() {
           ? 0.05
           : 0.025;
       scrollProgress += (scrollTarget - scrollProgress) * lerpFactor;
-      scrollProgressRef.current = scrollProgress;
 
       // Update each scene and modulate group visibility via scale/opacity
       for (let i = 0; i < SCENES.length; i++) {
@@ -181,9 +163,9 @@ export default function SceneManager() {
       cancelAnimationFrame(raf);
       window.removeEventListener("scroll", onScroll);
       window.removeEventListener("resize", onResize);
-      sceneObjectsRef.current = null;
       if (envTex) envTex.dispose();
       pmrem.dispose();
+      timer.dispose();
       for (const obj of built) obj.dispose();
       renderer.dispose();
     };
@@ -204,12 +186,6 @@ export default function SceneManager() {
           display: "block",
         }}
       />
-      {sceneObjectsRef.current && (
-        <TheatreDirector
-          scrollProgressRef={scrollProgressRef}
-          sceneObjects={sceneObjectsRef.current}
-        />
-      )}
     </>
   );
 }

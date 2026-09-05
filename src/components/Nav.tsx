@@ -7,11 +7,12 @@ type NavProps = {
   brand: string;
   labels: { home: string; team: string; projects: string; about: string; news: string; contact: string };
   current?: "home" | "team" | "projects" | "about" | "news" | "contact";
+  navLabel?: string;
 };
 
-export default function Nav({ locale, brand, labels, current }: NavProps) {
+export default function Nav({ locale, brand, labels, current, navLabel = "Main navigation" }: NavProps) {
   return (
-    <nav className="nav" aria-label="Main navigation">
+    <nav className="nav" aria-label={navLabel}>
       <div className="nav-island">
         <Link href={`/${locale}`} className="nav-brand" aria-current={current === "home" ? "page" : undefined}>
           {brand}

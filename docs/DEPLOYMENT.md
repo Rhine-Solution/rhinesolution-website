@@ -52,6 +52,7 @@ Required in Vercel (all environments):
 - `RESEND_API_KEY`
 - `NEXT_PUBLIC_TURNSTILE_SITE_KEY`
 - `TURNSTILE_SECRET_KEY`
+- `GEMINI_API_KEY`
 
 Keep production / preview / development consistent.
 

@@ -333,7 +333,8 @@
       "submit": "Invia messaggio",
       "submitting": "Invio in corso...",
       "success": "Messaggio inviato. Ti risponderemo entro 1-2 giorni lavorativi.",
-      "error_generic": "Qualcosa è andato storto. Riprova o scrivi a info@rhinesolution.com."
+      "error_generic": "Qualcosa è andato storto. Riprova o scrivi a info@rhinesolution.com.",
+      "verify_error": "Completa la verificación qui sotto."
     },
     "alt_title": "Oppure passa direttamente al lavoro.",
     "alt_text": "Ogni progetto pubblicato vive su questo sito. Inizia dalla vetrina.",

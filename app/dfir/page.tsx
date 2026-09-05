@@ -8,9 +8,12 @@ import { getContent, defaultLocale } from "@/lib/i18n";
 import { getCompanySocials } from "@/lib/socials";
 
 export const metadata: Metadata = {
-  title: "DFIR — Digital Forensics Cases",
+  title: "DFIR â€” Digital Forensics Cases",
   description:
     "Digital forensics case studies from Rhine Solution: examinations of media, devices and infrastructure.",
+  alternates: {
+    canonical: "https://rhinesolution.com/dfir",
+  },
 };
 
 const cases = [
@@ -30,7 +33,7 @@ export default function DfirIndexPage() {
   const content = getContent(defaultLocale);
   return (
     <>
-      <Nav locale="en" brand={content.brand.name} labels={content.nav} />
+      <Nav locale="en" brand={content.brand.name} labels={content.nav} navLabel={content.a11y.nav_label} />
       <JsonLd
         data={breadcrumbJsonLd("en", [
           { name: "Home", path: "/en" },
@@ -39,10 +42,10 @@ export default function DfirIndexPage() {
       />
       <main id="main" className="container page">
         <header className="page-head">
-          <p className="section-eyebrow">ZeroMeister · Digital Forensics</p>
+          <p className="section-eyebrow">ZeroMeister Â· Digital Forensics</p>
           <h1>DFIR Cases</h1>
           <p style={{ color: "var(--color-text-muted)", fontSize: "1.1rem" }}>
-            Digital Forensics &amp; Incident Response — selected examinations, documented as court-ready reports.
+            Digital Forensics &amp; Incident Response â€” selected examinations, documented as court-ready reports.
           </p>
         </header>
         <div className="grid" style={{ marginTop: "var(--space-5)" }}>
@@ -57,10 +60,10 @@ export default function DfirIndexPage() {
               <h2>{c.title}</h2>
               <p>{c.summary}</p>
               <p style={{ color: "var(--color-text-muted)", fontSize: "0.85rem", marginBottom: 0 }}>
-                {c.date} · {c.classification}
+                {c.date} Â· {c.classification}
               </p>
               <p style={{ color: "var(--color-blue-soft)", fontSize: "0.8rem", marginTop: "var(--space-2)", marginBottom: 0 }}>
-                {c.tags.join(" · ")}
+                {c.tags.join(" Â· ")}
               </p>
             </Link>
           ))}

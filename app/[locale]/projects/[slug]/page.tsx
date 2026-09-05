@@ -39,7 +39,7 @@ export default async function ProjectDetailPage({ params }: Props) {
   if (!p) notFound();
   return (
     <>
-      <Nav locale={locale} brand={content.brand.name} labels={content.nav} current="projects" />
+      <Nav locale={locale} brand={content.brand.name} labels={content.nav} navLabel={content.a11y.nav_label} current="projects" />
       <main id="main" className="container page">
         <h1>{p.title}</h1>
         <p style={{ color: "var(--color-text-muted)", fontSize: "1.1rem" }}>{p.summary}</p>

@@ -39,11 +39,11 @@ export default async function HomePage({ params }: Props) {
     let idx = 0;
     return words.map((word, w) => (
       <span key={w} className="hero-word" aria-hidden="true">
-        {word.split("").map((ch) => {
+        {word.split("").map((ch, ci) => {
           const delay = idx * step;
           idx += 1;
           return (
-            <span key={`${w}-${ch}`} className="hero-letter" style={{ animationDelay: `${delay}ms` }}>
+            <span key={`${w}-${ci}-${ch}`} className="hero-letter" style={{ animationDelay: `${delay}ms` }}>
               {ch}
             </span>
           );
@@ -61,7 +61,7 @@ export default async function HomePage({ params }: Props) {
         body={content.gate.body}
         verifiedLabel={content.gate.verified}
       />
-      <Nav locale={locale} brand={content.brand.name} labels={content.nav} current="home" />
+      <Nav locale={locale} brand={content.brand.name} labels={content.nav} navLabel={content.a11y.nav_label} current="home" />
       <main id="main">
         <section className="hero-section">
           <p className="hero-eyebrow">{t.hero_line_1}</p>
@@ -107,8 +107,8 @@ export default async function HomePage({ params }: Props) {
 
         <SectionDivider
           number="02"
-          eyebrow="Selected work"
-          text="Built and shipped."
+          eyebrow={content.sections.featured_work}
+          text={content.sections.featured_work_text}
         />
 
         <section className="container featured">

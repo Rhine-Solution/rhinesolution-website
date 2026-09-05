@@ -10,12 +10,14 @@ const localePaths = [
   "/team",
   "/projects",
   "/about",
-  "/news",
   "/contact",
   "/privacy",
   "/colophon",
   "/dfir/cybercrime-report",
 ];
+// News content exists only for en and nl — other locales are intentionally
+// not translated, so we only emit /news for those two.
+const newsLocales = ["en", "nl"] as const;
 
 function languages(path: string) {
   const norm = path.replace(/\/+$/, "");
@@ -35,7 +37,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
   const entries: MetadataRoute.Sitemap = [
     { url: base, lastModified: now, changeFrequency: "weekly", priority: 1.0, alternates: { languages: languages("") } },
-    { url: `${base}/music`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
+    { url: `${base}/music`, lastModified: now, changeFrequency: "weekly", priority: 0.8, alternates: { languages: { "x-default": `${base}/music`, en: `${base}/music` } } },
+    { url: `${base}/dfir`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
+    { url: `${base}/dfir/lab041`, lastModified: now, changeFrequency: "monthly", priority: 0.5 },
   ];
 
   for (const locale of locales) {
@@ -96,6 +100,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
         changeFrequency: "monthly",
         priority: 0.5,
         alternates: { languages: languages(`/news/${slug}`) },
+      });
+    }
+    if ((newsLocales as readonly string[]).includes(locale)) {
+      entries.push({
+        url: `${base}/${locale}/news`,
+        lastModified: now,
+        changeFrequency: "weekly",
+        priority: 0.7,
+        alternates: { languages: languages("/news") },
       });
     }
   }

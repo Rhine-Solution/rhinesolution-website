@@ -339,7 +339,8 @@
       "submit": "Verstuur bericht",
       "submitting": "Versturen...",
       "success": "Bericht verstuurd. We reageren binnen 1-2 werkdagen.",
-      "error_generic": "Er ging iets mis. Probeer opnieuw of mail info@rhinesolution.com."
+      "error_generic": "Er ging iets mis. Probeer opnieuw of mail info@rhinesolution.com.",
+      "verify_error": "Voltooi de verificatie hieronder."
     },
     "alt_title": "Of duik meteen het werk in.",
     "alt_text": "Elk geleverd project staat op deze site. Begin bij de showcase.",

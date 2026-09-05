@@ -56,7 +56,12 @@ function loadTurnstileScript(): Promise<void> {
 
 let scriptLoading: Promise<void> | null = null;
 function ensureScript(): Promise<void> {
-  if (!scriptLoading) scriptLoading = loadTurnstileScript();
+  if (!scriptLoading) {
+    scriptLoading = loadTurnstileScript().catch((err) => {
+      scriptLoading = null;
+      throw err;
+    });
+  }
   return scriptLoading;
 }
 

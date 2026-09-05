@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { FiChevronDown } from "react-icons/fi";
@@ -26,7 +25,6 @@ export default function LanguageSwitcher({
   onNavigate,
 }: LanguageSwitcherProps) {
   const pathname = usePathname() || "/";
-  const [open, setOpen] = useState(false);
   const a11y = getContent(locale).a11y;
 
   if (variant === "menu") {
@@ -59,11 +57,7 @@ export default function LanguageSwitcher({
   }
 
   return (
-    <details
-      className={`lang-switcher lang-switcher--${variant}`}
-      open={open}
-      onToggle={(e) => setOpen(e.currentTarget.open)}
-    >
+    <details className={`lang-switcher lang-switcher--${variant}`}>
       <summary aria-label={a11y.language_switcher}>
         <span className="lang-switcher-code">{locale.toUpperCase()}</span>
         <FiChevronDown className="lang-switcher-caret" size={12} aria-hidden="true" />
@@ -75,8 +69,8 @@ export default function LanguageSwitcher({
             <Link
               key={l}
               href={buildHref(pathname, locale, l)}
-              onClick={() => {
-                setOpen(false);
+              onClick={(e) => {
+                e.currentTarget.closest("details")?.removeAttribute("open");
                 onNavigate?.();
               }}
               aria-current={active ? "true" : undefined}

@@ -18,6 +18,15 @@ const nextConfig = {
   outputFileTracingIncludes: {
     "/*": ["./content/news/**/*"],
   },
+  images: {
+    remotePatterns: [
+      { protocol: "https", hostname: "images.unsplash.com" },
+      { protocol: "https", hostname: "github.com" },
+      { protocol: "https", hostname: "avatars.githubusercontent.com" },
+      { protocol: "https", hostname: "rhinesolution.com" },
+      { protocol: "https", hostname: "vercel.com" },
+    ],
+  },
   async headers() {
     return [
       {

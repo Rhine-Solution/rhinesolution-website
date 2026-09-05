@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: Props) {
   const p = getMember(content, member);
   if (!p) return { title: "Not found" };
   return buildMetadata(locale, `/team/${member}`, {
-    title: `${p.name} — ${p.role}`,
+    title: `${p.name} â€” ${p.role}`,
     description: p.tagline,
   });
 }
@@ -37,7 +37,7 @@ export default async function MemberPage({ params }: Props) {
   if (!p) notFound();
   return (
     <>
-      <Nav locale={locale} brand={content.brand.name} labels={content.nav} current="team" />
+      <Nav locale={locale} brand={content.brand.name} labels={content.nav} navLabel={content.a11y.nav_label} current="team" />
       <main id="main" className="container page">
         <header className="portfolio-header">
           <h1>{p.name}</h1>
@@ -74,7 +74,7 @@ export default async function MemberPage({ params }: Props) {
                 {p.featured.map((f) => (
                   <Link
                     key={f.href}
-                    href={f.href}
+                    href={localizeHref(f.href, locale)}
                     className="card"
                     style={{ textDecoration: "none", color: "inherit" }}
                   >
@@ -103,4 +103,17 @@ export default async function MemberPage({ params }: Props) {
       />
     </>
   );
+}
+
+// Featured-work hrefs in content may carry a hardcoded locale prefix (e.g.
+// "/en/dfir/cybercrime-report"). Rewrite it to the visitor's locale so the
+// link always lands on the matching localized page. Locale-agnostic paths
+// (e.g. "/dfir/lab041") are left untouched.
+function localizeHref(href: string, locale: string): string {
+  const locales = ["en", "nl", "de", "fr", "es", "it", "zh"];
+  const first = href.split("/").filter(Boolean)[0] ?? "";
+  if (locales.includes(first)) {
+    return `/${locale}/${href.split("/").slice(2).join("/")}`;
+  }
+  return href;
 }

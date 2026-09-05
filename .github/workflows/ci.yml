@@ -35,8 +35,11 @@ jobs:
       - name: Typecheck
         run: npm run typecheck
 
-      - name: Validate content
+- name: Validate content
         run: node scripts/validate-content.mjs
+
+      - name: Test
+        run: npm test
 
       - name: Build
         run: npm run build

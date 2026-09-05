@@ -2,6 +2,18 @@ import type { Metadata } from "next";
 
 const SITE = "https://rhinesolution.com";
 
+const LOCALES = ["en", "nl", "de", "fr", "es", "it", "zh"] as const;
+
+const OG_LOCALE: Record<(typeof LOCALES)[number], string> = {
+  en: "en_US",
+  nl: "nl_NL",
+  de: "de_DE",
+  fr: "fr_FR",
+  es: "es_ES",
+  it: "it_IT",
+  zh: "zh_CN",
+};
+
 /**
  * Returns standard SEO metadata for a localized page.
  * Combines page-specific title + description with OG, Twitter,
@@ -18,21 +30,20 @@ export function buildMetadata(
 ): Metadata {
   const normPath = path.replace(/\/+$/, "");
   const url = `${SITE}/${locale}${normPath}`;
+  const languages: Record<string, string> = { "x-default": `${SITE}/en${normPath}` };
+  for (const l of LOCALES) languages[l] = `${SITE}/${l}${normPath}`;
+
   return {
     title: opts.title,
     description: opts.description,
     alternates: {
       canonical: url,
       types: opts.feedUrl ? { "application/rss+xml": opts.feedUrl } : undefined,
-      languages: {
-        en: `${SITE}/en${normPath}`,
-        nl: `${SITE}/nl${normPath}`,
-        "x-default": `${SITE}/en${normPath}`,
-      },
+      languages,
     },
     openGraph: {
       type: "website",
-      locale: locale === "nl" ? "nl_NL" : "en_US",
+      locale: OG_LOCALE[locale as (typeof LOCALES)[number]] ?? "en_US",
       url,
       siteName: "Rhine Solution",
       title: opts.title,

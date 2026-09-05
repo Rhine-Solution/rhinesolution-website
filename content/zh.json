@@ -333,7 +333,8 @@
       "submit": "发送留言",
       "submitting": "发送中...",
       "success": "留言已发送。我们会在 1-2 个工作日内回复。",
-      "error_generic": "出了一些问题。请重试，或发送邮件至 info@rhinesolution.com。"
+      "error_generic": "出了一些问题。请重试，或发送邮件至 info@rhinesolution.com。",
+      "verify_error": "请完成下方的验证。"
     },
     "alt_title": "或者直接去看作品。",
     "alt_text": "每一个已上线的项目都收录在这个网站上。从展示页开始看吧。",
