@@ -34,7 +34,7 @@ export default function ProjectCard({
   return (
     <Link
       key={p.slug}
-      href={`/${locale}/projects/${p.slug}`}
+      href={`/${locale}${p.href ?? `/projects/${p.slug}`}`}
       className={`card project-card${p.featured ? " featured" : ""}`}
       style={{ textDecoration: "none", color: "inherit" }}
     >
