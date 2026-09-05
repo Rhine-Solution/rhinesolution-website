@@ -4,6 +4,8 @@ tags:
   - testing
 created: 2026-08-10
 updated: 2026-08-10
+type: concept
+description: Tests are the memory of what the system is supposed to do. If it's not tested, it will break in production.
 ---
 # 07 - Testing
 

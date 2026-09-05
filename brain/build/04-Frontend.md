@@ -4,6 +4,8 @@ tags:
   - frontend
 created: 2026-08-10
 updated: 2026-08-10
+type: concept
+description: 2026: server-first rendering is the default. Performance is the product.
 ---
 # 04 - Frontend
 

@@ -4,6 +4,8 @@ tags:
   - databases
 created: 2026-08-10
 updated: 2026-08-10
+type: concept
+description: Choose the right tool, design the schema first, and treat migrations as the riskiest operation you run.
 ---
 # 05 - Databases
 

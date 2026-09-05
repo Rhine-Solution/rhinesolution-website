@@ -4,6 +4,8 @@ tags:
   - journal
 created: 2026-08-10
 updated: 2026-09-04
+type: reference
+description: Addendum: PowerShell \Add-Content\ (PS 5.1) also writes non-ASCII as ANSI (e.g. \··\ -> lone 0xB7, invalid UTF-8). Always write notes via Node \writeFileSync(ut
 ---
 # Lessons Learned
 
@@ -44,3 +46,26 @@ updated: 2026-09-04
 - **Lesson**: Generate branded social cards as PNG (or JPG) 1200×630, never SVG. Use the `sharp` npm package (present as a Next.js transitive dep) — `require('sharp')(svg, {density:150}).resize(1200,630).png().toFile(...)`.
 - **Prevention**: see [[04-Frontend]].
 
+## Links
+- Next:  ··· Back to  ··· read the relevant layer note before your next task
+
+## 2026-09-04 — Public Brain + concurrent-branch hazard
+- **Lesson**: When publishing a private vault slice publicly, scrub AT PUBLISH TIME (not at render) — the committed public files must never contain private note names or tooling prose. The final review caught ``/`` in committed files and opencode/ops entries in the journal/backlog; fixed with a publish-time wiki-link scrub + `## Links` footer strip + vault curation.
+- **Lesson**: Two agents working the same repo directory can branch-switch under each other (ZeroMeister checked out `feat/cybercrime-report` mid-execution, hiding `brain/` from the working tree). All work stayed safe because it was committed + pushed incrementally. Use separate worktrees when collaborating in the same directory.
+- **Shipped**: public Brain at `/projects/brain` (explorer + 13 SSG note pages), `npm run brain:publish` pipeline, fail-closed secret scan, main commit `1994688`.
+## 2026-09-05 - Vercel env vars set via PowerShell pipe get corrupted
+- **What happened**: The AI chat widget returned 500 then 401 in production after adding GEMINI_API_KEY.
+- **Root cause**: \\ | vercel env add NAME production\ stored the value with a trailing literal \\r\n\ (len 57 vs 53), making the Gemini key invalid. Also env vars only apply to deployments created after they are set.
+- **Lesson**: Never pipe secrets into \ercel env add\ from PowerShell; use \--value\ or the REST API. Verify stored values by \ercel env pull\ + byte comparison.
+- **Prevention**: use \ercel env add NAME production --value ...\ or PATCH /v10/projects/{id}/env/{id} with type=encrypted; after any env change, \ercel redeploy\ production. Linked to [[08-Deployment-DevOps]].
+
+## 2026-09-05 - Windows PowerShell Set-Content writes a UTF-8 BOM that breaks frontmatter
+- **What happened**: 'Fixing' Brain note frontmatter with PowerShell \Set-Content -Encoding UTF8\ prepended a BOM (\uFEFF), breaking the \^---\ frontmatter regex and failing the new validate-brain gate.
+- **Root cause**: Windows PowerShell 5.1 \-Encoding UTF8\ = UTF-8 with BOM.
+- **Lesson**: For text files, write with Node (\s.writeFileSync(path, s, 'utf8')\) or .NET \UTF8Encoding(false)\; strip any leading BOM when a file 'loses' its frontmatter.
+- **Prevention**: the Brain pre-commit hook now catches it automatically.
+
+## 2026-09-05 - Q1-Q13 guardrails + 3D enrichment shipped
+- Content schema + CI gate (content.schema.json + AJV + encoding checks) now protects all 7 locale files; Brain notes get a pre-commit validation gate + Domain-Vocabulary + WebGL learning-path notes. llms.txt + minisearch (Brain+News) + WebGL HDRI/shader enrichment live on rhinesolution.com.
+
+  Addendum: PowerShell \Add-Content\ (PS 5.1) also writes non-ASCII as ANSI (e.g. \··\ -> lone 0xB7, invalid UTF-8). Always write notes via Node \writeFileSync(utf8)\ or the obsidian MCP, never Add-Content/Set-Content.

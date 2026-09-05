@@ -1,9 +1,11 @@
 ---
 tags:
   - brain
-  - deploy
+  - deployment
 created: 2026-08-10
 updated: 2026-09-04
+type: concept
+description: Lean ops for this workspace: Vercel + GitHub Actions + Cloudflare. Matches what Rhine Solution actually uses — no enterprise machinery we will never run.
 ---
 # 08 - Deployment & DevOps
 

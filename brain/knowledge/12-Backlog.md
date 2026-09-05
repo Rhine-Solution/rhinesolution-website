@@ -3,6 +3,8 @@ tags:
   - brain
 created: 2026-08-10
 updated: 2026-09-04
+type: reference
+description: P0 (quick wins, low risk):
 ---
 # 12 - Backlog
 
