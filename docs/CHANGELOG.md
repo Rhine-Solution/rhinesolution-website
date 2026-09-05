@@ -11,6 +11,11 @@
   RSS/Atom feeds, ISR refresh every 2h). `npm run news:update` /
   `news:accept` generate review-first site-update entries from conventional
   commits. (`81be5ee..3ebb694`)
+- **feat(news): all-inline news + on-site dev trends** - posts render their
+  full content on `/news` (no links to detail pages in the UI; detail pages
+  remain only as RSS/sitemap targets), and dev trends show headline +
+  excerpt + "via Source" styled on-site instead of external link lists.
+  (`fe79efc`)
 
 ## 2026-09-04
 
