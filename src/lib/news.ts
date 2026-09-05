@@ -1,4 +1,4 @@
-import { readFileSync, readdirSync } from "node:fs";
+import { readFileSync, readdirSync, existsSync } from "node:fs";
 import { join } from "node:path";
 import { parseNewsItem, sortNewsDesc, buildFeedXml } from "../../scripts/news-core.mjs";
 
@@ -24,6 +24,7 @@ export function formatNewsDate(date: string, locale: string): string {
 
 export function getNews(locale: string): NewsItem[] {
   const dir = join(process.cwd(), "content", "news", locale);
+  if (!existsSync(dir)) return [];
   const files = readdirSync(dir).filter((f) => f.endsWith(".md") && !f.startsWith("_"));
   const items = files.map((f) => {
     const base = parseNewsItem(f, readFileSync(join(dir, f), "utf8"));

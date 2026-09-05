@@ -265,15 +265,41 @@
       }
     ],
     "stack_title": "Stack y herramientas",
-    "stack": ["Next.js 15", "TypeScript", "Pure CSS", "Mac Mini", "Obsidian Brain", "Vercel", "Cloudflare"],
+    "stack": [
+      "Next.js 15",
+      "TypeScript",
+      "Pure CSS",
+      "Mac Mini",
+      "Obsidian Brain",
+      "Vercel",
+      "Cloudflare"
+    ],
     "values_title": "Lo que valoramos",
     "values": [
-      { "title": "Ofício sobre cantidad", "text": "Tomamos pocos proyectos y los terminamos bien." },
-      { "title": "La simplicidad gana", "text": "Estructura clara, CSS puro, sin dependencias innecesarias." },
-      { "title": "Asistido por IA, guiado por humanos", "text": "Los agentes y modelos nos hacen más rápidos; las personas toman las decisiones." },
-      { "title": "Documentado, siempre", "text": "Cada decisión vive en The Brain, no en la cabeza de alguien." },
-      { "title": "Ser dueños del resultado", "text": "Nuestra propia infraestructura, nuestro propio código, de principio a fin." },
-      { "title": "Bilingüe por defecto", "text": "Inglés y neerlandés integrados en la capa de contenido desde el primer día." }
+      {
+        "title": "Ofício sobre cantidad",
+        "text": "Tomamos pocos proyectos y los terminamos bien."
+      },
+      {
+        "title": "La simplicidad gana",
+        "text": "Estructura clara, CSS puro, sin dependencias innecesarias."
+      },
+      {
+        "title": "Asistido por IA, guiado por humanos",
+        "text": "Los agentes y modelos nos hacen más rápidos; las personas toman las decisiones."
+      },
+      {
+        "title": "Documentado, siempre",
+        "text": "Cada decisión vive en The Brain, no en la cabeza de alguien."
+      },
+      {
+        "title": "Ser dueños del resultado",
+        "text": "Nuestra propia infraestructura, nuestro propio código, de principio a fin."
+      },
+      {
+        "title": "Bilingüe por defecto",
+        "text": "Inglés y neerlandés integrados en la capa de contenido desde el primer día."
+      }
     ],
     "cta_head": "¿Interesado en trabajar juntos?",
     "cta_text": "Siempre hablarás con un constructor, no con un vendedor.",
@@ -283,23 +309,16 @@
     "eyebrow": "Actualizaciones",
     "title": "Novedades y actualizaciones",
     "subtitle": "Lo nuevo en Rhine Solution.",
-    "items": [
-      {
-        "date": "Aug 2026",
-        "title": "Estructura bilingüe del sitio",
-        "summary": "El sitio pasó al enrutamiento /[locale]. El inglés y el neerlandés ahora comparten un mismo árbol de componentes y una única capa de contenido."
-      },
-      {
-        "date": "Aug 2026",
-        "title": "Music Trends Local ya está en línea",
-        "summary": "Un portal musical de temática cyber con 48 pistas en ocho subgéneros electrónicos, además de búsqueda, filtros y canciones favoritas."
-      },
-      {
-        "date": "Jul 2026",
-        "title": "Limpieza de dependencias",
-        "summary": "Postcss actualizado y la auditoría devolvió cero vulnerabilidades en todo el árbol de dependencias."
-      }
-    ]
+    "back": "Volver a noticias",
+    "read_more": "Leer más",
+    "trends_title": "Tendencias dev",
+    "trends_subtitle": "Lo último del mundo del desarrollo de software.",
+    "categories": {
+      "launch": "Lanzamiento",
+      "feature": "Función",
+      "fix": "Corrección",
+      "update": "Actualización"
+    }
   },
   "contact": {
     "eyebrow": "Contacto",
@@ -498,13 +517,41 @@
                 "Enviar una foto a un amigo al otro lado del mundo ocurre por pasos. El mensaje nunca viaja como una sola pieza:"
               ],
               "steps": [
-                { "step": 1, "title": "Tu dispositivo", "body": "El dispositivo divide el mensaje (una foto, un correo) en pequeños fragmentos llamados paquetes. Cada paquete es como una carta en un sobre, con información de cabecera que indica de dónde viene y adónde va." },
-                { "step": 2, "title": "Ondas de radio hasta el router", "body": "Con Wi-Fi, los paquetes salen del dispositivo como ondas de radio y llegan al router. Con datos móviles van en su lugar a una antena de telefonía cercana." },
-                { "step": 3, "title": "Del router al módem", "body": "El router es el gestor de tráfico de la red doméstica. El módem es el traductor: convierte las señales en una forma que puede viajar por los cables del proveedor." },
-                { "step": 4, "title": "La red del ISP", "body": "El módem envía los datos por cables coaxiales o de fibra al proveedor de servicios de internet (ISP), que elige la ruta más eficiente para los paquetes." },
-                { "step": 5, "title": "Centros regionales", "body": "Los datos llegan a grandes centros de datos que intercambian tráfico entre redes. Estos centros se conectan a la columna vertebral de internet." },
-                { "step": 6, "title": "Cables submarinos", "body": "Para los datos que cruzan continentes, la columna vertebral incluye enormes cables en el fondo del océano, tendidos y reparados por barcos especiales. Los datos viajan a través de ellos como pulsos de luz en finas fibras de vidrio." },
-                { "step": 7, "title": "Destino", "body": "Los paquetes llegan al otro lado, se vuelven a ensamblar en el orden correcto y el dispositivo del destinatario muestra el mensaje." }
+                {
+                  "step": 1,
+                  "title": "Tu dispositivo",
+                  "body": "El dispositivo divide el mensaje (una foto, un correo) en pequeños fragmentos llamados paquetes. Cada paquete es como una carta en un sobre, con información de cabecera que indica de dónde viene y adónde va."
+                },
+                {
+                  "step": 2,
+                  "title": "Ondas de radio hasta el router",
+                  "body": "Con Wi-Fi, los paquetes salen del dispositivo como ondas de radio y llegan al router. Con datos móviles van en su lugar a una antena de telefonía cercana."
+                },
+                {
+                  "step": 3,
+                  "title": "Del router al módem",
+                  "body": "El router es el gestor de tráfico de la red doméstica. El módem es el traductor: convierte las señales en una forma que puede viajar por los cables del proveedor."
+                },
+                {
+                  "step": 4,
+                  "title": "La red del ISP",
+                  "body": "El módem envía los datos por cables coaxiales o de fibra al proveedor de servicios de internet (ISP), que elige la ruta más eficiente para los paquetes."
+                },
+                {
+                  "step": 5,
+                  "title": "Centros regionales",
+                  "body": "Los datos llegan a grandes centros de datos que intercambian tráfico entre redes. Estos centros se conectan a la columna vertebral de internet."
+                },
+                {
+                  "step": 6,
+                  "title": "Cables submarinos",
+                  "body": "Para los datos que cruzan continentes, la columna vertebral incluye enormes cables en el fondo del océano, tendidos y reparados por barcos especiales. Los datos viajan a través de ellos como pulsos de luz en finas fibras de vidrio."
+                },
+                {
+                  "step": 7,
+                  "title": "Destino",
+                  "body": "Los paquetes llegan al otro lado, se vuelven a ensamblar en el orden correcto y el dispositivo del destinatario muestra el mensaje."
+                }
               ],
               "note": "Así que cada mensaje viaja a través de una mezcla de ondas de radio, cables de cobre, fibras de vidrio y cables submarinos. Solo a nosotros nos parece inalámbrico."
             },
@@ -514,11 +561,26 @@
                 "Dos cosas hacen posible todo esto: los paquetes y los protocolos."
               ],
               "protocols": [
-                { "term": "Binario", "body": "Dentro de un dispositivo, toda la información se almacena como unos y ceros. El dispositivo los convierte en ondas de radio o señales eléctricas para enviarlos." },
-                { "term": "Dirección IP", "body": "Cada dispositivo recibe un número único, como una dirección postal. Los routers lo usan para reenviar cada paquete al lugar correcto." },
-                { "term": "TCP", "body": "TCP (Transmission Control Protocol) garantiza que los paquetes lleguen en el orden correcto y que no falte ninguno. El receptor confirma cada paquete y los que faltan se reenvían." },
-                { "term": "DNS", "body": "El Sistema de Nombres de Dominio es la guía telefónica de internet. Traduce nombres como www.example.com a la dirección IP que una computadora realmente necesita." },
-                { "term": "Servidores", "body": "Las páginas web, las aplicaciones y los archivos viven en servidores, computadoras potentes que permanecen conectadas. Cuando visitas una página, tu dispositivo le pide al servidor que se la envíe, y llega en forma de paquetes." }
+                {
+                  "term": "Binario",
+                  "body": "Dentro de un dispositivo, toda la información se almacena como unos y ceros. El dispositivo los convierte en ondas de radio o señales eléctricas para enviarlos."
+                },
+                {
+                  "term": "Dirección IP",
+                  "body": "Cada dispositivo recibe un número único, como una dirección postal. Los routers lo usan para reenviar cada paquete al lugar correcto."
+                },
+                {
+                  "term": "TCP",
+                  "body": "TCP (Transmission Control Protocol) garantiza que los paquetes lleguen en el orden correcto y que no falte ninguno. El receptor confirma cada paquete y los que faltan se reenvían."
+                },
+                {
+                  "term": "DNS",
+                  "body": "El Sistema de Nombres de Dominio es la guía telefónica de internet. Traduce nombres como www.example.com a la dirección IP que una computadora realmente necesita."
+                },
+                {
+                  "term": "Servidores",
+                  "body": "Las páginas web, las aplicaciones y los archivos viven en servidores, computadoras potentes que permanecen conectadas. Cuando visitas una página, tu dispositivo le pide al servidor que se la envíe, y llega en forma de paquetes."
+                }
               ]
             },
             {
@@ -526,13 +588,48 @@
               "table": {
                 "caption": "Comparación de tipos de conexión",
                 "rows": [
-                  ["Conexión", "Cómo funciona", "Ventajas", "Inconvenientes"],
-                  ["Cable", "Usa los mismos cables coaxiales que la televisión por cable; un módem convierte la señal.", "Rápida (hasta 1 Gbps) y muy disponible.", "La subida es lenta; los vecinos comparten la conexión, por lo que la velocidad baja por la noche."],
-                  ["Fibra", "Envía los datos como pulsos de luz a través de fibras de vidrio.", "La opción más rápida (hasta 10 Gbps), subida y bajada simétricas, poca pérdida de señal.", "No está disponible en todas partes; tender nueva fibra es caro."],
-                  ["DSL", "Usa las líneas telefónicas de cobre existentes.", "Muy extendida y no bloquea la línea telefónica.", "Más lenta; la velocidad depende de la distancia a la central del proveedor."],
-                  ["Satélite", "Envía los datos desde satélites en órbita a una antena parabólica en tu casa.", "Funciona en casi cualquier lugar, lo que ayuda a las zonas rurales.", "Latencia alta porque los datos viajan al espacio y regresan; las tormentas la interrumpen."],
-                  ["Fijo inalámbrico", "Señales de radio entre una estación base y una antena en el hogar.", "Buena para zonas sin cables; menor latencia que el satélite.", "Los árboles, los edificios y el clima pueden debilitar la señal."],
-                  ["5G en casa", "Usa redes móviles para conectar un hogar.", "Rápida de desplegar sin zanjas; altas velocidades y baja latencia.", "La cobertura aún es limitada y depende de la distancia y la congestión."]
+                  [
+                    "Conexión",
+                    "Cómo funciona",
+                    "Ventajas",
+                    "Inconvenientes"
+                  ],
+                  [
+                    "Cable",
+                    "Usa los mismos cables coaxiales que la televisión por cable; un módem convierte la señal.",
+                    "Rápida (hasta 1 Gbps) y muy disponible.",
+                    "La subida es lenta; los vecinos comparten la conexión, por lo que la velocidad baja por la noche."
+                  ],
+                  [
+                    "Fibra",
+                    "Envía los datos como pulsos de luz a través de fibras de vidrio.",
+                    "La opción más rápida (hasta 10 Gbps), subida y bajada simétricas, poca pérdida de señal.",
+                    "No está disponible en todas partes; tender nueva fibra es caro."
+                  ],
+                  [
+                    "DSL",
+                    "Usa las líneas telefónicas de cobre existentes.",
+                    "Muy extendida y no bloquea la línea telefónica.",
+                    "Más lenta; la velocidad depende de la distancia a la central del proveedor."
+                  ],
+                  [
+                    "Satélite",
+                    "Envía los datos desde satélites en órbita a una antena parabólica en tu casa.",
+                    "Funciona en casi cualquier lugar, lo que ayuda a las zonas rurales.",
+                    "Latencia alta porque los datos viajan al espacio y regresan; las tormentas la interrumpen."
+                  ],
+                  [
+                    "Fijo inalámbrico",
+                    "Señales de radio entre una estación base y una antena en el hogar.",
+                    "Buena para zonas sin cables; menor latencia que el satélite.",
+                    "Los árboles, los edificios y el clima pueden debilitar la señal."
+                  ],
+                  [
+                    "5G en casa",
+                    "Usa redes móviles para conectar un hogar.",
+                    "Rápida de desplegar sin zanjas; altas velocidades y baja latencia.",
+                    "La cobertura aún es limitada y depende de la distancia y la congestión."
+                  ]
                 ]
               },
               "note": "Un tema común: las velocidades de subida, el ancho de banda compartido y la cobertura rural son los puntos débiles de casi todas las tecnologías."
@@ -559,8 +656,14 @@
                 "La ciberdelincuencia es el delito que implica computadoras, internet u otra tecnología digital. Puede dirigirse a personas, empresas o gobiernos, y puede causar daños económicos, daños a la reputación o daño psicológico. Las definiciones varían entre países, lo que dificulta medirla, pero los expertos suelen dividir la ciberdelincuencia en dos grupos:"
               ],
               "bullets": [
-                { "strong": "Delito ciberdependiente:", "body": "delitos que solo pueden existir gracias a las computadoras y las redes. Hacking, ataques DDoS, malware. Sin internet, estos delitos no existirían." },
-                { "strong": "Delito ciberfacilitado:", "body": "delitos tradicionales que se trasladaron a internet o se volvieron más fáciles. Fraude en línea, phishing, piratería digital, ciberacoso. Ya existían antes, pero internet permite a los delincuentes cometerlos más rápido, más barato y contra más víctimas a la vez." }
+                {
+                  "strong": "Delito ciberdependiente:",
+                  "body": "delitos que solo pueden existir gracias a las computadoras y las redes. Hacking, ataques DDoS, malware. Sin internet, estos delitos no existirían."
+                },
+                {
+                  "strong": "Delito ciberfacilitado:",
+                  "body": "delitos tradicionales que se trasladaron a internet o se volvieron más fáciles. Fraude en línea, phishing, piratería digital, ciberacoso. Ya existían antes, pero internet permite a los delincuentes cometerlos más rápido, más barato y contra más víctimas a la vez."
+                }
               ],
               "paragraphs_after": [
                 "El criminólogo David Wall describe cuatro categorías de ciberdelincuencia: ciberallanamiento (entrar en sistemas donde no tienes permiso), ciberdecepción o ciberrobo (robar cosas en línea, como datos de tarjetas de crédito), ciberpornografía u obscenidad (compartir material sexual en línea) y ciberviolencia (causar daño emocional o psicológico, como el ciberacoso. La víctima puede no sufrir daño físico pero puede padecer un daño duradero)."
@@ -579,18 +682,54 @@
               "table": {
                 "caption": "Resumen de los tipos de ciberdelincuencia",
                 "rows": [
-                  ["Tipo", "Descripción"],
-                  ["Hacking", "Entrar en un sistema informático sin permiso, por beneficio personal o para causar daños."],
-                  ["Phishing", "Correos o mensajes falsos que parecen proceder de una empresa real (como un banco), usados para engañar a las personas y que revelen contraseñas o datos personales."],
-                  ["Ransomware", "Software malicioso que bloquea tus archivos y exige dinero para devolvértelos. El ataque WannaCry de 2017 es un ejemplo muy conocido."],
-                  ["Ataques DDoS", "Inundar un sitio web o un servicio con tanto tráfico que se cae, a menudo usando redes de computadoras infectadas (botnets)."],
-                  ["Robo de identidad", "Robar datos personales para cometer fraude, por ejemplo abrir cuentas o pedir préstamos a nombre de la víctima."],
-                  ["Ciberacoso", "Seguir, amenazar o intimidar a alguien repetidamente a través de internet."],
-                  ["Piratería digital", "Descargar o compartir contenido protegido, películas, música, software, sin permiso."],
-                  ["Ciberextorsión", "Hackear un sistema o un servidor de correo y exigir dinero para devolverlo o mantener los datos en secreto."],
-                  ["Ciberterrorismo", "Hackear sistemas gubernamentales o grandes organizaciones para impulsar objetivos políticos y crear miedo."],
-                  ["Blanqueo de dinero", "Limpiar dinero obtenido ilegalmente a través de internet y la banca digital para que parezca legal."],
-                  ["Grooming infantil", "Crear una conexión emocional con un niño en línea, a menudo para abusar de él o explotarlo."]
+                  [
+                    "Tipo",
+                    "Descripción"
+                  ],
+                  [
+                    "Hacking",
+                    "Entrar en un sistema informático sin permiso, por beneficio personal o para causar daños."
+                  ],
+                  [
+                    "Phishing",
+                    "Correos o mensajes falsos que parecen proceder de una empresa real (como un banco), usados para engañar a las personas y que revelen contraseñas o datos personales."
+                  ],
+                  [
+                    "Ransomware",
+                    "Software malicioso que bloquea tus archivos y exige dinero para devolvértelos. El ataque WannaCry de 2017 es un ejemplo muy conocido."
+                  ],
+                  [
+                    "Ataques DDoS",
+                    "Inundar un sitio web o un servicio con tanto tráfico que se cae, a menudo usando redes de computadoras infectadas (botnets)."
+                  ],
+                  [
+                    "Robo de identidad",
+                    "Robar datos personales para cometer fraude, por ejemplo abrir cuentas o pedir préstamos a nombre de la víctima."
+                  ],
+                  [
+                    "Ciberacoso",
+                    "Seguir, amenazar o intimidar a alguien repetidamente a través de internet."
+                  ],
+                  [
+                    "Piratería digital",
+                    "Descargar o compartir contenido protegido, películas, música, software, sin permiso."
+                  ],
+                  [
+                    "Ciberextorsión",
+                    "Hackear un sistema o un servidor de correo y exigir dinero para devolverlo o mantener los datos en secreto."
+                  ],
+                  [
+                    "Ciberterrorismo",
+                    "Hackear sistemas gubernamentales o grandes organizaciones para impulsar objetivos políticos y crear miedo."
+                  ],
+                  [
+                    "Blanqueo de dinero",
+                    "Limpiar dinero obtenido ilegalmente a través de internet y la banca digital para que parezca legal."
+                  ],
+                  [
+                    "Grooming infantil",
+                    "Crear una conexión emocional con un niño en línea, a menudo para abusar de él o explotarlo."
+                  ]
                 ]
               }
             }
@@ -607,13 +746,34 @@
               "table": {
                 "caption": "Datos y cifras clave",
                 "rows": [
-                  ["Dato", "Cifra / Fuente"],
-                  ["Coste mundial de la ciberdelincuencia en 2024", "Unos 9,5 billones de dólares al año, con previsión de subir otro 15% en 2025 (Cybersecurity Ventures)."],
-                  ["Ataque de ransomware WannaCry (2017)", "Infectó más de 230.000 computadoras en 150 países; más de 4.000 millones de dólares en pérdidas económicas."],
-                  ["Usuarios de internet en 2005", "Unos 1.000 millones de personas (16% de la población mundial)."],
-                  ["Usuarios de internet en 2023", "Unos 5.400 millones de personas (67% de la población mundial)."],
-                  ["Uso de internet entre adultos", "Pasó de alrededor del 52% (2000) a alrededor del 96% (2024)."],
-                  ["Contribución económica directa de internet", "Unos 175.000 millones de dólares al año por publicidad, comercio en línea y pagos a los ISP; efecto multiplicador de unos 444.000 millones."]
+                  [
+                    "Dato",
+                    "Cifra / Fuente"
+                  ],
+                  [
+                    "Coste mundial de la ciberdelincuencia en 2024",
+                    "Unos 9,5 billones de dólares al año, con previsión de subir otro 15% en 2025 (Cybersecurity Ventures)."
+                  ],
+                  [
+                    "Ataque de ransomware WannaCry (2017)",
+                    "Infectó más de 230.000 computadoras en 150 países; más de 4.000 millones de dólares en pérdidas económicas."
+                  ],
+                  [
+                    "Usuarios de internet en 2005",
+                    "Unos 1.000 millones de personas (16% de la población mundial)."
+                  ],
+                  [
+                    "Usuarios de internet en 2023",
+                    "Unos 5.400 millones de personas (67% de la población mundial)."
+                  ],
+                  [
+                    "Uso de internet entre adultos",
+                    "Pasó de alrededor del 52% (2000) a alrededor del 96% (2024)."
+                  ],
+                  [
+                    "Contribución económica directa de internet",
+                    "Unos 175.000 millones de dólares al año por publicidad, comercio en línea y pagos a los ISP; efecto multiplicador de unos 444.000 millones."
+                  ]
                 ]
               },
               "note": "El crecimiento de internet también significa más víctimas potenciales: de unos 1.000 millones de personas en línea en 2005 a unos 5.400 millones en 2023. La ciberdelincuencia es en la práctica una industria de billones de dólares para los delincuentes, y casi todo el mundo conectado es un objetivo potencial."
@@ -634,10 +794,26 @@
               "table": {
                 "caption": "Tres teorías que explican la ciberdelincuencia",
                 "rows": [
-                  ["Teoría", "Idea central", "Cómo explica la ciberdelincuencia"],
-                  ["Teoría general del delito (bajo autocontrol)", "Algunas personas actúan impulsivamente, asumen riesgos y buscan recompensas rápidas sin pensar en las consecuencias.", "La ciberdelincuencia ofrece dinero rápido, e internet permite a los delincuentes actuar sin ver el daño. Los estudios relacionan sistemáticamente el bajo autocontrol con el delito cibernético."],
-                  ["Teoría del aprendizaje social", "El delito se aprende de los demás. El comportamiento se copia cuando parece funcionar.", "Si los amigos o las comunidades en línea aprueban el hacking o la piratería, es más probable que las personas hagan lo mismo, sobre todo cuando parece que queda impune."],
-                  ["Teoría de la actividad rutinaria", "El delito ocurre cuando coinciden un delincuente motivado, un objetivo adecuado y la ausencia de un guardián capaz.", "En línea, las contraseñas débiles, hacer clic en enlaces de phishing y el software desactualizado te convierten en un objetivo adecuado. El software de seguridad y los hábitos cuidadosos son el guardián."]
+                  [
+                    "Teoría",
+                    "Idea central",
+                    "Cómo explica la ciberdelincuencia"
+                  ],
+                  [
+                    "Teoría general del delito (bajo autocontrol)",
+                    "Algunas personas actúan impulsivamente, asumen riesgos y buscan recompensas rápidas sin pensar en las consecuencias.",
+                    "La ciberdelincuencia ofrece dinero rápido, e internet permite a los delincuentes actuar sin ver el daño. Los estudios relacionan sistemáticamente el bajo autocontrol con el delito cibernético."
+                  ],
+                  [
+                    "Teoría del aprendizaje social",
+                    "El delito se aprende de los demás. El comportamiento se copia cuando parece funcionar.",
+                    "Si los amigos o las comunidades en línea aprueban el hacking o la piratería, es más probable que las personas hagan lo mismo, sobre todo cuando parece que queda impune."
+                  ],
+                  [
+                    "Teoría de la actividad rutinaria",
+                    "El delito ocurre cuando coinciden un delincuente motivado, un objetivo adecuado y la ausencia de un guardián capaz.",
+                    "En línea, las contraseñas débiles, hacer clic en enlaces de phishing y el software desactualizado te convierten en un objetivo adecuado. El software de seguridad y los hábitos cuidadosos son el guardián."
+                  ]
                 ]
               }
             },
@@ -647,9 +823,18 @@
                 "No todos los hackers tienen la misma motivación:"
               ],
               "bullets": [
-                { "strong": "Ciberutopistas", "body": "personas que hacen cosas maliciosas pero creen que actúan por el bien común." },
-                { "strong": "Ciberpunks", "body": "hackers que atacan a instituciones que les resultan ofensivas, a menudo solo por diversión o para reivindicar algo." },
-                { "strong": "Ciberespías y ciberterroristas", "body": "atacantes muy cualificados con motivaciones extremas, a menudo al servicio de estados o causas políticas." }
+                {
+                  "strong": "Ciberutopistas",
+                  "body": "personas que hacen cosas maliciosas pero creen que actúan por el bien común."
+                },
+                {
+                  "strong": "Ciberpunks",
+                  "body": "hackers que atacan a instituciones que les resultan ofensivas, a menudo solo por diversión o para reivindicar algo."
+                },
+                {
+                  "strong": "Ciberespías y ciberterroristas",
+                  "body": "atacantes muy cualificados con motivaciones extremas, a menudo al servicio de estados o causas políticas."
+                }
               ]
             }
           ]
@@ -680,10 +865,22 @@
                 "La ciberdelincuencia cuesta dinero, pero también afecta emocionalmente a las personas. Un estudio de 2025 analizó más de 6.700 publicaciones y 100.000 comentarios sobre ciberdelincuencia en Reddit, repartidos a lo largo de 14 años (2008-2022). Los hallazgos:"
               ],
               "bullets": [
-                { "strong": "", "body": "Las mayores discusiones las provocaron las violaciones de datos, los ciberataques, el ransomware y el hacking vinculado a países (hacking estatal ruso o chino)." },
-                { "strong": "Ira", "body": "fue la emoción más común, dirigida contra las violaciones de privacidad, las empresas que no protegieron los datos y los gobiernos que gestionaron mal las amenazas." },
-                { "strong": "Sarcasmo", "body": "fue la segunda reacción más común, sobre todo hacia los relatos oficiales y las medidas de seguridad ineficaces." },
-                { "strong": "Miedo", "body": "también estuvo claramente presente, lo que demuestra que la gente se siente realmente amenazada." }
+                {
+                  "strong": "",
+                  "body": "Las mayores discusiones las provocaron las violaciones de datos, los ciberataques, el ransomware y el hacking vinculado a países (hacking estatal ruso o chino)."
+                },
+                {
+                  "strong": "Ira",
+                  "body": "fue la emoción más común, dirigida contra las violaciones de privacidad, las empresas que no protegieron los datos y los gobiernos que gestionaron mal las amenazas."
+                },
+                {
+                  "strong": "Sarcasmo",
+                  "body": "fue la segunda reacción más común, sobre todo hacia los relatos oficiales y las medidas de seguridad ineficaces."
+                },
+                {
+                  "strong": "Miedo",
+                  "body": "también estuvo claramente presente, lo que demuestra que la gente se siente realmente amenazada."
+                }
               ],
               "paragraphs_after": [
                 "Los ciberataques pueden dañar seriamente la confianza pública en empresas y gobiernos, y las reacciones emocionales pueden incluso impulsar el apoyo a políticas de ciberseguridad más estrictas."
@@ -737,14 +934,38 @@
       ],
       "references_heading": "10 · Referencias",
       "references": [
-        { "label": "Tsotetsi, K. \"Understanding the Internet: A Journey from Devices to Submarine Cables.\"", "href": "https://vocal.media/fyi/understanding-the-internet-a-journey-from-devices-to-submarine-cables" },
-        { "label": "Lefelhoc, C. \"How Does Cable Internet Work?\"", "href": "https://www.compareinternet.com/blog/how-does-cable-internet-work/" },
-        { "label": "Fann, K. \"How Does the Internet Work? A Complete Guide.\" BroadbandNow.", "href": "https://broadbandnow.com/guides/how-does-the-internet-work" },
-        { "label": "Tutorials Point. \"Cyber Crime & Cyber Security.\"", "href": "https://www.tutorialspoint.com/fundamentals_of_science_and_technology/cyber_crime_and_cyber_security.htm" },
-        { "label": "Chen, S. et al. \"Exploring the global geography of cybercrime and its driving forces.\" (2023).", "href": "https://www.nature.com/articles/s41599-023-01560-x" },
-        { "label": "Achuthan, K., Khobragade, S. & Kowalski, R. \"Cybercrime through the public lens: a longitudinal analysis.\" (2025).", "href": "https://www.nature.com/articles/s41599-025-04459-x" },
-        { "label": "Onwuadiamu, G. \"Cybercrime in criminology; A systematic review of criminological theories, methods, and concepts.\" Journal of Economic Criminology 8 (2025) 100136.", "href": "https://doi.org/10.1016/j.jeconc.2025.100136" },
-        { "label": "ResearchGate. \"Top 20 countries exposed to external attacks from malicious programs in 2014.\"", "href": "https://www.researchgate.net/figure/Top-20-countries-exposed-to-external-attacks-from-malicious-programs-in-2014_fig1_331914032" }
+        {
+          "label": "Tsotetsi, K. \"Understanding the Internet: A Journey from Devices to Submarine Cables.\"",
+          "href": "https://vocal.media/fyi/understanding-the-internet-a-journey-from-devices-to-submarine-cables"
+        },
+        {
+          "label": "Lefelhoc, C. \"How Does Cable Internet Work?\"",
+          "href": "https://www.compareinternet.com/blog/how-does-cable-internet-work/"
+        },
+        {
+          "label": "Fann, K. \"How Does the Internet Work? A Complete Guide.\" BroadbandNow.",
+          "href": "https://broadbandnow.com/guides/how-does-the-internet-work"
+        },
+        {
+          "label": "Tutorials Point. \"Cyber Crime & Cyber Security.\"",
+          "href": "https://www.tutorialspoint.com/fundamentals_of_science_and_technology/cyber_crime_and_cyber_security.htm"
+        },
+        {
+          "label": "Chen, S. et al. \"Exploring the global geography of cybercrime and its driving forces.\" (2023).",
+          "href": "https://www.nature.com/articles/s41599-023-01560-x"
+        },
+        {
+          "label": "Achuthan, K., Khobragade, S. & Kowalski, R. \"Cybercrime through the public lens: a longitudinal analysis.\" (2025).",
+          "href": "https://www.nature.com/articles/s41599-025-04459-x"
+        },
+        {
+          "label": "Onwuadiamu, G. \"Cybercrime in criminology; A systematic review of criminological theories, methods, and concepts.\" Journal of Economic Criminology 8 (2025) 100136.",
+          "href": "https://doi.org/10.1016/j.jeconc.2025.100136"
+        },
+        {
+          "label": "ResearchGate. \"Top 20 countries exposed to external attacks from malicious programs in 2014.\"",
+          "href": "https://www.researchgate.net/figure/Top-20-countries-exposed-to-external-attacks-from-malicious-programs-in-2014_fig1_331914032"
+        }
       ],
       "references_note": "Figuras: \"A brief history of the internet\" (BroadbandNow) y \"Top 20 countries exposed to external attacks from malicious programs in 2014\" (ResearchGate). Los datos se recopilan de las fuentes anteriores y se reescriben con palabras propias de este informe.",
       "back_label": "Volver al equipo",

@@ -265,41 +265,60 @@
       }
     ],
     "stack_title": "Pile et outils",
-    "stack": ["Next.js 15", "TypeScript", "Pure CSS", "Mac Mini", "Obsidian Brain", "Vercel", "Cloudflare"],
+    "stack": [
+      "Next.js 15",
+      "TypeScript",
+      "Pure CSS",
+      "Mac Mini",
+      "Obsidian Brain",
+      "Vercel",
+      "Cloudflare"
+    ],
     "values_title": "Ce que nous valorisons",
     "values": [
-      { "title": "L'artisanat avant la quantité", "text": "Nous prenons quelques projets et les menons à bien." },
-      { "title": "La simplicité l'emporte", "text": "Structure claire, CSS pur, aucune dépendance inutile." },
-      { "title": "Assisté par l'IA, mené par l'humain", "text": "Les agents et les modèles nous font gagner du temps ; ce sont les humains qui décident." },
-      { "title": "Documenté, toujours", "text": "Chaque décision vit dans le Brain, pas seulement dans une tête." },
-      { "title": "Assumer le résultat", "text": "Notre propre infrastructure, notre propre code, de bout en bout." },
-      { "title": "Bilingue par défaut", "text": "L'anglais et le néerlandais sont intégrés à la couche de contenu dès le premier jour." }
+      {
+        "title": "L'artisanat avant la quantité",
+        "text": "Nous prenons quelques projets et les menons à bien."
+      },
+      {
+        "title": "La simplicité l'emporte",
+        "text": "Structure claire, CSS pur, aucune dépendance inutile."
+      },
+      {
+        "title": "Assisté par l'IA, mené par l'humain",
+        "text": "Les agents et les modèles nous font gagner du temps ; ce sont les humains qui décident."
+      },
+      {
+        "title": "Documenté, toujours",
+        "text": "Chaque décision vit dans le Brain, pas seulement dans une tête."
+      },
+      {
+        "title": "Assumer le résultat",
+        "text": "Notre propre infrastructure, notre propre code, de bout en bout."
+      },
+      {
+        "title": "Bilingue par défaut",
+        "text": "L'anglais et le néerlandais sont intégrés à la couche de contenu dès le premier jour."
+      }
     ],
     "cta_head": "Envie de travailler ensemble ?",
     "cta_text": "Vous parlerez toujours à un bâtisseur, jamais à un commercial.",
     "cta_link_label": "Parcourir nos réalisations"
   },
   "news": {
-    "eyebrow": "Actualités",
+    "eyebrow": "Updates",
     "title": "Nouvelles et actualités",
     "subtitle": "Les nouveautés de Rhine Solution.",
-    "items": [
-      {
-        "date": "Août 2026",
-        "title": "Structure bilingue du site",
-        "summary": "Le site est passé au routage /[locale]. L'anglais et le néerlandais partagent désormais un seul arbre de composants et une seule couche de contenu."
-      },
-      {
-        "date": "Août 2026",
-        "title": "Music Trends Local est en ligne",
-        "summary": "Un portail musical aux allures cyber avec 48 pistes réparties dans huit sous-genres électroniques, plus la recherche, les filtres et les morceaux favoris."
-      },
-      {
-        "date": "Juil. 2026",
-        "title": "Nettoyage des dépendances",
-        "summary": "Postcss a été mis à jour et l'audit a révélé zéro vulnérabilité sur l'ensemble de l'arbre de dépendances."
-      }
-    ]
+    "back": "Retour aux nouvelles",
+    "read_more": "Lire la suite",
+    "trends_title": "Tendances dev",
+    "trends_subtitle": "Le meilleur du développement logiciel dans le monde.",
+    "categories": {
+      "launch": "Lancement",
+      "feature": "Fonctionnalité",
+      "fix": "Correction",
+      "update": "Mise à jour"
+    }
   },
   "contact": {
     "eyebrow": "Contact",
@@ -461,8 +480,7 @@
         ]
       }
     }
-  }
-,
+  },
   "dfir": {
     "cybercrime_report": {
       "meta_title": "Rapport sur la cybercriminalité et la cybersécurité",

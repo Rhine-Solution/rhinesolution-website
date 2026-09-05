@@ -265,15 +265,41 @@
       }
     ],
     "stack_title": "Stack e strumenti",
-    "stack": ["Next.js 15", "TypeScript", "Pure CSS", "Mac Mini", "Obsidian Brain", "Vercel", "Cloudflare"],
+    "stack": [
+      "Next.js 15",
+      "TypeScript",
+      "Pure CSS",
+      "Mac Mini",
+      "Obsidian Brain",
+      "Vercel",
+      "Cloudflare"
+    ],
     "values_title": "Ciò in cui crediamo",
     "values": [
-      { "title": "Qualità più che quantità", "text": "Accettiamo pochi progetti e li portiamo a termine nel modo giusto." },
-      { "title": "La semplicità vince", "text": "Struttura chiara, CSS puro, nessuna dipendenza superflua." },
-      { "title": "Supportati dall'AI, guidati dalle persone", "text": "Agenti e modelli ci rendono più veloci; le decisioni le prendono le persone." },
-      { "title": "Sempre documentato", "text": "Ogni decisione vive nel Brain, non nella testa di qualcuno." },
-      { "title": "Padroni del risultato", "text": "La nostra infrastruttura, il nostro codice, dall'inizio alla fine." },
-      { "title": "Bilingue per impostazione predefinita", "text": "Inglese e olandese integrati nel livello dei contenuti fin dal primo giorno." }
+      {
+        "title": "Qualità più che quantità",
+        "text": "Accettiamo pochi progetti e li portiamo a termine nel modo giusto."
+      },
+      {
+        "title": "La semplicità vince",
+        "text": "Struttura chiara, CSS puro, nessuna dipendenza superflua."
+      },
+      {
+        "title": "Supportati dall'AI, guidati dalle persone",
+        "text": "Agenti e modelli ci rendono più veloci; le decisioni le prendono le persone."
+      },
+      {
+        "title": "Sempre documentato",
+        "text": "Ogni decisione vive nel Brain, non nella testa di qualcuno."
+      },
+      {
+        "title": "Padroni del risultato",
+        "text": "La nostra infrastruttura, il nostro codice, dall'inizio alla fine."
+      },
+      {
+        "title": "Bilingue per impostazione predefinita",
+        "text": "Inglese e olandese integrati nel livello dei contenuti fin dal primo giorno."
+      }
     ],
     "cta_head": "Ti interessa lavorare insieme?",
     "cta_text": "Parlerai sempre con un costruttore, non con un venditore.",
@@ -283,23 +309,16 @@
     "eyebrow": "Aggiornamenti",
     "title": "Novità e aggiornamenti",
     "subtitle": "Cosa c'è di nuovo da Rhine Solution.",
-    "items": [
-      {
-        "date": "Aug 2026",
-        "title": "Struttura bilingue del sito",
-        "summary": "Il sito è passato al routing /[locale]. Inglese e olandese ora condividono un unico albero di componenti e un unico livello di contenuti."
-      },
-      {
-        "date": "Aug 2026",
-        "title": "Music Trends Local è online",
-        "summary": "Un portale musicale a tema cyber con 48 brani in otto sottogeneri elettronici, più ricerca, filtri e brani preferiti."
-      },
-      {
-        "date": "Jul 2026",
-        "title": "Pulizia delle dipendenze",
-        "summary": "Postcss aggiornato e l'audit ha restituito zero vulnerabilità nell'intero albero delle dipendenze."
-      }
-    ]
+    "back": "Torna alle novità",
+    "read_more": "Leggi di più",
+    "trends_title": "Tendenze dev",
+    "trends_subtitle": "Le ultime novità dal mondo dello sviluppo software.",
+    "categories": {
+      "launch": "Lancio",
+      "feature": "Funzionalità",
+      "fix": "Correzione",
+      "update": "Aggiornamento"
+    }
   },
   "contact": {
     "eyebrow": "Contatti",
@@ -498,13 +517,41 @@
                 "Inviare una foto a un amico dall'altra parte del mondo avviene a tappe. Il messaggio non viaggia mai come un unico blocco:"
               ],
               "steps": [
-                { "step": 1, "title": "Il tuo dispositivo", "body": "Il dispositivo divide il messaggio (una foto, un'email) in piccoli frammenti chiamati pacchetti. Ogni pacchetto è come una lettera in una busta, con un'intestazione che indica da dove proviene e dove è diretto." },
-                { "step": 2, "title": "Onde radio verso il router", "body": "Con il Wi-Fi i pacchetti escono dal dispositivo come onde radio e arrivano al router. Con i dati mobili vanno invece a una cella telefonica vicina." },
-                { "step": 3, "title": "Dal router al modem", "body": "Il router è il gestore del traffico della rete domestica. Il modem è il traduttore: converte i segnali in una forma che può viaggiare sui cavi del provider." },
-                { "step": 4, "title": "La rete dell'ISP", "body": "Il modem invia i dati su cavi coassiali o in fibra all'internet service provider (ISP), che sceglie la rotta più efficiente per i pacchetti." },
-                { "step": 5, "title": "Hub regionali", "body": "I dati arrivano a grandi data center che si scambiano traffico tra reti. Questi hub si collegano alla dorsale di internet." },
-                { "step": 6, "title": "Cavi sottomarini", "body": "Per i dati che attraversano i continenti, la dorsale comprende enormi cavi sul fondale oceanico, posati e riparati da navi specializzate. I dati li attraversano come impulsi di luce in sottili fibre di vetro." },
-                { "step": 7, "title": "Destinazione", "body": "I pacchetti raggiungono l'altro lato, vengono riassemblati nell'ordine corretto e il dispositivo del destinatario mostra il messaggio." }
+                {
+                  "step": 1,
+                  "title": "Il tuo dispositivo",
+                  "body": "Il dispositivo divide il messaggio (una foto, un'email) in piccoli frammenti chiamati pacchetti. Ogni pacchetto è come una lettera in una busta, con un'intestazione che indica da dove proviene e dove è diretto."
+                },
+                {
+                  "step": 2,
+                  "title": "Onde radio verso il router",
+                  "body": "Con il Wi-Fi i pacchetti escono dal dispositivo come onde radio e arrivano al router. Con i dati mobili vanno invece a una cella telefonica vicina."
+                },
+                {
+                  "step": 3,
+                  "title": "Dal router al modem",
+                  "body": "Il router è il gestore del traffico della rete domestica. Il modem è il traduttore: converte i segnali in una forma che può viaggiare sui cavi del provider."
+                },
+                {
+                  "step": 4,
+                  "title": "La rete dell'ISP",
+                  "body": "Il modem invia i dati su cavi coassiali o in fibra all'internet service provider (ISP), che sceglie la rotta più efficiente per i pacchetti."
+                },
+                {
+                  "step": 5,
+                  "title": "Hub regionali",
+                  "body": "I dati arrivano a grandi data center che si scambiano traffico tra reti. Questi hub si collegano alla dorsale di internet."
+                },
+                {
+                  "step": 6,
+                  "title": "Cavi sottomarini",
+                  "body": "Per i dati che attraversano i continenti, la dorsale comprende enormi cavi sul fondale oceanico, posati e riparati da navi specializzate. I dati li attraversano come impulsi di luce in sottili fibre di vetro."
+                },
+                {
+                  "step": 7,
+                  "title": "Destinazione",
+                  "body": "I pacchetti raggiungono l'altro lato, vengono riassemblati nell'ordine corretto e il dispositivo del destinatario mostra il messaggio."
+                }
               ],
               "note": "Quindi ogni messaggio viaggia attraverso un mix di onde radio, fili di rame, fibre di vetro e cavi sottomarini. A noi sembra solo senza fili."
             },
@@ -514,11 +561,26 @@
                 "Due cose rendono possibile tutto questo: i pacchetti e i protocolli."
               ],
               "protocols": [
-                { "term": "Binario", "body": "All'interno di un dispositivo tutte le informazioni sono memorizzate come uno e zero. Il dispositivo le traduce in onde radio o segnali elettrici per inviarle." },
-                { "term": "Indirizzo IP", "body": "Ogni dispositivo riceve un numero univoco, come un indirizzo postale. I router lo usano per inoltrare ogni pacchetto al posto giusto." },
-                { "term": "TCP", "body": "Il TCP (Transmission Control Protocol) garantisce che i pacchetti arrivino nell'ordine giusto e che nulla vada perso. Il ricevente conferma ogni pacchetto e quelli mancanti vengono reinviati." },
-                { "term": "DNS", "body": "Il Domain Name System è l'elenco telefonico di internet. Traduce nomi come www.example.com nell'indirizzo IP di cui un computer ha realmente bisogno." },
-                { "term": "Server", "body": "Siti web, app e file vivono sui server, computer potenti che restano online. Quando visiti una pagina, il tuo dispositivo chiede al server di inviarla e questa torna sotto forma di pacchetti." }
+                {
+                  "term": "Binario",
+                  "body": "All'interno di un dispositivo tutte le informazioni sono memorizzate come uno e zero. Il dispositivo le traduce in onde radio o segnali elettrici per inviarle."
+                },
+                {
+                  "term": "Indirizzo IP",
+                  "body": "Ogni dispositivo riceve un numero univoco, come un indirizzo postale. I router lo usano per inoltrare ogni pacchetto al posto giusto."
+                },
+                {
+                  "term": "TCP",
+                  "body": "Il TCP (Transmission Control Protocol) garantisce che i pacchetti arrivino nell'ordine giusto e che nulla vada perso. Il ricevente conferma ogni pacchetto e quelli mancanti vengono reinviati."
+                },
+                {
+                  "term": "DNS",
+                  "body": "Il Domain Name System è l'elenco telefonico di internet. Traduce nomi come www.example.com nell'indirizzo IP di cui un computer ha realmente bisogno."
+                },
+                {
+                  "term": "Server",
+                  "body": "Siti web, app e file vivono sui server, computer potenti che restano online. Quando visiti una pagina, il tuo dispositivo chiede al server di inviarla e questa torna sotto forma di pacchetti."
+                }
               ]
             },
             {
@@ -526,13 +588,48 @@
               "table": {
                 "caption": "Tipi di connessione a confronto",
                 "rows": [
-                  ["Connessione", "Come funziona", "Punti di forza", "Punti deboli"],
-                  ["Cavo", "Usa gli stessi cavi coassiali della TV via cavo; un modem converte il segnale.", "Veloce (fino a 1 Gbps) e ampiamente disponibile.", "L'upload è lento; i vicini condividono la connessione, quindi la velocità cala di sera."],
-                  ["Fibra", "Invia i dati come impulsi di luce attraverso fibre di vetro.", "Opzione più veloce (fino a 10 Gbps), upload e download equivalenti, poca perdita di segnale.", "Non disponibile ovunque; posare nuova fibra è costoso."],
-                  ["DSL", "Usa le linee telefoniche in rame esistenti.", "Molto diffusa e non occupa la linea telefonica.", "Più lenta; la velocità dipende dalla distanza dalla centrale del provider."],
-                  ["Satellite", "Trasmette i dati da satelliti in orbita a una parabola a casa tua.", "Funziona quasi ovunque, il che aiuta le aree rurali.", "Latenza elevata perché i dati viaggiano fino allo spazio e ritorno; i temporali la interrompono."],
-                  ["Wireless fisso", "Segnali radio tra una stazione base e un'antenna a casa.", "Buona per le aree senza cavi; latenza inferiore al satellite.", "Alberi, edifici e maltempo possono indebolire il segnale."],
-                  ["5G a casa", "Usa le reti mobili per connettere un'abitazione.", "Rapida da implementare senza scavi; alte velocità e bassa latenza.", "La copertura è ancora limitata e dipende da distanza e congestione."]
+                  [
+                    "Connessione",
+                    "Come funziona",
+                    "Punti di forza",
+                    "Punti deboli"
+                  ],
+                  [
+                    "Cavo",
+                    "Usa gli stessi cavi coassiali della TV via cavo; un modem converte il segnale.",
+                    "Veloce (fino a 1 Gbps) e ampiamente disponibile.",
+                    "L'upload è lento; i vicini condividono la connessione, quindi la velocità cala di sera."
+                  ],
+                  [
+                    "Fibra",
+                    "Invia i dati come impulsi di luce attraverso fibre di vetro.",
+                    "Opzione più veloce (fino a 10 Gbps), upload e download equivalenti, poca perdita di segnale.",
+                    "Non disponibile ovunque; posare nuova fibra è costoso."
+                  ],
+                  [
+                    "DSL",
+                    "Usa le linee telefoniche in rame esistenti.",
+                    "Molto diffusa e non occupa la linea telefonica.",
+                    "Più lenta; la velocità dipende dalla distanza dalla centrale del provider."
+                  ],
+                  [
+                    "Satellite",
+                    "Trasmette i dati da satelliti in orbita a una parabola a casa tua.",
+                    "Funziona quasi ovunque, il che aiuta le aree rurali.",
+                    "Latenza elevata perché i dati viaggiano fino allo spazio e ritorno; i temporali la interrompono."
+                  ],
+                  [
+                    "Wireless fisso",
+                    "Segnali radio tra una stazione base e un'antenna a casa.",
+                    "Buona per le aree senza cavi; latenza inferiore al satellite.",
+                    "Alberi, edifici e maltempo possono indebolire il segnale."
+                  ],
+                  [
+                    "5G a casa",
+                    "Usa le reti mobili per connettere un'abitazione.",
+                    "Rapida da implementare senza scavi; alte velocità e bassa latenza.",
+                    "La copertura è ancora limitata e dipende da distanza e congestione."
+                  ]
                 ]
               },
               "note": "Un tema comune: velocità di upload, banda condivisa e copertura rurale sono i punti deboli di quasi tutte le tecnologie."
@@ -559,8 +656,14 @@
                 "La criminalità informatica è un crimine che coinvolge computer, internet o altra tecnologia digitale. Può colpire individui, aziende o governi e può causare danni finanziari, reputazionali o psicologici. Le definizioni variano da paese a paese, il che rende difficile misurarne l'entità, ma gli esperti dividono di solito la criminalità informatica in due gruppi:"
               ],
               "bullets": [
-                { "strong": "Cyber-dependent crime:", "body": "crimini che possono esistere solo grazie a computer e reti. Hacking, attacchi DDoS, malware. Senza internet questi crimini non esisterebbero." },
-                { "strong": "Cyber-enabled crime:", "body": "crimini tradizionali che si sono spostati online o sono diventati più facili. Frode online, phishing, pirateria digitale, cyberbullismo. Esistevano già prima, ma internet permette ai criminali di commetterli più velocemente, a costo minore e contro più vittime contemporaneamente." }
+                {
+                  "strong": "Cyber-dependent crime:",
+                  "body": "crimini che possono esistere solo grazie a computer e reti. Hacking, attacchi DDoS, malware. Senza internet questi crimini non esisterebbero."
+                },
+                {
+                  "strong": "Cyber-enabled crime:",
+                  "body": "crimini tradizionali che si sono spostati online o sono diventati più facili. Frode online, phishing, pirateria digitale, cyberbullismo. Esistevano già prima, ma internet permette ai criminali di commetterli più velocemente, a costo minore e contro più vittime contemporaneamente."
+                }
               ],
               "paragraphs_after": [
                 "Il criminologo David Wall descrive quattro categorie di criminalità informatica: l'accesso abusivo (cyber trespass: entrare in sistemi in cui non è permesso entrare), l'inganno o il furto informatico (rubare cose online, come i dati delle carte di credito), la pornografia o oscenità informatica (condividere materiale sessuale online) e la violenza informatica (causare danni emotivi o psicologici, come lo cyberstalking. La vittima può non subire danni fisici ma può soffrire danni duraturi)."
@@ -579,18 +682,54 @@
               "table": {
                 "caption": "Panoramica dei tipi di criminalità informatica",
                 "rows": [
-                  ["Tipo", "Descrizione"],
-                  ["Hacking", "Entrare in un sistema informatico senza permesso, per guadagno personale o per causare danni."],
-                  ["Phishing", "Email o messaggi falsi che sembrano provenire da un'azienda reale (come una banca), usati per indurre le persone a rivelare password o dati personali."],
-                  ["Ransomware", "Software dannoso che blocca i tuoi file e chiede denaro per restituirli. L'attacco WannaCry del 2017 è un esempio noto."],
-                  ["Attacchi DDoS", "Inondare un sito web o un servizio con così tanto traffico da mandarlo giù, spesso usando reti di computer infetti (botnet)."],
-                  ["Furto d'identità", "Rubare dati personali per commettere frodi, ad esempio aprendo conti o chiedendo prestiti a nome della vittima."],
-                  ["Cyberstalking", "Seguire, minacciare o intimidire ripetutamente qualcuno attraverso internet."],
-                  ["Pirateria digitale", "Scaricare o condividere contenuti protetti, film, musica, software, senza permesso."],
-                  ["Cyber-estorsione", "Violare un sistema o un server di posta e chiedere denaro per restituirlo o per mantenere segreti i dati."],
-                  ["Cyber-terrorismo", "Violare sistemi governativi o grandi organizzazioni per perseguire obiettivi politici e creare paura."],
-                  ["Riciclaggio di denaro", "Pulire denaro guadagnato illegalmente attraverso internet e il digital banking per farlo sembrare legale."],
-                  ["Adescamento di minori", "Costruire un legame emotivo con un minore online, spesso per abusarne o sfruttarlo."]
+                  [
+                    "Tipo",
+                    "Descrizione"
+                  ],
+                  [
+                    "Hacking",
+                    "Entrare in un sistema informatico senza permesso, per guadagno personale o per causare danni."
+                  ],
+                  [
+                    "Phishing",
+                    "Email o messaggi falsi che sembrano provenire da un'azienda reale (come una banca), usati per indurre le persone a rivelare password o dati personali."
+                  ],
+                  [
+                    "Ransomware",
+                    "Software dannoso che blocca i tuoi file e chiede denaro per restituirli. L'attacco WannaCry del 2017 è un esempio noto."
+                  ],
+                  [
+                    "Attacchi DDoS",
+                    "Inondare un sito web o un servizio con così tanto traffico da mandarlo giù, spesso usando reti di computer infetti (botnet)."
+                  ],
+                  [
+                    "Furto d'identità",
+                    "Rubare dati personali per commettere frodi, ad esempio aprendo conti o chiedendo prestiti a nome della vittima."
+                  ],
+                  [
+                    "Cyberstalking",
+                    "Seguire, minacciare o intimidire ripetutamente qualcuno attraverso internet."
+                  ],
+                  [
+                    "Pirateria digitale",
+                    "Scaricare o condividere contenuti protetti, film, musica, software, senza permesso."
+                  ],
+                  [
+                    "Cyber-estorsione",
+                    "Violare un sistema o un server di posta e chiedere denaro per restituirlo o per mantenere segreti i dati."
+                  ],
+                  [
+                    "Cyber-terrorismo",
+                    "Violare sistemi governativi o grandi organizzazioni per perseguire obiettivi politici e creare paura."
+                  ],
+                  [
+                    "Riciclaggio di denaro",
+                    "Pulire denaro guadagnato illegalmente attraverso internet e il digital banking per farlo sembrare legale."
+                  ],
+                  [
+                    "Adescamento di minori",
+                    "Costruire un legame emotivo con un minore online, spesso per abusarne o sfruttarlo."
+                  ]
                 ]
               }
             }
@@ -607,13 +746,34 @@
               "table": {
                 "caption": "Fatti e cifre chiave",
                 "rows": [
-                  ["Fatto", "Cifra / Fonte"],
-                  ["Costo globale della criminalità informatica nel 2024", "Circa 9,5 trilioni di dollari all'anno, con un aumento previsto di un altro 15% nel 2025 (Cybersecurity Ventures)."],
-                  ["Attacco ransomware WannaCry (2017)", "Ha infettato oltre 230.000 computer in 150 paesi; più di 4 miliardi di dollari di perdite economiche."],
-                  ["Utenti di internet nel 2005", "Circa 1 miliardo di persone (16% della popolazione mondiale)."],
-                  ["Utenti di internet nel 2023", "Circa 5,4 miliardi di persone (67% della popolazione mondiale)."],
-                  ["Uso di internet tra gli adulti", "Cresciuto da circa il 52% (2000) a circa il 96% (2024)."],
-                  ["Contributo economico diretto di internet", "Circa 175 miliardi di dollari all'anno tra pubblicità, e-commerce e pagamenti agli ISP; effetto indotto di circa 444 miliardi."]
+                  [
+                    "Fatto",
+                    "Cifra / Fonte"
+                  ],
+                  [
+                    "Costo globale della criminalità informatica nel 2024",
+                    "Circa 9,5 trilioni di dollari all'anno, con un aumento previsto di un altro 15% nel 2025 (Cybersecurity Ventures)."
+                  ],
+                  [
+                    "Attacco ransomware WannaCry (2017)",
+                    "Ha infettato oltre 230.000 computer in 150 paesi; più di 4 miliardi di dollari di perdite economiche."
+                  ],
+                  [
+                    "Utenti di internet nel 2005",
+                    "Circa 1 miliardo di persone (16% della popolazione mondiale)."
+                  ],
+                  [
+                    "Utenti di internet nel 2023",
+                    "Circa 5,4 miliardi di persone (67% della popolazione mondiale)."
+                  ],
+                  [
+                    "Uso di internet tra gli adulti",
+                    "Cresciuto da circa il 52% (2000) a circa il 96% (2024)."
+                  ],
+                  [
+                    "Contributo economico diretto di internet",
+                    "Circa 175 miliardi di dollari all'anno tra pubblicità, e-commerce e pagamenti agli ISP; effetto indotto di circa 444 miliardi."
+                  ]
                 ]
               },
               "note": "La crescita di internet significa anche più potenziali vittime: da circa 1 miliardo di persone online nel 2005 a circa 5,4 miliardi nel 2023. La criminalità informatica è di fatto un'industria da migliaia di miliardi per i criminali, e quasi ogni persona connessa è un potenziale bersaglio."
@@ -634,10 +794,26 @@
               "table": {
                 "caption": "Tre teorie che spiegano la criminalità informatica",
                 "rows": [
-                  ["Teoria", "Idea centrale", "Come spiega la criminalità informatica"],
-                  ["Teoria generale del crimine (scarso autocontrollo)", "Alcune persone agiscono d'impulso, si assumono rischi e vogliono ricompense rapide senza pensare alle conseguenze.", "La criminalità informatica offre denaro veloce e internet permette ai criminali di agire senza vedere il danno. Gli studi collegano costantemente lo scarso autocontrollo ai reati informatici."],
-                  ["Teoria dell'apprendimento sociale", "Il crimine si impara dagli altri. Il comportamento viene copiato quando sembra funzionare.", "Se amici o comunità online approvano l'hacking o la pirateria, è più probabile che anche altri lo facciano, soprattutto quando sembra che resti impunito."],
-                  ["Teoria dell'attività di routine", "Il crimine avviene quando un autore motivato, un bersaglio adatto e l'assenza di un guardiano capace si combinano.", "Online, password deboli, clic su link di phishing e software obsoleti ti rendono un bersaglio adatto. I software di sicurezza e le abitudini prudenti sono il guardiano."]
+                  [
+                    "Teoria",
+                    "Idea centrale",
+                    "Come spiega la criminalità informatica"
+                  ],
+                  [
+                    "Teoria generale del crimine (scarso autocontrollo)",
+                    "Alcune persone agiscono d'impulso, si assumono rischi e vogliono ricompense rapide senza pensare alle conseguenze.",
+                    "La criminalità informatica offre denaro veloce e internet permette ai criminali di agire senza vedere il danno. Gli studi collegano costantemente lo scarso autocontrollo ai reati informatici."
+                  ],
+                  [
+                    "Teoria dell'apprendimento sociale",
+                    "Il crimine si impara dagli altri. Il comportamento viene copiato quando sembra funzionare.",
+                    "Se amici o comunità online approvano l'hacking o la pirateria, è più probabile che anche altri lo facciano, soprattutto quando sembra che resti impunito."
+                  ],
+                  [
+                    "Teoria dell'attività di routine",
+                    "Il crimine avviene quando un autore motivato, un bersaglio adatto e l'assenza di un guardiano capace si combinano.",
+                    "Online, password deboli, clic su link di phishing e software obsoleti ti rendono un bersaglio adatto. I software di sicurezza e le abitudini prudenti sono il guardiano."
+                  ]
                 ]
               }
             },
@@ -647,9 +823,18 @@
                 "Non tutti gli hacker hanno la stessa motivazione:"
               ],
               "bullets": [
-                { "strong": "Cyber utopians", "body": "persone che fanno cose dannose ma credono di agire per il bene comune." },
-                { "strong": "Cyber punks", "body": "hacker che prendono di mira istituzioni che trovano offensive, spesso solo per divertimento o per fare una dichiarazione." },
-                { "strong": "Cyber spies and cyber terrorists", "body": "attaccanti molto abili con motivazioni estreme, che spesso lavorano per stati o cause politiche." }
+                {
+                  "strong": "Cyber utopians",
+                  "body": "persone che fanno cose dannose ma credono di agire per il bene comune."
+                },
+                {
+                  "strong": "Cyber punks",
+                  "body": "hacker che prendono di mira istituzioni che trovano offensive, spesso solo per divertimento o per fare una dichiarazione."
+                },
+                {
+                  "strong": "Cyber spies and cyber terrorists",
+                  "body": "attaccanti molto abili con motivazioni estreme, che spesso lavorano per stati o cause politiche."
+                }
               ]
             }
           ]
@@ -680,10 +865,22 @@
                 "La criminalità informatica costa denaro, ma colpisce anche le persone sul piano emotivo. Uno studio del 2025 ha analizzato più di 6.700 post e 100.000 commenti sulla criminalità informatica su Reddit, distribuiti su 14 anni (2008-2022). I risultati:"
               ],
               "bullets": [
-                { "strong": "", "body": "Le discussioni più ampie sono state scatenate da violazioni dei dati, attacchi informatici, ransomware e hacking legato a paesi (hacking di stato russo o cinese)." },
-                { "strong": "Anger", "body": "è stata l'emozione più comune, rivolta alle violazioni della privacy, alle aziende che non hanno protetto i dati e ai governi che hanno gestito male le minacce." },
-                { "strong": "Sarcasm", "body": "è stata la seconda reazione più comune, soprattutto verso le narrazioni ufficiali e le misure di sicurezza inefficaci." },
-                { "strong": "Fear", "body": "era anch'essa chiaramente presente, a dimostrazione che le persone si sentono davvero minacciate." }
+                {
+                  "strong": "",
+                  "body": "Le discussioni più ampie sono state scatenate da violazioni dei dati, attacchi informatici, ransomware e hacking legato a paesi (hacking di stato russo o cinese)."
+                },
+                {
+                  "strong": "Anger",
+                  "body": "è stata l'emozione più comune, rivolta alle violazioni della privacy, alle aziende che non hanno protetto i dati e ai governi che hanno gestito male le minacce."
+                },
+                {
+                  "strong": "Sarcasm",
+                  "body": "è stata la seconda reazione più comune, soprattutto verso le narrazioni ufficiali e le misure di sicurezza inefficaci."
+                },
+                {
+                  "strong": "Fear",
+                  "body": "era anch'essa chiaramente presente, a dimostrazione che le persone si sentono davvero minacciate."
+                }
               ],
               "paragraphs_after": [
                 "Gli attacchi informatici possono danneggiare seriamente la fiducia del pubblico nelle aziende e nei governi, e le reazioni emotive possono persino rafforzare il sostegno a politiche di cybersecurity più rigorose."
@@ -737,14 +934,38 @@
       ],
       "references_heading": "10 · Riferimenti",
       "references": [
-        { "label": "Tsotetsi, K. \"Understanding the Internet: A Journey from Devices to Submarine Cables.\"", "href": "https://vocal.media/fyi/understanding-the-internet-a-journey-from-devices-to-submarine-cables" },
-        { "label": "Lefelhoc, C. \"How Does Cable Internet Work?\"", "href": "https://www.compareinternet.com/blog/how-does-cable-internet-work/" },
-        { "label": "Fann, K. \"How Does the Internet Work? A Complete Guide.\" BroadbandNow.", "href": "https://broadbandnow.com/guides/how-does-the-internet-work" },
-        { "label": "Tutorials Point. \"Cyber Crime & Cyber Security.\"", "href": "https://www.tutorialspoint.com/fundamentals_of_science_and_technology/cyber_crime_and_cyber_security.htm" },
-        { "label": "Chen, S. et al. \"Exploring the global geography of cybercrime and its driving forces.\" (2023).", "href": "https://www.nature.com/articles/s41599-023-01560-x" },
-        { "label": "Achuthan, K., Khobragade, S. & Kowalski, R. \"Cybercrime through the public lens: a longitudinal analysis.\" (2025).", "href": "https://www.nature.com/articles/s41599-025-04459-x" },
-        { "label": "Onwuadiamu, G. \"Cybercrime in criminology; A systematic review of criminological theories, methods, and concepts.\" Journal of Economic Criminology 8 (2025) 100136.", "href": "https://doi.org/10.1016/j.jeconc.2025.100136" },
-        { "label": "ResearchGate. \"Top 20 countries exposed to external attacks from malicious programs in 2014.\"", "href": "https://www.researchgate.net/figure/Top-20-countries-exposed-to-external-attacks-from-malicious-programs-in-2014_fig1_331914032" }
+        {
+          "label": "Tsotetsi, K. \"Understanding the Internet: A Journey from Devices to Submarine Cables.\"",
+          "href": "https://vocal.media/fyi/understanding-the-internet-a-journey-from-devices-to-submarine-cables"
+        },
+        {
+          "label": "Lefelhoc, C. \"How Does Cable Internet Work?\"",
+          "href": "https://www.compareinternet.com/blog/how-does-cable-internet-work/"
+        },
+        {
+          "label": "Fann, K. \"How Does the Internet Work? A Complete Guide.\" BroadbandNow.",
+          "href": "https://broadbandnow.com/guides/how-does-the-internet-work"
+        },
+        {
+          "label": "Tutorials Point. \"Cyber Crime & Cyber Security.\"",
+          "href": "https://www.tutorialspoint.com/fundamentals_of_science_and_technology/cyber_crime_and_cyber_security.htm"
+        },
+        {
+          "label": "Chen, S. et al. \"Exploring the global geography of cybercrime and its driving forces.\" (2023).",
+          "href": "https://www.nature.com/articles/s41599-023-01560-x"
+        },
+        {
+          "label": "Achuthan, K., Khobragade, S. & Kowalski, R. \"Cybercrime through the public lens: a longitudinal analysis.\" (2025).",
+          "href": "https://www.nature.com/articles/s41599-025-04459-x"
+        },
+        {
+          "label": "Onwuadiamu, G. \"Cybercrime in criminology; A systematic review of criminological theories, methods, and concepts.\" Journal of Economic Criminology 8 (2025) 100136.",
+          "href": "https://doi.org/10.1016/j.jeconc.2025.100136"
+        },
+        {
+          "label": "ResearchGate. \"Top 20 countries exposed to external attacks from malicious programs in 2014.\"",
+          "href": "https://www.researchgate.net/figure/Top-20-countries-exposed-to-external-attacks-from-malicious-programs-in-2014_fig1_331914032"
+        }
       ],
       "references_note": "Figure: \"A brief history of the internet\" (BroadbandNow) e \"Top 20 countries exposed to external attacks from malicious programs in 2014\" (ResearchGate). I fatti sono raccolti dalle fonti sopra indicate e riscritti con le parole del presente rapporto.",
       "back_label": "Torna al team",

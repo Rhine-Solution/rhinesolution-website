@@ -265,15 +265,41 @@
       }
     ],
     "stack_title": "Stack & Toolkit",
-    "stack": ["Next.js 15", "TypeScript", "Pure CSS", "Mac Mini", "Obsidian Brain", "Vercel", "Cloudflare"],
+    "stack": [
+      "Next.js 15",
+      "TypeScript",
+      "Pure CSS",
+      "Mac Mini",
+      "Obsidian Brain",
+      "Vercel",
+      "Cloudflare"
+    ],
     "values_title": "Was uns wichtig ist",
     "values": [
-      { "title": "Handwerk vor Masse", "text": "Wir übernehmen wenige Projekte und führen sie ordentlich zu Ende." },
-      { "title": "Schlichtheit gewinnt", "text": "Klare Struktur, pures CSS, keine unnötigen Abhängigkeiten." },
-      { "title": "KI-gestützt, menschlich geführt", "text": "Agents und Modelle machen uns schneller; die Entscheidungen treffen Menschen." },
-      { "title": "Immer dokumentiert", "text": "Jede Entscheidung lebt im Brain, nicht im Kopf von jemandem." },
-      { "title": "Das Ergebnis verantworten", "text": "Unsere eigene Infrastruktur, unser eigener Code – Ende zu Ende." },
-      { "title": "Standardmäßig zweisprachig", "text": "Englisch und Niederländisch sind von Tag eins in die Content-Ebene eingebaut." }
+      {
+        "title": "Handwerk vor Masse",
+        "text": "Wir übernehmen wenige Projekte und führen sie ordentlich zu Ende."
+      },
+      {
+        "title": "Schlichtheit gewinnt",
+        "text": "Klare Struktur, pures CSS, keine unnötigen Abhängigkeiten."
+      },
+      {
+        "title": "KI-gestützt, menschlich geführt",
+        "text": "Agents und Modelle machen uns schneller; die Entscheidungen treffen Menschen."
+      },
+      {
+        "title": "Immer dokumentiert",
+        "text": "Jede Entscheidung lebt im Brain, nicht im Kopf von jemandem."
+      },
+      {
+        "title": "Das Ergebnis verantworten",
+        "text": "Unsere eigene Infrastruktur, unser eigener Code – Ende zu Ende."
+      },
+      {
+        "title": "Standardmäßig zweisprachig",
+        "text": "Englisch und Niederländisch sind von Tag eins in die Content-Ebene eingebaut."
+      }
     ],
     "cta_head": "Interesse an einer Zusammenarbeit?",
     "cta_text": "Sie sprechen immer mit einem Macher – nie mit einem Verkäufer.",
@@ -283,23 +309,16 @@
     "eyebrow": "Updates",
     "title": "Neuigkeiten & Updates",
     "subtitle": "Was gibt es Neues bei Rhine Solution.",
-    "items": [
-      {
-        "date": "Aug 2026",
-        "title": "Zweisprachige Seitenstruktur",
-        "summary": "Die Website ist auf /[locale]-Routing umgezogen. Englisch und Niederländisch teilen sich nun einen Komponentenbaum und eine einzige Content-Ebene."
-      },
-      {
-        "date": "Aug 2026",
-        "title": "Music Trends Local ist live",
-        "summary": "Ein Cyber-thematisiertes Musikportal mit 48 Tracks aus acht elektronischen Subgenres, plus Suche, Filter und Favoriten."
-      },
-      {
-        "date": "Jul 2026",
-        "title": "Bereinigung der Abhängigkeiten",
-        "summary": "Postcss wurde aktualisiert und der Audit ergab null Schwachstellen im gesamten Abhängigkeitsbaum."
-      }
-    ]
+    "back": "Zurück zu den Neuigkeiten",
+    "read_more": "Mehr lesen",
+    "trends_title": "Dev-Trends",
+    "trends_subtitle": "Das Neueste aus der Welt der Softwareentwicklung.",
+    "categories": {
+      "launch": "Launch",
+      "feature": "Funktion",
+      "fix": "Fix",
+      "update": "Update"
+    }
   },
   "contact": {
     "eyebrow": "Kontakt",
@@ -498,13 +517,41 @@
                 "Ein Bild an einen Freund auf der anderen Seite der Welt zu senden, geschieht in Schritten. Die Nachricht reist nie als ein einzelnes Stück:"
               ],
               "steps": [
-                { "step": 1, "title": "Ihr Gerät", "body": "Das Gerät zerlegt die Nachricht (ein Foto, eine E-Mail) in kleine Stücke, sogenannte Pakete. Jedes Paket ist wie ein Brief in einem Umschlag, mit Kopf-Informationen, die zeigen, woher es kommt und wohin es geht." },
-                { "step": 2, "title": "Funkwellen zum Router", "body": "Bei WLAN verlassen die Pakete das Gerät als Funkwellen und kommen am Router an. Bei mobilen Daten gehen sie stattdessen zu einem nahegelegenen Mobilfunkmast." },
-                { "step": 3, "title": "Router zum Modem", "body": "Der Router ist der Verkehrsmanager des Heimnetzwerks. Das Modem ist der Übersetzer: Es wandelt die Signale in eine Form um, die über die Kabel des Anbieters reisen kann." },
-                { "step": 4, "title": "Das Netzwerk des Internetanbieters", "body": "Das Modem sendet die Daten über Koaxial- oder Glasfaserkabel an den Internetdienstanbieter (ISP), der die effizienteste Route für die Pakete wählt." },
-                { "step": 5, "title": "Regionale Knotenpunkte", "body": "Die Daten treffen auf große Rechenzentren, die den Verkehr zwischen Netzwerken austauschen. Diese Knotenpunkte verbinden sich mit dem Internet-Backbone." },
-                { "step": 6, "title": "Seekabel", "body": "Für Daten, die Kontinente überqueren, umfasst das Backbone riesige Kabel auf dem Meeresboden, die von speziellen Schiffen verlegt und repariert werden. Die Daten reisen durch sie als Lichtimpulse in dünnen Glasfasern." },
-                { "step": 7, "title": "Ziel", "body": "Die Pakete erreichen die andere Seite, werden in der richtigen Reihenfolge wieder zusammengesetzt, und das Gerät des Empfängers zeigt die Nachricht an." }
+                {
+                  "step": 1,
+                  "title": "Ihr Gerät",
+                  "body": "Das Gerät zerlegt die Nachricht (ein Foto, eine E-Mail) in kleine Stücke, sogenannte Pakete. Jedes Paket ist wie ein Brief in einem Umschlag, mit Kopf-Informationen, die zeigen, woher es kommt und wohin es geht."
+                },
+                {
+                  "step": 2,
+                  "title": "Funkwellen zum Router",
+                  "body": "Bei WLAN verlassen die Pakete das Gerät als Funkwellen und kommen am Router an. Bei mobilen Daten gehen sie stattdessen zu einem nahegelegenen Mobilfunkmast."
+                },
+                {
+                  "step": 3,
+                  "title": "Router zum Modem",
+                  "body": "Der Router ist der Verkehrsmanager des Heimnetzwerks. Das Modem ist der Übersetzer: Es wandelt die Signale in eine Form um, die über die Kabel des Anbieters reisen kann."
+                },
+                {
+                  "step": 4,
+                  "title": "Das Netzwerk des Internetanbieters",
+                  "body": "Das Modem sendet die Daten über Koaxial- oder Glasfaserkabel an den Internetdienstanbieter (ISP), der die effizienteste Route für die Pakete wählt."
+                },
+                {
+                  "step": 5,
+                  "title": "Regionale Knotenpunkte",
+                  "body": "Die Daten treffen auf große Rechenzentren, die den Verkehr zwischen Netzwerken austauschen. Diese Knotenpunkte verbinden sich mit dem Internet-Backbone."
+                },
+                {
+                  "step": 6,
+                  "title": "Seekabel",
+                  "body": "Für Daten, die Kontinente überqueren, umfasst das Backbone riesige Kabel auf dem Meeresboden, die von speziellen Schiffen verlegt und repariert werden. Die Daten reisen durch sie als Lichtimpulse in dünnen Glasfasern."
+                },
+                {
+                  "step": 7,
+                  "title": "Ziel",
+                  "body": "Die Pakete erreichen die andere Seite, werden in der richtigen Reihenfolge wieder zusammengesetzt, und das Gerät des Empfängers zeigt die Nachricht an."
+                }
               ],
               "note": "Jede Nachricht reist also durch eine Mischung aus Funkwellen, Kupferdrähten, Glasfasern und Unterseekabeln. Für uns fühlt es sich nur drahtlos an."
             },
@@ -514,11 +561,26 @@
                 "Zwei Dinge machen das alles möglich: Pakete und Protokolle."
               ],
               "protocols": [
-                { "term": "Binär", "body": "Innerhalb eines Geräts werden alle Informationen als Einsen und Nullen gespeichert. Das Gerät übersetzt sie in Funkwellen oder elektrische Signale, um sie auszusenden." },
-                { "term": "IP-Adresse", "body": "Jedes Gerät erhält eine eindeutige Nummer, wie eine Postadresse. Router nutzen sie, um jedes Paket an den richtigen Ort weiterzuleiten." },
-                { "term": "TCP", "body": "TCP (Transmission Control Protocol) stellt sicher, dass Pakete in der richtigen Reihenfolge ankommen und nichts fehlt. Der Empfänger bestätigt jedes Paket, und fehlende werden erneut gesendet." },
-                { "term": "DNS", "body": "Das Domain Name System ist das Telefonbuch des Internets. Es übersetzt Namen wie www.example.com in die IP-Adresse, die ein Computer tatsächlich benötigt." },
-                { "term": "Server", "body": "Websites, Apps und Dateien leben auf Servern – leistungsstarken Computern, die online bleiben. Wenn Sie eine Seite besuchen, bittet Ihr Gerät den Server, sie zu senden, und sie kommt als Pakete zurück." }
+                {
+                  "term": "Binär",
+                  "body": "Innerhalb eines Geräts werden alle Informationen als Einsen und Nullen gespeichert. Das Gerät übersetzt sie in Funkwellen oder elektrische Signale, um sie auszusenden."
+                },
+                {
+                  "term": "IP-Adresse",
+                  "body": "Jedes Gerät erhält eine eindeutige Nummer, wie eine Postadresse. Router nutzen sie, um jedes Paket an den richtigen Ort weiterzuleiten."
+                },
+                {
+                  "term": "TCP",
+                  "body": "TCP (Transmission Control Protocol) stellt sicher, dass Pakete in der richtigen Reihenfolge ankommen und nichts fehlt. Der Empfänger bestätigt jedes Paket, und fehlende werden erneut gesendet."
+                },
+                {
+                  "term": "DNS",
+                  "body": "Das Domain Name System ist das Telefonbuch des Internets. Es übersetzt Namen wie www.example.com in die IP-Adresse, die ein Computer tatsächlich benötigt."
+                },
+                {
+                  "term": "Server",
+                  "body": "Websites, Apps und Dateien leben auf Servern – leistungsstarken Computern, die online bleiben. Wenn Sie eine Seite besuchen, bittet Ihr Gerät den Server, sie zu senden, und sie kommt als Pakete zurück."
+                }
               ]
             },
             {
@@ -526,13 +588,48 @@
               "table": {
                 "caption": "Verbindungsarten im Vergleich",
                 "rows": [
-                  ["Verbindung", "So funktioniert sie", "Stärken", "Schwächen"],
-                  ["Kabel", "Nutzt dieselben Koaxialkabel wie das Kabelfernsehen; ein Modem wandelt das Signal um.", "Schnell (bis zu 1 Gbit/s) und weit verbreitet verfügbar.", "Der Upload ist langsam; Nachbarn teilen sich die Verbindung, sodass die Geschwindigkeiten am Abend sinken."],
-                  ["Glasfaser", "Sendet Daten als Lichtimpulse durch Glasfasern.", "Schnellste Option (bis zu 10 Gbit/s), gleicher Upload/Download, geringer Signalverlust.", "Nicht überall verfügbar; das Verlegen neuer Glasfaser ist teuer."],
-                  ["DSL", "Nutzt die bestehenden Kupfertelefonleitungen.", "Sehr weit verbreitet und blockiert die Telefonleitung nicht.", "Langsamer; die Geschwindigkeit hängt von der Entfernung zur Vermittlungsstelle des Anbieters ab."],
-                  ["Satellit", "Sendet Daten von Satelliten im Orbit zu einer Schüssel bei Ihnen zu Hause.", "Funktioniert fast überall, was ländlichen Gebieten hilft.", "Hohe Latenz, weil die Daten ins Weltall und zurück reisen; Stürme unterbrechen die Verbindung."],
-                  ["Festes WLAN", "Funksignale zwischen einer Basisstation und einer Antenne am Haus.", "Gut für Gebiete ohne Kabel; geringere Latenz als beim Satelliten.", "Bäume, Gebäude und Wetter können das Signal abschwächen."],
-                  ["5G zu Hause", "Nutzt Mobilfunknetze, um einen Haushalt zu verbinden.", "Schnell einsatzbereit ohne Grabenarbeiten; hohe Geschwindigkeiten und geringe Latenz.", "Die Abdeckung ist noch begrenzt und hängt von Entfernung und Auslastung ab."]
+                  [
+                    "Verbindung",
+                    "So funktioniert sie",
+                    "Stärken",
+                    "Schwächen"
+                  ],
+                  [
+                    "Kabel",
+                    "Nutzt dieselben Koaxialkabel wie das Kabelfernsehen; ein Modem wandelt das Signal um.",
+                    "Schnell (bis zu 1 Gbit/s) und weit verbreitet verfügbar.",
+                    "Der Upload ist langsam; Nachbarn teilen sich die Verbindung, sodass die Geschwindigkeiten am Abend sinken."
+                  ],
+                  [
+                    "Glasfaser",
+                    "Sendet Daten als Lichtimpulse durch Glasfasern.",
+                    "Schnellste Option (bis zu 10 Gbit/s), gleicher Upload/Download, geringer Signalverlust.",
+                    "Nicht überall verfügbar; das Verlegen neuer Glasfaser ist teuer."
+                  ],
+                  [
+                    "DSL",
+                    "Nutzt die bestehenden Kupfertelefonleitungen.",
+                    "Sehr weit verbreitet und blockiert die Telefonleitung nicht.",
+                    "Langsamer; die Geschwindigkeit hängt von der Entfernung zur Vermittlungsstelle des Anbieters ab."
+                  ],
+                  [
+                    "Satellit",
+                    "Sendet Daten von Satelliten im Orbit zu einer Schüssel bei Ihnen zu Hause.",
+                    "Funktioniert fast überall, was ländlichen Gebieten hilft.",
+                    "Hohe Latenz, weil die Daten ins Weltall und zurück reisen; Stürme unterbrechen die Verbindung."
+                  ],
+                  [
+                    "Festes WLAN",
+                    "Funksignale zwischen einer Basisstation und einer Antenne am Haus.",
+                    "Gut für Gebiete ohne Kabel; geringere Latenz als beim Satelliten.",
+                    "Bäume, Gebäude und Wetter können das Signal abschwächen."
+                  ],
+                  [
+                    "5G zu Hause",
+                    "Nutzt Mobilfunknetze, um einen Haushalt zu verbinden.",
+                    "Schnell einsatzbereit ohne Grabenarbeiten; hohe Geschwindigkeiten und geringe Latenz.",
+                    "Die Abdeckung ist noch begrenzt und hängt von Entfernung und Auslastung ab."
+                  ]
                 ]
               },
               "note": "Ein gemeinsames Thema: Upload-Geschwindigkeiten, geteilte Bandbreite und ländliche Abdeckung sind die Schwachstellen fast jeder Technologie."
@@ -559,8 +656,14 @@
                 "Cybercrime ist Kriminalität, die Computer, das Internet oder andere digitale Technologien betrifft. Sie kann sich gegen Einzelpersonen, Unternehmen oder Regierungen richten und finanziellen Schaden, Reputationsschäden oder seelischen Schaden verursachen. Die Definitionen variieren von Land zu Land, was die Messung erschwert, aber Experten teilen Cybercrime meist in zwei Gruppen ein:"
               ],
               "bullets": [
-                { "strong": "Cyberabhängige Kriminalität:", "body": "Straftaten, die nur wegen Computern und Netzwerken existieren können. Hacking, DDoS-Angriffe, Malware. Ohne das Internet gäbe es diese Straftaten nicht." },
-                { "strong": "Cyberunterstützte Kriminalität:", "body": "traditionelle Straftaten, die ins Internet verlagert oder einfacher geworden sind. Online-Betrug, Phishing, digitale Piraterie, Cybermobbing. Sie gab es schon vorher, aber das Internet lässt Straftäter sie schneller, billiger und gegen mehr Opfer gleichzeitig ausführen." }
+                {
+                  "strong": "Cyberabhängige Kriminalität:",
+                  "body": "Straftaten, die nur wegen Computern und Netzwerken existieren können. Hacking, DDoS-Angriffe, Malware. Ohne das Internet gäbe es diese Straftaten nicht."
+                },
+                {
+                  "strong": "Cyberunterstützte Kriminalität:",
+                  "body": "traditionelle Straftaten, die ins Internet verlagert oder einfacher geworden sind. Online-Betrug, Phishing, digitale Piraterie, Cybermobbing. Sie gab es schon vorher, aber das Internet lässt Straftäter sie schneller, billiger und gegen mehr Opfer gleichzeitig ausführen."
+                }
               ],
               "paragraphs_after": [
                 "Der Kriminologe David Wall beschreibt vier Kategorien von Cybercrime: Cyber-Trespass (das Eindringen in Systeme, in die man nicht eindringen darf), Cyber-Deception oder Diebstahl (Online-Diebstahl, etwa von Kreditkartendaten), Cyber-Pornografie oder Obszönität (das Teilen sexuellen Materials online) und Cyber-Gewalt (das Verursachen von emotionalem oder psychologischem Schaden, etwa durch Cyberstalking. Das Opfer wird körperlich vielleicht nicht verletzt, kann aber dauerhaften Schaden erleiden)."
@@ -579,18 +682,54 @@
               "table": {
                 "caption": "Überblick über die Arten von Cybercrime",
                 "rows": [
-                  ["Art", "Beschreibung"],
-                  ["Hacking", "Eindringen in ein Computersystem ohne Erlaubnis, aus Eigeninteresse oder um Schaden zu verursachen."],
-                  ["Phishing", "Gefälschte E-Mails oder Nachrichten, die so aussehen, als kämen sie von einem echten Unternehmen (etwa einer Bank), um Menschen dazu zu bringen, Passwörter oder persönliche Daten preiszugeben."],
-                  ["Ransomware", "Schadsoftware, die Ihre Dateien sperrt und Geld verlangt, um sie zurückzugeben. Der WannaCry-Angriff 2017 ist ein bekanntes Beispiel."],
-                  ["DDoS-Angriffe", "Eine Website oder einen Dienst mit so viel Verkehr überschwemmen, dass er ausfällt – häufig über Netzwerke infizierter Computer (Botnetze)."],
-                  ["Identitätsdiebstahl", "Stehlen persönlicher Daten, um Betrug zu begehen, etwa Konten zu eröffnen oder Kredite im Namen des Opfers aufzunehmen."],
-                  ["Cyberstalking", "Jemanden wiederholt über das Internet verfolgen, bedrohen oder einschüchtern."],
-                  ["Digitale Piraterie", "Geschützte Inhalte – Filme, Musik, Software – ohne Erlaubnis herunterladen oder teilen."],
-                  ["Cyber-Erpressung", "Ein System oder einen E-Mail-Server hacken und Geld verlangen, um ihn zurückzugeben oder die Daten geheim zu halten."],
-                  ["Cyber-Terrorismus", "Regierungssysteme oder große Organisationen hacken, um politische Ziele durchzusetzen und Angst zu erzeugen."],
-                  ["Geldwäsche", "Illegal verdientes Geld über das Internet und digitales Banking reinigen, damit es legal aussieht."],
-                  ["Cybergrooming", "Aufbau einer emotionalen Bindung zu einem Kind online, oft um es zu missbrauchen oder zu handeln."]
+                  [
+                    "Art",
+                    "Beschreibung"
+                  ],
+                  [
+                    "Hacking",
+                    "Eindringen in ein Computersystem ohne Erlaubnis, aus Eigeninteresse oder um Schaden zu verursachen."
+                  ],
+                  [
+                    "Phishing",
+                    "Gefälschte E-Mails oder Nachrichten, die so aussehen, als kämen sie von einem echten Unternehmen (etwa einer Bank), um Menschen dazu zu bringen, Passwörter oder persönliche Daten preiszugeben."
+                  ],
+                  [
+                    "Ransomware",
+                    "Schadsoftware, die Ihre Dateien sperrt und Geld verlangt, um sie zurückzugeben. Der WannaCry-Angriff 2017 ist ein bekanntes Beispiel."
+                  ],
+                  [
+                    "DDoS-Angriffe",
+                    "Eine Website oder einen Dienst mit so viel Verkehr überschwemmen, dass er ausfällt – häufig über Netzwerke infizierter Computer (Botnetze)."
+                  ],
+                  [
+                    "Identitätsdiebstahl",
+                    "Stehlen persönlicher Daten, um Betrug zu begehen, etwa Konten zu eröffnen oder Kredite im Namen des Opfers aufzunehmen."
+                  ],
+                  [
+                    "Cyberstalking",
+                    "Jemanden wiederholt über das Internet verfolgen, bedrohen oder einschüchtern."
+                  ],
+                  [
+                    "Digitale Piraterie",
+                    "Geschützte Inhalte – Filme, Musik, Software – ohne Erlaubnis herunterladen oder teilen."
+                  ],
+                  [
+                    "Cyber-Erpressung",
+                    "Ein System oder einen E-Mail-Server hacken und Geld verlangen, um ihn zurückzugeben oder die Daten geheim zu halten."
+                  ],
+                  [
+                    "Cyber-Terrorismus",
+                    "Regierungssysteme oder große Organisationen hacken, um politische Ziele durchzusetzen und Angst zu erzeugen."
+                  ],
+                  [
+                    "Geldwäsche",
+                    "Illegal verdientes Geld über das Internet und digitales Banking reinigen, damit es legal aussieht."
+                  ],
+                  [
+                    "Cybergrooming",
+                    "Aufbau einer emotionalen Bindung zu einem Kind online, oft um es zu missbrauchen oder zu handeln."
+                  ]
                 ]
               }
             }
@@ -607,13 +746,34 @@
               "table": {
                 "caption": "Wichtige Fakten und Zahlen",
                 "rows": [
-                  ["Fakt", "Zahl / Quelle"],
-                  ["Weltweite Kosten von Cybercrime im Jahr 2024", "Etwa 9,5 Billionen US-Dollar pro Jahr, für 2025 wird ein weiterer Anstieg von 15 % erwartet (Cybersecurity Ventures)."],
-                  ["WannaCry-Ransomware-Angriff (2017)", "Infizierte mehr als 230.000 Computer in 150 Ländern; wirtschaftliche Verluste von über 4 Milliarden US-Dollar."],
-                  ["Internetnutzer im Jahr 2005", "Etwa 1 Milliarde Menschen (16 % der Weltbevölkerung)."],
-                  ["Internetnutzer im Jahr 2023", "Etwa 5,4 Milliarden Menschen (67 % der Weltbevölkerung)."],
-                  ["Internetnutzung Erwachsener", "Wuchs von etwa 52 % (2000) auf etwa 96 % (2024)."],
-                  ["Direkter wirtschaftlicher Beitrag des Internets", "Etwa 175 Milliarden US-Dollar pro Jahr aus Werbung, Online-Handel und ISP-Zahlungen; Folgeeffekt von etwa 444 Milliarden US-Dollar."]
+                  [
+                    "Fakt",
+                    "Zahl / Quelle"
+                  ],
+                  [
+                    "Weltweite Kosten von Cybercrime im Jahr 2024",
+                    "Etwa 9,5 Billionen US-Dollar pro Jahr, für 2025 wird ein weiterer Anstieg von 15 % erwartet (Cybersecurity Ventures)."
+                  ],
+                  [
+                    "WannaCry-Ransomware-Angriff (2017)",
+                    "Infizierte mehr als 230.000 Computer in 150 Ländern; wirtschaftliche Verluste von über 4 Milliarden US-Dollar."
+                  ],
+                  [
+                    "Internetnutzer im Jahr 2005",
+                    "Etwa 1 Milliarde Menschen (16 % der Weltbevölkerung)."
+                  ],
+                  [
+                    "Internetnutzer im Jahr 2023",
+                    "Etwa 5,4 Milliarden Menschen (67 % der Weltbevölkerung)."
+                  ],
+                  [
+                    "Internetnutzung Erwachsener",
+                    "Wuchs von etwa 52 % (2000) auf etwa 96 % (2024)."
+                  ],
+                  [
+                    "Direkter wirtschaftlicher Beitrag des Internets",
+                    "Etwa 175 Milliarden US-Dollar pro Jahr aus Werbung, Online-Handel und ISP-Zahlungen; Folgeeffekt von etwa 444 Milliarden US-Dollar."
+                  ]
                 ]
               },
               "note": "Internetwachstum bedeutet auch mehr potenzielle Opfer: von etwa 1 Milliarde Menschen online im Jahr 2005 auf rund 5,4 Milliarden im Jahr 2023. Cybercrime ist für Kriminelle praktisch eine Billionen-Dollar-Industrie, und fast jeder, der verbunden ist, ist ein potenzielles Ziel."
@@ -634,10 +794,26 @@
               "table": {
                 "caption": "Drei Theorien, die Cybercrime erklären",
                 "rows": [
-                  ["Theorie", "Kernidee", "Wie sie Cybercrime erklärt"],
-                  ["Allgemeine Kriminalitätstheorie (geringe Selbstkontrolle)", "Manche Menschen handeln impulsiv, gehen Risiken ein und wollen schnelle Belohnungen, ohne über die Konsequenzen nachzudenken.", "Cybercrime bietet schnelles Geld, und das Internet lässt Kriminelle handeln, ohne den Schaden zu sehen. Studien verbinden geringe Selbstkontrolle durchgängig mit Cyberstraftaten."],
-                  ["Theorie des sozialen Lernens", "Kriminalität wird von anderen gelernt. Verhalten wird nachgeahmt, wenn es zu funktionieren scheint.", "Wenn Freunde oder Online-Gemeinschaften Hacking oder Piraterie befürworten, tun es Menschen eher auch – besonders, wenn es ungestraft zu bleiben scheint."],
-                  ["Routine-Activity-Theorie", "Kriminalität passiert, wenn ein motivierter Täter, ein geeignetes Ziel und kein fähiger Wächter zusammentreffen.", "Online machen schwache Passwörter, das Klicken auf Phishing-Links und veraltete Software Sie zu einem geeigneten Ziel. Sicherheitssoftware und sorgfältige Gewohnheiten sind der Wächter."]
+                  [
+                    "Theorie",
+                    "Kernidee",
+                    "Wie sie Cybercrime erklärt"
+                  ],
+                  [
+                    "Allgemeine Kriminalitätstheorie (geringe Selbstkontrolle)",
+                    "Manche Menschen handeln impulsiv, gehen Risiken ein und wollen schnelle Belohnungen, ohne über die Konsequenzen nachzudenken.",
+                    "Cybercrime bietet schnelles Geld, und das Internet lässt Kriminelle handeln, ohne den Schaden zu sehen. Studien verbinden geringe Selbstkontrolle durchgängig mit Cyberstraftaten."
+                  ],
+                  [
+                    "Theorie des sozialen Lernens",
+                    "Kriminalität wird von anderen gelernt. Verhalten wird nachgeahmt, wenn es zu funktionieren scheint.",
+                    "Wenn Freunde oder Online-Gemeinschaften Hacking oder Piraterie befürworten, tun es Menschen eher auch – besonders, wenn es ungestraft zu bleiben scheint."
+                  ],
+                  [
+                    "Routine-Activity-Theorie",
+                    "Kriminalität passiert, wenn ein motivierter Täter, ein geeignetes Ziel und kein fähiger Wächter zusammentreffen.",
+                    "Online machen schwache Passwörter, das Klicken auf Phishing-Links und veraltete Software Sie zu einem geeigneten Ziel. Sicherheitssoftware und sorgfältige Gewohnheiten sind der Wächter."
+                  ]
                 ]
               }
             },
@@ -647,9 +823,18 @@
                 "Nicht jeder Hacker hat dieselbe Motivation:"
               ],
               "bullets": [
-                { "strong": "Cyber-Utopisten", "body": "Menschen, die böswillige Dinge tun, aber glauben, für das Gemeinwohl zu handeln." },
-                { "strong": "Cyber-Punks", "body": "Hacker, die Institutionen ins Visier nehmen, die sie anstößig finden – oft nur zum Spaß oder um ein Zeichen zu setzen." },
-                { "strong": "Cyber-Spione und Cyber-Terroristen", "body": "hochqualifizierte Angreifer mit extremen Motiven, die oft für Staaten oder politische Anliegen arbeiten." }
+                {
+                  "strong": "Cyber-Utopisten",
+                  "body": "Menschen, die böswillige Dinge tun, aber glauben, für das Gemeinwohl zu handeln."
+                },
+                {
+                  "strong": "Cyber-Punks",
+                  "body": "Hacker, die Institutionen ins Visier nehmen, die sie anstößig finden – oft nur zum Spaß oder um ein Zeichen zu setzen."
+                },
+                {
+                  "strong": "Cyber-Spione und Cyber-Terroristen",
+                  "body": "hochqualifizierte Angreifer mit extremen Motiven, die oft für Staaten oder politische Anliegen arbeiten."
+                }
               ]
             }
           ]
@@ -680,10 +865,22 @@
                 "Cybercrime kostet Geld, aber sie betrifft Menschen auch emotional. Eine Studie von 2025 analysierte mehr als 6.700 Beiträge und 100.000 Kommentare über Cybercrime auf Reddit, verteilt über 14 Jahre (2008–2022). Die Ergebnisse:"
               ],
               "bullets": [
-                { "strong": "", "body": "Die größten Diskussionen wurden durch Datenschutzverletzungen, Cyberangriffe, Ransomware und Hacking ausgelöst, das mit Ländern in Verbindung gebracht wurde (russisches oder chinesisches Staats-Hacking)." },
-                { "strong": "Wut", "body": "war die häufigste Emotion, gerichtet gegen Datenschutzverletzungen, Unternehmen, die Daten nicht geschützt haben, und Regierungen, die Bedrohungen schlecht gehandhabt haben." },
-                { "strong": "Sarkasmus", "body": "war die zweithäufigste Reaktion, meist gegenüber offiziellen Narrativen und wirkungslosen Sicherheitsmaßnahmen." },
-                { "strong": "Angst", "body": "war ebenfalls deutlich vorhanden und zeigt, dass sich Menschen wirklich bedroht fühlen." }
+                {
+                  "strong": "",
+                  "body": "Die größten Diskussionen wurden durch Datenschutzverletzungen, Cyberangriffe, Ransomware und Hacking ausgelöst, das mit Ländern in Verbindung gebracht wurde (russisches oder chinesisches Staats-Hacking)."
+                },
+                {
+                  "strong": "Wut",
+                  "body": "war die häufigste Emotion, gerichtet gegen Datenschutzverletzungen, Unternehmen, die Daten nicht geschützt haben, und Regierungen, die Bedrohungen schlecht gehandhabt haben."
+                },
+                {
+                  "strong": "Sarkasmus",
+                  "body": "war die zweithäufigste Reaktion, meist gegenüber offiziellen Narrativen und wirkungslosen Sicherheitsmaßnahmen."
+                },
+                {
+                  "strong": "Angst",
+                  "body": "war ebenfalls deutlich vorhanden und zeigt, dass sich Menschen wirklich bedroht fühlen."
+                }
               ],
               "paragraphs_after": [
                 "Cyberangriffe können das öffentliche Vertrauen in Unternehmen und Regierungen ernsthaft beschädigen, und emotionale Reaktionen können sogar die Unterstützung für strengere Cybersicherheitspolitiken fördern."
@@ -737,14 +934,38 @@
       ],
       "references_heading": "10 · Literaturverzeichnis",
       "references": [
-        { "label": "Tsotetsi, K. \"Understanding the Internet: A Journey from Devices to Submarine Cables.\"", "href": "https://vocal.media/fyi/understanding-the-internet-a-journey-from-devices-to-submarine-cables" },
-        { "label": "Lefelhoc, C. \"How Does Cable Internet Work?\"", "href": "https://www.compareinternet.com/blog/how-does-cable-internet-work/" },
-        { "label": "Fann, K. \"How Does the Internet Work? A Complete Guide.\" BroadbandNow.", "href": "https://broadbandnow.com/guides/how-does-the-internet-work" },
-        { "label": "Tutorials Point. \"Cyber Crime & Cyber Security.\"", "href": "https://www.tutorialspoint.com/fundamentals_of_science_and_technology/cyber_crime_and_cyber_security.htm" },
-        { "label": "Chen, S. et al. \"Exploring the global geography of cybercrime and its driving forces.\" (2023).", "href": "https://www.nature.com/articles/s41599-023-01560-x" },
-        { "label": "Achuthan, K., Khobragade, S. & Kowalski, R. \"Cybercrime through the public lens: a longitudinal analysis.\" (2025).", "href": "https://www.nature.com/articles/s41599-025-04459-x" },
-        { "label": "Onwuadiamu, G. \"Cybercrime in criminology; A systematic review of criminological theories, methods, and concepts.\" Journal of Economic Criminology 8 (2025) 100136.", "href": "https://doi.org/10.1016/j.jeconc.2025.100136" },
-        { "label": "ResearchGate. \"Top 20 countries exposed to external attacks from malicious programs in 2014.\"", "href": "https://www.researchgate.net/figure/Top-20-countries-exposed-to-external-attacks-from-malicious-programs-in-2014_fig1_331914032" }
+        {
+          "label": "Tsotetsi, K. \"Understanding the Internet: A Journey from Devices to Submarine Cables.\"",
+          "href": "https://vocal.media/fyi/understanding-the-internet-a-journey-from-devices-to-submarine-cables"
+        },
+        {
+          "label": "Lefelhoc, C. \"How Does Cable Internet Work?\"",
+          "href": "https://www.compareinternet.com/blog/how-does-cable-internet-work/"
+        },
+        {
+          "label": "Fann, K. \"How Does the Internet Work? A Complete Guide.\" BroadbandNow.",
+          "href": "https://broadbandnow.com/guides/how-does-the-internet-work"
+        },
+        {
+          "label": "Tutorials Point. \"Cyber Crime & Cyber Security.\"",
+          "href": "https://www.tutorialspoint.com/fundamentals_of_science_and_technology/cyber_crime_and_cyber_security.htm"
+        },
+        {
+          "label": "Chen, S. et al. \"Exploring the global geography of cybercrime and its driving forces.\" (2023).",
+          "href": "https://www.nature.com/articles/s41599-023-01560-x"
+        },
+        {
+          "label": "Achuthan, K., Khobragade, S. & Kowalski, R. \"Cybercrime through the public lens: a longitudinal analysis.\" (2025).",
+          "href": "https://www.nature.com/articles/s41599-025-04459-x"
+        },
+        {
+          "label": "Onwuadiamu, G. \"Cybercrime in criminology; A systematic review of criminological theories, methods, and concepts.\" Journal of Economic Criminology 8 (2025) 100136.",
+          "href": "https://doi.org/10.1016/j.jeconc.2025.100136"
+        },
+        {
+          "label": "ResearchGate. \"Top 20 countries exposed to external attacks from malicious programs in 2014.\"",
+          "href": "https://www.researchgate.net/figure/Top-20-countries-exposed-to-external-attacks-from-malicious-programs-in-2014_fig1_331914032"
+        }
       ],
       "references_note": "Abbildungen: „A brief history of the internet“ (BroadbandNow) und „Top 20 countries exposed to external attacks from malicious programs in 2014“ (ResearchGate). Die Fakten stammen aus den oben genannten Quellen und wurden in den eigenen Worten dieses Berichts neu formuliert.",
       "back_label": "Zurück zum Team",
