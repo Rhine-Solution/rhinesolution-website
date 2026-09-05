@@ -11,12 +11,12 @@ const securityHeaders = [
     key: "Strict-Transport-Security",
     value: "max-age=63072000; includeSubDomains; preload",
   },
-  // Report-only CSP: starts collecting violations without blocking anything.
-  // Tighten to an enforcing policy once the report data is clean.
+  // Enforcing CSP. Tuned from the report-only phase: Turnstile + Gemini connect,
+  // no external scripts besides Turnstile, no object-src, restricted base/form.
   {
-    key: "Content-Security-Policy-Report-Only",
+    key: "Content-Security-Policy",
     value:
-      "default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; connect-src 'self' https://generativelanguage.googleapis.com https://challenges.cloudflare.com; font-src 'self' data:; frame-src https://challenges.cloudflare.com; base-uri 'self'; form-action 'self'",
+      "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://challenges.cloudflare.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self' https://generativelanguage.googleapis.com https://challenges.cloudflare.com wss:; font-src 'self' data:; frame-src https://challenges.cloudflare.com; worker-src 'self' blob:; base-uri 'self'; form-action 'self'; object-src 'none'",
   },
 ];
 

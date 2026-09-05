@@ -160,7 +160,9 @@
       "knowledge": "Conoscenza",
       "journal": "Diario",
       "projects": "Progetti",
-      "archive": "Archivio"
+      "archive": "Archivio",
+      "operations": "Operazioni",
+      "dailies": "Diari"
     },
     "related": "Correlati"
   },

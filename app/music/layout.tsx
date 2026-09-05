@@ -1,3 +1,5 @@
+import type { Metadata } from "next";
+import "../../styles/globals.css";
 import "../../styles/music/music.css";
 import { Inter, Cormorant_Garamond } from "next/font/google";
 import MusicNav from "./MusicNav";
@@ -21,28 +23,32 @@ export const metadata = {
 
 export default function MusicLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div className={`music-body ${inter.variable} ${cormorant.variable}`}>
-      <a
-        href="#music-main"
-        className="skip-link"
-        style={{
-          position: "absolute",
-          top: "-100px",
-          left: "1rem",
-          background: "var(--color-accent)",
-          color: "var(--color-primary-fg)",
-          padding: "0.5rem 1rem",
-          zIndex: 1000,
-        }}
-      >
-        Skip to main content
-      </a>
-      <MusicNav />
-      <main id="music-main" style={{ flex: 1 }}>
-        {children}
-      </main>
-      <PlayerBar />
-      <MusicFooter />
-    </div>
+    <html lang="en" className={`${inter.variable} ${cormorant.variable}`}>
+      <body>
+        <div className="music-body">
+          <a
+            href="#music-main"
+            className="skip-link"
+            style={{
+              position: "absolute",
+              top: "-100px",
+              left: "1rem",
+              background: "var(--color-accent)",
+              color: "var(--color-primary-fg)",
+              padding: "0.5rem 1rem",
+              zIndex: 1000,
+            }}
+          >
+            Skip to main content
+          </a>
+          <MusicNav />
+          <main id="music-main" style={{ flex: 1 }}>
+            {children}
+          </main>
+          <PlayerBar />
+          <MusicFooter />
+        </div>
+      </body>
+    </html>
   );
 }

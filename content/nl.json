@@ -166,7 +166,9 @@
       "knowledge": "Kennis",
       "journal": "Logboek",
       "projects": "Projecten",
-      "archive": "Archief"
+      "archive": "Archief",
+      "operations": "Operaties",
+      "dailies": "Dagboeken"
     },
     "related": "Gerelateerd"
   },
