@@ -1,0 +1,31 @@
+# Rhine Solution
+
+> Rhine Solution is a two-person web studio in the Netherlands. We build custom web applications, portfolios, and digital experiences with Next.js, TypeScript, and pure CSS, and we document every decision in a public engineering knowledge base called The Brain.
+
+## Rhine Solution
+
+- [Home](https://rhinesolution.com/en): WebGL hero and studio intro
+- [Projects](https://rhinesolution.com/en/projects): selected work
+- [Team](https://rhinesolution.com/en/team): RAGNAROK (CEO & Visionary) and ZeroMeister (CTO & Engineer)
+- [About](https://rhinesolution.com/en/about): services, process, stack
+- [News](https://rhinesolution.com/en/news): studio updates and global development news
+- [Contact](https://rhinesolution.com/en/contact): start a conversation
+- [Privacy](https://rhinesolution.com/en/privacy): data policy
+- [Colophon](https://rhinesolution.com/en/colophon): how this site is made
+
+## Projects
+
+- [rhinesolution.com](https://rhinesolution.com/en/projects/rhinesolution): this website
+- [The Brain](https://rhinesolution.com/en/projects/brain): public engineering knowledge base (explorer + notes on plan/build/harden/ship/journal)
+- [Mac Mini AI Infrastructure](https://rhinesolution.com/en/projects/macmini): the studio's AI stack and agents
+- [Music Trends Local](https://rhinesolution.com/en/projects/music): cyber-themed music portal
+
+## Other pages
+
+- [DFIR case studies](https://rhinesolution.com/en/dfir): digital forensics work
+- [Cybercrime & Cybersecurity Report](https://rhinesolution.com/en/dfir/cybercrime-report): K1352 research report
+- [Music portal](https://rhinesolution.com/music): music trends local
+
+## Languages
+
+All locale-scoped pages are available in English and Dutch at `/en/...` and `/nl/...`, and additionally in German, French, Spanish, Italian, and Chinese at `/de`, `/fr`, `/es`, `/it`, `/zh`. English is the default.

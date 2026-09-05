@@ -108,6 +108,41 @@ export function createDriftScene(): RhineScene {
         group.add(lines);
       }
 
+      // Reflective shards — physical material picks up the HDRI environment
+      const shards: THREE.Mesh[] = [];
+      const shardCount = 10;
+      for (let i = 0; i < shardCount; i++) {
+        const shardGeo = new THREE.IcosahedronGeometry(0.18 + Math.random() * 0.3, 0);
+        const shardMat = new THREE.MeshPhysicalMaterial({
+          color:
+            i % 3 === 0
+              ? palette.BLUE_SOFT.clone()
+              : i % 3 === 1
+                ? palette.INDIGO.clone()
+                : palette.GOLD.clone(),
+          metalness: 0.85,
+          roughness: 0.25,
+          envMapIntensity: 0.9,
+          clearcoat: 0.3,
+        });
+        const shard = new THREE.Mesh(shardGeo, shardMat);
+        shard.position.set(
+          (Math.random() - 0.5) * 10,
+          (Math.random() - 0.5) * 7,
+          (Math.random() - 0.5) * 5 - 2
+        );
+        shard.userData = {
+          spin: new THREE.Vector3(
+            (Math.random() - 0.5) * 0.5,
+            (Math.random() - 0.5) * 0.5,
+            (Math.random() - 0.5) * 0.5
+          ),
+          floatPhase: Math.random() * Math.PI * 2,
+        };
+        shards.push(shard);
+        group.add(shard);
+      }
+
       return {
         group,
         update: (ctx, dt, time) => {
@@ -135,6 +170,13 @@ export function createDriftScene(): RhineScene {
           for (const lines of cubes) {
             (lines.material as THREE.LineBasicMaterial).opacity = 0.35;
           }
+          for (const shard of shards) {
+            const u = shard.userData as { spin: THREE.Vector3; floatPhase: number };
+            shard.rotation.x += u.spin.x * scaledDt;
+            shard.rotation.y += u.spin.y * scaledDt;
+            shard.rotation.z += u.spin.z * scaledDt;
+            shard.position.y += Math.sin(time * 0.6 + u.floatPhase) * 0.004;
+          }
         },
         dispose: () => {
           geo.dispose();
@@ -142,6 +184,10 @@ export function createDriftScene(): RhineScene {
           for (const lines of cubes) {
             lines.geometry.dispose();
             (lines.material as THREE.Material).dispose();
+          }
+          for (const shard of shards) {
+            shard.geometry.dispose();
+            (shard.material as THREE.Material).dispose();
           }
         },
       };
