@@ -3,6 +3,15 @@
 > Notable changes, newest first. Full detail lives in git history. Keep this
 > updated on every meaningful release/change.
 
+## 2026-09-05
+
+- **feat(news): news page v2** - per-locale Markdown posts in
+  `content/news/{en,nl}/`, static detail pages, category badges, RSS feed at
+  `/news/feed.xml`, and a Dev trends widget (top 5 headlines from curated
+  RSS/Atom feeds, ISR refresh every 2h). `npm run news:update` /
+  `news:accept` generate review-first site-update entries from conventional
+  commits. (`81be5ee..3ebb694`)
+
 ## 2026-09-04
 
 - **feat(brain): public knowledge base at /projects/brain** — publish script +
