@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import { FiMessageSquare, FiX, FiSend } from "react-icons/fi";
 import Turnstile from "./Turnstile";
+import { useDialog } from "@/lib/useDialog";
 
 type ChatMessage = {
   role: "user" | "assistant";
@@ -35,6 +36,7 @@ export default function ChatWidget({ locale: propLocale }: Props) {
   const [turnstileToken, setTurnstileToken] = useState("");
   const [turnstileNonce, setTurnstileNonce] = useState(0);
   const scrollRef = useRef<HTMLDivElement>(null);
+  const dialogRef = useDialog(open, () => setOpen(false), "Chat with Rhine Solution");
 
   const locale = propLocale ?? "en";
 
@@ -161,7 +163,7 @@ export default function ChatWidget({ locale: propLocale }: Props) {
   return (
     <div className="chat-widget">
       {open && (
-        <div className="chat-panel" role="dialog" aria-label="Chat with Rhine Solution">
+        <div className="chat-panel" ref={dialogRef}>
           <div className="chat-panel-head">
             <span className="chat-panel-title">
               <FiMessageSquare size={16} aria-hidden="true" />

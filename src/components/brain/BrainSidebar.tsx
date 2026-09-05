@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { FiMenu, FiX, FiFolder, FiFile } from "react-icons/fi";
 import type { BrainManifest, BrainTreeNode } from "@/lib/brain";
+import { useDialog } from "@/lib/useDialog";
 import styles from "./brain.module.css";
 
 type Props = {
@@ -15,6 +16,7 @@ type Props = {
 
 export default function BrainSidebar({ manifest, locale, labels, active }: Props) {
   const [open, setOpen] = useState(false);
+  const dialogRef = useDialog(open, () => setOpen(false), labels.browse ?? "Brain notes");
   const label = (name: string) => labels[name.toLowerCase()] ?? name;
 
   function renderTree(node: BrainTreeNode, depth: number) {
@@ -56,10 +58,10 @@ export default function BrainSidebar({ manifest, locale, labels, active }: Props
 
   return (
     <>
-      <button type="button" className={styles.treeToggle} onClick={() => setOpen(true)} aria-label="Open brain menu">
+      <button type="button" className={styles.treeToggle} onClick={() => setOpen(true)} aria-label="Open brain menu" aria-expanded={open} aria-controls="brain-tree">
         <FiMenu size={18} aria-hidden="true" /> <span>{labels.browse}</span>
       </button>
-      <div className={`${styles.tree} ${open ? styles.treeOpen : ""}`}>
+      <div className={`${styles.tree} ${open ? styles.treeOpen : ""}`} ref={dialogRef} id="brain-tree">
         <button type="button" className={styles.treeClose} onClick={() => setOpen(false)} aria-label="Close brain menu">
           <FiX size={18} aria-hidden="true" />
         </button>

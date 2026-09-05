@@ -147,6 +147,8 @@ export default function SceneManager() {
       }
 
       renderer.render(scene, camera);
+      // Freeze under prefers-reduced-motion and pause when the tab is hidden.
+      if (!reducedMotion && !document.hidden) raf = requestAnimationFrame(tick);
     };
     tick();
 
@@ -157,6 +159,12 @@ export default function SceneManager() {
       renderer.setSize(window.innerWidth, window.innerHeight, false);
     };
     window.addEventListener("resize", onResize);
+
+    const onVisibility = () => {
+      if (document.hidden) cancelAnimationFrame(raf);
+      else if (!reducedMotion) tick();
+    };
+    document.addEventListener("visibilitychange", onVisibility);
 
     // Cleanup
     return () => {
