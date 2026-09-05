@@ -60,6 +60,10 @@ const FOLDERS = {
   "Archive/fullstack.md": "archive",
   "Archive/rhinesolution-decision.md": "archive",
   "Archive/2026-08-10.md": "archive",
+  "_machine/wiki/index.md": "nous",
+  "_machine/wiki/rhine-solution.md": "nous",
+  "_machine/wiki/machine-brain.md": "nous",
+  "_machine/wiki/okm.md": "nous",
 };
 
 const PRIVATE_FILES = [
