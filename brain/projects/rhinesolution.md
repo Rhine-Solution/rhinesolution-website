@@ -7,14 +7,14 @@ updated: 2026-09-05
 status: in-progress
 stack: Next.js 15 + TypeScript + pure CSS + Three.js
 type: concept
-description: C:/Users/teoal/Projects/projects/rhinesolution-website
+description: The flagship Rhine Solution project deep-dive (website, public brain, infrastructure).
 ---
 # Project: Rhine Solution
 
 > **Rhine Solution — Custom Web Development.** Personal portfolio + client acquisition site.
 
 ## Location
-`C:/Users/teoal/Projects/projects/rhinesolution-website`
+`~/Projects/rhinesolution-website`
 
 ## Stack
 - **Next.js 15** (App Router) + TypeScript
