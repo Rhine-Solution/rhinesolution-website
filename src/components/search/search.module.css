@@ -66,3 +66,37 @@
   color: var(--color-text-muted);
   font-size: 0.9rem;
 }
+.facets {
+  display: flex;
+  gap: 0.4rem;
+  padding: 0.4rem 0.65rem 0;
+  flex-wrap: wrap;
+}
+.facet {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.2rem 0.55rem;
+  border: 1px solid color-mix(in srgb, var(--color-blue-soft) 40%, transparent);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--color-text-muted);
+  cursor: pointer;
+}
+.facetActive {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  background: var(--color-blue-soft);
+  color: var(--color-bg);
+  border: none;
+  cursor: pointer;
+}
+.optionActive {
+  outline: 2px solid var(--color-blue-soft);
+  outline-offset: -2px;
+  border-radius: 8px;
+}
+

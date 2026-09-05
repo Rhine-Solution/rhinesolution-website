@@ -185,17 +185,31 @@ export function publishBrain({ vault, out, force = false }) {
     }
     const slug = slugify(base(file));
     published.push(slug);
-    publishedBodies[slug] = { body: rawBody, folder, front: rawFront, description: data?.description };
+    publishedBodies[slug] = {
+      body: rawBody,
+      folder,
+      front: rawFront,
+      description: data?.description,
+      tags: Array.isArray(data?.tags) ? data.tags.map((t) => String(t)) : [],
+      updated: typeof data?.updated === "string" ? data.updated : "",
+    };
   }
 
   const publicSlugs = new Set(published);
-  for (const [slug, { body, folder, front, description }] of Object.entries(publishedBodies)) {
+  for (const [slug, { body, folder, front, description, tags, updated }] of Object.entries(publishedBodies)) {
     const file = Object.keys(FOLDERS).find((f) => slugify(base(f)) === slug);
-    const outBody = scrubLinks(stripLinksFooter(body), publicSlugs);
+    const bodyWithoutFooter = stripLinksFooter(body);
+    // outlinks = wikilinks that resolve to another published note (post-scrub slugs)
+    const outlinks = [];
+    for (const m of bodyWithoutFooter.matchAll(/\[\[([^\]|#]+)(?:#[^\]]+)?(?:[^\]])*\]\]/g)) {
+      const t = slugify(m[1].trim());
+      if (publicSlugs.has(t) && !outlinks.includes(t)) outlinks.push(t);
+    }
+    const outBody = scrubLinks(bodyWithoutFooter, publicSlugs);
     const content = front === null ? outBody : front + outBody;
     mkdirSync(join(out, folder), { recursive: true });
     writeFileSync(join(out, folder, base(file)), content);
-    publishedBodies[slug] = { body: outBody, folder, description };
+    publishedBodies[slug] = { body: outBody, folder, description, tags, updated, outlinks };
   }
 
   if (blocked.length > 0 && !force) {
@@ -204,7 +218,7 @@ export function publishBrain({ vault, out, force = false }) {
   }
 
   const notes = {};
-  for (const [slug, { body, folder, description }] of Object.entries(publishedBodies)) {
+  for (const [slug, { body, folder, description, tags, updated, outlinks }] of Object.entries(publishedBodies)) {
     const file = Object.keys(FOLDERS).find((f) => slugify(base(f)) === slug);
     notes[slug] = {
       slug,
@@ -214,6 +228,9 @@ export function publishBrain({ vault, out, force = false }) {
       folder,
       excerpt: extractExcerpt(body, description),
       order: Object.keys(FOLDERS).indexOf(file) + 1,
+      tags,
+      updated,
+      outlinks,
     };
   }
 

@@ -161,7 +161,8 @@
       "journal": "日志",
       "projects": "项目",
       "archive": "归档"
-    }
+    },
+    "related": "相关"
   },
   "project_rhinesolution": {
     "title": "rhinesolution.com",

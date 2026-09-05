@@ -161,7 +161,8 @@
       "journal": "Journal",
       "projects": "Projekte",
       "archive": "Archiv"
-    }
+    },
+    "related": "Verwandt"
   },
   "project_rhinesolution": {
     "title": "rhinesolution.com",

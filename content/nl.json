@@ -167,7 +167,8 @@
       "journal": "Logboek",
       "projects": "Projecten",
       "archive": "Archief"
-    }
+    },
+    "related": "Gerelateerd"
   },
   "project_rhinesolution": {
     "title": "rhinesolution.com",
