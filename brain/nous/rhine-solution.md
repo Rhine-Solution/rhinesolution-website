@@ -20,3 +20,4 @@ Rhine Solution is a software engineering studio. Its public site (rhinesolution.
 
 - The vault is the studio's knowledge base; the machine brain is where agents think.
 - Published surface: 19 public notes (Plan/Build/Harden/Ship/Knowledge/Journal/Projects/Archive).
+- **Swarm audit (2026-09-06)**: see  — performance half-done, positioning undifferentiated, a public-Brain home-path leak to fix, and the WebGL-hero decision (keep flat, re-add lazy 3D below fold).

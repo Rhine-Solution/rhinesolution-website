@@ -12,14 +12,14 @@ description: Choose the right tool, design the schema first, and treat migration
 > Choose the right tool, design the schema first, and treat migrations as the riskiest operation you run.
 
 ## Choosing a database
-| Need | Use |
-|---|---|
-| Relational, transactional, money | PostgreSQL (default answer) |
-| Flexible documents, fast iteration | MongoDB / DocumentDB |
-| Caching, ephemeral, hot reads | Redis |
-| Full-text / search | Postgres FTS, Meilisearch, Elasticsearch |
-| Analytics / big queries | ClickHouse, BigQuery, data warehouse |
-| Vectors / RAG | pgvector (Postgres) or dedicated vector DB |
+| Need                               | Use                                        |
+| ---------------------------------- | ------------------------------------------ |
+| Relational, transactional, money   | PostgreSQL (default answer)                |
+| Flexible documents, fast iteration | MongoDB / DocumentDB                       |
+| Caching, ephemeral, hot reads      | Redis                                      |
+| Full-text / search                 | Postgres FTS, Meilisearch, Elasticsearch   |
+| Analytics / big queries            | ClickHouse, BigQuery, data warehouse       |
+| Vectors / RAG                      | pgvector (Postgres) or dedicated vector DB |
 
 ## 2026: Postgres-first data platform
 - The "SQL vs NoSQL" debate is dead — it's **"Postgres core + edge store when a workload really demands it."** Most production architectures consolidate on Postgres-first, using extensions instead of extra engines:
