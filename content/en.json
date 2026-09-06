@@ -382,7 +382,8 @@
     "skills": "Skills",
     "social": "Find me online",
     "featured_work": "Featured work",
-    "featured_work_text": "Selected projects built and maintained by the Rhine Solution team."
+    "featured_work_text": "Selected projects built and maintained by the Rhine Solution team.",
+    "read_book": "Read the full book (PDF)"
   },
   "privacy": {
     "eyebrow": "Privacy",
@@ -1001,6 +1002,7 @@
     ],
     "year": 2026,
     "team": "RAGNAROK + ZeroMeister",
-    "live_url": "https://plan2shift.com/"
+    "live_url": "https://plan2shift.com/",
+    "book_url": "/plan2shift/book"
   }
 }

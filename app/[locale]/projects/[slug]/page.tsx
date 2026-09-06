@@ -61,9 +61,9 @@ export default async function ProjectDetailPage({ params }: Props) {
             <p>{p.team}</p>
           </section>
         )}
-        {p.live_url && (
-          <section style={{ marginTop: "var(--space-6)" }}>
-            {p.live_url.startsWith("http") ? (
+        {(p.live_url || p.book_url) && (
+          <section style={{ marginTop: "var(--space-6)", display: "flex", gap: "1rem", flexWrap: "wrap" }}>
+            {p.live_url && (p.live_url.startsWith("http") ? (
               <a
                 href={p.live_url}
                 target="_blank"
@@ -82,6 +82,15 @@ export default async function ProjectDetailPage({ params }: Props) {
               >
                 <LuArrowUpRight size={16} aria-hidden="true" />
                 {t.launch} {p.title}
+              </Link>
+            ))}
+            {p.book_url && (
+              <Link
+                href={p.book_url}
+                className="btn btn-secondary"
+                style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", fontSize: "1rem", padding: "0.75rem 1.5rem" }}
+              >
+                {t.read_book}
               </Link>
             )}
           </section>

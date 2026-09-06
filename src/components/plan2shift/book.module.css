@@ -1,0 +1,405 @@
+.wrap {
+  width: 100%;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+/* ---- toolbar ---- */
+.toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding: 0.7rem 1rem;
+  margin-bottom: 1.75rem;
+  background: rgba(7, 14, 36, 0.88);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  backdrop-filter: blur(10px);
+}
+
+.toolbarSpacer {
+  flex: 1;
+}
+
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: var(--color-text-muted);
+  text-decoration: none;
+  font-size: 0.95rem;
+  white-space: nowrap;
+}
+
+.backLink:hover {
+  color: var(--color-text);
+  text-decoration: underline;
+}
+
+.printHint {
+  color: var(--color-text-muted);
+  font-size: 0.8rem;
+}
+
+/* ---- layout ---- */
+.layout {
+  display: grid;
+  grid-template-columns: 250px minmax(0, 1fr);
+  gap: 2.25rem;
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---- table of contents ---- */
+.toc {
+  position: sticky;
+  top: 88px;
+  max-height: calc(100vh - 110px);
+  overflow: auto;
+  padding-right: 0.5rem;
+}
+
+@media (max-width: 900px) {
+  .toc {
+    position: static;
+    max-height: none;
+  }
+}
+
+.tocTitle {
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  color: var(--color-primary);
+  margin: 0 0 0.6rem;
+}
+
+.tocList {
+  list-style: none;
+  margin: 0;
+  padding: 0 0 0 0.85rem;
+  font-size: 0.88rem;
+  line-height: 1.6;
+  border-left: 1px solid var(--color-border);
+}
+
+.tocList li {
+  margin: 0.15rem 0;
+}
+
+.tocList .tocL1 {
+  margin-top: 0.45rem;
+  padding-left: 0.85rem;
+  margin-left: -0.85rem;
+  border-left: 2px solid var(--color-accent);
+}
+
+.tocList a {
+  color: var(--color-text-muted);
+  text-decoration: none;
+}
+
+.tocList a:hover {
+  color: var(--color-text);
+  text-decoration: underline;
+}
+
+.tocList .tocL1 > a {
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+/* ---- markdown body ---- */
+.markdown {
+  font-size: 1.02rem;
+  line-height: 1.75;
+  color: var(--color-text);
+  min-width: 0;
+}
+
+.markdown :global(h1) {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  line-height: 1.2;
+  margin: 0 0 0.6rem;
+  scroll-margin-top: 90px;
+}
+
+.markdown :global(h2) {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  line-height: 1.25;
+  margin: 2.6rem 0 0.9rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 1px solid var(--color-border);
+  scroll-margin-top: 90px;
+}
+
+.markdown :global(h3) {
+  font-family: var(--font-heading);
+  font-size: 1.18rem;
+  margin: 1.9rem 0 0.6rem;
+  scroll-margin-top: 90px;
+}
+
+.markdown :global(p) {
+  margin: 0 0 1rem;
+}
+
+.markdown :global(ul),
+.markdown :global(ol) {
+  margin: 0 0 1rem 1.4rem;
+}
+
+.markdown :global(li) {
+  margin: 0.3rem 0;
+}
+
+.markdown :global(blockquote) {
+  margin: 1.3rem 0;
+  padding: 0.65rem 1.1rem;
+  border-left: 3px solid var(--color-accent);
+  background: rgba(196, 168, 130, 0.09);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  color: var(--color-text-muted);
+}
+
+.markdown :global(strong) {
+  color: var(--color-text);
+}
+
+.markdown :global(a) {
+  color: var(--color-blue-soft);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.markdown :global(hr) {
+  border: 0;
+  border-top: 1px solid var(--color-border);
+  margin: 2.4rem 0;
+}
+
+.markdown :global(table) {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.3rem 0;
+  font-size: 0.93rem;
+  display: block;
+  overflow-x: auto;
+}
+
+.markdown :global(th),
+.markdown :global(td) {
+  border: 1px solid var(--color-border);
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+.markdown :global(th) {
+  background: rgba(126, 167, 255, 0.09);
+  font-weight: 600;
+}
+
+.markdown :global(tbody tr:nth-child(even)) {
+  background: rgba(126, 167, 255, 0.045);
+}
+
+.markdown :global(pre) {
+  background: #0b1226;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 1rem;
+  overflow-x: auto;
+  font-size: 0.85em;
+  line-height: 1.55;
+  margin: 1.3rem 0;
+}
+
+.markdown :global(code) {
+  background: rgba(126, 167, 255, 0.12);
+  border-radius: 4px;
+  padding: 0.12em 0.35em;
+  font-size: 0.9em;
+}
+
+.markdown :global(pre code) {
+  background: none;
+  padding: 0;
+}
+
+.markdown :global(.hljs-keyword),
+.markdown :global(.hljs-selector-tag) {
+  color: #7ea7ff;
+}
+
+.markdown :global(.hljs-string),
+.markdown :global(.hljs-attr) {
+  color: #a5d6a7;
+}
+
+.markdown :global(.hljs-number),
+.markdown :global(.hljs-literal) {
+  color: #ffd54f;
+}
+
+.markdown :global(.hljs-comment) {
+  color: rgba(226, 234, 255, 0.5);
+}
+
+.markdown :global(.hljs-title),
+.markdown :global(.hljs-function) {
+  color: #82aaff;
+}
+
+/* ---- mermaid diagrams ---- */
+.diagram {
+  margin: 1.5rem 0;
+  padding: 1rem;
+  background: #fdfbf7;
+  border: 1px solid #e3dccb;
+  border-radius: var(--radius-md);
+  overflow-x: auto;
+  color: #1a1a1a;
+}
+
+.diagram :global(svg) {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.diagramLoading,
+.diagramError {
+  margin: 1.5rem 0;
+  padding: 1rem;
+  background: rgba(126, 167, 255, 0.07);
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+}
+
+.diagramError pre {
+  margin: 0 0 0.5rem;
+  overflow-x: auto;
+}
+
+.diagramErrorNote {
+  margin: 0;
+}
+
+/* ---- print: the whole reason this reader exists ---- */
+@media print {
+  :global(body) {
+    background: #ffffff !important;
+    color: #161616 !important;
+  }
+
+  :global(.nav),
+  :global(.footer) {
+    display: none !important;
+  }
+
+  .toolbar,
+  .toc {
+    display: none !important;
+  }
+
+  .layout {
+    display: block;
+  }
+
+  .wrap {
+    max-width: none;
+  }
+
+  .markdown {
+    color: #161616;
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+
+  .markdown :global(h1),
+  .markdown :global(h2),
+  .markdown :global(h3) {
+    color: #101010;
+    break-after: avoid-page;
+  }
+
+  .markdown :global(a) {
+    color: #1d3f8f;
+  }
+
+  .markdown :global(blockquote) {
+    color: #333;
+    background: #f5f5f5;
+    border-left-color: #c4a882;
+    break-inside: avoid;
+  }
+
+  .markdown :global(pre) {
+    background: #f4f4f4;
+    color: #161616;
+    border-color: #ddd;
+    break-inside: avoid;
+  }
+
+  .markdown :global(pre code) {
+    color: inherit;
+  }
+
+  .markdown :global(.hljs-keyword),
+  .markdown :global(.hljs-selector-tag) {
+    color: #6a2fc7;
+  }
+
+  .markdown :global(.hljs-string),
+  .markdown :global(.hljs-attr) {
+    color: #3c6b2f;
+  }
+
+  .markdown :global(.hljs-number),
+  .markdown :global(.hljs-literal) {
+    color: #9c5300;
+  }
+
+  .markdown :global(.hljs-comment) {
+    color: #888;
+  }
+
+  .markdown :global(.hljs-title),
+  .markdown :global(.hljs-function) {
+    color: #274fb8;
+  }
+
+  .markdown :global(table),
+  .markdown :global(th),
+  .markdown :global(td) {
+    border-color: #c9c9c9;
+  }
+
+  .markdown :global(li),
+  .markdown :global(table) {
+    break-inside: avoid;
+  }
+
+  .diagram {
+    background: #ffffff;
+    border: 1px solid #d9d9d9;
+    overflow: visible;
+    break-inside: avoid;
+  }
+}

@@ -382,7 +382,8 @@
     "skills": "Fähigkeiten",
     "social": "Finden Sie mich online",
     "featured_work": "Ausgewählte Arbeit",
-    "featured_work_text": "Ausgewählte Projekte, gebaut und gepflegt vom Team von Rhine Solution."
+    "featured_work_text": "Ausgewählte Projekte, gebaut und gepflegt vom Team von Rhine Solution.",
+    "read_book": "Das vollständige Buch lesen (PDF)"
   },
   "privacy": {
     "eyebrow": "Datenschutz",
@@ -1001,6 +1002,7 @@
     ],
     "year": 2026,
     "team": "RAGNAROK + ZeroMeister",
-    "live_url": "https://plan2shift.com/"
+    "live_url": "https://plan2shift.com/",
+    "book_url": "/plan2shift/book"
   }
 }
