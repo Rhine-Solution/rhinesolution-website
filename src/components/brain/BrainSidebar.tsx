@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import { FiMenu, FiX, FiFolder, FiFile } from "react-icons/fi";
 import type { BrainManifest, BrainTreeNode } from "@/lib/brain";
 import { useDialog } from "@/lib/useDialog";
@@ -16,7 +16,8 @@ type Props = {
 
 export default function BrainSidebar({ manifest, locale, labels, active }: Props) {
   const [open, setOpen] = useState(false);
-  const dialogRef = useDialog(open, () => setOpen(false), labels.browse ?? "Brain notes");
+  const closeTree = useCallback(() => setOpen(false), []);
+  const dialogRef = useDialog(open, closeTree, labels.browse ?? "Brain notes");
   const label = (name: string) => labels[name.toLowerCase()] ?? name;
 
   function renderTree(node: BrainTreeNode, depth: number) {

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import { FiMessageSquare, FiX, FiSend } from "react-icons/fi";
 import Turnstile from "./Turnstile";
@@ -36,7 +36,8 @@ export default function ChatWidget({ locale: propLocale }: Props) {
   const [turnstileToken, setTurnstileToken] = useState("");
   const [turnstileNonce, setTurnstileNonce] = useState(0);
   const scrollRef = useRef<HTMLDivElement>(null);
-  const dialogRef = useDialog(open, () => setOpen(false), "Chat with Rhine Solution");
+  const closeChat = useCallback(() => setOpen(false), []);
+  const dialogRef = useDialog(open, closeChat, "Chat with Rhine Solution");
 
   const locale = propLocale ?? "en";
 
@@ -187,6 +188,7 @@ export default function ChatWidget({ locale: propLocale }: Props) {
           </div>
           <Turnstile
             key={turnstileNonce}
+            size="invisible"
             onToken={setTurnstileToken}
             onExpired={() => setTurnstileToken("")}
             onError={() => setTurnstileToken("")}
