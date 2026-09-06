@@ -96,11 +96,14 @@ export async function POST(req: Request) {
   }
 
   // Fail closed on the human check: no valid Turnstile token, no Gemini spend.
+  // NOTE: we deliberately do NOT pass a `remoteip` — behind Vercel's edge/checkpoint
+  // the IP here never matches the one Cloudflare recorded when the token was minted,
+  // which would fail every verification (403).
   const human = await verifyTurnstile(
-    typeof body.turnstileToken === "string" ? body.turnstileToken : undefined,
-    ip
+    typeof body.turnstileToken === "string" ? body.turnstileToken : undefined
   );
   if (!human.ok) {
+    console.error("[chat] human verification failed");
     return NextResponse.json(
       { error: "Human verification failed." },
       { status: 403 }
