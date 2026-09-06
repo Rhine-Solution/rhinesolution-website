@@ -1192,6 +1192,9 @@ p { margin-bottom: var(--space-3); }
 /* Custom cursor — opt-in via .custom-cursor-on on <html> */
 .custom-cursor-on,
 .custom-cursor-on * { cursor: none !important; }
+.custom-cursor-on iframe { cursor: auto !important; }
+.cursor-over-iframe .cursor-dot,
+.cursor-over-iframe .cursor-ring { opacity: 0; }
 .cursor-dot {
   position: fixed;
   top: 0;
