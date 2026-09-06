@@ -5,7 +5,7 @@ import { getNews } from "@/lib/news";
 const base = "https://rhinesolution.com";
 const locales = ["en", "nl", "de", "fr", "es", "it", "zh"] as const;
 const members = ["ragnarok", "zeromeister"] as const;
-const projects = ["rhinesolution", "macmini", "music", "plan2shift"] as const;
+const projects = ["rhinesolution", "macmini", "music", "plan2shift", "spendtracker"] as const;
 const localePaths = [
   "/team",
   "/projects",
@@ -38,6 +38,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const entries: MetadataRoute.Sitemap = [
     { url: base, lastModified: now, changeFrequency: "weekly", priority: 1.0, alternates: { languages: languages("") } },
     { url: `${base}/music`, lastModified: now, changeFrequency: "weekly", priority: 0.8, alternates: { languages: { "x-default": `${base}/music`, en: `${base}/music` } } },
+    { url: `${base}/spendtracker`, lastModified: now, changeFrequency: "weekly", priority: 0.8, alternates: { languages: { "x-default": `${base}/spendtracker`, en: `${base}/spendtracker` } } },
     { url: `${base}/dfir`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
     { url: `${base}/dfir/lab041`, lastModified: now, changeFrequency: "monthly", priority: 0.5 },
   ];

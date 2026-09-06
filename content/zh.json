@@ -996,5 +996,21 @@
     "year": 2026,
     "team": "RAGNAROK + ZeroMeister",
     "live_url": "https://plan2shift.com/"
+  },
+  "project_spendtracker": {
+    "title": "SpendTracker",
+    "slug": "spendtracker",
+    "icon": "wallet",
+    "summary": "一个可爱舒适的记账应用，采用柔和像素艺术风格。跟踪支出、多币种余额和储蓄目标——所有数据都存储在本地设备上。",
+    "stack": [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "localStorage"
+    ],
+    "year": 2026,
+    "team": "ZeroMeister",
+    "live_url": "/spendtracker"
   }
 }
