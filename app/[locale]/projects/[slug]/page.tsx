@@ -15,12 +15,10 @@ export async function generateStaticParams() {
     { locale: "en", slug: "macmini" },
     { locale: "en", slug: "music" },
     { locale: "en", slug: "plan2shift" },
-    { locale: "en", slug: "spendtracker" },
     { locale: "nl", slug: "rhinesolution" },
     { locale: "nl", slug: "macmini" },
     { locale: "nl", slug: "music" },
     { locale: "nl", slug: "plan2shift" },
-    { locale: "nl", slug: "spendtracker" },
   ];
 }
 

@@ -136,6 +136,12 @@
         "href": "/dfir/lab041",
         "meta": "数字取证 · LAB041",
         "summary": "对一部老式 MP3 播放器进行取证检查，通过元数据、空闲空间与文件雕刻追踪盗版音乐。"
+      },
+      {
+        "title": "SpendTracker",
+        "href": "/spendtracker",
+        "meta": "理财 · 本地存储",
+        "summary": "一个可爱的记账应用，采用柔和像素艺术风格。跟踪支出、多币种和储蓄目标——本地存储。"
       }
     ]
   },
@@ -996,21 +1002,5 @@
     "year": 2026,
     "team": "RAGNAROK + ZeroMeister",
     "live_url": "https://plan2shift.com/"
-  },
-  "project_spendtracker": {
-    "title": "SpendTracker",
-    "slug": "spendtracker",
-    "icon": "wallet",
-    "summary": "一个可爱舒适的记账应用，采用柔和像素艺术风格。跟踪支出、多币种余额和储蓄目标——所有数据都存储在本地设备上。",
-    "stack": [
-      "Next.js",
-      "React",
-      "TypeScript",
-      "Tailwind CSS",
-      "localStorage"
-    ],
-    "year": 2026,
-    "team": "ZeroMeister",
-    "live_url": "/spendtracker"
   }
 }

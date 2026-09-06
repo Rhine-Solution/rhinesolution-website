@@ -142,6 +142,12 @@
         "href": "/dfir/lab041",
         "meta": "Digital Forensics · LAB041",
         "summary": "Een forensisch onderzoek naar een oude MP3-speler, waarin illegaal verkregen muziek is herleid via metadata, slack space en file carving."
+      },
+      {
+        "title": "SpendTracker",
+        "href": "/spendtracker",
+        "meta": "Geld · local-first",
+        "summary": "Een schattige, knusse geldtracker met pastel pixel-art. Volg uitgaven, meerdere valuta en spaardoelen -- alles lokaal opgeslagen op je apparaat."
       }
     ]
   },
@@ -1002,21 +1008,5 @@
     "year": 2026,
     "team": "RAGNAROK + ZeroMeister",
     "live_url": "https://plan2shift.com/"
-  },
-  "project_spendtracker": {
-    "title": "SpendTracker",
-    "slug": "spendtracker",
-    "icon": "wallet",
-    "summary": "Een schattige, knusse geldtracker met pastel pixel-art stijl. Volg uitgaven, meerdere valuta en spaardoelen -- alles lokaal opgeslagen op je apparaat.",
-    "stack": [
-      "Next.js",
-      "React",
-      "TypeScript",
-      "Tailwind CSS",
-      "localStorage"
-    ],
-    "year": 2026,
-    "team": "ZeroMeister",
-    "live_url": "/spendtracker"
   }
 }

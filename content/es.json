@@ -136,6 +136,12 @@
         "href": "/dfir/lab041",
         "meta": "Informática Forense · LAB041",
         "summary": "Un examen forense de un antiguo reproductor MP3, rastreando música pirateada mediante metadatos, espacio slack y carving de archivos."
+      },
+      {
+        "title": "SpendTracker",
+        "href": "/spendtracker",
+        "meta": "Dinero · local-first",
+        "summary": "Un rastreador de dinero adorable con estilo pixel pastel. Controla gastos, varias monedas y metas de ahorro -- todo almacenado localmente."
       }
     ]
   },
@@ -996,21 +1002,5 @@
     "year": 2026,
     "team": "RAGNAROK + ZeroMeister",
     "live_url": "https://plan2shift.com/"
-  },
-  "project_spendtracker": {
-    "title": "SpendTracker",
-    "slug": "spendtracker",
-    "icon": "wallet",
-    "summary": "Un rastreador de dinero adorable y acogedor con estilo pixel pastel. Controla gastos, varias monedas y metas de ahorro -- todo almacenado localmente.",
-    "stack": [
-      "Next.js",
-      "React",
-      "TypeScript",
-      "Tailwind CSS",
-      "localStorage"
-    ],
-    "year": 2026,
-    "team": "ZeroMeister",
-    "live_url": "/spendtracker"
   }
 }

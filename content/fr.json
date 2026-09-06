@@ -136,6 +136,12 @@
         "href": "/dfir/lab041",
         "meta": "Criminalistique numérique · LAB041",
         "summary": "Un examen médico-légal d'un ancien lecteur MP3, retraçant la musique piratée via les métadonnées, l'espace résiduel et la récupération de fichiers."
+      },
+      {
+        "title": "SpendTracker",
+        "href": "/spendtracker",
+        "meta": "Argent · local-first",
+        "summary": "Un suivi des dépenses mignon et cosy au style pixel pastel. Suivez dépenses, plusieurs devises et objectifs d'épargne -- stocké localement."
       }
     ]
   },
@@ -996,21 +1002,5 @@
     "year": 2026,
     "team": "RAGNAROK + ZeroMeister",
     "live_url": "https://plan2shift.com/"
-  },
-  "project_spendtracker": {
-    "title": "SpendTracker",
-    "slug": "spendtracker",
-    "icon": "wallet",
-    "summary": "Un suivi des dépenses mignon et cosy au style pixel pastel. Suivez vos dépenses, plusieurs devises et vos objectifs d'épargne -- tout stocké localement.",
-    "stack": [
-      "Next.js",
-      "React",
-      "TypeScript",
-      "Tailwind CSS",
-      "localStorage"
-    ],
-    "year": 2026,
-    "team": "ZeroMeister",
-    "live_url": "/spendtracker"
   }
 }
