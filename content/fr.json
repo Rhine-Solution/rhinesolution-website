@@ -655,9 +655,11 @@
                 "Le tronçon final entre le réseau du fournisseur et le domicile s'appelle le dernier kilomètre. C'est la partie la plus coûteuse à construire, c'est pourquoi les villes bénéficient de la fibre tandis que les zones rurales et pauvres obtiennent des connexions plus lentes, voire aucune. Des technologies plus récentes, comme les liaisons micro-ondes et la 5G, aident à combler l'écart, mais l'accès de base à l'internet reste un problème dans de nombreuses régions du monde."
               ],
               "figure": {
-                "src": "/dfir/internet-history-timeline.svg",
                 "alt": "Frise chronologique de l'histoire de l'internet de 1969 à 2005, groupée par décennie : 1960, 1970, 1980, 1990 et 2000.",
-                "caption": "Figure 2 · Une frise chronologique de l'histoire de l'internet (1969-2005), groupée par décennie."
+                "caption": "Figure 2 · Une frise chronologique de l'histoire de l'internet (1969-2005), groupée par décennie.",
+                "chart": {
+                  "type": "timeline"
+                }
               }
             }
           ]
@@ -798,9 +800,11 @@
               },
               "note": "La croissance de l'internet signifie aussi plus de victimes potentielles : d'environ 1 milliard de personnes en ligne en 2005 à environ 5,4 milliards en 2023. La cybercriminalité est en réalité une industrie de mille milliards de dollars pour les criminels, et presque tous les connectés sont des cibles potentielles.",
               "figure": {
-                "src": "/dfir/internet-user-growth.svg",
                 "alt": "Diagramme à barres montrant les internautes passant de 1 milliard en 2005 à 5,4 milliards en 2023.",
-                "caption": "Figure 4 · Croissance du nombre d'internautes dans le monde, d'environ 1 milliard (2005) à 5,4 milliards (2023)."
+                "caption": "Figure 4 · Croissance du nombre d'internautes dans le monde, d'environ 1 milliard (2005) à 5,4 milliards (2023).",
+                "chart": {
+                  "type": "growth"
+                }
               }
             }
           ]
@@ -878,9 +882,11 @@
                 "Parce que l'internet n'a pas de frontières, il est difficile de dire exactement où se trouve un cybercriminel. Les criminels se cachent avec des VPN, des proxys, ou en attaquant par l'intermédiaire d'ordinateurs infectés dans d'autres pays. Néanmoins, les chercheurs ont cartographié les adresses IP connues pour des activités malveillantes. La plupart se situent en Amérique du Nord, en Europe centrale et orientale, en Asie de l'Est, en Inde et dans l'est de l'Australie. À l'échelle continentale, l'Amérique du Nord et l'Europe en hébergent le plus, et les régions à revenus élevés abritent la majorité des IP malveillantes. En d'autres termes, les pays les plus riches et les plus connectés sont à la fois les plus grandes cibles et les plus grandes sources d'infrastructures de cybercriminalité."
               ],
               "figure": {
-                "src": "/dfir/top-20-countries-malicious-programs-2014.png",
-                "alt": "Les 20 pays les plus exposés aux attaques externes de programmes malveillants en 2014",
-                "caption": "Figure 6 · Les 20 pays les plus exposés aux attaques externes de programmes malveillants en 2014 (source : ResearchGate)."
+                "alt": "Diagramme à barres de la part des internautes par pays (données d'exemple), triées de la plus élevée à la plus faible.",
+                "caption": "Figure 6 · Part des internautes par pays (schéma propre, données d'exemple).",
+                "chart": {
+                  "type": "country"
+                }
               },
               "note": "Nuance importante : ces cartes basées sur les IP montrent d'où proviennent les attaques, pas nécessairement où vivent les criminels. Un criminel dans un pays peut facilement attaquer depuis des serveurs situés dans un autre pays — c'est précisément pourquoi la lutte contre la cybercriminalité est si difficile pour la police."
             }
@@ -991,13 +997,9 @@
         {
           "label": "Onwuadiamu, G. \"Cybercrime in criminology; A systematic review of criminological theories, methods, and concepts.\" Journal of Economic Criminology 8 (2025) 100136.",
           "href": "https://doi.org/10.1016/j.jeconc.2025.100136"
-        },
-        {
-          "label": "ResearchGate. \"Top 20 countries exposed to external attacks from malicious programs in 2014.\"",
-          "href": "https://www.researchgate.net/figure/Top-20-countries-exposed-to-external-attacks-from-malicious-programs-in-2014_fig1_331914032"
         }
       ],
-      "references_note": "Les figures 1, 3, 4 et 5 ainsi que la frise de la figure 2 sont des schémas propres de l'auteur, réalisés avec Mermaid. La carte de la figure 6 provient de ResearchGate (2014). Les faits sont tirés des sources ci-dessus et reformulés dans les mots propres de ce rapport.",
+      "references_note": "Les figures 1, 3 et 5 sont des schémas propres de l'auteur, réalisés avec Mermaid. Les figures 2, 4 et 6 sont des graphiques interactifs propres, réalisés avec Chart.js (la figure 6 utilise des données d'exemple). Les faits sont tirés des sources ci-dessus et reformulés dans les mots propres de ce rapport.",
       "back_label": "Retour à l'équipe",
       "profile_label": "Voir le profil de RAGNAROK"
     }

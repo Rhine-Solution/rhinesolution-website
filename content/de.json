@@ -655,9 +655,11 @@
                 "Das letzte Stück vom Netzwerk des Anbieters bis zum Haus wird als letzte Meile bezeichnet. Es ist der teuerste Teil zu bauen, weshalb Städte Glasfaser bekommen, während ländliche und arme Gebiete langsamere Verbindungen oder gar keine erhalten. Neuere Technologien wie Mikrowellenverbindungen und 5G helfen, die Lücke zu schließen, aber grundlegender Internetzugang ist in vielen Teilen der Welt immer noch ein Problem."
               ],
               "figure": {
-                "src": "/dfir/internet-history-timeline.svg",
                 "alt": "Zeitleiste der Geschichte des Internets von 1969 bis 2005, gruppiert nach Jahrzehnten: 1960er, 1970er, 1980er, 1990er und 2000er.",
-                "caption": "Abbildung 2 · Eine Zeitleiste der Geschichte des Internets (1969-2005), nach Jahrzehnten gruppiert."
+                "caption": "Abbildung 2 · Eine Zeitleiste der Geschichte des Internets (1969-2005), nach Jahrzehnten gruppiert.",
+                "chart": {
+                  "type": "timeline"
+                }
               }
             }
           ]
@@ -798,9 +800,11 @@
               },
               "note": "Internetwachstum bedeutet auch mehr potenzielle Opfer: von etwa 1 Milliarde Menschen online im Jahr 2005 auf rund 5,4 Milliarden im Jahr 2023. Cybercrime ist für Kriminelle praktisch eine Billionen-Dollar-Industrie, und fast jeder, der verbunden ist, ist ein potenzielles Ziel.",
               "figure": {
-                "src": "/dfir/internet-user-growth.svg",
                 "alt": "Balkendiagramm, das zeigt, wie die Internetnutzer von 1 Milliarde (2005) auf 5,4 Milliarden (2023) wuchsen.",
-                "caption": "Abbildung 4 · Wachstum der Internetnutzer weltweit, von etwa 1 Milliarde (2005) auf 5,4 Milliarden (2023)."
+                "caption": "Abbildung 4 · Wachstum der Internetnutzer weltweit, von etwa 1 Milliarde (2005) auf 5,4 Milliarden (2023).",
+                "chart": {
+                  "type": "growth"
+                }
               }
             }
           ]
@@ -878,9 +882,11 @@
                 "Da das Internet keine Grenzen kennt, ist es schwer zu sagen, wo genau ein Cyberkrimineller sitzt. Kriminelle verstecken sich mit VPNs, Proxys oder indem sie über infizierte Computer in anderen Ländern angreifen. Dennoch kartierten Forscher die IP-Adressen, die für böswillige Aktivitäten bekannt sind. Die meisten befinden sich in Nordamerika, Mittel- und Osteuropa, Ostasien, Indien und Ostaustralien. Auf kontinentaler Ebene beherbergen Nordamerika und Europa die meisten, und Regionen mit hohem Einkommen beherbergen die Mehrheit der böswilligen IPs. Mit anderen Worten: Die reichsten, am stärksten vernetzten Länder sind sowohl die größten Ziele als auch die größten Ursprungsländer der Cybercrime-Infrastruktur."
               ],
               "figure": {
-                "src": "/dfir/top-20-countries-malicious-programs-2014.png",
-                "alt": "Top 20 der Länder, die 2014 externen Angriffen durch Schadprogramme ausgesetzt waren",
-                "caption": "Abbildung 6 · Top 20 der Länder, die 2014 externen Angriffen durch Schadprogramme ausgesetzt waren (Quelle: ResearchGate)."
+                "alt": "Balkendiagramm des Anteils der Internetnutzer nach Ländern (Beispieldaten), von hoch nach niedrig sortiert.",
+                "caption": "Abbildung 6 · Anteil der Internetnutzer nach Ländern (eigenes Diagramm, Beispieldaten).",
+                "chart": {
+                  "type": "country"
+                }
               },
               "note": "Wichtige Nuance: Diese IP-basierten Karten zeigen, woher Angriffe stammen, nicht unbedingt, wo die Kriminellen leben. Ein Krimineller in einem Land kann leicht von Servern in einem anderen angreifen – genau das macht die Bekämpfung von Cybercrime für die Polizei so schwer."
             }
@@ -991,13 +997,9 @@
         {
           "label": "Onwuadiamu, G. \"Cybercrime in criminology; A systematic review of criminological theories, methods, and concepts.\" Journal of Economic Criminology 8 (2025) 100136.",
           "href": "https://doi.org/10.1016/j.jeconc.2025.100136"
-        },
-        {
-          "label": "ResearchGate. \"Top 20 countries exposed to external attacks from malicious programs in 2014.\"",
-          "href": "https://www.researchgate.net/figure/Top-20-countries-exposed-to-external-attacks-from-malicious-programs-in-2014_fig1_331914032"
         }
       ],
-      "references_note": "Die Abbildungen 1, 3, 4 und 5 sowie die Zeitleiste in Abbildung 2 sind eigene Diagramme des Autors, erstellt mit Mermaid. Die Karte in Abbildung 6 stammt von ResearchGate (2014). Die Fakten stammen aus den oben genannten Quellen und wurden in den eigenen Worten dieses Berichts neu formuliert.",
+      "references_note": "Die Abbildungen 1, 3 und 5 sind eigene Diagramme des Autors, erstellt mit Mermaid. Die Abbildungen 2, 4 und 6 sind eigene interaktive Diagramme, erstellt mit Chart.js (Abbildung 6 verwendet Beispieldaten). Die Fakten stammen aus den oben genannten Quellen und wurden in den eigenen Worten dieses Berichts neu formuliert.",
       "back_label": "Zurück zum Team",
       "profile_label": "RAGNAROK-Profil ansehen"
     }

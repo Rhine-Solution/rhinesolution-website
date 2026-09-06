@@ -661,9 +661,11 @@
                 "Het laatste stuk van het netwerk van de provider naar het huis wordt de last mile genoemd. Het is het duurst om aan te leggen, en daarom krijgen steden glasvezel terwijl landelijke en arme gebieden het met tragere verbindingen moeten doen, of helemaal geen verbinding hebben. Nieuwere technologieën zoals microgolfverbindingen en 5G helpen het gat te dichten, maar basisinternettoegang is in veel delen van de wereld nog steeds een probleem."
               ],
               "figure": {
-                "src": "/dfir/internet-history-timeline.svg",
                 "alt": "Tijdlijn van de geschiedenis van het internet van 1969 tot 2005, gegroepeerd per decennium: 1960s, 1970s, 1980s, 1990s en 2000s.",
-                "caption": "Figuur 2 · Een tijdlijn van de geschiedenis van het internet (1969-2005), gegroepeerd per decennium."
+                "caption": "Figuur 2 · Een tijdlijn van de geschiedenis van het internet (1969-2005), gegroepeerd per decennium.",
+                "chart": {
+                  "type": "timeline"
+                }
               }
             }
           ]
@@ -804,9 +806,11 @@
               },
               "note": "Internetgroei betekent ook meer potentiële slachtoffers: van ongeveer 1 miljard mensen online in 2005 tot ruwweg 5,4 miljard in 2023. Cybercriminaliteit is voor criminelen feitelijk een biljoenenindustrie, en vrijwel iedereen die verbonden is, is een potentieel doelwit.",
               "figure": {
-                "src": "/dfir/internet-user-growth.svg",
                 "alt": "Staafdiagram dat toont hoe het aantal internetgebruikers groeide van 1 miljard in 2005 naar 5,4 miljard in 2023.",
-                "caption": "Figuur 4 · Groei van het aantal internetgebruikers wereldwijd, van circa 1 miljard (2005) naar 5,4 miljard (2023)."
+                "caption": "Figuur 4 · Groei van het aantal internetgebruikers wereldwijd, van circa 1 miljard (2005) naar 5,4 miljard (2023).",
+                "chart": {
+                  "type": "growth"
+                }
               }
             }
           ]
@@ -884,9 +888,11 @@
                 "Omdat het internet geen grenzen kent, is het moeilijk te zeggen waar een cybercrimineel zich precies bevindt. Criminelen verbergen zich met VPN's, proxies, of door aan te vallen via geïnfecteerde computers in andere landen. Toch hebben onderzoekers de IP-adressen in kaart gebracht die bekendstaan om kwaadaardige activiteiten. De meeste bevinden zich in Noord-Amerika, Centraal- en Oost-Europa, Oost-Azië, India en Oost-Australië. Op continentaal niveau herbergen Noord-Amerika en Europa de meeste, en huisvesten regio's met hoge inkomens de meerderheid van de kwaadaardige IP-adressen. Met andere woorden: de rijkste, best verbonden landen zijn zowel de grootste doelwitten als de grootste bronlocaties van cybercriminele infrastructuur."
               ],
               "figure": {
-                "src": "/dfir/top-20-countries-malicious-programs-2014.png",
-                "alt": "Top 20 landen blootgesteld aan externe aanvallen door schadelijke programma's in 2014",
-                "caption": "Figuur 6 · Top 20 landen blootgesteld aan externe aanvallen door schadelijke programma's in 2014 (bron: ResearchGate)."
+                "alt": "Staafdiagram van het aandeel internetgebruikers per land (voorbeelddata), gesorteerd van hoog naar laag.",
+                "caption": "Figuur 6 · Aandeel internetgebruikers per land (eigen grafiek, voorbeelddata).",
+                "chart": {
+                  "type": "country"
+                }
               },
               "note": "Belangrijke nuance: deze op IP gebaseerde kaarten laten zien waar aanvallen vandaan komen, niet noodzakelijkerwijs waar de criminelen wonen. Een crimineel in het ene land kan gemakkelijk aanvallen vanaf servers in een ander land, en dat is precies waarom de bestrijding van cybercriminaliteit voor de politie zo moeilijk is."
             }
@@ -997,13 +1003,9 @@
         {
           "label": "Onwuadiamu, G. \"Cybercrime in criminology; A systematic review of criminological theories, methods, and concepts.\" Journal of Economic Criminology 8 (2025) 100136.",
           "href": "https://doi.org/10.1016/j.jeconc.2025.100136"
-        },
-        {
-          "label": "ResearchGate. \"Top 20 countries exposed to external attacks from malicious programs in 2014.\"",
-          "href": "https://www.researchgate.net/figure/Top-20-countries-exposed-to-external-attacks-from-malicious-programs-in-2014_fig1_331914032"
         }
       ],
-      "references_note": "Afbeeldingen 1, 3, 4 en 5 en de tijdlijn in afbeelding 2 zijn eigen diagrammen van de auteur, gemaakt met Mermaid. De kaart in afbeelding 6 is afkomstig van ResearchGate (2014). De feiten zijn verzameld uit bovenstaande bronnen en in de eigen woorden van dit rapport herschreven.",
+      "references_note": "Afbeeldingen 1, 3 en 5 zijn eigen diagrammen van de auteur, gemaakt met Mermaid. Afbeeldingen 2, 4 en 6 zijn eigen interactieve grafieken, gemaakt met Chart.js (afbeelding 6 gebruikt voorbeelddata). De feiten zijn verzameld uit bovenstaande bronnen en in de eigen woorden van dit rapport herschreven.",
       "back_label": "Terug naar het team",
       "profile_label": "Bekijk RAGNAROK-profiel"
     }

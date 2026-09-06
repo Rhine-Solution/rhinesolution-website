@@ -655,9 +655,11 @@
                 "El tramo final desde la red del proveedor hasta el hogar se llama la última milla. Es la parte más cara de construir, por eso las ciudades tienen fibra mientras que las zonas rurales y pobres reciben conexiones más lentas o ninguna. Tecnologías más recientes, como los enlaces de microondas y el 5G, ayudan a cerrar esa brecha, pero el acceso básico a internet sigue siendo un problema en muchas partes del mundo."
               ],
               "figure": {
-                "src": "/dfir/internet-history-timeline.svg",
                 "alt": "Línea de tiempo de la historia de internet de 1969 a 2005, agrupada por décadas: 1960, 1970, 1980, 1990 y 2000.",
-                "caption": "Figura 2 · Una línea de tiempo de la historia de internet (1969-2005), agrupada por décadas."
+                "caption": "Figura 2 · Una línea de tiempo de la historia de internet (1969-2005), agrupada por décadas.",
+                "chart": {
+                  "type": "timeline"
+                }
               }
             }
           ]
@@ -798,9 +800,11 @@
               },
               "note": "El crecimiento de internet también significa más víctimas potenciales: de unos 1.000 millones de personas en línea en 2005 a unos 5.400 millones en 2023. La ciberdelincuencia es en la práctica una industria de billones de dólares para los delincuentes, y casi todo el mundo conectado es un objetivo potencial.",
               "figure": {
-                "src": "/dfir/internet-user-growth.svg",
                 "alt": "Gráfico de barras que muestra a los usuarios de internet pasando de 1.000 millones en 2005 a 5.400 millones en 2023.",
-                "caption": "Figura 4 · Crecimiento del número de usuarios de internet en el mundo, de unos 1.000 millones (2005) a 5.400 millones (2023)."
+                "caption": "Figura 4 · Crecimiento del número de usuarios de internet en el mundo, de unos 1.000 millones (2005) a 5.400 millones (2023).",
+                "chart": {
+                  "type": "growth"
+                }
               }
             }
           ]
@@ -878,9 +882,11 @@
                 "Como internet no tiene fronteras, es difícil decir exactamente dónde se encuentra un ciberdelincuente. Los delincuentes se ocultan con VPN, proxies o atacando a través de computadoras infectadas en otros países. Aun así, los investigadores trazaron un mapa de las direcciones IP conocidas por actividad maliciosa. La mayoría se encuentran en Norteamérica, Europa central y oriental, Asia oriental, India y el este de Australia. A nivel continental, Norteamérica y Europa albergan la mayoría, y las regiones de altos ingresos albergan la mayor parte de las IP maliciosas. En otras palabras, los países más ricos y mejor conectados son a la vez los mayores objetivos y las mayores ubicaciones de origen de la infraestructura de la ciberdelincuencia."
               ],
               "figure": {
-                "src": "/dfir/top-20-countries-malicious-programs-2014.png",
-                "alt": "Los 20 países más expuestos a ataques externos de programas maliciosos en 2014",
-                "caption": "Figura 6 · Los 20 países más expuestos a ataques externos de programas maliciosos en 2014 (fuente: ResearchGate)."
+                "alt": "Gráfico de barras de la cuota de usuarios de internet por país (datos de ejemplo), ordenados de mayor a menor.",
+                "caption": "Figura 6 · Cuota de usuarios de internet por país (gráfico propio, datos de ejemplo).",
+                "chart": {
+                  "type": "country"
+                }
               },
               "note": "Matiz importante: estos mapas basados en IP muestran desde dónde se originan los ataques, no necesariamente dónde viven los delincuentes. Un delincuente de un país puede atacar fácilmente desde servidores de otro, precisamente por eso es tan difícil para la policía combatir la ciberdelincuencia."
             }
@@ -991,13 +997,9 @@
         {
           "label": "Onwuadiamu, G. \"Cybercrime in criminology; A systematic review of criminological theories, methods, and concepts.\" Journal of Economic Criminology 8 (2025) 100136.",
           "href": "https://doi.org/10.1016/j.jeconc.2025.100136"
-        },
-        {
-          "label": "ResearchGate. \"Top 20 countries exposed to external attacks from malicious programs in 2014.\"",
-          "href": "https://www.researchgate.net/figure/Top-20-countries-exposed-to-external-attacks-from-malicious-programs-in-2014_fig1_331914032"
         }
       ],
-      "references_note": "Las figuras 1, 3, 4 y 5 y la línea de tiempo de la figura 2 son diagramas propios del autor, realizados con Mermaid. El mapa de la figura 6 procede de ResearchGate (2014). Los datos se recopilan de las fuentes anteriores y se reescriben con palabras propias de este informe.",
+      "references_note": "Las figuras 1, 3 y 5 son diagramas propios del autor, realizados con Mermaid. Las figuras 2, 4 y 6 son gráficos interactivos propios, realizados con Chart.js (la figura 6 utiliza datos de ejemplo). Los datos se recopilan de las fuentes anteriores y se reescriben con palabras propias de este informe.",
       "back_label": "Volver al equipo",
       "profile_label": "Ver el perfil de RAGNAROK"
     }

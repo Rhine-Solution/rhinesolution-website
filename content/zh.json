@@ -655,9 +655,11 @@
                 "从提供商网络到家庭的最后一段称为最后一英里。它是最昂贵的建设部分，因此城市能铺设光纤，而农村和贫困地区只能获得更慢的连接，甚至根本没有。微波链路和 5G 等新技术有助于弥合这一差距，但在世界许多地方，基本的互联网接入仍然是个问题。"
               ],
               "figure": {
-                "src": "/dfir/internet-history-timeline.svg",
                 "alt": "互联网历史时间线，从 1969 年到 2005 年，按十年分组：1960 年代、1970 年代、1980 年代、1990 年代和 2000 年代。",
-                "caption": "图 2 · 互联网历史时间线（1969-2005），按十年分组。"
+                "caption": "图 2 · 互联网历史时间线（1969-2005），按十年分组。",
+                "chart": {
+                  "type": "timeline"
+                }
               }
             }
           ]
@@ -798,9 +800,11 @@
               },
               "note": "互联网的增长也意味着更多的潜在受害者：从 2005 年约 10 亿人上网，到 2023 年约 54 亿人。网络犯罪实际上对犯罪分子而言是一个万亿美元级的产业，几乎所有联网的人都是潜在目标。",
               "figure": {
-                "src": "/dfir/internet-user-growth.svg",
                 "alt": "柱状图显示互联网用户从 2005 年的 10 亿增至 2023 年的 54 亿。",
-                "caption": "图 4 · 全球互联网用户数量增长，从 2005 年的约 10 亿增至 2023 年的 54 亿。"
+                "caption": "图 4 · 全球互联网用户数量增长，从 2005 年的约 10 亿增至 2023 年的 54 亿。",
+                "chart": {
+                  "type": "growth"
+                }
               }
             }
           ]
@@ -878,9 +882,11 @@
                 "由于互联网没有国界，很难确切说出网络犯罪分子身处何方。犯罪分子借助 VPN、代理服务器，或通过攻击其他国家的被感染计算机来隐藏自己。尽管如此，研究人员仍绘制了已知恶意活动的 IP 地址分布图。其中大部分位于北美、中欧和东欧、东亚、印度和澳大利亚东部。就大陆而言，北美和欧洲承载最多，高收入地区承载了大多数恶意 IP。换言之，最富有、互联程度最高的国家既是最大的目标，也是网络犯罪基础设施的最大来源地。"
               ],
               "figure": {
-                "src": "/dfir/top-20-countries-malicious-programs-2014.png",
-                "alt": "2014 年遭受恶意程序外部攻击最多的 20 个国家",
-                "caption": "图 6 · 2014 年遭受恶意程序外部攻击最多的 20 个国家（来源：ResearchGate）。"
+                "alt": "各国互联网用户占比柱状图（示例数据），从高到低排列。",
+                "caption": "图 6 · 各国互联网用户占比（自有图表，示例数据）。",
+                "chart": {
+                  "type": "country"
+                }
               },
               "note": "重要的细微差别：这些基于 IP 的地图显示的是攻击的源头，而不一定是犯罪分子居住的地方。一个国家的犯罪分子可以轻易地从另一个国家的服务器发起攻击，这正是警方打击网络犯罪如此困难的原因。"
             }
@@ -991,13 +997,9 @@
         {
           "label": "Onwuadiamu, G. \"Cybercrime in criminology; A systematic review of criminological theories, methods, and concepts.\" Journal of Economic Criminology 8 (2025) 100136.",
           "href": "https://doi.org/10.1016/j.jeconc.2025.100136"
-        },
-        {
-          "label": "ResearchGate. \"Top 20 countries exposed to external attacks from malicious programs in 2014.\"",
-          "href": "https://www.researchgate.net/figure/Top-20-countries-exposed-to-external-attacks-from-malicious-programs-in-2014_fig1_331914032"
         }
       ],
-      "references_note": "图 1、3、4、5 以及图 2 中的时间线均为作者自绘图表，使用 Mermaid 制作。图 6 的地图来自 ResearchGate（2014 年）。事实收集自上述来源，并以本报告的措辞改写。",
+      "references_note": "图 1、3、5 为作者自绘图表，使用 Mermaid 制作。图 2、4、6 为作者自绘交互式图表，使用 Chart.js 制作（图 6 使用示例数据）。事实收集自上述来源，并以本报告的措辞改写。",
       "back_label": "返回团队",
       "profile_label": "查看 RAGNAROK 简介"
     }

@@ -1973,6 +1973,8 @@ p { margin-bottom: var(--space-3); }
 .dfir-figure svg[width="100%"],
 .dfir-figure img[src$=".svg"] { max-width: min(100%, 720px); }
 .dfir-figure svg[width="100%"] { height: auto; }
+.dfir-chart-box { position: relative; height: 420px; max-width: 860px; margin-inline: auto; }
+.dfir-chart-box canvas { max-width: 100%; }
 .dfir-figure figcaption {
   margin-top: var(--space-2);
   font-size: 0.8rem;

@@ -655,9 +655,11 @@
                 "L'ultimo tratto dalla rete del provider fino alla casa si chiama ultimo miglio. È la parte più costosa da costruire, ed è per questo che le città ricevono la fibra mentre le aree rurali e povere ottengono connessioni più lente o nessuna. Tecnologie più recenti come i collegamenti a microonde e il 5G aiutano a colmare il divario, ma l'accesso di base a internet resta un problema in molte parti del mondo."
               ],
               "figure": {
-                "src": "/dfir/internet-history-timeline.svg",
                 "alt": "Linea temporale della storia di internet dal 1969 al 2005, raggruppata per decenni: anni '60, '70, '80, '90 e 2000.",
-                "caption": "Figura 2 · Una linea temporale della storia di internet (1969-2005), raggruppata per decenni."
+                "caption": "Figura 2 · Una linea temporale della storia di internet (1969-2005), raggruppata per decenni.",
+                "chart": {
+                  "type": "timeline"
+                }
               }
             }
           ]
@@ -798,9 +800,11 @@
               },
               "note": "La crescita di internet significa anche più potenziali vittime: da circa 1 miliardo di persone online nel 2005 a circa 5,4 miliardi nel 2023. La criminalità informatica è di fatto un'industria da migliaia di miliardi per i criminali, e quasi ogni persona connessa è un potenziale bersaglio.",
               "figure": {
-                "src": "/dfir/internet-user-growth.svg",
                 "alt": "Grafico a barre che mostra gli utenti internet passati da 1 miliardo nel 2005 a 5,4 miliardi nel 2023.",
-                "caption": "Figura 4 · Crescita del numero di utenti internet nel mondo, da circa 1 miliardo (2005) a 5,4 miliardi (2023)."
+                "caption": "Figura 4 · Crescita del numero di utenti internet nel mondo, da circa 1 miliardo (2005) a 5,4 miliardi (2023).",
+                "chart": {
+                  "type": "growth"
+                }
               }
             }
           ]
@@ -878,9 +882,11 @@
                 "Poiché internet non ha confini, è difficile dire esattamente dove si trova un criminale informatico. I criminali si nascondono con VPN, proxy o attaccando attraverso computer infetti in altri paesi. Tuttavia, i ricercatori hanno mappato gli indirizzi IP noti per attività dannose. La maggior parte si trova in Nord America, Europa centro-orientale, Asia orientale, India e Australia orientale. A livello continentale, Nord America ed Europa ne ospitano di più, e le regioni ad alto reddito ospitano la maggior parte degli IP dannosi. In altre parole, i paesi più ricchi e più connessi sono al tempo stesso i bersagli più grandi e le principali fonti dell'infrastruttura della criminalità informatica."
               ],
               "figure": {
-                "src": "/dfir/top-20-countries-malicious-programs-2014.png",
-                "alt": "I 20 paesi più esposti ad attacchi esterni da programmi dannosi nel 2014",
-                "caption": "Figura 6 · I 20 paesi più esposti ad attacchi esterni da programmi dannosi nel 2014 (fonte: ResearchGate)."
+                "alt": "Grafico a barre della quota di utenti internet per paese (dati di esempio), ordinati dal più alto al più basso.",
+                "caption": "Figura 6 · Quota di utenti internet per paese (grafico proprio, dati di esempio).",
+                "chart": {
+                  "type": "country"
+                }
               },
               "note": "Sfumatura importante: queste mappe basate sugli IP mostrano da dove provengono gli attacchi, non necessariamente dove vivono i criminali. Un criminale in un paese può facilmente attaccare da server in un altro: è esattamente il motivo per cui combattere la criminalità informatica è così difficile per la polizia."
             }
@@ -991,13 +997,9 @@
         {
           "label": "Onwuadiamu, G. \"Cybercrime in criminology; A systematic review of criminological theories, methods, and concepts.\" Journal of Economic Criminology 8 (2025) 100136.",
           "href": "https://doi.org/10.1016/j.jeconc.2025.100136"
-        },
-        {
-          "label": "ResearchGate. \"Top 20 countries exposed to external attacks from malicious programs in 2014.\"",
-          "href": "https://www.researchgate.net/figure/Top-20-countries-exposed-to-external-attacks-from-malicious-programs-in-2014_fig1_331914032"
         }
       ],
-      "references_note": "Le figure 1, 3, 4 e 5 e la linea temporale della figura 2 sono diagrammi propri dell'autore, realizzati con Mermaid. La mappa della figura 6 proviene da ResearchGate (2014). I fatti sono raccolti dalle fonti sopra indicate e riscritti con le parole del presente rapporto.",
+      "references_note": "Le figure 1, 3 e 5 sono diagrammi propri dell'autore, realizzati con Mermaid. Le figure 2, 4 e 6 sono grafici interattivi propri, realizzati con Chart.js (la figura 6 usa dati di esempio). I fatti sono raccolti dalle fonti sopra indicate e riscritti con le parole del presente rapporto.",
       "back_label": "Torna al team",
       "profile_label": "Visualizza il profilo di RAGNAROK"
     }
