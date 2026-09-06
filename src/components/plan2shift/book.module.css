@@ -1,0 +1,424 @@
+/* ---- two-column layout: categories | book ---- */
+.layout {
+  display: grid;
+  grid-template-columns: 260px minmax(0, 1fr);
+  gap: var(--space-6);
+  align-items: start;
+}
+
+/* ---- left: categories (sticky, site glass-panel) ---- */
+.sidebar {
+  position: sticky;
+  top: var(--space-6);
+  max-height: calc(100vh - var(--space-7));
+  overflow-y: auto;
+  background: rgba(13, 26, 56, 0.55);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
+}
+
+.sidebarTitle {
+  font-family: var(--font-heading);
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--color-primary);
+  margin: 0 0 var(--space-3);
+}
+
+.sidebarNav {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.category > a {
+  display: inline-block;
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-text);
+  text-decoration: none;
+  padding: 0.2rem 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.category > a:hover {
+  color: var(--color-primary);
+}
+
+.category > a.catActive {
+  color: var(--color-primary);
+}
+
+.catList {
+  list-style: none;
+  margin: 0.6rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.catList a {
+  display: block;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: var(--color-text-muted);
+  text-decoration: none;
+  padding: 0.15rem 0 0.15rem 0.6rem;
+  border-left: 2px solid var(--color-border);
+}
+
+.catList a:hover {
+  color: var(--color-text);
+  border-left-color: var(--color-blue-soft);
+}
+
+.catList a.linkActive {
+  color: var(--color-primary);
+  border-left-color: var(--color-primary);
+}
+
+.subList {
+  list-style: none;
+  margin: 0.15rem 0 0;
+  padding: 0 0 0 0.9rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.subList a {
+  font-size: 0.84rem;
+  padding-left: 0.5rem;
+  border-left: 1px solid color-mix(in srgb, var(--color-border) 60%, transparent);
+}
+
+/* ---- right: the book ---- */
+.book {
+  min-width: 0;
+  max-width: 74ch;
+}
+
+/* ---- print action row ---- */
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: var(--space-5);
+  padding-bottom: var(--space-4);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.printHint {
+  color: var(--color-text-muted);
+  font-size: 0.82rem;
+}
+
+/* ---- markdown body (site prose style) ---- */
+.markdown {
+  font-size: 1.02rem;
+  line-height: 1.75;
+  color: var(--color-text);
+  min-width: 0;
+}
+
+.markdown :global(h1) {
+  font-family: var(--font-heading);
+  font-size: 1.7rem;
+  line-height: 1.25;
+  margin: 0 0 0.8rem;
+  padding-top: 1.4rem;
+  border-top: 1px solid var(--color-border);
+  scroll-margin-top: 1rem;
+}
+
+.markdown :global(h2) {
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  line-height: 1.3;
+  margin: 2.4rem 0 0.8rem;
+  scroll-margin-top: 1rem;
+}
+
+.markdown :global(h3) {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  margin: 1.8rem 0 0.5rem;
+  scroll-margin-top: 1rem;
+}
+
+.markdown :global(p) {
+  margin: 0 0 1rem;
+}
+
+.markdown :global(ul),
+.markdown :global(ol) {
+  margin: 0 0 1rem 1.4rem;
+}
+
+.markdown :global(li) {
+  margin: 0.3rem 0;
+}
+
+.markdown :global(blockquote) {
+  margin: 1.3rem 0;
+  padding: 0.65rem 1.1rem;
+  border-left: 3px solid var(--color-accent);
+  background: rgba(196, 168, 130, 0.09);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  color: var(--color-text-muted);
+}
+
+.markdown :global(strong) {
+  color: var(--color-text);
+}
+
+.markdown :global(a) {
+  color: var(--color-blue-soft);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.markdown :global(hr) {
+  border: 0;
+  border-top: 1px solid var(--color-border);
+  margin: 2.4rem 0;
+}
+
+.markdown :global(table) {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.3rem 0;
+  font-size: 0.92rem;
+  display: block;
+  overflow-x: auto;
+}
+
+.markdown :global(th),
+.markdown :global(td) {
+  border: 1px solid var(--color-border);
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+.markdown :global(th) {
+  background: rgba(126, 167, 255, 0.09);
+  font-weight: 600;
+}
+
+.markdown :global(tbody tr:nth-child(even)) {
+  background: rgba(126, 167, 255, 0.045);
+}
+
+.markdown :global(pre) {
+  background: #0b1226;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 1rem;
+  overflow-x: auto;
+  font-size: 0.85em;
+  line-height: 1.55;
+  margin: 1.3rem 0;
+}
+
+.markdown :global(code) {
+  background: rgba(126, 167, 255, 0.12);
+  border-radius: 4px;
+  padding: 0.12em 0.35em;
+  font-size: 0.9em;
+}
+
+.markdown :global(pre code) {
+  background: none;
+  padding: 0;
+}
+
+.markdown :global(.hljs-keyword),
+.markdown :global(.hljs-selector-tag) {
+  color: #7ea7ff;
+}
+
+.markdown :global(.hljs-string),
+.markdown :global(.hljs-attr) {
+  color: #a5d6a7;
+}
+
+.markdown :global(.hljs-number),
+.markdown :global(.hljs-literal) {
+  color: #ffd54f;
+}
+
+.markdown :global(.hljs-comment) {
+  color: rgba(226, 234, 255, 0.5);
+}
+
+.markdown :global(.hljs-title),
+.markdown :global(.hljs-function) {
+  color: #82aaff;
+}
+
+/* ---- mermaid diagrams ---- */
+.diagram {
+  margin: 1.5rem 0;
+  padding: 1rem;
+  background: #fdfbf7;
+  border: 1px solid #e3dccb;
+  border-radius: var(--radius-md);
+  overflow-x: auto;
+  color: #1a1a1a;
+}
+
+.diagram :global(svg) {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.diagramLoading,
+.diagramError {
+  margin: 1.5rem 0;
+  padding: 1rem;
+  background: rgba(126, 167, 255, 0.07);
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+}
+
+.diagramError pre {
+  margin: 0 0 0.5rem;
+  overflow-x: auto;
+}
+
+.diagramErrorNote {
+  margin: 0;
+}
+
+/* ---- responsive: stack sidebar above the book ---- */
+@media (max-width: 899px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+  .sidebar {
+    position: static;
+    max-height: none;
+    order: -1;
+  }
+}
+
+/* ---- print ---- */
+@media print {
+  :global(body) {
+    background: #ffffff !important;
+    color: #161616 !important;
+  }
+
+  :global(.nav),
+  :global(.footer) {
+    display: none !important;
+  }
+
+  .sidebar,
+  .actions {
+    display: none !important;
+  }
+
+  .layout {
+    display: block;
+  }
+
+  .book {
+    max-width: none;
+  }
+
+  .markdown {
+    color: #161616;
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+
+  .markdown :global(h1),
+  .markdown :global(h2),
+  .markdown :global(h3) {
+    color: #101010;
+    break-after: avoid-page;
+  }
+
+  .markdown :global(h1) {
+    border-top-color: #d9d9d9;
+  }
+
+  .markdown :global(a) {
+    color: #1d3f8f;
+  }
+
+  .markdown :global(blockquote) {
+    color: #333;
+    background: #f5f5f5;
+    border-left-color: #c4a882;
+    break-inside: avoid;
+  }
+
+  .markdown :global(pre) {
+    background: #f4f4f4;
+    color: #161616;
+    border-color: #ddd;
+    break-inside: avoid;
+  }
+
+  .markdown :global(pre code) {
+    color: inherit;
+  }
+
+  .markdown :global(.hljs-keyword),
+  .markdown :global(.hljs-selector-tag) {
+    color: #6a2fc7;
+  }
+
+  .markdown :global(.hljs-string),
+  .markdown :global(.hljs-attr) {
+    color: #3c6b2f;
+  }
+
+  .markdown :global(.hljs-number),
+  .markdown :global(.hljs-literal) {
+    color: #9c5300;
+  }
+
+  .markdown :global(.hljs-comment) {
+    color: #888;
+  }
+
+  .markdown :global(.hljs-title),
+  .markdown :global(.hljs-function) {
+    color: #274fb8;
+  }
+
+  .markdown :global(table),
+  .markdown :global(th),
+  .markdown :global(td) {
+    border-color: #c9c9c9;
+  }
+
+  .markdown :global(li),
+  .markdown :global(table) {
+    break-inside: avoid;
+  }
+
+  .diagram {
+    background: #ffffff;
+    border: 1px solid #d9d9d9;
+    overflow: visible;
+    break-inside: avoid;
+  }
+}

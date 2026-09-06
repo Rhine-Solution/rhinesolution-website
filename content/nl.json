@@ -142,6 +142,12 @@
         "href": "/dfir/lab041",
         "meta": "Digital Forensics · LAB041",
         "summary": "Een forensisch onderzoek naar een oude MP3-speler, waarin illegaal verkregen muziek is herleid via metadata, slack space en file carving."
+      },
+      {
+        "title": "SpendTracker",
+        "href": "/spendtracker",
+        "meta": "Geld · local-first",
+        "summary": "Een schattige, knusse geldtracker met pastel pixel-art. Volg uitgaven, meerdere valuta en spaardoelen -- alles lokaal opgeslagen op je apparaat."
       }
     ]
   },
@@ -382,7 +388,8 @@
     "skills": "Vaardigheden",
     "social": "Vind mij online",
     "featured_work": "Uitgelicht werk",
-    "featured_work_text": "Geselecteerde projecten, gebouwd en onderhouden door het Rhine Solution team."
+    "featured_work_text": "Geselecteerde projecten, gebouwd en onderhouden door het Rhine Solution team.",
+    "read_book": "Lees het volledige boek (PDF)"
   },
   "privacy": {
     "eyebrow": "Privacy",
@@ -1023,6 +1030,7 @@
     ],
     "year": 2026,
     "team": "RAGNAROK + ZeroMeister",
-    "live_url": "https://plan2shift.com/"
+    "live_url": "https://plan2shift.com/",
+    "book_url": "/plan2shift/book"
   }
 }

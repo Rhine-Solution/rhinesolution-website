@@ -136,6 +136,12 @@
         "href": "/dfir/lab041",
         "meta": "Criminalistique numérique · LAB041",
         "summary": "Un examen médico-légal d'un ancien lecteur MP3, retraçant la musique piratée via les métadonnées, l'espace résiduel et la récupération de fichiers."
+      },
+      {
+        "title": "SpendTracker",
+        "href": "/spendtracker",
+        "meta": "Argent · local-first",
+        "summary": "Un suivi des dépenses mignon et cosy au style pixel pastel. Suivez dépenses, plusieurs devises et objectifs d'épargne -- stocké localement."
       }
     ]
   },
@@ -376,7 +382,8 @@
     "skills": "Compétences",
     "social": "Me retrouver en ligne",
     "featured_work": "À la une",
-    "featured_work_text": "Une sélection de projets conçus et maintenus par l'équipe de Rhine Solution."
+    "featured_work_text": "Une sélection de projets conçus et maintenus par l'équipe de Rhine Solution.",
+    "read_book": "Lire le livre complet (PDF)"
   },
   "privacy": {
     "eyebrow": "Confidentialité",
@@ -1017,6 +1024,7 @@
     ],
     "year": 2026,
     "team": "RAGNAROK + ZeroMeister",
-    "live_url": "https://plan2shift.com/"
+    "live_url": "https://plan2shift.com/",
+    "book_url": "/plan2shift/book"
   }
 }

@@ -136,6 +136,12 @@
         "href": "/dfir/lab041",
         "meta": "Informática Forense · LAB041",
         "summary": "Un examen forense de un antiguo reproductor MP3, rastreando música pirateada mediante metadatos, espacio slack y carving de archivos."
+      },
+      {
+        "title": "SpendTracker",
+        "href": "/spendtracker",
+        "meta": "Dinero · local-first",
+        "summary": "Un rastreador de dinero adorable con estilo pixel pastel. Controla gastos, varias monedas y metas de ahorro -- todo almacenado localmente."
       }
     ]
   },
@@ -376,7 +382,8 @@
     "skills": "Habilidades",
     "social": "Encuéntrame en línea",
     "featured_work": "Trabajo destacado",
-    "featured_work_text": "Proyectos seleccionados construidos y mantenidos por el equipo de Rhine Solution."
+    "featured_work_text": "Proyectos seleccionados construidos y mantenidos por el equipo de Rhine Solution.",
+    "read_book": "Leer el libro completo (PDF)"
   },
   "privacy": {
     "eyebrow": "Privacidad",
@@ -1017,6 +1024,7 @@
     ],
     "year": 2026,
     "team": "RAGNAROK + ZeroMeister",
-    "live_url": "https://plan2shift.com/"
+    "live_url": "https://plan2shift.com/",
+    "book_url": "/plan2shift/book"
   }
 }

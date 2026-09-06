@@ -136,6 +136,12 @@
         "href": "/dfir/lab041",
         "meta": "Digitale Forensik · LAB041",
         "summary": "Eine forensische Untersuchung eines alten MP3-Players, die kopierte Musik über Metadaten, Slack Space und File Carving nachverfolgt."
+      },
+      {
+        "title": "SpendTracker",
+        "href": "/spendtracker",
+        "meta": "Geld · local-first",
+        "summary": "Ein süßer, gemütlicher Geld-Tracker mit Pastell-Pixel-Art. Verfolge Ausgaben, mehrere Währungen und Sparziele -- alles lokal gespeichert."
       }
     ]
   },
@@ -376,7 +382,8 @@
     "skills": "Fähigkeiten",
     "social": "Finden Sie mich online",
     "featured_work": "Ausgewählte Arbeit",
-    "featured_work_text": "Ausgewählte Projekte, gebaut und gepflegt vom Team von Rhine Solution."
+    "featured_work_text": "Ausgewählte Projekte, gebaut und gepflegt vom Team von Rhine Solution.",
+    "read_book": "Das vollständige Buch lesen (PDF)"
   },
   "privacy": {
     "eyebrow": "Datenschutz",
@@ -1017,6 +1024,7 @@
     ],
     "year": 2026,
     "team": "RAGNAROK + ZeroMeister",
-    "live_url": "https://plan2shift.com/"
+    "live_url": "https://plan2shift.com/",
+    "book_url": "/plan2shift/book"
   }
 }
