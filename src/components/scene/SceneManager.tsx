@@ -2,7 +2,6 @@
 
 import { useEffect, useRef } from "react";
 import * as THREE from "three";
-import { HDRLoader } from "three/examples/jsm/loaders/HDRLoader.js";
 import { createDriftScene } from "./scenes/drift";
 import { createLinesScene } from "./scenes/lines";
 import { createRoadsScene } from "./scenes/roads";
@@ -60,18 +59,6 @@ export default function SceneManager() {
     const dir = new THREE.DirectionalLight(0x7ea7ff, 0.6);
     dir.position.set(2, 3, 4);
     scene.add(dir);
-
-    // CC0 HDRI environment (Poly Haven, studio_small_03) — real reflections
-    // on the physical-material shards, mapped via PMREM.
-    const pmrem = new THREE.PMREMGenerator(renderer);
-    let envTex: THREE.Texture | null = null;
-    new HDRLoader().load("/textures/studio_small_03_1k.hdr", (hdr) => {
-      envTex = pmrem.fromEquirectangular(hdr).texture;
-      scene.environment = envTex;
-      scene.environmentIntensity = 0.6;
-      hdr.dispose();
-      pmrem.dispose();
-    });
 
     // Build all scene objects
     const built = SCENES.map((s) => s.build());
@@ -169,8 +156,6 @@ export default function SceneManager() {
       cancelAnimationFrame(raf);
       window.removeEventListener("scroll", onScroll);
       window.removeEventListener("resize", onResize);
-      if (envTex) envTex.dispose();
-      pmrem.dispose();
       timer.dispose();
       for (const obj of built) obj.dispose();
       renderer.dispose();
