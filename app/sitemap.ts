@@ -41,6 +41,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/spendtracker`, lastModified: now, changeFrequency: "weekly", priority: 0.8, alternates: { languages: { "x-default": `${base}/spendtracker`, en: `${base}/spendtracker` } } },
     { url: `${base}/dfir`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
     { url: `${base}/dfir/lab041`, lastModified: now, changeFrequency: "monthly", priority: 0.5 },
+    { url: `${base}/plan2shift/book`, lastModified: now, changeFrequency: "monthly", priority: 0.6, alternates: { languages: { "x-default": `${base}/plan2shift/book`, en: `${base}/plan2shift/book` } } },
   ];
 
   for (const locale of locales) {

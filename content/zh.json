@@ -382,7 +382,8 @@
     "skills": "技能",
     "social": "在线找我",
     "featured_work": "精选作品",
-    "featured_work_text": "由 Rhine Solution 团队构建并维护的精选项目。"
+    "featured_work_text": "由 Rhine Solution 团队构建并维护的精选项目。",
+    "read_book": "阅读完整手册 (PDF)"
   },
   "privacy": {
     "eyebrow": "隐私政策",
@@ -1001,6 +1002,7 @@
     ],
     "year": 2026,
     "team": "RAGNAROK + ZeroMeister",
-    "live_url": "https://plan2shift.com/"
+    "live_url": "https://plan2shift.com/",
+    "book_url": "/plan2shift/book"
   }
 }

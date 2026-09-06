@@ -30,6 +30,7 @@ export type ContentProject = {
   year: string;
   team?: string;
   live_url?: string;
+  book_url?: string;
   href?: string;
 };
 
