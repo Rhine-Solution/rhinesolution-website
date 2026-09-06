@@ -322,10 +322,10 @@
       "file": "journal/Lessons-Learned.md",
       "title": "Lessons Learned",
       "folder": "journal",
-      "excerpt": "Addendum: PowerShell \\Add-Content\\ (PS 5.1) also writes non-ASCII as ANSI (e.g. \\··\\ -> lone 0xB7, invalid UTF-8). Always write notes via Node \\writeFileSync(ut",
+      "excerpt": "Addendum: PowerShell Add-Content (PS 5.1) also writes non-ASCII as ANSI (e.g. ··· -> lone 0xB7, invalid UTF-8). Always write notes via Node writeFileSync(utf8) ",
       "order": 13,
       "tags": [],
-      "updated": "2026-09-04",
+      "updated": "2026-09-06",
       "outlinks": [
         "06-security",
         "08-deployment-devops",
