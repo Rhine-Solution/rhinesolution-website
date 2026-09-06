@@ -76,6 +76,7 @@ export default async function CybercrimeReportPage({ params }: Props) {
                 h3_2?: string;
                 measures_2?: string[];
                 figure?: { src?: string; alt?: string; caption: string; chart?: { type: DfirChartType } };
+                embed?: { src: string; title: string; height?: number };
               };
               return (
                 <div key={si}>
@@ -130,6 +131,17 @@ export default async function CybercrimeReportPage({ params }: Props) {
                   </ul>
                 )}
                 {s.figure && <FigureMedia figure={s.figure} />}
+                {s.embed && (
+                  <div className="dfir-embed">
+                    <iframe
+                      src={s.embed.src}
+                      title={s.embed.title}
+                      height={s.embed.height ?? 520}
+                      loading="lazy"
+                      allowFullScreen
+                    />
+                  </div>
+                )}
                 </div>
               );
             })}

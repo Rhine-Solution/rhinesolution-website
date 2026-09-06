@@ -501,7 +501,7 @@
   "dfir": {
     "cybercrime_report": {
       "meta_title": "Cybercrime and Cybersecurity Report",
-      "meta_description": "Keuzedeel K1352 research report: how the internet works, what cybercrime is, the scale of the problem, and how to protect against it.",
+      "meta_description": "Keuzedeel K1352 research report: how the internet works, what cybercrime is, the scale of the problem, live cyber threats, and how to protect against it.",
       "eyebrow": "RAGNAROK · Cyber Security",
       "title": "Cybercrime and Cybersecurity Report",
       "lead": "Keuzedeel K1352 research report. How the internet works from zero, what cybercrime is, how big the problem really is, who commits it and why, and what people and organizations can do to protect themselves.",
@@ -906,7 +906,62 @@
           ]
         },
         {
-          "heading": "7 · How People React to Cybercrime",
+          "heading": "7 · Live Cyber Threats Around the World",
+          "subsections": [
+            {
+              "heading": "7.1 Real-time threat maps",
+              "paragraphs": [
+                "Cybercrime happens all over the world, all the time. Security companies like Kaspersky collect anonymized telemetry from the devices of millions of users through their Kaspersky Security Network, and visualize the detected attacks on a live world map: every line is an attack, detected as it happens. The most well-known example is the Kaspersky Cyberthreat Live Map, which shows attacks in real time and lets visitors pick a country to see its threat statistics."
+              ]
+            },
+            {
+              "heading": "",
+              "paragraphs": [
+                "Below is the live Kaspersky Cybermap widget. It is updated continuously and shows the scale and geography of cybercrime as it happens:"
+              ],
+              "embed": {
+                "src": "https://cybermap.kaspersky.com/en/widget/dynamic/dark",
+                "title": "Kaspersky Cyberthreat live map",
+                "height": 520
+              },
+              "paragraphs_after": [
+                "Every color represents a different kind of detection: on-access scans (green), on-demand scans (red), mail anti-virus (orange), web anti-virus (blue), intrusion detection (pink), vulnerability scans (yellow), anti-spam (purple) and ransomware (blue line). The counters at the bottom reset every day at 00:00 GMT."
+              ]
+            },
+            {
+              "heading": "7.2 What the map teaches us",
+              "paragraphs": [
+                "A live map like this is not just a gadget. It connects directly to this report's research questions:"
+              ],
+              "bullets": [
+                {
+                  "strong": "Scale:",
+                  "body": "the number of detections per second shows that cybercrime is not rare or exotic, but a constant, global background noise of attacks."
+                },
+                {
+                  "strong": "Geography:",
+                  "body": "lines connect attackers and targets across continents, confirming that the internet has no borders and that attacks can come from anywhere (see section 6)."
+                },
+                {
+                  "strong": "Variety:",
+                  "body": "the different detection colors show that cybercrime is not one crime, but a whole family of crimes, from malware and web threats to spam, ransomware and network attacks (see section 3)."
+                },
+                {
+                  "strong": "Data caveats:",
+                  "body": "the map reflects Kaspersky product telemetry only. It shows where detections happen, not necessarily where the criminals live, and other vendors (such as Check Point) publish similar maps with their own data."
+                }
+              ]
+            },
+            {
+              "heading": "7.3 Why this matters for the study",
+              "paragraphs": [
+                "The live map is a practical illustration of the theories in section 5: crime happens where opportunity and targets meet, and it adapts to the time of day and the region. Watching attacks occur in real time makes the abstract numbers of section 4 tangible — millions of detections per day, across every country, while users, companies and governments try to protect themselves (section 8)."
+              ]
+            }
+          ]
+        },
+        {
+          "heading": "8 · How People React to Cybercrime",
           "subsections": [
             {
               "heading": "",
@@ -938,7 +993,7 @@
           ]
         },
         {
-          "heading": "8 · Cybersecurity: How to Protect Yourself",
+          "heading": "9 · Cybersecurity: How to Protect Yourself",
           "subsections": [
             {
               "heading": "",
@@ -969,7 +1024,7 @@
           ]
         },
         {
-          "heading": "9 · Conclusion",
+          "heading": "10 · Conclusion",
           "subsections": [
             {
               "heading": "",
@@ -981,7 +1036,7 @@
           ]
         }
       ],
-      "references_heading": "10 · References",
+      "references_heading": "11 · References",
       "references": [
         {
           "label": "Tsotetsi, K. \"Understanding the Internet: A Journey from Devices to Submarine Cables.\"",
@@ -1010,6 +1065,18 @@
         {
           "label": "Onwuadiamu, G. \"Cybercrime in criminology; A systematic review of criminological theories, methods, and concepts.\" Journal of Economic Criminology 8 (2025) 100136.",
           "href": "https://doi.org/10.1016/j.jeconc.2025.100136"
+        },
+        {
+          "label": "Kaspersky. \"Kaspersky Cyberthreat live map\" (real-time threat visualization).",
+          "href": "https://cybermap.kaspersky.com/"
+        },
+        {
+          "label": "Kaspersky. \"Cyberthreats Map: watch global threats in real time.\" (2014).",
+          "href": "https://www.kaspersky.com/blog/cyberthreats-map-watch-global-threats-in-real-time/"
+        },
+        {
+          "label": "Kaspersky. \"Kaspersky Cyberthreat live map — Data sources (OAS, ODS, MAV, Web AV, IDS, VUL, Anti-Spam, Ransomware).\"",
+          "href": "https://cybermap.kaspersky.com/subsystems"
         }
       ],
       "references_note": "Figures 1, 3 and 5 are the author's own diagrams, made with Mermaid. Figures 2, 4 and 6 are the author's own interactive charts, made with Chart.js (Figure 6 uses sample data). Facts are collected from the sources above and rewritten in this report's own words.",

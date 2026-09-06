@@ -501,7 +501,7 @@
   "dfir": {
     "cybercrime_report": {
       "meta_title": "Rapporto su criminalità informatica e cybersecurity",
-      "meta_description": "Rapporto di ricerca del Keuzedeel K1352: come funziona internet, cos'è la criminalità informatica, la scala del problema e come proteggersi.",
+      "meta_description": "Rapporto di ricerca del Keuzedeel K1352: come funziona internet, cos'è la criminalità informatica, la scala del problema, le minacce informatiche in tempo reale e come proteggersi.",
       "eyebrow": "RAGNAROK · Cyber Security",
       "title": "Rapporto su criminalità informatica e cybersecurity",
       "lead": "Rapporto di ricerca del Keuzedeel K1352. Come funziona internet da zero, cos'è la criminalità informatica, quanto è grande davvero il problema, chi la commette e perché, e cosa possono fare le persone e le organizzazioni per proteggersi.",
@@ -906,7 +906,62 @@
           ]
         },
         {
-          "heading": "7 · Come reagiscono le persone alla criminalità informatica",
+          "heading": "7 · Minacce informatiche in diretta nel mondo",
+          "subsections": [
+            {
+              "heading": "7.1 Le mappe delle minacce in tempo reale",
+              "paragraphs": [
+                "La criminalità informatica avviene in tutto il mondo, continuamente. Aziende di sicurezza come Kaspersky raccolgono telemetria anonimizzata dai dispositivi di milioni di utenti attraverso il loro Kaspersky Security Network e visualizzano gli attacchi rilevati su una mappa mondiale in diretta: ogni linea è un attacco, rilevato nel momento in cui avviene. L'esempio più noto è la Kaspersky Cyberthreat Live Map, che mostra gli attacchi in tempo reale e permette ai visitatori di scegliere un paese per vedere le sue statistiche sulle minacce."
+              ]
+            },
+            {
+              "heading": "",
+              "paragraphs": [
+                "Di seguito è mostrato il widget in diretta della Kaspersky Cybermap. Si aggiorna continuamente e mostra la scala e la geografia della criminalità informatica mentre avviene:"
+              ],
+              "embed": {
+                "src": "https://cybermap.kaspersky.com/en/widget/dynamic/dark",
+                "title": "Kaspersky Cyberthreat live map",
+                "height": 520
+              },
+              "paragraphs_after": [
+                "Ogni colore rappresenta un tipo di rilevamento: scansioni all'accesso (verde), scansioni su richiesta (rosso), antivirus di posta (arancione), antivirus web (blu), rilevamento delle intrusioni (rosa), scansioni delle vulnerabilità (giallo), antispam (viola) e ransomware (linea blu). I contatori in basso vengono azzerati ogni giorno alle 00:00 GMT."
+              ]
+            },
+            {
+              "heading": "7.2 Cosa ci insegna la mappa",
+              "paragraphs": [
+                "Una mappa in diretta come questa non è solo un gadget. Si collega direttamente alle domande di ricerca di questo rapporto:"
+              ],
+              "bullets": [
+                {
+                  "strong": "Scala:",
+                  "body": "il numero di rilevamenti al secondo mostra che la criminalità informatica non è rara o esotica, ma un rumore di fondo costante e mondiale di attacchi."
+                },
+                {
+                  "strong": "Geografia:",
+                  "body": "le linee collegano attaccanti e obiettivi attraverso i continenti, confermando che internet non ha confini e che gli attacchi possono arrivare da ovunque (vedi sezione 6)."
+                },
+                {
+                  "strong": "Varietà:",
+                  "body": "i diversi colori di rilevamento mostrano che la criminalità informatica non è un singolo reato, ma un'intera famiglia di reati, dal malware e le minacce web allo spam, al ransomware e agli attacchi di rete (vedi sezione 3)."
+                },
+                {
+                  "strong": "Nota sui dati:",
+                  "body": "la mappa riflette solo la telemetria dei prodotti Kaspersky. Mostra dove avvengono i rilevamenti, non necessariamente dove vivono i criminali, e altri fornitori (come Check Point) pubblicano mappe simili con i propri dati."
+                }
+              ]
+            },
+            {
+              "heading": "7.3 Perché è importante per lo studio",
+              "paragraphs": [
+                "La mappa in diretta è un'illustrazione pratica delle teorie della sezione 5: il crimine avviene dove opportunità e obiettivi si incontrano, e si adatta all'ora del giorno e alla regione. Osservare gli attacchi in tempo reale rende tangibili le cifre astratte della sezione 4 — milioni di rilevamenti al giorno, in ogni paese, mentre utenti, aziende e governi cercano di proteggersi (sezione 8)."
+              ]
+            }
+          ]
+        },
+        {
+          "heading": "8 · Come reagiscono le persone alla criminalità informatica",
           "subsections": [
             {
               "heading": "",
@@ -938,7 +993,7 @@
           ]
         },
         {
-          "heading": "8 · Cybersecurity: come proteggersi",
+          "heading": "9 · Cybersecurity: come proteggersi",
           "subsections": [
             {
               "heading": "",
@@ -969,7 +1024,7 @@
           ]
         },
         {
-          "heading": "9 · Conclusione",
+          "heading": "10 · Conclusione",
           "subsections": [
             {
               "heading": "",
@@ -981,7 +1036,7 @@
           ]
         }
       ],
-      "references_heading": "10 · Riferimenti",
+      "references_heading": "11 · Riferimenti",
       "references": [
         {
           "label": "Tsotetsi, K. \"Understanding the Internet: A Journey from Devices to Submarine Cables.\"",
@@ -1010,6 +1065,18 @@
         {
           "label": "Onwuadiamu, G. \"Cybercrime in criminology; A systematic review of criminological theories, methods, and concepts.\" Journal of Economic Criminology 8 (2025) 100136.",
           "href": "https://doi.org/10.1016/j.jeconc.2025.100136"
+        },
+        {
+          "label": "Kaspersky. \"Kaspersky Cyberthreat live map\" (real-time threat visualization).",
+          "href": "https://cybermap.kaspersky.com/"
+        },
+        {
+          "label": "Kaspersky. \"Cyberthreats Map: watch global threats in real time.\" (2014).",
+          "href": "https://www.kaspersky.com/blog/cyberthreats-map-watch-global-threats-in-real-time/"
+        },
+        {
+          "label": "Kaspersky. \"Kaspersky Cyberthreat live map — Data sources (OAS, ODS, MAV, Web AV, IDS, VUL, Anti-Spam, Ransomware).\"",
+          "href": "https://cybermap.kaspersky.com/subsystems"
         }
       ],
       "references_note": "Le figure 1, 3 e 5 sono diagrammi propri dell'autore, realizzati con Mermaid. Le figure 2, 4 e 6 sono grafici interattivi propri, realizzati con Chart.js (la figura 6 usa dati di esempio). I fatti sono raccolti dalle fonti sopra indicate e riscritti con le parole del presente rapporto.",

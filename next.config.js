@@ -16,7 +16,7 @@ const securityHeaders = [
   {
     key: "Content-Security-Policy",
     value:
-      "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://challenges.cloudflare.com https://vercel.live; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self' https://generativelanguage.googleapis.com https://challenges.cloudflare.com https://vercel.live wss:; font-src 'self' data:; frame-src https://challenges.cloudflare.com; worker-src 'self' blob:; base-uri 'self'; form-action 'self'; object-src 'none'",
+      "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://challenges.cloudflare.com https://vercel.live; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self' https://generativelanguage.googleapis.com https://challenges.cloudflare.com https://vercel.live wss:; font-src 'self' data:; frame-src https://challenges.cloudflare.com https://cybermap.kaspersky.com; worker-src 'self' blob:; base-uri 'self'; form-action 'self'; object-src 'none'",
   },
 ];
 
