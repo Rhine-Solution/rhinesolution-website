@@ -572,9 +572,11 @@
               ],
               "note": "Quindi ogni messaggio viaggia attraverso un mix di onde radio, fili di rame, fibre di vetro e cavi sottomarini. A noi sembra solo senza fili.",
               "figure": {
-                "src": "/dfir/journey-of-a-message.svg",
                 "alt": "Diagramma di flusso delle sette tappe di un messaggio: dispositivo, onde radio, router e modem, rete ISP, nodi regionali, cavi sottomarini, destinazione.",
-                "caption": "Figura 1 · Il percorso di un messaggio da un dispositivo alla sua destinazione (diagramma proprio)."
+                "caption": "Figura 1 · Il percorso di un messaggio da un dispositivo alla sua destinazione (diagramma proprio).",
+                "chart": {
+                  "type": "journey"
+                }
               }
             },
             {
@@ -693,9 +695,11 @@
                 "Il criminologo David Wall descrive quattro categorie di criminalità informatica: l'accesso abusivo (cyber trespass: entrare in sistemi in cui non è permesso entrare), l'inganno o il furto informatico (rubare cose online, come i dati delle carte di credito), la pornografia o oscenità informatica (condividere materiale sessuale online) e la violenza informatica (causare danni emotivi o psicologici, come lo cyberstalking. La vittima può non subire danni fisici ma può soffrire danni duraturi)."
               ],
               "figure": {
-                "src": "/dfir/cybercrime-taxonomy.svg",
                 "alt": "Mappa mentale della criminalità informatica divisa in cyber-dipendente e cyber-assistita, più le quattro categorie di David Wall.",
-                "caption": "Figura 3 · Come si classifica la criminalità informatica: reati cyber-dipendenti e cyber-assistiti, e le quattro categorie di David Wall."
+                "caption": "Figura 3 · Come si classifica la criminalità informatica: reati cyber-dipendenti e cyber-assistiti, e le quattro categorie di David Wall.",
+                "chart": {
+                  "type": "taxonomy"
+                }
               }
             }
           ]
@@ -853,9 +857,11 @@
                 ]
               },
               "figure": {
-                "src": "/dfir/routine-activity-theory.svg",
                 "alt": "Diagramma della teoria delle attività di routine: autore motivato, bersaglio adatto e guardiano capace.",
-                "caption": "Figura 5 · Teoria delle attività di routine: il crimine avviene quando un autore motivato, un bersaglio adatto e l'assenza di un guardiano si incontrano."
+                "caption": "Figura 5 · Teoria delle attività di routine: il crimine avviene quando un autore motivato, un bersaglio adatto e l'assenza di un guardiano si incontrano.",
+                "chart": {
+                  "type": "routine"
+                }
               }
             },
             {

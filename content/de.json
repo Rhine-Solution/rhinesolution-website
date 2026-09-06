@@ -572,9 +572,11 @@
               ],
               "note": "Jede Nachricht reist also durch eine Mischung aus Funkwellen, Kupferdrähten, Glasfasern und Unterseekabeln. Für uns fühlt es sich nur drahtlos an.",
               "figure": {
-                "src": "/dfir/journey-of-a-message.svg",
                 "alt": "Flussdiagramm der sieben Stationen einer Nachricht: Gerät, Funkwellen, Router und Modem, ISP-Netz, regionale Knoten, Seekabel, Ziel.",
-                "caption": "Abbildung 1 · Der Weg einer Nachricht von einem Gerät zu ihrem Ziel (eigenes Diagramm)."
+                "caption": "Abbildung 1 · Der Weg einer Nachricht von einem Gerät zu ihrem Ziel (eigenes Diagramm).",
+                "chart": {
+                  "type": "journey"
+                }
               }
             },
             {
@@ -693,9 +695,11 @@
                 "Der Kriminologe David Wall beschreibt vier Kategorien von Cybercrime: Cyber-Trespass (das Eindringen in Systeme, in die man nicht eindringen darf), Cyber-Deception oder Diebstahl (Online-Diebstahl, etwa von Kreditkartendaten), Cyber-Pornografie oder Obszönität (das Teilen sexuellen Materials online) und Cyber-Gewalt (das Verursachen von emotionalem oder psychologischem Schaden, etwa durch Cyberstalking. Das Opfer wird körperlich vielleicht nicht verletzt, kann aber dauerhaften Schaden erleiden)."
               ],
               "figure": {
-                "src": "/dfir/cybercrime-taxonomy.svg",
                 "alt": "Mindmap der Cyberkriminalität, unterteilt in cyberabhängige und cyberunterstützte Kriminalität, plus die vier Kategorien von David Wall.",
-                "caption": "Abbildung 3 · Wie Cyberkriminalität eingeordnet wird: cyberabhängige und cyberunterstützte Kriminalität sowie die vier Kategorien von David Wall."
+                "caption": "Abbildung 3 · Wie Cyberkriminalität eingeordnet wird: cyberabhängige und cyberunterstützte Kriminalität sowie die vier Kategorien von David Wall.",
+                "chart": {
+                  "type": "taxonomy"
+                }
               }
             }
           ]
@@ -853,9 +857,11 @@
                 ]
               },
               "figure": {
-                "src": "/dfir/routine-activity-theory.svg",
                 "alt": "Diagramm der Routine-Activity-Theorie: motivierter Täter, geeignetes Ziel und ein fähiger Wächter.",
-                "caption": "Abbildung 5 · Routine-Activity-Theorie: Kriminalität entsteht, wenn ein Täter, ein Ziel und das Fehlen eines Wächters zusammentreffen."
+                "caption": "Abbildung 5 · Routine-Activity-Theorie: Kriminalität entsteht, wenn ein Täter, ein Ziel und das Fehlen eines Wächters zusammentreffen.",
+                "chart": {
+                  "type": "routine"
+                }
               }
             },
             {

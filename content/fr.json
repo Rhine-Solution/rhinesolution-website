@@ -572,9 +572,11 @@
               ],
               "note": "Chaque message voyage donc à travers un mélange d'ondes radio, de fils de cuivre, de fibres de verre et de câbles sous-marins. Ce n'est que pour nous qu'il semble sans fil.",
               "figure": {
-                "src": "/dfir/journey-of-a-message.svg",
                 "alt": "Schéma des sept étapes d'un message : appareil, ondes radio, routeur et modem, réseau FAI, nœuds régionaux, câbles sous-marins, destination.",
-                "caption": "Figure 1 · Le parcours d'un message d'un appareil jusqu'à sa destination (schéma propre)."
+                "caption": "Figure 1 · Le parcours d'un message d'un appareil jusqu'à sa destination (schéma propre).",
+                "chart": {
+                  "type": "journey"
+                }
               }
             },
             {
@@ -693,9 +695,11 @@
                 "Le criminologue David Wall décrit quatre catégories de cybercriminalité : la cyber-intrusion (pénétrer dans des systèmes auxquels vous n'êtes pas autorisé à accéder), la cyber-tromperie ou le cyber-vol (voler des choses en ligne, comme des données de carte bancaire), la cyber-pornographie ou l'obscénité en ligne (partager du matériel sexuel sur internet), et la cyber-violence (causer un préjudice émotionnel ou psychologique, comme le cyberharcèlement. La victime n'est pas forcément blessée physiquement mais peut subir des dommages durables)."
               ],
               "figure": {
-                "src": "/dfir/cybercrime-taxonomy.svg",
                 "alt": "Carte mentale de la cybercriminalité divisée en criminalité cyber-dépendante et cyber-assistée, plus les quatre catégories de David Wall.",
-                "caption": "Figure 3 · Comment la cybercriminalité est classée : criminalité cyber-dépendante et cyber-assistée, et les quatre catégories de David Wall."
+                "caption": "Figure 3 · Comment la cybercriminalité est classée : criminalité cyber-dépendante et cyber-assistée, et les quatre catégories de David Wall.",
+                "chart": {
+                  "type": "taxonomy"
+                }
               }
             }
           ]
@@ -853,9 +857,11 @@
                 ]
               },
               "figure": {
-                "src": "/dfir/routine-activity-theory.svg",
                 "alt": "Schéma de la théorie des activités routinières : délinquant motivé, cible adaptée et gardien capable.",
-                "caption": "Figure 5 · Théorie des activités routinières : la criminalité survient quand un délinquant, une cible et l'absence de gardien se rencontrent."
+                "caption": "Figure 5 · Théorie des activités routinières : la criminalité survient quand un délinquant, une cible et l'absence de gardien se rencontrent.",
+                "chart": {
+                  "type": "routine"
+                }
               }
             },
             {

@@ -572,9 +572,11 @@
               ],
               "note": "Así que cada mensaje viaja a través de una mezcla de ondas de radio, cables de cobre, fibras de vidrio y cables submarinos. Solo a nosotros nos parece inalámbrico.",
               "figure": {
-                "src": "/dfir/journey-of-a-message.svg",
                 "alt": "Diagrama de flujo de las siete etapas de un mensaje: dispositivo, ondas de radio, router y módem, red del ISP, nodos regionales, cables submarinos, destino.",
-                "caption": "Figura 1 · El recorrido de un mensaje desde un dispositivo hasta su destino (diagrama propio)."
+                "caption": "Figura 1 · El recorrido de un mensaje desde un dispositivo hasta su destino (diagrama propio).",
+                "chart": {
+                  "type": "journey"
+                }
               }
             },
             {
@@ -693,9 +695,11 @@
                 "El criminólogo David Wall describe cuatro categorías de ciberdelincuencia: ciberallanamiento (entrar en sistemas donde no tienes permiso), ciberdecepción o ciberrobo (robar cosas en línea, como datos de tarjetas de crédito), ciberpornografía u obscenidad (compartir material sexual en línea) y ciberviolencia (causar daño emocional o psicológico, como el ciberacoso. La víctima puede no sufrir daño físico pero puede padecer un daño duradero)."
               ],
               "figure": {
-                "src": "/dfir/cybercrime-taxonomy.svg",
                 "alt": "Mapa mental de la ciberdelincuencia dividida en ciberdependiente y ciberasistida, más las cuatro categorías de David Wall.",
-                "caption": "Figura 3 · Cómo se clasifica la ciberdelincuencia: delitos ciberdependientes y ciberasistidos, y las cuatro categorías de David Wall."
+                "caption": "Figura 3 · Cómo se clasifica la ciberdelincuencia: delitos ciberdependientes y ciberasistidos, y las cuatro categorías de David Wall.",
+                "chart": {
+                  "type": "taxonomy"
+                }
               }
             }
           ]
@@ -853,9 +857,11 @@
                 ]
               },
               "figure": {
-                "src": "/dfir/routine-activity-theory.svg",
                 "alt": "Diagrama de la teoría de las actividades rutinarias: delincuente motivado, objetivo adecuado y guardián capaz.",
-                "caption": "Figura 5 · Teoría de las actividades rutinarias: el delito ocurre cuando coinciden un delincuente motivado, un objetivo adecuado y la ausencia de un guardián."
+                "caption": "Figura 5 · Teoría de las actividades rutinarias: el delito ocurre cuando coinciden un delincuente motivado, un objetivo adecuado y la ausencia de un guardián.",
+                "chart": {
+                  "type": "routine"
+                }
               }
             },
             {

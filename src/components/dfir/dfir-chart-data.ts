@@ -1,4 +1,58 @@
-export type DfirChartType = "timeline" | "country" | "growth";
+export type DfirChartType = "timeline" | "country" | "growth" | "journey" | "taxonomy" | "routine";
+
+export const JOURNEY_STEPS: { step: number; title: string; body: string }[] = [
+  { step: 1, title: "Your device", body: "splits the message into small packets, each with header info showing where it came from and where it is going." },
+  { step: 2, title: "Radio waves", body: "on Wi-Fi the packets leave as radio waves to the router; on mobile data they go to a nearby cell tower." },
+  { step: 3, title: "Router and modem", body: "the router manages the home network; the modem converts the signals for the provider's cables." },
+  { step: 4, title: "ISP network", body: "the provider picks the most efficient route for the packets over coaxial or fiber cables." },
+  { step: 5, title: "Regional hubs", body: "large data centers exchange traffic between networks and connect to the internet backbone." },
+  { step: 6, title: "Submarine cables", body: "for cross-continent data, the backbone includes huge cables on the ocean floor; data travels as light pulses in glass fibers." },
+  { step: 7, title: "Destination", body: "the packets are re-assembled in the correct order and the recipient's device shows the message." },
+];
+
+export const TAXONOMY_ROOT = { label: "Cybercrime", x: 0, y: 0 };
+
+export const TAXONOMY_BRANCHES: { label: string; x: number; y: number; children: { label: string; x: number; y: number }[] }[] = [
+  {
+    label: "Cyber-dependent crime",
+    x: 1,
+    y: -2,
+    children: [
+      { label: "Hacking", x: 2, y: -3 },
+      { label: "DDoS attacks", x: 2, y: -2 },
+      { label: "Malware", x: 2, y: -1 },
+    ],
+  },
+  {
+    label: "Cyber-enabled crime",
+    x: 1,
+    y: 0,
+    children: [
+      { label: "Online fraud", x: 2, y: -0.5 },
+      { label: "Phishing", x: 2, y: 0 },
+      { label: "Digital piracy", x: 2, y: 0.5 },
+      { label: "Cyberbullying", x: 2, y: 1 },
+    ],
+  },
+  {
+    label: "Wall's four categories",
+    x: 1,
+    y: 2,
+    children: [
+      { label: "Cyber trespass", x: 2, y: 1.5 },
+      { label: "Cyber deception / theft", x: 2, y: 2 },
+      { label: "Cyber pornography / obscenity", x: 2, y: 2.5 },
+      { label: "Cyber violence", x: 2, y: 3 },
+    ],
+  },
+];
+
+export const ROUTINE_NODES: { label: string; role: string; x: number; y: number }[] = [
+  { label: "Motivated offender", role: "motivated offender", x: 0, y: 1.6 },
+  { label: "Suitable target", role: "suitable target", x: -1.5, y: -0.8 },
+  { label: "Capable guardian", role: "capable guardian (absent)", x: 1.5, y: -0.8 },
+  { label: "Crime happens", role: "result", x: 0, y: -0.2 },
+];
 
 export const TIMELINE_EVENTS: { year: number; event: string }[] = [
   { year: 1969, event: "ARPANET sends its first message from one network to another." },

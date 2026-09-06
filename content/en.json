@@ -572,9 +572,11 @@
               ],
               "note": "So every message travels through a mix of radio waves, copper wires, glass fibers and undersea cables. It only feels wireless to us.",
               "figure": {
-                "src": "/dfir/journey-of-a-message.svg",
                 "alt": "Flow diagram of the seven stages a message travels through: device, radio waves, router and modem, ISP network, regional hubs, submarine cables, destination.",
-                "caption": "Figure 1 · The journey of a message from a device to its destination (own diagram)."
+                "caption": "Figure 1 · The journey of a message from a device to its destination (own diagram).",
+                "chart": {
+                  "type": "journey"
+                }
               }
             },
             {
@@ -693,9 +695,11 @@
                 "Criminologist David Wall describes four categories of cybercrime: cyber trespass (getting into systems you are not allowed to enter), cyber deception or theft (stealing things online, like credit card data), cyber pornography or obscenity (sharing sexual material online), and cyber violence (causing emotional or psychological harm, such as cyberstalking. The victim may not be physically hurt but can suffer lasting damage)."
               ],
               "figure": {
-                "src": "/dfir/cybercrime-taxonomy.svg",
                 "alt": "Mind map of cybercrime types split into cyber-dependent and cyber-enabled crime, plus David Wall's four categories.",
-                "caption": "Figure 3 · How cybercrime is grouped: cyber-dependent vs cyber-enabled crime, and David Wall's four categories."
+                "caption": "Figure 3 · How cybercrime is grouped: cyber-dependent vs cyber-enabled crime, and David Wall's four categories.",
+                "chart": {
+                  "type": "taxonomy"
+                }
               }
             }
           ]
@@ -853,9 +857,11 @@
                 ]
               },
               "figure": {
-                "src": "/dfir/routine-activity-theory.svg",
                 "alt": "Diagram of routine activity theory: motivated offender, suitable target and a capable guardian.",
-                "caption": "Figure 5 · Routine activity theory: crime happens when an offender, a target and the absence of a guardian meet."
+                "caption": "Figure 5 · Routine activity theory: crime happens when an offender, a target and the absence of a guardian meet.",
+                "chart": {
+                  "type": "routine"
+                }
               }
             },
             {

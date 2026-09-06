@@ -578,9 +578,11 @@
               ],
               "note": "Elk bericht reist dus door een mix van radiogolven, koperdraden, glasvezels en onderzeese kabels. Het voelt voor ons alleen maar draadloos.",
               "figure": {
-                "src": "/dfir/journey-of-a-message.svg",
                 "alt": "Stroomdiagram van de zeven fasen die een bericht doorloopt: apparaat, radiogolven, router en modem, ISP-netwerk, regionale knooppunten, zeekabels, bestemming.",
-                "caption": "Figuur 1 · De reis van een bericht van een apparaat naar zijn bestemming (eigen diagram)."
+                "caption": "Figuur 1 · De reis van een bericht van een apparaat naar zijn bestemming (eigen diagram).",
+                "chart": {
+                  "type": "journey"
+                }
               }
             },
             {
@@ -699,9 +701,11 @@
                 "Criminoloog David Wall beschrijft vier categorieën cybercriminaliteit: cyber trespass (binnendringen in systemen waar je niet mag komen), cyber deception of theft (online stelen, zoals creditcardgegevens), cyber pornography of obscenity (online verspreiden van seksueel materiaal) en cyber violence (het veroorzaken van emotionele of psychologische schade, zoals cyberstalking. Het slachtoffer wordt misschien niet fysiek gekwetst, maar kan blijvende schade oplopen)."
               ],
               "figure": {
-                "src": "/dfir/cybercrime-taxonomy.svg",
                 "alt": "Mindmap van cybercriminaliteit onderverdeeld in cyberafhankelijke en cyberondersteunde criminaliteit, plus de vier categorieën van David Wall.",
-                "caption": "Figuur 3 · Hoe cybercriminaliteit wordt gegroepeerd: cyberafhankelijke en cyberondersteunde criminaliteit, en de vier categorieën van David Wall."
+                "caption": "Figuur 3 · Hoe cybercriminaliteit wordt gegroepeerd: cyberafhankelijke en cyberondersteunde criminaliteit, en de vier categorieën van David Wall.",
+                "chart": {
+                  "type": "taxonomy"
+                }
               }
             }
           ]
@@ -859,9 +863,11 @@
                 ]
               },
               "figure": {
-                "src": "/dfir/routine-activity-theory.svg",
                 "alt": "Diagram van de routine-activiteitentheorie: gemotiveerde dader, geschikt doelwit en een capabele bewaker.",
-                "caption": "Figuur 5 · Routine-activiteitentheorie: criminaliteit ontstaat wanneer een dader, een doelwit en het ontbreken van een bewaker samenkomen."
+                "caption": "Figuur 5 · Routine-activiteitentheorie: criminaliteit ontstaat wanneer een dader, een doelwit en het ontbreken van een bewaker samenkomen.",
+                "chart": {
+                  "type": "routine"
+                }
               }
             },
             {
