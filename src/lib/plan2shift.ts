@@ -12,6 +12,10 @@ export function getPlan2ShiftBook(): string {
 function transformPlan2Shift(raw: string): string {
   let md = raw;
 
+  // Drop the document title line — the book page header renders it already,
+  // and the reader groups the remaining `#` headings (L1/L2/L3/ALL) as categories.
+  md = md.replace(/^#[^\n]*\n/, "");
+
   const tocStart = md.search(/^##[ \t]+Table of Contents[ \t]*$/m);
   if (tocStart >= 0) {
     const afterToc = md.slice(tocStart);

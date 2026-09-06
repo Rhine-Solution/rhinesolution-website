@@ -27,19 +27,15 @@ export default function Plan2ShiftBookPage() {
         <p className={newsStyles.crumbs}>
           <Link href="/en/projects/plan2shift">← Plan2Shift project</Link>
         </p>
-        <article className={newsStyles.article}>
-          <header className={newsStyles.articleHead}>
-            <h1>PLAN2SHIFT — Product &amp; Technical Book</h1>
-            <p className={newsStyles.lede}>
-              One document, three reading layers: the pitch, the product and the technical
-              source of truth — market, roadmap, architecture, data model, security and
-              operations, with diagrams.
-            </p>
-          </header>
-          <div className={newsStyles.cardBody}>
-            <BookReader content={book} />
-          </div>
-        </article>
+        <header className={newsStyles.articleHead}>
+          <h1>PLAN2SHIFT — Product &amp; Technical Book</h1>
+          <p className={newsStyles.lede}>
+            One document, three reading layers: the pitch, the product and the
+            technical source of truth — market, roadmap, architecture, data model,
+            security and operations, with diagrams.
+          </p>
+        </header>
+        <BookReader content={book} />
         <p className={newsStyles.back}>
           <Link href="/en/projects/plan2shift" className="btn btn-secondary">
             ← Back to Plan2Shift

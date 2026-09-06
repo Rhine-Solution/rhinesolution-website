@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
 import ReactMarkdown from "react-markdown";
 import type { Components } from "react-markdown";
 import remarkGfm from "remark-gfm";
@@ -8,56 +8,108 @@ import rehypeHighlight from "rehype-highlight";
 import Mermaid from "./Mermaid";
 import styles from "./book.module.css";
 
-type TocItem = { level: number; text: string; id: string; children: TocItem[] };
+type Node = { level: number; text: string; id: string; children: Node[] };
+type Category = { text: string; id: string; children: Node[] };
 
 export default function BookReader({ content }: { content: string }) {
-  const toc = useMemo(() => parseHeadings(content), [content]);
+  const categories = useMemo(() => parseCategories(content), [content]);
+  const [active, setActive] = useState<string>("");
+
+  // Scrollspy: highlight the topmost section intersecting the reading band.
+  useEffect(() => {
+    const targets = document.querySelectorAll<HTMLElement>("[data-book-section]");
+    if (targets.length === 0) return;
+    const visible = new Set<HTMLElement>();
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) visible.add(entry.target as HTMLElement);
+          else visible.delete(entry.target as HTMLElement);
+        }
+        let bestEl: HTMLElement | null = null;
+        for (const el of visible) {
+          if (!bestEl || el.getBoundingClientRect().top < bestEl.getBoundingClientRect().top) {
+            bestEl = el;
+          }
+        }
+        if (bestEl) setActive(bestEl.id);
+      },
+      { rootMargin: "-15% 0px -55% 0px", threshold: 0 }
+    );
+    targets.forEach((t) => observer.observe(t));
+    return () => observer.disconnect();
+  }, [content]);
 
   return (
-    <>
-      {toc.length > 0 && (
-        <nav className={styles.toc} aria-label="Table of contents">
-          <h2 className={styles.tocTitle}>Contents</h2>
-          <TocList items={toc} />
+    <div className={styles.layout}>
+      <aside className={styles.sidebar}>
+        <p className={styles.sidebarTitle}>Contents</p>
+        <nav className={styles.sidebarNav} aria-label="Table of contents">
+          {categories.map((cat) => (
+            <div className={styles.category} key={cat.id}>
+              <a
+                className={active === cat.id ? styles.catActive : undefined}
+                href={`#${cat.id}`}
+              >
+                {cat.text}
+              </a>
+              {cat.children.length > 0 && (
+                <ul className={styles.catList}>
+                  {cat.children.map((item) => (
+                    <li key={item.id}>
+                      <a
+                        className={active === item.id ? styles.linkActive : undefined}
+                        href={`#${item.id}`}
+                      >
+                        {item.text}
+                      </a>
+                      {item.children.length > 0 && (
+                        <ul className={styles.subList}>
+                          {item.children.map((sub) => (
+                            <li key={sub.id}>
+                              <a
+                                className={active === sub.id ? styles.linkActive : undefined}
+                                href={`#${sub.id}`}
+                              >
+                                {sub.text}
+                              </a>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
+          ))}
         </nav>
-      )}
-      <div className={styles.actions}>
-        <span className={styles.printHint}>Save as PDF via your browser&apos;s print dialog</span>
-        <button type="button" className="btn btn-primary" onClick={() => window.print()}>
-          Download as PDF
-        </button>
+      </aside>
+      <div className={styles.book}>
+        <div className={styles.actions}>
+          <span className={styles.printHint}>Save as PDF via your browser&apos;s print dialog</span>
+          <button type="button" className="btn btn-primary" onClick={() => window.print()}>
+            Download as PDF
+          </button>
+        </div>
+        <div className={styles.markdown}>
+          <ReactMarkdown
+            remarkPlugins={[remarkGfm]}
+            rehypePlugins={[rehypeHighlight]}
+            components={markdownComponents}
+          >
+            {content}
+          </ReactMarkdown>
+        </div>
       </div>
-      <div className={styles.markdown}>
-        <ReactMarkdown
-          remarkPlugins={[remarkGfm]}
-          rehypePlugins={[rehypeHighlight]}
-          components={markdownComponents}
-        >
-          {content}
-        </ReactMarkdown>
-      </div>
-    </>
-  );
-}
-
-function TocList({ items }: { items: TocItem[] }) {
-  if (items.length === 0) return null;
-  return (
-    <ul className={styles.tocList}>
-      {items.map((item) => (
-        <li key={item.id} className={item.level === 1 ? styles.tocL1 : undefined}>
-          <a href={`#${item.id}`}>{item.text}</a>
-          {item.children.length > 0 && <TocList items={item.children} />}
-        </li>
-      ))}
-    </ul>
+    </div>
   );
 }
 
 const markdownComponents: Components = {
-  h1: ({ children }) => <h1 id={slugify(textFromChildren(children))}>{children}</h1>,
-  h2: ({ children }) => <h2 id={slugify(textFromChildren(children))}>{children}</h2>,
-  h3: ({ children }) => <h3 id={slugify(textFromChildren(children))}>{children}</h3>,
+  h1: ({ children }) => <HeadingTag tag="h1">{children}</HeadingTag>,
+  h2: ({ children }) => <HeadingTag tag="h2">{children}</HeadingTag>,
+  h3: ({ children }) => <HeadingTag tag="h3">{children}</HeadingTag>,
   a: ({ href, children }) => (
     <a
       href={href}
@@ -89,6 +141,16 @@ const markdownComponents: Components = {
   },
 };
 
+function HeadingTag({ tag, children }: { tag: "h1" | "h2" | "h3"; children: React.ReactNode }) {
+  const id = slugify(textFromChildren(children));
+  const Tag = tag as "h1";
+  return (
+    <Tag id={id} data-book-section={id}>
+      {children}
+    </Tag>
+  );
+}
+
 function textFromChildren(children: React.ReactNode): string {
   if (Array.isArray(children)) return children.map(String).join("");
   return String(children ?? "");
@@ -101,13 +163,13 @@ function slugify(text: string): string {
     .replace(/^-+|-+$/g, "");
 }
 
-// Parse heading outline for the generated table of contents. Fenced code
-// blocks are skipped so `#` in SQL or config samples never becomes an entry.
-function parseHeadings(md: string): TocItem[] {
-  const roots: TocItem[] = [];
-  const stack: TocItem[] = [];
+// Parse the heading outline into categories (the `#` layer headings, e.g.
+// "L1 — THE PITCH LAYER") with their `##` sections and `###` sub-sections.
+// Fenced code blocks are skipped so `#` in SQL or config samples is ignored.
+function parseCategories(md: string): Category[] {
+  const cats: Category[] = [];
+  let current: Category | null = null;
   let inFence = false;
-  let isFirstHeading = true;
 
   for (const line of md.replace(/\r\n/g, "\n").split("\n")) {
     if (/^\s*```/.test(line)) {
@@ -123,18 +185,21 @@ function parseHeadings(md: string): TocItem[] {
     const text = m[2].replace(/[*_`~]/g, "").trim();
     if (!text) continue;
 
-    if (isFirstHeading) {
-      isFirstHeading = false; // the document title — not part of the outline
+    if (level === 1) {
+      current = { text, id: slugify(text), children: [] };
+      cats.push(current);
       continue;
     }
+    if (!current) continue;
 
-    const item: TocItem = { level, text, id: slugify(text), children: [] };
-    while (stack.length > 0 && stack[stack.length - 1].level >= level) stack.pop();
-    const parent = stack.length > 0 ? stack[stack.length - 1] : undefined;
-    if (parent) parent.children.push(item);
-    else roots.push(item);
-    stack.push(item);
+    const node: Node = { level, text, id: slugify(text), children: [] };
+    if (level === 2) {
+      current.children.push(node);
+    } else if (level === 3) {
+      const last = current.children[current.children.length - 1];
+      if (last) last.children.push(node);
+    }
   }
 
-  return roots;
+  return cats;
 }

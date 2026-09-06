@@ -12,7 +12,7 @@
 | **Repo HEAD** | `5708154` (2026-09-06) — HttpOnly cookie auth, multi-tenant foundation, 9 Dutch roles, permission matrix, dashboard shell, TOTP support codes, security.txt / Terms / Web Analytics / GTranslate |
 | **Version** | 1.0.0 |
 | **Last updated** | 2026-09-06 |
-| **Maintainers** | Owner (teoal) + colleague (Mayumi) + AI swarm (Brain) |
+| **Maintainers** | Owner (RAGNAROK) + colleague (ZeroMeister) + AI swarm (AI BRAIN) |
 | **Living doc** | Updated every planning cycle from the machine-brain knowledge base |
 
 ---
