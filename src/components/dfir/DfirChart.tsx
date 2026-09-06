@@ -121,6 +121,7 @@ function buildTimelineConfig() {
     options: {
       responsive: true,
       maintainAspectRatio: false,
+      animation: false,
       plugins: {
         legend: { display: false },
         tooltip: timelineTooltip(),
@@ -271,6 +272,7 @@ function diagramBase() {
   return {
     responsive: true,
     maintainAspectRatio: false,
+    animation: false,
     plugins: {
       legend: { display: false },
       tooltip: {
@@ -397,6 +399,7 @@ function buildTaxonomyConfig() {
           pointRadius: 0,
           pointHoverRadius: 0,
           fill: false,
+          datalabels: { display: false },
         })),
         {
           label: "Cybercrime categories",
@@ -423,7 +426,7 @@ function buildTaxonomyConfig() {
           },
         },
         datalabels: {
-          formatter: (v: { label: string }) => v.label,
+          formatter: (v: { label?: string }) => v.label ?? "",
           anchor: "center" as const,
           align: "end" as const,
           offset: 8,
@@ -477,6 +480,7 @@ function buildRoutineConfig() {
           pointRadius: 0,
           pointHoverRadius: 0,
           fill: false,
+          datalabels: { display: false },
         })),
         {
           label: "Routine activity theory",
@@ -503,7 +507,7 @@ function buildRoutineConfig() {
           },
         },
         datalabels: {
-          formatter: (v: { label: string }) => v.label,
+          formatter: (v: { label?: string }) => v.label ?? "",
           anchor: "center" as const,
           align: (ctx: { dataIndex: number }) =>
             ctx.dataIndex === 3 ? ("center" as const) : ("end" as const),
