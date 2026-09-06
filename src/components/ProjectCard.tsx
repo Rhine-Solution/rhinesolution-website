@@ -5,6 +5,7 @@ import {
   LuGlobe,
   LuMusic,
   LuServer,
+  LuWallet,
   LuArrowUpRight,
 } from "react-icons/lu";
 import type { ContentProject } from "@/lib/i18n";
@@ -15,6 +16,7 @@ const projectIcons: Record<string, typeof LuGlobe> = {
   server: LuServer,
   music: LuMusic,
   calendar: LuCalendarDays,
+  wallet: LuWallet,
 };
 
 type Props = {

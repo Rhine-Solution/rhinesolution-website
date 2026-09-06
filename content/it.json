@@ -996,5 +996,21 @@
     "year": 2026,
     "team": "RAGNAROK + ZeroMeister",
     "live_url": "https://plan2shift.com/"
+  },
+  "project_spendtracker": {
+    "title": "SpendTracker",
+    "slug": "spendtracker",
+    "icon": "wallet",
+    "summary": "Un tracker di spese carino e accogliente con stile pixel pastello. Monitora spese, più valute e obiettivi di risparmio -- tutto salvato localmente.",
+    "stack": [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "localStorage"
+    ],
+    "year": 2026,
+    "team": "ZeroMeister",
+    "live_url": "/spendtracker"
   }
 }
