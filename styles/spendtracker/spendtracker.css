@@ -740,7 +740,7 @@ body {
   color: var(--ink);
   background-image: radial-gradient(#eecce0 1px, transparent 1px);
   background-size: 20px 20px;
-  font-family: "Fredoka", ui-rounded, system-ui, -apple-system, "Segoe UI", Roboto,
+  font-family: var(--font-fredoka), ui-rounded, system-ui, -apple-system, "Segoe UI", Roboto,
     sans-serif;
   -webkit-font-smoothing: antialiased;
 }

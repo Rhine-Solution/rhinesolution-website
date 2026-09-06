@@ -169,7 +169,7 @@ export function useAppState() {
 function computeStreak(days: Set<string>): number {
   const today = new Date(todayISO() + "T00:00:00");
   // allow streak that starts today OR yesterday
-  let cursor = new Date(today);
+  const cursor = new Date(today);
   if (!days.has(toLocalISO(cursor))) {
     cursor.setDate(cursor.getDate() - 1);
     if (!days.has(toLocalISO(cursor))) return 0;

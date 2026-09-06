@@ -1,5 +1,12 @@
 import type { Metadata, Viewport } from "next";
+import { Fredoka } from "next/font/google";
 import "../../styles/spendtracker/spendtracker.css";
+
+const fredoka = Fredoka({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-fredoka",
+});
 
 export const metadata: Metadata = {
   title: "SpendTracker — Cute Money Tracker",
@@ -20,15 +27,7 @@ export default function SpendTrackerLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="light">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap"
-          rel="stylesheet"
-        />
-      </head>
+    <html lang="en" className={`${fredoka.variable} light`}>
       <body>{children}</body>
     </html>
   );
