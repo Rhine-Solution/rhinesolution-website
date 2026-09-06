@@ -129,12 +129,17 @@ export default async function CybercrimeReportPage({ params }: Props) {
                 )}
                 {s.figure && (
                   <figure className={`dfir-figure${s.figure.src.includes("top-20") ? " dfir-figure--wide" : ""}`}>
-                    <Image
-                      src={s.figure.src}
-                      alt={s.figure.alt}
-                      width={s.figure.src.includes("top-20") ? 850 : 768}
-                      height={s.figure.src.includes("top-20") ? 381 : 1296}
-                    />
+                    {s.figure.src.endsWith(".svg") ? (
+                      // eslint-disable-next-line @next/next/no-img-element
+                      <img src={s.figure.src} alt={s.figure.alt} />
+                    ) : (
+                      <Image
+                        src={s.figure.src}
+                        alt={s.figure.alt}
+                        width={s.figure.src.includes("top-20") ? 850 : 768}
+                        height={s.figure.src.includes("top-20") ? 381 : 1296}
+                      />
+                    )}
                     <figcaption>{s.figure.caption}</figcaption>
                   </figure>
                 )}

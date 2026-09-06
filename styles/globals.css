@@ -1970,6 +1970,9 @@ p { margin-bottom: var(--space-3); }
   height: auto;
 }
 .dfir-figure--wide img { max-width: min(100%, 640px); }
+.dfir-figure svg[width="100%"],
+.dfir-figure img[src$=".svg"] { max-width: min(100%, 720px); }
+.dfir-figure svg[width="100%"] { height: auto; }
 .dfir-figure figcaption {
   margin-top: var(--space-2);
   font-size: 0.8rem;
