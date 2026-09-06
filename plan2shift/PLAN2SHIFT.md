@@ -9,7 +9,7 @@
 | | |
 |---|---|
 | **Status** | Research + planning. **No product build until the owner says "build".** Phase-0 groundwork partially delivered by colleague (multi-tenancy, auth hardening). |
-| **Repo HEAD** | `823c711` (2026-09-06) — multi-tenant foundation, 9 Dutch roles, permission matrix, dashboard shell, TOTP support codes |
+| **Repo HEAD** | `5708154` (2026-09-06) — HttpOnly cookie auth, multi-tenant foundation, 9 Dutch roles, permission matrix, dashboard shell, TOTP support codes, security.txt / Terms / Web Analytics / GTranslate |
 | **Version** | 1.0.0 |
 | **Last updated** | 2026-09-06 |
 | **Maintainers** | Owner (teoal) + colleague (Mayumi) + AI swarm (Brain) |
@@ -312,20 +312,18 @@ flowchart LR
 
 ### Phase 0 — Foundation hardening (partially delivered)
 
-**Delivered by colleague (2026-09-06, repo `823c711`):**
+**Delivered (2026-09-06, repo `823c711` → hardened through `5708154`):**
 - Multi-tenant schema: `companies`, `company_members`, `company_support`, `support_audit`; JWT carries `company_id + role + token_version`.
 - **9 canonical Dutch roles** + legacy aliases; **27-permission matrix** in `lib/permissions.ts` (single source of truth).
 - Role-filtered `/dashboard` shell; server-computed permissions via `/api/auth/me`.
-- **Auth hardening**: JWT revocation via `token_version`, body-size guard, nonce CSP + `strict-dynamic`, HSTS 1y at the edge, security headers.
-- **TOTP support codes** (HR/Executive show code; Beheerder/Eigenaar/Ops jump-in, 1h audited token).
+- **Auth hardening**: **HttpOnly cookie sessions** (no JWT in JS-accessible storage; `plan2shift_session` + `plan2shift_support` cookies), JWT revocation via `token_version`, body-size guard, **rate limits** (Cloudflare rule + in-memory limiter) on login/Turnstile/switch-company, Turnstile + disposable-email block, HSTS 1y at the edge, security headers/CSP.
+- **TOTP support codes** (HR/Executive show code; Beheerder/Eigenaar/Ops jump-in, 1h audited support cookie).
 
 **Remaining (gates everything):**
-- 🔴 **HttpOnly cookie auth** — replace JWT in `sessionStorage`/`localStorage` (XSS-readable). Spec exists.
-- 🔴 **Rate-limit `/api/auth/login`**.
-- 🔴 Turnstile sitekey → `NEXT_PUBLIC_TURNSTILE_SITE_KEY` (currently hardcoded).
 - Product schema beyond members: shifts, assignments, verlof pots, etc. (data-model section).
 - Authenticated app shell for the product routes (`/dashboard` modules are the shell — feature pages come in Phase 1).
 - GDPR ops: DPA Art 28, 52-week time-entry retention, EU residency.
+- **Sentry + Resend/Queues: formally deferred to Phase 1** (not wired in Phase 0; see Integrations Matrix).
 
 ### Phase 1 — Horeca MVP (the authoritative scope: **12 items**, from [[plan2shift-prd]])
 
@@ -533,6 +531,8 @@ flowchart LR
 
 **Rule:** MT is fine for the marketing site; the app's legal/CAO/ziekmelding strings are curated only. Keep the two boundaries separate.
 
+> **Note (2026-09-06):** the marketing `/terms` page is now **Dutch** (curated, per the NL-only rule) — the canonical language for legal content. Other languages are served by the GTranslate widget on the marketing site.
+
 ---
 
 ## 13. Go-to-Market
@@ -575,13 +575,13 @@ flowchart LR
     W --> S
     W --> A
     A -.build & deploy.-> W
-    W -->|Hyperdrive:127.0.0.1:3307| TUN --> DB
+    W -->|Hyperdrive: db.plan2shift.com:3306 (tunnel)| TUN --> DB
     W -->|turnstile verify| T
 ```
 
-- **Next.js static export** (SSG) → Cloudflare Workers + **Hyperdrive** → **private MySQL** on the Mac Mini via `cloudflared access tcp` (`3306` → `127.0.0.1:3307`).
+- **Next.js static export** (SSG) → Cloudflare Workers + **Hyperdrive** → **private MySQL** on the Mac Mini. Hyperdrive routes through the Cloudflare Tunnel at the internal hostname **`db.plan2shift.com:3306`**. `127.0.0.1:3307` is only the *local* HeidiSQL admin proxy on this PC (`docs/friend-heidisql-access.md`) — it is never part of the runtime request path.
 - Every request scoped by `company_id` from the verified token (never from body/query); `hasPermission` gated server-side.
-- Static assets `Cache-Control` public/immutable for `_next/static`; HTML `no-store`; nonce CSP + `strict-dynamic`.
+- Static assets `Cache-Control` public/immutable for `_next/static`; HTML `no-store`. CSP: `script-src 'self' 'unsafe-inline'` + Turnstile/GTranslate/Cloudflare Insights origins — **nonce/`strict-dynamic` was removed** because a per-response nonce broke hydration against edge-cached HTML on `plan2shift.com`.
 - Simple, low-cost, one-region-first. Barely any COGS at pilot scale (≈€0.15–0.30/venue).
 
 ### Deployment & rollback
@@ -602,7 +602,7 @@ flowchart LR
 
 ## 15. Data Model
 
-### Multi-tenancy (shipped in repo `823c711`)
+### Multi-tenancy (shipped; hardened in repo `5708154`)
 
 ```sql
 companies       (id, name, industry, settings JSON, active, created_at, updated_at)
@@ -612,8 +612,8 @@ support_audit   (id, actor_user_id, company_id, at, ip)
 users           (id, name, email UNIQUE, password_hash, token_version)
 ```
 
-- A `users` row may belong to several companies (no tenant column on users); every future domain table is scoped by `company_id` (our `tenant_id`).
-- JWT: `{ sub, company_id, role, tv, iat, exp (24h) }`; `tv` = `token_version` (revocation on logout/password change).
+- A `users` row may belong to several companies (no tenant column on users); every future domain table is scoped by `company_id` (our `tenant_id`). **Login resolves the user's first active membership** — that single-company resolution is the intended behavior until venue-scoping (open question 1 / risk #10) lands.
+- JWT: `{ sub, company_id, role, tv, iat, exp (24h) }`; support tokens add `scope: "support"` + `company_name`, `exp 1h`; `tv` = `token_version` (revocation on logout/password change).
 - **9 canonical roles**: `medewerker, teamleider, planner, manager, hr, executive, beheerder, eigenaar, op` (legacy aliases map `worker→medewerker`, `admin→beheerder`, `owner→eigenaar`, …). Full matrix: `docs/roles-plan.md`.
 
 ### ER overview (target schema)
@@ -661,18 +661,18 @@ sequenceDiagram
     participant B as Browser
     participant W as Worker API
     participant DB as MySQL
-    B->>W: POST /api/auth/login (email, password, turnstileToken)
+    B->>W: POST /api/auth/login (email, password, turnstileToken, remember)
     W->>DB: SELECT user + token_version + active membership
     DB-->>W: user + company_id + role
-    W-->>B: token JWT(sub, company_id, role, tv, exp 24h)
-    B->>W: GET /api/auth/me
+    W-->>B: Set-Cookie HttpOnly JWT (sub, company_id, role, tv, exp 24h)
+    B->>W: GET /api/auth/me (cookie)
     W->>W: verify JWT + tv + hasPermission
     W-->>B: permissions[] (server-computed)
 ```
 
-- **Turnstile** fail-closed at login (secret `env.TURNSTILE_SECRET`); **disposable-email rejection**; **body-size guard**; per-IP rate limit on switch-company; **JWT revocation** via `token_version`.
-- **Known gap (Phase 0)**: JWT lives in `sessionStorage`/`localStorage` (XSS-readable) → **HttpOnly cookie spec is the fix** (exists in the Brain; must land before Phase 1).
-- CSP: nonce + `strict-dynamic` at the edge; HSTS `max-age=31536000; includeSubDomains`; HTML `no-store`; image-src opened for Commons/Turnstile/GTranslate; X-Frame-Options/referrer/permissions-policy set. GTranslate origins whitelisted (marketing widget only).
+- **Turnstile** fail-closed at login (secret `env.TURNSTILE_SECRET`); **disposable-email rejection**; **body-size guard**; **per-IP rate limits** on login/Turnstile/switch-company (Cloudflare rule + in-memory limiter, per-IP + `cf.colo.id`); **JWT revocation** via `token_version`.
+- **HttpOnly cookie auth is live**: sessions ride on `plan2shift_session` (+ `plan2shift_support` during support jump-in), `HttpOnly; Secure; SameSite=Lax`, with an Origin check on state-changing endpoints. The own session is preserved across support jump-in via the second cookie; `/api/auth/end-support` drops support scope; `/api/auth/session` is a stateless nav check. No JWT is readable by client JS.
+- CSP: `script-src 'self' 'unsafe-inline'` + `challenges.cloudflare.com` + GTranslate origins + `static.cloudflareinsights.com`; HSTS `max-age=31536000; includeSubDomains`; HTML `no-store`; img-src opened for Commons/Turnstile/GTranslate; X-Frame-Options/referrer/permissions-policy set. **Nonce/`strict-dynamic` was removed** — edge-cached HTML on `plan2shift.com` broke hydration with a per-response nonce; `'unsafe-inline'` is the pragmatic, cache-safe standard for the Next.js static export.
 
 ### Compliance rules (the moat) — what blocks vs what advises
 
@@ -702,11 +702,11 @@ sequenceDiagram
     API-->>EX: totp_secret (own company only)
     OPS->>API: POST /api/auth/switch-company companyId + code
     API->>API: rate-limit + TOTP validate (support:jump-in)
-    API-->>OPS: temp JWT scope=support exp 1h
+    API-->>OPS: Set-Cookie plan2shift_support (temp JWT scope=support exp 1h)
     API->>DB: INSERT support_audit (actor, company, ip)
 ```
 
-HR/Executive show their own company's 6-digit code (30s, RFC 6238). Beheerder/Eigenaar/Ops enter a company's code → 1h temp JWT `scope=support`, always audited (`support_audit` row) + "Controlling Business" banner + End Support. Rate-limited, secrets rotatable, never logged.
+HR/Executive show their own company's 6-digit code (30s, RFC 6238). Beheerder/Eigenaar/Ops enter a company's code → 1h temp support cookie `scope=support` (the own session cookie is preserved), always audited (`support_audit` row) + "Controlling Business" banner + **End Support** (`POST /api/auth/end-support` clears the support cookie). Rate-limited, secrets rotatable, never logged.
 
 ---
 
@@ -731,8 +731,8 @@ flowchart LR
 | **iCal** | Calendar sync (tokenless) | Phase 1 | |
 | **CSV fallback** | Export anytime | Phase 1 | Never leave a venue stuck |
 | **Cloudflare** (Workers/Hyperdrive/Turnstile/Access) | Edge, DB tunnel, captcha | 0–4 | |
-| **Sentry** | Error tracking, release-tagged | Phase 0 | |
-| **Resend + Queues** | Transactional email | Phase 0/1 | |
+| **Sentry** | Error tracking, release-tagged | **Phase 1** (deferred from P0) | Not wired in Phase 0; add `SENTRY_DSN` secret + release pin |
+| **Resend + Queues** | Transactional email | **Phase 1** (deferred from P0) | Not wired in Phase 0; add `RESEND_API_KEY`; contact form is still `mailto:` |
 | **SMS provider (NL)** | Off-app notifications, reply verbs | Phase 1 | ~€0.045/message |
 | **GTranslate** | Marketing site MT only | 0 | Never legal/CAO strings |
 | **POS (Lightspeed/Bork)** | Live/omzet labour-cost | Phase 2 | |
@@ -744,7 +744,7 @@ flowchart LR
 
 ```mermaid
 flowchart TD
-    U["UptimeRobot + Sentry on /api/health"] --> A{Incident?}
+    U["UptimeRobot on /api/health"] --> A{Incident?}
     A -->|site| S[Static: cf-cache-status]
     A -->|api| W[Worker: /api/health, wrangler tail]
     A -->|db| D[MySQL + Hyperdrive pool]
@@ -753,9 +753,10 @@ flowchart TD
 ```
 
 - **Backups**: daily dump over tunnel (`mysqldump … --single-transaction …`), gzip; **RPO 24h / RTO ≤2h**; offsite **encrypted** copies (restic/rclone crypt — never raw in git); retention 14d + 4w + 3m; **monthly restore drill**.
-- **Monitoring**: uptime + Sentry (release-tagged) + Workers logs (`wrangler tail --status error`) + Hyperdrive pool watch + Mac Mini host check (disk/memory/processes) → alert on symptoms, link to this runbook.
-- **Secrets**: all via `wrangler secret put` — `AUTH_SECRET`, `TURNSTILE_SECRET`, `SENTRY_DSN`, `RESEND_API_KEY`; DB creds in the Hyperdrive binding; cloudflared **pinned v2026.5.1** (v2026.6.0 ignores service tokens, issue #1673), finite token expiry + notification; rotation = generate → deploy → verify → revoke.
+- **Monitoring**: uptime + Workers logs (`wrangler tail --status error`) + Hyperdrive pool watch + Mac Mini host check (disk/memory/processes) → alert on symptoms, link to this runbook. Sentry (release-tagged) lands with Phase 1.
+- **Secrets**: all via `wrangler secret put` — `AUTH_SECRET`, `TURNSTILE_SECRET` (Sentry/Resend secrets arrive with Phase 1); DB creds in the Hyperdrive binding; cloudflared **pinned v2026.5.1** (v2026.6.0 ignores service tokens, issue #1673), finite token expiry + notification; rotation = generate → deploy → verify → revoke.
 - **Incident triage order**: site → worker → DB → tunnel; symptom map (503 = missing env/secret mismatch, 502 = Hyperdrive/DB, 401 = auth path); blameless postmortems with dated actions.
+- **Public surface (shipped)**: `security.txt` at both `/.well-known/security.txt` and `/security.txt` (RFC 9116); `/terms` Terms & Privacy page; Cloudflare Web Analytics beacon (whitelisted in the CSP's `script-src`).
 - **Support jump-in**: how we fix a pilot hands-on (see Security); test the full loop in Phase-0 pre-flight.
 
 ```mermaid
@@ -805,7 +806,7 @@ flowchart LR
 
 | # | Risk | Impact | Mitigation | Phase |
 |---|---|---|---|---|
-| 1 | Security debt (JWT in storage, no login rate-limit) | GDPR fines, account takeovers | **Phase 0 gate** — HttpOnly cookie spec, rate limit, sitekey env | 0 |
+| 1 | Security debt (JWT in storage, no login rate-limit) | GDPR fines, account takeovers | **Resolved 2026-09-06** — HttpOnly cookie sessions, Cloudflare + in-memory rate limits, sitekey in env | 0 |
 | 2 | Ziekmelding = GDPR Art 9 data | Fine + trust loss | Fact-only + expected-return; manager-confirm betermelding | 1 |
 | 3 | Nmbrs production access unverified (partner/certification gates) | Payroll link stalls | Mock-first spike; Exact CSV + manual export fallback | 1 |
 | 4 | `min_staff` undefined per venue | Hero roster blocked | Derived-from-contract baseline + guarded override (PRD item 2) | 1 |
@@ -813,7 +814,7 @@ flowchart LR
 | 6 | Churn > 2%/mo (horeca seasonality) | LTV halves → not viable | Nmbrs link + compliance moat + win-switches playbook | ongoing |
 | 7 | Small-venue mix skew free-≤5 cannibalization | Breakeven → 350+ venues | Target ≥15-seat venues; add-ons | ongoing |
 | 8 | Single MySQL origin = SPOF | Data loss | RPO24h backups + restore drills + encrypted offsite | 0 |
-| 9 | Marketing overclaims (AI badge, ISO/B-Corp footer) | Trust risk | Verify or remove all claims before launch | 0/1 |
+| 9 | Marketing overclaims (AI badge, ISO/B-Corp footer) | Trust risk | Footer claims removed 2026-09-06 → honest "GDPR-ready · Hosted on Cloudflare"; audit any remaining claims before launch | 0/1 |
 | 10 | Venue-scoping (multi-location) missing from company-level RBAC | Phase-1.5 delay | Layered `user_venue_roles`; design the JWT venue-claim then | 1.5 |
 
 ### Compliance calendar (track — verify official dates each renewal)

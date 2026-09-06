@@ -1,7 +1,6 @@
 "use client";
 
 import { useMemo } from "react";
-import Link from "next/link";
 import ReactMarkdown from "react-markdown";
 import type { Components } from "react-markdown";
 import remarkGfm from "remark-gfm";
@@ -15,36 +14,29 @@ export default function BookReader({ content }: { content: string }) {
   const toc = useMemo(() => parseHeadings(content), [content]);
 
   return (
-    <div className={styles.wrap}>
-      <div className={styles.toolbar}>
-        <Link href="/en/projects/plan2shift" className={styles.backLink}>
-          ← Plan2Shift project
-        </Link>
-        <span className={styles.toolbarSpacer} />
+    <>
+      {toc.length > 0 && (
+        <nav className={styles.toc} aria-label="Table of contents">
+          <h2 className={styles.tocTitle}>Contents</h2>
+          <TocList items={toc} />
+        </nav>
+      )}
+      <div className={styles.actions}>
         <span className={styles.printHint}>Save as PDF via your browser&apos;s print dialog</span>
         <button type="button" className="btn btn-primary" onClick={() => window.print()}>
           Download as PDF
         </button>
       </div>
-
-      <div className={styles.layout}>
-        {toc.length > 0 && (
-          <nav className={styles.toc} aria-label="Table of contents">
-            <h2 className={styles.tocTitle}>Contents</h2>
-            <TocList items={toc} />
-          </nav>
-        )}
-        <article className={styles.markdown}>
-          <ReactMarkdown
-            remarkPlugins={[remarkGfm]}
-            rehypePlugins={[rehypeHighlight]}
-            components={markdownComponents}
-          >
-            {content}
-          </ReactMarkdown>
-        </article>
+      <div className={styles.markdown}>
+        <ReactMarkdown
+          remarkPlugins={[remarkGfm]}
+          rehypePlugins={[rehypeHighlight]}
+          components={markdownComponents}
+        >
+          {content}
+        </ReactMarkdown>
       </div>
-    </div>
+    </>
   );
 }
 
