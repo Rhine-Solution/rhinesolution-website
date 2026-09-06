@@ -3,7 +3,6 @@
 import { useEffect, useRef } from "react";
 import * as THREE from "three";
 import { HDRLoader } from "three/examples/jsm/loaders/HDRLoader.js";
-import { createShaderScene } from "./scenes/shader";
 import { createDriftScene } from "./scenes/drift";
 import { createLinesScene } from "./scenes/lines";
 import { createRoadsScene } from "./scenes/roads";
@@ -11,8 +10,7 @@ import { createGlowScene } from "./scenes/glow";
 import type { RhineScene } from "./types";
 
 const SCENES: RhineScene[] = [
-  createShaderScene(),
-  createDriftScene(),
+createDriftScene(),
   createLinesScene(),
   createRoadsScene(),
   createGlowScene(),

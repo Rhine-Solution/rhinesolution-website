@@ -72,6 +72,42 @@ export function createDriftScene(): RhineScene {
       const points = new THREE.Points(geo, mat);
       group.add(points);
 
+      // Wireframe cubes — sparse, slow rotation (the original clean look)
+      const cubes: THREE.LineSegments[] = [];
+      const cubeCount = 14;
+      for (let i = 0; i < cubeCount; i++) {
+        const size = 0.4 + Math.random() * 0.8;
+        const cubeGeo = new THREE.BoxGeometry(size, size, size);
+        const edges = new THREE.EdgesGeometry(cubeGeo);
+        const lineMat = new THREE.LineBasicMaterial({
+          color: palette.BLUE_SOFT.clone(),
+          transparent: true,
+          opacity: 0.35,
+        });
+        const lines = new THREE.LineSegments(edges, lineMat);
+        lines.position.set(
+          (Math.random() - 0.5) * 12,
+          (Math.random() - 0.5) * 8,
+          (Math.random() - 0.5) * 6 - 2
+        );
+        lines.rotation.set(
+          Math.random() * Math.PI,
+          Math.random() * Math.PI,
+          Math.random() * Math.PI
+        );
+        const userData = {
+          rotSpeed: new THREE.Vector3(
+            (Math.random() - 0.5) * 0.15,
+            (Math.random() - 0.5) * 0.15,
+            (Math.random() - 0.5) * 0.15
+          ),
+          floatPhase: Math.random() * Math.PI * 2,
+        };
+        lines.userData = userData;
+        cubes.push(lines);
+        group.add(lines);
+      }
+
       return {
         group,
         update: (ctx, dt, time) => {
@@ -83,10 +119,25 @@ export function createDriftScene(): RhineScene {
           const fieldRot = theatre?.fieldRotation ?? 0;
           const particleSpeed = theatre?.particleSpeed ?? 1;
           group.rotation.y = (fieldRot * Math.PI) / 180;
+          const scaledDt = dt * particleSpeed;
+          for (const lines of cubes) {
+            const u = lines.userData as {
+              rotSpeed: THREE.Vector3;
+              floatPhase: number;
+            };
+            lines.rotation.x += u.rotSpeed.x * scaledDt;
+            lines.rotation.y += u.rotSpeed.y * scaledDt;
+            lines.rotation.z += u.rotSpeed.z * scaledDt;
+            lines.position.y += Math.sin(time * 0.4 + u.floatPhase) * 0.001;
+          }
         },
         dispose: () => {
           geo.dispose();
           mat.dispose();
+          for (const lines of cubes) {
+            lines.geometry.dispose();
+            (lines.material as THREE.Material).dispose();
+          }
         },
       };
     },
