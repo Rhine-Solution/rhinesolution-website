@@ -266,15 +266,15 @@
   color: #82aaff;
 }
 
-/* ---- mermaid diagrams ---- */
+/* ---- mermaid diagrams (dark, matching site theme) ---- */
 .diagram {
   margin: 1.5rem 0;
   padding: 1rem;
-  background: #fdfbf7;
-  border: 1px solid #e3dccb;
+  background: rgba(10, 18, 46, 0.5);
+  border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
   overflow-x: auto;
-  color: #1a1a1a;
+  color: var(--color-text);
 }
 
 .diagram :global(svg) {

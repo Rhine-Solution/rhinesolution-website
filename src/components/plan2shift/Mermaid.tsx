@@ -16,9 +16,36 @@ function getMermaid() {
       };
       mermaid.initialize({
         startOnLoad: false,
-        theme: "neutral",
+        theme: "base",
         securityLevel: "strict",
-        fontFamily: "Inter, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif",
+        fontFamily: "'Rijksoverheid Sans', -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif",
+        themeVariables: {
+          background: "transparent",
+          primaryColor: "#0d1830",
+          primaryBorderColor: "#7EA7FF",
+          primaryTextColor: "#F2F5FF",
+          secondaryColor: "#0a1226",
+          secondaryBorderColor: "#4a6db3",
+          secondaryTextColor: "#F2F5FF",
+          tertiaryColor: "#1a2640",
+          tertiaryBorderColor: "#C4A882",
+          tertiaryTextColor: "#F8F5F0",
+          lineColor: "#7EA7FF",
+          textColor: "#F2F5FF",
+          nodeBorder: "#4a6db3",
+          clusterBkg: "#0d1830",
+          clusterBorder: "#7EA7FF",
+          titleColor: "#C4A882",
+          edgeLabelBackground: "#0a1226",
+          fontSize: "14px",
+          cScale0: "#2C6BFF",
+          cScale1: "#7EA7FF",
+          cScale2: "#C4A882",
+          cScale3: "#4a6db3",
+          cScale4: "#e8d5c4",
+          cScale5: "#3A4848",
+          cScale6: "#1a2640",
+        },
       });
       return mermaid;
     });
