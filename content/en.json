@@ -136,6 +136,12 @@
         "href": "/dfir/lab041",
         "meta": "Digital Forensics · LAB041",
         "summary": "A forensic examination of an old MP3 player, tracing pirated music via metadata, slack space and file carving."
+      },
+      {
+        "title": "SpendTracker",
+        "href": "/spendtracker",
+        "meta": "Money · local-first",
+        "summary": "A cute, cozy money tracker with pastel pixel-art. Track spending, multiple currencies, and savings goals -- all stored locally on your device."
       }
     ]
   },
@@ -996,21 +1002,5 @@
     "year": 2026,
     "team": "RAGNAROK + ZeroMeister",
     "live_url": "https://plan2shift.com/"
-  },
-  "project_spendtracker": {
-    "title": "SpendTracker",
-    "slug": "spendtracker",
-    "icon": "wallet",
-    "summary": "A cute, cozy money tracker with pastel pixel-art vibes. Track spending, multi-currency balances, and savings goals -- all stored locally on your device.",
-    "stack": [
-      "Next.js",
-      "React",
-      "TypeScript",
-      "Tailwind CSS",
-      "localStorage"
-    ],
-    "year": 2026,
-    "team": "ZeroMeister",
-    "live_url": "/spendtracker"
   }
 }
