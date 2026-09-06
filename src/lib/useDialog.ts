@@ -1,31 +1,47 @@
 import { useEffect, useRef } from "react";
 
-// Accessible dialog: initial focus, Tab trap, Escape to close, focus restore on close.
+// Accessible dialog: focus trap, Escape to close, focus restore on close.
+// All behavior is keyed on the `open` transition only — re-renders (typing,
+// state updates) must NEVER steal focus back to the dialog's first element.
 export function useDialog(open: boolean, onClose: () => void, label: string) {
   const ref = useRef<HTMLDivElement>(null);
+  const prevOpen = useRef(false);
   const prevFocus = useRef<HTMLElement | null>(null);
+  const onCloseRef = useRef(onClose);
+  const labelRef = useRef(label);
+  onCloseRef.current = onClose;
+  labelRef.current = label;
 
   useEffect(() => {
-    if (!open) return;
+    const wasOpen = prevOpen.current;
+    prevOpen.current = open;
+    if (!open) return; // no setup while closed (cleanup of the open run restores focus)
+
     const el = ref.current;
     if (!el) return;
-    prevFocus.current = document.activeElement as HTMLElement | null;
-    el.setAttribute("role", "dialog");
-    el.setAttribute("aria-modal", "true");
-    el.setAttribute("aria-label", label);
+    if (!wasOpen) {
+      prevFocus.current = document.activeElement as HTMLElement | null;
+      el.setAttribute("role", "dialog");
+      el.setAttribute("aria-modal", "true");
+      el.setAttribute("aria-label", labelRef.current);
+    }
 
     const focusables = () =>
-      Array.from(el.querySelectorAll<HTMLElement>(
-        'a[href], button:not([disabled]), input, textarea, select, [tabindex]:not([tabindex="-1"])'
-      )).filter((n) => n.offsetParent !== null);
+      Array.from(
+        el.querySelectorAll<HTMLElement>(
+          'a[href], button:not([disabled]), input, textarea, select, [tabindex]:not([tabindex="-1"])'
+        )
+      ).filter((n) => n.offsetParent !== null);
     const first = () => focusables()[0];
     const last = () => focusables()[focusables().length - 1];
-    first()?.focus();
+
+    // Only on the transition into open — never on later re-renders.
+    if (!wasOpen) first()?.focus();
 
     const onKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
         e.preventDefault();
-        onClose();
+        onCloseRef.current();
         return;
       }
       if (e.key !== "Tab") return;
@@ -43,9 +59,10 @@ export function useDialog(open: boolean, onClose: () => void, label: string) {
     document.addEventListener("keydown", onKeyDown, true);
     return () => {
       document.removeEventListener("keydown", onKeyDown, true);
-      prevFocus.current?.focus();
+      // Closing: return focus to whatever opened the dialog.
+      if (wasOpen) prevFocus.current?.focus();
     };
-  }, [open, onClose, label]);
+  }, [open]);
 
   return ref;
 }

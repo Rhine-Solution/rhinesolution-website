@@ -16,6 +16,8 @@ declare global {
         opts: {
           sitekey: string;
           theme: "dark" | "light" | "auto";
+          size?: "normal" | "compact" | "flexible" | "invisible";
+          appearance?: "always" | "execute" | "interaction-only";
           callback: (token: string) => void;
           "expired-callback"?: () => void;
           "error-callback"?: () => void;
@@ -31,6 +33,7 @@ type TurnstileProps = {
   onExpired?: () => void;
   onError?: () => void;
   theme?: "dark" | "light" | "auto";
+  size?: "normal" | "compact" | "flexible" | "invisible";
 };
 
 function loadTurnstileScript(): Promise<void> {
@@ -65,7 +68,7 @@ function ensureScript(): Promise<void> {
   return scriptLoading;
 }
 
-export default function Turnstile({ onToken, onExpired, onError, theme = "dark" }: TurnstileProps) {
+export default function Turnstile({ onToken, onExpired, onError, theme = "dark", size = "normal" }: TurnstileProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const widgetIdRef = useRef<string | undefined>(undefined);
   const [status, setStatus] = useState<TurnstileStatus>({ state: "loading" });
@@ -90,6 +93,7 @@ export default function Turnstile({ onToken, onExpired, onError, theme = "dark" 
         widgetIdRef.current = window.turnstile.render(containerRef.current, {
           sitekey: siteKey,
           theme,
+          size,
           callback: (token: string) => {
             onToken(token);
             setStatus({ state: "ready", token });
