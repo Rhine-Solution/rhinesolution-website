@@ -563,7 +563,12 @@
                   "body": "Die Pakete erreichen die andere Seite, werden in der richtigen Reihenfolge wieder zusammengesetzt, und das Gerät des Empfängers zeigt die Nachricht an."
                 }
               ],
-              "note": "Jede Nachricht reist also durch eine Mischung aus Funkwellen, Kupferdrähten, Glasfasern und Unterseekabeln. Für uns fühlt es sich nur drahtlos an."
+              "note": "Jede Nachricht reist also durch eine Mischung aus Funkwellen, Kupferdrähten, Glasfasern und Unterseekabeln. Für uns fühlt es sich nur drahtlos an.",
+              "figure": {
+                "src": "/dfir/journey-of-a-message.svg",
+                "alt": "Flussdiagramm der sieben Stationen einer Nachricht: Gerät, Funkwellen, Router und Modem, ISP-Netz, regionale Knoten, Seekabel, Ziel.",
+                "caption": "Abbildung 1 · Der Weg einer Nachricht von einem Gerät zu ihrem Ziel (eigenes Diagramm)."
+              }
             },
             {
               "heading": "1.3 Pakete, IP-Adressen und Protokolle",
@@ -650,9 +655,9 @@
                 "Das letzte Stück vom Netzwerk des Anbieters bis zum Haus wird als letzte Meile bezeichnet. Es ist der teuerste Teil zu bauen, weshalb Städte Glasfaser bekommen, während ländliche und arme Gebiete langsamere Verbindungen oder gar keine erhalten. Neuere Technologien wie Mikrowellenverbindungen und 5G helfen, die Lücke zu schließen, aber grundlegender Internetzugang ist in vielen Teilen der Welt immer noch ein Problem."
               ],
               "figure": {
-                "src": "/dfir/a-brief-history-of-the-internet-graphic-768x1296.jpg",
-                "alt": "Infografik: eine kurze Geschichte des Internets",
-                "caption": "Abbildung 1 · Eine kurze Geschichte des Internets (Infografik von BroadbandNow)."
+                "src": "/dfir/internet-history-timeline.svg",
+                "alt": "Zeitleiste der Geschichte des Internets von 1969 bis 2005, gruppiert nach Jahrzehnten: 1960er, 1970er, 1980er, 1990er und 2000er.",
+                "caption": "Abbildung 2 · Eine Zeitleiste der Geschichte des Internets (1969-2005), nach Jahrzehnten gruppiert."
               }
             }
           ]
@@ -677,7 +682,12 @@
               ],
               "paragraphs_after": [
                 "Der Kriminologe David Wall beschreibt vier Kategorien von Cybercrime: Cyber-Trespass (das Eindringen in Systeme, in die man nicht eindringen darf), Cyber-Deception oder Diebstahl (Online-Diebstahl, etwa von Kreditkartendaten), Cyber-Pornografie oder Obszönität (das Teilen sexuellen Materials online) und Cyber-Gewalt (das Verursachen von emotionalem oder psychologischem Schaden, etwa durch Cyberstalking. Das Opfer wird körperlich vielleicht nicht verletzt, kann aber dauerhaften Schaden erleiden)."
-              ]
+              ],
+              "figure": {
+                "src": "/dfir/cybercrime-taxonomy.svg",
+                "alt": "Mindmap der Cyberkriminalität, unterteilt in cyberabhängige und cyberunterstützte Kriminalität, plus die vier Kategorien von David Wall.",
+                "caption": "Abbildung 3 · Wie Cyberkriminalität eingeordnet wird: cyberabhängige und cyberunterstützte Kriminalität sowie die vier Kategorien von David Wall."
+              }
             }
           ]
         },
@@ -786,7 +796,12 @@
                   ]
                 ]
               },
-              "note": "Internetwachstum bedeutet auch mehr potenzielle Opfer: von etwa 1 Milliarde Menschen online im Jahr 2005 auf rund 5,4 Milliarden im Jahr 2023. Cybercrime ist für Kriminelle praktisch eine Billionen-Dollar-Industrie, und fast jeder, der verbunden ist, ist ein potenzielles Ziel."
+              "note": "Internetwachstum bedeutet auch mehr potenzielle Opfer: von etwa 1 Milliarde Menschen online im Jahr 2005 auf rund 5,4 Milliarden im Jahr 2023. Cybercrime ist für Kriminelle praktisch eine Billionen-Dollar-Industrie, und fast jeder, der verbunden ist, ist ein potenzielles Ziel.",
+              "figure": {
+                "src": "/dfir/internet-user-growth.svg",
+                "alt": "Balkendiagramm, das zeigt, wie die Internetnutzer von 1 Milliarde (2005) auf 5,4 Milliarden (2023) wuchsen.",
+                "caption": "Abbildung 4 · Wachstum der Internetnutzer weltweit, von etwa 1 Milliarde (2005) auf 5,4 Milliarden (2023)."
+              }
             }
           ]
         },
@@ -825,6 +840,11 @@
                     "Online machen schwache Passwörter, das Klicken auf Phishing-Links und veraltete Software Sie zu einem geeigneten Ziel. Sicherheitssoftware und sorgfältige Gewohnheiten sind der Wächter."
                   ]
                 ]
+              },
+              "figure": {
+                "src": "/dfir/routine-activity-theory.svg",
+                "alt": "Diagramm der Routine-Activity-Theorie: motivierter Täter, geeignetes Ziel und ein fähiger Wächter.",
+                "caption": "Abbildung 5 · Routine-Activity-Theorie: Kriminalität entsteht, wenn ein Täter, ein Ziel und das Fehlen eines Wächters zusammentreffen."
               }
             },
             {
@@ -860,7 +880,7 @@
               "figure": {
                 "src": "/dfir/top-20-countries-malicious-programs-2014.png",
                 "alt": "Top 20 der Länder, die 2014 externen Angriffen durch Schadprogramme ausgesetzt waren",
-                "caption": "Abbildung 2 · Top 20 der Länder, die 2014 externen Angriffen durch Schadprogramme ausgesetzt waren (Quelle: ResearchGate)."
+                "caption": "Abbildung 6 · Top 20 der Länder, die 2014 externen Angriffen durch Schadprogramme ausgesetzt waren (Quelle: ResearchGate)."
               },
               "note": "Wichtige Nuance: Diese IP-basierten Karten zeigen, woher Angriffe stammen, nicht unbedingt, wo die Kriminellen leben. Ein Krimineller in einem Land kann leicht von Servern in einem anderen angreifen – genau das macht die Bekämpfung von Cybercrime für die Polizei so schwer."
             }
@@ -977,7 +997,7 @@
           "href": "https://www.researchgate.net/figure/Top-20-countries-exposed-to-external-attacks-from-malicious-programs-in-2014_fig1_331914032"
         }
       ],
-      "references_note": "Abbildungen: „A brief history of the internet“ (BroadbandNow) und „Top 20 countries exposed to external attacks from malicious programs in 2014“ (ResearchGate). Die Fakten stammen aus den oben genannten Quellen und wurden in den eigenen Worten dieses Berichts neu formuliert.",
+      "references_note": "Die Abbildungen 1, 3, 4 und 5 sowie die Zeitleiste in Abbildung 2 sind eigene Diagramme des Autors, erstellt mit Mermaid. Die Karte in Abbildung 6 stammt von ResearchGate (2014). Die Fakten stammen aus den oben genannten Quellen und wurden in den eigenen Worten dieses Berichts neu formuliert.",
       "back_label": "Zurück zum Team",
       "profile_label": "RAGNAROK-Profil ansehen"
     }

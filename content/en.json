@@ -563,7 +563,12 @@
                   "body": "The packets reach the other side, are re-assembled in the correct order, and the recipient's device shows the message."
                 }
               ],
-              "note": "So every message travels through a mix of radio waves, copper wires, glass fibers and undersea cables. It only feels wireless to us."
+              "note": "So every message travels through a mix of radio waves, copper wires, glass fibers and undersea cables. It only feels wireless to us.",
+              "figure": {
+                "src": "/dfir/journey-of-a-message.svg",
+                "alt": "Flow diagram of the seven stages a message travels through: device, radio waves, router and modem, ISP network, regional hubs, submarine cables, destination.",
+                "caption": "Figure 1 · The journey of a message from a device to its destination (own diagram)."
+              }
             },
             {
               "heading": "1.3 Packets, IP addresses and protocols",
@@ -650,9 +655,9 @@
                 "The final stretch from the provider's network to the home is called the last mile. It is the most expensive part to build, which is why cities get fiber while rural and poor areas get slower connections or none at all. Newer technologies such as microwave links and 5G help close the gap, but basic internet access is still a problem in many parts of the world."
               ],
               "figure": {
-                "src": "/dfir/a-brief-history-of-the-internet-graphic-768x1296.jpg",
-                "alt": "Infographic: a brief history of the internet",
-                "caption": "Figure 1 · A brief history of the internet (infographic from BroadbandNow)."
+                "src": "/dfir/internet-history-timeline.svg",
+                "alt": "Timeline of the history of the internet from 1969 to 2005, grouped by decade: 1960s, 1970s, 1980s, 1990s and 2000s.",
+                "caption": "Figure 2 · A timeline of the history of the internet (1969-2005), grouped by decade."
               }
             }
           ]
@@ -677,7 +682,12 @@
               ],
               "paragraphs_after": [
                 "Criminologist David Wall describes four categories of cybercrime: cyber trespass (getting into systems you are not allowed to enter), cyber deception or theft (stealing things online, like credit card data), cyber pornography or obscenity (sharing sexual material online), and cyber violence (causing emotional or psychological harm, such as cyberstalking. The victim may not be physically hurt but can suffer lasting damage)."
-              ]
+              ],
+              "figure": {
+                "src": "/dfir/cybercrime-taxonomy.svg",
+                "alt": "Mind map of cybercrime types split into cyber-dependent and cyber-enabled crime, plus David Wall's four categories.",
+                "caption": "Figure 3 · How cybercrime is grouped: cyber-dependent vs cyber-enabled crime, and David Wall's four categories."
+              }
             }
           ]
         },
@@ -786,7 +796,12 @@
                   ]
                 ]
               },
-              "note": "Internet growth also means more potential victims: from about 1 billion people online in 2005 to roughly 5.4 billion in 2023. Cybercrime is effectively a trillion-dollar industry for criminals, and almost everyone connected is a potential target."
+              "note": "Internet growth also means more potential victims: from about 1 billion people online in 2005 to roughly 5.4 billion in 2023. Cybercrime is effectively a trillion-dollar industry for criminals, and almost everyone connected is a potential target.",
+              "figure": {
+                "src": "/dfir/internet-user-growth.svg",
+                "alt": "Bar chart showing internet users growing from 1 billion in 2005 to 5.4 billion in 2023.",
+                "caption": "Figure 4 · Growth in the number of internet users worldwide, from about 1 billion (2005) to 5.4 billion (2023)."
+              }
             }
           ]
         },
@@ -825,6 +840,11 @@
                     "Online, weak passwords, clicking phishing links and outdated software make you a suitable target. Security software and careful habits are the guardian."
                   ]
                 ]
+              },
+              "figure": {
+                "src": "/dfir/routine-activity-theory.svg",
+                "alt": "Diagram of routine activity theory: motivated offender, suitable target and a capable guardian.",
+                "caption": "Figure 5 · Routine activity theory: crime happens when an offender, a target and the absence of a guardian meet."
               }
             },
             {
@@ -860,7 +880,7 @@
               "figure": {
                 "src": "/dfir/top-20-countries-malicious-programs-2014.png",
                 "alt": "Top 20 countries exposed to external attacks from malicious programs in 2014",
-                "caption": "Figure 2 · Top 20 countries exposed to external attacks from malicious programs in 2014 (source: ResearchGate)."
+                "caption": "Figure 6 · Top 20 countries exposed to external attacks from malicious programs in 2014 (source: ResearchGate)."
               },
               "note": "Important nuance: these IP-based maps show where attacks originate from, not necessarily where the criminals live. A criminal in one country can easily attack from servers in another, exactly why fighting cybercrime is so hard for the police."
             }
@@ -977,7 +997,7 @@
           "href": "https://www.researchgate.net/figure/Top-20-countries-exposed-to-external-attacks-from-malicious-programs-in-2014_fig1_331914032"
         }
       ],
-      "references_note": "Figures: \"A brief history of the internet\" (BroadbandNow) and \"Top 20 countries exposed to external attacks from malicious programs in 2014\" (ResearchGate). Facts are collected from the sources above and rewritten in this report's own words.",
+      "references_note": "Figures 1, 3, 4 and 5 and the timeline in Figure 2 are the author's own diagrams, made with Mermaid. The map in Figure 6 is taken from ResearchGate (2014). Facts are collected from the sources above and rewritten in this report's own words.",
       "back_label": "Back to the team",
       "profile_label": "View RAGNAROK profile"
     }

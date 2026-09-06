@@ -563,7 +563,12 @@
                   "body": "Los paquetes llegan al otro lado, se vuelven a ensamblar en el orden correcto y el dispositivo del destinatario muestra el mensaje."
                 }
               ],
-              "note": "Así que cada mensaje viaja a través de una mezcla de ondas de radio, cables de cobre, fibras de vidrio y cables submarinos. Solo a nosotros nos parece inalámbrico."
+              "note": "Así que cada mensaje viaja a través de una mezcla de ondas de radio, cables de cobre, fibras de vidrio y cables submarinos. Solo a nosotros nos parece inalámbrico.",
+              "figure": {
+                "src": "/dfir/journey-of-a-message.svg",
+                "alt": "Diagrama de flujo de las siete etapas de un mensaje: dispositivo, ondas de radio, router y módem, red del ISP, nodos regionales, cables submarinos, destino.",
+                "caption": "Figura 1 · El recorrido de un mensaje desde un dispositivo hasta su destino (diagrama propio)."
+              }
             },
             {
               "heading": "1.3 Paquetes, direcciones IP y protocolos",
@@ -650,9 +655,9 @@
                 "El tramo final desde la red del proveedor hasta el hogar se llama la última milla. Es la parte más cara de construir, por eso las ciudades tienen fibra mientras que las zonas rurales y pobres reciben conexiones más lentas o ninguna. Tecnologías más recientes, como los enlaces de microondas y el 5G, ayudan a cerrar esa brecha, pero el acceso básico a internet sigue siendo un problema en muchas partes del mundo."
               ],
               "figure": {
-                "src": "/dfir/a-brief-history-of-the-internet-graphic-768x1296.jpg",
-                "alt": "Infografía: una breve historia de internet",
-                "caption": "Figura 1 · Una breve historia de internet (infografía de BroadbandNow)."
+                "src": "/dfir/internet-history-timeline.svg",
+                "alt": "Línea de tiempo de la historia de internet de 1969 a 2005, agrupada por décadas: 1960, 1970, 1980, 1990 y 2000.",
+                "caption": "Figura 2 · Una línea de tiempo de la historia de internet (1969-2005), agrupada por décadas."
               }
             }
           ]
@@ -677,7 +682,12 @@
               ],
               "paragraphs_after": [
                 "El criminólogo David Wall describe cuatro categorías de ciberdelincuencia: ciberallanamiento (entrar en sistemas donde no tienes permiso), ciberdecepción o ciberrobo (robar cosas en línea, como datos de tarjetas de crédito), ciberpornografía u obscenidad (compartir material sexual en línea) y ciberviolencia (causar daño emocional o psicológico, como el ciberacoso. La víctima puede no sufrir daño físico pero puede padecer un daño duradero)."
-              ]
+              ],
+              "figure": {
+                "src": "/dfir/cybercrime-taxonomy.svg",
+                "alt": "Mapa mental de la ciberdelincuencia dividida en ciberdependiente y ciberasistida, más las cuatro categorías de David Wall.",
+                "caption": "Figura 3 · Cómo se clasifica la ciberdelincuencia: delitos ciberdependientes y ciberasistidos, y las cuatro categorías de David Wall."
+              }
             }
           ]
         },
@@ -786,7 +796,12 @@
                   ]
                 ]
               },
-              "note": "El crecimiento de internet también significa más víctimas potenciales: de unos 1.000 millones de personas en línea en 2005 a unos 5.400 millones en 2023. La ciberdelincuencia es en la práctica una industria de billones de dólares para los delincuentes, y casi todo el mundo conectado es un objetivo potencial."
+              "note": "El crecimiento de internet también significa más víctimas potenciales: de unos 1.000 millones de personas en línea en 2005 a unos 5.400 millones en 2023. La ciberdelincuencia es en la práctica una industria de billones de dólares para los delincuentes, y casi todo el mundo conectado es un objetivo potencial.",
+              "figure": {
+                "src": "/dfir/internet-user-growth.svg",
+                "alt": "Gráfico de barras que muestra a los usuarios de internet pasando de 1.000 millones en 2005 a 5.400 millones en 2023.",
+                "caption": "Figura 4 · Crecimiento del número de usuarios de internet en el mundo, de unos 1.000 millones (2005) a 5.400 millones (2023)."
+              }
             }
           ]
         },
@@ -825,6 +840,11 @@
                     "En línea, las contraseñas débiles, hacer clic en enlaces de phishing y el software desactualizado te convierten en un objetivo adecuado. El software de seguridad y los hábitos cuidadosos son el guardián."
                   ]
                 ]
+              },
+              "figure": {
+                "src": "/dfir/routine-activity-theory.svg",
+                "alt": "Diagrama de la teoría de las actividades rutinarias: delincuente motivado, objetivo adecuado y guardián capaz.",
+                "caption": "Figura 5 · Teoría de las actividades rutinarias: el delito ocurre cuando coinciden un delincuente motivado, un objetivo adecuado y la ausencia de un guardián."
               }
             },
             {
@@ -860,7 +880,7 @@
               "figure": {
                 "src": "/dfir/top-20-countries-malicious-programs-2014.png",
                 "alt": "Los 20 países más expuestos a ataques externos de programas maliciosos en 2014",
-                "caption": "Figura 2 · Los 20 países más expuestos a ataques externos de programas maliciosos en 2014 (fuente: ResearchGate)."
+                "caption": "Figura 6 · Los 20 países más expuestos a ataques externos de programas maliciosos en 2014 (fuente: ResearchGate)."
               },
               "note": "Matiz importante: estos mapas basados en IP muestran desde dónde se originan los ataques, no necesariamente dónde viven los delincuentes. Un delincuente de un país puede atacar fácilmente desde servidores de otro, precisamente por eso es tan difícil para la policía combatir la ciberdelincuencia."
             }
@@ -977,7 +997,7 @@
           "href": "https://www.researchgate.net/figure/Top-20-countries-exposed-to-external-attacks-from-malicious-programs-in-2014_fig1_331914032"
         }
       ],
-      "references_note": "Figuras: \"A brief history of the internet\" (BroadbandNow) y \"Top 20 countries exposed to external attacks from malicious programs in 2014\" (ResearchGate). Los datos se recopilan de las fuentes anteriores y se reescriben con palabras propias de este informe.",
+      "references_note": "Las figuras 1, 3, 4 y 5 y la línea de tiempo de la figura 2 son diagramas propios del autor, realizados con Mermaid. El mapa de la figura 6 procede de ResearchGate (2014). Los datos se recopilan de las fuentes anteriores y se reescriben con palabras propias de este informe.",
       "back_label": "Volver al equipo",
       "profile_label": "Ver el perfil de RAGNAROK"
     }

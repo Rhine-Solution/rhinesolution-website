@@ -569,7 +569,12 @@
                   "body": "De pakketten bereiken de andere kant, worden in de juiste volgorde weer in elkaar gezet, en het apparaat van de ontvanger toont het bericht."
                 }
               ],
-              "note": "Elk bericht reist dus door een mix van radiogolven, koperdraden, glasvezels en onderzeese kabels. Het voelt voor ons alleen maar draadloos."
+              "note": "Elk bericht reist dus door een mix van radiogolven, koperdraden, glasvezels en onderzeese kabels. Het voelt voor ons alleen maar draadloos.",
+              "figure": {
+                "src": "/dfir/journey-of-a-message.svg",
+                "alt": "Stroomdiagram van de zeven fasen die een bericht doorloopt: apparaat, radiogolven, router en modem, ISP-netwerk, regionale knooppunten, zeekabels, bestemming.",
+                "caption": "Figuur 1 · De reis van een bericht van een apparaat naar zijn bestemming (eigen diagram)."
+              }
             },
             {
               "heading": "1.3 Pakketten, IP-adressen en protocollen",
@@ -656,9 +661,9 @@
                 "Het laatste stuk van het netwerk van de provider naar het huis wordt de last mile genoemd. Het is het duurst om aan te leggen, en daarom krijgen steden glasvezel terwijl landelijke en arme gebieden het met tragere verbindingen moeten doen, of helemaal geen verbinding hebben. Nieuwere technologieën zoals microgolfverbindingen en 5G helpen het gat te dichten, maar basisinternettoegang is in veel delen van de wereld nog steeds een probleem."
               ],
               "figure": {
-                "src": "/dfir/a-brief-history-of-the-internet-graphic-768x1296.jpg",
-                "alt": "Infographic: een korte geschiedenis van het internet",
-                "caption": "Figuur 1 · Een korte geschiedenis van het internet (infographic van BroadbandNow)."
+                "src": "/dfir/internet-history-timeline.svg",
+                "alt": "Tijdlijn van de geschiedenis van het internet van 1969 tot 2005, gegroepeerd per decennium: 1960s, 1970s, 1980s, 1990s en 2000s.",
+                "caption": "Figuur 2 · Een tijdlijn van de geschiedenis van het internet (1969-2005), gegroepeerd per decennium."
               }
             }
           ]
@@ -683,7 +688,12 @@
               ],
               "paragraphs_after": [
                 "Criminoloog David Wall beschrijft vier categorieën cybercriminaliteit: cyber trespass (binnendringen in systemen waar je niet mag komen), cyber deception of theft (online stelen, zoals creditcardgegevens), cyber pornography of obscenity (online verspreiden van seksueel materiaal) en cyber violence (het veroorzaken van emotionele of psychologische schade, zoals cyberstalking. Het slachtoffer wordt misschien niet fysiek gekwetst, maar kan blijvende schade oplopen)."
-              ]
+              ],
+              "figure": {
+                "src": "/dfir/cybercrime-taxonomy.svg",
+                "alt": "Mindmap van cybercriminaliteit onderverdeeld in cyberafhankelijke en cyberondersteunde criminaliteit, plus de vier categorieën van David Wall.",
+                "caption": "Figuur 3 · Hoe cybercriminaliteit wordt gegroepeerd: cyberafhankelijke en cyberondersteunde criminaliteit, en de vier categorieën van David Wall."
+              }
             }
           ]
         },
@@ -792,7 +802,12 @@
                   ]
                 ]
               },
-              "note": "Internetgroei betekent ook meer potentiële slachtoffers: van ongeveer 1 miljard mensen online in 2005 tot ruwweg 5,4 miljard in 2023. Cybercriminaliteit is voor criminelen feitelijk een biljoenenindustrie, en vrijwel iedereen die verbonden is, is een potentieel doelwit."
+              "note": "Internetgroei betekent ook meer potentiële slachtoffers: van ongeveer 1 miljard mensen online in 2005 tot ruwweg 5,4 miljard in 2023. Cybercriminaliteit is voor criminelen feitelijk een biljoenenindustrie, en vrijwel iedereen die verbonden is, is een potentieel doelwit.",
+              "figure": {
+                "src": "/dfir/internet-user-growth.svg",
+                "alt": "Staafdiagram dat toont hoe het aantal internetgebruikers groeide van 1 miljard in 2005 naar 5,4 miljard in 2023.",
+                "caption": "Figuur 4 · Groei van het aantal internetgebruikers wereldwijd, van circa 1 miljard (2005) naar 5,4 miljard (2023)."
+              }
             }
           ]
         },
@@ -831,6 +846,11 @@
                     "Online maken zwakke wachtwoorden, klikken op phishing-links en verouderde software je een geschikt doelwit. Beveiligingssoftware en zorgvuldige gewoontes zijn de beschermer."
                   ]
                 ]
+              },
+              "figure": {
+                "src": "/dfir/routine-activity-theory.svg",
+                "alt": "Diagram van de routine-activiteitentheorie: gemotiveerde dader, geschikt doelwit en een capabele bewaker.",
+                "caption": "Figuur 5 · Routine-activiteitentheorie: criminaliteit ontstaat wanneer een dader, een doelwit en het ontbreken van een bewaker samenkomen."
               }
             },
             {
@@ -866,7 +886,7 @@
               "figure": {
                 "src": "/dfir/top-20-countries-malicious-programs-2014.png",
                 "alt": "Top 20 landen blootgesteld aan externe aanvallen door schadelijke programma's in 2014",
-                "caption": "Figuur 2 · Top 20 landen blootgesteld aan externe aanvallen door schadelijke programma's in 2014 (bron: ResearchGate)."
+                "caption": "Figuur 6 · Top 20 landen blootgesteld aan externe aanvallen door schadelijke programma's in 2014 (bron: ResearchGate)."
               },
               "note": "Belangrijke nuance: deze op IP gebaseerde kaarten laten zien waar aanvallen vandaan komen, niet noodzakelijkerwijs waar de criminelen wonen. Een crimineel in het ene land kan gemakkelijk aanvallen vanaf servers in een ander land, en dat is precies waarom de bestrijding van cybercriminaliteit voor de politie zo moeilijk is."
             }
@@ -983,7 +1003,7 @@
           "href": "https://www.researchgate.net/figure/Top-20-countries-exposed-to-external-attacks-from-malicious-programs-in-2014_fig1_331914032"
         }
       ],
-      "references_note": "Figuren: \"A brief history of the internet\" (BroadbandNow) en \"Top 20 countries exposed to external attacks from malicious programs in 2014\" (ResearchGate). De feiten zijn verzameld uit bovenstaande bronnen en in de eigen woorden van dit rapport herschreven.",
+      "references_note": "Afbeeldingen 1, 3, 4 en 5 en de tijdlijn in afbeelding 2 zijn eigen diagrammen van de auteur, gemaakt met Mermaid. De kaart in afbeelding 6 is afkomstig van ResearchGate (2014). De feiten zijn verzameld uit bovenstaande bronnen en in de eigen woorden van dit rapport herschreven.",
       "back_label": "Terug naar het team",
       "profile_label": "Bekijk RAGNAROK-profiel"
     }
