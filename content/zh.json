@@ -501,7 +501,7 @@
   "dfir": {
     "cybercrime_report": {
       "meta_title": "网络犯罪与网络安全报告",
-      "meta_description": "Keuzedeel K1352 研究报告：互联网如何运作、什么是网络犯罪、问题的规模有多大，以及如何防范。",
+      "meta_description": "Keuzedeel K1352 研究报告：互联网如何运作、什么是网络犯罪、问题的规模、实时网络威胁以及如何防范。",
       "eyebrow": "RAGNAROK · 网络安全",
       "title": "网络犯罪与网络安全报告",
       "lead": "Keuzedeel K1352 研究报告。从零开始讲解互联网如何运作、什么是网络犯罪、问题到底有多大、谁在实施犯罪及其原因，以及个人和组织可以如何保护自己。",
@@ -570,7 +570,14 @@
                   "body": "数据包到达另一侧，按正确顺序重新组装，接收者的设备便显示出消息。"
                 }
               ],
-              "note": "所以每条消息都要经过无线电波、铜线、玻璃纤维和海底电缆的混合传输。只是我们感觉它是无线的。"
+              "note": "所以每条消息都要经过无线电波、铜线、玻璃纤维和海底电缆的混合传输。只是我们感觉它是无线的。",
+              "figure": {
+                "alt": "流程图展示一条消息经历的七个阶段：设备、无线电波、路由器和调制解调器、ISP 网络、区域枢纽、海底光缆、目的地。",
+                "caption": "图 1 · 一条消息从设备到目的地的旅程（自有图表）。",
+                "chart": {
+                  "type": "journey"
+                }
+              }
             },
             {
               "heading": "1.3 数据包、IP 地址与协议",
@@ -657,9 +664,11 @@
                 "从提供商网络到家庭的最后一段称为最后一英里。它是最昂贵的建设部分，因此城市能铺设光纤，而农村和贫困地区只能获得更慢的连接，甚至根本没有。微波链路和 5G 等新技术有助于弥合这一差距，但在世界许多地方，基本的互联网接入仍然是个问题。"
               ],
               "figure": {
-                "src": "/dfir/a-brief-history-of-the-internet-graphic-768x1296.jpg",
-                "alt": "信息图：互联网简史",
-                "caption": "图 1 · 互联网简史（信息图来自 BroadbandNow）。"
+                "alt": "互联网历史时间线，从 1969 年到 2005 年，按十年分组：1960 年代、1970 年代、1980 年代、1990 年代和 2000 年代。",
+                "caption": "图 2 · 互联网历史时间线（1969-2005），按十年分组。",
+                "chart": {
+                  "type": "timeline"
+                }
               }
             }
           ]
@@ -684,7 +693,14 @@
               ],
               "paragraphs_after": [
                 "犯罪学家 David Wall 描述了四类网络犯罪：网络入侵（进入你无权进入的系统）、网络欺骗或盗窃（在线窃取财物，如信用卡数据）、网络色情或淫秽（在线传播性材料），以及网络暴力（造成情感或心理伤害，如网络跟踪。受害者可能没有身体受伤，却会遭受持久的伤害）。"
-              ]
+              ],
+              "figure": {
+                "alt": "网络犯罪分类思维导图，分为依赖网络与借助网络的犯罪，以及 David Wall 的四类划分。",
+                "caption": "图 3 · 网络犯罪的分类：依赖网络的犯罪与借助网络的犯罪，以及 David Wall 的四类划分。",
+                "chart": {
+                  "type": "taxonomy"
+                }
+              }
             }
           ]
         },
@@ -793,7 +809,14 @@
                   ]
                 ]
               },
-              "note": "互联网的增长也意味着更多的潜在受害者：从 2005 年约 10 亿人上网，到 2023 年约 54 亿人。网络犯罪实际上对犯罪分子而言是一个万亿美元级的产业，几乎所有联网的人都是潜在目标。"
+              "note": "互联网的增长也意味着更多的潜在受害者：从 2005 年约 10 亿人上网，到 2023 年约 54 亿人。网络犯罪实际上对犯罪分子而言是一个万亿美元级的产业，几乎所有联网的人都是潜在目标。",
+              "figure": {
+                "alt": "柱状图显示互联网用户从 2005 年的 10 亿增至 2023 年的 54 亿。",
+                "caption": "图 4 · 全球互联网用户数量增长，从 2005 年的约 10 亿增至 2023 年的 54 亿。",
+                "chart": {
+                  "type": "growth"
+                }
+              }
             }
           ]
         },
@@ -832,6 +855,13 @@
                     "在网上，弱密码、点击钓鱼链接和过时软件会让你成为合适的目标。安全软件和谨慎的习惯就是监管者。"
                   ]
                 ]
+              },
+              "figure": {
+                "alt": "日常活动理论示意图：有犯罪动机者、合适目标与有能力的守护者。",
+                "caption": "图 5 · 日常活动理论：当有犯罪动机者、合适目标与缺乏守护者相遇时，犯罪就会发生。",
+                "chart": {
+                  "type": "routine"
+                }
               }
             },
             {
@@ -865,16 +895,73 @@
                 "由于互联网没有国界，很难确切说出网络犯罪分子身处何方。犯罪分子借助 VPN、代理服务器，或通过攻击其他国家的被感染计算机来隐藏自己。尽管如此，研究人员仍绘制了已知恶意活动的 IP 地址分布图。其中大部分位于北美、中欧和东欧、东亚、印度和澳大利亚东部。就大陆而言，北美和欧洲承载最多，高收入地区承载了大多数恶意 IP。换言之，最富有、互联程度最高的国家既是最大的目标，也是网络犯罪基础设施的最大来源地。"
               ],
               "figure": {
-                "src": "/dfir/top-20-countries-malicious-programs-2014.png",
-                "alt": "2014 年遭受恶意程序外部攻击最多的 20 个国家",
-                "caption": "图 2 · 2014 年遭受恶意程序外部攻击最多的 20 个国家（来源：ResearchGate）。"
+                "alt": "各国互联网用户占比柱状图（示例数据），从高到低排列。",
+                "caption": "图 6 · 各国互联网用户占比（自有图表，示例数据）。",
+                "chart": {
+                  "type": "country"
+                }
               },
               "note": "重要的细微差别：这些基于 IP 的地图显示的是攻击的源头，而不一定是犯罪分子居住的地方。一个国家的犯罪分子可以轻易地从另一个国家的服务器发起攻击，这正是警方打击网络犯罪如此困难的原因。"
             }
           ]
         },
         {
-          "heading": "7 · 人们对网络犯罪的反应",
+          "heading": "7 · 世界范围内的实时网络威胁",
+          "subsections": [
+            {
+              "heading": "7.1 实时威胁地图",
+              "paragraphs": [
+                "网络犯罪在世界各地持续发生。像卡巴斯基这样的安全公司通过其卡巴斯基安全网络收集数百万用户设备上的匿名遥测数据，并在实时世界地图上可视化检测到的攻击：每条线都是一次攻击，在发生时立即被检测到。最著名的例子是卡巴斯基网络威胁实时地图，它实时显示攻击，并允许访问者选择一个国家查看其威胁统计数据。"
+              ]
+            },
+            {
+              "heading": "",
+              "paragraphs": [
+                "以下是卡巴斯基网络地图的实时小组件。它不断更新，显示网络犯罪发生时其规模和地理分布："
+              ],
+              "embed": {
+                "src": "https://cybermap.kaspersky.com/en/widget/dynamic/dark",
+                "title": "Kaspersky Cyberthreat live map",
+                "height": 520
+              },
+              "paragraphs_after": [
+                "每种颜色代表一种检测类型：访问时扫描（绿色）、按需扫描（红色）、邮件防病毒（橙色）、网页防病毒（蓝色）、入侵检测（粉色）、漏洞扫描（黄色）、反垃圾邮件（紫色）和勒索软件（蓝线）。底部的计数器每天 00:00 GMT 重置。"
+              ]
+            },
+            {
+              "heading": "7.2 地图告诉我们的内容",
+              "paragraphs": [
+                "这样的实时地图不只是一个小工具。它直接联系到本报告的研究问题："
+              ],
+              "bullets": [
+                {
+                  "strong": "规模：",
+                  "body": "每秒的检测次数表明，网络犯罪并非罕见或新奇，而是一种持续的、全球性的攻击背景噪音。"
+                },
+                {
+                  "strong": "地理：",
+                  "body": "线条连接各大洲的攻击者和目标，证实互联网没有边界，攻击可能来自任何地方（见第 6 节）。"
+                },
+                {
+                  "strong": "多样性：",
+                  "body": "不同的检测颜色表明，网络犯罪不是一种犯罪，而是一整类犯罪，从恶意软件和网页威胁到垃圾邮件、勒索软件和网络攻击（见第 3 节）。"
+                },
+                {
+                  "strong": "数据说明：",
+                  "body": "该地图仅反映卡巴斯基产品的遥测数据。它显示检测发生的地点，不一定是犯罪分子居住的地点，其他供应商（如 Check Point）也发布类似的地图并使用自己的数据。"
+                }
+              ]
+            },
+            {
+              "heading": "7.3 为什么这对本研究很重要",
+              "paragraphs": [
+                "实时地图是第 5 节理论的实际例证：犯罪发生在机会与目标相遇的地方，并会适应一天中的时间和地区。实时观看攻击使第 4 节的抽象数字变得具体——每天数百万次检测，遍及每个国家，而用户、企业和政府都在努力保护自己（第 8 节）。"
+              ]
+            }
+          ]
+        },
+        {
+          "heading": "8 · 人们对网络犯罪的反应",
           "subsections": [
             {
               "heading": "",
@@ -906,7 +993,7 @@
           ]
         },
         {
-          "heading": "8 · 网络安全：如何保护自己",
+          "heading": "9 · 网络安全：如何保护自己",
           "subsections": [
             {
               "heading": "",
@@ -937,7 +1024,7 @@
           ]
         },
         {
-          "heading": "9 · 结论",
+          "heading": "10 · 结论",
           "subsections": [
             {
               "heading": "",
@@ -949,7 +1036,7 @@
           ]
         }
       ],
-      "references_heading": "10 · 参考文献",
+      "references_heading": "11 · 参考文献",
       "references": [
         {
           "label": "Tsotetsi, K. \"Understanding the Internet: A Journey from Devices to Submarine Cables.\"",
@@ -980,11 +1067,19 @@
           "href": "https://doi.org/10.1016/j.jeconc.2025.100136"
         },
         {
-          "label": "ResearchGate. \"Top 20 countries exposed to external attacks from malicious programs in 2014.\"",
-          "href": "https://www.researchgate.net/figure/Top-20-countries-exposed-to-external-attacks-from-malicious-programs-in-2014_fig1_331914032"
+          "label": "Kaspersky. \"Kaspersky Cyberthreat live map\" (real-time threat visualization).",
+          "href": "https://cybermap.kaspersky.com/"
+        },
+        {
+          "label": "Kaspersky. \"Cyberthreats Map: watch global threats in real time.\" (2014).",
+          "href": "https://www.kaspersky.com/blog/cyberthreats-map-watch-global-threats-in-real-time/"
+        },
+        {
+          "label": "Kaspersky. \"Kaspersky Cyberthreat live map — Data sources (OAS, ODS, MAV, Web AV, IDS, VUL, Anti-Spam, Ransomware).\"",
+          "href": "https://cybermap.kaspersky.com/subsystems"
         }
       ],
-      "references_note": "图表：\"互联网简史\"（BroadbandNow）和\"2014 年遭受恶意程序外部攻击最多的 20 个国家\"（ResearchGate）。事实收集自上述来源，并以本报告的措辞改写。",
+      "references_note": "图 1、3、5 为作者自绘图表，使用 Mermaid 制作。图 2、4、6 为作者自绘交互式图表，使用 Chart.js 制作（图 6 使用示例数据）。事实收集自上述来源，并以本报告的措辞改写。",
       "back_label": "返回团队",
       "profile_label": "查看 RAGNAROK 简介"
     }

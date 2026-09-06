@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import DfirChart from "@/components/dfir/DfirChart";
+import type { DfirChartType } from "@/components/dfir/dfir-chart-data";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import JsonLd, { breadcrumbJsonLd } from "@/components/JsonLd";
@@ -73,7 +75,8 @@ export default async function CybercrimeReportPage({ params }: Props) {
                 measures?: string[];
                 h3_2?: string;
                 measures_2?: string[];
-                figure?: { src: string; alt: string; caption: string };
+                figure?: { src?: string; alt?: string; caption: string; chart?: { type: DfirChartType } };
+                embed?: { src: string; title: string; height?: number };
               };
               return (
                 <div key={si}>
@@ -127,16 +130,17 @@ export default async function CybercrimeReportPage({ params }: Props) {
                     ))}
                   </ul>
                 )}
-                {s.figure && (
-                  <figure className={`dfir-figure${s.figure.src.includes("top-20") ? " dfir-figure--wide" : ""}`}>
-                    <Image
-                      src={s.figure.src}
-                      alt={s.figure.alt}
-                      width={s.figure.src.includes("top-20") ? 850 : 768}
-                      height={s.figure.src.includes("top-20") ? 381 : 1296}
+                {s.figure && <FigureMedia figure={s.figure} />}
+                {s.embed && (
+                  <div className="dfir-embed">
+                    <iframe
+                      src={s.embed.src}
+                      title={s.embed.title}
+                      height={s.embed.height ?? 520}
+                      loading="lazy"
+                      allowFullScreen
                     />
-                    <figcaption>{s.figure.caption}</figcaption>
-                  </figure>
+                  </div>
                 )}
                 </div>
               );
@@ -163,6 +167,44 @@ export default async function CybercrimeReportPage({ params }: Props) {
       </main>
       <Footer locale={locale} brand={content.brand.name} tagline={content.footer_columns.brand_tagline} navLabels={content.nav} footerColumns={content.footer_columns} socials={getCompanySocials(content)} socialHeading={content.footer.social_heading} />
     </>
+  );
+}
+
+type Figure = {
+  src?: string;
+  alt?: string;
+  caption: string;
+  chart?: { type: DfirChartType };
+};
+
+function FigureMedia({ figure }: { figure: Figure }) {
+  if (figure.chart) {
+    return (
+      <figure className="dfir-figure">
+        <div className="dfir-chart-box">
+          <DfirChart type={figure.chart.type} />
+        </div>
+        <figcaption>{figure.caption}</figcaption>
+      </figure>
+    );
+  }
+
+  const src = figure.src as string;
+  return (
+    <figure className={`dfir-figure${src.includes("top-20") ? " dfir-figure--wide" : ""}`}>
+      {src.endsWith(".svg") ? (
+        // eslint-disable-next-line @next/next/no-img-element
+        <img src={src} alt={figure.alt ?? ""} />
+      ) : (
+        <Image
+          src={src}
+          alt={figure.alt ?? ""}
+          width={src.includes("top-20") ? 850 : 768}
+          height={src.includes("top-20") ? 381 : 1296}
+        />
+      )}
+      <figcaption>{figure.caption}</figcaption>
+    </figure>
   );
 }
 

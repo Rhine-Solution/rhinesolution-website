@@ -501,7 +501,7 @@
   "dfir": {
     "cybercrime_report": {
       "meta_title": "Informe sobre ciberdelincuencia y ciberseguridad",
-      "meta_description": "Informe de investigación del keuzedeel K1352: cómo funciona internet, qué es la ciberdelincuencia, la magnitud del problema y cómo protegerse de ella.",
+      "meta_description": "Informe de investigación del keuzedeel K1352: cómo funciona internet, qué es la ciberdelincuencia, la magnitud del problema, las ciberamenazas en vivo y cómo protegerse.",
       "eyebrow": "RAGNAROK · Cyber Security",
       "title": "Informe sobre ciberdelincuencia y ciberseguridad",
       "lead": "Informe de investigación del keuzedeel K1352. Cómo funciona internet desde cero, qué es la ciberdelincuencia, cuán grande es realmente el problema, quién la comete y por qué, y qué pueden hacer las personas y las organizaciones para protegerse.",
@@ -570,7 +570,14 @@
                   "body": "Los paquetes llegan al otro lado, se vuelven a ensamblar en el orden correcto y el dispositivo del destinatario muestra el mensaje."
                 }
               ],
-              "note": "Así que cada mensaje viaja a través de una mezcla de ondas de radio, cables de cobre, fibras de vidrio y cables submarinos. Solo a nosotros nos parece inalámbrico."
+              "note": "Así que cada mensaje viaja a través de una mezcla de ondas de radio, cables de cobre, fibras de vidrio y cables submarinos. Solo a nosotros nos parece inalámbrico.",
+              "figure": {
+                "alt": "Diagrama de flujo de las siete etapas de un mensaje: dispositivo, ondas de radio, router y módem, red del ISP, nodos regionales, cables submarinos, destino.",
+                "caption": "Figura 1 · El recorrido de un mensaje desde un dispositivo hasta su destino (diagrama propio).",
+                "chart": {
+                  "type": "journey"
+                }
+              }
             },
             {
               "heading": "1.3 Paquetes, direcciones IP y protocolos",
@@ -657,9 +664,11 @@
                 "El tramo final desde la red del proveedor hasta el hogar se llama la última milla. Es la parte más cara de construir, por eso las ciudades tienen fibra mientras que las zonas rurales y pobres reciben conexiones más lentas o ninguna. Tecnologías más recientes, como los enlaces de microondas y el 5G, ayudan a cerrar esa brecha, pero el acceso básico a internet sigue siendo un problema en muchas partes del mundo."
               ],
               "figure": {
-                "src": "/dfir/a-brief-history-of-the-internet-graphic-768x1296.jpg",
-                "alt": "Infografía: una breve historia de internet",
-                "caption": "Figura 1 · Una breve historia de internet (infografía de BroadbandNow)."
+                "alt": "Línea de tiempo de la historia de internet de 1969 a 2005, agrupada por décadas: 1960, 1970, 1980, 1990 y 2000.",
+                "caption": "Figura 2 · Una línea de tiempo de la historia de internet (1969-2005), agrupada por décadas.",
+                "chart": {
+                  "type": "timeline"
+                }
               }
             }
           ]
@@ -684,7 +693,14 @@
               ],
               "paragraphs_after": [
                 "El criminólogo David Wall describe cuatro categorías de ciberdelincuencia: ciberallanamiento (entrar en sistemas donde no tienes permiso), ciberdecepción o ciberrobo (robar cosas en línea, como datos de tarjetas de crédito), ciberpornografía u obscenidad (compartir material sexual en línea) y ciberviolencia (causar daño emocional o psicológico, como el ciberacoso. La víctima puede no sufrir daño físico pero puede padecer un daño duradero)."
-              ]
+              ],
+              "figure": {
+                "alt": "Mapa mental de la ciberdelincuencia dividida en ciberdependiente y ciberasistida, más las cuatro categorías de David Wall.",
+                "caption": "Figura 3 · Cómo se clasifica la ciberdelincuencia: delitos ciberdependientes y ciberasistidos, y las cuatro categorías de David Wall.",
+                "chart": {
+                  "type": "taxonomy"
+                }
+              }
             }
           ]
         },
@@ -793,7 +809,14 @@
                   ]
                 ]
               },
-              "note": "El crecimiento de internet también significa más víctimas potenciales: de unos 1.000 millones de personas en línea en 2005 a unos 5.400 millones en 2023. La ciberdelincuencia es en la práctica una industria de billones de dólares para los delincuentes, y casi todo el mundo conectado es un objetivo potencial."
+              "note": "El crecimiento de internet también significa más víctimas potenciales: de unos 1.000 millones de personas en línea en 2005 a unos 5.400 millones en 2023. La ciberdelincuencia es en la práctica una industria de billones de dólares para los delincuentes, y casi todo el mundo conectado es un objetivo potencial.",
+              "figure": {
+                "alt": "Gráfico de barras que muestra a los usuarios de internet pasando de 1.000 millones en 2005 a 5.400 millones en 2023.",
+                "caption": "Figura 4 · Crecimiento del número de usuarios de internet en el mundo, de unos 1.000 millones (2005) a 5.400 millones (2023).",
+                "chart": {
+                  "type": "growth"
+                }
+              }
             }
           ]
         },
@@ -832,6 +855,13 @@
                     "En línea, las contraseñas débiles, hacer clic en enlaces de phishing y el software desactualizado te convierten en un objetivo adecuado. El software de seguridad y los hábitos cuidadosos son el guardián."
                   ]
                 ]
+              },
+              "figure": {
+                "alt": "Diagrama de la teoría de las actividades rutinarias: delincuente motivado, objetivo adecuado y guardián capaz.",
+                "caption": "Figura 5 · Teoría de las actividades rutinarias: el delito ocurre cuando coinciden un delincuente motivado, un objetivo adecuado y la ausencia de un guardián.",
+                "chart": {
+                  "type": "routine"
+                }
               }
             },
             {
@@ -865,16 +895,73 @@
                 "Como internet no tiene fronteras, es difícil decir exactamente dónde se encuentra un ciberdelincuente. Los delincuentes se ocultan con VPN, proxies o atacando a través de computadoras infectadas en otros países. Aun así, los investigadores trazaron un mapa de las direcciones IP conocidas por actividad maliciosa. La mayoría se encuentran en Norteamérica, Europa central y oriental, Asia oriental, India y el este de Australia. A nivel continental, Norteamérica y Europa albergan la mayoría, y las regiones de altos ingresos albergan la mayor parte de las IP maliciosas. En otras palabras, los países más ricos y mejor conectados son a la vez los mayores objetivos y las mayores ubicaciones de origen de la infraestructura de la ciberdelincuencia."
               ],
               "figure": {
-                "src": "/dfir/top-20-countries-malicious-programs-2014.png",
-                "alt": "Los 20 países más expuestos a ataques externos de programas maliciosos en 2014",
-                "caption": "Figura 2 · Los 20 países más expuestos a ataques externos de programas maliciosos en 2014 (fuente: ResearchGate)."
+                "alt": "Gráfico de barras de la cuota de usuarios de internet por país (datos de ejemplo), ordenados de mayor a menor.",
+                "caption": "Figura 6 · Cuota de usuarios de internet por país (gráfico propio, datos de ejemplo).",
+                "chart": {
+                  "type": "country"
+                }
               },
               "note": "Matiz importante: estos mapas basados en IP muestran desde dónde se originan los ataques, no necesariamente dónde viven los delincuentes. Un delincuente de un país puede atacar fácilmente desde servidores de otro, precisamente por eso es tan difícil para la policía combatir la ciberdelincuencia."
             }
           ]
         },
         {
-          "heading": "7 · Cómo reacciona la gente ante la ciberdelincuencia",
+          "heading": "7 · Ciberamenazas en vivo en todo el mundo",
+          "subsections": [
+            {
+              "heading": "7.1 Mapas de amenazas en tiempo real",
+              "paragraphs": [
+                "La ciberdelincuencia ocurre en todo el mundo, constantemente. Empresas de seguridad como Kaspersky recopilan telemetría anónima de los dispositivos de millones de usuarios a través de su Kaspersky Security Network y visualizan los ataques detectados en un mapa mundial en vivo: cada línea es un ataque, detectado en el momento en que ocurre. El ejemplo más conocido es el Kaspersky Cyberthreat Live Map, que muestra los ataques en tiempo real y permite a los visitantes elegir un país para ver sus estadísticas de amenazas."
+              ]
+            },
+            {
+              "heading": "",
+              "paragraphs": [
+                "A continuación se muestra el widget en vivo de la Kaspersky Cybermap. Se actualiza continuamente y muestra la escala y la geografía de la ciberdelincuencia a medida que ocurre:"
+              ],
+              "embed": {
+                "src": "https://cybermap.kaspersky.com/en/widget/dynamic/dark",
+                "title": "Kaspersky Cyberthreat live map",
+                "height": 520
+              },
+              "paragraphs_after": [
+                "Cada color representa un tipo de detección: escaneos de acceso (verde), escaneos bajo demanda (rojo), antivirus de correo (naranja), antivirus web (azul), detección de intrusiones (rosa), escaneos de vulnerabilidades (amarillo), antispam (púrpura) y ransomware (línea azul). Los contadores inferiores se reinician cada día a las 00:00 GMT."
+              ]
+            },
+            {
+              "heading": "7.2 Qué nos enseña el mapa",
+              "paragraphs": [
+                "Un mapa en vivo como este no es solo un artilugio. Se conecta directamente con las preguntas de investigación de este informe:"
+              ],
+              "bullets": [
+                {
+                  "strong": "Escala:",
+                  "body": "el número de detecciones por segundo muestra que la ciberdelincuencia no es rara ni exótica, sino un ruido de fondo constante y mundial de ataques."
+                },
+                {
+                  "strong": "Geografía:",
+                  "body": "las líneas conectan atacantes y objetivos a través de los continentes, confirmando que internet no tiene fronteras y que los ataques pueden venir de cualquier lugar (ver sección 6)."
+                },
+                {
+                  "strong": "Variedad:",
+                  "body": "los distintos colores de detección muestran que la ciberdelincuencia no es un delito, sino toda una familia de delitos, desde malware y amenazas web hasta spam, ransomware y ataques de red (ver sección 3)."
+                },
+                {
+                  "strong": "Salvedad sobre los datos:",
+                  "body": "el mapa refleja únicamente la telemetría de los productos de Kaspersky. Muestra dónde se producen las detecciones, no necesariamente dónde viven los delincuentes, y otros proveedores (como Check Point) publican mapas similares con sus propios datos."
+                }
+              ]
+            },
+            {
+              "heading": "7.3 Por qué es importante para el estudio",
+              "paragraphs": [
+                "El mapa en vivo es una ilustración práctica de las teorías de la sección 5: el delito ocurre donde coinciden oportunidad y objetivos, y se adapta a la hora del día y a la región. Ver ataques en tiempo real hace tangibles las cifras abstractas de la sección 4 — millones de detecciones al día, en cada país, mientras usuarios, empresas y gobiernos intentan protegerse (sección 8)."
+              ]
+            }
+          ]
+        },
+        {
+          "heading": "8 · Cómo reacciona la gente ante la ciberdelincuencia",
           "subsections": [
             {
               "heading": "",
@@ -906,7 +993,7 @@
           ]
         },
         {
-          "heading": "8 · Ciberseguridad: cómo protegerte",
+          "heading": "9 · Ciberseguridad: cómo protegerte",
           "subsections": [
             {
               "heading": "",
@@ -937,7 +1024,7 @@
           ]
         },
         {
-          "heading": "9 · Conclusión",
+          "heading": "10 · Conclusión",
           "subsections": [
             {
               "heading": "",
@@ -949,7 +1036,7 @@
           ]
         }
       ],
-      "references_heading": "10 · Referencias",
+      "references_heading": "11 · Referencias",
       "references": [
         {
           "label": "Tsotetsi, K. \"Understanding the Internet: A Journey from Devices to Submarine Cables.\"",
@@ -980,11 +1067,19 @@
           "href": "https://doi.org/10.1016/j.jeconc.2025.100136"
         },
         {
-          "label": "ResearchGate. \"Top 20 countries exposed to external attacks from malicious programs in 2014.\"",
-          "href": "https://www.researchgate.net/figure/Top-20-countries-exposed-to-external-attacks-from-malicious-programs-in-2014_fig1_331914032"
+          "label": "Kaspersky. \"Kaspersky Cyberthreat live map\" (real-time threat visualization).",
+          "href": "https://cybermap.kaspersky.com/"
+        },
+        {
+          "label": "Kaspersky. \"Cyberthreats Map: watch global threats in real time.\" (2014).",
+          "href": "https://www.kaspersky.com/blog/cyberthreats-map-watch-global-threats-in-real-time/"
+        },
+        {
+          "label": "Kaspersky. \"Kaspersky Cyberthreat live map — Data sources (OAS, ODS, MAV, Web AV, IDS, VUL, Anti-Spam, Ransomware).\"",
+          "href": "https://cybermap.kaspersky.com/subsystems"
         }
       ],
-      "references_note": "Figuras: \"A brief history of the internet\" (BroadbandNow) y \"Top 20 countries exposed to external attacks from malicious programs in 2014\" (ResearchGate). Los datos se recopilan de las fuentes anteriores y se reescriben con palabras propias de este informe.",
+      "references_note": "Las figuras 1, 3 y 5 son diagramas propios del autor, realizados con Mermaid. Las figuras 2, 4 y 6 son gráficos interactivos propios, realizados con Chart.js (la figura 6 utiliza datos de ejemplo). Los datos se recopilan de las fuentes anteriores y se reescriben con palabras propias de este informe.",
       "back_label": "Volver al equipo",
       "profile_label": "Ver el perfil de RAGNAROK"
     }

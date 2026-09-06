@@ -501,7 +501,7 @@
   "dfir": {
     "cybercrime_report": {
       "meta_title": "Rapport sur la cybercriminalité et la cybersécurité",
-      "meta_description": "Rapport de recherche du keuzedeel K1352 : comment fonctionne l'internet, ce qu'est la cybercriminalité, l'ampleur du problème et comment s'en protéger.",
+      "meta_description": "Rapport de recherche du keuzedeel K1352 : comment fonctionne l'internet, ce qu'est la cybercriminalité, l'ampleur du problème, les cybermenaces en direct et comment s'en protéger.",
       "eyebrow": "RAGNAROK · Cybersécurité",
       "title": "Rapport sur la cybercriminalité et la cybersécurité",
       "lead": "Rapport de recherche du keuzedeel K1352. Comment fonctionne l'internet de A à Z, ce qu'est la cybercriminalité, l'ampleur réelle du problème, qui la commet et pourquoi, et ce que les particuliers et les organisations peuvent faire pour se protéger.",
@@ -570,7 +570,14 @@
                   "body": "Les paquets atteignent l'autre bout du monde, sont réassemblés dans le bon ordre, et l'appareil du destinataire affiche le message."
                 }
               ],
-              "note": "Chaque message voyage donc à travers un mélange d'ondes radio, de fils de cuivre, de fibres de verre et de câbles sous-marins. Ce n'est que pour nous qu'il semble sans fil."
+              "note": "Chaque message voyage donc à travers un mélange d'ondes radio, de fils de cuivre, de fibres de verre et de câbles sous-marins. Ce n'est que pour nous qu'il semble sans fil.",
+              "figure": {
+                "alt": "Schéma des sept étapes d'un message : appareil, ondes radio, routeur et modem, réseau FAI, nœuds régionaux, câbles sous-marins, destination.",
+                "caption": "Figure 1 · Le parcours d'un message d'un appareil jusqu'à sa destination (schéma propre).",
+                "chart": {
+                  "type": "journey"
+                }
+              }
             },
             {
               "heading": "1.3 Paquets, adresses IP et protocoles",
@@ -657,9 +664,11 @@
                 "Le tronçon final entre le réseau du fournisseur et le domicile s'appelle le dernier kilomètre. C'est la partie la plus coûteuse à construire, c'est pourquoi les villes bénéficient de la fibre tandis que les zones rurales et pauvres obtiennent des connexions plus lentes, voire aucune. Des technologies plus récentes, comme les liaisons micro-ondes et la 5G, aident à combler l'écart, mais l'accès de base à l'internet reste un problème dans de nombreuses régions du monde."
               ],
               "figure": {
-                "src": "/dfir/a-brief-history-of-the-internet-graphic-768x1296.jpg",
-                "alt": "Infographie : une brève histoire de l'internet",
-                "caption": "Figure 1 · Une brève histoire de l'internet (infographie de BroadbandNow)."
+                "alt": "Frise chronologique de l'histoire de l'internet de 1969 à 2005, groupée par décennie : 1960, 1970, 1980, 1990 et 2000.",
+                "caption": "Figure 2 · Une frise chronologique de l'histoire de l'internet (1969-2005), groupée par décennie.",
+                "chart": {
+                  "type": "timeline"
+                }
               }
             }
           ]
@@ -684,7 +693,14 @@
               ],
               "paragraphs_after": [
                 "Le criminologue David Wall décrit quatre catégories de cybercriminalité : la cyber-intrusion (pénétrer dans des systèmes auxquels vous n'êtes pas autorisé à accéder), la cyber-tromperie ou le cyber-vol (voler des choses en ligne, comme des données de carte bancaire), la cyber-pornographie ou l'obscénité en ligne (partager du matériel sexuel sur internet), et la cyber-violence (causer un préjudice émotionnel ou psychologique, comme le cyberharcèlement. La victime n'est pas forcément blessée physiquement mais peut subir des dommages durables)."
-              ]
+              ],
+              "figure": {
+                "alt": "Carte mentale de la cybercriminalité divisée en criminalité cyber-dépendante et cyber-assistée, plus les quatre catégories de David Wall.",
+                "caption": "Figure 3 · Comment la cybercriminalité est classée : criminalité cyber-dépendante et cyber-assistée, et les quatre catégories de David Wall.",
+                "chart": {
+                  "type": "taxonomy"
+                }
+              }
             }
           ]
         },
@@ -793,7 +809,14 @@
                   ]
                 ]
               },
-              "note": "La croissance de l'internet signifie aussi plus de victimes potentielles : d'environ 1 milliard de personnes en ligne en 2005 à environ 5,4 milliards en 2023. La cybercriminalité est en réalité une industrie de mille milliards de dollars pour les criminels, et presque tous les connectés sont des cibles potentielles."
+              "note": "La croissance de l'internet signifie aussi plus de victimes potentielles : d'environ 1 milliard de personnes en ligne en 2005 à environ 5,4 milliards en 2023. La cybercriminalité est en réalité une industrie de mille milliards de dollars pour les criminels, et presque tous les connectés sont des cibles potentielles.",
+              "figure": {
+                "alt": "Diagramme à barres montrant les internautes passant de 1 milliard en 2005 à 5,4 milliards en 2023.",
+                "caption": "Figure 4 · Croissance du nombre d'internautes dans le monde, d'environ 1 milliard (2005) à 5,4 milliards (2023).",
+                "chart": {
+                  "type": "growth"
+                }
+              }
             }
           ]
         },
@@ -832,6 +855,13 @@
                     "En ligne, des mots de passe faibles, le clic sur des liens de phishing et des logiciels obsolètes font de vous une cible appropriée. Les logiciels de sécurité et des habitudes prudentes jouent le rôle de gardien."
                   ]
                 ]
+              },
+              "figure": {
+                "alt": "Schéma de la théorie des activités routinières : délinquant motivé, cible adaptée et gardien capable.",
+                "caption": "Figure 5 · Théorie des activités routinières : la criminalité survient quand un délinquant, une cible et l'absence de gardien se rencontrent.",
+                "chart": {
+                  "type": "routine"
+                }
               }
             },
             {
@@ -865,16 +895,73 @@
                 "Parce que l'internet n'a pas de frontières, il est difficile de dire exactement où se trouve un cybercriminel. Les criminels se cachent avec des VPN, des proxys, ou en attaquant par l'intermédiaire d'ordinateurs infectés dans d'autres pays. Néanmoins, les chercheurs ont cartographié les adresses IP connues pour des activités malveillantes. La plupart se situent en Amérique du Nord, en Europe centrale et orientale, en Asie de l'Est, en Inde et dans l'est de l'Australie. À l'échelle continentale, l'Amérique du Nord et l'Europe en hébergent le plus, et les régions à revenus élevés abritent la majorité des IP malveillantes. En d'autres termes, les pays les plus riches et les plus connectés sont à la fois les plus grandes cibles et les plus grandes sources d'infrastructures de cybercriminalité."
               ],
               "figure": {
-                "src": "/dfir/top-20-countries-malicious-programs-2014.png",
-                "alt": "Les 20 pays les plus exposés aux attaques externes de programmes malveillants en 2014",
-                "caption": "Figure 2 · Les 20 pays les plus exposés aux attaques externes de programmes malveillants en 2014 (source : ResearchGate)."
+                "alt": "Diagramme à barres de la part des internautes par pays (données d'exemple), triées de la plus élevée à la plus faible.",
+                "caption": "Figure 6 · Part des internautes par pays (schéma propre, données d'exemple).",
+                "chart": {
+                  "type": "country"
+                }
               },
               "note": "Nuance importante : ces cartes basées sur les IP montrent d'où proviennent les attaques, pas nécessairement où vivent les criminels. Un criminel dans un pays peut facilement attaquer depuis des serveurs situés dans un autre pays — c'est précisément pourquoi la lutte contre la cybercriminalité est si difficile pour la police."
             }
           ]
         },
         {
-          "heading": "7 · Comment les gens réagissent à la cybercriminalité",
+          "heading": "7 · Les cybermenaces en direct dans le monde",
+          "subsections": [
+            {
+              "heading": "7.1 Les cartes de menaces en temps réel",
+              "paragraphs": [
+                "La cybercriminalité se produit partout dans le monde, en permanence. Des entreprises de sécurité comme Kaspersky collectent la télémétrie anonymisée des appareils de millions d'utilisateurs via leur Kaspersky Security Network et visualisent les attaques détectées sur une carte du monde en direct : chaque ligne est une attaque, détectée au moment où elle se produit. L'exemple le plus connu est la Kaspersky Cyberthreat Live Map, qui montre les attaques en temps réel et permet aux visiteurs de choisir un pays pour voir ses statistiques de menaces."
+              ]
+            },
+            {
+              "heading": "",
+              "paragraphs": [
+                "Voici le widget en direct de la Kaspersky Cybermap. Il est mis à jour en continu et montre l'ampleur et la géographie de la cybercriminalité au moment où elle se produit :"
+              ],
+              "embed": {
+                "src": "https://cybermap.kaspersky.com/en/widget/dynamic/dark",
+                "title": "Kaspersky Cyberthreat live map",
+                "height": 520
+              },
+              "paragraphs_after": [
+                "Chaque couleur représente un type de détection : scans à l'accès (vert), scans à la demande (rouge), antivirus mail (orange), antivirus web (bleu), détection d'intrusion (rose), scans de vulnérabilités (jaune), anti-spam (violet) et rançongiciel (ligne bleue). Les compteurs en bas sont remis à zéro chaque jour à 00h00 GMT."
+              ]
+            },
+            {
+              "heading": "7.2 Ce que la carte nous apprend",
+              "paragraphs": [
+                "Une telle carte en direct n'est pas qu'un gadget. Elle répond directement aux questions de recherche de ce rapport :"
+              ],
+              "bullets": [
+                {
+                  "strong": "Ampleur :",
+                  "body": "le nombre de détections par seconde montre que la cybercriminalité n'est ni rare ni exotique, mais un bruit de fond constant et mondial d'attaques."
+                },
+                {
+                  "strong": "Géographie :",
+                  "body": "les lignes relient attaquants et cibles à travers les continents, confirmant qu'internet n'a pas de frontières et que les attaques peuvent venir de n'importe où (voir section 6)."
+                },
+                {
+                  "strong": "Variété :",
+                  "body": "les différentes couleurs de détection montrent que la cybercriminalité n'est pas un crime, mais toute une famille de crimes, du malware et des menaces web au spam, au rançongiciel et aux attaques réseau (voir section 3)."
+                },
+                {
+                  "strong": "Réserve sur les données :",
+                  "body": "la carte reflète uniquement la télémétrie des produits Kaspersky. Elle montre où se produisent les détections, pas nécessairement où vivent les criminels, et d'autres fournisseurs (comme Check Point) publient des cartes similaires avec leurs propres données."
+                }
+              ]
+            },
+            {
+              "heading": "7.3 Pourquoi cela compte pour l'étude",
+              "paragraphs": [
+                "La carte en direct est une illustration pratique des théories de la section 5 : le crime se produit là où opportunités et cibles se rencontrent, et il s'adapte à l'heure de la journée et à la région. Observer des attaques en temps réel rend tangibles les chiffres abstraits de la section 4 — des millions de détections par jour, dans chaque pays, tandis que les utilisateurs, entreprises et gouvernements tentent de se protéger (section 8)."
+              ]
+            }
+          ]
+        },
+        {
+          "heading": "8 · Comment les gens réagissent à la cybercriminalité",
           "subsections": [
             {
               "heading": "",
@@ -906,7 +993,7 @@
           ]
         },
         {
-          "heading": "8 · Cybersécurité : comment se protéger",
+          "heading": "9 · Cybersécurité : comment se protéger",
           "subsections": [
             {
               "heading": "",
@@ -937,7 +1024,7 @@
           ]
         },
         {
-          "heading": "9 · Conclusion",
+          "heading": "10 · Conclusion",
           "subsections": [
             {
               "heading": "",
@@ -949,7 +1036,7 @@
           ]
         }
       ],
-      "references_heading": "10 · Références",
+      "references_heading": "11 · Références",
       "references": [
         {
           "label": "Tsotetsi, K. \"Understanding the Internet: A Journey from Devices to Submarine Cables.\"",
@@ -980,11 +1067,19 @@
           "href": "https://doi.org/10.1016/j.jeconc.2025.100136"
         },
         {
-          "label": "ResearchGate. \"Top 20 countries exposed to external attacks from malicious programs in 2014.\"",
-          "href": "https://www.researchgate.net/figure/Top-20-countries-exposed-to-external-attacks-from-malicious-programs-in-2014_fig1_331914032"
+          "label": "Kaspersky. \"Kaspersky Cyberthreat live map\" (real-time threat visualization).",
+          "href": "https://cybermap.kaspersky.com/"
+        },
+        {
+          "label": "Kaspersky. \"Cyberthreats Map: watch global threats in real time.\" (2014).",
+          "href": "https://www.kaspersky.com/blog/cyberthreats-map-watch-global-threats-in-real-time/"
+        },
+        {
+          "label": "Kaspersky. \"Kaspersky Cyberthreat live map — Data sources (OAS, ODS, MAV, Web AV, IDS, VUL, Anti-Spam, Ransomware).\"",
+          "href": "https://cybermap.kaspersky.com/subsystems"
         }
       ],
-      "references_note": "Figures : « Une brève histoire de l'internet » (BroadbandNow) et « Les 20 pays les plus exposés aux attaques externes de programmes malveillants en 2014 » (ResearchGate). Les faits sont tirés des sources ci-dessus et reformulés dans les mots propres de ce rapport.",
+      "references_note": "Les figures 1, 3 et 5 sont des schémas propres de l'auteur, réalisés avec Mermaid. Les figures 2, 4 et 6 sont des graphiques interactifs propres, réalisés avec Chart.js (la figure 6 utilise des données d'exemple). Les faits sont tirés des sources ci-dessus et reformulés dans les mots propres de ce rapport.",
       "back_label": "Retour à l'équipe",
       "profile_label": "Voir le profil de RAGNAROK"
     }

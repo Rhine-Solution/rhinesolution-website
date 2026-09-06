@@ -569,7 +569,7 @@ flowchart LR
     end
     subgraph Data[Private network]
         DB[(MySQL - Mac Mini)]
-        TUN[cloudflared access tcp :3306]
+        TUN["cloudflared access tcp :3306"]
     end
     User[Browser / PWA] --> W
     W --> S
@@ -745,8 +745,8 @@ flowchart LR
 ```mermaid
 flowchart TD
     U["UptimeRobot on /api/health"] --> A{Incident?}
-    A -->|site| S[Static: cf-cache-status]
-    A -->|api| W[Worker: /api/health, wrangler tail]
+    A -->|site| S["Static: cf-cache-status"]
+    A -->|api| W["Worker: /api/health, wrangler tail"]
     A -->|db| D[MySQL + Hyperdrive pool]
     A -->|tunnel| T[cloudflared alive + token valid]
     D --> R[Restore from encrypted backup]

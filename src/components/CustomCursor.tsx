@@ -32,6 +32,10 @@ export default function CustomCursor() {
     const onOver = (e: MouseEvent) => {
       const t = e.target as HTMLElement | null;
       if (!t) return;
+      document.documentElement.classList.toggle(
+        "cursor-over-iframe",
+        Boolean(t.closest("iframe"))
+      );
       const interactive = t.closest(
         'a, button, [role="button"], [data-cursor="hover"], input, textarea, select, label'
       );
@@ -64,6 +68,7 @@ export default function CustomCursor() {
       window.removeEventListener("mouseover", onOver);
       cancelAnimationFrame(raf);
       document.documentElement.classList.remove("custom-cursor-on");
+      document.documentElement.classList.remove("cursor-over-iframe");
     };
   }, []);
 

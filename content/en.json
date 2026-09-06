@@ -501,7 +501,7 @@
   "dfir": {
     "cybercrime_report": {
       "meta_title": "Cybercrime and Cybersecurity Report",
-      "meta_description": "Keuzedeel K1352 research report: how the internet works, what cybercrime is, the scale of the problem, and how to protect against it.",
+      "meta_description": "Keuzedeel K1352 research report: how the internet works, what cybercrime is, the scale of the problem, live cyber threats, and how to protect against it.",
       "eyebrow": "RAGNAROK · Cyber Security",
       "title": "Cybercrime and Cybersecurity Report",
       "lead": "Keuzedeel K1352 research report. How the internet works from zero, what cybercrime is, how big the problem really is, who commits it and why, and what people and organizations can do to protect themselves.",
@@ -570,7 +570,14 @@
                   "body": "The packets reach the other side, are re-assembled in the correct order, and the recipient's device shows the message."
                 }
               ],
-              "note": "So every message travels through a mix of radio waves, copper wires, glass fibers and undersea cables. It only feels wireless to us."
+              "note": "So every message travels through a mix of radio waves, copper wires, glass fibers and undersea cables. It only feels wireless to us.",
+              "figure": {
+                "alt": "Flow diagram of the seven stages a message travels through: device, radio waves, router and modem, ISP network, regional hubs, submarine cables, destination.",
+                "caption": "Figure 1 · The journey of a message from a device to its destination (own diagram).",
+                "chart": {
+                  "type": "journey"
+                }
+              }
             },
             {
               "heading": "1.3 Packets, IP addresses and protocols",
@@ -657,9 +664,11 @@
                 "The final stretch from the provider's network to the home is called the last mile. It is the most expensive part to build, which is why cities get fiber while rural and poor areas get slower connections or none at all. Newer technologies such as microwave links and 5G help close the gap, but basic internet access is still a problem in many parts of the world."
               ],
               "figure": {
-                "src": "/dfir/a-brief-history-of-the-internet-graphic-768x1296.jpg",
-                "alt": "Infographic: a brief history of the internet",
-                "caption": "Figure 1 · A brief history of the internet (infographic from BroadbandNow)."
+                "alt": "Timeline of the history of the internet from 1969 to 2005, grouped by decade: 1960s, 1970s, 1980s, 1990s and 2000s.",
+                "caption": "Figure 2 · A timeline of the history of the internet (1969-2005), grouped by decade.",
+                "chart": {
+                  "type": "timeline"
+                }
               }
             }
           ]
@@ -684,7 +693,14 @@
               ],
               "paragraphs_after": [
                 "Criminologist David Wall describes four categories of cybercrime: cyber trespass (getting into systems you are not allowed to enter), cyber deception or theft (stealing things online, like credit card data), cyber pornography or obscenity (sharing sexual material online), and cyber violence (causing emotional or psychological harm, such as cyberstalking. The victim may not be physically hurt but can suffer lasting damage)."
-              ]
+              ],
+              "figure": {
+                "alt": "Mind map of cybercrime types split into cyber-dependent and cyber-enabled crime, plus David Wall's four categories.",
+                "caption": "Figure 3 · How cybercrime is grouped: cyber-dependent vs cyber-enabled crime, and David Wall's four categories.",
+                "chart": {
+                  "type": "taxonomy"
+                }
+              }
             }
           ]
         },
@@ -793,7 +809,14 @@
                   ]
                 ]
               },
-              "note": "Internet growth also means more potential victims: from about 1 billion people online in 2005 to roughly 5.4 billion in 2023. Cybercrime is effectively a trillion-dollar industry for criminals, and almost everyone connected is a potential target."
+              "note": "Internet growth also means more potential victims: from about 1 billion people online in 2005 to roughly 5.4 billion in 2023. Cybercrime is effectively a trillion-dollar industry for criminals, and almost everyone connected is a potential target.",
+              "figure": {
+                "alt": "Bar chart showing internet users growing from 1 billion in 2005 to 5.4 billion in 2023.",
+                "caption": "Figure 4 · Growth in the number of internet users worldwide, from about 1 billion (2005) to 5.4 billion (2023).",
+                "chart": {
+                  "type": "growth"
+                }
+              }
             }
           ]
         },
@@ -832,6 +855,13 @@
                     "Online, weak passwords, clicking phishing links and outdated software make you a suitable target. Security software and careful habits are the guardian."
                   ]
                 ]
+              },
+              "figure": {
+                "alt": "Diagram of routine activity theory: motivated offender, suitable target and a capable guardian.",
+                "caption": "Figure 5 · Routine activity theory: crime happens when an offender, a target and the absence of a guardian meet.",
+                "chart": {
+                  "type": "routine"
+                }
               }
             },
             {
@@ -865,16 +895,73 @@
                 "Because the internet has no borders, it is hard to say exactly where a cybercriminal sits. Criminals hide with VPNs, proxies, or by attacking through infected computers in other countries. Still, researchers mapped the IP addresses known for malicious activity. Most are located in North America, Central and Eastern Europe, East Asia, India and eastern Australia. On a continental level, North America and Europe host the most, and high-income regions host the majority of malicious IPs. In other words, the richest, most connected countries are both the biggest targets and the biggest source locations of cybercrime infrastructure."
               ],
               "figure": {
-                "src": "/dfir/top-20-countries-malicious-programs-2014.png",
-                "alt": "Top 20 countries exposed to external attacks from malicious programs in 2014",
-                "caption": "Figure 2 · Top 20 countries exposed to external attacks from malicious programs in 2014 (source: ResearchGate)."
+                "alt": "Bar chart of the share of internet users by country (sample data), sorted from highest to lowest.",
+                "caption": "Figure 6 · Share of internet users by country (own chart, sample data).",
+                "chart": {
+                  "type": "country"
+                }
               },
               "note": "Important nuance: these IP-based maps show where attacks originate from, not necessarily where the criminals live. A criminal in one country can easily attack from servers in another, exactly why fighting cybercrime is so hard for the police."
             }
           ]
         },
         {
-          "heading": "7 · How People React to Cybercrime",
+          "heading": "7 · Live Cyber Threats Around the World",
+          "subsections": [
+            {
+              "heading": "7.1 Real-time threat maps",
+              "paragraphs": [
+                "Cybercrime happens all over the world, all the time. Security companies like Kaspersky collect anonymized telemetry from the devices of millions of users through their Kaspersky Security Network, and visualize the detected attacks on a live world map: every line is an attack, detected as it happens. The most well-known example is the Kaspersky Cyberthreat Live Map, which shows attacks in real time and lets visitors pick a country to see its threat statistics."
+              ]
+            },
+            {
+              "heading": "",
+              "paragraphs": [
+                "Below is the live Kaspersky Cybermap widget. It is updated continuously and shows the scale and geography of cybercrime as it happens:"
+              ],
+              "embed": {
+                "src": "https://cybermap.kaspersky.com/en/widget/dynamic/dark",
+                "title": "Kaspersky Cyberthreat live map",
+                "height": 520
+              },
+              "paragraphs_after": [
+                "Every color represents a different kind of detection: on-access scans (green), on-demand scans (red), mail anti-virus (orange), web anti-virus (blue), intrusion detection (pink), vulnerability scans (yellow), anti-spam (purple) and ransomware (blue line). The counters at the bottom reset every day at 00:00 GMT."
+              ]
+            },
+            {
+              "heading": "7.2 What the map teaches us",
+              "paragraphs": [
+                "A live map like this is not just a gadget. It connects directly to this report's research questions:"
+              ],
+              "bullets": [
+                {
+                  "strong": "Scale:",
+                  "body": "the number of detections per second shows that cybercrime is not rare or exotic, but a constant, global background noise of attacks."
+                },
+                {
+                  "strong": "Geography:",
+                  "body": "lines connect attackers and targets across continents, confirming that the internet has no borders and that attacks can come from anywhere (see section 6)."
+                },
+                {
+                  "strong": "Variety:",
+                  "body": "the different detection colors show that cybercrime is not one crime, but a whole family of crimes, from malware and web threats to spam, ransomware and network attacks (see section 3)."
+                },
+                {
+                  "strong": "Data caveats:",
+                  "body": "the map reflects Kaspersky product telemetry only. It shows where detections happen, not necessarily where the criminals live, and other vendors (such as Check Point) publish similar maps with their own data."
+                }
+              ]
+            },
+            {
+              "heading": "7.3 Why this matters for the study",
+              "paragraphs": [
+                "The live map is a practical illustration of the theories in section 5: crime happens where opportunity and targets meet, and it adapts to the time of day and the region. Watching attacks occur in real time makes the abstract numbers of section 4 tangible — millions of detections per day, across every country, while users, companies and governments try to protect themselves (section 8)."
+              ]
+            }
+          ]
+        },
+        {
+          "heading": "8 · How People React to Cybercrime",
           "subsections": [
             {
               "heading": "",
@@ -906,7 +993,7 @@
           ]
         },
         {
-          "heading": "8 · Cybersecurity: How to Protect Yourself",
+          "heading": "9 · Cybersecurity: How to Protect Yourself",
           "subsections": [
             {
               "heading": "",
@@ -937,7 +1024,7 @@
           ]
         },
         {
-          "heading": "9 · Conclusion",
+          "heading": "10 · Conclusion",
           "subsections": [
             {
               "heading": "",
@@ -949,7 +1036,7 @@
           ]
         }
       ],
-      "references_heading": "10 · References",
+      "references_heading": "11 · References",
       "references": [
         {
           "label": "Tsotetsi, K. \"Understanding the Internet: A Journey from Devices to Submarine Cables.\"",
@@ -980,11 +1067,19 @@
           "href": "https://doi.org/10.1016/j.jeconc.2025.100136"
         },
         {
-          "label": "ResearchGate. \"Top 20 countries exposed to external attacks from malicious programs in 2014.\"",
-          "href": "https://www.researchgate.net/figure/Top-20-countries-exposed-to-external-attacks-from-malicious-programs-in-2014_fig1_331914032"
+          "label": "Kaspersky. \"Kaspersky Cyberthreat live map\" (real-time threat visualization).",
+          "href": "https://cybermap.kaspersky.com/"
+        },
+        {
+          "label": "Kaspersky. \"Cyberthreats Map: watch global threats in real time.\" (2014).",
+          "href": "https://www.kaspersky.com/blog/cyberthreats-map-watch-global-threats-in-real-time/"
+        },
+        {
+          "label": "Kaspersky. \"Kaspersky Cyberthreat live map — Data sources (OAS, ODS, MAV, Web AV, IDS, VUL, Anti-Spam, Ransomware).\"",
+          "href": "https://cybermap.kaspersky.com/subsystems"
         }
       ],
-      "references_note": "Figures: \"A brief history of the internet\" (BroadbandNow) and \"Top 20 countries exposed to external attacks from malicious programs in 2014\" (ResearchGate). Facts are collected from the sources above and rewritten in this report's own words.",
+      "references_note": "Figures 1, 3 and 5 are the author's own diagrams, made with Mermaid. Figures 2, 4 and 6 are the author's own interactive charts, made with Chart.js (Figure 6 uses sample data). Facts are collected from the sources above and rewritten in this report's own words.",
       "back_label": "Back to the team",
       "profile_label": "View RAGNAROK profile"
     }

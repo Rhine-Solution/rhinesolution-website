@@ -501,7 +501,7 @@
   "dfir": {
     "cybercrime_report": {
       "meta_title": "Rapporto su criminalità informatica e cybersecurity",
-      "meta_description": "Rapporto di ricerca del Keuzedeel K1352: come funziona internet, cos'è la criminalità informatica, la scala del problema e come proteggersi.",
+      "meta_description": "Rapporto di ricerca del Keuzedeel K1352: come funziona internet, cos'è la criminalità informatica, la scala del problema, le minacce informatiche in tempo reale e come proteggersi.",
       "eyebrow": "RAGNAROK · Cyber Security",
       "title": "Rapporto su criminalità informatica e cybersecurity",
       "lead": "Rapporto di ricerca del Keuzedeel K1352. Come funziona internet da zero, cos'è la criminalità informatica, quanto è grande davvero il problema, chi la commette e perché, e cosa possono fare le persone e le organizzazioni per proteggersi.",
@@ -570,7 +570,14 @@
                   "body": "I pacchetti raggiungono l'altro lato, vengono riassemblati nell'ordine corretto e il dispositivo del destinatario mostra il messaggio."
                 }
               ],
-              "note": "Quindi ogni messaggio viaggia attraverso un mix di onde radio, fili di rame, fibre di vetro e cavi sottomarini. A noi sembra solo senza fili."
+              "note": "Quindi ogni messaggio viaggia attraverso un mix di onde radio, fili di rame, fibre di vetro e cavi sottomarini. A noi sembra solo senza fili.",
+              "figure": {
+                "alt": "Diagramma di flusso delle sette tappe di un messaggio: dispositivo, onde radio, router e modem, rete ISP, nodi regionali, cavi sottomarini, destinazione.",
+                "caption": "Figura 1 · Il percorso di un messaggio da un dispositivo alla sua destinazione (diagramma proprio).",
+                "chart": {
+                  "type": "journey"
+                }
+              }
             },
             {
               "heading": "1.3 Pacchetti, indirizzi IP e protocolli",
@@ -657,9 +664,11 @@
                 "L'ultimo tratto dalla rete del provider fino alla casa si chiama ultimo miglio. È la parte più costosa da costruire, ed è per questo che le città ricevono la fibra mentre le aree rurali e povere ottengono connessioni più lente o nessuna. Tecnologie più recenti come i collegamenti a microonde e il 5G aiutano a colmare il divario, ma l'accesso di base a internet resta un problema in molte parti del mondo."
               ],
               "figure": {
-                "src": "/dfir/a-brief-history-of-the-internet-graphic-768x1296.jpg",
-                "alt": "Infografica: una breve storia di internet",
-                "caption": "Figura 1 · Una breve storia di internet (infografica di BroadbandNow)."
+                "alt": "Linea temporale della storia di internet dal 1969 al 2005, raggruppata per decenni: anni '60, '70, '80, '90 e 2000.",
+                "caption": "Figura 2 · Una linea temporale della storia di internet (1969-2005), raggruppata per decenni.",
+                "chart": {
+                  "type": "timeline"
+                }
               }
             }
           ]
@@ -684,7 +693,14 @@
               ],
               "paragraphs_after": [
                 "Il criminologo David Wall descrive quattro categorie di criminalità informatica: l'accesso abusivo (cyber trespass: entrare in sistemi in cui non è permesso entrare), l'inganno o il furto informatico (rubare cose online, come i dati delle carte di credito), la pornografia o oscenità informatica (condividere materiale sessuale online) e la violenza informatica (causare danni emotivi o psicologici, come lo cyberstalking. La vittima può non subire danni fisici ma può soffrire danni duraturi)."
-              ]
+              ],
+              "figure": {
+                "alt": "Mappa mentale della criminalità informatica divisa in cyber-dipendente e cyber-assistita, più le quattro categorie di David Wall.",
+                "caption": "Figura 3 · Come si classifica la criminalità informatica: reati cyber-dipendenti e cyber-assistiti, e le quattro categorie di David Wall.",
+                "chart": {
+                  "type": "taxonomy"
+                }
+              }
             }
           ]
         },
@@ -793,7 +809,14 @@
                   ]
                 ]
               },
-              "note": "La crescita di internet significa anche più potenziali vittime: da circa 1 miliardo di persone online nel 2005 a circa 5,4 miliardi nel 2023. La criminalità informatica è di fatto un'industria da migliaia di miliardi per i criminali, e quasi ogni persona connessa è un potenziale bersaglio."
+              "note": "La crescita di internet significa anche più potenziali vittime: da circa 1 miliardo di persone online nel 2005 a circa 5,4 miliardi nel 2023. La criminalità informatica è di fatto un'industria da migliaia di miliardi per i criminali, e quasi ogni persona connessa è un potenziale bersaglio.",
+              "figure": {
+                "alt": "Grafico a barre che mostra gli utenti internet passati da 1 miliardo nel 2005 a 5,4 miliardi nel 2023.",
+                "caption": "Figura 4 · Crescita del numero di utenti internet nel mondo, da circa 1 miliardo (2005) a 5,4 miliardi (2023).",
+                "chart": {
+                  "type": "growth"
+                }
+              }
             }
           ]
         },
@@ -832,6 +855,13 @@
                     "Online, password deboli, clic su link di phishing e software obsoleti ti rendono un bersaglio adatto. I software di sicurezza e le abitudini prudenti sono il guardiano."
                   ]
                 ]
+              },
+              "figure": {
+                "alt": "Diagramma della teoria delle attività di routine: autore motivato, bersaglio adatto e guardiano capace.",
+                "caption": "Figura 5 · Teoria delle attività di routine: il crimine avviene quando un autore motivato, un bersaglio adatto e l'assenza di un guardiano si incontrano.",
+                "chart": {
+                  "type": "routine"
+                }
               }
             },
             {
@@ -865,16 +895,73 @@
                 "Poiché internet non ha confini, è difficile dire esattamente dove si trova un criminale informatico. I criminali si nascondono con VPN, proxy o attaccando attraverso computer infetti in altri paesi. Tuttavia, i ricercatori hanno mappato gli indirizzi IP noti per attività dannose. La maggior parte si trova in Nord America, Europa centro-orientale, Asia orientale, India e Australia orientale. A livello continentale, Nord America ed Europa ne ospitano di più, e le regioni ad alto reddito ospitano la maggior parte degli IP dannosi. In altre parole, i paesi più ricchi e più connessi sono al tempo stesso i bersagli più grandi e le principali fonti dell'infrastruttura della criminalità informatica."
               ],
               "figure": {
-                "src": "/dfir/top-20-countries-malicious-programs-2014.png",
-                "alt": "I 20 paesi più esposti ad attacchi esterni da programmi dannosi nel 2014",
-                "caption": "Figura 2 · I 20 paesi più esposti ad attacchi esterni da programmi dannosi nel 2014 (fonte: ResearchGate)."
+                "alt": "Grafico a barre della quota di utenti internet per paese (dati di esempio), ordinati dal più alto al più basso.",
+                "caption": "Figura 6 · Quota di utenti internet per paese (grafico proprio, dati di esempio).",
+                "chart": {
+                  "type": "country"
+                }
               },
               "note": "Sfumatura importante: queste mappe basate sugli IP mostrano da dove provengono gli attacchi, non necessariamente dove vivono i criminali. Un criminale in un paese può facilmente attaccare da server in un altro: è esattamente il motivo per cui combattere la criminalità informatica è così difficile per la polizia."
             }
           ]
         },
         {
-          "heading": "7 · Come reagiscono le persone alla criminalità informatica",
+          "heading": "7 · Minacce informatiche in diretta nel mondo",
+          "subsections": [
+            {
+              "heading": "7.1 Le mappe delle minacce in tempo reale",
+              "paragraphs": [
+                "La criminalità informatica avviene in tutto il mondo, continuamente. Aziende di sicurezza come Kaspersky raccolgono telemetria anonimizzata dai dispositivi di milioni di utenti attraverso il loro Kaspersky Security Network e visualizzano gli attacchi rilevati su una mappa mondiale in diretta: ogni linea è un attacco, rilevato nel momento in cui avviene. L'esempio più noto è la Kaspersky Cyberthreat Live Map, che mostra gli attacchi in tempo reale e permette ai visitatori di scegliere un paese per vedere le sue statistiche sulle minacce."
+              ]
+            },
+            {
+              "heading": "",
+              "paragraphs": [
+                "Di seguito è mostrato il widget in diretta della Kaspersky Cybermap. Si aggiorna continuamente e mostra la scala e la geografia della criminalità informatica mentre avviene:"
+              ],
+              "embed": {
+                "src": "https://cybermap.kaspersky.com/en/widget/dynamic/dark",
+                "title": "Kaspersky Cyberthreat live map",
+                "height": 520
+              },
+              "paragraphs_after": [
+                "Ogni colore rappresenta un tipo di rilevamento: scansioni all'accesso (verde), scansioni su richiesta (rosso), antivirus di posta (arancione), antivirus web (blu), rilevamento delle intrusioni (rosa), scansioni delle vulnerabilità (giallo), antispam (viola) e ransomware (linea blu). I contatori in basso vengono azzerati ogni giorno alle 00:00 GMT."
+              ]
+            },
+            {
+              "heading": "7.2 Cosa ci insegna la mappa",
+              "paragraphs": [
+                "Una mappa in diretta come questa non è solo un gadget. Si collega direttamente alle domande di ricerca di questo rapporto:"
+              ],
+              "bullets": [
+                {
+                  "strong": "Scala:",
+                  "body": "il numero di rilevamenti al secondo mostra che la criminalità informatica non è rara o esotica, ma un rumore di fondo costante e mondiale di attacchi."
+                },
+                {
+                  "strong": "Geografia:",
+                  "body": "le linee collegano attaccanti e obiettivi attraverso i continenti, confermando che internet non ha confini e che gli attacchi possono arrivare da ovunque (vedi sezione 6)."
+                },
+                {
+                  "strong": "Varietà:",
+                  "body": "i diversi colori di rilevamento mostrano che la criminalità informatica non è un singolo reato, ma un'intera famiglia di reati, dal malware e le minacce web allo spam, al ransomware e agli attacchi di rete (vedi sezione 3)."
+                },
+                {
+                  "strong": "Nota sui dati:",
+                  "body": "la mappa riflette solo la telemetria dei prodotti Kaspersky. Mostra dove avvengono i rilevamenti, non necessariamente dove vivono i criminali, e altri fornitori (come Check Point) pubblicano mappe simili con i propri dati."
+                }
+              ]
+            },
+            {
+              "heading": "7.3 Perché è importante per lo studio",
+              "paragraphs": [
+                "La mappa in diretta è un'illustrazione pratica delle teorie della sezione 5: il crimine avviene dove opportunità e obiettivi si incontrano, e si adatta all'ora del giorno e alla regione. Osservare gli attacchi in tempo reale rende tangibili le cifre astratte della sezione 4 — milioni di rilevamenti al giorno, in ogni paese, mentre utenti, aziende e governi cercano di proteggersi (sezione 8)."
+              ]
+            }
+          ]
+        },
+        {
+          "heading": "8 · Come reagiscono le persone alla criminalità informatica",
           "subsections": [
             {
               "heading": "",
@@ -906,7 +993,7 @@
           ]
         },
         {
-          "heading": "8 · Cybersecurity: come proteggersi",
+          "heading": "9 · Cybersecurity: come proteggersi",
           "subsections": [
             {
               "heading": "",
@@ -937,7 +1024,7 @@
           ]
         },
         {
-          "heading": "9 · Conclusione",
+          "heading": "10 · Conclusione",
           "subsections": [
             {
               "heading": "",
@@ -949,7 +1036,7 @@
           ]
         }
       ],
-      "references_heading": "10 · Riferimenti",
+      "references_heading": "11 · Riferimenti",
       "references": [
         {
           "label": "Tsotetsi, K. \"Understanding the Internet: A Journey from Devices to Submarine Cables.\"",
@@ -980,11 +1067,19 @@
           "href": "https://doi.org/10.1016/j.jeconc.2025.100136"
         },
         {
-          "label": "ResearchGate. \"Top 20 countries exposed to external attacks from malicious programs in 2014.\"",
-          "href": "https://www.researchgate.net/figure/Top-20-countries-exposed-to-external-attacks-from-malicious-programs-in-2014_fig1_331914032"
+          "label": "Kaspersky. \"Kaspersky Cyberthreat live map\" (real-time threat visualization).",
+          "href": "https://cybermap.kaspersky.com/"
+        },
+        {
+          "label": "Kaspersky. \"Cyberthreats Map: watch global threats in real time.\" (2014).",
+          "href": "https://www.kaspersky.com/blog/cyberthreats-map-watch-global-threats-in-real-time/"
+        },
+        {
+          "label": "Kaspersky. \"Kaspersky Cyberthreat live map — Data sources (OAS, ODS, MAV, Web AV, IDS, VUL, Anti-Spam, Ransomware).\"",
+          "href": "https://cybermap.kaspersky.com/subsystems"
         }
       ],
-      "references_note": "Figure: \"A brief history of the internet\" (BroadbandNow) e \"Top 20 countries exposed to external attacks from malicious programs in 2014\" (ResearchGate). I fatti sono raccolti dalle fonti sopra indicate e riscritti con le parole del presente rapporto.",
+      "references_note": "Le figure 1, 3 e 5 sono diagrammi propri dell'autore, realizzati con Mermaid. Le figure 2, 4 e 6 sono grafici interattivi propri, realizzati con Chart.js (la figura 6 usa dati di esempio). I fatti sono raccolti dalle fonti sopra indicate e riscritti con le parole del presente rapporto.",
       "back_label": "Torna al team",
       "profile_label": "Visualizza il profilo di RAGNAROK"
     }
