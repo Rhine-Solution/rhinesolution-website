@@ -21,6 +21,7 @@ description: Map of all machine-brain wiki notes, grouped by type.
 -  — swarm audit (perf, positioning, features, WebGL decision).
 - [[machine-brain]] — NOUS, the machine-brain chamber.
 -  — NOUS's live Discord agent (Free Claude Code bridge): identity wiring, capabilities, training state.
+-  — the Heart/Soul/Brain core: research synthesis, gap analysis, and roadmap for the Rhine Solution AI core.
 - [[okm]] — OKF/OKM conventions.
 -  — market + competitors for scheduling/WFM SaaS.
 -  — Workers + Hyperdrive + MySQL pattern (howto).
