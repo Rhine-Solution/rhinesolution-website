@@ -1,22 +1,14 @@
 import type { Metadata, Viewport } from "next";
-import { Cormorant_Garamond } from "next/font/google";
 import "../../styles/globals.css";
 import { getContent } from "@/lib/i18n";
 import { rijksSans, rijksHeading, rijksSerif } from "@/lib/fonts";
 import MobileHeader from "@/components/MobileHeader";
 import MobileFooter from "@/components/MobileFooter";
 import ChatWidget from "@/components/ChatWidget";
-import SceneManager from "@/components/scene/SceneManager";
 import SmoothScrollProvider from "@/components/SmoothScrollProvider";
 import CustomCursor from "@/components/CustomCursor";
 import IntroLoader from "@/components/IntroLoader";
 import JsonLd, { siteJsonLd } from "@/components/JsonLd";
-
-const cormorant = Cormorant_Garamond({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-cormorant",
-});
 
 type Props = {
   children: React.ReactNode;
@@ -45,10 +37,9 @@ export default async function LocaleLayout({ children, params }: Props) {
   const { locale } = await params;
   const content = getContent(locale);
   return (
-    <html lang={locale} className={`${rijksSans.variable} ${rijksHeading.variable} ${rijksSerif.variable} ${cormorant.variable}`}>
+    <html lang={locale} className={`${rijksSans.variable} ${rijksHeading.variable} ${rijksSerif.variable}`}>
       <body>
         <JsonLd data={siteJsonLd()} />
-        <SceneManager />
         <SmoothScrollProvider />
         <CustomCursor />
         <IntroLoader />
