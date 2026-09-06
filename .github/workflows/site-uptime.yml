@@ -1,0 +1,66 @@
+name: site-uptime
+
+on:
+  schedule:
+    - cron: "*/5 * * * *"
+  workflow_dispatch:
+
+concurrency: site-uptime
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout state branch
+        uses: actions/checkout@v4
+        with:
+          ref: uptime-monitor-state
+
+      - name: Check site
+        id: check
+        run: |
+          prev="unknown"
+          [ -f uptime-state.txt ] && prev=$(cat uptime-state.txt)
+          code=$(curl -s -o /dev/null -w "%{http_code}" -m 15 -I https://rhinesolution.com || echo 000)
+          if [ "$code" = "200" ] || [ "$code" = "301" ] || [ "$code" = "302" ] || [ "$code" = "403" ]; then
+            now="up"
+          else
+            now="down"
+          fi
+          echo "prev=$prev now=$now code=$code"
+          echo "$prev" > prev.txt
+          echo "$now" > now.txt
+
+      - name: Alert on transition + persist state
+        env:
+          WEBHOOK: ${{ secrets.SITE_DISCORD_WEBHOOK }}
+        run: |
+          prev=$(cat prev.txt)
+          now=$(cat now.txt)
+          if [ -n "$WEBHOOK" ] && [ "$prev" != "$now" ]; then
+            if [ "$now" = "down" ]; then
+              msg="DOWN: rhinesolution.com unreachable (GitHub Actions uptime monitor, code check failed)"
+            elif [ "$prev" = "down" ]; then
+              msg="UP: rhinesolution.com is back online"
+            else
+              msg=""
+            fi
+            if [ -n "$msg" ]; then
+              curl -s -H "Content-Type: application/json" -d "{\"content\":\"$msg\"}" "$WEBHOOK" || echo "webhook post failed"
+            fi
+          fi
+          echo "$now" > uptime-state.txt
+
+      - name: Commit state
+        run: |
+          git config user.name "uptime-bot"
+          git config user.email "uptime@rhinesolution.com"
+          if git diff --quiet; then
+            echo "no state change"
+          else
+            git add uptime-state.txt
+            git commit -m "chore(uptime): update site state $(date -u +%Y-%m-%dT%H:%MZ)"
+            git push origin uptime-monitor-state
+          fi
