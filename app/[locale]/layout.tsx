@@ -5,7 +5,6 @@ import { rijksSans, rijksHeading, rijksSerif } from "@/lib/fonts";
 import MobileHeader from "@/components/MobileHeader";
 import MobileFooter from "@/components/MobileFooter";
 import ChatWidget from "@/components/ChatWidget";
-import SmoothScrollProvider from "@/components/SmoothScrollProvider";
 import CustomCursor from "@/components/CustomCursor";
 import IntroLoader from "@/components/IntroLoader";
 import JsonLd, { siteJsonLd } from "@/components/JsonLd";
@@ -40,7 +39,6 @@ export default async function LocaleLayout({ children, params }: Props) {
     <html lang={locale} className={`${rijksSans.variable} ${rijksHeading.variable} ${rijksSerif.variable}`}>
       <body>
         <JsonLd data={siteJsonLd()} />
-        <SmoothScrollProvider />
         <CustomCursor />
         <IntroLoader />
         <a className="skip-link" href="#main">
