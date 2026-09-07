@@ -30,7 +30,7 @@
     "react-markdown": "^10.1.0",
     "rehype-highlight": "^7.0.2",
     "remark-gfm": "^4.0.1",
-    "resend": "^6.25.0",
+    "resend": "^6.26.0",
     "three": "^0.185.1"
   },
   "overrides": {
