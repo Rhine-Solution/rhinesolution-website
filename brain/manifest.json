@@ -429,7 +429,7 @@
       "file": "nous/index.md",
       "title": "Wiki index",
       "folder": "nous",
-      "excerpt": "Map of all machine-brain wiki notes, grouped by type.",
+      "excerpt": "Map of all machine-brain wiki notes, grouped by type. Updated 2026-09-06 with decisions, identity, and machine-config/health sections.",
       "order": 20,
       "tags": [],
       "updated": "2026-09-06",
@@ -448,7 +448,7 @@
       "excerpt": "Rhine Solution is a software engineering studio. Its public site (rhinesolution.com, 7 locales, Next.js 15 on Vercel) includes a public brain browser under Our ",
       "order": 21,
       "tags": [],
-      "updated": "2026-09-05",
+      "updated": "2026-09-06",
       "outlinks": [
         "machine-brain",
         "okm",
@@ -461,10 +461,10 @@
       "file": "nous/machine-brain.md",
       "title": "Machine brain (NOUS)",
       "folder": "nous",
-      "excerpt": "The machine brain is the AI-augmented chamber (Brain/_machine/) where agents capture, think, and compound — separate from the read-only legacy Brain/.",
+      "excerpt": "The machine brain is the AI-augmented chamber (Brain/_machine/) where agents capture, think, and compound - separate from the read-only legacy Brain/.",
       "order": 22,
       "tags": [],
-      "updated": "2026-09-05",
+      "updated": "2026-09-06",
       "outlinks": [
         "rhine-solution",
         "okm",
@@ -480,7 +480,7 @@
       "excerpt": "Every note carries OKF frontmatter: tags, created, updated, type, description. Every fact is timeless, dated (as_of), or a pointer.",
       "order": 23,
       "tags": [],
-      "updated": "2026-09-05",
+      "updated": "2026-09-06",
       "outlinks": [
         "machine-brain",
         "index"
