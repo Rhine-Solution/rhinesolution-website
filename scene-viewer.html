@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rhine Solution 3D Scene Viewer — all models</title>
+<style>
+  body{margin:0;overflow:hidden;background:#0a0f1e;font-family:monospace}
+  #info{position:fixed;top:12px;left:14px;z-index:10;color:#d5e0ff;font-size:12px;line-height:1.6;
+    background:rgba(10,15,30,.7);padding:8px 12px;border:1px solid #223366;border-radius:6px;max-width:320px}
+  #info b{color:#7fb3ff}
+  #status{position:fixed;top:12px;right:14px;z-index:10;color:#d5e0ff;font-size:12px;line-height:1.7;
+    background:rgba(10,15,30,.7);padding:8px 12px;border:1px solid #223366;border-radius:6px;max-width:260px}
+  #status .ok{color:#7dffa0}
+  #status .err{color:#ff7d7d}
+  #hint{position:fixed;bottom:12px;left:14px;z-index:10;color:#5a6a9a;font-size:11px}
+</style>
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+    "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+  }
+}
+</script>
+</head>
+<body>
+<div id="info">
+  <b>RHINE 3D SCENE</b> — all models combined into one scene<br>
+  camera 45° · bloom 0.24/0.21/0.04 (their settings)
+</div>
+<div id="status">loading…</div>
+<div id="hint">drag = orbit &nbsp;·&nbsp; scroll = zoom &nbsp;·&nbsp; right-drag = pan</div>
+
+<script type="module">
+import * as THREE from 'three';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import { DRACOLoader } from 'three/addons/loaders/DRACOLoader.js';
+import { KTX2Loader } from 'three/addons/loaders/KTX2Loader.js';
+import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js';
+import { RenderPass } from 'three/addons/postprocessing/RenderPass.js';
+import { UnrealBloomPass } from 'three/addons/postprocessing/UnrealBloomPass.js';
+
+const status = document.getElementById('status');
+const log = (html) => { status.innerHTML = html; };
+
+const scene = new THREE.Scene();
+scene.background = new THREE.Color(0x0a0f1e);
+scene.fog = new THREE.Fog(0x0a0f1e, 300, 700);
+
+const camera = new THREE.PerspectiveCamera(45, innerWidth / innerHeight, 0.1, 5000);
+camera.position.set(30, 45, 110);
+
+const renderer = new THREE.WebGLRenderer({ antialias: true });
+renderer.setSize(innerWidth, innerHeight);
+renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+renderer.toneMapping = THREE.ACESFilmicToneMapping;
+renderer.toneMappingExposure = 1.1;
+renderer.outputColorSpace = THREE.SRGBColorSpace;
+document.body.appendChild(renderer.domElement);
+
+const controls = new OrbitControls(camera, renderer.domElement);
+controls.enableDamping = true;
+controls.dampingFactor = 0.08;
+controls.target.set(0, 8, 0);
+controls.maxPolarAngle = Math.PI / 2.05;
+
+// lighting — same feel as the site
+scene.add(new THREE.AmbientLight(0xffffff, 0.55));
+const key = new THREE.DirectionalLight(0xfff2dd, 1.6);
+key.position.set(50, 70, 40);
+scene.add(key);
+const rim = new THREE.DirectionalLight(0x88aaff, 0.8);
+rim.position.set(-50, 25, -50);
+scene.add(rim);
+const fill = new THREE.DirectionalLight(0x334477, 0.4);
+fill.position.set(0, 10, -60);
+scene.add(fill);
+const hemi = new THREE.HemisphereLight(0x8899ff, 0x223344, 0.5);
+scene.add(hemi);
+
+// reference grid
+const grid = new THREE.GridHelper(240, 48, 0x3355aa, 0x1c2c55);
+grid.position.y = -0.6;
+scene.add(grid);
+
+// --- loaders (draco + ktx2) ---
+const draco = new DRACOLoader();
+draco.setDecoderPath('https://unpkg.com/three@0.160.0/examples/jsm/libs/draco/');
+const ktx2 = new KTX2Loader();
+ktx2.setTranscoderPath('https://unpkg.com/three@0.160.0/examples/jsm/libs/basis/');
+const loader = new GLTFLoader();
+loader.setDRACOLoader(draco);
+loader.setKTX2Loader(ktx2);
+
+const models = [
+  { file: 'webgl/models/map.glb',          label: 'map.glb' },
+  { file: 'webgl/models/scene_4.glb',      label: 'scene_4.glb' },
+  { file: 'webgl/models/scene_2-line.glb', label: 'scene_2-line.glb' },
+  { file: 'webgl/models/scene_3.glb',      label: 'scene_3.glb' },
+  { file: 'webgl/models/scene_1.glb',      label: 'scene_1.glb' },
+  { file: 'webgl/models/scene_2.glb',      label: 'scene_2.glb' },
+  { file: 'webgl/models/map-cube.glb',     label: 'map-cube.glb' },
+  { file: 'webgl/models/map-districts.glb',label: 'map-districts.glb' },
+];
+
+const COLS = 4, SPACING = 34;
+const loaded = {};
+let done = 0;
+let html = '';
+
+function layout(obj, index) {
+  // center the model on its own bounding box and place it in the grid
+  const box = new THREE.Box3().setFromObject(obj);
+  const size = box.getSize(new THREE.Vector3());
+  const center = box.getCenter(new THREE.Vector3());
+  const maxDim = Math.max(size.x, size.y, size.z) || 1;
+  const target = 18; // target height of the largest dimension
+  const s = target / maxDim;
+  obj.scale.multiplyScalar(s);
+  const b2 = new THREE.Box3().setFromObject(obj);
+  const c2 = b2.getCenter(new THREE.Vector3());
+  const col = index % COLS;
+  const row = Math.floor(index / COLS);
+  const X = (col - (COLS - 1) / 2) * SPACING;
+  const Z = (row - 0.5) * SPACING;
+  obj.position.set(X - c2.x, -c2.y, Z - c2.z);
+}
+
+function loadOne(m, index) {
+  loader.load(m.file, (gltf) => {
+    const obj = gltf.scene;
+    layout(obj, index);
+    scene.add(obj);
+    loaded[m.label] = true;
+    done++;
+    html += `<div class="ok">✓ ${m.label}</div>`;
+    log(html + (done === models.length ? '' : '<br>loading…'));
+    if (done === models.length) onAllLoaded();
+  }, undefined, (err) => {
+    html += `<div class="err">✗ ${m.label} — ${(err.message||err).slice(0,50)}</div>`;
+    done++;
+    log(html);
+    if (done === models.length) onAllLoaded();
+  });
+}
+
+function onAllLoaded() {
+  // frame the whole layout
+  const all = new THREE.Box3().setFromObject(scene);
+  const center = all.getCenter(new THREE.Vector3());
+  controls.target.set(center.x, center.y, center.z);
+  html += '<br><b>ready — orbit to explore</b>';
+  log(html);
+}
+
+models.forEach(loadOne);
+
+// post-processing — bloom tuned to their site settings
+const composer = new EffectComposer(renderer);
+composer.addPass(new RenderPass(scene, camera));
+const bloom = new UnrealBloomPass(new THREE.Vector2(innerWidth, innerHeight), 0.24, 0.04, 0.21);
+composer.addPass(bloom);
+
+// texture showcase — the KTX2/Basis textures on spinning cubes (side row)
+const texList = ['28.ktx2', 'hero-cube-details.ktx2', 'noise_1.ktx2', 'water-normal.ktx2', 'voronoi.ktx2', 'matcap2.ktx2'];
+const cubes = [];
+texList.forEach((t, i) => {
+  ktx2.loadAsync(`webgl/textures/${t}`).then((tex) => {
+    tex.colorSpace = THREE.SRGBColorSpace;
+    const mat = new THREE.MeshStandardMaterial({ map: tex, roughness: 0.6, metalness: 0.2 });
+    const cube = new THREE.Mesh(new THREE.BoxGeometry(6, 6, 6), mat);
+    cube.position.set(90, 6, (i - (texList.length - 1) / 2) * 12);
+    scene.add(cube);
+    cubes.push(cube);
+  }).catch(() => {});
+});
+
+// animate
+const clock = new THREE.Clock();
+function animate() {
+  requestAnimationFrame(animate);
+  const t = clock.getElapsedTime();
+  cubes.forEach((c, i) => { c.rotation.y = t * 0.4 + i; c.rotation.x = t * 0.2; });
+  controls.update();
+  composer.render();
+}
+animate();
+
+window.addEventListener('resize', () => {
+  camera.aspect = innerWidth / innerHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(innerWidth, innerHeight);
+  composer.setSize(innerWidth, innerHeight);
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+{
+  "error": true,
+  "url": "https://hubtown.co.in/projects/images/map/minimap-grid.png",
+  "statusCode": 404,
+  "statusMessage": "Page not found: /projects/images/map/minimap-grid.png",
+  "message": "Page not found: /projects/images/map/minimap-grid.png",
+  "data": {
+    "path": "/projects/images/map/minimap-grid.png"
+  }
+}
