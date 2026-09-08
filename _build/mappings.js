@@ -105,6 +105,15 @@ module.exports = {
     ['id="district-item-south-mumbai"', 'id="district-item-south"'],
     ['id="district-item-western-suburbs"', 'id="district-item-west"'],
     ['id="district-item-thane"', 'id="district-item-north"'],
+    // NL map: rename the setSelection district case names in the bundle to the
+    // rebuilt ev keys. The district-glow shader branches on `case"western-suburbs"`
+    // etc. (2 switches: prev-district fade-out + active ramp); with ev now
+    // west/south/central/north those cases never match, so clicking a district
+    // row left the glow unchanged. old thane -> north (uThaneMix carries north).
+    ['case"western-suburbs"', 'case"west"'],
+    ['case"central-suburbs"', 'case"central"'],
+    ['case"south-mumbai"', 'case"south"'],
+    ['case"thane"', 'case"north"'],
   ],
 
   // ---- HOME (scene sections; chunk data + SSR html) ----
