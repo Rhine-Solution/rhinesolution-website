@@ -16,6 +16,7 @@ const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
 const { sanityKey, extractTemplateVar, synthesizeDetail, revive } = require('./inject-project-detail.js');
+const { reserializePayload } = require('./payload-reserialize.js');
 
 const LIST_KEY = 'sanity-onNvxnDB8paO7TROOqQDtTStnLDv6SmIJhMGSA_DVDM';
 const SITE_SETTINGS_KEY = 'sanity-RXp6fvBEHhAm7cPW_PXkzJe4MLPxGM93lTtTMD1wfIk';
@@ -100,7 +101,7 @@ function rebrandProjects(mergedRoot, log) {
   const cMe = extractTemplateVar(bundle, 'cMe');
   if (!cMe) { if (log) console.log('  rebrand-projects: SKIP (cMe query not found)'); return null; }
 
-  const pp = JSON.parse(fs.readFileSync(payloadPath, 'utf8'));
+  let pp = JSON.parse(fs.readFileSync(payloadPath, 'utf8'));
   const dataMap = pp[2];
   if (!dataMap || typeof dataMap !== 'object') {
     if (log) console.log('  rebrand-projects: SKIP (data map not found)');
@@ -136,8 +137,21 @@ function rebrandProjects(mergedRoot, log) {
     appendDetail(pp, dataMap, cMe, PROJECTS[i], listItemIdxs[i]);
   }
 
+  // --- 4. GC: re-serialize so ONLY entries reachable from the root remain ---
+  // Earlier inject-project-detail.js runs appended per-project detail objects
+  // whose data-map keys rebrandProjects removed in step 2; those array entries
+  // are now orphaned (unreachable) yet still physically present, and several
+  // carry hubtown/akruti/dlf/sunstream strings. The shared walker re-emits the
+  // payload from the root, dropping every orphan. The decode semantics (same
+  // 7-project list, siteSettings, sourceMap) are preserved — only the raw
+  // array shrinks and the dead hubtown strings disappear at the byte level.
+  const ppBefore = pp.length;
+  const gcPp = reserializePayload(pp, { removed: new Set(), sourceMapReplacer: null });
+  const ppAfter = gcPp.length;
+  pp = gcPp;
+
   fs.writeFileSync(payloadPath, JSON.stringify(pp), 'utf8');
-  if (log) console.log('  rebrand-projects: replaced list, deleted', deleted, 'stale detail keys');
+  if (log) console.log('  rebrand-projects: replaced list, deleted', deleted, 'stale detail keys; GC', ppBefore, '->', ppAfter, 'entries');
   return { listItems: newList.length, detailKeys: newDetailKeys.length };
 }
 

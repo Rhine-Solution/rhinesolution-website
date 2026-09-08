@@ -77,13 +77,25 @@ function allIndexHtml(root) {
   report('projects list = 7 Rhine projects', pass, detail);
 })();
 
-// ---- assertion 2: no hubtown slugs in decoded projects content ----
+// ---- assertion 2: no hubtown slugs in decoded content NOR in the raw file ----
 (function () {
   let pass = false, detail = '';
   try {
-    const pp = JSON.parse(fs.readFileSync(PROJECTS_PAYLOAD, 'utf8'));
+    const rawText = fs.readFileSync(PROJECTS_PAYLOAD, 'utf8');
+    const pp = JSON.parse(rawText);
     const revived = revive(pp, { ShallowReactive: v => ({ ...v }) });
     const revivedJson = JSON.stringify(revived);
+
+    // 0) RAW file must be clean of hubtown slug strings too (dead data gate).
+    //    `25-` is a slug PREFIX, not a substring — it appears inside UUIDs like
+    //    4525-9fb9 — so it is NOT checked here; the distinctive patterns below
+    //    are sufficient to catch every hubtown/orphaned slug at the byte level.
+    for (const pat of HUBTOWN_PATTERNS) {
+      if (rawText.includes(pat)) {
+        detail = `raw projects payload contains hubtown slug pattern "${pat}" (orphaned data)`;
+        return report('no hubtown slugs in projects payload', false, detail);
+      }
+    }
 
     // 1) the bare token `hubtown` must not appear anywhere in decoded content
     if (revivedJson.includes('hubtown')) {

@@ -21,6 +21,7 @@
 const fs = require('fs');
 const path = require('path');
 const { revive } = require('./inject-project-detail.js');
+const { reserializePayload } = require('./payload-reserialize.js');
 
 // Any string carrying hubtown press branding marks its article as a leftover.
 const HUBTOWN_RE = /Times of India|ET Now|Gudi Padwa/i;
@@ -97,113 +98,28 @@ function rebuildNewsSourceMap(survivingArticles, articleKeys) {
   return { documents, paths, mappings };
 }
 
-// Re-serialize the raw indexed payload with fresh indices, pruning the given
-// article object indices from every array that references them and swapping
-// the news wrapper's sourceMap for the freshly built one.
+// Does the payload node at `dataIdx` resolve (one level) to an object that
+// carries an `articles` array? That marks the news data object.
+function isNewsData(ppArr, dataIdx) {
+  const data = ppArr[dataIdx];
+  if (!data || typeof data !== 'object' || Array.isArray(data)) return false;
+  return data.articles != null;
+}
+
+// Re-serialize the raw indexed payload with fresh indices (see the shared
+// payload-reserialize walker): no pruning, but the news wrapper's sourceMap is
+// swapped for the freshly built one so dropped source objects stay unreachable.
 function reserialize(pp, removedArticleIdxs, newNewsSourceMap) {
-  const memo = new Map(); // old payload index -> new payload index
-  const primitives = new Map(); // typeof:value -> new index
-  const out = [];
-  const alloc = v => { out.push(v); return out.length - 1; };
-
-  // Plain wrapper reference cache used to rebuild the news sourceMap in place.
-  function emit(idx) {
-    if (memo.has(idx)) return memo.get(idx);
-    const node = pp[idx];
-
-    if (node === null) {
-      const i = alloc(null);
-      memo.set(idx, i);
-      return i;
-    }
-
-    if (typeof node !== 'object') {
-      // primitive: dedup by value so equal strings/numbers share an index
-      const key = typeof node + ':' + String(node);
-      if (primitives.has(key)) {
-        memo.set(idx, primitives.get(key));
-        return primitives.get(key);
+  return reserializePayload(pp, {
+    removed: removedArticleIdxs,
+    sourceMapReplacer: (idx) => {
+      const node = pp[idx];
+      if (node && node.data != null && isNewsData(pp, node.data)) {
+        return newNewsSourceMap;
       }
-      const i = alloc(node);
-      primitives.set(key, i);
-      memo.set(idx, i);
-      return i;
-    }
-
-    if (Array.isArray(node)) {
-      const i = alloc(null);
-      memo.set(idx, i);
-      if (node.length && typeof node[0] === 'string') {
-        // wrapped type array, e.g. ["ShallowReactive", 2]
-        const arr = [node[0]];
-        for (let k = 1; k < node.length; k++) arr.push(emit(node[k]));
-        out[i] = arr;
-      } else {
-        // plain index array; prune removed articles
-        const arr = [];
-        for (const c of node) {
-          if (removedArticleIdxs.has(c)) continue;
-          arr.push(emit(c));
-        }
-        out[i] = arr;
-      }
-      return i;
-    }
-
-    // plain object whose values are indices
-    const i = alloc(null);
-    memo.set(idx, i);
-    const o = {};
-    for (const k in node) {
-      if (k === 'sourceMap' && node.data != null && isNewsData(pp, node.data)) {
-        // replace the news wrapper's sourceMap with the rebuilt one
-        o.sourceMap = emitObject(newNewsSourceMap);
-      } else {
-        o[k] = emit(node[k]);
-      }
-    }
-    out[i] = o;
-    return i;
-  }
-
-  // Emit a freshly built (plain JS) sourceMap object as a normal payload node.
-  function emitObject(obj) {
-    const i = alloc(null);
-    const o = {};
-    for (const k in obj) {
-      o[k] = emitValue(obj[k]);
-    }
-    out[i] = o;
-    return i;
-  }
-  function emitValue(v) {
-    if (v === null) return alloc(null);
-    if (Array.isArray(v)) {
-      const i = alloc(null);
-      const arr = [];
-      for (const c of v) arr.push(emitValue(c));
-      out[i] = arr;
-      return i;
-    }
-    if (typeof v === 'object') return emitObject(v);
-    // primitive
-    const key = typeof v + ':' + String(v);
-    if (primitives.has(key)) return primitives.get(key);
-    const i = alloc(v);
-    primitives.set(key, i);
-    return i;
-  }
-
-  // Does the payload node at `dataIdx` resolve (one level) to an object that
-  // carries an `articles` array? That marks the news data object.
-  function isNewsData(ppArr, dataIdx) {
-    const data = ppArr[dataIdx];
-    if (!data || typeof data !== 'object' || Array.isArray(data)) return false;
-    return data.articles != null;
-  }
-
-  const rootIdx = emit(0);
-  return out;
+      return null;
+    },
+  });
 }
 
 function rebrandNews(mergedRoot, log) {
