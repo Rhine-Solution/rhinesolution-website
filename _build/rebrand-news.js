@@ -1,14 +1,20 @@
-// Rebrand the news payload: drop the two leftover hubtown press articles
-// (whose resolved source title is a Times of India / ET Now / Gudi Padwa
-// string) so the news list decodes to only Rhine Solution posts.
+// Rebrand the news payload: keep all articles but strip the hubtown press
+// branding. The two leftover hubtown articles (whose resolved source title is
+// a Times of India / ET Now / Gudi Padwa string) have their `source` field
+// rewritten to a null primitive so the press strings disappear from the
+// serialized payload, while the articles themselves (including the EN variants
+// of "Bilingual site structure" and "Music Trends Local is live") stay in the
+// list.
 //
 // The news payload is a Nuxt-indexed array (see inject-project-detail.js's
 // revive() for the walker). This module:
 //   1. Revives the payload to find the offending articles.
-//   2. Re-serializes the whole payload from the raw indexed array with fresh
-//      indices, pruning the offending articles and rebuilding the news
-//      sourceMap (paths + mappings) so no dangling numeric refs or removed
-//      _key paths remain.
+//   2. Rewrites each offending article's raw `source` field to a null
+//      primitive index.
+//   3. Re-serializes the whole payload from the raw indexed array with fresh
+//      indices, with NO pruning, rebuilding the news sourceMap (paths +
+//      mappings) so it stays consistent with all articles — a `source`
+//      path/mapping is emitted only for articles that still carry a source.
 //
 // Runs AFTER injectProjectDetails/rebrandProjects in the merge pipeline.
 
@@ -204,7 +210,7 @@ function rebrandNews(mergedRoot, log) {
   const payloadPath = path.join(mergedRoot, 'news', '_payloadc9a0.json');
   if (!fs.existsSync(payloadPath)) {
     if (log) console.log('  rebrand-news: SKIP (missing news payload)');
-    return { removed: 0 };
+    return { nulled: 0 };
   }
 
   const pp = JSON.parse(fs.readFileSync(payloadPath, 'utf8'));
@@ -226,36 +232,53 @@ function rebrandNews(mergedRoot, log) {
   }
   if (!newsData) {
     if (log) console.log('  rebrand-news: SKIP (news list not in payload)');
-    return { removed: 0 };
+    return { nulled: 0 };
   }
 
-  // Original articles (raw indices) and which are hubtown leftovers.
+  // Original articles (raw indices) and which carry hubtown press branding.
   const origArticles = newsData.articles;
-  const removedPositions = [];
+  const nulledPositions = [];
   origArticles.forEach((a, i) => {
-    if (isHubtownArticle(a)) removedPositions.push(i);
+    if (isHubtownArticle(a)) nulledPositions.push(i);
   });
-  if (!removedPositions.length) {
-    if (log) console.log('  rebrand-news: no hubtown articles to remove');
-    return { removed: 0 };
+  if (!nulledPositions.length) {
+    if (log) console.log('  rebrand-news: no hubtown source attributions to null');
+    return { nulled: 0 };
   }
 
-  // Raw indices of the offending article objects. The articles array (raw) is
-  // reachable via the data map -> wrapper -> data.articles; find the raw
-  // articles array index from the raw payload.
+  // Rewrite the RAW `source` field of each offending article to a null
+  // primitive index, so the hubtown press strings are dropped from the
+  // serialized payload (their source objects become unreachable).
   const articlesRawIdx = findArticlesRawIdx(pp);
-  const removedArticleIdxs = new Set(removedPositions.map(p => pp[articlesRawIdx][p]));
+  const nullPrimitiveIdx = findNullPrimitiveIdx(pp);
+  for (const pos of nulledPositions) {
+    const rawArticle = pp[pp[articlesRawIdx][pos]];
+    if (rawArticle && typeof rawArticle === 'object' && !Array.isArray(rawArticle) &&
+        typeof rawArticle.source === 'number') {
+      rawArticle.source = nullPrimitiveIdx;
+    }
+  }
 
-  // Surviving articles, in new order, for sourceMap rebuild.
-  const surviving = origArticles.filter((_, i) => !removedPositions.includes(i));
-  const survivingKeys = articleKeysFromPaths(newsSourceMap && newsSourceMap.paths || [])
-    .filter((_, i) => !removedPositions.includes(i));
+  // All articles survive. Null the source on the revived copies so the
+  // sourceMap rebuild skips a `source` path/mapping for them.
+  const surviving = origArticles.map(a => ({ ...a }));
+  for (const pos of nulledPositions) surviving[pos].source = null;
+  const survivingKeys = articleKeysFromPaths(newsSourceMap && newsSourceMap.paths || []);
   const newSourceMap = rebuildNewsSourceMap(surviving, survivingKeys);
 
-  const newPp = reserialize(pp, removedArticleIdxs, newSourceMap);
+  const newPp = reserialize(pp, new Set(), newSourceMap);
   fs.writeFileSync(payloadPath, JSON.stringify(newPp), 'utf8');
-  if (log) console.log('  rebrand-news: removed', removedPositions.length, 'hubtown article(s)');
-  return { removed: removedPositions.length };
+  if (log) console.log('  rebrand-news: nulled', nulledPositions.length, 'hubtown source attribution(s)');
+  return { nulled: nulledPositions.length };
+}
+
+// Find the raw payload index of a null primitive, appending one if needed.
+function findNullPrimitiveIdx(pp) {
+  for (let i = 0; i < pp.length; i++) {
+    if (pp[i] === null) return i;
+  }
+  pp.push(null);
+  return pp.length - 1;
 }
 
 // Find the raw payload index of the `articles` array by locating the raw data
