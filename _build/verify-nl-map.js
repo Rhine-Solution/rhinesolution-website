@@ -10,6 +10,22 @@
 //
 // Usage: node _build/verify-nl-map.js  (run from the merged site root, or pass
 // the merged root as argv[2]).
+//
+// Manual check (not automatable headless — the 3D map scene does not run its
+// projection loop under headless Chrome, so the district pins never get screen
+// positions and the pointer-position-driven interaction can't fire):
+//   1. `node serve.js` then open http://localhost:8080/
+//   2. Wait for the loader ("Ready to Explore") to clear.
+//   3. Move the pointer over a district pin/label (e.g. "SOUTH") on the map.
+//      The district's roads should glow (district road highlight) and the
+//      cursor becomes a pointer. No console errors may appear.
+//   4. Move the pointer away — the glow should fade. Repeat for each district.
+//   5. On a touch device (or DevTools mobile emulation), tapping a district
+//      row must trigger the same glow (`map:district:touchclick`).
+// The controller already exercised this once interactively; assertion 7 below
+// is a static wiring canary that the district-glow handler chain is intact in
+// the rebuilt bundle (it can't prove the runtime glow, only that the wiring
+// survived regeneration).
 
 'use strict';
 
@@ -238,11 +254,30 @@ function allEvProjectsFrom(ev) {
   report('bundle: `};class exe` intact after ev object (bundle not broken)', pass, detail);
 })();
 
+// ---- assertion 7: district-glow interaction wiring is intact in the bundle ----
+// Static canary for the district-glow interaction (hover/click a district row
+// -> `map:district:enter` -> setSelectedDistrictRoads -> uSelectionMix tween).
+// Headless browsers don't run the 3D projection loop that positions the
+// district pins, so the runtime glow can't be asserted headless — see the
+// manual check in the header. If any of these wiring anchors vanish from the
+// regenerated bundle, the interaction is broken and this FAILs.
+(function () {
+  let pass = false, detail = '';
+  try {
+    const bundle = fs.readFileSync(BUNDLE, 'utf8');
+    const anchors = ['map:district:enter', 'map:district:leave', 'setSelectedDistrictRoads', 'uSelectionMix'];
+    const missing = anchors.filter((a) => !bundle.includes(a));
+    if (missing.length) detail = 'missing from bundle: ' + missing.join(', ');
+    else pass = true;
+  } catch (e) { detail = e.message; }
+  report('bundle: district-glow wiring anchors present (map:district:enter/leave, setSelectedDistrictRoads, uSelectionMix)', pass, detail);
+})();
+
 // ---- summary ----
 console.log('');
 report('rebuild cycle: build-merged.js + build-locales.js exit 0', rebuildResult.pass, rebuildResult.detail);
 if (failures === 0) {
-  console.log(`SUMMARY: ALL 6 ASSERTIONS PASS`);
+  console.log(`SUMMARY: ALL 7 ASSERTIONS PASS`);
   process.exit(0);
 } else {
   console.log(`SUMMARY: ${failures} ASSERTION(S) FAILED`);

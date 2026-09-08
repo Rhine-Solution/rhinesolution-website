@@ -18,6 +18,11 @@
 // terrain lines up with the project locations computed below — recomputing a
 // slightly different bbox from the GeoJSON would drift cube anchors off the
 // terrain and break the Task 5 coords assertion.
+//
+// Known behavior (accepted for now): `brain` and `rhinesolution` are both
+// anchored in Rotterdam, so their cubes share the exact same world position
+// ([-49.516, 20, -61.879]) and may overlap/z-fight in the 3D scene. Both
+// projects ARE in Rotterdam; this is correct data, not an error.
 
 'use strict';
 

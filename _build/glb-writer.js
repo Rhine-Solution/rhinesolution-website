@@ -102,8 +102,10 @@ function addBufferView(sceneJson, { byteOffset, byteLength, target } = {}) {
 
 // Record an accessor over an existing bufferView. Returns its index into
 // sceneJson.accessors. `min`/`max` are optional but required by the spec for
-// POSITION accessors used by renderers.
-function addAccessor(sceneJson, { bufferView, componentType, count, type, min, max } = {}) {
+// POSITION accessors used by renderers; `normalized` is emitted when truthy
+// (required for integer COLOR_0 accessors, which glTF interprets as floats
+// otherwise).
+function addAccessor(sceneJson, { bufferView, componentType, count, type, min, max, normalized } = {}) {
   if (!Number.isInteger(bufferView) || !Number.isInteger(componentType) || !Number.isInteger(count) || !type) {
     throw new TypeError('addAccessor: bufferView, componentType, count and type are required');
   }
@@ -111,6 +113,7 @@ function addAccessor(sceneJson, { bufferView, componentType, count, type, min, m
   const accessor = { bufferView, componentType, count, type };
   if (Array.isArray(min)) accessor.min = min;
   if (Array.isArray(max)) accessor.max = max;
+  if (normalized) accessor.normalized = true;
   accessors.push(accessor);
   return accessors.length - 1;
 }
