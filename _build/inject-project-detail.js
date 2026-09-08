@@ -143,4 +143,4 @@ function injectProjectDetails(mergedRoot, log) {
   return added;
 }
 
-module.exports = { injectProjectDetails, sanityKey, extractTemplateVar, synthesizeDetail };
+module.exports = { injectProjectDetails, sanityKey, extractTemplateVar, synthesizeDetail, revive };

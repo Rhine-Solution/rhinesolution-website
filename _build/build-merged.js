@@ -273,6 +273,11 @@ if (absPayload) console.log('  rewrote', absPayload, 'payload hrefs/data-src to 
 const { injectProjectDetails } = require('./inject-project-detail.js');
 injectProjectDetails(MERGED, true);
 
+// rebrand projects payload to Rhine's real 7-project portfolio
+const { rebrandProjects } = require('./rebrand-projects.js');
+const rebrand = rebrandProjects(MERGED, true);
+if (rebrand) console.log('  rebrand-projects:', JSON.stringify(rebrand));
+
 // payload alias: Nuxt's client-side SPA navigation fetches `<route>/_payload.json`,
 // but the prerendered payload files are named `_payloadc9a0.json`. Emit a `_payload.json`
 // copy next to each hashed payload so SPA nav works on ANY static host (no server rewrite).
