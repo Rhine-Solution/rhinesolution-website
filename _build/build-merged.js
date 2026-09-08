@@ -230,6 +230,12 @@ for (const f of htmlFiles) {
 }
 console.log('  chrome applied to', htmlFiles.length, 'html/payload files');
 
+// Fix stale /careers canonical URLs (route renamed to /team) on the EN pages
+// after chrome. Locale copies pick this up when build-locales.js regenerates.
+const { fixCanonical } = require('./fix-canonical.js');
+const fixCanon = fixCanonical(MERGED, true);
+if (fixCanon.fixed) console.log('  fix-canonical: rewrote', fixCanon.fixed, 'URLs to /team');
+
 // Absolute page links: SSR nav/footer use relative `X/index.html` (root) or `../X/index.html`
 // (depth-1 relative). On a deep client-side route like /projects/<slug> those resolve to the
 // WRONG place (e.g. /projects/about/index.html -> 404). Rewrite all page links to root-absolute
