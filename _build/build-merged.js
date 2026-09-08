@@ -269,6 +269,10 @@ for (const p of ['', ...pages]) {
 }
 if (absPayload) console.log('  rewrote', absPayload, 'payload hrefs/data-src to absolute');
 
+// rebrand the SSR district stats on home + projects (after chrome + absolute links)
+const { rebrandHome } = require('./rebrand-home.js');
+rebrandHome(MERGED, true);
+
 // inject per-project detail into projects payload so the PDP modal works offline
 const { injectProjectDetails } = require('./inject-project-detail.js');
 injectProjectDetails(MERGED, true);
