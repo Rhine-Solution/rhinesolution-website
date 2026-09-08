@@ -435,7 +435,7 @@ const scene = {
     COLOR_0: addAccessor(scene, { bufferView: addBufferView(scene, { byteOffset: colOff, byteLength: tColor.byteLength }), componentType: 5123, count: U * V, type: 'VEC4', normalized: true }),
   };
   const idxAcc = addAccessor(scene, { bufferView: addBufferView(scene, { byteOffset: idxOff, byteLength: tIndex.byteLength }), componentType: 5125, count: tIndex.length, type: 'SCALAR' });
-  scene.meshes.push(mesh('terrain', [primitive(attrs, idxAcc, 0)]));
+  scene.meshes.push(mesh('terrain', [primitive(attrs, idxAcc, 4)]));
   scene.nodes.push(meshNode('terrain', 0));
 }
 

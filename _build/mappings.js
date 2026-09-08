@@ -94,6 +94,17 @@ module.exports = {
     ['Excellence', 'Excellence'],
     ['Purpose', 'Together'],
     ['Legacy', 'Next'],
+    // NL map: rename SSR district-row ids to match the rebuilt ev keys
+    // (west/south/central/north). buildMapDistricts does
+    // `querySelector('#district-item-<evKey>')`; the rows previously carried
+    // hubtown's Mumbai ids, so the query returned null and the CSS2DObject
+    // constructor threw on every page. Only the id attribute changes; the
+    // `<!--[-->label<!--]-->` span text stays untouched. old thane -> north
+    // (the shader's "thane" uniform carries the north channel).
+    ['id="district-item-central-suburbs"', 'id="district-item-central"'],
+    ['id="district-item-south-mumbai"', 'id="district-item-south"'],
+    ['id="district-item-western-suburbs"', 'id="district-item-west"'],
+    ['id="district-item-thane"', 'id="district-item-north"'],
   ],
 
   // ---- HOME (scene sections; chunk data + SSR html) ----
