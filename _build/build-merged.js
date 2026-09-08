@@ -282,6 +282,11 @@ const { rebrandProjects } = require('./rebrand-projects.js');
 const rebrand = rebrandProjects(MERGED, true);
 if (rebrand) console.log('  rebrand-projects:', JSON.stringify(rebrand));
 
+// drop hubtown press articles from the news payload
+const { rebrandNews } = require('./rebrand-news.js');
+const newsRebrand = rebrandNews(MERGED, true);
+if (newsRebrand && newsRebrand.removed) console.log('  rebrand-news: removed', newsRebrand.removed, 'hubtown article(s)');
+
 // payload alias: Nuxt's client-side SPA navigation fetches `<route>/_payload.json`,
 // but the prerendered payload files are named `_payloadc9a0.json`. Emit a `_payload.json`
 // copy next to each hashed payload so SPA nav works on ANY static host (no server rewrite).
