@@ -2,6 +2,17 @@
 // Applied across SSR HTML + _payload*.json + route chunks + main bundle.
 // Format: array of [from, to]. Longest matches win (sorted at apply time).
 
+// The `ev` object (district/project data, see nl-map-data.js) is NOT rebuilt
+// here: it lives only in the main bundle `_nuxt/u1ipQrxM.js` as the minified
+// construct `const ev={...};class exe`. It is replaced by a dedicated
+// regex-anchored step in build-merged.js (rebuildBundleEv) because the
+// pair-table's string split/join can't hold the full 5KB object. The NL
+// district keys map to the shader's 4 channels as:
+//   ev.west    -> uWesternMix (dist_west)
+//   ev.south   -> uSouthMix   (dist_south)
+//   ev.central -> uCentralMix (dist_central)
+//   ev.north   -> uThaneMix   (the "thane" uniform carries north; dist_north)
+
 module.exports = {
   // ---- GLOBAL CHROME (every page HTML + main bundle + all payloads) ----
   chrome: [

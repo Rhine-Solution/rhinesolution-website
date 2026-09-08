@@ -10,6 +10,7 @@ const path = require('path');
 const MERGED = path.resolve(__dirname, '..');
 const MIRROR = path.join(MERGED, 'hubtown-mirror', 'hubtown.co.in');
 const MAPPINGS = require('./mappings.js');
+const MAP_DATA = require('./nl-map-data.js');
 
 // ---------------------------------------------------------------------------
 // swap helpers
@@ -67,6 +68,24 @@ function swapBundleLogo(text) {
   if (e === -1) return [text, 0];
   const replaced = text.slice(0, s) + BUNDLE_LOGO_REPL + text.slice(e + BUNDLE_LOGO_END.length);
   return [replaced, 1];
+}
+
+// Rebuild the `ev` object in the main bundle: the minified construct is
+// `const ev={...};class exe` (the `;class exe` is the terminator that begins
+// the class which reads ev[e]). Regex-anchored so we replace the whole span
+// from `const ev={` up to (but excluding) `};class exe`, leaving the
+// following code intact. The replacement is `const ev=` + compact JSON of
+// MAP_DATA.ev + `;`. Only applies to the main bundle (this construct is
+// unique to `_nuxt/u1ipQrxM.js`); returns [text, count].
+const EV_RE = /const ev=\{[\s\S]*?\};class exe/;
+const EV_SERIALIZE_KEYS = ['west', 'south', 'central', 'north'];
+
+function rebuildBundleEv(text, ev) {
+  const match = text.match(EV_RE);
+  if (!match) return [text, 0];
+  const serialized = EV_SERIALIZE_KEYS.map((k) => `"${k}":` + JSON.stringify(ev[k] || [])).join(',');
+  const replacement = 'const ev={' + serialized + '};class exe';
+  return [text.replace(EV_RE, replacement), 1];
 }
 
 // ---------------------------------------------------------------------------
@@ -150,6 +169,13 @@ if (fs.existsSync(BAD_PROJECTS_DIR)) {
   fs.rmSync(BAD_PROJECTS_DIR, { recursive: true, force: true });
   console.log('  removed malformed projects dir');
 }
+
+// ---------------------------------------------------------------------------
+// 1b. NL map GLB generation (after the mirror copy so it isn't overwritten)
+// ---------------------------------------------------------------------------
+console.log('== 1b. NL map GLB generation ==');
+require('./nl-terrain.js');   // regenerates webgl/models/map.glb (terrain + 7 loc_*)
+require('./nl-districts.js'); // regenerates webgl/models/map-districts.glb (4 dist_*)
 
 // ---------------------------------------------------------------------------
 // collect pages
@@ -314,6 +340,9 @@ let [b2, logos] = swapBundleLogo(bundle);
 bundle = b2;
 if (logos) console.log('  bundle: logo component x' + logos);
 bundle = apply(bundle, chromePairs, 'bundle', false);
+let [bundle2, evChanged] = rebuildBundleEv(bundle, MAP_DATA.ev);
+bundle = bundle2;
+if (evChanged) console.log('  bundle: rebuilt ev object from MAP_DATA.ev');
 fs.writeFileSync(bundlePath, bundle, 'utf8');
 
 // route chunks: apply chrome too (socials, emails, brand domains live in these files)
