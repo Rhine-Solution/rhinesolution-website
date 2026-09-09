@@ -1,7 +1,7 @@
 // Netherlands terrain GLB generator.
 //
-// Reads _build/geo/nl-provinces.geojson (12 provinces) and dedups the shared
-// province borders so no boundary line is drawn twice. Uses MAP_DATA from
+// Reads _build/geo/nl-country.geojson (Netherlands outline + Wadden islands,
+// no internal province borders), uses MAP_DATA from
 // nl-map-data.js for the geographic bbox, city coords, district clusters and
 // lonLatToWorld, and writes webgl/models/map.glb with:
 //   - terrain  : grid mesh over the NL bbox (triangles, mode 0), attrs
@@ -34,7 +34,7 @@ const path = require('path');
 const MAP_DATA = require('./nl-map-data.js');
 const { writeGLB, addBufferView, addAccessor, meshNode, primitive, mesh } = require('./glb-writer.js');
 
-const GEOJSON_PATH = path.join(__dirname, 'geo', 'nl-provinces.geojson');
+const GEOJSON_PATH = path.join(__dirname, 'geo', 'nl-country.geojson');
 const OUT_PATH = path.resolve(__dirname, '..', 'webgl', 'models', 'map.glb');
 
 const { lonLatToWorld, bbox, districts, projects, cityCoords, applyNudge } = MAP_DATA;
