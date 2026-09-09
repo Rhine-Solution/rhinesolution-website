@@ -1,6 +1,7 @@
 // Netherlands terrain GLB generator.
 //
-// Reads _build/geo/nl-provinces.geojson (12 provinces), uses MAP_DATA from
+// Reads _build/geo/nl-country.geojson (Netherlands nation outline + Wadden
+// islands, from Natural Earth 10m), uses MAP_DATA from
 // nl-map-data.js for the geographic bbox, city coords, district clusters and
 // lonLatToWorld, and writes webgl/models/map.glb with:
 //   - terrain  : grid mesh over the NL bbox (triangles, mode 0), attrs
@@ -21,8 +22,9 @@
 // falloff radius R). District centroids are the means of each district's
 // city coordinates (world space).
 //
-// Terrain heights use the original map's world scale (POSITION.y ~0..39,
-// higher inland, water below the shader's uWaterLevel=0).
+// Terrain heights are gentle (POSITION.y ~-0.5..3.5, slightly higher inland,
+// water below the shader's uWaterLevel=0) — the Netherlands is low-lying, so
+// the map reads flat with a soft roll for depth rather than a steep dome.
 
 'use strict';
 
@@ -32,7 +34,7 @@ const path = require('path');
 const MAP_DATA = require('./nl-map-data.js');
 const { writeGLB, addBufferView, addAccessor, meshNode, primitive, mesh } = require('./glb-writer.js');
 
-const GEOJSON_PATH = path.join(__dirname, 'geo', 'nl-provinces.geojson');
+const GEOJSON_PATH = path.join(__dirname, 'geo', 'nl-country.geojson');
 const OUT_PATH = path.resolve(__dirname, '..', 'webgl', 'models', 'map.glb');
 
 const { lonLatToWorld, bbox, districts, projects, cityCoords } = MAP_DATA;
@@ -51,8 +53,9 @@ const STEP = 0.5;
 // District-gradient falloff radius in world units.
 const R = 120;
 
-// Line elevation above the terrain plane (original major y ~15.2..19.7).
-const LINE_Y = 16;
+// Line elevation sits just above the gentle terrain (max ~3.5), so boundary
+// lines always render above the land.
+const LINE_Y = 4.2;
 
 // Site palette base color for COLOR_0.
 const COLOR = { r: 0x1c, g: 0x26, b: 0x34 };
@@ -60,7 +63,7 @@ const COLOR = { r: 0x1c, g: 0x26, b: 0x34 };
 // Water/land levels (fragment shader: water when POSITION.y < uWaterLevel=0).
 const WATER_Y = -0.5;
 const LAND_MIN = 0.5;
-const LAND_MAX = 35;
+const LAND_MAX = 3.5;
 
 function smoothstep(a, b, x) {
   const t = Math.max(0, Math.min(1, (x - a) / (b - a)));
