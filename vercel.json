@@ -1,0 +1,35 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "rewrites": [
+    { "source": "/reports/:file([a-z0-9-]+)", "destination": "/reports/:file.html" },
+    { "source": "/faqs", "destination": "/faqs/faqs.html" },
+    { "source": "/projects/:slug(.*)", "destination": "/projects/index.html" }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "X-Frame-Options", "value": "DENY" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
+        { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=()" }
+      ]
+    },
+    {
+      "source": "/(.*)\\.(png|jpg|jpeg|webp|svg|gif|glb|draco)", 
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }]
+    },
+    {
+      "source": "/(.*)\\.(css|js)", 
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }]
+    },
+    {
+      "source": "/(index.html|about/|projects/|news/|contact/|reports/)", 
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }]
+    }
+  ],
+  "functions": {
+    "api/chat.js": { "runtime": "nodejs20.x", "maxDuration": 60 },
+    "api/contact.js": { "runtime": "nodejs20.x" }
+  }
+}
