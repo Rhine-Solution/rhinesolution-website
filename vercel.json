@@ -29,7 +29,7 @@
     }
   ],
   "functions": {
-    "api/chat.js": { "runtime": "nodejs20.x", "maxDuration": 60 },
-    "api/contact.js": { "runtime": "nodejs20.x" }
+    "api/chat.js": { "maxDuration": 60 },
+    "api/contact.js": { "maxDuration": 10 }
   }
 }
