@@ -74,17 +74,61 @@ function revive(payload, revivers) {
 
 const LIST_KEY = 'sanity-onNvxnDB8paO7TROOqQDtTStnLDv6SmIJhMGSA_DVDM';
 
+// Per-project rich content (from the source content/en.json project_* blocks),
+// keyed by the payload slug. Provides a real summary, tech stack and live link
+// so the PDP modal / case cards are no longer generic filler.
+const PROJECT_DETAILS = {
+  plan2shift: {
+    summary: 'A shift planning platform for workers and HR teams. Plan shifts, track your monthly earnings in real time, and send sick-leave or shift-change requests without the back-and-forth.',
+    stack: ['Next.js', 'TypeScript', 'PostgreSQL', 'Tailwind CSS'],
+    liveUrl: 'https://plan2shift.com/',
+  },
+  brain: {
+    summary: 'Our living engineering knowledge base — architecture, security, deployment, and testing notes, published openly. Browse the thinking behind how we build.',
+    stack: ['Obsidian', 'Markdown', 'Git'],
+    liveUrl: '/projects/brain',
+  },
+  'music-trends-local': {
+    summary: 'A cyber-themed music portal showcasing top songs, artists, and genres — 48 tracks across 8 electronic sub-genres with search, filters, and localStorage favorites.',
+    stack: ['HTML5', 'CSS', 'Bootstrap', 'JavaScript', 'SVG', 'Next.js 15'],
+    liveUrl: '/music',
+  },
+  'mac-mini-ai': {
+    summary: "The Mac Mini that runs Rhine Solution's AI stack: Free Claude Code (Discord bot), 5 model fallbacks (NVIDIA NIM, Groq, Gemini, Mistral, OpenRouter), and the OpenCode agent that assists with daily work.",
+    stack: ['macOS 26', 'Free Claude Code', 'OpenCode', '5 LLM providers', 'Tailscale'],
+  },
+  rhinesolution: {
+    summary: 'This website. Next.js 15, TypeScript, pure CSS, deployed to Vercel with Cloudflare DNS.',
+    stack: ['Next.js 15', 'TypeScript', 'Pure CSS', 'Vercel', 'Cloudflare'],
+    liveUrl: '/',
+  },
+};
+
 // Build the synthesized per-project detail object from list fields.
 function synthesizeDetail(listProject) {
   const statusLabel = listProject.status || (listProject.soldOut ? 'shipped' : '');
+  const detail = PROJECT_DETAILS[listProject.slug];
+  const summary = detail
+    ? detail.summary
+    : (listProject.title || 'A Rhine Solution project') +
+      ' — a custom web experience built by Rhine Solution. Small team, high standard, shipped work.';
   return {
     _id: listProject._id,
     _updatedAt: '2026-01-01T00:00:00Z',
     title: listProject.title,
     slug: listProject.slug,
     metaTitle: (listProject.title || 'Rhine Solution project') + ' | Rhine Solution',
-    metaDescription: (listProject.title || 'A Rhine Solution project') +
-      ' — a custom web experience built by Rhine Solution. Small team, high standard, shipped work.',
+    metaDescription: summary,
+    // Sanity Portable Text body rendering for the PDP modal
+    content: [{
+      _type: 'block',
+      style: 'normal',
+      _key: 'rh-intro',
+      children: [{ _type: 'span', text: summary, _key: 'rh-span0' }],
+      markDefs: [],
+    }],
+    stack: [], // NOTE: array-of-strings breaks the Nuxt reviver; client query omits it anyway
+    liveUrl: detail ? detail.liveUrl || null : null,
     type: listProject.type,
     status: statusLabel,
     location: listProject.location,
@@ -116,18 +160,25 @@ function injectProjectDetails(mergedRoot, log) {
   }
 
   const dataMap = pp[2]; // the real data map object (["ShallowReactive",2] wraps index 2)
-  let added = 0;
+  let added = 0, updated = 0;
   for (const proj of listWrapper.data) {
     if (!proj || !proj.slug) continue;
     const key = 'sanity-' + sanityKey(cMe, { slug: proj.slug });
-    if (key in dataMap) continue; // already injected
     const detail = synthesizeDetail(proj);
-    // append primitives -> refs, then object, then wrapper
+    // append primitives -> refs, (then object, then wrapper for new entries)
     const refs = {};
     for (const [k, v] of Object.entries(detail)) {
       const idx = pp.length;
       pp.push(v);
       refs[k] = idx;
+    }
+    if (key in dataMap) {
+      // update the existing entry's refs in place so re-runs pick up new content
+      const wrapperIdx = dataMap[key];
+      const wrapper = pp[wrapperIdx];
+      const objIdx = wrapper && wrapper.data;
+      const obj = pp[objIdx];
+      if (obj) { for (const k of Object.keys(refs)) obj[k] = refs[k]; updated++; continue; }
     }
     const objIdx = pp.length;
     pp.push(refs);
@@ -136,11 +187,11 @@ function injectProjectDetails(mergedRoot, log) {
     dataMap[key] = wrapperIdx;
     added++;
   }
-  if (added) {
+  if (added || updated) {
     fs.writeFileSync(payloadPath, JSON.stringify(pp), 'utf8');
-    if (log) console.log('  project-detail inject: added', added, 'project detail entries');
+    if (log) console.log('  project-detail inject: added', added, 'and updated', updated, 'entries');
   }
-  return added;
+  return added + updated;
 }
 
 module.exports = { injectProjectDetails, sanityKey, extractTemplateVar, synthesizeDetail, revive };
