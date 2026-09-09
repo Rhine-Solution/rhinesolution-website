@@ -25,6 +25,12 @@ function safePath(urlPath) {
   let p = decodeURIComponent(urlPath.split('?')[0]);
   // /faqs lives at faqs/faqs.html (no index.html) — alias /faqs and /faqs/ to it
   if (p === '/faqs' || p === '/faqs/') p = '/faqs/faqs.html';
+  // /reports/<case> lives at reports/<case>.html — alias clean case routes
+  if (p.startsWith('/reports/')) {
+    const tail = p.slice('/reports/'.length).replace(/\/$/, '');
+    if (tail === '') p = '/reports/index.html';
+    else if (tail !== 'index.html' && !path.extname(tail)) p = '/reports/' + tail + '.html';
+  }
   if (p === '/') p = '/index.html';
   if (p.endsWith('/')) p += 'index.html';
   // careers route now lives under /team (renamed); alias /careers and /careers/* to team
