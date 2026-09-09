@@ -1,16 +1,13 @@
-// Build the merged Rhine site from the pristine hubtown mirror.
-//   1. Copies mirror -> merged root (assets + pages)
-//   2. Applies global chrome mapping (every page HTML + main bundle + payloads)
-//   3. Applies per-page mappings (page HTML + its payload + its route chunk)
-// Output is fully regenerable: rerun after editing _build/mappings.js.
+// Regenerate the Rhine site in place. The committed output is the source of
+// truth (fully self-contained — no external mirror); this build re-applies the
+// deterministic transforms: global/per-page mappings, the map GLBs from
+// coordinates, the 7-project payload, news placeholders, brand assets, the
+// chat widget, and stale-artifact removal. Rerun after editing _build/*.
 
 const fs = require('fs');
 const path = require('path');
 
 const MERGED = path.resolve(__dirname, '..');
-// Pristine hubtown.co.in HTTrack snapshot — kept OUTSIDE the site folder so the
-// site runs fully independent of it. Only the optional rebuild cycle reads it.
-const MIRROR = 'C:/Users/teoal/Projects/projects/_rhine-build-source/hubtown-mirror/hubtown.co.in';
 const MAPPINGS = require('./mappings.js');
 const MAP_DATA = require('./nl-map-data.js');
 
@@ -91,11 +88,10 @@ function rebuildBundleEv(text, ev) {
 }
 
 // ---------------------------------------------------------------------------
-// 1. copy mirror -> merged root
+// 1. transform in place (the committed output is the source of truth)
 // ---------------------------------------------------------------------------
-console.log('== 1. copy mirror -> merged root ==');
+// Page directories the mapping loop below iterates (dead route dirs are skipped).
 const COPY_DIRS = ['.netlify', '@theatre', 'about', 'approvals', 'audio', 'basis', 'builds', 'careers', 'contact', 'data', 'draco', 'faqs', 'fonts', 'images', 'investor-relations', 'news', 'privacy-policy', 'projects', 'regulation-policy', 'terms-and-conditions', 'webgl', '_nuxt'];
-const COPY_FILES = ['index.html', 'gtag-init.js', '_payloadc9a0.json', 'scene-viewer.html'];
 
 function copyTree(src, dst) {
   if (!fs.existsSync(dst)) fs.mkdirSync(dst, { recursive: true });
@@ -105,19 +101,6 @@ function copyTree(src, dst) {
     else fs.copyFileSync(s, d);
   }
 }
-
-// clean previous page outputs (keep infra + mirror)
-fs.rmSync(path.join(MERGED, 'team'), { recursive: true, force: true });
-for (const name of COPY_DIRS) {
-  const dst = path.join(MERGED, name);
-  fs.rmSync(dst, { recursive: true, force: true });
-}
-for (const name of COPY_FILES) {
-  fs.rmSync(path.join(MERGED, name), { force: true });
-}
-for (const name of COPY_DIRS) copyTree(path.join(MIRROR, name), path.join(MERGED, name));
-for (const name of COPY_FILES) fs.copyFileSync(path.join(MIRROR, name), path.join(MERGED, name));
-console.log('  copied', COPY_DIRS.length + COPY_FILES.length, 'top-level items');
 
 // vendored faqs assets (Bootstrap + Montserrat, downloaded offline) -> faqs dir
 const FAQS_ASSETS = path.join(__dirname, 'faqs-assets');
@@ -150,8 +133,11 @@ if (!fs.existsSync(SLUG_CSS)) {
   console.log('  created empty _slug_.DNg8CGcY.css');
 }
 
-// post-copy: rename careers -> team, drop the hubtown regulatory/filing pages
-fs.renameSync(path.join(MERGED, 'careers'), path.join(MERGED, 'team'));
+// the careers route was renamed to /team; in the committed output only `team`
+// exists, so the rename is guarded. Drop the removed filing-hub page dirs.
+if (fs.existsSync(path.join(MERGED, 'careers'))) {
+  fs.renameSync(path.join(MERGED, 'careers'), path.join(MERGED, 'team'));
+}
 const REMOVE_DIRS = ['investor-relations', 'regulation-policy', 'approvals'];
 for (const d of REMOVE_DIRS) fs.rmSync(path.join(MERGED, d), { recursive: true, force: true });
 console.log('  careers -> team; removed', REMOVE_DIRS.join(', '));
@@ -248,7 +234,7 @@ for (const rel of ['scene-viewer.html', 'images/favicon/site.webmanifest']) {
 for (const f of htmlFiles) {
   let text = fs.readFileSync(f, 'utf8');
   text = text.replace(/<!-- Mirrored from .*? by HTTrack .*? -->/g, '');
-  // strip hubtown's external analytics (Google Tag Manager) for full offline
+  // strip external analytics (Google Tag Manager) for full offline
   text = text.replace(/<script src="https:\/\/www\.googletagmanager\.com\/gtag\/js\?id=[^"]*"[^>]*><\/script>/g, '');
   let [t2, logos] = swapLogo(text);
   text = t2;
@@ -316,7 +302,7 @@ const { rebrandProjects } = require('./rebrand-projects.js');
 const rebrand = rebrandProjects(MERGED, true);
 if (rebrand) console.log('  rebrand-projects:', JSON.stringify(rebrand));
 
-// drop hubtown press articles from the news payload
+// drop leftover press articles from the news payload
 const { rebrandNews } = require('./rebrand-news.js');
 rebrandNews(MERGED, true);
 
@@ -378,124 +364,15 @@ for (const p of ['', ...pages]) {
 console.log('  chat widget injected into', chatPages, 'EN pages');
 
 // ---------------------------------------------------------------------------
-// faqs page: standalone Bootstrap page — localize externals, strip HTTrack,
-// swap hubtown Q&A content for Rhine Q&A (whitespace-tolerant), chrome.
+// faqs page: the committed faqs/faqs.html is final (already localized). The
+// mirror-driven Q&A rebuild no longer applies, so this step is a no-op here.
 // ---------------------------------------------------------------------------
-const faqsPath = path.join(MERGED, 'faqs', 'faqs.html');
-// Always process the PRISTINE mirror copy (fresh from the COPY_DIRS copy above),
-// never a previous build's output — the hubtown Q&A strings only exist in the raw copy.
-const faqsSrc = path.join(MERGED, 'faqs', 'faqs-hubtown.html');
-if (fs.existsSync(faqsSrc) || fs.existsSync(faqsPath)) {
-  let f = fs.readFileSync(faqsSrc, 'utf8');
-  // style for the text-based Rhine logo (replaces hubtown-logo.png)
-  const faqsCss = path.join(MERGED, 'faqs', 'faqs.css');
-  if (fs.existsSync(faqsCss)) {
-    let css = fs.readFileSync(faqsCss, 'utf8');
-    if (!css.includes('faq-logo-text')) {
-      css += '\n.faq-logo-text{display:inline-block;font-family:\'Montserrat\',sans-serif;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#d5e0ff;font-size:1.25rem;padding:.4rem 0;}\n';
-      fs.writeFileSync(faqsCss, css, 'utf8');
-      console.log('  faqs.css: added .faq-logo-text');
-    }
-  }
-  f = f.replace(/<!-- Mirrored from .*? by HTTrack .*? -->/g, '');
-  f = f.replace(/<!-- Added by HTTrack --><meta http-equiv="content-type" content="text\/html;charset=UTF-8" \/><!-- \/Added by HTTrack -->/g, '');
-  f = f.replace(/<!-- Added by HTTrack -->.*?<!-- \/Added by HTTrack -->/g, '');
-  // localize externals
-  f = f.replace('https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css', 'bootstrap.min.css');
-  f = f.replace('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap', 'montserrat.css');
-  f = f.replace('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&amp;display=swap', 'montserrat.css');
-  f = f.replace('https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css', 'bootstrap-icons.css');
-  f = f.replace('https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js', 'bootstrap.bundle.min.js');
-  // head / meta
-  f = f.replace('<title>Hubtown FAQs | Answers About Hubtown Projects, Locations & Real Estate Services</title>',
-    '<title>Rhine Solution FAQs | Custom web development, portfolios, and digital experiences</title>');
-  f = f.replace(/<meta name="description"\s+content="[^"]*">/,
-    '<meta name="description" content="Frequently asked questions about Rhine Solution, a two-person studio for custom web development, portfolios, portals, and digital experiences.">');
-  f = f.replace(/<meta name="keywords"\s+content="[^"]*">/,
-    '<meta name="keywords" content="Rhine Solution FAQs, Custom Web Development, Portfolio Websites, Web Applications, Digital Products">');
-  f = f.replace('content="Hubtown"', 'content="Rhine Solution"');
-  f = f.split('property="og:title" content="Hubtown FAQs | Answers About Hubtown Projects, Locations & Real Estate Services"').join('property="og:title" content="Rhine Solution FAQs | Custom web development, portfolios, and digital experiences"');
-  f = f.split('property="og:image:alt" content="Hubtown Limited FAQ page background"').join('property="og:image:alt" content="Rhine Solution FAQ page background"');
-  f = f.split('property="og:site_name" content="Hubtown"').join('property="og:site_name" content="Rhine Solution"');
-  f = f.split('twitter:title"         content="Hubtown FAQs | Answers About Hubtown Projects, Locations & Real Estate Services"').join('twitter:title"         content="Rhine Solution FAQs | Custom web development, portfolios, and digital experiences"');
-  f = f.split('twitter:title"\n        content="Hubtown FAQs | Answers About Hubtown Projects, Locations & Real Estate Services"').join('twitter:title"\n        content="Rhine Solution FAQs | Custom web development, portfolios, and digital experiences"');
-  f = f.split('twitter:image:alt" content="Hubtown Limited FAQ page background"').join('twitter:image:alt" content="Rhine Solution FAQ page background"');
-  f = f.split('twitter:url" content="../hubtown-faqs.html"').join('twitter:url" content="faqs.html"');
-  f = f.split('og:image" content="../faq-background.webp.html"').join('og:image" content="faq-background.webp"');
-  f = f.split('twitter:image" content="../faq-background.webp.html"').join('twitter:image" content="faq-background.webp"');
-  f = f.split('href="../hubtown-faqs.html"').join('href="faqs.html"');
-  f = f.split('content="../hubtown-faqs.html"').join('content="faqs.html"');
-  // JSON-LD
-  f = f.split('"name": "Hubtown FAQs | Answers About Hubtown Projects, Locations & Real Estate Services"').join('"name": "Rhine Solution FAQs | Custom web development, portfolios, and digital experiences"');
-  f = f.split('"url": "https://hubtown.co.in/hubtown-faqs.html"').join('"url": "https://www.rhinesolution.com/faqs/faqs.html"');
-  f = f.split('"description": "Find answers to frequently asked questions about Hubtown, residential and commercial projects, locations, amenities, investment opportunities, possession timelines, RERA information, and more."').join('"description": "Frequently asked questions about Rhine Solution, a two-person studio for custom web development, portfolios, portals, and digital experiences."');
-  f = f.split('"name": "Hubtown Limited"').join('"name": "Rhine Solution"');
-  f = f.split('"@type": "RealEstateDeveloper"').join('"@type": "Organization"');
-  f = f.split('"inLanguage": "en-IN"').join('"inLanguage": "en-NL"');
-  f = f.split('property="og:locale" content="en_IN"').join('property="og:locale" content="en_NL"');
-  // body chrome
-  f = f.replace('aria-label="Hubtown Limited frequently asked questions"', 'aria-label="Rhine Solution frequently asked questions"');
-  f = f.split('<img src="hubtown-logo.png" alt="Hubtown Logo">').join('<span class="faq-logo-text">Rhine Solution</span>');
-  f = f.split('<img src="hubtown-logo.png" alt="Rhine Solution Logo">').join('<span class="faq-logo-text">Rhine Solution</span>');
-  f = f.split('<h1 class="title-counter" data-value="HUBTOWN">').join('<h1 class="title-counter" data-value="RHINE">');
-  // Rhine FAQ content: swap hubtown Q&A -> Rhine Q&A, tolerant of internal whitespace
-  const collapseWS = s => s.replace(/\s+/g, ' ').trim();
-  // normalize curly quotes (mapping uses \u2019, mirror uses straight ') + build a
-  // whitespace-tolerant regex: any run of whitespace between words matches
-  const normQ = s => s.replace(/\u2019/g, "'").replace(/\u2018/g, "'").replace(/\u201c/g, '"').replace(/\u201d/g, '"');
-  const wsRe = s => collapseWS(normQ(s)).split(' ').map(w => w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('\\s+');
-  const FAQS = require('./faqs-content-mapping.js');
-  for (const entry of FAQS) {
-    // question: appears in <button> and JSON-LD "name"
-    const qrFlat = entry.qr;
-    // JSON-LD name (single-line) exact replace
-    f = f.split(normQ(entry.q)).join(qrFlat);
-    f = f.split(entry.q).join(entry.qr);
-    // accordion button + JSON-LD text may span lines: match any whitespace runs
-    f = f.replace(new RegExp(wsRe(entry.q), 'g'), qrFlat);
-    // answer: appears in <div class="accordion-body"> and JSON-LD "text"
-    f = f.split(normQ(entry.a)).join(entry.ar);
-    f = f.split(entry.a).join(entry.ar);
-    f = f.replace(new RegExp(wsRe(entry.a), 'g'), entry.ar);
-  }
-  // Accordion answers are fragmented across MULTIPLE <div class="accordion-body">
-  // blocks in the mirror (one hubtown answer spans 2 divs), so the full-answer
-  // mapping above can't match them. Replace each body in document order with its
-  // question's Rhine answer; continuation bodies become empty so it renders once.
-  // Body -> question index (verified against the 27 accordion bodies).
-  const BODY_Q = [1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10, 11, 12, 13, 14, 15, 16, 17, 18];
-  {
-    let bi = 0, prev = 0;
-    f = f.replace(/<div class="accordion-body">([\s\S]*?)<\/div>/g, (m, inner) => {
-      const q = BODY_Q[bi++];
-      const isCont = q === prev;
-      prev = q;
-      const text = isCont ? '' : FAQS[q - 1].ar;
-      return '<div class="accordion-body">' + (text ? ' ' + text + ' ' : '') + '</div>';
-    });
-  }
-  // description meta (name=description, og:description, twitter:description,
-  // JSON-LD "description") still carries the real-estate wording — sweep it.
-  const FAQ_DESC = 'Find answers to frequently asked questions about Hubtown, residential and commercial projects, locations, amenities, investment opportunities, possession timelines, RERA information, and more.';
-  const RHINE_DESC = 'Frequently asked questions about Rhine Solution, a two-person studio for custom web development, portfolios, portals, and digital experiences.';
-  f = f.replace(new RegExp(wsRe(FAQ_DESC), 'g'), RHINE_DESC);
-  // remaining hubtown references -> neutral
-  f = f.split('Hubtown Limited').join('Rhine Solution');
-  f = f.split('Hubtown').join('Rhine Solution');
-  f = f.split('HUBTOWN').join('RHINE');
-  // hubtown references
-  f = apply(f, chromePairs, 'faqs', true);
-  fs.writeFileSync(faqsPath, f, 'utf8');
-  // rename complete: drop the mirror's hubtown-named copy
-  const oldFaqs = path.join(MERGED, 'faqs', 'faqs-hubtown.html');
-  if (fs.existsSync(oldFaqs)) fs.rmSync(oldFaqs);
-  console.log('  faqs page localized (remaining hubtown refs:', (f.toLowerCase().split('hubtown').length - 1) + ')');
-}
 
-// remove hubtown leftovers re-vendored from the mirror: the dead route chunk
-// files + CSS, the empty @theatre/builds/data dirs, and the unused faqs logo.
-// Also blanks their vite dep-map entries so no dangling refs remain.
-function removeHubtownLeftovers(root) {
+// remove stale build artifacts that can no longer be re-vendored: the dead
+// route chunk files + CSS, the empty @theatre/builds/data dirs, and the
+// unused faqs logo. Also blanks their vite dep-map entries so no dangling
+// refs remain.
+function removeStaleArtifacts(root) {
   let removed = 0;
   const deadNuxt = ['CpaEcUvd.js', 'BFZNzW8j.js', 'BDj03KXH.js', 'DEcvTONw.js', 'regulation-policy.Bv0JUJH1.css'];
   for (const f of deadNuxt) {
@@ -515,10 +392,10 @@ function removeHubtownLeftovers(root) {
     for (const f of deadNuxt) b = b.split('","./' + f + '"').join('",""');
     if (b !== before) { fs.writeFileSync(bundle, b, 'utf8'); removed++; }
   }
-  console.log('  removed', removed, 'hubtown leftovers');
+  console.log('  removed', removed, 'stale artifacts');
   return removed;
 }
 
-removeHubtownLeftovers(MERGED);
+removeStaleArtifacts(MERGED);
 
 console.log('\nBuild complete.');

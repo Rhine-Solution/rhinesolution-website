@@ -1,4 +1,4 @@
-// Rebrand the projects payload: swap hubtown's 56 Mumbai real-estate projects
+// Rebrand the projects payload: swap the original 56 real-estate projects
 // for Rhine Solution's real 7-project portfolio.
 //
 // The client reads the projects list from the Nuxt payload cache under the list
@@ -147,10 +147,10 @@ function rebrandProjects(mergedRoot, log) {
   // Earlier inject-project-detail.js runs appended per-project detail objects
   // whose data-map keys rebrandProjects removed in step 2; those array entries
   // are now orphaned (unreachable) yet still physically present, and several
-  // carry hubtown/akruti/dlf/sunstream strings. The shared walker re-emits the
+  // carry stale original project strings. The shared walker re-emits the
   // payload from the root, dropping every orphan. The decode semantics (same
   // 7-project list, siteSettings, sourceMap) are preserved — only the raw
-  // array shrinks and the dead hubtown strings disappear at the byte level.
+  // array shrinks and the dead strings disappear at the byte level.
   const ppBefore = pp.length;
   const gcPp = reserializePayload(pp, { removed: new Set(), sourceMapReplacer: null });
   const ppAfter = gcPp.length;

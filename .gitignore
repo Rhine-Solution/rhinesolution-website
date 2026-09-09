@@ -1,6 +1,5 @@
-# Heavy source mirror (raw HTTrack source, not part of the rebuilt site)
-# Lives at Projects/projects/_rhine-build-source/ (outside this repo) since this
-# site now runs fully independently of the mirror.
+# The site is fully self-contained: the committed output is the source of truth
+# and the rebuild runs in place (no external source folder required).
 
 # Derived/cache folders
 _preview/

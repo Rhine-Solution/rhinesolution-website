@@ -1,8 +1,8 @@
-// verify-cleanup.js
-// Regression gate for the hubtown-leftover cleanup and production polish:
+﻿// verify-cleanup.js
+// Regression gate for the stale-artifact cleanup and production polish:
 //   - chat widget panel can actually close ([hidden] beats display:flex)
 //   - no dead route chunks / CSS linger in _nuxt
-//   - no leftover hubtown dirs, files, or copy (three-lib, @theatre, builds,
+//   - no leftover stale dirs, files, or copy (three-lib, @theatre, builds,
 //     data, faqs/hubtown-logo.png, dead chunk files)
 //   - news placeholder images live in the provider folder as bare refs
 //   - robots.txt / sitemap.xml / 404.html present
@@ -36,7 +36,6 @@ function allIndexHtml(root) {
   const out = [];
   const walk = (dir) => {
     for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
-      if (e.name === 'hubtown-mirror') continue;
       const p = path.join(dir, e.name);
       if (e.isDirectory()) walk(p);
       else if (e.name === 'index.html') out.push(p);
@@ -78,7 +77,7 @@ function allIndexHtml(root) {
   report('no dead route chunks/CSS in _nuxt', pass, detail);
 })();
 
-// ---- assertion 3: no leftover hubtown dirs/files ----
+// ---- assertion 3: no leftover stale dirs/files ----
 (function () {
   let pass = true, detail = '';
   for (const rel of ['three-lib', '@theatre', 'builds', 'data', 'faqs/hubtown-logo.png']) {
@@ -87,7 +86,7 @@ function allIndexHtml(root) {
     }
   }
   if (detail) detail = detail.trim();
-  report('no leftover hubtown dirs/files', pass, detail);
+  report('no leftover stale dirs/files', pass, detail);
 })();
 
 // ---- assertion 4: news placeholders live in the provider folder as bare refs ----
@@ -169,7 +168,7 @@ function allIndexHtml(root) {
   report('build-locales.js self-contained (no source-repo load)', pass, detail);
 })();
 
-// ---- assertion 8: no Hubtown/HUBTOWN text in any built index.html ----
+// ---- assertion 8: no legacy brand text in any built index.html ----
 (function () {
   let pass = true, detail = '';
   const hits = [];
@@ -180,7 +179,7 @@ function allIndexHtml(root) {
     }
   }
   if (hits.length) { pass = false; detail = hits.join(', '); }
-  report('no hubtown text in built pages', pass, detail);
+  report('no legacy brand text in built pages', pass, detail);
 })();
 
 // ---- summary ----

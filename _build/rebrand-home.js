@@ -1,8 +1,8 @@
-// Rebrand the SSR map-legend district stats on the home + projects pages:
-// swap hubtown's Mumbai district pairs for Rhine's neutral portfolio tags.
+﻿// Rebrand the SSR map-legend district stats on the home + projects pages:
+// swap the original Mumbai district pairs for Rhine's neutral portfolio tags.
 //
-// Each page carries four hardcoded SSR stat pairs — a count span and a label
-// span — wrapped in hydration-comment spans, e.g.
+// Each page carries four hardcoded SSR stat pairs â€” a count span and a label
+// span â€” wrapped in hydration-comment spans, e.g.
 //   <!--[-->09 PROJECTS<!--]-->  ...  <!--[-->Central Suburbs<!--]-->
 // This module only rewrites the inner text of those wrapped spans; the
 // `<!--[-->...<!--]-->` wrappers are preserved byte-for-byte so hydration is
@@ -10,7 +10,7 @@
 // projects) with generic labels that carry no Mumbai geography.
 //
 // Runs AFTER the chrome + absolute-links passes in the merge pipeline. Applies
-// to EN pages only — locale copies are regenerated later by build-locales.js.
+// to EN pages only â€” locale copies are regenerated later by build-locales.js.
 
 const fs = require('fs');
 const path = require('path');

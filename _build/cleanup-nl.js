@@ -1,4 +1,4 @@
-// cleanup-nl.js — NL content surgery that string-pairs can't do cleanly.
+﻿// cleanup-nl.js â€” NL content surgery that string-pairs can't do cleanly.
 // Runs AFTER the chrome step in build-merged.js so it sees chromed files.
 //   SSR (all pages): login button -> plan2shift anchor; district-strip labels/counts.
 //   projects page:   'mumbai' map-nav label, seo-headings block, map__nav-overlay div.
@@ -17,7 +17,7 @@ const PAGES = ['', 'about', 'team', 'news', 'projects', 'contact', 'privacy-poli
 const htmlOf = (p) => (p ? path.join(MERGED, p, 'index.html') : path.join(MERGED, 'index.html'));
 
 // ---------------------------------------------------------------------------
-// 1. SSR: loader wordmark (HUBTOWN pixel squares -> RHINE SOLUTION text)
+// 1. SSR: loader wordmark (original pixel squares -> RHINE SOLUTION text)
 //    + login button -> external plan2shift anchor (all pages)
 // ---------------------------------------------------------------------------
 const LOADER_SVG_RE = /<svg xmlns="http:\/\/www\.w3\.org\/2000\/svg" viewBox="0 0 352 40"[^>]*>.*?<\/svg>/g;
@@ -133,7 +133,7 @@ for (const page of PAGES) {
 }
 
 // ---------------------------------------------------------------------------
-// 4. bundle BJMCwerj.js — mumbai filter surgery + seo/overlay render removal
+// 4. bundle BJMCwerj.js â€” mumbai filter surgery + seo/overlay render removal
 // ---------------------------------------------------------------------------
 {
   const p = path.join(MERGED, '_nuxt', 'BJMCwerj.js');
@@ -154,25 +154,25 @@ for (const page of PAGES) {
 }
 
 // ---------------------------------------------------------------------------
-// 5. bundle u1ipQrxM.js — login handler -> plan2shift, strip dead routes
+// 5. bundle u1ipQrxM.js â€” login handler -> plan2shift, strip dead routes
 // ---------------------------------------------------------------------------
 {
   const p = path.join(MERGED, '_nuxt', 'u1ipQrxM.js');
   let u = fs.readFileSync(p, 'utf8');
   const before = u;
-  // loader wordmark (HUBTOWN squares -> RHINE SOLUTION text)
+  // loader wordmark (original squares -> RHINE SOLUTION text)
   const nSvg = (u.match(LOADER_SVG_RE) || []).length;
   if (nSvg) u = u.replace(LOADER_SVG_RE, LOADER_WORDMARK);
   u = u.split('"on-login-click":K(s)').join('"on-login-click":()=>window.open("https://plan2shift.com/login","_blank","noopener")');
   u = u.replace(/\{name:"(?:investor-relations|regulation-policy|approvals|registration)",path:"[^"]*",component:\(\)=>Yr\(\(\)=>import\("\.\/[A-Za-z0-9_\-]+\.js"\),__vite__mapDeps\(\[[0-9,]+\]\),import\.meta\.url\)\},?/g, '');
-  // dead CSS chunk name for the removed regulation-policy route (vite deps map) —
+  // dead CSS chunk name for the removed regulation-policy route (vite deps map) â€”
   // empty the string, keep the array length so index references stay valid
   u = u.split('"./regulation-policy.Bv0JUJH1.css"').join('""');
   if (u !== before) fs.writeFileSync(p, u, 'utf8');
 }
 
 // ---------------------------------------------------------------------------
-// 6. bundle JFwdWLci.js — phone country default NL
+// 6. bundle JFwdWLci.js â€” phone country default NL
 // ---------------------------------------------------------------------------
 {
   const p = path.join(MERGED, '_nuxt', 'JFwdWLci.js');

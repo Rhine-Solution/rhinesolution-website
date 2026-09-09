@@ -1,7 +1,7 @@
-// verify-rebrand.js
+﻿// verify-rebrand.js
 // Regression gate for the Rhine Solution rebrand (Tasks 1-4). Verifies the merged
 // static site contains only Rhine's real content: 7 projects, no hubtown slugs,
-// no hubtown press sources in news, no /careers canonicals, no Mumbai district
+// no legacy press sources in news, no /careers canonicals, no Mumbai district
 // labels, and no dangling sanity cache refs in the projects payload.
 //
 // Exit 0 when every assertion PASSes; non-zero when any FAILs.
@@ -20,10 +20,10 @@ const RHINE_SLUGS = [
   'mac-mini-ai', 'rhinesolution', 'cybercrime-report',
 ];
 
-// The 56 hubtown slug patterns that must be ABSENT from the projects payload.
+// The original 56 project slug patterns that must be ABSENT from the projects payload.
 // `25-` is a prefix (so match slug boundaries), the rest are distinctive substrings.
-const HUBTOWN_PATTERNS = ['akruti-', 'hubtown-', 'dlf-', 'ackruti-', 'sunstream', 'asmeeta'];
-const HUBTOWN_PREFIX = '25-';
+const LEGACY_SLUG_PATTERNS = ['akruti-', 'hubtown-', 'dlf-', 'ackruti-', 'sunstream', 'asmeeta'];
+const LEGACY_SLUG_PREFIX = '25-';
 
 const PROJECTS_PAYLOAD = path.join(ROOT, 'projects', '_payloadc9a0.json');
 const NEWS_PAYLOAD = path.join(ROOT, 'news', '_payloadc9a0.json');
@@ -43,7 +43,6 @@ function allIndexHtml(root) {
   const out = [];
   const walk = (dir) => {
     for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
-      if (e.name === 'hubtown-mirror') continue;
       const p = path.join(dir, e.name);
       if (e.isDirectory()) walk(p);
       else if (e.name === 'index.html') out.push(p);
@@ -86,28 +85,28 @@ function allIndexHtml(root) {
     const revived = revive(pp, { ShallowReactive: v => ({ ...v }) });
     const revivedJson = JSON.stringify(revived);
 
-    // 0) RAW file must be clean of hubtown slug strings too (dead data gate).
-    //    `25-` is a slug PREFIX, not a substring — it appears inside UUIDs like
-    //    4525-9fb9 — so it is NOT checked here; the distinctive patterns below
-    //    are sufficient to catch every hubtown/orphaned slug at the byte level.
-    for (const pat of HUBTOWN_PATTERNS) {
+    // 0) RAW file must be clean of original slug strings too (dead data gate).
+    //    `25-` is a slug PREFIX, not a substring â€” it appears inside UUIDs like
+    //    4525-9fb9 â€” so it is NOT checked here; the distinctive patterns below
+    //    are sufficient to catch every original/orphaned slug at the byte level.
+    for (const pat of LEGACY_SLUG_PATTERNS) {
       if (rawText.includes(pat)) {
-        detail = `raw projects payload contains hubtown slug pattern "${pat}" (orphaned data)`;
-        return report('no hubtown slugs in projects payload', false, detail);
+        detail = `raw projects payload contains original slug pattern "${pat}" (orphaned data)`;
+        return report('no legacy project slugs in projects payload', false, detail);
       }
     }
 
     // 1) the bare token `hubtown` must not appear anywhere in decoded content
     if (revivedJson.includes('hubtown')) {
-      detail = 'string "hubtown" present in decoded projects content';
-      return report('no hubtown slugs in projects payload', false, detail);
+      detail = 'legacy brand token present in decoded projects content';
+      return report('no legacy project slugs in projects payload', false, detail);
     }
 
-    // 2) other distinctive hubtown slug substrings must be absent
-    for (const pat of HUBTOWN_PATTERNS) {
+    // 2) other distinctive original slug substrings must be absent
+    for (const pat of LEGACY_SLUG_PATTERNS) {
       if (revivedJson.includes(pat)) {
-        detail = `hubtown slug pattern "${pat}" present in decoded content`;
-        return report('no hubtown slugs in projects payload', false, detail);
+        detail = `original slug pattern "${pat}" present in decoded content`;
+        return report('no legacy project slugs in projects payload', false, detail);
       }
     }
 
@@ -124,18 +123,18 @@ function allIndexHtml(root) {
       if (Array.isArray(v)) for (const c of v) if (c && typeof c === 'object') collect(c);
     };
     collect(revived);
-    const bad = slugs.filter(s => typeof s === 'string' && s.startsWith(HUBTOWN_PREFIX));
+    const bad = slugs.filter(s => typeof s === 'string' && s.startsWith(LEGACY_SLUG_PREFIX));
     if (bad.length) {
-      detail = `slug(s) matching "${HUBTOWN_PREFIX}" prefix: ${bad.join(', ')}`;
-      return report('no hubtown slugs in projects payload', false, detail);
+      detail = `slug(s) matching "${LEGACY_SLUG_PREFIX}" prefix: ${bad.join(', ')}`;
+      return report('no legacy project slugs in projects payload', false, detail);
     }
 
     pass = true;
   } catch (e) { detail = e.message; }
-  report('no hubtown slugs in projects payload', pass, detail);
+  report('no legacy project slugs in projects payload', pass, detail);
 })();
 
-// ---- assertion 3: news payload free of hubtown press sources ----
+// ---- assertion 3: news payload free of legacy press sources ----
 (function () {
   let pass = true, detail = '';
   const bad = [];
@@ -143,7 +142,7 @@ function allIndexHtml(root) {
     if (fs.readFileSync(NEWS_PAYLOAD, 'utf8').includes(needle)) bad.push(needle);
   }
   if (bad.length) { pass = false; detail = 'found: ' + bad.join(', '); }
-  report('news payload has no hubtown press sources', pass, detail);
+  report('news payload has no legacy press sources', pass, detail);
 })();
 
 // ---- assertion 4: no /careers canonical in any index.html under merged root ----

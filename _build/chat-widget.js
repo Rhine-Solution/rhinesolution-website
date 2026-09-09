@@ -1,4 +1,4 @@
-﻿// chat-widget.js â€” injects the Rhine Solution assistant (hubtown-style skin)
+﻿// chat-widget.js â€” injects the Rhine Solution assistant (original-site skin)
 // into every EN page as a self-contained vanilla-JS widget. Talks to /api/chat
 // (Gemini SSE proxy; local serve.js stubs it offline).
 // Runs inside build-merged.js (after chrome).

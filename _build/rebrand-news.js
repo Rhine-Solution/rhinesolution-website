@@ -1,10 +1,9 @@
-// Rebrand the news payload: keep all articles but strip the hubtown press
-// branding. The two leftover hubtown articles (whose resolved source title is
-// a Times of India / ET Now / Gudi Padwa string) have their `source` field
-// rewritten to a null primitive so the press strings disappear from the
-// serialized payload, while the articles themselves (including the EN variants
-// of "Bilingual site structure" and "Music Trends Local is live") stay in the
-// list.
+// Rebrand the news payload: keep all articles but strip the original press
+// branding. Any article whose resolved source title is a Times of India / ET
+// Now / Gudi Padwa string has its `source` field rewritten to a null primitive
+// so the press strings disappear from the serialized payload, while the
+// articles themselves (including the EN variants of "Bilingual site structure"
+// and "Music Trends Local is live") stay in the list.
 //
 // The news payload is a Nuxt-indexed array (see inject-project-detail.js's
 // revive() for the walker). This module:
@@ -23,15 +22,15 @@ const path = require('path');
 const { revive } = require('./inject-project-detail.js');
 const { reserializePayload } = require('./payload-reserialize.js');
 
-// Any string carrying hubtown press branding marks its article as a leftover.
-const HUBTOWN_RE = /Times of India|ET Now|Gudi Padwa/i;
+// Any string carrying the original press branding marks its article as a leftover.
+const LEGACY_PRESS_RE = /Times of India|ET Now|Gudi Padwa/i;
 
-function isHubtownArticle(article) {
+function isLegacyArticle(article) {
   if (!article || typeof article !== 'object') return false;
   const title = article.title;
   const srcTitle = article.source && article.source.title;
-  return (typeof title === 'string' && HUBTOWN_RE.test(title)) ||
-         (typeof srcTitle === 'string' && HUBTOWN_RE.test(srcTitle));
+  return (typeof title === 'string' && LEGACY_PRESS_RE.test(title)) ||
+         (typeof srcTitle === 'string' && LEGACY_PRESS_RE.test(srcTitle));
 }
 
 // Extract the Sanity _key for each article position, in array order, from the
@@ -151,19 +150,19 @@ function rebrandNews(mergedRoot, log) {
     return { nulled: 0 };
   }
 
-  // Original articles (raw indices) and which carry hubtown press branding.
+  // Original articles (raw indices) and which carry the press branding.
   const origArticles = newsData.articles;
   const nulledPositions = [];
   origArticles.forEach((a, i) => {
-    if (isHubtownArticle(a)) nulledPositions.push(i);
+    if (isLegacyArticle(a)) nulledPositions.push(i);
   });
   if (!nulledPositions.length) {
-    if (log) console.log('  rebrand-news: no hubtown source attributions to null');
+    if (log) console.log('  rebrand-news: no press source attributions to null');
     return { nulled: 0 };
   }
 
   // Rewrite the RAW `source` field of each offending article to a null
-  // primitive index, so the hubtown press strings are dropped from the
+  // primitive index, so the press strings are dropped from the
   // serialized payload (their source objects become unreachable).
   const articlesRawIdx = findArticlesRawIdx(pp);
   const nullPrimitiveIdx = findNullPrimitiveIdx(pp);
@@ -184,7 +183,7 @@ function rebrandNews(mergedRoot, log) {
 
   const newPp = reserialize(pp, new Set(), newSourceMap);
   fs.writeFileSync(payloadPath, JSON.stringify(newPp), 'utf8');
-  if (log) console.log('  rebrand-news: nulled', nulledPositions.length, 'hubtown source attribution(s)');
+  if (log) console.log('  rebrand-news: nulled', nulledPositions.length, 'press source attribution(s)');
   return { nulled: nulledPositions.length };
 }
 

@@ -1,4 +1,4 @@
-// verify-nl-map.js
+﻿// verify-nl-map.js
 // Regression gate for the Netherlands map rebuild (Tasks 1-5). Verifies the
 // generated NL map artifacts against _build/nl-map-data.js (the single source
 // of truth): the 7 loc_* cube anchors in webgl/models/map.glb, the 4 dist_*
@@ -11,7 +11,7 @@
 // Usage: node _build/verify-nl-map.js  (run from the merged site root, or pass
 // the merged root as argv[2]).
 //
-// Manual check (not automatable headless — the 3D map scene does not run its
+// Manual check (not automatable headless â€” the 3D map scene does not run its
 // projection loop under headless Chrome, so the district pins never get screen
 // positions and the pointer-position-driven interaction can't fire):
 //   1. `node serve.js` then open http://localhost:8080/
@@ -19,7 +19,7 @@
 //   3. Move the pointer over a district pin/label (e.g. "SOUTH") on the map.
 //      The district's roads should glow (district road highlight) and the
 //      cursor becomes a pointer. No console errors may appear.
-//   4. Move the pointer away — the glow should fade. Repeat for each district.
+//   4. Move the pointer away â€” the glow should fade. Repeat for each district.
 //   5. On a touch device (or DevTools mobile emulation), tapping a district
 //      row must trigger the same glow (`map:district:touchclick`).
 // The controller already exercised this once interactively; assertion 7 below
@@ -44,7 +44,7 @@ const BUNDLE = path.join(ROOT, '_nuxt', 'u1ipQrxM.js');
 // the site bundle): `0_loc_<type>_<status>_<slug>` -> slug.
 const getProjectName = (e) => e.split('_').slice(4).join('-').toLowerCase();
 
-const HUBTOWN_NEEDLES = ['hubtown', 'akruti', 'sunstream', '25-', 'asmeeta'];
+const LEGACY_NEEDLES = ['hubtown', 'akruti', 'sunstream', '25-', 'asmeeta'];
 const EXPECTED_DISTRICT_NODES = ['dist_west', 'dist_south', 'dist_central', 'dist_north'];
 
 let failures = 0;
@@ -191,7 +191,7 @@ function projectForLocNode(node) {
   report('map-districts.glb: exactly 4 dist_west/south/central/north anchors', pass, detail);
 })();
 
-// ---- assertion 4: bundle ev decodes to 4 keys / 7 projects, no hubtown, valid locations ----
+// ---- assertion 4: bundle ev decodes to 4 keys / 7 projects, no legacy strings, valid locations ----
 (function () {
   let pass = false, detail = '';
   try {
@@ -210,10 +210,10 @@ function projectForLocNode(node) {
     if (projects.length !== 7) throw new Error(`ev has ${projects.length} projects, expected 7`);
 
     const leaks = [];
-    for (const needle of HUBTOWN_NEEDLES) {
+    for (const needle of LEGACY_NEEDLES) {
       if (evText.includes(needle)) leaks.push(`"${needle}"`);
     }
-    if (leaks.length) throw new Error('hubtown strings present in ev: ' + leaks.join(', '));
+    if (leaks.length) throw new Error('legacy strings present in ev: ' + leaks.join(', '));
 
     const badLoc = [];
     for (const p of projects) {
@@ -232,7 +232,7 @@ function projectForLocNode(node) {
 
     pass = true;
   } catch (e) { detail = e.message; }
-  report('bundle ev: 4 keys, 7 projects, no hubtown strings, valid locations', pass, detail);
+  report('bundle ev: 4 keys, 7 projects, no legacy strings, valid locations', pass, detail);
 })();
 
 function allEvProjectsFrom(ev) {
@@ -258,7 +258,7 @@ function allEvProjectsFrom(ev) {
 // Static canary for the district-glow interaction (hover/click a district row
 // -> `map:district:enter` -> setSelectedDistrictRoads -> uSelectionMix tween).
 // Headless browsers don't run the 3D projection loop that positions the
-// district pins, so the runtime glow can't be asserted headless — see the
+// district pins, so the runtime glow can't be asserted headless â€” see the
 // manual check in the header. If any of these wiring anchors vanish from the
 // regenerated bundle, the interaction is broken and this FAILs.
 (function () {
