@@ -1,4 +1,4 @@
-﻿// chat-widget.js â€” injects the Rhine Solution assistant (original-site skin)
+// chat-widget.js â€” injects the Rhine Solution assistant (original-site skin)
 // into every EN page as a self-contained vanilla-JS widget. Talks to /api/chat
 // (Gemini SSE proxy; local serve.js stubs it offline).
 // Runs inside build-merged.js (after chrome).
@@ -15,12 +15,12 @@ const WIDGET = `<script id="rhine-chat-widget">
   var CSS =
     '.rhine-chat{position:fixed;right:1rem;bottom:1rem;z-index:9500;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;}'
   + '.rhine-chat *{box-sizing:border-box}'
-  + '.rh-chat-fab{display:flex;align-items:center;justify-content:center;width:56px;height:56px;background:#020a19;color:#d5e0ff;border:1px solid rgba(126,167,255,.45);cursor:pointer;font-family:inherit;font-size:10px;letter-spacing:.12em;text-transform:uppercase;position:relative;transition:transform .2s,background .2s}'
+  + '.rh-chat-fab{display:flex;align-items:center;justify-content:center;width:56px;height:56px;background:#020a19;color:#d5e0ff;border:1px solid rgba(126,167,255,.45);cursor:pointer;font-family:inherit;font-size:10px;letter-spacing:.12em;text-transform:uppercase;position:relative;transition:transform .2s,background .2s;clip-path:polygon(0 0,calc(100% - 10px) 0,100% 10px,100% 100%,10px 100%,0 calc(100% - 10px))}'
   + '.rh-chat-fab:hover{transform:translateY(-2px);background:#0a142e}'
   + '.rh-chat-fab::before,.rh-chat-fab::after{content:"";position:absolute;width:6px;height:6px;background:#2C6BFF}'
   + '.rh-chat-fab::before{top:-1px;left:-1px}'
   + '.rh-chat-fab::after{bottom:-1px;right:-1px}'
-  + '.rh-chat-panel{position:absolute;right:0;bottom:66px;width:min(380px,calc(100vw - 2rem));height:min(520px,70vh);display:flex;flex-direction:column;background:#020a19;border:1px solid rgba(126,167,255,.25);box-shadow:0 20px 60px rgba(0,0,0,.6)}'
+  + '.rh-chat-panel{position:absolute;right:0;bottom:66px;width:min(380px,calc(100vw - 2rem));height:min(520px,70vh);display:flex;flex-direction:column;background:#020a19;border:1px solid rgba(126,167,255,.25);box-shadow:0 20px 60px rgba(0,0,0,.6);clip-path:polygon(0 0,calc(100% - 12px) 0,100% 12px,100% 100%,12px 100%,0 calc(100% - 12px))}'
   + '.rh-chat-panel[hidden]{display:none}'
   + '.rh-chat-panel::before{content:"";position:absolute;top:-1px;left:-1px;width:8px;height:8px;background:#2C6BFF}'
   + '.rh-chat-panel::after{content:"";position:absolute;bottom:-1px;right:-1px;width:8px;height:8px;background:#2C6BFF}'
