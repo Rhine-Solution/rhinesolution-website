@@ -1,7 +1,7 @@
 // Netherlands terrain GLB generator.
 //
-// Reads _build/geo/nl-country.geojson (Netherlands nation outline + Wadden
-// islands, from Natural Earth 10m), uses MAP_DATA from
+// Reads _build/geo/nl-provinces.geojson (12 provinces) and dedups the shared
+// province borders so no boundary line is drawn twice. Uses MAP_DATA from
 // nl-map-data.js for the geographic bbox, city coords, district clusters and
 // lonLatToWorld, and writes webgl/models/map.glb with:
 //   - terrain  : grid mesh over the NL bbox (triangles, mode 0), attrs
@@ -34,7 +34,7 @@ const path = require('path');
 const MAP_DATA = require('./nl-map-data.js');
 const { writeGLB, addBufferView, addAccessor, meshNode, primitive, mesh } = require('./glb-writer.js');
 
-const GEOJSON_PATH = path.join(__dirname, 'geo', 'nl-country.geojson');
+const GEOJSON_PATH = path.join(__dirname, 'geo', 'nl-provinces.geojson');
 const OUT_PATH = path.resolve(__dirname, '..', 'webgl', 'models', 'map.glb');
 
 const { lonLatToWorld, bbox, districts, projects, cityCoords, applyNudge } = MAP_DATA;
@@ -55,7 +55,7 @@ const R = 120;
 
 // Line elevation sits just above the gentle terrain (max ~3.5), so boundary
 // lines always render above the land.
-const LINE_Y = 4.2;
+const LINE_Y = 13.5;
 
 // Site palette base color for COLOR_0.
 const COLOR = { r: 0x1c, g: 0x26, b: 0x34 };
@@ -63,7 +63,7 @@ const COLOR = { r: 0x1c, g: 0x26, b: 0x34 };
 // Water/land levels (fragment shader: water when POSITION.y < uWaterLevel=0).
 const WATER_Y = -0.5;
 const LAND_MIN = 0.5;
-const LAND_MAX = 3.5;
+const LAND_MAX = 12;
 
 function smoothstep(a, b, x) {
   const t = Math.max(0, Math.min(1, (x - a) / (b - a)));
@@ -330,36 +330,45 @@ function splitRuns(ring) {
   return runs;
 }
 
-// Per-run segment emission. Each run becomes a LINES strip; consecutive
-// vertices are paired (mode 1). Adds closing segment for closed rings.
-function buildBoundaryMesh(runFilter) {
-  const pos = [];
-  const edge = [];
-  const tcs = [];
-  const wst = [];
-  const ind = [];
+// Boundary line emission with dedup. Province rings share EXACT vertices on
+// adjacent borders, so each segment is emitted once by canonicalizing it to a
+// quantized edge key. Edges traced by ONE province = coastline (major); edges
+// traced by TWO = internal province border (minor). Lines render solid (no
+// per-run fade) — the intro reveal animation still fades them in as a whole.
+const SNAP = 1.0;
+function buildBoundaryMesh(kind) {
+  const q = (v) => Math.round(v / SNAP);
+  const EM = new Map();
   for (const ring of collectRings()) {
-    const res = resample(ring);
-    for (const run of splitRuns(res)) {
-      if (!runFilter(run.coast)) continue;
-      const n = run.pts.length;
-      const base = pos.length / 2;
-      for (let i = 0; i < n; i++) {
-        const [x, z] = run.pts[i];
-        pos.push(x, z);
-        // Fade gradient along the run: 0 at both ends -> 1 in the body.
-        const fade = Math.max(2, Math.round(n * 0.05));
-        edge.push(smoothstep(0, fade, Math.min(i, n - 1 - i)));
-        const dNorth = Math.hypot(x - centroids.north.x, z - centroids.north.z);
-        const dCentral = Math.hypot(x - centroids.central.x, z - centroids.central.z);
-        const dSouth = Math.hypot(x - centroids.south.x, z - centroids.south.z);
-        const dWest = Math.hypot(x - centroids.west.x, z - centroids.west.z);
-        tcs.push(1 - smoothstep(0, R, dNorth), 1 - smoothstep(0, R, dCentral), 1 - smoothstep(0, R, dSouth));
-        wst.push(1 - smoothstep(0, R, dWest), 0, 0);
-      }
-      for (let i = 0; i < n - 1; i++) { ind.push(base + i, base + i + 1); }
-      if (run.closed) ind.push(base + n - 1, base);
+    const n = ring.length;
+    for (let i = 0; i < n; i++) {
+      const a = ring[i], b = ring[(i + 1) % n];
+      const ka = q(a[0]) + ',' + q(a[1]);
+      const kb = q(b[0]) + ',' + q(b[1]);
+      if (ka === kb) continue;
+      const key = ka < kb ? ka + '|' + kb : kb + '|' + ka;
+      const e = EM.get(key);
+      if (e) e.count++;
+      else EM.set(key, { a, b, count: 1 });
     }
+  }
+  const pos = [], edge = [], tcs = [], wst = [], ind = [];
+  let base = 0;
+  for (const e of EM.values()) {
+    const isMajor = e.count === 1;
+    if (kind === 'major' ? !isMajor : isMajor) continue;
+    for (const [x, z] of [[e.a[0], e.a[1]], [e.b[0], e.b[1]]]) {
+      pos.push(x, z);
+      edge.push(1);
+      const dN = Math.hypot(x - centroids.north.x, z - centroids.north.z);
+      const dC = Math.hypot(x - centroids.central.x, z - centroids.central.z);
+      const dS = Math.hypot(x - centroids.south.x, z - centroids.south.z);
+      const dW = Math.hypot(x - centroids.west.x, z - centroids.west.z);
+      tcs.push(1 - smoothstep(0, R, dN), 1 - smoothstep(0, R, dC), 1 - smoothstep(0, R, dS));
+      wst.push(1 - smoothstep(0, R, dW), 0, 0);
+    }
+    ind.push(base, base + 1);
+    base += 2;
   }
   const verts = pos.length / 2;
   const posArr = new Float32Array(verts * 3);
@@ -378,8 +387,8 @@ function buildBoundaryMesh(runFilter) {
   };
 }
 
-const major = buildBoundaryMesh((coast) => coast === true);
-const minor = buildBoundaryMesh((coast) => coast === false);
+const major = buildBoundaryMesh('major');
+const minor = buildBoundaryMesh('minor');
 
 // ---- GLB assembly ----------------------------------------------------------
 
