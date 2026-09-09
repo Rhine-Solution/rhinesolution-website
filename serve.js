@@ -23,6 +23,8 @@ const MIME = {
 
 function safePath(urlPath) {
   let p = decodeURIComponent(urlPath.split('?')[0]);
+  // /faqs lives at faqs/faqs.html (no index.html) — alias /faqs and /faqs/ to it
+  if (p === '/faqs' || p === '/faqs/') p = '/faqs/faqs.html';
   if (p === '/') p = '/index.html';
   if (p.endsWith('/')) p += 'index.html';
   // careers route now lives under /team (renamed); alias /careers and /careers/* to team
