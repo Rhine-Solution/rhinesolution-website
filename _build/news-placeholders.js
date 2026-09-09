@@ -25,8 +25,10 @@ const HASH_TO_SLUG = {
   '7f12184b74543cc3ff9dfa6ac930ec8154c6376a-985x754-png': 'music-trends-local',
 };
 
-// generate branded placeholders (dark-blue panel, corner accents, title)
-const newsDir = path.join(MERGED, 'images', 'news');
+// generate branded placeholders (dark-blue panel, corner accents, title).
+// They live in the news-images provider folder (base `/news-images/7m7t0x6z/production/`)
+// so the runtime NuxtImg renders them without its imageUrl prefix mangling the path.
+const newsDir = path.join(MERGED, 'news-images', '7m7t0x6z', 'production');
 fs.mkdirSync(newsDir, { recursive: true });
 for (const [title, slug] of Object.entries(ARTICLES)) {
   const w = 1200, h = 800;
@@ -40,7 +42,8 @@ for (const [title, slug] of Object.entries(ARTICLES)) {
   <text x="${w / 2}" y="${h / 2 + 46}" text-anchor="middle" fill="#7ea7ff" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="30" letter-spacing="4">${title.toUpperCase()}</text>
 </svg>
 `;
-  fs.writeFileSync(path.join(newsDir, slug + '.svg'), svg, 'utf8');
+  fs.writeFileSync(path.join(newsDir, 'rhine-' + slug + '.svg'), svg, 'utf8');
+  fs.writeFileSync(path.join(__dirname, 'news-images', '7m7t0x6z', 'production', 'rhine-' + slug + '.svg'), svg, 'utf8');
 }
 
 // rewrite news SSR <img> srcset/src by alt
@@ -51,7 +54,7 @@ if (fs.existsSync(newsHtml)) {
   html = html.replace(/<img([^>]*)alt="([^"]*)"([^>]*)>/g, (m, pre, alt, post) => {
     const slug = ARTICLES[alt.trim()];
     if (!slug) return m;
-    const src = `/images/news/${slug}.svg`;
+    const src = `/news-images/7m7t0x6z/production/rhine-${slug}.svg`;
     let out = m.replace(/srcset="[^"]*"/, `srcset="${src} 1x, ${src} 2x"`);
     out = out.replace(/src="[^"]*"/, `src="${src}"`);
     if (out === m) return m;
@@ -62,14 +65,18 @@ if (fs.existsSync(newsHtml)) {
   console.log('news-placeholders: rewrote', replaced, 'news <img> tags');
 }
 
-// rewrite news payload imageUrl refs
+// rewrite news payload imageUrl refs. The payload ref already carries an `image-`
+// prefix (image-<hash>-<w>x<h>-<ext>), and the client's Sanity image builder
+// strips that prefix then renames the last dash-segment to '.ext', so the
+// placeholder ref must be `image-rhine-<slug>-svg` to round-trip to the real
+// file `rhine-<slug>.svg` when the runtime re-renders the img.
 for (const f of fs.readdirSync(path.join(MERGED, 'news'))) {
   if (!/^_payload.*\.json$/.test(f)) continue;
   const fp = path.join(MERGED, 'news', f);
   let t = fs.readFileSync(fp, 'utf8');
   let ch = false;
   for (const [hash, slug] of Object.entries(HASH_TO_SLUG)) {
-    if (t.includes(hash)) { t = t.split(hash).join(`/images/news/${slug}.svg`); ch = true; }
+    if (t.includes(hash)) { t = t.split(hash).join(`rhine-${slug}-svg`); ch = true; }
   }
   if (ch) fs.writeFileSync(fp, t, 'utf8');
 }

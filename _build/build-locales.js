@@ -13,13 +13,16 @@ const MERGED = path.resolve(__dirname, '..');
 // Locales are removed — the site is English-only. Keep this script a no-op so
 // the rebuild cycle (verify-nl-map assertion 6) still exits 0.
 const LOCALES = [];
-const CONTENT_BASE = 'C:/Users/teoal/Projects/projects/rhinesolution-website/content';
-
 const PAGES = ['team', 'about', 'contact', 'news', 'privacy-policy', 'projects', 'terms-and-conditions'];
 
 // ---- content reverse index: en value -> locale value ----
+// Only touched when locales are enabled; the English-only site never loads the
+// source-repo content JSON, so the build is fully self-contained.
 const content = {};
-for (const loc of ['en', ...LOCALES]) content[loc] = require(path.join(CONTENT_BASE, loc + '.json'));
+if (LOCALES.length) {
+  const CONTENT_BASE = 'C:/Users/teoal/Projects/projects/rhinesolution-website/content';
+  for (const loc of ['en', ...LOCALES]) content[loc] = require(path.join(CONTENT_BASE, loc + '.json'));
+}
 
 function leafPairs(en, loc, map) {
   for (const k of Object.keys(en)) {

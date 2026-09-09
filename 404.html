@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>404 — Rhine Solution</title>
+<meta name="robots" content="noindex">
+<style>
+  html,body{margin:0;height:100%;background:#020a19;color:#d5e0ff;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;}
+  .wrap{min-height:100%;display:flex;align-items:center;justify-content:center;position:relative;}
+  .box{text-align:center;padding:2rem;position:relative;border:1px solid rgba(126,167,255,.25);}
+  .box::before{content:"";position:absolute;top:-1px;left:-1px;width:10px;height:10px;background:#2C6BFF;}
+  .box::after{content:"";position:absolute;bottom:-1px;right:-1px;width:10px;height:10px;background:#2C6BFF;}
+  .code{font-size:64px;font-weight:700;letter-spacing:.12em;margin:0;color:#d5e0ff;}
+  .msg{margin:1rem 0 1.5rem;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#7ea7ff;}
+  a{color:#2C6BFF;text-decoration:none;font-size:12px;letter-spacing:.12em;text-transform:uppercase;}
+  a:hover{color:#d5e0ff;}
+</style>
+<script>
+  setTimeout(function(){ location.replace('/'); }, 5000);
+</script>
+</head>
+<body>
+<div class="wrap">
+  <div class="box">
+    <p class="code">404</p>
+    <p class="msg">Page not found</p>
+    <a href="/">Back to home</a>
+  </div>
+</div>
+</body>
+</html>

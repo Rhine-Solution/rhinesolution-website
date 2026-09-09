@@ -32,8 +32,14 @@ const PROJECTS = [
   { title: 'Cybercrime & Cybersecurity Report', slug: 'cybercrime-report', type: 'report', status: 'shipped', location: 'Groningen, Netherlands', city: 'groningen', coordinates: '53.22 N. 6.57 E' },
 ];
 
-function newUuid() {
-  return crypto.randomUUID();
+// Deterministic slug-derived UUID (v5, DNS namespace) so rebuilds don't churn payloads.
+function uuidFromSlug(slug) {
+  const ns = Buffer.from('6ba7b8109dad11d180b400c04fd430c8', 'hex');
+  const h = crypto.createHash('sha1').update(ns).update(Buffer.from(slug)).digest();
+  h[6] = (h[6] & 0x0f) | 0x50;
+  h[8] = (h[8] & 0x3f) | 0x80;
+  const s = h.slice(0, 16).toString('hex');
+  return `${s.slice(0, 8)}-${s.slice(8, 12)}-${s.slice(12, 16)}-${s.slice(16, 20)}-${s.slice(20)}`;
 }
 
 // Append one value to the payload array, returning its index.
@@ -47,7 +53,7 @@ function appendPrimitive(pp, v) {
 function buildListItem(pp, proj) {
   const refs = {};
   for (const [k, v] of Object.entries({
-    _id: newUuid(),
+    _id: uuidFromSlug(proj.slug),
     city: proj.city,
     coordinates: proj.coordinates,
     location: proj.location,
@@ -155,4 +161,4 @@ function rebrandProjects(mergedRoot, log) {
   return { listItems: newList.length, detailKeys: newDetailKeys.length };
 }
 
-module.exports = { rebrandProjects, LIST_KEY, PROJECTS };
+module.exports = { rebrandProjects, uuidFromSlug, LIST_KEY, PROJECTS };

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+  <rect width="1200" height="800" fill="#020a19"/>
+  <rect x="0" y="0" width="10" height="10" fill="#2C6BFF"/>
+  <rect x="1190" y="0" width="10" height="10" fill="#2C6BFF"/>
+  <rect x="0" y="790" width="10" height="10" fill="#2C6BFF"/>
+  <rect x="1190" y="790" width="10" height="10" fill="#2C6BFF"/>
+  <text x="600" y="376" text-anchor="middle" fill="#d5e0ff" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="52" letter-spacing="10" font-weight="700">RHINE SOLUTION</text>
+  <text x="600" y="446" text-anchor="middle" fill="#7ea7ff" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="30" letter-spacing="4">DEPENDENCY CLEANUP</text>
+</svg>

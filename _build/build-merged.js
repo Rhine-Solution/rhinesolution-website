@@ -479,11 +479,10 @@ if (fs.existsSync(faqsSrc) || fs.existsSync(faqsPath)) {
   const FAQ_DESC = 'Find answers to frequently asked questions about Hubtown, residential and commercial projects, locations, amenities, investment opportunities, possession timelines, RERA information, and more.';
   const RHINE_DESC = 'Frequently asked questions about Rhine Solution, a two-person studio for custom web development, portfolios, portals, and digital experiences.';
   f = f.replace(new RegExp(wsRe(FAQ_DESC), 'g'), RHINE_DESC);
-  // remaining hubtown references -> neutral (logo file stays; title/HUBTOWN done)
+  // remaining hubtown references -> neutral
   f = f.split('Hubtown Limited').join('Rhine Solution');
   f = f.split('Hubtown').join('Rhine Solution');
   f = f.split('HUBTOWN').join('RHINE');
-  f = f.split('hubtown-logo.png').join('hubtown-logo.png'); // keep asset filename
   // hubtown references
   f = apply(f, chromePairs, 'faqs', true);
   fs.writeFileSync(faqsPath, f, 'utf8');
@@ -492,5 +491,34 @@ if (fs.existsSync(faqsSrc) || fs.existsSync(faqsPath)) {
   if (fs.existsSync(oldFaqs)) fs.rmSync(oldFaqs);
   console.log('  faqs page localized (remaining hubtown refs:', (f.toLowerCase().split('hubtown').length - 1) + ')');
 }
+
+// remove hubtown leftovers re-vendored from the mirror: the dead route chunk
+// files + CSS, the empty @theatre/builds/data dirs, and the unused faqs logo.
+// Also blanks their vite dep-map entries so no dangling refs remain.
+function removeHubtownLeftovers(root) {
+  let removed = 0;
+  const deadNuxt = ['CpaEcUvd.js', 'BFZNzW8j.js', 'BDj03KXH.js', 'DEcvTONw.js', 'regulation-policy.Bv0JUJH1.css'];
+  for (const f of deadNuxt) {
+    const p = path.join(root, '_nuxt', f);
+    if (fs.existsSync(p)) { fs.rmSync(p); removed++; }
+  }
+  for (const d of ['@theatre', 'builds', 'data']) {
+    const p = path.join(root, d);
+    if (fs.existsSync(p)) { fs.rmSync(p, { recursive: true, force: true }); removed++; }
+  }
+  const logo = path.join(root, 'faqs', 'hubtown-logo.png');
+  if (fs.existsSync(logo)) { fs.rmSync(logo); removed++; }
+  const bundle = path.join(root, '_nuxt', 'u1ipQrxM.js');
+  if (fs.existsSync(bundle)) {
+    let b = fs.readFileSync(bundle, 'utf8');
+    const before = b;
+    for (const f of deadNuxt) b = b.split('","./' + f + '"').join('",""');
+    if (b !== before) { fs.writeFileSync(bundle, b, 'utf8'); removed++; }
+  }
+  console.log('  removed', removed, 'hubtown leftovers');
+  return removed;
+}
+
+removeHubtownLeftovers(MERGED);
 
 console.log('\nBuild complete.');
