@@ -101,7 +101,7 @@ function projectForLocNode(node) {
     slug,
     proj,
     evEntry,
-    expected: MAP_DATA.cityCoords[proj.city],
+    expected: MAP_DATA.applyNudge(MAP_DATA.cityCoords[proj.city], proj.nudge),
   };
 }
 

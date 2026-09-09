@@ -80,7 +80,7 @@ const projects = [
   { slug: 'brain', title: 'The Brain', type: 'knowledge-base', status: 'shipped', city: 'Rotterdam', district: 'south' },
   { slug: 'music-trends-local', title: 'Music Trends Local', type: 'web-app', status: 'shipped', city: 'The Hague', district: 'west' },
   { slug: 'mac-mini-ai', title: 'Mac Mini AI Infrastructure', type: 'infrastructure', status: 'maintained', city: 'Delft', district: 'south' },
-  { slug: 'rhinesolution', title: 'rhinesolution.com', type: 'website', status: 'shipped', city: 'Rotterdam', district: 'south' },
+  { slug: 'rhinesolution', title: 'rhinesolution.com', type: 'website', status: 'shipped', city: 'Rotterdam', district: 'south', nudge: [20, 0, 15] },
   { slug: 'cybercrime-report', title: 'Cybercrime & Cybersecurity Report', type: 'report', status: 'shipped', city: 'Groningen', district: 'north' },
 ];
 
@@ -97,6 +97,14 @@ const districts = {
 // The ev replacement object. Keys are seeded in district order so the compact
 // JSON Task 4 serializes lands in the plan's stated west/south/central/north
 // order; each district's array keeps the projects in PROJECTS order.
+// Offset a project's anchor by its `nudge` (world units) so co-located projects
+// (e.g. brain + rhinesolution, both in Rotterdam) render as separate cubes.
+function applyNudge(loc, nudge) {
+  const out = loc.slice();
+  if (nudge) { out[0] += nudge[0]; out[1] += nudge[1] || 0; out[2] += nudge[2] || 0; }
+  return out;
+}
+
 const ev = {};
 for (const key of Object.keys(districts)) ev[key] = [];
 for (const project of projects) {
@@ -105,7 +113,7 @@ for (const project of projects) {
     district: project.district,
     type: project.type,
     status: project.status,
-    location: cityCoords[project.city].slice(),
+    location: applyNudge(cityCoords[project.city], project.nudge),
   });
 }
 
@@ -121,6 +129,6 @@ function gradientAttrs() {
 
 // Everything downstream needs. `bbox` is the geographic box all cityCoords were
 // computed with â€” Task 3's terrain must use it too (see header note).
-const MAP_DATA = { districts, projects, cityCoords, ev, gradientAttrs, lonLatToWorld, bbox };
+const MAP_DATA = { districts, projects, cityCoords, ev, gradientAttrs, lonLatToWorld, applyNudge, bbox };
 
 module.exports = MAP_DATA;

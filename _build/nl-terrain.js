@@ -37,7 +37,7 @@ const { writeGLB, addBufferView, addAccessor, meshNode, primitive, mesh } = requ
 const GEOJSON_PATH = path.join(__dirname, 'geo', 'nl-country.geojson');
 const OUT_PATH = path.resolve(__dirname, '..', 'webgl', 'models', 'map.glb');
 
-const { lonLatToWorld, bbox, districts, projects, cityCoords } = MAP_DATA;
+const { lonLatToWorld, bbox, districts, projects, cityCoords, applyNudge } = MAP_DATA;
 
 // World-space extent (matches nl-map-data.js WORLD_X / WORLD_Z).
 const WX = [-235, 345];
@@ -482,7 +482,7 @@ addLineMesh('minor', minor);
 // loc_* cube anchors (no mesh).
 for (const p of projects) {
   const name = '0_loc_' + p.type + '_' + p.status + '_' + p.slug;
-  scene.nodes.push(meshNode(name, undefined, cityCoords[p.city].slice()));
+  scene.nodes.push(meshNode(name, undefined, applyNudge(cityCoords[p.city], p.nudge)));
 }
 
 scene.scenes[0].nodes = scene.nodes.map((_, i) => i);
