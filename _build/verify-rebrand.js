@@ -110,6 +110,14 @@ function allIndexHtml(root) {
       }
     }
 
+    // 2b) India location/coords must not leak into decoded project content
+    const INDIA_NEEDLES = ['mumbai', 'residential', 'maharashtra', 'maharera', '19.3', '72.46', ' andheri'];
+    const hits = INDIA_NEEDLES.filter((n) => revivedJson.toLowerCase().includes(n));
+    if (hits.length) {
+      detail = 'India location/coords present: ' + hits.join(', ');
+      return report('no India location/coords in projects payload', false, detail);
+    }
+
     // 3) `25-` is a prefix: reject any project slug starting with it (avoid
     //    UUID/date substrings that legitimately contain "25-")
     const slugs = [];
