@@ -112,9 +112,11 @@ function gridLon(i) { return lon0 + (i / (U - 1)) * (lon1 - lon0); }
 function gridLat(j) { return lat0 + (j / (V - 1)) * (lat1 - lat0); }
 
 // World -> grid cell (may be out of range; caller clamps).
+// Row is inverted: north (lower z after the lonLatToWorld flip) must sample the
+// same geographic cell the mask grid holds, so coast classification stays right.
 function worldToGrid(x, z) {
   const c = ((x - WX[0]) / (WX[1] - WX[0])) * (U - 1);
-  const r = ((z - WZ[0]) / (WZ[1] - WZ[0])) * (V - 1);
+  const r = (V - 1) - ((z - WZ[0]) / (WZ[1] - WZ[0])) * (V - 1);
   return { c, r };
 }
 
@@ -214,9 +216,12 @@ for (let j = 0; j < V - 1; j++) {
     const b = j * U + i + 1;
     const c = (j + 1) * U + i + 1;
     const d = (j + 1) * U + i;
-    // +y up winding.
-    tIndex[ti++] = a; tIndex[ti++] = c; tIndex[ti++] = b;
-    tIndex[ti++] = a; tIndex[ti++] = d; tIndex[ti++] = c;
+    // +y up winding. The terrain material renders back faces, so the winding
+    // below is what keeps the triangles visible from above. The lonLatToWorld z
+    // flip is a mirror in z; reversing the winding preserves the same rendered
+    // orientation (mirror + reversed = identical facing to the pre-flip build).
+    tIndex[ti++] = a; tIndex[ti++] = b; tIndex[ti++] = c;
+    tIndex[ti++] = a; tIndex[ti++] = c; tIndex[ti++] = d;
   }
 }
 

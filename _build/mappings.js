@@ -114,6 +114,22 @@ module.exports = {
     ['case"central-suburbs"', 'case"central"'],
     ['case"south-mumbai"', 'case"south"'],
     ['case"thane"', 'case"north"'],
+    // NL cleanup: footer CTA "Chat with us" -> "Contact us" (SSR + bundle)
+    ['Chat with us', 'Contact us'],
+    // NL cleanup: WhatsApp icon path -> envelope (mail) icon path (SSR + bundle)
+    ['M17.004 2.906A9.84 9.84 0 0 0 9.994 0C4.53 0 .085 4.445.084 9.91a9.9 9.9 0 0 0 1.322 4.954L0 20l5.254-1.378a9.9 9.9 0 0 0 4.736 1.206h.004c5.462 0 9.908-4.446 9.91-9.91a9.85 9.85 0 0 0-2.9-7.011m-7.01 15.248H9.99a8.2 8.2 0 0 1-4.193-1.148l-.3-.178-3.119.817.832-3.04-.195-.311a8.2 8.2 0 0 1-1.26-4.384c.002-4.541 3.697-8.236 8.241-8.236 2.2 0 4.268.858 5.824 2.416a8.19 8.19 0 0 1 2.41 5.827c-.002 4.542-3.697 8.237-8.237 8.237m4.518-6.169c-.248-.124-1.465-.722-1.692-.805s-.392-.124-.557.124-.64.806-.784.97c-.145.166-.29.187-.537.063s-1.045-.386-1.991-1.23c-.736-.656-1.233-1.467-1.378-1.715s-.015-.382.109-.505c.11-.111.247-.29.371-.434s.165-.248.248-.413.041-.31-.02-.434c-.063-.124-.558-1.342-.764-1.838-.201-.483-.406-.417-.557-.425a10 10 0 0 0-.475-.009.9.9 0 0 0-.66.31c-.228.248-.867.847-.867 2.066s.887 2.396 1.011 2.561 1.746 2.667 4.23 3.74a14 14 0 0 0 1.412.521c.593.19 1.133.162 1.56.099.475-.072 1.465-.6 1.67-1.178.207-.578.207-1.074.145-1.177s-.227-.166-.475-.29z', 'M1 3c0-1.1.9-2 2-2h14c1.1 0 2 .9 2 2v14c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2V3zm2 .7v13.6h14V3.7l-6.4 4.8a1.6 1.6 0 0 1-1.9 0L3 3.7zM4.3 3l5.4 4.1L15 3H4.3z'],
+    // NL cleanup: default <title> fallback in useSeoMeta (never "Hubtown")
+    [':"Hubtown"', ':"Rhine Solution"'],
+    // NL cleanup: map test-default project slug
+    ['"hubtown-seasons"', '"plan2shift"'],
+    // NL cleanup: map default district/city readout label
+    ['DISTRIC.CITY', 'WEST \u00b7 AMSTERDAM'],
+    // NL cleanup: FAQs renamed (file + every footer/menu link)
+    ['faqs-hubtown.html', 'faqs.html'],
+    // NL cleanup: theatre studio project name
+    ['theatreProjectName:"hubtown"', 'theatreProjectName:"rhine-solution"'],
+    // NL cleanup: projects description (meta + JSON-LD + map intro)
+    ['Production systems, deployed and maintained.', 'Explore the projects Rhine Solution has designed, engineered, and shipped \u2014 web apps, portals, and research from a two-person studio.'],
   ],
 
   // ---- HOME (scene sections; chunk data + SSR html) ----
@@ -153,7 +169,7 @@ module.exports = {
     ['First name', 'Name'],
     ['Last name', 'Company'],
     ['Contact Info', 'Contact'],
-    ['Phone', 'Based in'],
+    ['Phone', 'Phone*'],
     ['+91 22 69 66 20 00', 'Rotterdam, Netherlands'],
     ['Address', 'Enquiries'],
     ['HUBTOWN SEASONS, CTS No. 469-A, OPP. JAIN TEMPLE, R.K. CHEMBURKAR MARG, CHEMBUR EAST, Mumbai Suburban,\\nMaharashtra, 400071', 'info@rhinesolution.com \u2014 replies within 1-2 business days.'],
@@ -200,6 +216,12 @@ module.exports = {
     ['https://drive.google.com/file/d/1wcXAm58huNexxybBeJ6JQqjX7tTP1zZS/view?usp=sharing', '/news/index.html'],
     ['https://drive.google.com/file/d/16IEDUFTSL9NiyhwIdJJ2YdQNTRxTnCn6/view?usp=sharing', '/news/index.html'],
     ['https://www.etnownews.com/real-estate/etnow-in-realty-conclave-awards-2026-west-edition-grand-platform-to-recognise-real-estate-excellence-check-full-list-of-winners-article-153636347', '/news/index.html'],
+    // NL cleanup: article count (SSR text + payload totalArticles value)
+    ['6 of 54 articles', '6 of 6 articles'],
+    ['"Newsroom",54,', '"Newsroom",6,'],
+    // NL cleanup: India press source labels (SSR only)
+    ['Times of India - Special Supplement for Gudi Padwa', 'Rhine Solution'],
+    ['ET Now Digital', 'Rhine Solution'],
   ],
 
   // ---- CAREERS -> TEAM page ----
@@ -251,6 +273,7 @@ module.exports = {
     ['From site engineers to sales teams, every voice is valued here. We believe diverse perspectives lead to better outcomes\u2014and more resilient communities.', 'Every decision lives in the Brain, not in someone\'s head.'],
     ['Being an Industry Leader our vision is to be the creator of value and enduring experiences for customers and our partners, to build remarkable landmarks that resonate our brand values.', 'We favor simplicity, craft, and production code. When we promise a project, it ships.'],
     ['We are always looking for new talents. If you feel aligned with Hubtown\'s values and believe your skills can help elevate our mission, feel free to reach out via email.', 'Want to work with us? We take on a few projects a year and finish them properly.'],
+    ['With every project, we aim to create spaces that matter, and we know it takes exceptional people to bring that vision to life.', 'With every project, we aim to build software that works in the real world \u2014 designed, engineered, and shipped end to end by the two of us.'],
   ],
 
   // ---- INVESTOR RELATIONS (filing-hub page: swap chrome, keep data list) ----
@@ -283,6 +306,10 @@ module.exports = {
     ['We reserve the right to update or revise the Terms and Conditions at any time without prior notice. Any changes will be effective immediately upon posting the updated privacy policy on our website.', 'These terms cover your use of the Rhine Solution website. We\'re a two-person studio; if something here reads oddly, email info@rhinesolution.com and we\'ll fix it.'],
     ['Collected Data', 'What we cover'],
     ['Use of Data', 'Why we collect it'],
+    // the three collected-data paragraphs reuse the privacy-policy rewrites
+    ['Information you give us. You may give us information about you by filling in forms on our sites, or by submitting your CV, or by corresponding with us by phone, e-mail or otherwise or, by you interacting with any of our business partners, suppliers or sub-contractors (including estate agents, sales agents and our professional advisors) engaged on our behalf. This includes information you provide when you register to use our sites, subscribe to our service, email us, arrange property viewings with us, request brochures from us, complete an enquiry form, provide your CV and when you report a problem with our sites. The information you give us may include your name, address, e-mail address, phone number and any other information relevant to your enquiry or request for information or services which we may request and you may choose to provide us from time to time.', 'Only what you type into the contact form: your name, your email address, your message, and the language you used (English or Dutch). Nothing else. We do not collect IP addresses, browser fingerprints, location data, device identifiers, or any analytics. We do not place cookies.'],
+    ['Information we collect about you. We may automatically collect: technical information, including the IP address, your login information, browser type and version, time zone setting, browser plug-in types and versions, operating system and platform; and information about your visit, including the full URL clickstream to, through and from our sites; materials you viewed or searched for; page response times, download errors, length of visits to certain pages, page interaction information, and methods used to browse away from the page and any phone number used to call our customer service number.', 'To reply to you. That\'s it. The legal basis under GDPR Article 6(1)(b) is that processing is necessary to respond to your enquiry. We do not market to you, build profiles on you, or share your information with anyone outside the chain needed to send you our reply.'],
+    ['Information we receive from other sources. We may receive information about you if you use our sites or the other services we provide. In this case we will have informed you when we collected that data that it may be shared internally and combined with data collected on our sites. We also work closely with third parties (including, for example, business partners, sub-contractors in technical, payment and delivery services, advertising networks, analytics providers, search information providers, credit reference agencies) and may receive information about you from them.', 'Rhine Solution is a two-person studio. We are the data controller for any personal information you send us through this site. You can reach us at the addresses listed at the bottom of this page.'],
   ],
 
   // ---- APPROVALS (document hub) ----
@@ -338,7 +365,7 @@ module.exports = {
     ['The most reliable real estate developers in India', 'Small team, high standard, shipped work.'],
     [' The most reliable ', ' Small team, high '],
     [' real estate developers in India ', ' standard, shipped work. '],
-    ['Hubtown has helped shape the city for over 40 years and we\'re just getting started.', 'Rhine Solution is a two-person studio led by a CEO/CTO pair who build together. We make custom web experiences \u2014 portfolios, portals, and products \u2014 from first sketch to live deploy.'],
+    ['Hubtown has helped shape the city for over 40 years and we\'re just getting started.', 'RHINE SOLUTION IS A TWO PERSON STUDIO\u00ae'],
     ['With every project, we aim to create spaces that matter, and we know it takes exceptional people to bring that vision to life.', 'Our workflow is AI-first but human-led. The Mac Mini runs our agents and models, and the Obsidian Brain keeps every decision documented and repeatable.'],
     ['About Hubtown', 'About Rhine Solution'],
     ['Informations Data', 'Studio facts'],

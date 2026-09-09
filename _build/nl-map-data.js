@@ -1,9 +1,9 @@
-// Netherlands map data — single source of truth for the NL terrain rebuild.
+﻿// Netherlands map data â€” single source of truth for the NL terrain rebuild.
 //
 // Exports MAP_DATA, consumed by _build/nl-terrain.js (map.glb generation),
 // _build/nl-districts.js (district anchors) and _build/mappings.js (the `ev`
 // chrome replacement): the 7 Rhine projects grouped into 4 NL districts, each
-// project's world-space cube position, and lonLatToWorld — the mapping that
+// project's world-space cube position, and lonLatToWorld â€” the mapping that
 // turns NL lon/lat into the same world-space scale the original Mumbai terrain
 // used (terrain bbox roughly x:[-235,345], z:[-395,394], centered near origin).
 //
@@ -15,13 +15,13 @@
 //
 // Task 3 must build the terrain GLB with the SAME geographic bbox used here
 // (pass `bbox` to lonLatToWorld, or rely on its default) so the generated
-// terrain lines up with the project locations computed below — recomputing a
+// terrain lines up with the project locations computed below â€” recomputing a
 // slightly different bbox from the GeoJSON would drift cube anchors off the
 // terrain and break the Task 5 coords assertion.
 //
 // Known behavior (accepted for now): `brain` and `rhinesolution` are both
 // anchored in Rotterdam, so their cubes share the exact same world position
-// ([-49.516, 20, -61.879]) and may overlap/z-fight in the 3D scene. Both
+// ([-49.516, 20, 60.879]) and may overlap/z-fight in the 3D scene. Both
 // projects ARE in Rotterdam; this is correct data, not an error.
 
 'use strict';
@@ -41,12 +41,16 @@ const bbox = { lon: [3.2, 7.2], lat: [50.7, 53.6] };
 // NL bbox (shape { lon:[min,max], lat:[min,max] }). Returns [x, 0, z] on the
 // terrain plane; callers needing a cube anchor height use CUBE_Y (see
 // cityCoords below).
+//
+// Z orientation: the original Mumbai map put north at -z (south-mumbai at +z),
+// and the site camera renders -z at the TOP of the screen. We mirror that here
+// (higher lat -> lower z) so the NL map renders north-up like the original.
 function lonLatToWorld(lon, lat, box) {
   const { lon: [lon0, lon1], lat: [lat0, lat1] } = box || bbox;
   const t = (lon - lon0) / (lon1 - lon0);
   const u = (lat - lat0) / (lat1 - lat0);
   const x = WORLD_X[0] + t * (WORLD_X[1] - WORLD_X[0]);
-  const z = WORLD_Z[0] + u * (WORLD_Z[1] - WORLD_Z[0]);
+  const z = WORLD_Z[1] - u * (WORLD_Z[1] - WORLD_Z[0]);
   return [Math.round(x * 1000) / 1000, 0, Math.round(z * 1000) / 1000];
 }
 
@@ -68,7 +72,7 @@ for (const city of Object.keys(CITY_LONLAT)) {
   cityCoords[city] = [x, CUBE_Y, z];
 }
 
-// The 7 Rhine projects (source of truth: the prior plan's payload — slugs,
+// The 7 Rhine projects (source of truth: the prior plan's payload â€” slugs,
 // types and statuses confirmed against projects/_payloadc9a0.json).
 const projects = [
   { slug: 'plan2shift', title: 'Plan2Shift', type: 'web-app', status: 'shipped', city: 'Utrecht', district: 'central' },
@@ -116,7 +120,7 @@ function gradientAttrs() {
 }
 
 // Everything downstream needs. `bbox` is the geographic box all cityCoords were
-// computed with — Task 3's terrain must use it too (see header note).
+// computed with â€” Task 3's terrain must use it too (see header note).
 const MAP_DATA = { districts, projects, cityCoords, ev, gradientAttrs, lonLatToWorld, bbox };
 
 module.exports = MAP_DATA;

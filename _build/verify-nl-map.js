@@ -273,11 +273,42 @@ function allEvProjectsFrom(ev) {
   report('bundle: district-glow wiring anchors present (map:district:enter/leave, setSelectedDistrictRoads, uSelectionMix)', pass, detail);
 })();
 
+// ---- assertion 8: map is north-up (north city at LOWER z than south city) ----
+// Regression gate for the vertical-flip fix: the original Mumbai map put north
+// at -z and the site camera renders -z at the TOP of the screen. Groningen
+// (northernmost) must sit at a smaller z than Rotterdam (southernmost), in both
+// cityCoords and the regenerated map.glb loc_* anchors.
+(function () {
+  let pass = false, detail = '';
+  try {
+    const gron = MAP_DATA.cityCoords['Groningen'];
+    const rot = MAP_DATA.cityCoords['Rotterdam'];
+    if (!gron || !rot) throw new Error('missing cityCoords for Groningen/Rotterdam');
+    if (!(gron[2] < rot[2])) {
+      throw new Error(`cityCoords not north-up: Groningen z=${gron[2]} !< Rotterdam z=${rot[2]}`);
+    }
+    const scene = readGlbJson(MAP_GLB);
+    const bySlug = {};
+    for (const n of (scene.nodes || [])) {
+      if (n.name && n.name.includes('loc')) bySlug[getProjectName(n.name)] = n.translation;
+    }
+    // north city (Groningen) -> cybercrime-report; south city (Rotterdam) -> brain
+    const g = bySlug['cybercrime-report'];
+    const r = bySlug['brain'];
+    if (!g || !r) throw new Error('map.glb missing cybercrime-report/brain loc nodes');
+    if (!(g[2] < r[2])) {
+      throw new Error(`map.glb not north-up: groningen z=${g[2]} !< rotterdam z=${r[2]}`);
+    }
+    pass = true;
+  } catch (e) { detail = e.message; }
+  report('orientation: Groningen (north) z < Rotterdam (south) z in cityCoords + map.glb', pass, detail);
+})();
+
 // ---- summary ----
 console.log('');
 report('rebuild cycle: build-merged.js + build-locales.js exit 0', rebuildResult.pass, rebuildResult.detail);
 if (failures === 0) {
-  console.log(`SUMMARY: ALL 7 ASSERTIONS PASS`);
+  console.log(`SUMMARY: ALL 8 ASSERTIONS PASS`);
   process.exit(0);
 } else {
   console.log(`SUMMARY: ${failures} ASSERTION(S) FAILED`);

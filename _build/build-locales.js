@@ -10,7 +10,9 @@ const fs = require('fs');
 const path = require('path');
 
 const MERGED = path.resolve(__dirname, '..');
-const LOCALES = ['nl', 'de', 'fr', 'es', 'it', 'zh'];
+// Locales are removed — the site is English-only. Keep this script a no-op so
+// the rebuild cycle (verify-nl-map assertion 6) still exits 0.
+const LOCALES = [];
 const CONTENT_BASE = 'C:/Users/teoal/Projects/projects/rhinesolution-website/content';
 
 const PAGES = ['team', 'about', 'contact', 'news', 'privacy-policy', 'projects', 'terms-and-conditions'];
@@ -174,12 +176,6 @@ for (const loc of LOCALES) {
   console.log('generated locale:', loc);
 }
 // inject the switcher into the EN root pages too
-for (const page of ['', ...PAGES]) {
-  const f = page ? path.join(MERGED, page, 'index.html') : path.join(MERGED, 'index.html');
-  if (!fs.existsSync(f)) continue;
-  let t = fs.readFileSync(f, 'utf8');
-  if (!t.includes('rhine-locale-switch')) t = t.replace('</body>', switcher() + '</body>');
-  fs.writeFileSync(f, t, 'utf8');
-}
-console.log('switcher injected into EN root');
+// (locale switcher removed with the languages — English only)
+console.log('locales: disabled (English-only site)');
 console.log('done');

@@ -87,6 +87,33 @@ const server = http.createServer((req, res) => {
     return;
   }
 
+  // offline stub: chat assistant — stream a canned reply (no Gemini key locally).
+  // The Vercel deploy replaces this with api/chat.js (real Gemini proxy).
+  if (urlPath === '/api/chat' && req.method === 'POST') {
+    let body = '';
+    req.on('data', c => { body += c; });
+    req.on('end', () => {
+      let q = 'the assistant';
+      try { const b = JSON.parse(body); const ms = b.messages || []; const last = ms[ms.length - 1]; q = last && last.content ? last.content.slice(0, 60) : 'the assistant'; } catch (e) {}
+      res.writeHead(200, { 'Content-Type': 'text/event-stream; charset=utf-8', 'Cache-Control': 'no-cache' });
+      const parts = [
+        `Offline preview: the live assistant runs on Gemini after deploy.`,
+        `You asked: "${q}". Set GEMINI_API_KEY on the Vercel project to enable real answers.`,
+      ];
+      const chunk = parts.join(' ');
+      const payload = { candidates: [{ content: { parts: [{ text: chunk }] } }] };
+      res.write(`data: ${JSON.stringify(payload)}\n\n`);
+      res.end('data: [DONE]\n\n');
+    });
+    return;
+  }
+
+  if (urlPath === '/api/chat') {
+    res.writeHead(405, { 'Content-Type': 'application/json' });
+    res.end(JSON.stringify({ ok: false, message: 'Method not allowed' }));
+    return;
+  }
+
   // offline stub: Cloudflare Turnstile script
   if (urlPath === '/turnstile-api.js') {
     res.writeHead(200, { 'Content-Type': 'text/javascript' });

@@ -1,5 +1,6 @@
 # Heavy source mirror (raw HTTrack source, not part of the rebuilt site)
-hubtown-mirror/
+# Lives at Projects/projects/_rhine-build-source/ (outside this repo) since this
+# site now runs fully independently of the mirror.
 
 # Derived/cache folders
 _preview/
